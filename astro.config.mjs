@@ -108,5 +108,20 @@ export default defineConfig({
 
     // Duplicate case study
     '/casestudy/hey-you/': '/casestudy/heyyou-app/',
+
+    // Old WordPress taxonomy pages (from GSC data)
+    '/caseandstudy-videotype/2d-motion-graphic/': '/work/',
+    '/caseandstudy-videotype/product-demo/': '/work/',
+    '/cands-category/awareness/': '/work/',
+    '/cands-category/music/': '/work/',
+    '/cands-category/recent-work/': '/work/',
+    '/cands-category/hero-video/': '/work/',
+    '/cands-category/explainer/': '/work/',
+    '/cands-category/app/': '/work/',
+    '/cands-category/property/': '/work/',
+    '/tax-other-projects/product-demo/': '/work/',
+    '/tax-other-projects/explainer/': '/work/',
+    '/tax-other-projects/education/': '/work/',
+    '/category/industry/': '/blog/',
   },
 });
