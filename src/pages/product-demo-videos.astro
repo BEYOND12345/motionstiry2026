@@ -1,0 +1,241 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const caseStudies = [
+  {
+    title: "Trudi / AI Property Management",
+    description: "Trudi's AI handles tenant communication, maintenance, and financials. The animated product demo walks through each workflow without overwhelming the viewer — or needing a single screenshot.",
+    link: "/casestudy/property-management-explainer-video/",
+    vimeoId: "866174146",
+  },
+  {
+    title: "Wipster / Video Feedback Tool",
+    description: "Wipster needed to show how their video review workflow connected across teams. The product demo walks through the full platform, step by step, in 90 seconds.",
+    link: "/casestudy/wipster-product-overview/",
+    vimeoId: "648360270",
+  },
+  {
+    title: "Atomic / In-App Messaging",
+    description: "Atomic's product was technically deep and hard to pitch to non-technical buyers. The software demo video did the explaining before the sales call started.",
+    link: "/casestudy/atomic-in-app-messaging/",
+    vimeoId: "861022443",
+  },
+  {
+    title: "Good2Pay / Paperless Invoicing",
+    description: "Good2Pay needed a product demo animation that showed the full invoicing flow — from creation to payment — without getting lost in the details. Clean, fast, and built for their landing page.",
+    link: "/casestudy/good2pay/",
+    vimeoId: "448704979",
+  },
+];
+
+const services = [
+  { title: "Full platform walkthroughs", desc: "End-to-end product demo videos that show the entire user journey, from login to outcome." },
+  { title: "Feature highlight videos", desc: "Short, focused demos that spotlight a single feature or workflow update." },
+  { title: "Sales enablement demos", desc: "Animated software demos built for sales decks, outreach sequences, and leave-behinds." },
+  { title: "Investor pitch demos", desc: "Product demo animations that show traction and capability — built for fundraising decks." },
+  { title: "Onboarding & activation videos", desc: "Step-by-step walkthroughs that get new users to value faster and reduce early churn." },
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Product Demo Videos",
+  "description": "Animated product demo videos that show your software in action. Turn complex features into clear, compelling walkthroughs.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Motion Story",
+    "url": "https://motionstory.com.au",
+  },
+  "serviceType": "Product Demo Video Production",
+  "areaServed": "Worldwide",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://motionstory.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Product Demo Videos", "item": "https://motionstory.com.au/product-demo-videos/" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's the difference between an animated product demo and a screen recording?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A screen recording captures your software as-is — cursor movements, loading states, and all. An animated product demo is a crafted piece of motion design that shows your software at its best. You control pacing, focus, and narrative. It looks polished on a landing page, in a sales deck, and in an investor pitch. And it doesn't break every time your UI changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long should a product demo video be?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most product demo videos land between 60 and 90 seconds. That's long enough to show the core workflow and short enough to hold attention on a landing page or in a sales email. Longer walkthroughs (2–3 minutes) work well for onboarding sequences or detailed feature tours where the viewer is already invested."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the video be updated when the UI changes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Because animated product demos are built from designed assets — not screen recordings — individual screens or sections can be updated without remaking the entire video. This is one of the biggest advantages over screen recordings, which need to be completely reshot after any interface change."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What information do you need to get started?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I need access to your product (or detailed screenshots and a walkthrough), your brand guidelines, and clarity on who the video is for and where it will live. A 30-minute kickoff call covers the rest. I'll handle scripting, storyboarding, and animation from there."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a product demo video take to produce?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most product demo videos are delivered within 4–6 weeks from kickoff. That includes scripting, storyboarding, design, animation, and two rounds of revisions. Shorter feature highlight videos can turn around faster — typically 2–3 weeks."
+      }
+    },
+  ],
+};
+---
+
+<PageLayout
+  title="Product Demo Videos — Show Your Software in Action | Motion Story"
+  description="Animated product demo videos that show your software in action. Turn complex features into clear, compelling walkthroughs."
+  ctaHeading="Got a product worth showing off?"
+  ctaLabel="Start a Conversation"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  {/* Hero */}
+  <div class="pt-32 pb-24 px-8 max-w-5xl mx-auto">
+    <span class="text-metadata mb-8 block">Product Demo Videos</span>
+    <h1 class="font-display text-4xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-8">
+      Your product does incredible things.<br />Nobody's seeing it.
+    </h1>
+    <p class="text-body max-w-xl mb-24">
+      Screenshots don't move. Screen recordings are boring. And nobody's signing up for a free trial just to understand what your software does. A product demo video shows the platform doing what it does best — without the viewer needing a login.
+    </p>
+
+    {/* Body */}
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div>
+          <span class="text-metadata mb-4 block text-accent">The Brief</span>
+        </div>
+        <div class="md:col-span-2">
+          <p class="text-body text-lg leading-relaxed mb-8">
+            Product demo videos work across the entire funnel. On your landing page, they stop the scroll and explain the product before someone bounces. In a sales deck, they do the heavy lifting so your rep isn't narrating screenshots. In an investor pitch, they show the product is real, polished, and moving. In onboarding sequences, they get new users to value before they churn.
+          </p>
+          <p class="text-body text-lg leading-relaxed">
+            Animated product demos also age better than screen recordings. When your UI changes — and it will — you don't need to reshoot the entire video. Individual screens can be updated without starting from scratch. I've made software demo videos for platforms from fintech to property management, and the brief is always the same: show the product doing what it does, clearly, in under two minutes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* What I Make */}
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <span class="text-metadata mb-10 block">What I Make</span>
+      <div class="space-y-12">
+        {services.map((service, i) => (
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12 border-b border-black/10 last:border-b-0 last:pb-0">
+            <div>
+              <span class="text-metadata mb-4 block text-accent">{(i + 1).toString().padStart(2, '0')}</span>
+              <h3 class="font-display text-lg font-medium tracking-tight">{service.title}</h3>
+            </div>
+            <div class="md:col-span-2">
+              <p class="text-body">{service.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* Case Studies */}
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <span class="text-metadata mb-10 block">Selected Work</span>
+      <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight leading-[0.9] mb-16">
+        Product demos,<br />real platforms.
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {caseStudies.map(study => (
+          <a href={study.link} class="group block">
+            <div class="aspect-video mb-6 overflow-hidden bg-black/5">
+              <img
+                src={`https://vumbnail.com/${study.vimeoId}.jpg`}
+                alt={study.title}
+                class="w-full h-full object-cover group-hover:opacity-80 transition-opacity"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="font-display text-xl font-bold tracking-tight mb-3 group-hover:opacity-60 transition-opacity">{study.title}</h3>
+            <p class="text-body mb-4">{study.description}</p>
+            <span class="text-metadata text-accent group-hover:opacity-60 transition-opacity">View Case Study →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    {/* Testimonial */}
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <span class="text-metadata mb-10 block">Client Feedback</span>
+      <blockquote class="text-body text-2xl md:text-3xl leading-relaxed font-display tracking-tight mb-8">
+        "40,000 views on YouTube, which increased brand perception and reputation."
+      </blockquote>
+      <div>
+        <p class="font-display font-medium">Simon Lehman</p>
+        <p class="text-metadata">Marketing Manager, Acodis</p>
+      </div>
+    </section>
+
+    {/* FAQs */}
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <span class="text-metadata mb-10 block">FAQs</span>
+      <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight leading-[0.9] mb-16">
+        Common questions about<br />product demo videos.
+      </h2>
+      <div class="space-y-12">
+        {faqSchema.mainEntity.map((faq: { name: string; acceptedAnswer: { text: string } }) => (
+          <div class="pb-12 border-b border-black/10 last:border-b-0 last:pb-0">
+            <h3 class="font-display text-lg font-medium tracking-tight mb-4">{faq.name}</h3>
+            <p class="text-body max-w-2xl">{faq.acceptedAnswer.text}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* Cross-links */}
+    <section class="border-t border-black/10 pt-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <a href="/saas-tech/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
+          <span class="text-metadata mb-3 block">SaaS & Tech</span>
+          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">Motion for SaaS →</p>
+          <p class="text-body !text-sm mt-2">Product demos, explainers, onboarding.</p>
+        </a>
+        <a href="/work/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
+          <span class="text-metadata mb-3 block">Work</span>
+          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">See all work →</p>
+          <p class="text-body !text-sm mt-2">50+ projects delivered worldwide</p>
+        </a>
+        <a href="/contact/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
+          <span class="text-metadata mb-3 block">Start a Project</span>
+          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">Get in touch →</p>
+          <p class="text-body !text-sm mt-2">Tell me what you're working on</p>
+        </a>
+      </div>
+    </section>
+  </div>
+</PageLayout>

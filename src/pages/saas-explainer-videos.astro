@@ -1,0 +1,225 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const caseStudies = [
+  {
+    title: "Wipster / Video Feedback Tool",
+    description: "Wipster's video review platform needed a SaaS explainer video that could walk prospects through the full workflow — from upload to approval — without requiring a login. Ninety seconds, zero confusion.",
+    link: "/casestudy/wipster-product-overview/",
+    vimeoId: "648360270",
+  },
+  {
+    title: "Atomic / In-App Messaging",
+    description: "Atomic's product was technically deep and hard to pitch to non-technical buyers. I built a software explainer video that did the selling before the sales call even started.",
+    link: "/casestudy/atomic-in-app-messaging/",
+    vimeoId: "861022443",
+  },
+  {
+    title: "Mosaic / Strategic Data Planning",
+    description: "Mosaic's platform serves finance teams running complex planning workflows. I turned that into a clear SaaS product video that works on a landing page, in a sales deck, and at conference booths.",
+    link: "/casestudy/mosaic-platform-explained/",
+    vimeoId: "879242129",
+  },
+  {
+    title: "Trudi / AI Property Management",
+    description: "Trudi's AI handles tenant communication, maintenance requests, and financials. The explainer video walks through each workflow without overwhelming the viewer — or underselling the product.",
+    link: "/casestudy/property-management-explainer-video/",
+    vimeoId: "866174146",
+  },
+];
+
+const services = [
+  { title: "Product demo videos", desc: "Walk prospects through your software, screen by screen, without needing a login or a sales call." },
+  { title: "Platform explainers", desc: "Distill what your platform does, how it works, and why it matters — in under two minutes." },
+  { title: "Onboarding animations", desc: "Get new users to value faster, reduce support tickets, and cut early-stage churn." },
+  { title: "Investor pitch animations", desc: "Board-level and investor presentations that make your market opportunity impossible to ignore." },
+  { title: "Social & paid motion", desc: "Short-form SaaS video animation for LinkedIn, paid ads, pre-roll, and product launches." },
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "SaaS Explainer Videos",
+  "description": "SaaS explainer videos that turn complex software into clear, compelling stories. Product demos, platform explainers, and onboarding animation.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Motion Story",
+    "url": "https://motionstory.com.au",
+  },
+  "serviceType": "SaaS Explainer Video Production",
+  "areaServed": "Worldwide",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://motionstory.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "SaaS Explainer Videos", "item": "https://motionstory.com.au/saas-explainer-videos/" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does a SaaS explainer video cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most SaaS explainer videos range from $8,000 to $25,000 depending on length, complexity, and style. A 60-second product explainer sits at the lower end; a full platform walkthrough with custom illustration and multiple audience versions sits higher. I scope every project individually after understanding your product and goals.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to produce a SaaS explainer video?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Typical turnaround is 4 to 6 weeks from kickoff to final delivery. That includes scripting, storyboarding, design, animation, and sound. Tight timelines are possible for simpler projects — I've delivered launch videos in under three weeks when the brief is clear.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "What's included in a SaaS explainer video project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every project includes scriptwriting, storyboarding, custom design and illustration, full animation, professional voiceover, sound design, and music licensing. You get structured checkpoints at each phase so nothing goes off-track.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "How does a SaaS explainer video improve conversion rates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A well-placed explainer video removes friction at the top of your funnel. Prospects understand your product before they book a demo, which means shorter sales cycles and higher-quality leads. On landing pages, video consistently lifts conversion rates because it answers objections faster than text alone.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "How many rounds of revisions are included?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every phase — script, storyboard, and animation — includes two rounds of revisions. Because I checkpoint at each stage, big surprises are rare. Most clients use one round or less. Additional revisions beyond the included rounds are available at an hourly rate.",
+      },
+    },
+  ],
+};
+---
+
+<PageLayout
+  title="SaaS Explainer Videos — Simplify Your Software Story | Motion Story"
+  description="SaaS explainer videos that turn complex software into clear, compelling stories. Product demos, platform explainers & onboarding animation."
+  ctaHeading="Got a SaaS product that's hard to explain?"
+  ctaLabel="Start a Conversation"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  {/* Hero */}
+  <div class="pt-32 pb-24 px-8 max-w-5xl mx-auto">
+    <span class="text-metadata mb-8 block">SaaS Explainer Videos</span>
+    <h1 class="font-display text-4xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-8">
+      Your software is invisible.<br />Your explainer video shouldn't be.
+    </h1>
+    <p class="text-body max-w-xl mb-24">
+      You can't hold SaaS. You can't screenshot it meaningfully. And you can't demo it without a login and a 30-minute walkthrough. A SaaS explainer video bridges that gap — giving prospects, investors, and new users a clear picture of what your product does before they ever touch it.
+    </p>
+
+    {/* Body */}
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div>
+          <span class="text-metadata mb-4 block text-accent">The Brief</span>
+        </div>
+        <div class="md:col-span-2">
+          <p class="text-body text-lg leading-relaxed mb-8">
+            SaaS explainer videos shorten sales cycles because prospects arrive at calls already understanding the product. They improve onboarding activation because new users see the value before they start clicking. And they reduce churn because the story you tell at signup stays consistent through the entire customer journey.
+          </p>
+          <p class="text-body text-lg leading-relaxed">
+            I've made software explainer videos for SaaS companies from seed stage through Series B — platforms with multiple stakeholder audiences, dense dashboards, and features that only make sense in context. Whether it's a 60-second product video for your homepage or a full platform walkthrough for your sales team, that's the brief I'm built for.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* What I Make */}
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <span class="text-metadata mb-10 block">What I Make</span>
+      <div class="space-y-12">
+        {services.map((service, i) => (
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12 border-b border-black/10 last:border-b-0 last:pb-0">
+            <div>
+              <span class="text-metadata mb-4 block text-accent">{(i + 1).toString().padStart(2, '0')}</span>
+              <h3 class="font-display text-lg font-medium tracking-tight">{service.title}</h3>
+            </div>
+            <div class="md:col-span-2">
+              <p class="text-body">{service.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* Case Studies */}
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <span class="text-metadata mb-10 block">Selected Work</span>
+      <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight leading-[0.9] mb-16">
+        SaaS explainer videos,<br />real results.
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {caseStudies.map(study => (
+          <a href={study.link} class="group block">
+            <div class="aspect-video mb-6 overflow-hidden bg-black/5">
+              <img
+                src={`https://vumbnail.com/${study.vimeoId}.jpg`}
+                alt={study.title}
+                class="w-full h-full object-cover group-hover:opacity-80 transition-opacity"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="font-display text-xl font-bold tracking-tight mb-3 group-hover:opacity-60 transition-opacity">{study.title}</h3>
+            <p class="text-body mb-4">{study.description}</p>
+            <span class="text-metadata text-accent group-hover:opacity-60 transition-opacity">View Case Study →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    {/* Testimonial */}
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <span class="text-metadata mb-10 block">Client Feedback</span>
+      <blockquote class="text-body text-2xl md:text-3xl leading-relaxed font-display tracking-tight mb-8">
+        "40,000 views on YouTube, which increased brand perception and reputation."
+      </blockquote>
+      <div>
+        <p class="font-display font-medium">Simon Lehman</p>
+        <p class="text-metadata">Marketing Manager, Acodis</p>
+      </div>
+    </section>
+
+    {/* Cross-links */}
+    <section class="border-t border-black/10 pt-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <a href="/process/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
+          <span class="text-metadata mb-3 block">Process</span>
+          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">How I work →</p>
+          <p class="text-body !text-sm mt-2">Three phases. No wasted time.</p>
+        </a>
+        <a href="/work/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
+          <span class="text-metadata mb-3 block">Work</span>
+          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">See all work →</p>
+          <p class="text-body !text-sm mt-2">50+ projects delivered worldwide</p>
+        </a>
+        <a href="/contact/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
+          <span class="text-metadata mb-3 block">Start a Project</span>
+          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">Get in touch →</p>
+          <p class="text-body !text-sm mt-2">Tell me what you're working on</p>
+        </a>
+      </div>
+    </section>
+  </div>
+</PageLayout>

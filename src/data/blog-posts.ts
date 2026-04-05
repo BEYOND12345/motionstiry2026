@@ -11,40 +11,53 @@ export interface BlogPost {
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "how-explainer-videos-supercharge-startup-growth",
-    title: "How Explainer Videos Supercharge Startup Growth",
-    date: "2023-05-15",
+    title: "How SaaS Explainer Videos Drive Real Growth",
+    date: "2026-04-06",
     category: "Explainer Video Strategy",
-    tags: ["Explainer videos for startups", "Startup growth strategies", "SaaS Explainer Videos"],
-    excerpt: "Embarking on the journey of launching a startup is both exhilarating and demanding. Standing out in a competitive landscape and effectively conveying your value proposition to your target audience are critical for success.",
-    content: `Introduction: Unleash the Power of Explainer Videos for Your Startup's Success
+    tags: ["SaaS explainer videos", "Startup growth", "Product demo videos", "SaaS marketing", "Explainer video production"],
+    excerpt: "Your SaaS product is brilliant, but nobody understands what it does from a screenshot. Here's how explainer videos shorten sales cycles, improve onboarding, and drive real conversion.",
+    content: `Your SaaS product solves a real problem. But when someone lands on your homepage, they have about eight seconds to decide if they care. A paragraph of text and a hero image won't cut it. A SaaS explainer video will.
 
-Embarking on the journey of launching a startup is both exhilarating and demanding. Standing out in a competitive landscape and effectively conveying your value proposition to your target audience are critical for success. In today's digital era, explainer videos have emerged as an extraordinary weapon in a startup's arsenal, enabling them to captivate, engage, and drive customer interest. Brace yourself for the ultimate guide that uncovers the immense potential of explainer videos and reveals how they can skyrocket your startup's growth.
+This isn't about making something pretty. It's about taking the complexity out of your product story so the right people understand it fast enough to act.
 
-## Unveiling the Magic of Explainer Videos
+## Why SaaS Products Need Explainer Videos
 
-What exactly are explainer videos? Picture this: captivating visuals, persuasive storytelling, and seamless audio intricately woven together to present a concise overview of your product, service, or concept. These short videos, typically spanning 60 to 120 seconds, unlock the power to convey complex ideas with simplicity and impact. Through stunning animations, crystal-clear voiceovers, and compelling narratives, explainer videos command the undivided attention of viewers, leaving a lasting impression.
+Software is invisible. You can't hold it. You can't photograph it doing something useful. And most product screenshots look the same — a dashboard with graphs and a sidebar.
 
-## The Advantages: Why Explainer Videos are Startup Game-Changers
+An explainer video changes that. In 60 to 90 seconds, you can show what your platform does, who it's for, and why it matters. Not by listing features, but by walking through a real scenario that your target customer recognises.
 
-The benefits of explainer videos are nothing short of remarkable, making them an indispensable marketing tool for startups. Let's dive into the key advantages that can revolutionize your business:
+The companies I work with use explainer videos in three main places:
 
-- Unparalleled Audience Engagement: With their ability to deliver information in an easily digestible format, explainer videos hold viewers spellbound from the beginning to the end, ensuring maximum engagement.
-- Mastering Simplified Communication: Explaining complex concepts concisely can be a daunting task. However, explainer videos dismantle intricate ideas into bite-sized, easily comprehensible pieces, effectively conveying your message to potential customers.
-- Conversion Rate Catalysts: Extensive research reveals that explainer videos wield the power to significantly boost conversion rates. By fostering trust, educating potential customers, and providing compelling reasons to take action, they pave the way for increased conversions.
+- **Homepage hero** — the first thing a visitor sees. Instead of reading three paragraphs, they watch a 60-second overview and either self-qualify or move on. Both outcomes save your sales team time.
+- **Sales enablement** — a product demo video that reps can send before or after a call. Prospects share it internally, which means your pitch reaches decision-makers who never joined the demo.
+- **Onboarding sequences** — short animated walkthroughs that guide new users through key workflows. This is where explainer videos directly reduce churn.
 
-## Explainer Videos: The Startup Accelerators
+## What Makes a Good SaaS Explainer Video
 
-Startups face the formidable challenge of establishing their brand presence and effectively communicating their unique value proposition in a crowded marketplace. Here's how explainer videos become the catalysts for their success:
+Not all explainer videos are equal. The ones that actually drive results share a few things in common:
 
-- Captivating the Audience: In the era of fleeting attention spans, capturing viewers' interest within seconds is paramount. Startups can leverage explainer videos to create visually stunning introductions that instantly captivate the audience. By showcasing their unique selling points in an engaging and memorable manner, startups distinguish themselves from competitors, leaving an indelible mark.
-- Simplifying Complex Concepts: Startups often offer innovative products or services that may be unfamiliar to their target audience. Explainer videos excel at breaking down intricate concepts into visually appealing representations and compelling narratives, making the learning process effortless for potential customers. This simplification nurtures a deep understanding of the value your startup brings to the table.
-- Igniting Emotional Connections: Successful startups build emotional connections with their audience. Explainer videos, with their ability to evoke emotions through powerful storytelling, create an opportunity to connect on a profound level. By tapping into the emotions and aspirations of viewers, startups forge a bond that goes beyond transactional relationships, establishing lasting brand loyalty.
+- **They lead with the problem, not the product.** Your viewer needs to recognise their own pain before they care about your solution. Start with the frustration they already feel.
+- **They show the product in context.** Abstract metaphors are fine for brand films. For SaaS, you need to show the actual interface — or a stylised version of it — doing something useful.
+- **They're the right length.** 60 seconds for a homepage overview. 90 seconds for a product walkthrough. Two minutes if you're covering multiple user types or a complex workflow. Anything longer needs a very good reason.
+- **They age well.** Animated product demos outlast screen recordings because they don't break every time your UI changes. A well-made animation can stay relevant for two or three years.
 
-## Conclusion: Harness the Potential of Explainer Videos for Explosive Startup Growth
+## Where Explainer Videos Fit in the SaaS Funnel
 
-As a startup entrepreneur, you possess the vision and determination to make your mark. Explainer videos offer an unparalleled avenue to captivate, educate, and inspire your audience. By harnessing their potential, you can transcend the limitations of traditional marketing and unlock explosive growth for your startup. Embrace the power of explainer videos, and propel your startup towards unparalleled success.
+Top of funnel: a 30-second social cut grabs attention on LinkedIn or in paid ads. Middle of funnel: a 60-second homepage video converts browsers into trial signups. Bottom of funnel: a product demo video gives your sales team a tool that works without them in the room.
 
-Remember, the key lies in leveraging their engaging nature, simplifying complex concepts.`
+Post-sale, onboarding animations reduce support tickets and accelerate time-to-value. I've seen teams cut onboarding support queries significantly just by replacing text-based help docs with short animated walkthroughs.
+
+## The Investment
+
+A professional SaaS explainer video typically costs between $4,000 and $12,000 depending on length, complexity, and how many stakeholder audiences you need to address. The timeline is usually four to six weeks from kickoff to final delivery.
+
+That might sound like a lot until you compare it to the cost of a sales team spending an extra 15 minutes on every call explaining what the product does. Or the cost of losing trial users in their first week because they couldn't figure out where to start.
+
+## Getting Started
+
+If you're thinking about a SaaS explainer video, the first step is getting clear on what you need it to do. Is it a homepage hero? A sales tool? An onboarding asset? The answer shapes everything — length, tone, level of product detail, and where the video lives.
+
+I work with SaaS companies from seed stage to Series B, and the brief is always the same: take something complex and make it clear. If that sounds like what you need, take a look at my SaaS explainer video work or get in touch.`
   },
   {
     slug: "find-the-perfect-animation-production-company",
@@ -100,46 +113,71 @@ Enhance your brand reach with a crystal clear message by selecting the perfect a
   },
   {
     slug: "how-to-write-a-explainer-video-script",
-    title: "How To Write An Explainer Video Script",
-    date: "2022-07-10",
-    category: "Informational",
-    tags: ["Guide", "How to"],
-    excerpt: "Remember the time you were a kid and you received this amazingly wrapped box? And after rushing to open it you get a pair of socks inside? That is what people feel when they get explainer videos with nice titles and turn out to be poorly scripted.",
-    content: `Remember the time you were a kid and you received this amazingly wrapped box? And after rushing to open it you get a pair of socks inside? That is what people feel when they get explainer videos with nice titles and turn out to be "clickbait" ads or video content that is poorly scripted.
+    title: "How To Write An Explainer Video Script That Actually Works",
+    date: "2026-04-06",
+    category: "Explainer Video Strategy",
+    tags: ["Explainer video script", "How to", "Explainer video production", "Video marketing", "SaaS explainer videos"],
+    excerpt: "Most explainer video scripts fail because they start with the product instead of the problem. Here's a proven framework for writing scripts that keep viewers watching and drive action.",
+    content: `Most explainer video scripts fail for the same reason: they start with the product instead of the problem. The viewer doesn't care about your features yet. They care about their own frustration. Your script needs to meet them there first.
 
-Now that you've attracted viewers to watch your video with your eye-catching title, start creating an explainer video script. Why? Because it's crucial to make their interest last by keeping them engaged with it. People today absolutely hate being bored or watching the classic "infomercial" approach. So, it's time to work on an explainer video script that will do your ad justice.
+After writing and producing over 50 explainer videos, I've landed on a framework that consistently works — whether the video is 30 seconds for social or two minutes for a product walkthrough.
 
-## The Structure
+## The Four-Part Framework
 
-First you need a structure, a framework on how the explainer video is presented to give it substance and to tell the viewer in an entertaining, more importantly a quick and easy way the message you want to convey.
+Every effective explainer video script follows this structure. The proportions shift depending on length, but the sequence stays the same.
 
-Let's go over 4 easy steps and the appropriate durations for each:
+**1. The Problem (20% of your runtime)**
 
-- **The Problem** \u2013 What is the problem? Tell your audience what is the problem in the market? For a 60 second video, just use 30 words or less.
-- **The Solution** \u2013 Time to tell them the product that will solve the market's problems! 10 to 15 words should do for this one.
-- **How does it work?** \u2013 Now you need to explain how this product will help them. Best to not overdo the details, just the "need-to-know" stuff is okay. 30 to 50 words will be enough.
-- **Call to Action** \u2013 Hook, line, and sinker. Pull them in by putting on some credibility and social proof like testimonials. 10 to 20 words would suffice.
+Open with something your viewer already feels. Not a statistic — a situation. If you're making a SaaS explainer video, describe the specific workflow that's broken. If it's a cause video, describe the reality your audience hasn't seen.
 
-## The Concept
+For a 60-second video, this is about two to three sentences. You're not dwelling here — you're establishing recognition. The viewer should think "yes, that's exactly my problem" within the first ten seconds.
 
-Now you have the skeleton done, you need meat in those bones to make your script move as gracefully as a ballerina. Your explainer video script writer and animator's creative qualifications are crucial here as they will have a plethora of ideas in their heads to choose from and turn it to something great. Also, tell a story and don't make it rely on numbers and statistics too much. Use those numbers in the call to action portion instead.
+**2. The Solution (10% of your runtime)**
 
-Be extremely careful with your ideas however, as writing the explainer script poorly is a disaster so being careful with your concepts will pay off. Don't be afraid to be daring, but not offensive as the last thing you want in an explainer video is to drive too much negativity towards your product. No jargon whatsoever must be used if you want people to get it. Humour is also one of the best things to incorporate in the explainer video script so don't be afraid to use it!
+Introduce your product or organisation as the answer. Keep it to one sentence. Name it, say what it does at the highest level, and move on. The detail comes next.
 
-## Writing a Video? What?
+**3. How It Works (50% of your runtime)**
 
-How can a writer write a visual interpretation of something? It's a different beast altogether putting words into an image and may be a challenge for a lot of writers out there. It's simple, start with an idea and go from there. Here are some tips for you:
+This is where most of your screen time goes. Walk through two to four key steps or features that show how the product solves the problem you opened with. Each step should be visual — this is where your animator brings the interface or concept to life.
 
-- **Keep it simple** \u2013 Don't overwhelm your viewer with complex visuals! Let your animator perfect his work and make his life easy.
-- **Don't be "that guy"** \u2013 If you want a messed up video, go right ahead and control your crew. Writers, designers, and animators are paid to be creative so let them spread their wings and fly!
-- **Voiceovers** \u2013 The visuals must absolutely match the voiceovers. It will seem duplicitous if it doesn't and people will see through this right away.
-- **Proper Timing** \u2013 Don't be too "artsy" with the video and put in too many visuals for short spoken portions and vice versa.
+The most common mistake here is trying to cover everything. You don't need to show every feature. Pick the ones that matter most to your primary audience and show those clearly. Three features explained well beat eight features mentioned in passing.
 
-## How long should the explainer video be?
+**4. The Call to Action (20% of your runtime)**
 
-People prefer to keep things short and it's also cheaper to make. You can make it longer as long as it's more awesome, and expensive. You need to balance between the two (length and awesomeness) but in the end it will all come down to what you are trying to say and what the video is for.
+End with what you want the viewer to do next. Sign up, book a demo, visit the website, learn more. Be specific. Add a line of social proof if you have it — a recognisable client name or a concrete result.
 
-Here at Motion Story we have all that it takes to give you that kickass explainer video experience so contact us and let's talk about your video!`
+## Word Count Guidelines
+
+A professional voiceover reads at about 140 to 150 words per minute. Use that to calibrate your script length:
+
+- **30-second video:** 65 to 75 words
+- **60-second video:** 130 to 150 words
+- **90-second video:** 200 to 225 words
+- **2-minute video:** 270 to 300 words
+
+If your script is running long, cut features — not the problem statement or the call to action. Those bookends are what make the video work.
+
+## Writing for Animation
+
+Writing an explainer video script is different from writing a blog post or a sales page. You're writing for two audiences at once: the viewer who hears the words, and the animator who needs to visualise them.
+
+- **Write in scenes, not paragraphs.** Each sentence or pair of sentences should correspond to a distinct visual moment. If you can't picture what's on screen while you read a line, rewrite it.
+- **Cut the jargon.** If your target viewer wouldn't use a term in casual conversation, replace it. Technical accuracy matters less than immediate understanding.
+- **Read it aloud.** Every script should sound natural when spoken. If a sentence feels awkward to say, it'll sound worse with a voiceover.
+- **Leave room for the visuals.** The animation will carry a lot of meaning. You don't need to describe everything in words — sometimes a pause with the right visual does more than another sentence.
+
+## Common Mistakes
+
+- Starting with your company name and mission statement. Nobody cares yet. Lead with their problem.
+- Listing features without context. "We offer real-time analytics" means nothing. "See which campaigns are working before your budget runs out" means everything.
+- Making it too long. If you're over 90 seconds, you need a very good reason. Most products can be explained in 60.
+- Writing the script after the design. Script comes first. The visual language should serve the story, not the other way around.
+
+## What Happens Next
+
+Once the script is locked, it becomes the foundation for everything — storyboarding, style frames, animation, and voiceover. A strong script makes every stage faster and cheaper. A weak one creates expensive revisions.
+
+If you'd rather have someone handle the script and production together, that's how I work. Every project at Motion Story starts with the script, and I don't move to design until the words are right. See how the process works or get in touch to talk through your project.`
   },
   {
     slug: "skyrocket-your-explainer-video",
@@ -168,44 +206,67 @@ Regardless if you have numerous product explainer videos or not, creating a play
   },
   {
     slug: "live-action-or-animated-video",
-    title: "Live Action or Animated Video: You Don't Know What You Need?",
-    date: "2022-07-10",
-    category: "Informational",
-    tags: [],
-    excerpt: "Live action or animated video? It's been a long debate which type of video is more effective to use as an animated explainer video. Both are very different methods that aim for the same result.",
-    content: `Live action or animated video? It's been a long debate which type of video is more effective to use as an animated explainer video. Both are very different methods that aim for the same result, to get your customers engaged and to reel them in and purchase your product.
+    title: "Animated vs Live Action Video: Which Is Right for Your Business?",
+    date: "2026-04-06",
+    category: "Explainer Video Strategy",
+    tags: ["Animated video", "Live action video", "Explainer video production", "Video marketing", "Product demo videos"],
+    excerpt: "Animated or live action? The answer depends on what you're explaining, who you're talking to, and where the video will live. Here's how to decide.",
+    content: `Animated or live action? It's the first question most businesses ask when they decide to invest in video. The answer isn't about which format is "better" — it's about which one does the job you need it to do.
 
-## Live Action Video
+After a decade of producing animated explainer videos for SaaS companies, nonprofits, and agencies, I've seen both formats succeed and fail. The difference comes down to matching the format to the message.
 
-The live action video is the use of real people with scripted \u2013 or unscripted interactions or reactions with your product. Often this tells a story of how your product can help the customer, or a story that will evoke an emotional response from the viewer and then masterfully relating it to your product.
+## When Animation Is the Right Choice
 
-Types of Live Action Video:
+Animation works best when you're explaining something that's hard to film. If your product is software, a concept, a process, or a service that happens behind the scenes, animation lets you show it clearly without the limitations of a camera.
 
-- **Live Action Video** \u2013 These videos use a camera crew, actors, editors, post production and the whole shebang to tell a complete story of your product.
-- **Testimonial Video** \u2013 Using people to give commentary about how your product has helped them or analysis on how the product can be great all in all.
+**Use animation when:**
 
-Pros: Best used to showcase your tangible products and services through actions, stories, and dialog to convey the message in a realistic, more personal manner. You can easily connect with your audience by highlighting on the emotions using actual people.
+- Your product is digital or invisible — SaaS platforms, apps, data tools. You can't film software being useful, but you can animate it.
+- You need to simplify complexity — showing how data flows through a system, how a multi-step process works, or how different stakeholders interact.
+- Your audience is global — animation doesn't have accents, doesn't age, and doesn't carry cultural baggage the way actors do. A character illustrated in a clean, modern style works across markets.
+- You want longevity — a well-produced animated explainer video stays relevant for two to three years. A live action piece with specific people, locations, or fashion choices can feel dated in 12 months.
+- Budget matters — animated explainer videos typically cost $4,000 to $12,000. A comparable live action production with crew, talent, and location starts at $15,000 and goes up fast.
 
-Cons: You can only demonstrate limited concepts and ideas since there's not much flexibility in using live action videos alone, unless you spend an astronomical amount of money.
+**Animation styles to consider:**
 
-## Animated Video
+- **2D motion graphics** — the most common style for SaaS and product explainers. Clean, modern, and highly versatile.
+- **Character animation** — useful when you need to show people using your product or experiencing a problem. Works well for cause and nonprofit videos.
+- **Data visualisation** — for products or missions that involve numbers, trends, or geographic data.
+- **Product UI animation** — stylised screen recordings that show your interface in action without breaking when the UI updates.
 
-Types of Animated Explainer Video: Animated Screencast, Kinetic Typography, Whiteboard Animation, Infographic Animation, Character Animation, 3D Animation, iOS Demo/App Demo Video, Music Based Video.
+## When Live Action Is the Right Choice
 
-Pros: Animated explainer videos can come in all shapes, sizes, and forms. The flexibility is endless as long as you can imagine it and the animators can create it. This also gets in touch with your viewer's inner child and has the ability to keep the topic simple. With regards to branding, the colours of your brand can be easily integrated with the video. In addition this is often way more affordable than hiring actors and a production crew.
+Live action creates a human connection that animation can't replicate. If your message depends on trust, emotion, or the credibility of real people, live action is the stronger format.
 
-Cons: One must be extremely careful when creating an animated explainer video as too much detail or too little of it can result in misinformation, offence, or your video not making any sense at all.
+**Use live action when:**
 
-## How to identify which explainer video will work best for your business?
+- You're telling a human story — testimonials, founder stories, customer success stories. Real faces build trust faster than illustrated ones.
+- Your product is physical — if you're selling something people can hold, wear, or use in a physical space, show it in the real world.
+- You need to establish personal credibility — thought leadership content, investor updates, or any context where the audience needs to see and trust the person behind the company.
+- The emotion is the message — charity campaigns, awareness pieces, and brand films that need to move people rather than inform them.
 
-- **Identify the content purpose** \u2013 What do you want your viewers to think and feel during and after they watch the video?
-- **Come up with a Marketing Goal** \u2013 Live action tends to be better for appealing to a customer's feelings. Animated video is more effective in explaining how something works as it is more memorable.
-- **Know your Budget** \u2013 Several factors affect the final cost. Don't assume that cheaper is better \u2013 quality is always better than quantity.
-- **Classify your Target Audience** \u2013 Who are you showing this to? Get your ad targeting right to make sure you reach the right people.
-- **Work on your Timeline** \u2013 Never rush out something incomplete. Make sure you follow schedules to have everything moving like clockwork.
-- **Select your Marketing Platform** \u2013 Any video is good for any platform. Live action video is best for television commercials and branding purposes. You can then go online and spread the animation ads to your target audience.
+**The trade-offs with live action:**
 
-Generally, an animated explainer video will work out well for most projects, specifically anything that will be shared on the internet. Just make sure to look at all of your options, and use live action when the human element is needed.`
+- Higher production costs — crew, talent, location, wardrobe, post-production.
+- Less flexible in editing — changing a word in an animation takes minutes. Re-shooting a scene takes a day.
+- Ages faster — people, fashion, and locations date the content.
+- Location-dependent — you need to be in the same place as your crew unless you're using remote production, which has its own limitations.
+
+## The Hybrid Approach
+
+Many of the best explainer videos combine both. A live action opening with a real person introducing the problem, transitioning into animation to show how the product or process works, then back to live action for the testimonial or call to action.
+
+This works particularly well for SaaS companies that want the credibility of a real founder or customer but need animation to actually demonstrate the product.
+
+## How to Decide
+
+Ask yourself three questions:
+
+- **What am I explaining?** If it's invisible or complex, lean toward animation. If it's tangible or personal, lean toward live action.
+- **Where will this video live?** Homepage explainers and product demos work best as animation. Social content and brand films can go either way. Testimonials should almost always be live action.
+- **What's my budget and timeline?** Animation is typically faster and more affordable. If you're working with a tight timeline or a modest budget, animation gives you more production value per dollar.
+
+For most businesses explaining a digital product or complex service, animation is the right starting point. It's what I specialise in at Motion Story — taking complex products and missions and making them clear through motion design. If you're weighing up your options, get in touch and I can help you figure out the right approach for your project.`
   },
   {
     slug: "facebook-ads-for-explainer-videos",

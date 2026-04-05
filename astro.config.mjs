@@ -41,21 +41,21 @@ export default defineConfig({
 
     // Old service pages → audience pages
     '/services/': '/saas-tech/',
-    '/explainer-video-company/': '/saas-tech/',
-    '/explainer-video-company-20024/': '/saas-tech/',
-    '/animation-production-company/': '/saas-tech/',
-    '/motion-graphic-production-company/': '/saas-tech/',
-    '/animated-video-service/': '/saas-tech/',
+    '/explainer-video-company/': '/explainer-videos/',
+    '/explainer-video-company-20024/': '/explainer-videos/',
+    '/animation-production-company/': '/explainer-videos/',
+    '/motion-graphic-production-company/': '/explainer-videos/',
+    '/animated-video-service/': '/explainer-videos/',
     '/30s-explainer-videos/': '/saas-tech/',
     '/start-up-explainer-videos/': '/saas-tech/',
     '/finance-explainer-videos/': '/saas-tech/',
-    '/animated-product-demos/': '/saas-tech/',
-    '/saas-explainer-videos/': '/saas-tech/',
-    '/technology-explainers/': '/saas-tech/',
-    '/startup-explainer-videos/': '/saas-tech/',
-    '/explainer-videos/': '/saas-tech/',
-    '/product-demo-videos/': '/saas-tech/',
-    '/animated-onboarding-videos/': '/saas-tech/',
+    '/animated-product-demos/': '/product-demo-videos/',
+    // '/saas-explainer-videos/' now has its own page
+    '/technology-explainers/': '/saas-explainer-videos/',
+    '/startup-explainer-videos/': '/saas-explainer-videos/',
+    // '/explainer-videos/' now has its own page
+    // '/product-demo-videos/' now has its own page
+    '/animated-onboarding-videos/': '/saas-explainer-videos/',
 
     // Charity → causes
     '/charity-explainer-videos/': '/causes/',
@@ -68,7 +68,7 @@ export default defineConfig({
     '/landing-page-explainer-video-01/': '/saas-tech/',
     '/animation-production-company-2/': '/saas-tech/',
     '/landing-page-animated-video-services-01/': '/saas-tech/',
-    '/landing-animated-product-demos-01/': '/saas-tech/',
+    '/landing-animated-product-demos-01/': '/product-demo-videos/',
     '/freelance-motion-graphic-designer/': '/saas-tech/',
     '/freelance-motion-design-and-animation/': '/saas-tech/',
     '/motion-graphic-production/': '/saas-tech/',
