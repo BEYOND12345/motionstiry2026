@@ -182,6 +182,44 @@ export default function Homepage() {
               </div>
             </section>
 
+            {/* Clients */}
+            <section className="mb-48">
+              <span className="text-metadata mb-10 block">Trusted By</span>
+              <div className="flex flex-wrap gap-x-8 gap-y-5">
+                {[
+                  "United Nations",
+                  "RSPCA",
+                  "Red Cross",
+                  "NSW Government",
+                  "Wipster",
+                  "Aon",
+                  "UTS",
+                  "Cotton Australia",
+                  "Oovvuu",
+                  "IPA",
+                ].map(name => (
+                  <span
+                    key={name}
+                    className="font-display text-sm md:text-base font-medium tracking-tight opacity-30"
+                  >
+                    {name}
+                  </span>
+                ))}
+              </div>
+            </section>
+
+            {/* Blog */}
+            <section className="mb-48">
+              <span className="text-metadata mb-6 block">Insights</span>
+              <a
+                href="/blog/"
+                className="group flex items-center gap-4"
+              >
+                <span className="text-accent text-2xl">→</span>
+                <span className="text-nav-item">Read the blog</span>
+              </a>
+            </section>
+
             {/* Contact Form */}
             <section id="contact" className="mb-48">
               <span className="text-metadata mb-10 block">Start a Project</span>
