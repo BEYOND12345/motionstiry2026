@@ -1,0 +1,79 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { BLOG_POSTS } from '../data/blog-posts';
+
+const sortedPosts = [...BLOG_POSTS].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Blog — Motion Story",
+  "description": "Insights on motion design, animation production, and visual communication from Dan Neale at Motion Story.",
+  "url": "https://motionstory.com.au/blog/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Motion Story",
+    "url": "https://motionstory.com.au"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": sortedPosts.length,
+    "itemListElement": sortedPosts.map((post, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "url": `https://motionstory.com.au/${post.slug}/`,
+      "name": post.title
+    }))
+  }
+};
+
+const breadcrumbData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://motionstory.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://motionstory.com.au/blog/" }
+  ]
+};
+---
+
+<PageLayout
+  title="Blog — Motion Design Insights | Motion Story"
+  description="Insights on motion design, animation production, and visual communication from Dan Neale at Motion Story."
+  activeNav="Blog"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbData)} />
+  </Fragment>
+  <div class="pt-32 pb-24 px-8 max-w-5xl mx-auto">
+    <span class="text-metadata mb-8 block">Blog</span>
+    <h1 class="font-display text-4xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-8">
+      Insights.
+    </h1>
+    <p class="text-body max-w-lg mb-24">
+      Thoughts on motion design, animation production, and making complex ideas clear.
+    </p>
+
+    <div class="space-y-0">
+      {sortedPosts.map(post => (
+        <a href={`/${post.slug}/`} class="group block py-10 border-b border-black/10 first:border-t first:border-black/10">
+          <div class="flex items-start justify-between gap-8">
+            <div class="flex-1">
+              <div class="flex items-center gap-4 mb-3">
+                <span class="text-metadata">{post.category}</span>
+                <span class="text-metadata opacity-30">·</span>
+                <span class="text-metadata opacity-50">{new Date(post.date).toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+              </div>
+              <h2 class="font-display text-2xl font-medium tracking-tight mb-2 group-hover:opacity-60 transition-opacity">
+                {post.title}
+              </h2>
+              <p class="text-body line-clamp-2 max-w-2xl">{post.excerpt}</p>
+            </div>
+            <span class="text-metadata opacity-0 group-hover:opacity-100 transition-opacity shrink-0 mt-8">Read →</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</PageLayout>

@@ -1,0 +1,118 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  bodyClass?: string;
+}
+
+const { title, description, canonicalUrl, ogImage, bodyClass } = Astro.props;
+const siteUrl = 'https://motionstory.com.au';
+const canonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
+const image = ogImage || `${siteUrl}/og-default.jpg`;
+---
+
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:locale" content="en_AU" />
+    <meta property="og:site_name" content="Motion Story" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- View Transitions -->
+    <ViewTransitions />
+
+    <slot name="head" />
+    <style>
+      :focus-visible { outline: 2px solid black; outline-offset: 2px; }
+    </style>
+  </head>
+  <body class={bodyClass}>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  /* Page transition animations */
+  @keyframes fadeSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeSlideOut {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+
+  /* Default page transition — cinematic slide */
+  ::view-transition-old(root) {
+    animation: fadeSlideOut 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  ::view-transition-new(root) {
+    animation: fadeSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.1s;
+  }
+
+  /* Nav bar persists across pages — no animation */
+  ::view-transition-old(site-nav),
+  ::view-transition-new(site-nav) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
+  /* Shared hero images morph between pages */
+  ::view-transition-old(project-hero) {
+    animation: fadeOut 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  ::view-transition-new(project-hero) {
+    animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.15s;
+  }
+</style>

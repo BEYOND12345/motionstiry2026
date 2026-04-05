@@ -1,0 +1,90 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Privacy Policy — Motion Story",
+  "url": "https://motionstory.com.au/privacy-policy/",
+  "dateModified": "2026-01-01",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Motion Story",
+    "url": "https://motionstory.com.au"
+  }
+};
+---
+
+<PageLayout
+  title="Privacy Policy — Motion Story"
+  description="Motion Story's privacy policy. How we collect, use, and protect your personal information."
+  showCTA={false}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org", "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://motionstory.com.au/" },
+        { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://motionstory.com.au/privacy-policy/" }
+      ]
+    })} />
+  </Fragment>
+  <div class="pt-32 pb-24 px-8 max-w-3xl mx-auto">
+    <span class="text-metadata mb-8 block">Legal</span>
+    <h1 class="font-display text-5xl font-bold tracking-tight mb-16">Privacy Policy</h1>
+
+    <div class="prose-custom space-y-12">
+      <section>
+        <h2 class="font-display text-xl font-medium mb-4">1. Information We Collect</h2>
+        <p class="text-body leading-relaxed">
+          When you contact us through our website or email, we may collect your name, email address, company name, and any information you provide about your project. We do not collect personal information unless you voluntarily provide it.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-display text-xl font-medium mb-4">2. How We Use Your Information</h2>
+        <p class="text-body leading-relaxed">
+          We use your information solely to respond to your inquiries, provide our animation services, and communicate about your projects. We do not sell, rent, or share your personal information with third parties for marketing purposes.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-display text-xl font-medium mb-4">3. Data Security</h2>
+        <p class="text-body leading-relaxed">
+          We take reasonable measures to protect your personal information from unauthorised access, use, or disclosure. All project files and communications are handled with professional confidentiality.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-display text-xl font-medium mb-4">4. Cookies & Analytics</h2>
+        <p class="text-body leading-relaxed">
+          Our website may use minimal analytics to understand how visitors interact with our content. We do not use tracking cookies for advertising purposes. You can disable cookies in your browser settings at any time.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-display text-xl font-medium mb-4">5. Third-Party Services</h2>
+        <p class="text-body leading-relaxed">
+          Our website embeds videos from Vimeo and may use third-party tools for form submission and analytics. These services have their own privacy policies and we encourage you to review them.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-display text-xl font-medium mb-4">6. Your Rights</h2>
+        <p class="text-body leading-relaxed">
+          You have the right to access, correct, or delete any personal information we hold about you. To exercise these rights, please contact us at daniel@motionstory.com.au.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-display text-xl font-medium mb-4">7. Contact</h2>
+        <p class="text-body leading-relaxed">
+          If you have questions about this privacy policy, please contact us at <a href="mailto:daniel@motionstory.com.au" class="border-b border-black/20 hover:border-black transition-colors">daniel@motionstory.com.au</a>.
+        </p>
+      </section>
+
+      <p class="text-metadata pt-8 border-t border-black/10">Last updated: April 2026</p>
+    </div>
+  </div>
+</PageLayout>

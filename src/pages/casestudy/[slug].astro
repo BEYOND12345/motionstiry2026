@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import CaseStudyPage from '../../components/CaseStudyPage';
+import { ALL_PROJECTS } from '../../data/projects';
+import '../../styles/global.css';
+
+export function getStaticPaths() {
+  return ALL_PROJECTS.map(project => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": project.title,
+  "description": project.details,
+  "thumbnailUrl": `https://vumbnail.com/${project.vimeoId}.jpg`,
+  "embedUrl": `https://player.vimeo.com/video/${project.vimeoId}`,
+  "uploadDate": `${project.year}-01-01`,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Motion Story",
+    "url": "https://motionstory.com.au",
+    "logo": "https://motionstory.com.au/logo.png"
+  },
+  "productionCompany": {
+    "@type": "Organization",
+    "name": "Motion Story",
+    "url": "https://motionstory.com.au"
+  }
+};
+
+const breadcrumbData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://motionstory.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://motionstory.com.au/work/" },
+    { "@type": "ListItem", "position": 3, "name": project.title, "item": `https://motionstory.com.au/casestudy/${project.slug}/` }
+  ]
+};
+
+const creativeWorkData = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": project.title,
+  "description": project.details,
+  "creator": {
+    "@type": "Organization",
+    "name": "Motion Story",
+    "url": "https://motionstory.com.au"
+  },
+  "about": {
+    "@type": "Organization",
+    "name": project.client
+  },
+  "genre": project.category,
+  "dateCreated": project.year,
+  "video": {
+    "@type": "VideoObject",
+    "embedUrl": `https://player.vimeo.com/video/${project.vimeoId}`,
+    "thumbnailUrl": `https://vumbnail.com/${project.vimeoId}.jpg`
+  }
+};
+---
+
+<BaseLayout
+  title={`${project.title} — Case Study | Motion Story`}
+  description={project.details}
+  ogImage={`https://vumbnail.com/${project.vimeoId}.jpg`}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <script type="application/ld+json" set:html={JSON.stringify(creativeWorkData)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbData)} />
+  </Fragment>
+
+  <Nav />
+  <CaseStudyPage project={project} allProjects={ALL_PROJECTS} client:load />
+</BaseLayout>

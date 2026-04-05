@@ -1,0 +1,180 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { BLOG_POSTS } from '../data/blog-posts';
+
+export function getStaticPaths() {
+  return BLOG_POSTS.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": post.title,
+  "description": post.excerpt,
+  "datePublished": post.date,
+  "dateModified": post.date,
+  "author": {
+    "@type": "Person",
+    "name": "Daniel Neale",
+    "url": "https://motionstory.com.au/about/",
+    "jobTitle": "Founder & Creative Director",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Motion Story"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Motion Story",
+    "url": "https://motionstory.com.au",
+    "logo": "https://motionstory.com.au/logo.png"
+  },
+  "mainEntityOfPage": `https://motionstory.com.au/${post.slug}/`,
+  "keywords": post.tags.join(", "),
+  "articleSection": post.category
+};
+
+const breadcrumbData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://motionstory.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://motionstory.com.au/blog/" },
+    { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://motionstory.com.au/${post.slug}/` }
+  ]
+};
+
+const wordCount = post.content.split(/\s+/).length;
+const readingTime = Math.max(1, Math.round(wordCount / 200));
+
+const relatedPosts = BLOG_POSTS
+  .filter(p => p.slug !== post.slug)
+  .filter(p => p.category === post.category || p.tags.some(t => post.tags.includes(t)))
+  .slice(0, 3);
+
+// Enhanced markdown-ish rendering with H3, bold, italic, links
+function renderContent(content: string): string {
+  function inlineFormat(text: string): string {
+    return text
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.+?)\*/g, '<em>$1</em>')
+      .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" class="border-b border-black/20 hover:border-black transition-colors">$1</a>')
+      .replace(/\u2013/g, '–')
+      .replace(/\u2014/g, '—');
+  }
+
+  return content
+    .split('\n\n')
+    .map(block => {
+      if (block.startsWith('### ')) {
+        return `<h3 class="font-display text-xl font-medium tracking-tight mt-12 mb-4">${inlineFormat(block.replace('### ', ''))}</h3>`;
+      }
+      if (block.startsWith('## ')) {
+        return `<h2 class="font-display text-2xl font-medium tracking-tight mt-16 mb-6">${inlineFormat(block.replace('## ', ''))}</h2>`;
+      }
+      if (block.startsWith('- ')) {
+        const items = block.split('\n').map(line =>
+          `<li class="text-body text-lg leading-relaxed">${inlineFormat(line.replace(/^- /, ''))}</li>`
+        ).join('');
+        return `<ul class="space-y-3 my-6 ml-4 list-disc">${items}</ul>`;
+      }
+      return `<p class="text-body text-lg leading-relaxed mb-6">${inlineFormat(block)}</p>`;
+    })
+    .join('');
+}
+---
+
+<PageLayout
+  title={`${post.title} — Motion Story Blog`}
+  description={post.excerpt}
+  activeNav="Blog"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbData)} />
+  </Fragment>
+
+  <article class="pt-32 pb-24 px-8 max-w-3xl mx-auto">
+    <!-- Breadcrumb -->
+    <nav class="mb-8" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-metadata">
+        <li><a href="/" class="hover:opacity-60 transition-opacity">Home</a></li>
+        <li class="opacity-30">/</li>
+        <li><a href="/blog/" class="hover:opacity-60 transition-opacity">Blog</a></li>
+        <li class="opacity-30">/</li>
+        <li class="opacity-50 truncate max-w-[200px]">{post.title}</li>
+      </ol>
+    </nav>
+
+    <div class="mb-16">
+      <div class="flex items-center gap-4 mb-6">
+        <span class="text-metadata">{post.category}</span>
+        <span class="text-metadata opacity-30">·</span>
+        <span class="text-metadata opacity-50">{new Date(post.date).toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+        <span class="text-metadata opacity-30">·</span>
+        <span class="text-metadata opacity-50">{readingTime} min read</span>
+      </div>
+      <h1 class="font-display text-4xl md:text-6xl font-bold tracking-tight leading-[0.9] mb-6">
+        {post.title}
+      </h1>
+      <p class="text-body text-lg">{post.excerpt}</p>
+    </div>
+
+    <div class="border-t border-black/10 pt-12" set:html={renderContent(post.content)} />
+
+    {post.tags.length > 0 && (
+      <div class="mt-16 pt-8 border-t border-black/10">
+        <span class="text-metadata mb-4 block">Tags</span>
+        <div class="flex flex-wrap gap-2">
+          {post.tags.map(tag => (
+            <span class="text-metadata py-1 px-3 border border-black/10 rounded-full">{tag}</span>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Author -->
+    <div class="mt-16 pt-8 border-t border-black/10">
+      <span class="text-metadata mb-4 block">Written by</span>
+      <a href="/about/" class="group inline-block">
+        <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">Dan Neale</p>
+        <p class="text-body text-sm">Motion Designer & Creative Director, Motion Story</p>
+      </a>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-16 pt-8 border-t border-black/10 bg-stone-50 -mx-8 px-8 py-12">
+      <h2 class="font-display text-2xl font-medium tracking-tight mb-4">Got something complex to explain?</h2>
+      <p class="text-body mb-6">I make motion design for SaaS companies, agencies, and nonprofits. Tell me what you're working on.</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="/contact/" class="inline-block text-metadata py-3 px-6 bg-black text-white hover:bg-black/80 transition-colors">Start a Project</a>
+        <a href="/work/" class="inline-block text-metadata py-3 px-6 border border-black/10 hover:border-black transition-colors">See My Work</a>
+      </div>
+    </div>
+
+    <!-- Related Posts -->
+    {relatedPosts.length > 0 && (
+      <div class="mt-16 pt-8 border-t border-black/10">
+        <span class="text-metadata mb-8 block">Related Articles</span>
+        <div class="space-y-8">
+          {relatedPosts.map(related => (
+            <a href={`/${related.slug}/`} class="group block">
+              <div class="flex items-center gap-4 mb-2">
+                <span class="text-metadata opacity-50">{related.category}</span>
+                <span class="text-metadata opacity-30">·</span>
+                <span class="text-metadata opacity-50">{new Date(related.date).toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+              </div>
+              <h3 class="font-display text-lg font-medium tracking-tight group-hover:opacity-60 transition-opacity">{related.title}</h3>
+              <p class="text-body text-sm line-clamp-2 mt-1">{related.excerpt}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+  </article>
+</PageLayout>

@@ -1,0 +1,42 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import CTA from '../components/CTA.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  activeNav?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  showCTA?: boolean;
+  ctaHeading?: string;
+  ctaLabel?: string;
+}
+
+const {
+  title,
+  description,
+  activeNav,
+  canonicalUrl,
+  ogImage,
+  showCTA = true,
+  ctaHeading,
+  ctaLabel,
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description} canonicalUrl={canonicalUrl} ogImage={ogImage}>
+  <slot name="head" slot="head" />
+  <Nav activeItem={activeNav} />
+  <div class="min-h-screen bg-white text-black">
+    <div class="grain-overlay" />
+    <main id="main-content">
+      <slot />
+    </main>
+    {showCTA && <CTA heading={ctaHeading} label={ctaLabel} />}
+    <Footer />
+  </div>
+</BaseLayout>

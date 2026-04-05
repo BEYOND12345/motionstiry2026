@@ -1,0 +1,128 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "How I Work | Motion Design Process | Motion Story",
+  "url": "https://motionstory.com.au/process/",
+  "description": "The process that turns complex briefs into clear motion design. Three phases. No wasted time. Dan Neale, Motion Story.",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".text-body"]
+  }
+};
+---
+
+<PageLayout
+  title="How I Work | Motion Design Process | Motion Story"
+  description="The process that turns complex briefs into clear motion design. Three phases. No wasted time. Dan Neale, Motion Story."
+  activeNav="Process"
+  ctaHeading="You don't need a video. You need people to understand what you do."
+  ctaLabel="Book a Discovery Call"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org", "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://motionstory.com.au/" },
+        { "@type": "ListItem", "position": 2, "name": "Process", "item": "https://motionstory.com.au/process/" }
+      ]
+    })} />
+  </Fragment>
+
+  <div class="pt-32 pb-24 px-8 max-w-5xl mx-auto">
+    <span class="text-metadata mb-8 block">Process</span>
+    <h1 class="font-display text-4xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-16">
+      The process isn't<br />complicated. The<br />clarity is.
+    </h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32">
+      <div>
+        <p class="text-body text-lg leading-relaxed">
+          Most projects fail before a single frame is animated. The brief is wrong. The message is buried. There's no clear point of view. Here's how I stop that from happening.
+        </p>
+      </div>
+    </div>
+
+    <!-- Phases -->
+    <div class="space-y-32 mb-32">
+
+      <!-- Phase 01 -->
+      <section>
+        <span class="text-metadata mb-4 block text-accent">01</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+          <div>
+            <h2 class="font-display text-3xl font-bold tracking-tight mb-8">Challenge the brief.</h2>
+            <p class="text-body text-lg leading-relaxed">
+              Before we talk about visuals, we talk about substance. What does this piece actually need to do? Who watches it, where, and what decision do they make afterwards? Most clients come in thinking they know what they want. Some of them are right. My job is to find out which — and redirect before we've spent anything.
+            </p>
+          </div>
+          <div>
+            <p class="text-metadata mb-4">What happens here</p>
+            <ul class="space-y-3">
+              <li class="text-body text-lg leading-relaxed">Discovery session — me asking hard questions</li>
+              <li class="text-body text-lg leading-relaxed">Script and concept — one clear direction, not three options</li>
+              <li class="text-body text-lg leading-relaxed">Voice and tone direction</li>
+              <li class="text-body text-lg leading-relaxed">Visual style reference</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phase 02 -->
+      <section>
+        <span class="text-metadata mb-4 block text-accent">02</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+          <div>
+            <h2 class="font-display text-3xl font-bold tracking-tight mb-8">Build the visual argument.</h2>
+            <p class="text-body text-lg leading-relaxed">
+              This is where the script becomes something you can see. Not a dozen revision rounds. Not mood boards for mood boards' sake. One clear visual direction, agreed early, built with precision. The hard decisions get made here — before animation makes them expensive.
+            </p>
+          </div>
+          <div>
+            <p class="text-metadata mb-4">What gets built</p>
+            <ul class="space-y-3">
+              <li class="text-body text-lg leading-relaxed">Storyboard (rough → refined)</li>
+              <li class="text-body text-lg leading-relaxed">Style frame design</li>
+              <li class="text-body text-lg leading-relaxed">Motion direction — how things move, not just how they look</li>
+              <li class="text-body text-lg leading-relaxed">One structured feedback round before production begins</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phase 03 -->
+      <section>
+        <span class="text-metadata mb-4 block text-accent">03</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+          <div>
+            <h2 class="font-display text-3xl font-bold tracking-tight mb-8">Animate. Refine. Ship.</h2>
+            <p class="text-body text-lg leading-relaxed">
+              Production. The part most people think is the whole job. By this point, the hard decisions are made. Animation is execution — and it moves fast when the earlier phases did their job properly.
+            </p>
+          </div>
+          <div>
+            <p class="text-metadata mb-4">What gets delivered</p>
+            <ul class="space-y-3">
+              <li class="text-body text-lg leading-relaxed">Full animation production</li>
+              <li class="text-body text-lg leading-relaxed">Sound design and voiceover integration</li>
+              <li class="text-body text-lg leading-relaxed">Two structured revision rounds</li>
+              <li class="text-body text-lg leading-relaxed">Final delivery in your required format (web, social, pitch, embed)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- CTA -->
+    <section class="mb-32">
+      <h2 class="font-display text-3xl font-bold tracking-tight mb-8">You don't need a video. You need people to understand what you do.</h2>
+      <p class="text-body text-lg leading-relaxed">
+        The video is the outcome. Clarity is the goal. If that's how you want to work — let's talk.
+      </p>
+    </section>
+  </div>
+</PageLayout>

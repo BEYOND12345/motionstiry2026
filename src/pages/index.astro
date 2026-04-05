@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Homepage from '../components/Homepage';
+import '../styles/global.css';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "LocalBusiness"],
+      "@id": "https://motionstory.com.au/#organization",
+      "name": "Motion Story",
+      "alternateName": "Motion Story Studio",
+      "url": "https://motionstory.com.au",
+      "logo": "https://motionstory.com.au/logo.png",
+      "description": "Motion design for ideas that are hard to explain. Dan Neale works with SaaS companies, agencies, and nonprofits to turn complex products and missions into clear, effective motion design. Based in Byron Bay, Australia.",
+      "foundingDate": "2012",
+      "founder": {
+        "@type": "Person",
+        "name": "Daniel Neale",
+        "jobTitle": "Founder & Creative Director"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Unit 2 - 17 Tasman Way",
+        "addressLocality": "Byron Bay",
+        "addressRegion": "NSW",
+        "postalCode": "2481",
+        "addressCountry": "AU"
+      },
+      "email": "daniel@motionstory.com.au",
+      "priceRange": "$$$$",
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": -28.6437, "longitude": 153.6120 },
+        "geoRadius": "50000"
+      },
+      "serviceArea": {
+        "@type": "Place",
+        "name": "Worldwide"
+      },
+      "knowsAbout": [
+        "Motion Design",
+        "Creative Direction",
+        "Product Demo Videos",
+        "Platform Explainers",
+        "Data Visualisation",
+        "SaaS Marketing"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Motion Design Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Product Demo Videos",
+              "description": "Show the software in action, step by step. Clear animated walkthroughs that drive conversions and reduce support queries."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Platform Explainers",
+              "description": "What it does, how it works, why it matters. Motion design that turns complex products into clear visual arguments."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Onboarding Animation",
+              "description": "Get users to value faster, reduce churn. Animated onboarding sequences that accelerate product activation."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Campaign Motion",
+              "description": "Short-form motion design for LinkedIn, paid ads, pre-roll, and social campaigns."
+            }
+          }
+        ]
+      },
+      "sameAs": [
+        "https://www.instagram.com/motionstory",
+        "https://vimeo.com/motionstory",
+        "https://www.linkedin.com/company/motionstory",
+        "https://www.behance.net/motionstory"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://motionstory.com.au/#website",
+      "url": "https://motionstory.com.au",
+      "name": "Motion Story",
+      "publisher": { "@id": "https://motionstory.com.au/#organization" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://motionstory.com.au/#webpage",
+      "url": "https://motionstory.com.au",
+      "name": "Motion Story — Motion Design for Complex Ideas | Byron Bay",
+      "description": "Motion design for ideas that are hard to explain. Dan Neale works with SaaS companies, agencies, and nonprofits worldwide. Based in Byron Bay, Australia.",
+      "isPartOf": { "@id": "https://motionstory.com.au/#website" },
+      "about": { "@id": "https://motionstory.com.au/#organization" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", ".text-body"]
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Motion Story — Motion Design for Complex Ideas | Byron Bay"
+  description="Motion design for ideas that are hard to explain. Dan Neale works with SaaS companies, agencies, and nonprofits. Byron Bay, serving clients worldwide."
+  bodyClass="homepage-layout"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </Fragment>
+
+  <Homepage client:load />
+</BaseLayout>

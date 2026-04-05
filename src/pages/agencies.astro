@@ -1,0 +1,153 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const servicesList = [
+  "Software and platform explainers",
+  "Product demo and onboarding animation",
+  "Brand films and campaign motion",
+  "Social and paid ad content",
+  "Data visualisation and motion graphics",
+  "2D animation and character work",
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Motion Design for Agencies & Studios",
+  "description": "Senior motion design production for branding agencies, design studios, and integrated creative shops. White label or direct.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Motion Story",
+    "url": "https://motionstory.com.au",
+  },
+  "serviceType": "Motion Design Production for Agencies",
+  "areaServed": "Worldwide",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://motionstory.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Agencies & Studios", "item": "https://motionstory.com.au/agencies/" },
+  ],
+};
+---
+
+<PageLayout
+  title="Motion Design for Agencies & Studios | Motion Story"
+  description="Senior motion design production for branding agencies, design studios, and integrated creative shops. White label or direct. Dan Neale, Motion Story."
+  ctaHeading="Let's see if we're a fit."
+  ctaLabel="Get in Touch"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </Fragment>
+
+  {/* Hero */}
+  <div class="pt-32 pb-24 px-8 max-w-5xl mx-auto">
+    <span class="text-metadata mb-8 block">Agencies & Studios</span>
+    <h1 class="font-display text-4xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-8">
+      Your client needs motion.<br />You don't have the bandwidth.
+    </h1>
+    <p class="text-body max-w-xl mb-24">
+      I work with branding agencies, design studios, and creative shops that need senior animation production — without the overhead of keeping it in-house.
+    </p>
+
+    {/* Body */}
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div>
+          <span class="text-metadata mb-4 block text-accent">How I Work</span>
+        </div>
+        <div class="md:col-span-2">
+          <p class="text-body text-lg leading-relaxed mb-8">
+            You bring the client relationship. I bring the production.
+          </p>
+          <p class="text-body text-lg leading-relaxed mb-8">
+            I understand how agencies work — the brief that changes on a Thursday, the revision round that wasn't in the scope, the client who doesn't know what they want until they see what they don't want.
+          </p>
+          <p class="text-body text-lg leading-relaxed">
+            I've been the invisible production partner on agency briefs for years. Your name on it. My work behind it. White label or direct — whatever keeps the project clean.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* What I Bring */}
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div>
+          <span class="text-metadata mb-4 block text-accent">What I Bring</span>
+        </div>
+        <div class="md:col-span-2">
+          <p class="text-body text-lg leading-relaxed">
+            I'll read the brief critically. If the message is buried, I'll say so. If the script is trying to say too many things at once, I'll find the one. That's not scope creep — that's how you protect your client relationship before production starts.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* How It Works */}
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <span class="text-metadata mb-10 block">How It Works</span>
+      <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight leading-[0.9] mb-16">
+        Two ways<br />to work together.
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div class="pb-12 border-b border-black/10 md:border-b-0 md:pb-0">
+          <span class="text-metadata mb-4 block text-accent">01</span>
+          <h3 class="font-display text-xl font-medium tracking-tight mb-4">White Label</h3>
+          <p class="text-body">
+            You brief me, I deliver finished files under your agency name. Your client never knows I was involved.
+          </p>
+        </div>
+        <div>
+          <span class="text-metadata mb-4 block text-accent">02</span>
+          <h3 class="font-display text-xl font-medium tracking-tight mb-4">Direct with Your Client</h3>
+          <p class="text-body">
+            You bring me in as the motion specialist. I work alongside your team, directly with the client on production matters.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* Services */}
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <span class="text-metadata mb-10 block">Services</span>
+      <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight leading-[0.9] mb-16">
+        What I produce<br />for agencies.
+      </h2>
+      <div class="space-y-12">
+        {servicesList.map((service, i) => (
+          <div class="flex items-baseline gap-8 pb-12 border-b border-black/10 last:border-b-0 last:pb-0">
+            <span class="text-metadata text-accent">{(i + 1).toString().padStart(2, '0')}</span>
+            <h3 class="font-display text-lg font-medium tracking-tight">{service}</h3>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* Cross-links */}
+    <section class="border-t border-black/10 pt-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <a href="/work/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
+          <span class="text-metadata mb-3 block">Work</span>
+          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">See all work →</p>
+          <p class="text-body !text-sm mt-2">50+ projects delivered worldwide</p>
+        </a>
+        <a href="/process/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
+          <span class="text-metadata mb-3 block">Process</span>
+          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">How I work →</p>
+          <p class="text-body !text-sm mt-2">Three phases. No wasted time.</p>
+        </a>
+        <a href="/contact/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
+          <span class="text-metadata mb-3 block">Contact</span>
+          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">Start a conversation →</p>
+          <p class="text-body !text-sm mt-2">Quick response, no sales pitch</p>
+        </a>
+      </div>
+    </section>
+  </div>
+</PageLayout>

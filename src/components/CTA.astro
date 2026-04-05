@@ -1,0 +1,23 @@
+---
+interface Props {
+  heading?: string;
+  label?: string;
+}
+
+const { heading = "Got something complex to explain?", label = "Start a Project" } = Astro.props;
+---
+
+<section class="border-t border-black/10 bg-black/[0.01]">
+  <div class="max-w-6xl mx-auto px-8 py-32 text-center">
+    <span class="text-metadata mb-8 block">{label}</span>
+    <h2 class="font-display text-3xl md:text-6xl font-bold tracking-tight mb-12">
+      {heading}
+    </h2>
+    <a
+      href="mailto:daniel@motionstory.com.au"
+      class="font-display text-lg md:text-3xl font-bold tracking-tight hover:opacity-50 transition-opacity border-b border-black/20 pb-2 break-all"
+    >
+      daniel@motionstory.com.au
+    </a>
+  </div>
+</section>

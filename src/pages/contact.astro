@@ -1,0 +1,144 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Start a Project — Motion Story",
+  "url": "https://motionstory.com.au/contact/",
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "name": "Motion Story",
+    "email": "daniel@motionstory.com.au",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Byron Bay",
+      "addressRegion": "NSW",
+      "addressCountry": "AU"
+    }
+  }
+};
+---
+
+<PageLayout
+  title="Start a Project | Motion Story"
+  description="Tell Dan about your project. Motion design for complex ideas."
+  activeNav="Start a Project"
+  showCTA={false}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org", "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://motionstory.com.au/" },
+        { "@type": "ListItem", "position": 2, "name": "Start a Project", "item": "https://motionstory.com.au/contact/" }
+      ]
+    })} />
+  </Fragment>
+
+  <div class="pt-32 pb-24 px-8 max-w-5xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-24">
+      <div>
+        <span class="text-metadata mb-8 block">Start a Project</span>
+        <h1 class="font-display text-4xl md:text-7xl font-bold tracking-tight leading-[0.85] mb-8">
+          Got something<br />complex to<br />explain?
+        </h1>
+        <p class="text-body max-w-md mb-16">
+          Tell me what you're working on.
+          If it's the right fit, we'll know quickly.
+        </p>
+
+        <div class="space-y-10 mb-16">
+          <div>
+            <span class="text-metadata mb-3 block">Email</span>
+            <a href="mailto:daniel@motionstory.com.au" class="font-display text-xl font-medium hover:opacity-50 transition-opacity">
+              daniel@motionstory.com.au
+            </a>
+          </div>
+          <div>
+            <span class="text-metadata mb-3 block">Studio</span>
+            <p class="text-body">Byron Bay, Australia</p>
+          </div>
+          <div>
+            <span class="text-metadata mb-3 block">Prefer to talk first?</span>
+            <a href="mailto:daniel@motionstory.com.au?subject=Discovery%20call%20request" class="text-metadata border-b border-black/20 pb-1 hover:border-black transition-colors">
+              Request a 20-minute discovery call →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <form class="space-y-10 pt-16" action="https://formspree.io/f/xaqlpada" method="POST">
+          <input type="hidden" name="_next" value="https://motionstory.com.au/thank-you/" />
+          <div class="group">
+            <label class="text-metadata mb-4 block transition-colors group-focus-within:text-black" for="name">Name</label>
+            <input
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Your name"
+              required
+              class="w-full bg-transparent border-b border-black/10 py-5 focus:outline-none focus:border-black transition-colors text-body"
+            />
+          </div>
+          <div class="group">
+            <label class="text-metadata mb-4 block transition-colors group-focus-within:text-black" for="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+              class="w-full bg-transparent border-b border-black/10 py-5 focus:outline-none focus:border-black transition-colors text-body"
+            />
+          </div>
+          <div class="group">
+            <label class="text-metadata mb-4 block transition-colors group-focus-within:text-black" for="company">Company / Organisation</label>
+            <input
+              id="company"
+              type="text"
+              name="company"
+              placeholder="Optional"
+              class="w-full bg-transparent border-b border-black/10 py-5 focus:outline-none focus:border-black transition-colors text-body"
+            />
+          </div>
+          <div class="group">
+            <label class="text-metadata mb-4 block transition-colors group-focus-within:text-black" for="message">Tell me about your project</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="What are you working on? What's the timeline?"
+              rows="4"
+              required
+              class="w-full bg-transparent border-b border-black/10 py-5 focus:outline-none focus:border-black transition-colors text-body resize-none"
+            ></textarea>
+          </div>
+          <div class="group">
+            <label class="text-metadata mb-4 block transition-colors group-focus-within:text-black" for="source">How did you find me?</label>
+            <select
+              id="source"
+              name="source"
+              class="w-full bg-transparent border-b border-black/10 py-5 focus:outline-none focus:border-black transition-colors text-body appearance-none"
+            >
+              <option value="">Select</option>
+              <option value="google">Google</option>
+              <option value="referral">Referral</option>
+              <option value="linkedin">LinkedIn</option>
+              <option value="agency">Agency</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <button type="submit" class="group/btn relative w-full py-7 border border-black/10 hover:border-black transition-all duration-500">
+            <span class="text-metadata relative z-10">Send it through</span>
+            <div class="absolute inset-0 bg-black/[0.02] translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500"></div>
+          </button>
+          <p class="text-body !text-sm opacity-50 mt-4">
+            Your information is protected under my <a href="/privacy-policy/" class="border-b border-black/20 hover:border-black transition-colors">privacy policy</a>.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</PageLayout>

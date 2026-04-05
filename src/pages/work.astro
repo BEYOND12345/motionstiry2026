@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import PortfolioPage from '../components/PortfolioPage';
+import '../styles/global.css';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Motion Design Portfolio — Motion Story",
+  "description": "Motion design work for SaaS companies, platforms, agencies, and nonprofits. A decade of making complexity look simple.",
+  "url": "https://motionstory.com.au/work/",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Motion Story",
+    "url": "https://motionstory.com.au"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Motion Story",
+    "url": "https://motionstory.com.au"
+  }
+};
+---
+
+<BaseLayout
+  title="Motion Design Portfolio | Motion Story"
+  description="Motion design work for SaaS companies, platforms, agencies, and nonprofits. A decade of making complexity look simple."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org", "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://motionstory.com.au/" },
+        { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://motionstory.com.au/work/" }
+      ]
+    })} />
+  </Fragment>
+
+  <Nav activeItem="Work" />
+  <PortfolioPage client:load />
+</BaseLayout>
