@@ -111,13 +111,17 @@ export default function Homepage() {
           <header id="top">
             <div className="flex items-center justify-start mb-24">
               <nav className="flex items-center gap-10">
-                {["Work", "Profile", "Contact"].map(item => (
+                {[
+                  { label: "Work", href: "#work" },
+                  { label: "About", href: "#profile" },
+                  { label: "Start a Project", href: "#contact" },
+                ].map(item => (
                   <a
-                    key={item}
-                    href={`#${item.toLowerCase()}`}
+                    key={item.label}
+                    href={item.href}
                     className="text-top-nav hover:text-black transition-colors"
                   >
-                    {item}
+                    {item.label}
                   </a>
                 ))}
               </nav>
@@ -129,7 +133,7 @@ export default function Homepage() {
                 Story.
               </h1>
               <p className="text-body max-w-md mb-12">
-                Motion design for ideas that are hard to explain. I work with SaaS companies, agencies, and nonprofits to turn complex products and missions into motion design that makes people understand — and care.
+                Motion design for ideas that are hard to explain. I work with SaaS companies, agencies, and nonprofits — turning complex products and missions into something people immediately get.
               </p>
 
               <a
@@ -152,7 +156,7 @@ export default function Homepage() {
                 </div>
                 <h3 className="text-heading mb-10">Dan Neale</h3>
                 <p className="text-body mb-12">
-                  I'm a motion designer and creative director based in Byron Bay. Over the past decade I've made motion design for Employment Hero, Wipster, the United Nations, the RSPCA, and 50+ other organisations with something complex to explain. I take on a limited number of projects at a time. When I'm on your project, I'm on your project.
+                  I'm a motion designer and creative director based in Byron Bay. Over 15 years and 500+ projects, I've made motion design for Employment Hero, Wipster, the United Nations, the RSPCA, and organisations across SaaS, government, and the nonprofit sector. I take on a limited number of projects at a time. When I'm on your project, I'm on your project.
                 </p>
                 <div className="flex gap-12">
                   <a href="https://www.linkedin.com/in/danielneale" className="text-metadata border-b border-black/5 pb-2 hover:border-black transition-colors" target="_blank" rel="noopener">LinkedIn</a>
@@ -168,7 +172,7 @@ export default function Homepage() {
                 {[
                   { title: "SaaS & Tech Companies", desc: "Product demos, platform explainers, onboarding animation. I help software companies show what they've built — clearly.", href: "/saas-tech/" },
                   { title: "Agencies & Studios", desc: "Senior motion design production when your team needs capacity. White label or direct. Reliable delivery, no hand-holding required.", href: "/agencies/" },
-                  { title: "Causes & Nonprofits", desc: "Motion design for missions that matter. When the communication isn't just marketing — it's the difference between someone understanding and someone not.", href: "/causes/" }
+                  { title: "Causes & Nonprofits", desc: "Motion design for missions that matter. When the stakes are real and the brief needs to cut through noise, not add to it.", href: "/causes/" }
                 ].map((client, i) => (
                   <a key={i} href={client.href} className="group block">
                     <h4 className="text-project-title mb-4 group-hover:opacity-70 transition-opacity">
@@ -182,9 +186,34 @@ export default function Homepage() {
               </div>
             </section>
 
+            {/* Results / Testimonials */}
+            <section className="mb-48">
+              <span className="text-metadata mb-10 block">Results</span>
+              <div className="space-y-16">
+                <div>
+                  <p className="text-body text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
+                    "For a video about bins, we are pretty astounded by the results. 62% completion rate. 21% view rate. This will be a long-term asset for our business."
+                  </p>
+                  <div>
+                    <p className="font-display font-medium text-sm">Lee Bright</p>
+                    <p className="text-metadata">Marketing Lead, Method Recycling</p>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-body text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
+                    "40,000 views on YouTube, which increased brand perception and reputation."
+                  </p>
+                  <div>
+                    <p className="font-display font-medium text-sm">Simon Lehman</p>
+                    <p className="text-metadata">Marketing Manager, Acodis</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
             {/* Clients */}
             <section className="mb-48">
-              <span className="text-metadata mb-10 block">Trusted By</span>
+              <span className="text-metadata mb-10 block">Clients</span>
               <div className="flex flex-wrap gap-x-8 gap-y-5">
                 {[
                   "United Nations",
@@ -210,7 +239,10 @@ export default function Homepage() {
 
             {/* Blog */}
             <section className="mb-48">
-              <span className="text-metadata mb-6 block">Insights</span>
+              <span className="text-metadata mb-6 block">Thinking</span>
+              <p className="text-body mb-8">
+                How to make complex ideas land. When to use video. What most demos get wrong.
+              </p>
               <a
                 href="/blog/"
                 className="group flex items-center gap-4"
@@ -252,7 +284,7 @@ export default function Homepage() {
                   <textarea
                     id="hp-message"
                     name="message"
-                    placeholder="What are you working on? What's the timeline?"
+                    placeholder="What are you working on? What's the challenge?"
                     rows={4}
                     required
                     className="w-full bg-transparent border-b border-black/10 py-6 focus:outline-none focus:border-black transition-colors text-body resize-none"
