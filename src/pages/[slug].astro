@@ -90,9 +90,11 @@ function renderContent(content: string): string {
 ---
 
 <PageLayout
-  title={`${post.title} — Motion Story Blog`}
+  title={`${post.title} | Motion Story`}
   description={post.excerpt}
   activeNav="Blog"
+  ogType="article"
+  publishedDate={post.date}
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />

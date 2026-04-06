@@ -104,7 +104,7 @@ export default function Homepage() {
       <div className="grain-overlay" />
       <CustomCursor />
 
-      <div className="split-container">
+      <div id="main-content" className="split-container">
         {/* Left Side: Messaging & Story */}
         <aside className="split-left relative">
           <header id="top">

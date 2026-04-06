@@ -5,9 +5,12 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://motionstory.com.au',
+  trailingSlash: 'always',
   integrations: [
     react(),
-    sitemap(),
+    sitemap({
+      filter: (page) => !page.includes('/thank-you/'),
+    }),
   ],
   vite: {
     plugins: [tailwindcss()],

@@ -1,5 +1,14 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Message Sent",
+  "description": "Thanks for reaching out. I'll get back to you shortly.",
+  "url": "https://motionstory.com.au/thank-you/",
+  "isPartOf": { "@type": "WebSite", "name": "Motion Story", "url": "https://motionstory.com.au" }
+};
 ---
 
 <PageLayout
@@ -7,6 +16,10 @@ import PageLayout from '../layouts/PageLayout.astro';
   description="Thanks for reaching out. I'll get back to you shortly."
   showCTA={false}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+    <meta name="robots" content="noindex, nofollow" />
+  </Fragment>
   <div class="pt-32 pb-24 px-8 max-w-3xl mx-auto text-center">
     <span class="text-metadata mb-8 block">Message Sent</span>
     <h1 class="font-display text-4xl md:text-7xl font-bold tracking-tight leading-[0.9] mb-8">

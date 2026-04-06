@@ -14,6 +14,8 @@ interface Props {
   showCTA?: boolean;
   ctaHeading?: string;
   ctaLabel?: string;
+  ogType?: string;
+  publishedDate?: string;
 }
 
 const {
@@ -25,10 +27,12 @@ const {
   showCTA = true,
   ctaHeading,
   ctaLabel,
+  ogType,
+  publishedDate,
 } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description} canonicalUrl={canonicalUrl} ogImage={ogImage}>
+<BaseLayout title={title} description={description} canonicalUrl={canonicalUrl} ogImage={ogImage} ogType={ogType} publishedDate={publishedDate}>
   <slot name="head" slot="head" />
   <Nav activeItem={activeNav} />
   <div class="min-h-screen bg-white text-black">
