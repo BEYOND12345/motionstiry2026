@@ -1,0 +1,225 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const caseStudies = [
+  {
+    title: "Meltwater / Brand Story",
+    description: "Meltwater needed a brand film that captured what their media intelligence platform actually does — without drowning in features. I built a motion piece that tells the story from the user's perspective, keeping it human and clear.",
+    link: "/casestudy/meltwater/",
+    vimeoId: "394326130",
+  },
+  {
+    title: "United Nations / Plastic Waste Data",
+    description: "The UN needed to turn dense plastic pollution data into something people would actually watch and share. I designed a data-driven motion graphics piece that makes the numbers feel urgent, not academic.",
+    link: "/casestudy/united-nations/",
+    vimeoId: "540393117",
+  },
+  {
+    title: "Wipster / Video Feedback Tool",
+    description: "Wipster needed to show how their video review workflow connected across teams. The product overview walks through the full platform, step by step, in 90 seconds.",
+    link: "/casestudy/wipster-product-overview/",
+    vimeoId: "648360270",
+  },
+  {
+    title: "RSPCA / Saving Cats",
+    description: "The RSPCA wanted an explainer that could drive donations and awareness around cat welfare — without relying on sad imagery. I used warm, character-driven motion graphics to tell the story with heart and clarity.",
+    link: "/casestudy/rspca-cat-care-explainer/",
+    vimeoId: "762085540",
+  },
+];
+
+const services = [
+  { title: "SaaS & product explainers", desc: "Turn complex software into clear, watchable product demos that sell before the sales call." },
+  { title: "Brand & campaign animation", desc: "Motion graphics for brand films, launches, and campaigns that need to move fast and land hard." },
+  { title: "Data visualisation & infographics", desc: "Make numbers, timelines, and processes visual — for reports, presentations, and public campaigns." },
+  { title: "Social & paid media motion", desc: "Short-form motion graphics for LinkedIn, Instagram, YouTube pre-roll, and paid ads." },
+  { title: "Onboarding & training animation", desc: "Get users or staff up to speed faster with animated walkthroughs and training sequences." },
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Motion Graphics Studio",
+  "description": "Motion graphics studio specialising in explainer videos, product demos, brand animation, data visualisation, and campaign motion design.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Motion Story",
+    "url": "https://motionstory.com.au",
+  },
+  "serviceType": "Motion Graphics Production",
+  "areaServed": "Worldwide",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://motionstory.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Motion Graphics", "item": "https://motionstory.com.au/motion-graphics/" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is motion graphics?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Motion graphics is a form of animation that combines graphic design with movement to communicate ideas visually. Unlike character animation or live-action video, motion graphics focuses on moving text, shapes, icons, and data to explain concepts, tell brand stories, and simplify complex information. It's widely used for explainer videos, product demos, data visualisation, and digital campaigns.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "How much does motion graphics production cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Motion graphics projects typically range from $5,000 to $25,000+ depending on length, complexity, and style. A 60-second explainer video sits at the lower end, while a multi-piece campaign with custom illustration and sound design sits higher. Every project at Motion Story includes a fixed quote upfront — no hourly billing, no surprise invoices.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a motion graphics project take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most motion graphics projects take 4–8 weeks from kickoff to final delivery. This includes scripting, storyboarding, design, animation, and sound. Shorter pieces (15–30 seconds) can move faster. Rush timelines are possible for the right project — just ask.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between 2D and 3D motion graphics?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "2D motion graphics uses flat shapes, icons, typography, and illustrations animated in two-dimensional space. It's the most common style for explainer videos, social content, and brand animation. 3D motion graphics adds depth and volume — useful for product renders, architectural visualisation, and cinematic sequences. Motion Story specialises in 2D motion graphics, which suits most communication and marketing needs.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "What makes a good motion graphics studio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A good motion graphics studio combines strategic thinking with design craft. They don't just animate — they help you figure out what to say, how to structure the story, and what visual approach will land with your audience. Look for a clear process, strong case studies across different industries, and a willingness to understand your product deeply before opening After Effects.",
+      },
+    },
+  ],
+};
+---
+
+<PageLayout
+  title="Motion Graphics Studio — Animation & Motion Design | Motion Story"
+  description="Motion graphics studio specialising in explainer videos, product demos & brand animation. 15 years, 500+ projects. Based in Byron Bay, Australia."
+  ctaHeading="Got an idea worth animating?"
+  ctaLabel="Start a Conversation"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  {/* Hero */}
+  <div class="pt-32 pb-24 px-8 max-w-5xl mx-auto">
+    <span class="text-metadata mb-8 block">Motion Graphics Studio</span>
+    <h1 class="font-display text-4xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-8">
+      Motion graphics for<br />complex ideas.
+    </h1>
+    <p class="text-body max-w-xl mb-24">
+      Not a generalist video agency. A focused motion graphics practice for brands, products, and campaigns that need to explain something complex — clearly and fast. Dan Neale, 15 years experience, 500+ projects delivered worldwide.
+    </p>
+
+    {/* Body */}
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div>
+          <span class="text-metadata mb-4 block text-accent">The Brief</span>
+        </div>
+        <div class="md:col-span-2">
+          <p class="text-body text-lg leading-relaxed mb-8">
+            Motion graphics does what other formats can't. It shows invisible processes — how data flows through a platform, how a policy affects a population, how a product works under the hood. It directs attention precisely, controls pacing, and simplifies complexity without dumbing it down.
+          </p>
+          <p class="text-body text-lg leading-relaxed">
+            I work across sectors — SaaS product demos, nonprofit campaigns, government data visualisation, agency partnerships — but the thread is always the same: take something that's hard to explain and make it land in under two minutes. That's the job of a motion graphics production company, and it's what I've been doing for 15 years.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* What I Make */}
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <span class="text-metadata mb-10 block">What I Make</span>
+      <div class="space-y-12">
+        {services.map((service, i) => (
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12 border-b border-black/10 last:border-b-0 last:pb-0">
+            <div>
+              <span class="text-metadata mb-4 block text-accent">{(i + 1).toString().padStart(2, '0')}</span>
+              <h3 class="font-display text-lg font-medium tracking-tight">{service.title}</h3>
+            </div>
+            <div class="md:col-span-2">
+              <p class="text-body">{service.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* Case Studies */}
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <span class="text-metadata mb-10 block">Selected Work</span>
+      <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight leading-[0.9] mb-16">
+        Motion graphics projects,<br />real results.
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {caseStudies.map(study => (
+          <a href={study.link} class="group block">
+            <div class="aspect-video mb-6 overflow-hidden bg-black/5">
+              <img
+                src={`https://vumbnail.com/${study.vimeoId}.jpg`}
+                alt={study.title}
+                class="w-full h-full object-cover group-hover:opacity-80 transition-opacity"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="font-display text-xl font-bold tracking-tight mb-3 group-hover:opacity-60 transition-opacity">{study.title}</h3>
+            <p class="text-body mb-4">{study.description}</p>
+            <span class="text-metadata text-accent group-hover:opacity-60 transition-opacity">View Case Study →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    {/* Testimonial */}
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <span class="text-metadata mb-10 block">Client Feedback</span>
+      <blockquote class="text-body text-2xl md:text-3xl leading-relaxed font-display tracking-tight mb-8">
+        "40,000 views on YouTube, which increased brand perception and reputation."
+      </blockquote>
+      <div>
+        <p class="font-display font-medium">Simon Lehman</p>
+        <p class="text-metadata">Marketing Manager, Acodis</p>
+      </div>
+    </section>
+
+    {/* Cross-links */}
+    <section class="border-t border-black/10 pt-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <a href="/saas-tech/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
+          <span class="text-metadata mb-3 block">SaaS & Tech</span>
+          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">Motion for SaaS →</p>
+          <p class="text-body !text-sm mt-2">Product demos and platform explainers</p>
+        </a>
+        <a href="/work/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
+          <span class="text-metadata mb-3 block">Work</span>
+          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">See all work →</p>
+          <p class="text-body !text-sm mt-2">500+ projects delivered worldwide</p>
+        </a>
+        <a href="/contact/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
+          <span class="text-metadata mb-3 block">Start a Project</span>
+          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">Get in touch →</p>
+          <p class="text-body !text-sm mt-2">Tell me what you're working on</p>
+        </a>
+      </div>
+    </section>
+  </div>
+</PageLayout>

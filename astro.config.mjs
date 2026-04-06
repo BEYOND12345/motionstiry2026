@@ -44,7 +44,7 @@ export default defineConfig({
     '/explainer-video-company/': '/explainer-videos/',
     '/explainer-video-company-20024/': '/explainer-videos/',
     '/animation-production-company/': '/explainer-videos/',
-    '/motion-graphic-production-company/': '/explainer-videos/',
+    '/motion-graphic-production-company/': '/motion-graphics/',
     '/animated-video-service/': '/explainer-videos/',
     '/30s-explainer-videos/': '/saas-tech/',
     '/start-up-explainer-videos/': '/saas-tech/',
@@ -69,9 +69,9 @@ export default defineConfig({
     '/animation-production-company-2/': '/saas-tech/',
     '/landing-page-animated-video-services-01/': '/saas-tech/',
     '/landing-animated-product-demos-01/': '/product-demo-videos/',
-    '/freelance-motion-graphic-designer/': '/saas-tech/',
+    '/freelance-motion-graphic-designer/': '/motion-graphics/',
     '/freelance-motion-design-and-animation/': '/saas-tech/',
-    '/motion-graphic-production/': '/saas-tech/',
+    '/motion-graphic-production/': '/motion-graphics/',
 
     // Old standalone pages → new equivalents
     '/frequently-asked-questions-motion-story/': '/',

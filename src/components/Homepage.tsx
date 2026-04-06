@@ -48,7 +48,6 @@ const ProjectRow = ({
         </h3>
         <span className="text-metadata project-client hidden md:block opacity-40">{project.client}</span>
         <div className="flex items-center justify-end gap-8 min-w-[100px]">
-          <span className="text-metadata">{project.year}</span>
           <motion.span
             animate={{ rotate: isExpanded ? 45 : 0 }}
             className="text-xl font-light opacity-20"
@@ -290,7 +289,7 @@ export default function Homepage() {
                     className="w-full bg-transparent border-b border-black/10 py-6 focus:outline-none focus:border-black transition-colors text-body resize-none"
                   />
                 </div>
-                <button className="group/btn relative w-full py-8 border border-black/10 hover:border-black transition-all duration-500">
+                <button className="group/btn relative overflow-hidden w-full py-8 border border-black/10 hover:border-black transition-all duration-500">
                   <span className="text-metadata relative z-10">Send it through</span>
                   <div className="absolute inset-0 bg-black/[0.02] translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500" />
                 </button>

@@ -27,8 +27,6 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
           <FadeUp>
             <div className="flex items-center gap-4 mb-6">
               <span className="text-metadata">{project.category}</span>
-              <span className="text-metadata opacity-30">—</span>
-              <span className="text-metadata opacity-50">{project.year}</span>
             </div>
           </FadeUp>
           <SlideUp>
@@ -81,10 +79,6 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
               <span className="text-metadata mb-4 block">Category</span>
               <p className="font-display text-lg font-medium">{project.category}</p>
             </div>
-            <div className="mb-12">
-              <span className="text-metadata mb-4 block">Year</span>
-              <p className="font-display text-lg font-medium">{project.year}</p>
-            </div>
             <div>
               <span className="text-metadata mb-4 block">Studio</span>
               <p className="font-display text-lg font-medium">Motion Story</p>
@@ -136,7 +130,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
                       />
                     </div>
                     <p className="font-display text-base font-medium group-hover:opacity-60 transition-opacity">{rp.title}</p>
-                    <p className="text-metadata opacity-50">{rp.client} · {rp.year}</p>
+                    <p className="text-metadata opacity-50">{rp.client}</p>
                   </a>
                 </FadeUp>
               ))}

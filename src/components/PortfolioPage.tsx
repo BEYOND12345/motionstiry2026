@@ -83,7 +83,7 @@ export default function PortfolioPage() {
                     </h2>
                     <p className="text-body text-sm line-clamp-1">{project.description}</p>
                   </div>
-                  <span className="text-metadata opacity-40 shrink-0">{project.year}</span>
+                  <span className="text-metadata opacity-40 shrink-0">{project.category}</span>
                 </div>
               </motion.a>
             ))}
