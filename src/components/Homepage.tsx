@@ -113,6 +113,7 @@ export default function Homepage() {
                 {[
                   { label: "Work", href: "#work" },
                   { label: "About", href: "#profile" },
+                  { label: "Blog", href: "/blog/" },
                   { label: "Start a Project", href: "#contact" },
                 ].map(item => (
                   <a
