@@ -97,7 +97,7 @@ const ProjectRow = ({
 };
 
 export default function Homepage() {
-  const [expandedId, setExpandedId] = useState<string | null>("wipster");
+  const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set(["atomic", "trudi", "giraffe", "mosaic", "good2pay", "infoview", "heyyou", "cart-share", "uclusion"]));
 
   return (
     <div className="min-h-screen bg-white text-black selection:bg-accent selection:text-white">
@@ -129,11 +129,12 @@ export default function Homepage() {
 
             <div className="mb-32" id="work">
               <h1 className="text-display mb-10">
-                Motion<br />
-                Story.
+                Complex<br />
+                Made<br />
+                Simple.
               </h1>
               <p className="text-body max-w-md mb-12">
-                Motion design for ideas that are hard to explain. I work with SaaS companies, agencies, and nonprofits — turning complex products and missions into something people immediately get.
+                Motion design for ideas that are hard to explain. I work with SaaS companies, agencies, and nonprofits, turning complex products and missions into something people immediately get.
               </p>
 
               <a
@@ -151,15 +152,21 @@ export default function Homepage() {
             <section id="profile" className="mb-48">
               <span className="text-metadata mb-8 block">Profile</span>
               <div className="max-w-2xl">
-                <div className="aspect-video overflow-hidden bg-gray-100 mb-12 flex items-center justify-center">
-                  <span className="text-metadata opacity-30">Photo</span>
+                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden mb-12">
+                  <img src="/daniel-neale.jpg" alt="Daniel Neale" className="w-full h-full object-cover" />
                 </div>
-                <h3 className="text-heading mb-10">Dan Neale</h3>
+                <h3 className="text-heading mb-10">Daniel Neale</h3>
+                <p className="text-body mb-6">
+                  Director, founder, and occasional creative producer. Trained as a graphic designer, built a career in motion design, now working as a creative director. 15 years and 500+ projects deep.
+                </p>
+                <p className="text-body mb-6">
+                  That depth means I can read a brief and see minutes of detailed animation before anything hits the timeline. I draw from every project I've done: SaaS platforms, government campaigns, nonprofits, startups. I apply what works.
+                </p>
                 <p className="text-body mb-12">
-                  I'm a motion designer and creative director based in Byron Bay. Over 15 years and 500+ projects, I've made motion design for Employment Hero, Wipster, the United Nations, the RSPCA, and organisations across SaaS, government, and the nonprofit sector. I take on a limited number of projects at a time. When I'm on your project, I'm on your project.
+                  I'm a passionate, obsessive storyteller who loves turning dry, complex subjects into something clear and engaging. Also a father, a surfer, and a big-time animal lover. I put everything into the work.
                 </p>
                 <div className="flex gap-12">
-                  <a href="https://www.linkedin.com/in/danielneale" className="text-metadata border-b border-black/5 pb-2 hover:border-black transition-colors" target="_blank" rel="noopener">LinkedIn</a>
+                  <a href="https://www.behance.net/danielneale" className="text-metadata border-b border-black/5 pb-2 hover:border-black transition-colors" target="_blank" rel="noopener">Behance</a>
                   <a href="https://vimeo.com/motionstory" className="text-metadata border-b border-black/5 pb-2 hover:border-black transition-colors" target="_blank" rel="noopener">Vimeo</a>
                 </div>
               </div>
@@ -170,7 +177,7 @@ export default function Homepage() {
               <span className="text-metadata mb-10 block">Who I Work With</span>
               <div className="grid grid-cols-1 gap-16">
                 {[
-                  { title: "SaaS & Tech Companies", desc: "Product demos, platform explainers, onboarding animation. I help software companies show what they've built — clearly.", href: "/saas-tech/" },
+                  { title: "SaaS & Tech Companies", desc: "Product demos, platform explainers, onboarding animation. I help software companies show what they've built, clearly.", href: "/saas-tech/" },
                   { title: "Agencies & Studios", desc: "Senior motion design production when your team needs capacity. White label or direct. Reliable delivery, no hand-holding required.", href: "/agencies/" },
                   { title: "Causes & Nonprofits", desc: "Motion design for missions that matter. When the stakes are real and the brief needs to cut through noise, not add to it.", href: "/causes/" }
                 ].map((client, i) => (
@@ -192,7 +199,7 @@ export default function Homepage() {
               <div className="space-y-16">
                 <div>
                   <p className="text-body text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
-                    "For a video about bins, we are pretty astounded by the results. 62% completion rate. 21% view rate. This will be a long-term asset for our business."
+                    "62% completion rate. 21% view rate. For a video about bins, we're astounded. Long-term asset for our business."
                   </p>
                   <div>
                     <p className="font-display font-medium text-sm">Lee Bright</p>
@@ -206,6 +213,32 @@ export default function Homepage() {
                   <div>
                     <p className="font-display font-medium text-sm">Simon Lehman</p>
                     <p className="text-metadata">Marketing Manager, Acodis</p>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-body text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
+                    "Working with Daniel was incredible. Easy to brainstorm, pivot ideas, and collaborate at each stage. 10/10 would use again."
+                  </p>
+                  <div>
+                    <p className="font-display font-medium text-sm">Matty Sirois</p>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-body text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
+                    "Creative, efficient, and seamless. Daniel grasped our core message and crafted something that resonated with our audience immediately."
+                  </p>
+                  <div>
+                    <p className="font-display font-medium text-sm">Kris Deep</p>
+                    <p className="text-metadata">Founder, Pulseee</p>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-body text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
+                    "Without this video, our campaign would have never reached such a huge audience. The road user charge has now been approved in SA and VIC. Daniel's work was pivotal."
+                  </p>
+                  <div>
+                    <p className="font-display font-medium text-sm">Michael Player</p>
+                    <p className="text-metadata">Director of Communications, Infrastructure Australia</p>
                   </div>
                 </div>
               </div>
@@ -325,7 +358,7 @@ export default function Homepage() {
             <div className="pt-8 border-t border-black/10 flex flex-col items-start gap-4">
               <a href="#top" className="text-metadata hover:text-black transition-colors">Back to Top</a>
               <div className="flex flex-col gap-1">
-                <span className="text-metadata">Motion Story — Complexity Explained.</span>
+                <span className="text-metadata">Motion Story. Complexity Explained.</span>
               </div>
             </div>
           </footer>
@@ -354,8 +387,13 @@ export default function Homepage() {
                   >
                     <ProjectRow
                       project={project}
-                      isExpanded={expandedId === project.id}
-                      onToggle={() => setExpandedId(expandedId === project.id ? null : project.id)}
+                      isExpanded={expandedIds.has(project.id)}
+                      onToggle={() => setExpandedIds(prev => {
+                        const next = new Set(prev);
+                        if (next.has(project.id)) next.delete(project.id);
+                        else next.add(project.id);
+                        return next;
+                      })}
                     />
                   </motion.div>
                 ))}

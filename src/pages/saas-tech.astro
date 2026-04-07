@@ -83,7 +83,7 @@ const breadcrumbSchema = {
 
     {/* Body */}
     <section class="mb-32 pb-32 border-b border-black/10">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
         <div>
           <span class="text-metadata mb-4 block text-accent">The Brief</span>
         </div>
@@ -92,7 +92,7 @@ const breadcrumbSchema = {
             A well-made motion design piece changes that before the sales call even happens. Your homepage does the heavy lifting. Your onboarding doesn't lose people in the first week. Your pipeline gets shorter because prospects show up to calls already understanding what they're buying.
           </p>
           <p class="text-body text-lg leading-relaxed">
-            I've made product videos for platforms from seed stage to Series B — software with three stakeholder audiences, dashboards only power users understand, features that only make sense in context. That's the brief I'm built for.
+            I've made product videos for platforms from seed stage to Series B. Software with three stakeholder audiences, dashboards only power users understand, features that only make sense in context. That's the brief I'm built for.
           </p>
         </div>
       </div>
@@ -103,7 +103,7 @@ const breadcrumbSchema = {
       <span class="text-metadata mb-10 block">What I Make</span>
       <div class="space-y-12">
         {services.map((service, i) => (
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12 border-b border-black/10 last:border-b-0 last:pb-0">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start pb-12 border-b border-black/10 last:border-b-0 last:pb-0">
             <div>
               <span class="text-metadata mb-4 block text-accent">{(i + 1).toString().padStart(2, '0')}</span>
               <h3 class="font-display text-lg font-medium tracking-tight">{service.title}</h3>

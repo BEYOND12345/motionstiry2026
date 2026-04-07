@@ -20,7 +20,7 @@ export default function PortfolioPage() {
         </SlideUp>
         <FadeUp>
           <p className="text-body max-w-lg">
-            Motion design for SaaS companies, platforms, agencies, and nonprofits. Every project here started with something hard to explain — and ended with something people actually watched.
+            Motion design for SaaS companies, platforms, agencies, and nonprofits. Every project here started with something hard to explain and ended with something people actually watched.
           </p>
         </FadeUp>
       </PageTransition>
@@ -99,7 +99,7 @@ export default function PortfolioPage() {
           </FadeUp>
           <SlideUp>
             <p className="text-body max-w-xl mx-auto mb-12">
-              "Motion design doesn't just explain your product — it makes people care about it before they've even tried it."
+              "Motion design doesn't just explain your product. It makes people care about it before they've even tried it."
             </p>
           </SlideUp>
           <FadeUp>

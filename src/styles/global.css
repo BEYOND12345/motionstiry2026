@@ -26,7 +26,7 @@ body.homepage-layout {
   overflow: hidden;
 }
 
-/* Grain Overlay — filmic texture */
+/* Grain Overlay: filmic texture */
 .grain-overlay {
   position: fixed;
   top: 0;
@@ -42,9 +42,9 @@ body.homepage-layout {
 /* Typographic System */
 .text-display {
   font-family: var(--font-display);
-  font-size: clamp(80px, 12vw, 160px);
+  font-size: clamp(64px, 9vw, 120px);
   font-weight: 700;
-  line-height: 0.85;
+  line-height: 0.9;
   letter-spacing: -0.04em;
   text-transform: uppercase;
 }
@@ -166,7 +166,7 @@ body.homepage-layout {
   transform: translate(-50%, -50%);
 }
 
-/* Responsive — Tablet */
+/* Responsive: Tablet */
 @media (max-width: 1024px) {
   .split-container {
     flex-direction: column;
@@ -190,7 +190,7 @@ body.homepage-layout {
   }
 }
 
-/* Responsive — Mobile */
+/* Responsive: Mobile */
 @media (max-width: 768px) {
   .split-left, .split-right {
     padding: 2rem 1.5rem;
@@ -209,7 +209,7 @@ body.homepage-layout {
   }
 }
 
-/* Responsive — Small Phone */
+/* Responsive: Small Phone */
 @media (max-width: 480px) {
   .split-left, .split-right {
     padding: 1.5rem 1rem;

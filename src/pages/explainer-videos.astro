@@ -4,7 +4,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 const caseStudies = [
   {
     title: "Wipster / Video Feedback Tool",
-    description: "Wipster's platform connects creative teams across the entire video review workflow. I built a 90-second product overview that walks through the full experience — no login required, no jargon.",
+    description: "Wipster's platform connects creative teams across the entire video review workflow. I built a 90-second product overview that walks through the full experience. No login required, no jargon.",
     link: "/casestudy/wipster-product-overview/",
     vimeoId: "648360270",
   },
@@ -16,7 +16,7 @@ const caseStudies = [
   },
   {
     title: "RSPCA / Saving Cats",
-    description: "RSPCA wanted to shift public behaviour around cat ownership. The explainer had to land emotionally without being heavy-handed — clear problem, clear action, sixty seconds.",
+    description: "RSPCA wanted to shift public behaviour around cat ownership. The explainer had to land emotionally without being heavy-handed. Clear problem, clear action, sixty seconds.",
     link: "/casestudy/rspca-cat-care-explainer/",
     vimeoId: "762085540",
   },
@@ -30,7 +30,7 @@ const caseStudies = [
 
 const services = [
   { title: "SaaS & product explainers", desc: "Turn complex software into a clear, watchable story. Homepage heroes, landing pages, sales decks." },
-  { title: "Nonprofit & cause videos", desc: "Make people understand the problem — and feel compelled to act. Campaigns, fundraising, advocacy." },
+  { title: "Nonprofit & cause videos", desc: "Make people understand the problem and feel compelled to act. Campaigns, fundraising, advocacy." },
   { title: "Data visualisation", desc: "Transform numbers and research into motion graphics that actually communicate. Reports, presentations, social." },
   { title: "Campaign & social motion", desc: "Short-form content built for feeds. LinkedIn, Instagram, YouTube pre-roll, paid ads." },
   { title: "Onboarding & training animation", desc: "Get users or staff up to speed faster. Reduce support tickets, improve retention, cut training time." },
@@ -92,7 +92,7 @@ const faqSchema = {
       "name": "What's the production process for an explainer video?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The process runs in three phases: First, we nail the script and storyboard — this is where clarity lives. Second, I design the visual style and key frames. Third, I animate, add sound design, and deliver final files. You get review points at every stage so nothing goes off track.",
+        "text": "The process runs in three phases: First, we nail the script and storyboard. This is where clarity lives. Second, I design the visual style and key frames. Third, I animate, add sound design, and deliver final files. You get review points at every stage so nothing goes off track.",
       },
     },
     {
@@ -100,7 +100,7 @@ const faqSchema = {
       "name": "What styles of explainer video are available?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "I work across motion graphics, 2D character animation, data visualisation, kinetic typography, and mixed-media styles. The right style depends on your audience and the complexity of your message — not a trend. Every project gets a custom visual direction designed to fit your brand.",
+        "text": "I work across motion graphics, 2D character animation, data visualisation, kinetic typography, and mixed-media styles. The right style depends on your audience and the complexity of your message, not a trend. Every project gets a custom visual direction designed to fit your brand.",
       },
     },
   ],
@@ -109,7 +109,7 @@ const faqSchema = {
 
 <PageLayout
   title="Explainer Video Production | Motion Story"
-  description="Explainer video production for SaaS, tech, and nonprofits. Motion design that makes people understand — and care. Based in Australia."
+  description="Explainer video production for SaaS, tech, and nonprofits. Motion design that makes people understand and care. Based in Australia."
   ctaHeading="Got something complex to explain?"
   ctaLabel="Start a Conversation"
 >
@@ -126,18 +126,18 @@ const faqSchema = {
       Explainer videos for ideas<br />that don't explain themselves.
     </h1>
     <p class="text-body max-w-xl mb-24">
-      Some products, platforms, and missions are genuinely hard to explain. Not because they're bad — because they're complex. An animated explainer video gives you 60 to 180 seconds of pure clarity. No jargon, no filler, no confused faces on the other end of a sales call.
+      Some products, platforms, and missions are genuinely hard to explain. Not because they're bad, but because they're complex. An animated explainer video gives you 60 to 180 seconds of pure clarity. No jargon, no filler, no confused faces on the other end of a sales call.
     </p>
 
     {/* Body */}
     <section class="mb-32 pb-32 border-b border-black/10">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
         <div>
           <span class="text-metadata mb-4 block text-accent">The Brief</span>
         </div>
         <div class="md:col-span-2">
           <p class="text-body text-lg leading-relaxed mb-8">
-            A great explainer video does three things: it earns attention in the first five seconds, it makes something complex feel obvious, and it ends with the viewer knowing exactly what to do next. That's it. Clarity, brevity, and visual storytelling — not decoration.
+            A great explainer video does three things: it earns attention in the first five seconds, it makes something complex feel obvious, and it ends with the viewer knowing exactly what to do next. That's it. Clarity, brevity, and visual storytelling. Not decoration.
           </p>
           <p class="text-body text-lg leading-relaxed mb-8">
             I've delivered 50+ explainer video projects over 10+ years for SaaS companies, tech startups, nonprofits, and government agencies. Everything from 60-second product overviews to 3-minute deep dives that replace entire pitch decks. The range of work is wide, but the goal is always the same: make people understand, then make them care.
@@ -154,7 +154,7 @@ const faqSchema = {
       <span class="text-metadata mb-10 block">Explainer Video Services</span>
       <div class="space-y-12">
         {services.map((service, i) => (
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12 border-b border-black/10 last:border-b-0 last:pb-0">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start pb-12 border-b border-black/10 last:border-b-0 last:pb-0">
             <div>
               <span class="text-metadata mb-4 block text-accent">{(i + 1).toString().padStart(2, '0')}</span>
               <h3 class="font-display text-lg font-medium tracking-tight">{service.title}</h3>
@@ -211,44 +211,44 @@ const faqSchema = {
         Common questions about<br />explainer video production.
       </h2>
       <div class="space-y-12">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12 border-b border-black/10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start pb-12 border-b border-black/10">
           <div>
             <h3 class="font-display text-lg font-medium tracking-tight">What is an explainer video?</h3>
           </div>
           <div class="md:col-span-2">
-            <p class="text-body">A short animated video — typically 60 seconds to 3 minutes — designed to clearly communicate what a product, service, or idea does and why it matters. They're used on homepages, in sales decks, on social media, and in onboarding flows to replace long-winded copy with something people actually watch.</p>
+            <p class="text-body">A short animated video, typically 60 seconds to 3 minutes, designed to clearly communicate what a product, service, or idea does and why it matters. They're used on homepages, in sales decks, on social media, and in onboarding flows to replace long-winded copy with something people actually watch.</p>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12 border-b border-black/10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start pb-12 border-b border-black/10">
           <div>
             <h3 class="font-display text-lg font-medium tracking-tight">How much does an explainer video cost?</h3>
           </div>
           <div class="md:col-span-2">
-            <p class="text-body">Explainer video production typically ranges from $5,000 to $25,000+ depending on length, complexity, and style. A 60-second motion graphics piece sits at a different price point than a 3-minute character-animated narrative. I scope every project individually based on the brief — no cookie-cutter packages.</p>
+            <p class="text-body">Explainer video production typically ranges from $5,000 to $25,000+ depending on length, complexity, and style. A 60-second motion graphics piece sits at a different price point than a 3-minute character-animated narrative. I scope every project individually based on the brief. No cookie-cutter packages.</p>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12 border-b border-black/10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start pb-12 border-b border-black/10">
           <div>
             <h3 class="font-display text-lg font-medium tracking-tight">How long does it take to produce an explainer video?</h3>
           </div>
           <div class="md:col-span-2">
-            <p class="text-body">Most projects take 4 to 8 weeks from kickoff to final delivery. That includes scripting, storyboarding, design, animation, and revisions. Tight timelines are possible for simpler projects — I'll always be upfront about what's realistic.</p>
+            <p class="text-body">Most projects take 4 to 8 weeks from kickoff to final delivery. That includes scripting, storyboarding, design, animation, and revisions. Tight timelines are possible for simpler projects. I'll always be upfront about what's realistic.</p>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12 border-b border-black/10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start pb-12 border-b border-black/10">
           <div>
             <h3 class="font-display text-lg font-medium tracking-tight">What's the production process?</h3>
           </div>
           <div class="md:col-span-2">
-            <p class="text-body">Three phases. First, we nail the script and storyboard — this is where clarity lives. Second, I design the visual style and key frames. Third, I animate, add sound design, and deliver final files. You get review points at every stage so nothing goes off track.</p>
+            <p class="text-body">Three phases. First, we nail the script and storyboard. This is where clarity lives. Second, I design the visual style and key frames. Third, I animate, add sound design, and deliver final files. You get review points at every stage so nothing goes off track.</p>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12 border-b border-black/10 last:border-b-0 last:pb-0">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start pb-12 border-b border-black/10 last:border-b-0 last:pb-0">
           <div>
             <h3 class="font-display text-lg font-medium tracking-tight">What styles of explainer video are available?</h3>
           </div>
           <div class="md:col-span-2">
-            <p class="text-body">Motion graphics, 2D character animation, data visualisation, kinetic typography, and mixed-media. The right style depends on your audience and the complexity of your message — not a trend. Every project gets a custom visual direction designed to fit your brand.</p>
+            <p class="text-body">Motion graphics, 2D character animation, data visualisation, kinetic typography, and mixed-media. The right style depends on your audience and the complexity of your message, not a trend. Every project gets a custom visual direction designed to fit your brand.</p>
           </div>
         </div>
       </div>

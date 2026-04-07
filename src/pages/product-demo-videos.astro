@@ -4,7 +4,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 const caseStudies = [
   {
     title: "Trudi / AI Property Management",
-    description: "Trudi's AI handles tenant communication, maintenance, and financials. The animated product demo walks through each workflow without overwhelming the viewer — or needing a single screenshot.",
+    description: "Trudi's AI handles tenant communication, maintenance, and financials. The animated product demo walks through each workflow without overwhelming the viewer or needing a single screenshot.",
     link: "/casestudy/property-management-explainer-video/",
     vimeoId: "866174146",
   },
@@ -22,7 +22,7 @@ const caseStudies = [
   },
   {
     title: "Good2Pay / Paperless Invoicing",
-    description: "Good2Pay needed a product demo animation that showed the full invoicing flow — from creation to payment — without getting lost in the details. Clean, fast, and built for their landing page.",
+    description: "Good2Pay needed a product demo animation that showed the full invoicing flow, from creation to payment, without getting lost in the details. Clean, fast, and built for their landing page.",
     link: "/casestudy/good2pay/",
     vimeoId: "448704979",
   },
@@ -32,7 +32,7 @@ const services = [
   { title: "Full platform walkthroughs", desc: "End-to-end product demo videos that show the entire user journey, from login to outcome." },
   { title: "Feature highlight videos", desc: "Short, focused demos that spotlight a single feature or workflow update." },
   { title: "Sales enablement demos", desc: "Animated software demos built for sales decks, outreach sequences, and leave-behinds." },
-  { title: "Investor pitch demos", desc: "Product demo animations that show traction and capability — built for fundraising decks." },
+  { title: "Investor pitch demos", desc: "Product demo animations that show traction and capability, built for fundraising decks." },
   { title: "Onboarding & activation videos", desc: "Step-by-step walkthroughs that get new users to value faster and reduce early churn." },
 ];
 
@@ -126,12 +126,12 @@ const faqSchema = {
       Your product does incredible things.<br />Nobody's seeing it.
     </h1>
     <p class="text-body max-w-xl mb-24">
-      Screenshots don't move. Screen recordings are boring. And nobody's signing up for a free trial just to understand what your software does. A product demo video shows the platform doing what it does best — without the viewer needing a login.
+      Screenshots don't move. Screen recordings are boring. And nobody's signing up for a free trial just to understand what your software does. A product demo video shows the platform doing what it does best, without the viewer needing a login.
     </p>
 
     {/* Body */}
     <section class="mb-32 pb-32 border-b border-black/10">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
         <div>
           <span class="text-metadata mb-4 block text-accent">The Brief</span>
         </div>
@@ -140,7 +140,7 @@ const faqSchema = {
             Product demo videos work across the entire funnel. On your landing page, they stop the scroll and explain the product before someone bounces. In a sales deck, they do the heavy lifting so your rep isn't narrating screenshots. In an investor pitch, they show the product is real, polished, and moving. In onboarding sequences, they get new users to value before they churn.
           </p>
           <p class="text-body text-lg leading-relaxed">
-            Animated product demos also age better than screen recordings. When your UI changes — and it will — you don't need to reshoot the entire video. Individual screens can be updated without starting from scratch. I've made software demo videos for platforms from fintech to property management, and the brief is always the same: show the product doing what it does, clearly, in under two minutes.
+            Animated product demos also age better than screen recordings. When your UI changes (and it will) you don't need to reshoot the entire video. Individual screens can be updated without starting from scratch. I've made software demo videos for platforms from fintech to property management, and the brief is always the same: show the product doing what it does, clearly, in under two minutes.
           </p>
         </div>
       </div>
@@ -151,7 +151,7 @@ const faqSchema = {
       <span class="text-metadata mb-10 block">What I Make</span>
       <div class="space-y-12">
         {services.map((service, i) => (
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12 border-b border-black/10 last:border-b-0 last:pb-0">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start pb-12 border-b border-black/10 last:border-b-0 last:pb-0">
             <div>
               <span class="text-metadata mb-4 block text-accent">{(i + 1).toString().padStart(2, '0')}</span>
               <h3 class="font-display text-lg font-medium tracking-tight">{service.title}</h3>

@@ -22,22 +22,22 @@ This isn't about making something pretty. It's about taking the complexity out o
 
 ## Why SaaS Products Need Explainer Videos
 
-Software is invisible. You can't hold it. You can't photograph it doing something useful. And most product screenshots look the same — a dashboard with graphs and a sidebar.
+Software is invisible. You can't hold it. You can't photograph it doing something useful. And most product screenshots look the same: a dashboard with graphs and a sidebar.
 
 An explainer video changes that. In 60 to 90 seconds, you can show what your platform does, who it's for, and why it matters. Not by listing features, but by walking through a real scenario that your target customer recognises.
 
 The companies I work with use explainer videos in three main places:
 
-- **Homepage hero** — the first thing a visitor sees. Instead of reading three paragraphs, they watch a 60-second overview and either self-qualify or move on. Both outcomes save your sales team time.
-- **Sales enablement** — a product demo video that reps can send before or after a call. Prospects share it internally, which means your pitch reaches decision-makers who never joined the demo.
-- **Onboarding sequences** — short animated walkthroughs that guide new users through key workflows. This is where explainer videos directly reduce churn.
+- **Homepage hero:** the first thing a visitor sees. Instead of reading three paragraphs, they watch a 60-second overview and either self-qualify or move on. Both outcomes save your sales team time.
+- **Sales enablement:** a product demo video that reps can send before or after a call. Prospects share it internally, which means your pitch reaches decision-makers who never joined the demo.
+- **Onboarding sequences:** short animated walkthroughs that guide new users through key workflows. This is where explainer videos directly reduce churn.
 
 ## What Makes a Good SaaS Explainer Video
 
 Not all explainer videos are equal. The ones that actually drive results share a few things in common:
 
 - **They lead with the problem, not the product.** Your viewer needs to recognise their own pain before they care about your solution. Start with the frustration they already feel.
-- **They show the product in context.** Abstract metaphors are fine for brand films. For SaaS, you need to show the actual interface — or a stylised version of it — doing something useful.
+- **They show the product in context.** Abstract metaphors are fine for brand films. For SaaS, you need to show the actual interface, or a stylised version of it, doing something useful.
 - **They're the right length.** 60 seconds for a homepage overview. 90 seconds for a product walkthrough. Two minutes if you're covering multiple user types or a complex workflow. Anything longer needs a very good reason.
 - **They age well.** Animated product demos outlast screen recordings because they don't break every time your UI changes. A well-made animation can stay relevant for two or three years.
 
@@ -55,7 +55,7 @@ That might sound like a lot until you compare it to the cost of a sales team spe
 
 ## Getting Started
 
-If you're thinking about a SaaS explainer video, the first step is getting clear on what you need it to do. Is it a homepage hero? A sales tool? An onboarding asset? The answer shapes everything — length, tone, level of product detail, and where the video lives.
+If you're thinking about a SaaS explainer video, the first step is getting clear on what you need it to do. Is it a homepage hero? A sales tool? An onboarding asset? The answer shapes everything: length, tone, level of product detail, and where the video lives.
 
 I work with SaaS companies from seed stage to Series B, and the brief is always the same: take something complex and make it clear. If that sounds like what you need, take a look at my SaaS explainer video work or get in touch.`
   },
@@ -68,7 +68,7 @@ I work with SaaS companies from seed stage to Series B, and the brief is always 
     excerpt: "Most explainer video scripts fail because they start with the product instead of the problem. Here's a proven framework for writing scripts that keep viewers watching and drive action.",
     content: `Most explainer video scripts fail for the same reason: they start with the product instead of the problem. The viewer doesn't care about your features yet. They care about their own frustration. Your script needs to meet them there first.
 
-After writing and producing over 50 explainer videos, I've landed on a framework that consistently works — whether the video is 30 seconds for social or two minutes for a product walkthrough.
+After writing and producing over 50 explainer videos, I've landed on a framework that consistently works, whether the video is 30 seconds for social or two minutes for a product walkthrough.
 
 ## The Four-Part Framework
 
@@ -76,9 +76,9 @@ Every effective explainer video script follows this structure. The proportions s
 
 **1. The Problem (20% of your runtime)**
 
-Open with something your viewer already feels. Not a statistic — a situation. If you're making a SaaS explainer video, describe the specific workflow that's broken. If it's a cause video, describe the reality your audience hasn't seen.
+Open with something your viewer already feels. Not a statistic. A situation. If you're making a SaaS explainer video, describe the specific workflow that's broken. If it's a cause video, describe the reality your audience hasn't seen.
 
-For a 60-second video, this is about two to three sentences. You're not dwelling here — you're establishing recognition. The viewer should think "yes, that's exactly my problem" within the first ten seconds.
+For a 60-second video, this is about two to three sentences. You're not dwelling here. You're establishing recognition. The viewer should think "yes, that's exactly my problem" within the first ten seconds.
 
 **2. The Solution (10% of your runtime)**
 
@@ -86,13 +86,13 @@ Introduce your product or organisation as the answer. Keep it to one sentence. N
 
 **3. How It Works (50% of your runtime)**
 
-This is where most of your screen time goes. Walk through two to four key steps or features that show how the product solves the problem you opened with. Each step should be visual — this is where your animator brings the interface or concept to life.
+This is where most of your screen time goes. Walk through two to four key steps or features that show how the product solves the problem you opened with. Each step should be visual. This is where your animator brings the interface or concept to life.
 
 The most common mistake here is trying to cover everything. You don't need to show every feature. Pick the ones that matter most to your primary audience and show those clearly. Three features explained well beat eight features mentioned in passing.
 
 **4. The Call to Action (20% of your runtime)**
 
-End with what you want the viewer to do next. Sign up, book a demo, visit the website, learn more. Be specific. Add a line of social proof if you have it — a recognisable client name or a concrete result.
+End with what you want the viewer to do next. Sign up, book a demo, visit the website, learn more. Be specific. Add a line of social proof if you have it: a recognisable client name or a concrete result.
 
 ## Word Count Guidelines
 
@@ -103,7 +103,7 @@ A professional voiceover reads at about 140 to 150 words per minute. Use that to
 - **90-second video:** 200 to 225 words
 - **2-minute video:** 270 to 300 words
 
-If your script is running long, cut features — not the problem statement or the call to action. Those bookends are what make the video work.
+If your script is running long, cut features, not the problem statement or the call to action. Those bookends are what make the video work.
 
 ## Writing for Animation
 
@@ -112,7 +112,7 @@ Writing an explainer video script is different from writing a blog post or a sal
 - **Write in scenes, not paragraphs.** Each sentence or pair of sentences should correspond to a distinct visual moment. If you can't picture what's on screen while you read a line, rewrite it.
 - **Cut the jargon.** If your target viewer wouldn't use a term in casual conversation, replace it. Technical accuracy matters less than immediate understanding.
 - **Read it aloud.** Every script should sound natural when spoken. If a sentence feels awkward to say, it'll sound worse with a voiceover.
-- **Leave room for the visuals.** The animation will carry a lot of meaning. You don't need to describe everything in words — sometimes a pause with the right visual does more than another sentence.
+- **Leave room for the visuals.** The animation will carry a lot of meaning. You don't need to describe everything in words. Sometimes a pause with the right visual does more than another sentence.
 
 ## Common Mistakes
 
@@ -123,7 +123,7 @@ Writing an explainer video script is different from writing a blog post or a sal
 
 ## What Happens Next
 
-Once the script is locked, it becomes the foundation for everything — storyboarding, style frames, animation, and voiceover. A strong script makes every stage faster and cheaper. A weak one creates expensive revisions.
+Once the script is locked, it becomes the foundation for everything: storyboarding, style frames, animation, and voiceover. A strong script makes every stage faster and cheaper. A weak one creates expensive revisions.
 
 If you'd rather have someone handle the script and production together, that's how I work. Every project at Motion Story starts with the script, and I don't move to design until the words are right. See how the process works or get in touch to talk through your project.`
   },
@@ -134,7 +134,7 @@ If you'd rather have someone handle the script and production together, that's h
     category: "Explainer Video Strategy",
     tags: ["Animated video", "Live action video", "Explainer video production", "Video marketing", "Product demo videos"],
     excerpt: "Animated or live action? The answer depends on what you're explaining, who you're talking to, and where the video will live. Here's how to decide.",
-    content: `Animated or live action? It's the first question most businesses ask when they decide to invest in video. The answer isn't about which format is "better" — it's about which one does the job you need it to do.
+    content: `Animated or live action? It's the first question most businesses ask when they decide to invest in video. The answer isn't about which format is "better." It's about which one does the job you need it to do.
 
 After a decade of producing animated explainer videos for SaaS companies, nonprofits, and agencies, I've seen both formats succeed and fail. The difference comes down to matching the format to the message.
 
@@ -144,18 +144,18 @@ Animation works best when you're explaining something that's hard to film. If yo
 
 **Use animation when:**
 
-- Your product is digital or invisible — SaaS platforms, apps, data tools. You can't film software being useful, but you can animate it.
-- You need to simplify complexity — showing how data flows through a system, how a multi-step process works, or how different stakeholders interact.
-- Your audience is global — animation doesn't have accents, doesn't age, and doesn't carry cultural baggage the way actors do. A character illustrated in a clean, modern style works across markets.
-- You want longevity — a well-produced animated explainer video stays relevant for two to three years. A live action piece with specific people, locations, or fashion choices can feel dated in 12 months.
-- Budget matters — animated explainer videos typically cost $4,000 to $12,000. A comparable live action production with crew, talent, and location starts at $15,000 and goes up fast.
+- Your product is digital or invisible. SaaS platforms, apps, data tools. You can't film software being useful, but you can animate it.
+- You need to simplify complexity, showing how data flows through a system, how a multi-step process works, or how different stakeholders interact.
+- Your audience is global. Animation doesn't have accents, doesn't age, and doesn't carry cultural baggage the way actors do. A character illustrated in a clean, modern style works across markets.
+- You want longevity. A well-produced animated explainer video stays relevant for two to three years. A live action piece with specific people, locations, or fashion choices can feel dated in 12 months.
+- Budget matters. Animated explainer videos typically cost $4,000 to $12,000. A comparable live action production with crew, talent, and location starts at $15,000 and goes up fast.
 
 **Animation styles to consider:**
 
-- **2D motion graphics** — the most common style for SaaS and product explainers. Clean, modern, and highly versatile.
-- **Character animation** — useful when you need to show people using your product or experiencing a problem. Works well for cause and nonprofit videos.
-- **Data visualisation** — for products or missions that involve numbers, trends, or geographic data.
-- **Product UI animation** — stylised screen recordings that show your interface in action without breaking when the UI updates.
+- **2D motion graphics:** the most common style for SaaS and product explainers. Clean, modern, and highly versatile.
+- **Character animation:** useful when you need to show people using your product or experiencing a problem. Works well for cause and nonprofit videos.
+- **Data visualisation:** for products or missions that involve numbers, trends, or geographic data.
+- **Product UI animation:** stylised screen recordings that show your interface in action without breaking when the UI updates.
 
 ## When Live Action Is the Right Choice
 
@@ -163,17 +163,17 @@ Live action creates a human connection that animation can't replicate. If your m
 
 **Use live action when:**
 
-- You're telling a human story — testimonials, founder stories, customer success stories. Real faces build trust faster than illustrated ones.
-- Your product is physical — if you're selling something people can hold, wear, or use in a physical space, show it in the real world.
-- You need to establish personal credibility — thought leadership content, investor updates, or any context where the audience needs to see and trust the person behind the company.
-- The emotion is the message — charity campaigns, awareness pieces, and brand films that need to move people rather than inform them.
+- You're telling a human story. Testimonials, founder stories, customer success stories. Real faces build trust faster than illustrated ones.
+- Your product is physical. If you're selling something people can hold, wear, or use in a physical space, show it in the real world.
+- You need to establish personal credibility. Thought leadership content, investor updates, or any context where the audience needs to see and trust the person behind the company.
+- The emotion is the message. Charity campaigns, awareness pieces, and brand films that need to move people rather than inform them.
 
 **The trade-offs with live action:**
 
-- Higher production costs — crew, talent, location, wardrobe, post-production.
-- Less flexible in editing — changing a word in an animation takes minutes. Re-shooting a scene takes a day.
-- Ages faster — people, fashion, and locations date the content.
-- Location-dependent — you need to be in the same place as your crew unless you're using remote production, which has its own limitations.
+- Higher production costs: crew, talent, location, wardrobe, post-production.
+- Less flexible in editing. Changing a word in an animation takes minutes. Re-shooting a scene takes a day.
+- Ages faster. People, fashion, and locations date the content.
+- Location-dependent. You need to be in the same place as your crew unless you're using remote production, which has its own limitations.
 
 ## The Hybrid Approach
 
@@ -189,7 +189,7 @@ Ask yourself three questions:
 - **Where will this video live?** Homepage explainers and product demos work best as animation. Social content and brand films can go either way. Testimonials should almost always be live action.
 - **What's my budget and timeline?** Animation is typically faster and more affordable. If you're working with a tight timeline or a modest budget, animation gives you more production value per dollar.
 
-For most businesses explaining a digital product or complex service, animation is the right starting point. It's what I specialise in at Motion Story — taking complex products and missions and making them clear through motion design. If you're weighing up your options, get in touch and I can help you figure out the right approach for your project.`
+For most businesses explaining a digital product or complex service, animation is the right starting point. It's what I specialise in at Motion Story, taking complex products and missions and making them clear through motion design. If you're weighing up your options, get in touch and I can help you figure out the right approach for your project.`
   },
   {
     slug: "why-most-saas-videos-get-ignored",
@@ -206,13 +206,13 @@ Views trickled. Conversions didn't move. Your team started questioning whether v
 
 Most SaaS videos get ignored not because they're bad, but because the company did nothing to set them up for success. They treated publishing as the finish line when it should have been the starting gun.
 
-Here's what to do before you hit publish — and why it matters more than the production itself.
+Here's what to do before you hit publish, and why it matters more than the production itself.
 
 ## Why Good Videos Get Ignored
 
 ### Reason 1: No Distribution Plan
 
-You wouldn't launch a product without a go-to-market strategy. But most companies launch a video with no distribution plan at all. They embed it on a page and hope people find it. That's not a strategy — it's a prayer.
+You wouldn't launch a product without a go-to-market strategy. But most companies launch a video with no distribution plan at all. They embed it on a page and hope people find it. That's not a strategy. It's a prayer.
 
 A video needs a deliberate distribution plan the same way a blog post or a product launch does. Where will it be shared? Who will share it? When? How many times? Through which channels?
 
@@ -232,7 +232,7 @@ Every element around the video affects whether someone presses play: the headlin
 
 You posted it on LinkedIn once. You sent one email to your list. Done. But a single post reaches 5-10% of your audience at best. The other 90% never saw it.
 
-Great content deserves repeated promotion. Not identical reposts — different angles, different clips, different contexts. A 60-second explainer can fuel weeks of social content if you break it up strategically.
+Great content deserves repeated promotion. Not identical reposts. Different angles, different clips, different contexts. A 60-second explainer can fuel weeks of social content if you break it up strategically.
 
 ### Reason 5: No Feedback Loop
 
@@ -247,12 +247,12 @@ Before you publish your next SaaS video, complete this checklist. It takes 30 mi
 - **Is the video above the fold on the most relevant page?** For explainers, that's the homepage. For product demos, that's the product page or a dedicated demo page.
 - **Is the video player large enough?** At least 640px wide on desktop. Full-width on mobile. Don't make people squint.
 - **Is there a clear, compelling headline above the video?** "See how [Product] works" beats a bare video player every time.
-- **Is the thumbnail compelling?** Use a custom thumbnail — not a random frame grab. The thumbnail is your video's headline.
+- **Is the thumbnail compelling?** Use a custom thumbnail, not a random frame grab. The thumbnail is your video's headline.
 
 ### Distribution Plan
 
 - **Social media:** Schedule 3-5 posts over the first two weeks. First post: the full video. Subsequent posts: 15-30 second clips with different hooks.
-- **Email:** Send to your full list within the first week. Segment if possible — different subject lines for different personas.
+- **Email:** Send to your full list within the first week. Segment if possible with different subject lines for different personas.
 - **Sales team:** Brief the sales team on how and when to use the video. Add it to email templates and CRM sequences.
 - **Partners and integrations:** Share with partner companies for co-promotion if relevant.
 - **Paid promotion:** Even $500 in LinkedIn spend on a strong explainer video can drive meaningful traffic in the first two weeks.
@@ -261,7 +261,7 @@ Before you publish your next SaaS video, complete this checklist. It takes 30 mi
 
 - **Social cuts:** 2-3 short versions (15-second and 30-second) for social media platforms.
 - **GIF or animated thumbnail:** A 3-5 second loop that can be used in emails (where video doesn't auto-play).
-- **Transcript or blog post:** Written version of the video content for SEO. Search engines can't watch videos — they need text.
+- **Transcript or blog post:** Written version of the video content for SEO. Search engines can't watch videos. They need text.
 - **Landing page:** If the video is for a campaign, build a dedicated page around it with a clear CTA.
 
 ### Measurement
@@ -274,9 +274,9 @@ For a detailed guide on what metrics to track and how to calculate ROI, read my 
 
 ## The 80/20 of Video Publishing
 
-Here's a ratio I share with every client: spend 20% of your video budget on production and 80% of your effort on distribution and optimisation. The production is the easy part — you hire someone talented and they deliver a great video. The hard part is making sure the right people see it.
+Here's a ratio I share with every client: spend 20% of your video budget on production and 80% of your effort on distribution and optimisation. The production is the easy part. You hire someone talented and they deliver a great video. The hard part is making sure the right people see it.
 
-Most companies invert this. They agonise over the production — the style, the voiceover, the third round of revisions — and then publish it with no plan and wonder why it underperformed.
+Most companies invert this. They agonise over the production (the style, the voiceover, the third round of revisions) and then publish it with no plan and wonder why it underperformed.
 
 The video that's 80% as polished but seen by 10x more people will outperform the masterpiece that nobody watches.
 
@@ -290,9 +290,9 @@ The first 30 days after publishing are critical. Here's the weekly rhythm:
 
 **Week 3:** Optimise placement. If play rate is below 15%, try a different position on the page, a larger player, or a stronger headline. If watch-through is below 40%, the opening might need a re-edit.
 
-**Week 4:** Compile results. Compare to your baseline. Calculate preliminary ROI. Decide on next steps — more distribution, a re-edit, or planning the next video.
+**Week 4:** Compile results. Compare to your baseline. Calculate preliminary ROI. Decide on next steps: more distribution, a re-edit, or planning the next video.
 
-If you want help planning a video project with distribution built in from the start, [get in touch](/contact/). The best time to plan your distribution strategy is before production begins — not after the video is finished.
+If you want help planning a video project with distribution built in from the start, [get in touch](/contact/). The best time to plan your distribution strategy is before production begins, not after the video is finished.
 
 ## FAQ
 
@@ -303,7 +303,7 @@ Absolutely. If the content is still relevant, reshare it. Most of your audience 
 For a SaaS explainer, $500-$2,000 in the first month on LinkedIn or YouTube will give you meaningful data on how the video performs with cold audiences. Use that data to decide whether to scale up.
 
 **Should I gate my video behind a form?**
-Almost never. Gating a video dramatically reduces views and sends the signal that your content isn't worth watching unless you capture an email first. Let the video do its job — build trust and interest — and gate the next step (demo booking, trial signup) instead.
+Almost never. Gating a video dramatically reduces views and sends the signal that your content isn't worth watching unless you capture an email first. Let the video do its job (build trust and interest) and gate the next step (demo booking, trial signup) instead.
 
 ---
 
@@ -326,9 +326,9 @@ After producing videos for hundreds of SaaS companies, I've seen the ones that d
 
 **The problem:** Your sales team sends cold emails that look like every other cold email. Open rates are low. Response rates are lower.
 
-**The video solution:** A personalised 30-second video introduction. Not a generic product video — a short clip where the rep introduces themselves, mentions the prospect's company by name, and explains why they're reaching out.
+**The video solution:** A personalised 30-second video introduction. Not a generic product video. A short clip where the rep introduces themselves, mentions the prospect's company by name, and explains why they're reaching out.
 
-This doesn't need to be animated. A quick webcam recording works. But pair it with a 45-second animated overview of your product that the rep links to in the same email. "Here's a quick look at what we do" — linked to a polished [explainer video](/explainer-videos/) that sells the category and the product.
+This doesn't need to be animated. A quick webcam recording works. But pair it with a 45-second animated overview of your product that the rep links to in the same email. "Here's a quick look at what we do," linked to a polished [explainer video](/explainer-videos/) that sells the category and the product.
 
 **Impact:** Companies using video in outreach emails report 2-3x higher response rates compared to text-only emails.
 
@@ -338,7 +338,7 @@ This doesn't need to be animated. A quick webcam recording works. But pair it wi
 
 **The video solution:** Send a 60-90 second product overview video before the demo call. "Before our call on Thursday, here's a quick overview of the platform so we can jump straight into your use case."
 
-This should be a polished, animated product explainer — not a raw screen recording. It positions your product professionally and ensures the prospect arrives with context. Check out how I approach these on my [product demo video page](/product-demo-videos/).
+This should be a polished, animated product explainer, not a raw screen recording. It positions your product professionally and ensures the prospect arrives with context. Check out how I approach these on my [product demo video page](/product-demo-videos/).
 
 **Impact:** Demos where the prospect watched a pre-demo video run 30-40% more efficiently. Reps close at higher rates because they spend their time on objection handling rather than education.
 
@@ -346,7 +346,7 @@ This should be a polished, animated product explainer — not a raw screen recor
 
 **The problem:** Live demos go wrong. The staging environment crashes. The feature the prospect cares about isn't configured. The rep gets flustered.
 
-**The video solution:** Supplement (don't replace) the live demo with pre-recorded product walkthrough segments. When the rep gets to a complex workflow, they can play a polished 30-second animation that shows it perfectly — then switch back to live to answer questions.
+**The video solution:** Supplement (don't replace) the live demo with pre-recorded product walkthrough segments. When the rep gets to a complex workflow, they can play a polished 30-second animation that shows it perfectly, then switch back to live to answer questions.
 
 This isn't about replacing the live demo. It's about having a safety net for the moments that matter most. A beautiful animated walkthrough of your core workflow is more impressive than a buggy staging environment.
 
@@ -368,7 +368,7 @@ This is where video drives the most underappreciated value in SaaS sales. **The 
 
 **The video solution:** Embed a 60-second animated summary at the top of your proposal. This recaps the problem, the solution, and the business case. It re-engages the prospect at the moment they're evaluating your proposal against competitors.
 
-You can also create a short "why us" video that addresses common objections — pricing, implementation time, integration complexity. Proactively answering objections via video feels confident and transparent.
+You can also create a short "why us" video that addresses common objections: pricing, implementation time, integration complexity. Proactively answering objections via video feels confident and transparent.
 
 **Impact:** Proposals with embedded video have 40-60% higher open rates and faster decision timelines.
 
@@ -400,7 +400,7 @@ For a framework on how to structure this investment, read my guide on [measuring
 Make it easy. Embed the videos in email templates, add them to your CRM as sendable assets, and track usage. If reps see that deals with video close faster, adoption happens naturally. Start with one champion on the team and let the results spread.
 
 **Should sales videos be different from marketing videos?**
-Yes, in length and specificity. Marketing videos cast a wide net — they need to speak to a broad audience. Sales videos can be narrower and more detailed because you know who's watching. A marketing explainer says "here's what we do." A sales video says "here's how we solve the exact problem you described on Tuesday's call."
+Yes, in length and specificity. Marketing videos cast a wide net. They need to speak to a broad audience. Sales videos can be narrower and more detailed because you know who's watching. A marketing explainer says "here's what we do." A sales video says "here's how we solve the exact problem you described on Tuesday's call."
 
 **How much does a full sales video suite cost?**
 For a pre-demo explainer, a shareable overview, and 3-5 onboarding clips: $15,000-$30,000 as a package. That's significantly less than producing each piece independently because the visual system, illustration assets, and brand elements are shared across all videos.
@@ -416,9 +416,9 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     category: "Conversion Strategy",
     tags: ["homepage video", "product demo video", "SaaS conversion", "video strategy"],
     excerpt: "Should your SaaS homepage feature an explainer or a product demo? The answer depends on your audience's awareness level and your conversion goal.",
-    content: `Homepage explainer or product demo — which one should sit at the top of your SaaS website? I get asked this constantly, and the answer isn't "both." It's "it depends on who's landing on your page and what they already know."
+    content: `Homepage explainer or product demo. Which one should sit at the top of your SaaS website? I get asked this constantly, and the answer isn't "both." It's "it depends on who's landing on your page and what they already know."
 
-These two video types serve fundamentally different purposes. Choosing wrong doesn't just waste your budget — it actively hurts conversion because the video is confusing rather than clarifying.
+These two video types serve fundamentally different purposes. Choosing wrong doesn't just waste your budget. It actively hurts conversion because the video is confusing rather than clarifying.
 
 ## What Each Video Type Does
 
@@ -432,7 +432,7 @@ These two video types serve fundamentally different purposes. Choosing wrong doe
 
 **Audience assumption:** The viewer has never heard of you. They might not even know the problem category exists.
 
-**Conversion goal:** Get the viewer interested enough to take the next step — start a trial, book a demo, or explore the product.
+**Conversion goal:** Get the viewer interested enough to take the next step: start a trial, book a demo, or explore the product.
 
 ### Product Demo Video
 
@@ -444,11 +444,11 @@ These two video types serve fundamentally different purposes. Choosing wrong doe
 
 **Audience assumption:** The viewer knows what you do and wants to see the details. They're evaluating whether your product fits their needs.
 
-**Conversion goal:** Move the viewer from evaluation to decision — start a trial with confidence or request a personalised demo.
+**Conversion goal:** Move the viewer from evaluation to decision: start a trial with confidence or request a personalised demo.
 
 ## When to Use an Explainer on Your Homepage
 
-**Your audience is mostly cold traffic.** If the majority of homepage visitors come from organic search, paid ads, or referrals — and they're encountering your brand for the first time — they need context before details. An explainer gives them the "why should I care" before the "how it works."
+**Your audience is mostly cold traffic.** If the majority of homepage visitors come from organic search, paid ads, or referrals, and they're encountering your brand for the first time, they need context before details. An explainer gives them the "why should I care" before the "how it works."
 
 **Your product category is new or unfamiliar.** If you're creating a new market or solving a problem people don't yet have a name for, you need the explainer to frame the problem first. Jumping into a product demo assumes the viewer already understands the landscape.
 
@@ -458,13 +458,13 @@ These two video types serve fundamentally different purposes. Choosing wrong doe
 
 ## When to Use a Product Demo on Your Homepage
 
-**Your audience is mostly warm traffic.** If visitors come from direct search, email campaigns, or sales outreach — and they already know who you are — they don't need the basics. They want to see the product in action.
+**Your audience is mostly warm traffic.** If visitors come from direct search, email campaigns, or sales outreach, and they already know who you are, they don't need the basics. They want to see the product in action.
 
 **Your product category is well understood.** If you're in a crowded space where everyone knows what CRM, project management, or email marketing is, you don't need to explain the category. Go straight to "here's why ours is different" with a product walkthrough.
 
-**Your product has strong visual appeal.** Some SaaS interfaces are genuinely impressive — beautiful dashboards, intuitive workflows, delightful interactions. If your product looks good in motion, show it. A well-animated [product demo video](/product-demo-videos/) can differentiate you on execution quality alone.
+**Your product has strong visual appeal.** Some SaaS interfaces are genuinely impressive: beautiful dashboards, intuitive workflows, delightful interactions. If your product looks good in motion, show it. A well-animated [product demo video](/product-demo-videos/) can differentiate you on execution quality alone.
 
-**You're targeting technical buyers.** Engineers, developers, and technical product managers often prefer to see the product immediately. They don't need a problem statement — they already know the problem. Show them the solution.
+**You're targeting technical buyers.** Engineers, developers, and technical product managers often prefer to see the product immediately. They don't need a problem statement. They already know the problem. Show them the solution.
 
 ## The Data: What Actually Converts Better
 
@@ -527,7 +527,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     excerpt: "Measuring video ROI isn't guesswork. Here's a practical framework for calculating exactly what your motion design investment returns.",
     content: `You spent $12,000 on a motion design video. Your CEO wants to know: was it worth it? If you can't answer with numbers, the next video budget is going to be a harder sell.
 
-Here's the thing — measuring video ROI isn't actually that hard. It's just that most SaaS companies track the wrong metrics or don't connect the video to downstream revenue. This guide gives you a practical framework for measuring what your motion design investment actually returns.
+Here's the thing. Measuring video ROI isn't actually that hard. It's just that most SaaS companies track the wrong metrics or don't connect the video to downstream revenue. This guide gives you a practical framework for measuring what your motion design investment actually returns.
 
 ## Why Video ROI Feels Hard to Measure
 
@@ -559,7 +559,7 @@ These connect the video to your marketing and sales pipeline.
 **For product demo videos:**
 - Track how often sales reps send the video in outreach
 - Measure response rates on emails that include the video vs those that don't
-- Track deal velocity — do deals close faster when the prospect watched the demo video?
+- Track deal velocity. Do deals close faster when the prospect watched the demo video?
 
 **For onboarding videos:**
 - Measure feature adoption rates for features covered by the video
@@ -584,7 +584,7 @@ To calculate revenue influenced by video:
 
 If the video cost $12,000, the first-year ROI is ($28,800 - $12,000) / $12,000 = 140%.
 
-And that's conservative — the video will continue to generate returns for 2-3 years.
+And that's conservative. The video will continue to generate returns for 2-3 years.
 
 ## Setting Up Tracking
 
@@ -630,7 +630,7 @@ And the video was still running and performing 18 months later. For a deeper loo
 
 **Not measuring the baseline.** If you don't know your pre-video conversion rate, you can't calculate the video's impact. Always measure before you launch.
 
-**Ignoring the time value.** A $12,000 video that works for 30 months costs $400/month. Compare that to a $4,000 video that needs replacing every 6 months — $667/month. The cheaper video is actually more expensive.
+**Ignoring the time value.** A $12,000 video that works for 30 months costs $400/month. Compare that to a $4,000 video that needs replacing every 6 months ($667/month). The cheaper video is actually more expensive.
 
 **Attributing all improvement to the video.** Be honest. If you launched a new video, redesigned the homepage, and changed your pricing at the same time, you can't credit the video for all of the improvement. Isolate variables where possible.
 
@@ -639,10 +639,10 @@ If you're building a case for video investment, start by tracking these metrics 
 ## FAQ
 
 **What if my traffic is too low to measure statistically significant results?**
-Focus on qualitative signals. Are prospects mentioning the video in sales calls? Is the sales team using it? Are support tickets dropping for the features you covered? Low-traffic businesses can still measure ROI — just with different data points.
+Focus on qualitative signals. Are prospects mentioning the video in sales calls? Is the sales team using it? Are support tickets dropping for the features you covered? Low-traffic businesses can still measure ROI, just with different data points.
 
 **Which video type has the highest ROI?**
-Onboarding videos, consistently. They directly reduce churn and support costs, which makes the ROI calculation straightforward. Homepage explainers are second — they influence the top of the funnel at scale.
+Onboarding videos, consistently. They directly reduce churn and support costs, which makes the ROI calculation straightforward. Homepage explainers are second. They influence the top of the funnel at scale.
 
 **How do I present video ROI to my CFO?**
 Use the revenue attribution formula above. CFOs want a single number: how much revenue did the video generate relative to its cost? Show the baseline, the improvement, and the maths. Keep it to one page.
@@ -658,7 +658,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     category: "Conversion Strategy",
     tags: ["video performance", "SaaS video metrics", "video testing", "conversion optimization"],
     excerpt: "Most SaaS companies can't tell whether their video is working or not. Here's a simple framework to evaluate any video in 10 seconds flat.",
-    content: `You invested $10,000 in a product video six months ago. Is it working? Most SaaS companies can't answer that question with any confidence. They'll tell you the video "looks great" or that they "got good feedback" — but they have no idea whether it's actually moving the metrics that matter.
+    content: `You invested $10,000 in a product video six months ago. Is it working? Most SaaS companies can't answer that question with any confidence. They'll tell you the video "looks great" or that they "got good feedback," but they have no idea whether it's actually moving the metrics that matter.
 
 Here's a simple framework I use with clients to evaluate whether a video is doing its job. It takes 10 seconds of viewing and 10 minutes of data review. If your video fails, I'll tell you what to do about it.
 
@@ -667,7 +667,7 @@ Here's a simple framework I use with clients to evaluate whether a video is doin
 Watch the first 10 seconds of your video as if you've never seen your product before. Answer three questions:
 
 **1. Do I understand what the company does?**
-Within 10 seconds, a first-time viewer should have a basic grasp of the problem you solve or the product category you're in. Not the details — just the territory. If the first 10 seconds are a logo animation, a generic statement about innovation, or abstract visuals with no clear connection to a product, you've failed this test.
+Within 10 seconds, a first-time viewer should have a basic grasp of the problem you solve or the product category you're in. Not the details, just the territory. If the first 10 seconds are a logo animation, a generic statement about innovation, or abstract visuals with no clear connection to a product, you've failed this test.
 
 **2. Do I know who this is for?**
 The video should signal its audience within 10 seconds. This happens through the scenario described, the visual context, or the language used. "If you manage a remote team" tells you who it's for. "For businesses of all sizes" tells you nothing.
@@ -695,21 +695,21 @@ Now look at the numbers. These five metrics tell you whether the video is actual
 
 **Benchmark:** 50-70% for a 60-second video. 35-50% for a 90-second video. Under 30% means the video is losing people.
 
-**What low watch-through means:** The video is too long, the middle section drags, or the opening hook isn't strong enough to carry viewers through. Check your retention graph — the steepest drop-off point tells you exactly where you're losing them. For help with openings, read my piece on [the 3-second watch rule](/blog/how-to-get-past-3-second-watch-rule).
+**What low watch-through means:** The video is too long, the middle section drags, or the opening hook isn't strong enough to carry viewers through. Check your retention graph. The steepest drop-off point tells you exactly where you're losing them. For help with openings, read my piece on [the 3-second watch rule](/blog/how-to-get-past-3-second-watch-rule).
 
 ### Metric 3: Click-Through or Conversion Rate
 
-**What it measures:** What percentage of viewers take the desired action after watching — trial signup, demo booking, page visit.
+**What it measures:** What percentage of viewers take the desired action after watching: trial signup, demo booking, page visit.
 
 **Benchmark:** 3-10% for homepage videos driving trial signups. 10-25% for sales enablement videos driving demo requests.
 
-**What low conversion means:** The call to action is weak, unclear, or missing. The video might also be creating interest without urgency — the viewer understands the product but doesn't feel compelled to act now.
+**What low conversion means:** The call to action is weak, unclear, or missing. The video might also be creating interest without urgency. The viewer understands the product but doesn't feel compelled to act now.
 
 ### Metric 4: Share and Forward Rate
 
 **What it measures:** How often people share the video or forward it to colleagues.
 
-**Benchmark:** Any sharing above 2-3% is excellent for SaaS content. This metric matters most for sales enablement videos — the whole point is that prospects share them with internal stakeholders.
+**Benchmark:** Any sharing above 2-3% is excellent for SaaS content. This metric matters most for sales enablement videos. The whole point is that prospects share them with internal stakeholders.
 
 **What low share rate means:** The video doesn't make the viewer look smart for sharing it. It's either too generic, too long, or too salesy. The best-shared SaaS videos clearly explain a problem that the viewer's colleagues also face.
 
@@ -724,7 +724,7 @@ Now look at the numbers. These five metrics tell you whether the video is actual
 ## The Action Plan
 
 If your video fails the 10-second viewing test:
-- **Re-edit the opening.** You may not need a whole new video — sometimes restructuring the first 15 seconds transforms performance.
+- **Re-edit the opening.** You may not need a whole new video. Sometimes restructuring the first 15 seconds transforms performance.
 - **Tighten the runtime.** Cut anything that doesn't serve the three questions above.
 - **Sharpen the CTA.** Make the call to action specific and singular.
 
@@ -733,7 +733,7 @@ If your video passes the viewing test but fails the data test:
 - **Match the video to the right page.** A product demo on the homepage might not convert as well as an explainer. Match the content to the viewer's stage.
 - **Test variations.** Try different thumbnails, different page positions, or different surrounding copy.
 
-If your video passes both tests: congratulations. Now think about what your next video should be — a product demo, an onboarding series, or social cuts to extend reach. Check my guide on [what type of video your SaaS company needs](/blog/what-type-of-video-does-my-saas-company-need) for the logical next step.
+If your video passes both tests: congratulations. Now think about what your next video should be: a product demo, an onboarding series, or social cuts to extend reach. Check my guide on [what type of video your SaaS company needs](/blog/what-type-of-video-does-my-saas-company-need) for the logical next step.
 
 ## FAQ
 
@@ -759,11 +759,11 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     excerpt: "Most viewers decide in three seconds whether to keep watching. Here's what separates videos that hold attention from those that get scrolled past.",
     content: `Three seconds. That's how long a viewer gives your video before deciding to keep watching or scroll past. On social media, it's closer to 1.5 seconds. On a landing page, you get maybe five. But the principle is the same: the opening of your video is doing more work than any other part.
 
-I've spent 15 years making videos that need to grab attention fast. Here's what I've learned about what makes people stay — and what makes them leave.
+I've spent 15 years making videos that need to grab attention fast. Here's what I've learned about what makes people stay and what makes them leave.
 
 ## Why Three Seconds Matters
 
-Every video platform measures retention. YouTube, Vimeo, Wistia — they all track when viewers drop off. And the data is brutally consistent: the biggest drop happens in the first three to five seconds. If you lose 50% of your audience before the 10-second mark, your video is failing before it even gets to the message.
+Every video platform measures retention. YouTube, Vimeo, Wistia. They all track when viewers drop off. And the data is brutally consistent: the biggest drop happens in the first three to five seconds. If you lose 50% of your audience before the 10-second mark, your video is failing before it even gets to the message.
 
 This isn't about attention spans getting shorter (though they are). It's about competition. Your video is one of dozens that person will encounter today. They're making a rapid assessment: is this worth my time?
 
@@ -773,11 +773,11 @@ Your job is to answer that question immediately.
 
 ### 1. Start With Motion, Not a Title Card
 
-A static title card — your logo, a gradient background, the video title in Helvetica — is dead time. The viewer sees nothing happening and moves on.
+A static title card (your logo, a gradient background, the video title in Helvetica) is dead time. The viewer sees nothing happening and moves on.
 
 **What to do instead:** Start with movement. Something visually interesting happening from frame one. This doesn't mean flashy transitions or gratuitous effects. It means the visual is already telling a story the moment the video begins.
 
-For SaaS explainer videos, this might mean the animation is already showing a problem scenario — a frustrated person, a cluttered dashboard, data going in the wrong direction. The viewer sees themselves in the visual before the voiceover even starts.
+For SaaS explainer videos, this might mean the animation is already showing a problem scenario: a frustrated person, a cluttered dashboard, data going in the wrong direction. The viewer sees themselves in the visual before the voiceover even starts.
 
 ### 2. Open With the Problem
 
@@ -789,7 +789,7 @@ This is the most consistent predictor of retention I've seen across hundreds of 
 
 ### 3. Use Audio as a Hook (Even When Muted)
 
-On social media, most videos start muted. But on landing pages and in email, audio matters. A strong first line of voiceover — delivered with confidence and urgency — signals quality. A weak, generic opening line signals the opposite.
+On social media, most videos start muted. But on landing pages and in email, audio matters. A strong first line of voiceover, delivered with confidence and urgency, signals quality. A weak, generic opening line signals the opposite.
 
 **For muted contexts:** Use text on screen in the first two seconds that mirrors the hook. Bold, readable, urgent. "Tired of manual reporting?" on screen while the animation shows a person drowning in spreadsheets. The viewer gets the hook with or without sound.
 
@@ -797,7 +797,7 @@ On social media, most videos start muted. But on landing pages and in email, aud
 
 The best openings make the viewer curious. Something is incomplete, unexpected, or unresolved. They keep watching because they want to see what happens next.
 
-This can be as simple as showing a problem without immediately showing the solution. Or starting with an unexpected visual — a metaphor that doesn't quite make sense yet but is interesting enough to warrant a few more seconds. The reveal comes later. The curiosity comes first.
+This can be as simple as showing a problem without immediately showing the solution. Or starting with an unexpected visual, a metaphor that doesn't quite make sense yet but is interesting enough to warrant a few more seconds. The reveal comes later. The curiosity comes first.
 
 ### 5. Match the Energy to the Platform
 
@@ -805,7 +805,7 @@ A video that works on your homepage won't necessarily work on LinkedIn. The paci
 
 - **Homepage:** You have 5-8 seconds. The viewer chose to be there. Lead with the problem, keep the pacing measured.
 - **Social feed:** You have 1.5-3 seconds. The viewer is scrolling. Lead with movement, bold text, or an unexpected visual.
-- **Sales email:** You have about 5 seconds after they click play. Lead with relevance — this video is specifically about their problem.
+- **Sales email:** You have about 5 seconds after they click play. Lead with relevance. This video is specifically about their problem.
 - **Product onboarding:** You have the most room. The viewer is already invested. But you still need to show value in the first 10 seconds or they'll skip to the next step.
 
 ## What Kills Retention
@@ -821,14 +821,14 @@ A video that works on your homepage won't necessarily work on LinkedIn. The paci
 
 **Watch your analytics.** Most video platforms show you a retention graph. Look at where the drop-off happens. If it's in the first five seconds, your opening needs work. If it's at 30 seconds, your middle section is the problem.
 
-**Create multiple openings.** For social ads, produce two or three variations of the first three seconds and test which one holds attention best. The rest of the video can be identical — just swap the hook. I talk more about testing and measuring in my guide on [the 10-second test](/blog/10-second-test-is-your-video-working).
+**Create multiple openings.** For social ads, produce two or three variations of the first three seconds and test which one holds attention best. The rest of the video can be identical. Just swap the hook. I talk more about testing and measuring in my guide on [the 10-second test](/blog/10-second-test-is-your-video-working).
 
 If your SaaS videos are getting views but losing viewers early, the fix is almost always in the first five seconds. Get those right and the rest of the video has a chance to do its job. Take a look at [my explainer video work](/explainer-videos/) to see how I approach openings, or [get in touch](/contact/) to discuss your project.
 
 ## FAQ
 
 **Does the 3-second rule apply to product onboarding videos too?**
-Less strictly, but yes. New users inside your product are more patient, but they're still evaluating whether the video is worth their time. Open with the outcome — "After this 45-second walkthrough, you'll be able to set up automated reports" — so they know the payoff.
+Less strictly, but yes. New users inside your product are more patient, but they're still evaluating whether the video is worth their time. Open with the outcome. "After this 45-second walkthrough, you'll be able to set up automated reports," so they know the payoff.
 
 **Should I use text hooks or voiceover hooks?**
 Both, when possible. Text on screen for muted social contexts. Strong voiceover for landing pages and embedded video players. The hook should work in both modes.
@@ -853,11 +853,11 @@ I've audited hundreds of SaaS product videos over 15 years, and the same five pr
 
 ## Reason 1: You're Leading With Features, Not Problems
 
-This is the number one killer. Your video opens with "Our platform offers real-time analytics, automated workflows, and seamless integrations" — and the viewer is already gone.
+This is the number one killer. Your video opens with "Our platform offers real-time analytics, automated workflows, and seamless integrations," and the viewer is already gone.
 
 **Why it fails:** Features don't create urgency. Problems do. Your viewer needs to recognise their own pain before they care about your solution. If the first 10 seconds don't make them think "yes, that's exactly my situation," the remaining 80 seconds are wasted.
 
-**How to fix it:** Restructure the opening. Start with a scenario your target customer lives every day. "You spend three hours every Monday pulling data from five different tools into a spreadsheet" hits harder than "automated reporting across all your platforms." The feature is the same — the framing is everything.
+**How to fix it:** Restructure the opening. Start with a scenario your target customer lives every day. "You spend three hours every Monday pulling data from five different tools into a spreadsheet" hits harder than "automated reporting across all your platforms." The feature is the same. The framing is everything.
 
 ## Reason 2: The Video Is Too Long
 
@@ -873,15 +873,15 @@ I cover the science of attention and watch time in more detail in my piece on [h
 
 Your video ends with your logo and a tagline. Maybe a website URL. But there's no explicit instruction telling the viewer what to do next.
 
-**Why it fails:** Viewers don't take action by default. They need to be told — specifically and confidently. "Visit our website" isn't a CTA. "Start your free 14-day trial at example.com" is.
+**Why it fails:** Viewers don't take action by default. They need to be told, specifically and confidently. "Visit our website" isn't a CTA. "Start your free 14-day trial at example.com" is.
 
-**How to fix it:** End with one clear action. Not two, not three — one. And make it specific. If your goal is demo bookings, say "Book a 15-minute demo." If it's trial signups, say "Start your free trial — no credit card required." The last thing the viewer hears should be the thing you want them to do.
+**How to fix it:** End with one clear action. Not two, not three. One. And make it specific. If your goal is demo bookings, say "Book a 15-minute demo." If it's trial signups, say "Start your free trial, no credit card required." The last thing the viewer hears should be the thing you want them to do.
 
 ## Reason 4: The Video Lives in the Wrong Place
 
 You put the video on your homepage. Good. But it's below the fold, after 500 words of copy, next to a stock photo. Nobody scrolls that far.
 
-**Why it fails:** Placement determines whether the video gets watched. A demo video buried on a features page gets a fraction of the views it would get as the homepage hero. Context matters too — a video designed for sales outreach performs differently when it's embedded in a help centre.
+**Why it fails:** Placement determines whether the video gets watched. A demo video buried on a features page gets a fraction of the views it would get as the homepage hero. Context matters too. A video designed for sales outreach performs differently when it's embedded in a help centre.
 
 **How to fix it:** Match the video to the right context. Homepage hero videos should be above the fold, auto-playing (muted), with a prominent play button. Sales enablement videos should be sent directly by reps, not linked from a general page. Product demos should live on a dedicated demo page or within the product itself.
 
@@ -891,7 +891,7 @@ For a deeper dive into where different video types belong, read my guide on [hom
 
 Blue gradient background. Flat character illustration. Generic UI mockup. Upbeat acoustic guitar. Your video looks exactly like your competitors' videos, so it creates exactly zero differentiation.
 
-**Why it fails:** If your video looks generic, your company feels generic. The visual language of your video is communicating something about your brand whether you intended it or not. A templated look communicates "we didn't invest in this" — which makes prospects wonder what else you're cutting corners on.
+**Why it fails:** If your video looks generic, your company feels generic. The visual language of your video is communicating something about your brand whether you intended it or not. A templated look communicates "we didn't invest in this," which makes prospects wonder what else you're cutting corners on.
 
 **How to fix it:** Invest in custom design that reflects your actual brand. Use your colour palette, your typography, your visual personality. Show your real product interface (stylised, not raw screenshots). The video should feel like it belongs to your company and no one else's.
 
@@ -930,8 +930,8 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     date: "2025-12-17",
     category: "Craft & Process",
     tags: ["motion design engagement", "video production models", "SaaS video workflow", "creative partnership"],
-    excerpt: "Project-based, retainer, or embedded — each model has trade-offs. Here's how to pick the engagement type that matches your SaaS company's stage and needs.",
-    content: `Not every SaaS company needs the same relationship with a motion designer. Some need a single polished video. Others need an ongoing creative partner. The engagement model matters as much as the talent — pick the wrong one and you'll either overspend or underdeliver.
+    excerpt: "Project-based, retainer, or embedded. Each model has trade-offs. Here's how to pick the engagement type that matches your SaaS company's stage and needs.",
+    content: `Not every SaaS company needs the same relationship with a motion designer. Some need a single polished video. Others need an ongoing creative partner. The engagement model matters as much as the talent. Pick the wrong one and you'll either overspend or underdeliver.
 
 Here are the three main ways to work with a motion designer, and how to figure out which one fits your situation.
 
@@ -953,9 +953,9 @@ Here are the three main ways to work with a motion designer, and how to figure o
 
 **The upside:** Clear scope means predictable cost. You get to evaluate the designer's work on a single project before deciding whether to work together again. No commitment beyond the project.
 
-**The downside:** Every new project starts from scratch. The designer doesn't accumulate deep knowledge of your product or brand. There's a ramp-up cost each time — re-learning your positioning, your audience, your visual language.
+**The downside:** Every new project starts from scratch. The designer doesn't accumulate deep knowledge of your product or brand. There's a ramp-up cost each time, re-learning your positioning, your audience, your visual language.
 
-**When to choose this:** You need 1-3 videos per year and each one is a distinct project with its own brief. You're not at the stage where video content is a continuous stream. If this sounds like you, start by putting together a solid brief — I've laid out exactly how in my guide on [how to brief a motion designer](/blog/how-to-brief-a-motion-designer-saas-video).
+**When to choose this:** You need 1-3 videos per year and each one is a distinct project with its own brief. You're not at the stage where video content is a continuous stream. If this sounds like you, start by putting together a solid brief. I've laid out exactly how in my guide on [how to brief a motion designer](/blog/how-to-brief-a-motion-designer-saas-video).
 
 ## 2. Retainer Engagement
 
@@ -975,18 +975,18 @@ Here are the three main ways to work with a motion designer, and how to figure o
 
 **The upside:** The designer becomes an extension of your team. They understand your product deeply, know your brand guidelines by heart, and can produce content with minimal briefing. Turnaround times shrink dramatically. There's no ramp-up cost for each new video.
 
-**The downside:** You're committing to a monthly spend regardless of whether you use all the time. If your content cadence is unpredictable — busy one month, quiet the next — a retainer can feel wasteful during slow periods. You also get one creative perspective, which is fine for volume content but might not push the boundaries on hero pieces.
+**The downside:** You're committing to a monthly spend regardless of whether you use all the time. If your content cadence is unpredictable (busy one month, quiet the next) a retainer can feel wasteful during slow periods. You also get one creative perspective, which is fine for volume content but might not push the boundaries on hero pieces.
 
 **When to choose this:** You produce 3-6+ videos per month and need consistent quality and fast delivery. Your product and messaging are stable enough that a single designer can work semi-autonomously. You value speed and familiarity over variety.
 
 ## 3. Embedded or Integrated Partnership
 
-**How it works:** The motion designer (or boutique studio) operates as a virtual member of your team. They attend planning meetings, contribute to marketing strategy, and proactively suggest video content opportunities. This goes beyond execution — it's a creative partnership.
+**How it works:** The motion designer (or boutique studio) operates as a virtual member of your team. They attend planning meetings, contribute to marketing strategy, and proactively suggest video content opportunities. This goes beyond execution. It's a creative partnership.
 
 **Typical scope:**
 - 3-5 days per week of dedicated involvement
 - Strategic input on content planning and video marketing roadmap
-- Full production of all video assets — hero content, product demos, social, onboarding, internal comms
+- Full production of all video assets: hero content, product demos, social, onboarding, internal comms
 - Quarterly creative reviews and strategy sessions
 - $8,000-$20,000 per month
 
@@ -996,11 +996,11 @@ Here are the three main ways to work with a motion designer, and how to figure o
 - Companies approaching or past Series B that need a scaled content operation
 - Situations where the motion designer needs deep product access and regular collaboration with product, marketing, and sales teams
 
-**The upside:** You get senior creative thinking without the full-time salary and overhead of an in-house hire. The designer has enough context to be proactive — they'll identify opportunities you haven't thought of. The work is deeply aligned with your strategy because they're involved in shaping it.
+**The upside:** You get senior creative thinking without the full-time salary and overhead of an in-house hire. The designer has enough context to be proactive. They'll identify opportunities you haven't thought of. The work is deeply aligned with your strategy because they're involved in shaping it.
 
-**The downside:** This is a significant monthly commitment. It works best with a boutique studio or a senior freelancer — large agencies rarely offer this level of integration. You need to be willing to bring the designer into your internal processes, which requires trust and access.
+**The downside:** This is a significant monthly commitment. It works best with a boutique studio or a senior freelancer. Large agencies rarely offer this level of integration. You need to be willing to bring the designer into your internal processes, which requires trust and access.
 
-**When to choose this:** Video is central to your growth strategy, you're producing content weekly, and you need someone who thinks strategically — not just someone who animates. You want the benefits of an in-house creative director at a fraction of the cost.
+**When to choose this:** Video is central to your growth strategy, you're producing content weekly, and you need someone who thinks strategically, not just someone who animates. You want the benefits of an in-house creative director at a fraction of the cost.
 
 ## How to Transition Between Models
 
@@ -1057,7 +1057,7 @@ Here's exactly what to include, why each piece matters, and a template you can c
 
 The typical brief I receive from a SaaS company looks like this: "We need an explainer video. Here's our website. Make it look cool."
 
-That's not a brief. That's a wish. And it leads to the designer making a hundred assumptions, most of which will be wrong. Then you're three rounds of revisions deep trying to get to what you actually wanted — which you could have communicated upfront.
+That's not a brief. That's a wish. And it leads to the designer making a hundred assumptions, most of which will be wrong. Then you're three rounds of revisions deep trying to get to what you actually wanted, which you could have communicated upfront.
 
 The other extreme is the 15-page document that covers everything from brand history to competitor analysis but never answers the one question that matters: what does this video need to make the viewer do?
 
@@ -1071,7 +1071,7 @@ One sentence. What does this video need to accomplish?
 - "Help sales reps explain the platform before a demo call"
 - "Reduce onboarding support tickets for the dashboard feature"
 
-Not "raise brand awareness" or "tell our story." Those aren't objectives — they're vibes. You need something specific enough that you can measure whether the video achieved it.
+Not "raise brand awareness" or "tell our story." Those aren't objectives. They're vibes. You need something specific enough that you can measure whether the video achieved it.
 
 ### 2. The Audience
 
@@ -1081,13 +1081,13 @@ Who is watching this video, and what do they already know?
 - **Awareness level:** "They know the problem exists but haven't heard of our product"
 - **Where they'll see it:** "Embedded on the homepage above the fold" or "Sent as a link in sales outreach emails"
 
-The audience determines everything — the tone, the complexity, the length, and the call to action. A video for a CTO is different from a video for an end user, even if it's the same product.
+The audience determines everything: the tone, the complexity, the length, and the call to action. A video for a CTO is different from a video for an end user, even if it's the same product.
 
 ### 3. The Key Message
 
 If the viewer remembers one thing after watching, what should it be?
 
-Force yourself to write this as a single sentence. If you can't, you don't have a clear enough message yet. This isn't the script — it's the North Star that guides every creative decision.
+Force yourself to write this as a single sentence. If you can't, you don't have a clear enough message yet. This isn't the script. It's the North Star that guides every creative decision.
 
 Example: "Our platform eliminates manual reporting by pulling data from all your tools into one dashboard automatically."
 
@@ -1109,7 +1109,7 @@ This is where visual references save hours of miscommunication. Share 2-3 videos
 - "I like the pacing and colour palette of this video, but the character style is too cartoonish for us"
 - "This one has the right level of product detail but the music feels too corporate"
 
-Don't say "modern and clean" — that means something different to every designer. Show, don't tell. If you want to see the range of styles I work in, my [work page](/work/) has examples across different approaches.
+Don't say "modern and clean." That means something different to every designer. Show, don't tell. If you want to see the range of styles I work in, my [work page](/work/) has examples across different approaches.
 
 ### 6. Product Information
 
@@ -1162,9 +1162,9 @@ Copy this and fill it in:
 
 ## What Happens After the Brief
 
-A good motion designer will take your brief and come back with questions. That's a good sign — it means they're thinking about the project, not just executing blindly. Expect a kick-off conversation where they dig into the messaging, challenge some assumptions, and propose a creative direction.
+A good motion designer will take your brief and come back with questions. That's a good sign. It means they're thinking about the project, not just executing blindly. Expect a kick-off conversation where they dig into the messaging, challenge some assumptions, and propose a creative direction.
 
-From there, the typical process runs: script, storyboard, style frames, animation, sound design, final delivery. You review at each stage. The brief ensures that the first draft of each stage is close to what you want — not a random guess. For a full walkthrough, check out my [process page](/process/).
+From there, the typical process runs: script, storyboard, style frames, animation, sound design, final delivery. You review at each stage. The brief ensures that the first draft of each stage is close to what you want, not a random guess. For a full walkthrough, check out my [process page](/process/).
 
 ## The Bottom Line
 
@@ -1214,11 +1214,11 @@ After 15 years of making videos for SaaS companies, here's how I'd break down th
 
 ### 2. The Product Demo Video
 
-**What it is:** A 90-second to 3-minute video that shows how your product actually works. More detailed than an explainer — this walks through specific features and workflows.
+**What it is:** A 90-second to 3-minute video that shows how your product actually works. More detailed than an explainer, this walks through specific features and workflows.
 
 **Who it's for:** Prospects who are past the awareness stage. They know what you do; now they want to see how you do it. Sales teams use these to warm up prospects before calls or to leave behind after demos.
 
-**What it should do:** Walk through 3-5 key workflows that show the product solving real problems. Use stylised UI animation rather than raw screen recordings — it looks better and doesn't break when your interface updates.
+**What it should do:** Walk through 3-5 key workflows that show the product solving real problems. Use stylised UI animation rather than raw screen recordings. It looks better and doesn't break when your interface updates.
 
 **When you need it:** After your homepage explainer, once you have a sales team that's doing product demonstrations. This video extends the sales team's reach. Check out my [product demo video examples](/product-demo-videos/) for more.
 
@@ -1232,7 +1232,7 @@ After 15 years of making videos for SaaS companies, here's how I'd break down th
 
 **What it should do:** Build emotional connection and trust. Show the human side of your company. This is often the video that plays at conferences, appears on your About page, or gets shared in fundraising decks.
 
-**When you need it:** When you're actively fundraising, recruiting, or building brand awareness. This isn't your first video — it's the one you invest in once the fundamentals (explainer and demo) are covered.
+**When you need it:** When you're actively fundraising, recruiting, or building brand awareness. This isn't your first video. It's the one you invest in once the fundamentals (explainer and demo) are covered.
 
 **Budget range:** $10,000-$25,000. Often involves a mix of live action and animation.
 
@@ -1254,7 +1254,7 @@ After 15 years of making videos for SaaS companies, here's how I'd break down th
 
 **Who it's for:** Cold audiences who don't know you yet. These videos need to stop the scroll and deliver a single clear message in seconds.
 
-**What they should do:** Lead with a provocative question or a relatable pain point. Show the product briefly. End with a clear call to action. These aren't mini-explainers — they're attention hooks.
+**What they should do:** Lead with a provocative question or a relatable pain point. Show the product briefly. End with a clear call to action. These aren't mini-explainers. They're attention hooks.
 
 **When you need them:** When you're running paid acquisition campaigns. Many companies get these as cut-downs from their homepage explainer, which is cost-effective. I discuss how to make the first few seconds count in my piece on [getting past the 3-second watch rule](/blog/how-to-get-past-3-second-watch-rule).
 
@@ -1264,17 +1264,17 @@ After 15 years of making videos for SaaS companies, here's how I'd break down th
 
 If you're starting from zero, here's the order I'd recommend:
 
-1. **Homepage explainer** — this serves the broadest audience and works across the most touchpoints.
-2. **Product demo** — gives your sales team a tool that works without them in the room.
-3. **Social cuts** — extend the reach of your explainer through paid and organic channels.
-4. **Onboarding videos** — reduce churn and support load.
-5. **Brand video** — build emotional connection once the fundamentals are covered.
+1. **Homepage explainer.** This serves the broadest audience and works across the most touchpoints.
+2. **Product demo.** Gives your sales team a tool that works without them in the room.
+3. **Social cuts.** Extend the reach of your explainer through paid and organic channels.
+4. **Onboarding videos.** Reduce churn and support load.
+5. **Brand video.** Build emotional connection once the fundamentals are covered.
 
 Most SaaS companies should start with items 1 and 3 (a homepage explainer with social cuts derived from it). That's one production project that gives you four to five usable assets.
 
 ## The Mistake Most Companies Make
 
-The most common mistake is jumping straight to a product demo when you need an explainer. A demo assumes the viewer already understands what your product is and why it matters. If they don't have that context, a feature walkthrough won't convert — it'll confuse.
+The most common mistake is jumping straight to a product demo when you need an explainer. A demo assumes the viewer already understands what your product is and why it matters. If they don't have that context, a feature walkthrough won't convert. It'll confuse.
 
 Start with the story (explainer), then go deeper (demo). Don't skip the first chapter.
 
@@ -1286,7 +1286,7 @@ If you're not sure where to start, take a look at my [motion graphics work](/mot
 You can, but the result is usually a video that's too long and tries to do too much. It's better to have a tight 60-second explainer and a separate 90-second demo than a single 3-minute video that loses viewers halfway through.
 
 **Do I need animation or can I use screen recordings?**
-Screen recordings work for quick tutorials, but they age badly — every UI update makes them obsolete. For anything customer-facing that needs to last more than a few months, animated or stylised versions of your product interface will serve you better.
+Screen recordings work for quick tutorials, but they age badly. Every UI update makes them obsolete. For anything customer-facing that needs to last more than a few months, animated or stylised versions of your product interface will serve you better.
 
 **How often should I update my videos?**
 A good animated explainer lasts 2-3 years. Product demos might need refreshing every 12-18 months as features change. Social cuts should be refreshed quarterly if you're running them in paid campaigns, since ad fatigue is real.
@@ -1302,7 +1302,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     category: "Buyer's Guide",
     tags: ["in-house motion designer", "SaaS video team", "hiring motion designer", "video production strategy"],
     excerpt: "Hiring a full-time motion designer sounds efficient until you do the maths. Here's an honest look at when in-house makes sense and when outsourcing wins.",
-    content: `Your SaaS marketing team is growing. You're producing more video content. Someone suggests hiring a full-time motion designer in-house. It sounds smart — dedicated resource, faster turnaround, no agency fees. But the reality is more complicated than the job posting.
+    content: `Your SaaS marketing team is growing. You're producing more video content. Someone suggests hiring a full-time motion designer in-house. It sounds smart: dedicated resource, faster turnaround, no agency fees. But the reality is more complicated than the job posting.
 
 I've worked with dozens of SaaS companies that have gone both ways: some hired in-house and thrived, some hired in-house and regretted it, and some outsource strategically and get better results for less money. Here's how to figure out which camp you belong in.
 
@@ -1312,7 +1312,7 @@ Let's start with the numbers that matter.
 
 **Salary:** A mid-level motion designer in Australia costs $80,000-$110,000. In the US, you're looking at $75,000-$120,000 depending on the market. Senior talent with SaaS experience pushes $130,000-$160,000.
 
-**On-costs:** Superannuation or benefits, equipment (a capable workstation runs $4,000-$6,000), software licenses (After Effects, Cinema 4D, Illustrator — roughly $3,000-$5,000 per year), plus paid leave, training, and management overhead. Add 25-35% on top of salary.
+**On-costs:** Superannuation or benefits, equipment (a capable workstation runs $4,000-$6,000), software licenses (After Effects, Cinema 4D, Illustrator, roughly $3,000-$5,000 per year), plus paid leave, training, and management overhead. Add 25-35% on top of salary.
 
 **Total cost:** A mid-level in-house motion designer costs your company $100,000-$150,000 per year all-in. A senior hire costs $160,000-$210,000.
 
@@ -1320,19 +1320,19 @@ Now compare that to outsourcing. At $10,000-$15,000 per video from a quality stu
 
 ## When In-House Makes Sense
 
-**You need video content every week.** If your marketing team produces 2-4 videos per week — social clips, product updates, feature announcements, internal comms — the volume justifies a dedicated person. At this pace, outsourcing becomes a scheduling nightmare.
+**You need video content every week.** If your marketing team produces 2-4 videos per week (social clips, product updates, feature announcements, internal comms) the volume justifies a dedicated person. At this pace, outsourcing becomes a scheduling nightmare.
 
 **Your product changes constantly.** If your UI updates weekly and you need videos that reflect the current product, an in-house designer who lives inside the product will be faster than briefing an external studio every time.
 
 **You need real-time turnaround.** Launch tomorrow and need a 15-second social teaser today? An in-house designer can pivot immediately. An external studio has other clients and a production queue.
 
-**Video is a core part of your product.** If your SaaS product includes video tutorials, interactive animations, or embedded educational content, motion design is a product function — not a marketing expense.
+**Video is a core part of your product.** If your SaaS product includes video tutorials, interactive animations, or embedded educational content, motion design is a product function, not a marketing expense.
 
 ## When In-House Doesn't Make Sense
 
 **You need 4-10 videos per year.** This is where most SaaS companies sit, especially before Series B. At this volume, a full-time hire is sitting idle for large stretches. You're paying $150,000 for someone to make 8 videos and fill the rest of their time with tasks they're overqualified for.
 
-**You need strategic variety.** An in-house designer brings one perspective, one style, and one skill set. A studio brings a team with diverse approaches. For hero content — your homepage explainer, your product launch video, your investor piece — variety and outside perspective matter.
+**You need strategic variety.** An in-house designer brings one perspective, one style, and one skill set. A studio brings a team with diverse approaches. For hero content (your homepage explainer, your product launch video, your investor piece) variety and outside perspective matter.
 
 **You don't have a creative director.** A motion designer without creative direction will produce motion design. But will it serve your business goals? Will the messaging be right? Will it convert? Without someone senior shaping the brief and the strategy, you're getting execution without thinking. That's a problem I cover in more depth in my piece on [why SaaS demo videos don't convert](/blog/why-saas-demo-video-not-converting).
 
@@ -1367,7 +1367,7 @@ This works if you have a senior creative to mentor them and you're patient about
 Yes, and for many SaaS companies this is the best option. A retained freelancer at 2-3 days per week gives you dedicated bandwidth without the full-time overhead. Just make sure the arrangement is structured with clear deliverables, not just hours.
 
 **What about using AI tools to replace a motion designer?**
-AI is changing parts of the motion design workflow — particularly in ideation, asset generation, and simple animations. But for strategic SaaS content that needs to communicate a specific product story? You still need a human who understands positioning, pacing, and visual narrative. AI is a tool, not a replacement. Not yet.
+AI is changing parts of the motion design workflow, particularly in ideation, asset generation, and simple animations. But for strategic SaaS content that needs to communicate a specific product story? You still need a human who understands positioning, pacing, and visual narrative. AI is a tool, not a replacement. Not yet.
 
 ---
 
@@ -1379,10 +1379,10 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     date: "2025-10-22",
     category: "Buyer's Guide",
     tags: ["motion design studio", "freelance animator", "SaaS video production", "animation hiring"],
-    excerpt: "Studio or freelancer? The answer isn't about which is 'better' — it's about what your project actually needs. Here's how to decide without wasting money.",
+    excerpt: "Studio or freelancer? The answer isn't about which is 'better.' It's about what your project actually needs. Here's how to decide without wasting money.",
     content: `You've decided your SaaS company needs a motion design video. Now you're staring at a choice: hire a motion design studio or work with a freelance animator? The answer depends on your project scope, your budget, and how much hand-holding you need during the process.
 
-I've been on both sides of this. I ran a studio team for years before building Motion Story into what it is now — a boutique operation that sits somewhere between a solo freelancer and a large agency. So I can give you the honest trade-offs without trying to sell you on one model.
+I've been on both sides of this. I ran a studio team for years before building Motion Story into what it is now, a boutique operation that sits somewhere between a solo freelancer and a large agency. So I can give you the honest trade-offs without trying to sell you on one model.
 
 ## The Freelance Animator
 
@@ -1404,11 +1404,11 @@ A freelance animator is a single person handling your project end-to-end, or at 
 
 ## The Motion Design Studio
 
-A studio is a team — usually a creative director, designers, animators, and sometimes a producer or strategist. The team size and structure vary, but the core difference is that you're hiring a system, not a person.
+A studio is a team: usually a creative director, designers, animators, and sometimes a producer or strategist. The team size and structure vary, but the core difference is that you're hiring a system, not a person.
 
 **When a studio is the right call:**
 
-- **You need strategic input.** If you're not sure what kind of video you need, what the messaging should be, or how to position your product, a studio brings that thinking. You're not just buying animation — you're buying creative direction.
+- **You need strategic input.** If you're not sure what kind of video you need, what the messaging should be, or how to position your product, a studio brings that thinking. You're not just buying animation. You're buying creative direction.
 - **Your project involves multiple deliverables.** A homepage video plus social cuts plus onboarding animations plus a sales video. Studios have the bandwidth to manage multi-asset projects without dropping quality.
 - **You want a managed process.** Studios run structured workflows with clear milestones: brief, script, storyboard, style frames, animation, sound. You review at each stage. There's a process page (like my [process](/process/)) that tells you exactly what to expect.
 - **Brand consistency matters.** If you're building a library of video content over time, a studio maintains a consistent visual language across all of it.
@@ -1422,7 +1422,7 @@ A studio is a team — usually a creative director, designers, animators, and so
 
 ## The Middle Ground: Boutique Studios
 
-This is where the market has been moving. Boutique studios — typically 1-4 people — offer the strategic thinking and process of a studio with the directness and affordability of a freelancer. You work directly with the creative lead, the process is structured but not bloated, and pricing sits in the $6,000-$15,000 range for most projects.
+This is where the market has been moving. Boutique studios (typically 1-4 people) offer the strategic thinking and process of a studio with the directness and affordability of a freelancer. You work directly with the creative lead, the process is structured but not bloated, and pricing sits in the $6,000-$15,000 range for most projects.
 
 The trade-off is capacity. A boutique studio might not be able to turn around five videos in three weeks. But for most SaaS companies that need one or two high-quality videos at a time, it's the best of both worlds.
 
@@ -1453,7 +1453,7 @@ Whether you choose a freelancer or a studio, the portfolio is what matters. Watc
 
 The best freelancer will outperform a mediocre studio, and vice versa. The model matters less than the talent and the fit.
 
-If you want to see how I work — somewhere between freelancer and studio — take a look at my [work](/work/) or [get in touch](/contact/).
+If you want to see how I work (somewhere between freelancer and studio) take a look at my [work](/work/) or [get in touch](/contact/).
 
 ## FAQ
 
@@ -1464,7 +1464,7 @@ Yes, if they're experienced with SaaS products. But if you need a product demo w
 Same way for both: portfolio quality, relevant experience, client references, and a clear process. Ask both to walk you through how they'd approach your project before you commit.
 
 **What if I start with a freelancer and it's not working?**
-It happens. The key is having clear milestones where you review progress. If the storyboard stage doesn't feel right, that's the time to course-correct — not after the animation is half done.
+It happens. The key is having clear milestones where you review progress. If the storyboard stage doesn't feel right, that's the time to course-correct, not after the animation is half done.
 
 ---
 
@@ -1476,7 +1476,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     date: "2025-10-08",
     category: "Buyer's Guide",
     tags: ["SaaS video cost", "explainer video pricing", "motion design budget", "video production cost"],
-    excerpt: "Real pricing for SaaS motion design videos in 2026, based on 500+ projects. No vague ranges or 'it depends' — actual numbers broken down by video type.",
+    excerpt: "Real pricing for SaaS motion design videos in 2026, based on 500+ projects. No vague ranges or 'it depends.' Actual numbers broken down by video type.",
     content: `Everyone wants to know what a SaaS video costs, and every website gives you the same useless answer: "it depends." So here are real numbers from 15 years and over 500 projects. No fluff, no bait-and-switch ranges designed to get you on a sales call.
 
 ## The Short Answer
@@ -1518,7 +1518,7 @@ Here's the breakdown.
 **What you get:**
 - 90-120 second hero video with full custom design system
 - Character animation, complex scene transitions, and detailed product UI sequences
-- Full messaging strategy and script development (not just animation — positioning work)
+- Full messaging strategy and script development (not just animation, but positioning work)
 - Multiple deliverables: hero video, product demo, onboarding clips, social cuts, investor deck video
 - Custom sound design or original music composition
 - Voiceover with premium talent and direction
@@ -1601,7 +1601,7 @@ Before ranking anyone, you need to know what matters. A beautiful showreel means
 - **They understand the product before they design.** If a studio jumps straight to visual concepts without understanding your user journey, run.
 - **They've worked with software companies before.** SaaS animation is a specific discipline. Animating a UI walkthrough is different from animating a brand film. Look for product demo work in their portfolio.
 - **They can write or contribute to the script.** The best SaaS videos start with strong messaging. Studios that only take a finished script and animate it are missing half the value.
-- **They deliver assets you can actually use.** Social cuts, landing page versions, onboarding clips — not just one hero video that lives on your homepage.
+- **They deliver assets you can actually use.** Social cuts, landing page versions, onboarding clips. Not just one hero video that lives on your homepage.
 
 ## The Categories Worth Considering
 
@@ -1611,7 +1611,7 @@ These are small teams (2-8 people) that specialise exclusively in SaaS and tech.
 
 ### Mid-Size Motion Design Agencies
 
-Teams of 10-30 people that handle a range of industries but have a dedicated SaaS vertical. They bring more production capacity, which means faster turnarounds on multi-video projects. Pricing ranges from $10,000-$25,000 per video depending on complexity. Good for companies that need a suite of videos — homepage explainer, product demos, onboarding series — delivered in a coordinated campaign.
+Teams of 10-30 people that handle a range of industries but have a dedicated SaaS vertical. They bring more production capacity, which means faster turnarounds on multi-video projects. Pricing ranges from $10,000-$25,000 per video depending on complexity. Good for companies that need a suite of videos (homepage explainer, product demos, onboarding series) delivered in a coordinated campaign.
 
 ### Large Production Companies
 
@@ -1619,7 +1619,7 @@ Full-service agencies with 50+ staff that offer motion design as one of many ser
 
 ### Freelance Motion Designers
 
-Individual designers working independently. Some are exceptional — senior creatives who left agencies to work directly with clients. Others are junior generalists padding their portfolio. Rates vary wildly: $3,000-$8,000 for a 60-second video. The upside is cost savings and direct communication. The risk is bandwidth, consistency, and what happens when they get sick or overloaded. I've written more about the studio vs freelancer decision in my piece on [motion design studio vs freelance animator](/blog/motion-design-studio-vs-freelance-animator).
+Individual designers working independently. Some are exceptional: senior creatives who left agencies to work directly with clients. Others are junior generalists padding their portfolio. Rates vary wildly: $3,000-$8,000 for a 60-second video. The upside is cost savings and direct communication. The risk is bandwidth, consistency, and what happens when they get sick or overloaded. I've written more about the studio vs freelancer decision in my piece on [motion design studio vs freelance animator](/blog/motion-design-studio-vs-freelance-animator).
 
 ## What to Look for in Their Portfolio
 
@@ -1641,7 +1641,7 @@ If someone quotes you $1,500 for a SaaS explainer, you'll get templated work. If
 
 ## My Honest Recommendation
 
-Start with a studio that specialises in your space. SaaS is specific enough that generalist studios — no matter how talented — will spend your budget learning what a SaaS-focused studio already knows. Look for a team that leads with strategy, not just style. The prettiest video in the world won't convert if the messaging is wrong.
+Start with a studio that specialises in your space. SaaS is specific enough that generalist studios, no matter how talented, will spend your budget learning what a SaaS-focused studio already knows. Look for a team that leads with strategy, not just style. The prettiest video in the world won't convert if the messaging is wrong.
 
 If you want to see how I approach SaaS explainer projects, take a look at my [SaaS explainer video work](/saas-explainer-videos/) or [get in touch](/contact/) to talk through your project.
 
@@ -1651,7 +1651,7 @@ If you want to see how I approach SaaS explainer projects, take a look at my [Sa
 Look at their portfolio. If more than half their recent work is for software companies, they're probably genuine. If their SaaS section has three videos and the rest is food commercials, they're stretching the truth.
 
 **Should I choose a local studio or work remotely?**
-Remote works fine for motion design. Unlike live action, you don't need anyone on location. What matters is communication quality, not proximity. Most of my clients are in the US, UK, and across Australia — we've never met in person and the work doesn't suffer.
+Remote works fine for motion design. Unlike live action, you don't need anyone on location. What matters is communication quality, not proximity. Most of my clients are in the US, UK, and across Australia. We've never met in person and the work doesn't suffer.
 
 **How many revisions should I expect?**
 A good studio builds two to three rounds of revisions into their process. If they're offering unlimited revisions, that usually means their process isn't tight enough to get it right efficiently. If they're offering zero revisions, that's a different red flag.
@@ -1666,8 +1666,8 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     date: "2025-09-10",
     category: "Craft & Process",
     tags: ["motion design script", "scriptwriting", "explainer video script", "creative process", "video production"],
-    excerpt: "A great motion design script isn't a voiceover track — it's the architecture of the entire video. Here's what separates scripts that work from scripts that waste everyone's time.",
-    content: `A great motion design script isn't just words for a voiceover artist to read. It's the architecture of the entire video. Every visual cue, every emotional beat, every moment of understanding — it all starts in the script. Get it right and the animation practically builds itself. Get it wrong and no amount of beautiful motion design can save it.
+    excerpt: "A great motion design script isn't a voiceover track. It's the architecture of the entire video. Here's what separates scripts that work from scripts that waste everyone's time.",
+    content: `A great motion design script isn't just words for a voiceover artist to read. It's the architecture of the entire video. Every visual cue, every emotional beat, every moment of understanding. It all starts in the script. Get it right and the animation practically builds itself. Get it wrong and no amount of beautiful motion design can save it.
 
 After writing scripts for hundreds of projects, I've learned that the difference between a script that works and one that wastes everyone's time comes down to a few principles.
 
@@ -1675,7 +1675,7 @@ After writing scripts for hundreds of projects, I've learned that the difference
 
 A 60-second video has room for about 140 words. That's roughly the length of this paragraph and the one above it combined. There is no space for filler.
 
-Every word in a motion design script needs to justify its existence. "Our innovative, cutting-edge platform leverages advanced technology" — that's nine words that communicate nothing. "See which campaigns are working before your budget runs out" — that's eleven words that create urgency, specificity, and a reason to care.
+Every word in a motion design script needs to justify its existence. "Our innovative, cutting-edge platform leverages advanced technology." That's nine words that communicate nothing. "See which campaigns are working before your budget runs out." That's eleven words that create urgency, specificity, and a reason to care.
 
 **The test:** Read every sentence and ask "what does the viewer learn or feel from this that they didn't learn or feel from the previous sentence?" If the answer is "nothing new," cut it.
 
@@ -1694,25 +1694,25 @@ The timing is flexible, but the sequence matters. Rearranging these sections alm
 
 ## The Opening Line Is Everything
 
-You have about five seconds — maybe 15 words — to earn the viewer's attention. If the opening line doesn't create recognition, tension, or curiosity, nothing that follows matters.
+You have about five seconds, maybe 15 words, to earn the viewer's attention. If the opening line doesn't create recognition, tension, or curiosity, nothing that follows matters.
 
 **Openings that fail:**
-- "Welcome to [product name]" — nobody cares yet
-- "[Company] is the leading platform for..." — self-congratulation doesn't hook
-- "In today's fast-paced world..." — generic and instantly forgettable
+- "Welcome to [product name]." Nobody cares yet
+- "[Company] is the leading platform for..." Self-congratulation doesn't hook
+- "In today's fast-paced world..." Generic and instantly forgettable
 
 **Openings that work:**
 - "Your sales team is sending the same email to every lead. Here's why it's costing you."
 - "Three spreadsheets, two time zones, and nobody knows which version is current."
 - "What if your customers could see in 60 seconds what takes your sales team 30 minutes to explain?"
 
-Each of these creates a specific scenario. The viewer either recognises themselves or doesn't. Both outcomes are useful — you want to attract the right viewers and let the wrong ones self-select out.
+Each of these creates a specific scenario. The viewer either recognises themselves or doesn't. Both outcomes are useful. You want to attract the right viewers and let the wrong ones self-select out.
 
 ## What to Do When AI Writes the First Draft
 
 AI tools can generate a passable script draft in seconds. I've seen clients come to me with ChatGPT scripts and ask me to animate them. The scripts are grammatically correct, structurally adequate, and completely generic.
 
-The problem with AI-generated scripts is that they contain no specific insight. They don't know that your customer's real frustration isn't "inefficiency" — it's that they spend every Monday morning re-entering data from a weekend batch process. They don't know that your product's real differentiator isn't "advanced analytics" — it's that it shows the one metric that predicts churn two weeks before it happens.
+The problem with AI-generated scripts is that they contain no specific insight. They don't know that your customer's real frustration isn't "inefficiency." It's that they spend every Monday morning re-entering data from a weekend batch process. They don't know that your product's real differentiator isn't "advanced analytics." It's that it shows the one metric that predicts churn two weeks before it happens.
 
 **Where AI helps:** Generating a structural outline. Getting past a blank page. Suggesting alternative phrasings.
 
@@ -1724,7 +1724,7 @@ Use AI as a starting point if you like. But the script that actually works will 
 
 Here's the single most useful editorial question for motion design scripts: **"What is the animator going to show during this line?"**
 
-If you can't immediately picture a clear, specific visual for a line of script, the line isn't working. Motion design is a visual medium. The script needs to give the animator something to work with — a scenario to illustrate, a transformation to show, a comparison to visualise.
+If you can't immediately picture a clear, specific visual for a line of script, the line isn't working. Motion design is a visual medium. The script needs to give the animator something to work with: a scenario to illustrate, a transformation to show, a comparison to visualise.
 
 Lines like "our platform delivers exceptional value" give the animator nothing. Lines like "watch three days of manual reporting collapse into a single click" give the animator a clear visual sequence.
 
@@ -1732,24 +1732,24 @@ This question also prevents scripts from being too dense. If one sentence requir
 
 ## The Handoff
 
-A finished script isn't a Google Doc with paragraphs of text. It's a two-column document — voiceover on the left, visual direction on the right. Each row represents a scene. The animator reads across to understand what's being said and shown simultaneously.
+A finished script isn't a Google Doc with paragraphs of text. It's a two-column document: voiceover on the left, visual direction on the right. Each row represents a scene. The animator reads across to understand what's being said and shown simultaneously.
 
 This format forces clarity. If the visual column is vague ("show the platform"), the script isn't ready. If the visual column is specific ("animated dashboard showing lead scores updating in real time as a sales rep's daily pipeline builds"), the animator can work independently and accurately.
 
-Good scripts make every subsequent stage of production faster and cheaper. Bad scripts create expensive revisions in animation — the most time-consuming phase to change.
+Good scripts make every subsequent stage of production faster and cheaper. Bad scripts create expensive revisions in animation, the most time-consuming phase to change.
 
 If you're working on a video project and the script isn't right yet, [get in touch](/contact/). I write every script before designing a single frame. See how the [process](/process/) works.
 
 ## Frequently Asked Questions
 
 **How long should a motion design script be?**
-A voiceover reads at roughly 140 to 150 words per minute. So a 60-second video needs about 140 words, a 90-second video about 210, and a two-minute video about 280. If your script is over these numbers, it's too long — and the solution is cutting content, not speeding up the read.
+A voiceover reads at roughly 140 to 150 words per minute. So a 60-second video needs about 140 words, a 90-second video about 210, and a two-minute video about 280. If your script is over these numbers, it's too long, and the solution is cutting content, not speeding up the read.
 
 **Should I write the script myself or hire someone?**
-It depends on your skill set. If you can write concisely and you know your customers' problems intimately, a self-written first draft is valuable. But most scripts benefit from a professional rewrite by someone who understands the constraints of visual storytelling — pacing, scene economy, and the relationship between words and images.
+It depends on your skill set. If you can write concisely and you know your customers' problems intimately, a self-written first draft is valuable. But most scripts benefit from a professional rewrite by someone who understands the constraints of visual storytelling: pacing, scene economy, and the relationship between words and images.
 
 **What's the most common script mistake you see?**
-Feature listing. The script reads like a product page — "We offer X, Y, and Z. Our platform includes A, B, and C." There's no story, no tension, no character. The fix is almost always to start with the customer's problem and build from there.
+Feature listing. The script reads like a product page: "We offer X, Y, and Z. Our platform includes A, B, and C." There's no story, no tension, no character. The fix is almost always to start with the customer's problem and build from there.
 
 ---
 
@@ -1761,14 +1761,14 @@ Feature listing. The script reads like a product page — "We offer X, Y, and Z.
     date: "2025-08-27",
     category: "Craft & Process",
     tags: ["storytelling", "motion design", "video production", "creative process", "explainer videos"],
-    excerpt: "Most explainer videos aren't stories — they're feature lists with a voiceover. Here's what actual storytelling looks like in motion design, and the process that produces it.",
+    excerpt: "Most explainer videos aren't stories. They're feature lists with a voiceover. Here's what actual storytelling looks like in motion design, and the process that produces it.",
     content: `Most videos that claim to "tell your story" don't tell a story at all. They list features. They describe a company's history. They walk through a process in chronological order. That's not storytelling. That's information delivery with a voiceover.
 
-Storytelling — the real kind — has specific mechanics. It creates tension. It follows a character. It makes deliberate choices about what to include and what to leave out. And in motion design, it's the difference between a video that people watch once and forget and one that changes how they think about your product.
+Storytelling, the real kind, has specific mechanics. It creates tension. It follows a character. It makes deliberate choices about what to include and what to leave out. And in motion design, it's the difference between a video that people watch once and forget and one that changes how they think about your product.
 
 ## Stories Have Tension
 
-The most important element of any story is tension — the gap between how things are and how they could be. Without tension, there's no reason to keep watching.
+The most important element of any story is tension: the gap between how things are and how they could be. Without tension, there's no reason to keep watching.
 
 In a [SaaS explainer video](/saas-explainer-videos/), tension looks like this: "Your team spends four hours every week manually reconciling data across three platforms. By Thursday, someone's working from an outdated version. By Friday, the report is wrong."
 
@@ -1778,7 +1778,7 @@ Most explainer videos skip this entirely. They open with "Introducing [product n
 
 ## Stories Follow a Character
 
-Every story needs a character — someone the viewer can project themselves onto. In motion design, this doesn't mean you need elaborate character animation. It means the narrative needs a perspective.
+Every story needs a character, someone the viewer can project themselves onto. In motion design, this doesn't mean you need elaborate character animation. It means the narrative needs a perspective.
 
 **The character is usually the customer:**
 
@@ -1790,11 +1790,11 @@ The character gives the viewer a way in. Instead of processing abstract informat
 
 ## Stories Require Choices About What to Leave Out
 
-This is the hardest part. Every client wants to include everything — every feature, every use case, every differentiator. The impulse is understandable. They've built something complex and they're proud of all of it.
+This is the hardest part. Every client wants to include everything: every feature, every use case, every differentiator. The impulse is understandable. They've built something complex and they're proud of all of it.
 
 But stories work through compression, not completeness. You choose the one scenario that best represents your product's value. You choose the three features that matter most to your primary audience. You cut everything else.
 
-I had a client whose product had twelve major features. They wanted all twelve in a 90-second video. That's seven seconds per feature — barely enough time to name them, let alone explain them. We chose three features, showed them in depth, and the video converted better than anything they'd produced before.
+I had a client whose product had twelve major features. They wanted all twelve in a 90-second video. That's seven seconds per feature, barely enough time to name them, let alone explain them. We chose three features, showed them in depth, and the video converted better than anything they'd produced before.
 
 **The principle:** A story that goes deep on three things is more compelling than a story that skims twelve.
 
@@ -1802,15 +1802,15 @@ I had a client whose product had twelve major features. They wanted all twelve i
 
 Good storytelling doesn't happen in the animation phase. It happens in the first two weeks of a project, during the work that most people skip:
 
-**1. Problem immersion.** Before I write a word, I need to understand the problem the product solves — not from the founder's perspective, but from the customer's. What does their day look like? Where does it break down? What's the cost of doing nothing?
+**1. Problem immersion.** Before I write a word, I need to understand the problem the product solves, not from the founder's perspective, but from the customer's. What does their day look like? Where does it break down? What's the cost of doing nothing?
 
 **2. One thing identification.** What's the single most important thing the viewer needs to understand? Not the most impressive feature. The thing that makes them think "I need this."
 
-**3. Story arc development.** Structure the narrative: world as it is (tension), introduction of the solution (turn), world as it could be (resolution). This arc works at any length — 30 seconds or three minutes.
+**3. Story arc development.** Structure the narrative: world as it is (tension), introduction of the solution (turn), world as it could be (resolution). This arc works at any length, from 30 seconds to three minutes.
 
 **4. Script writing.** Words first, visuals second. The script is the backbone. If the story doesn't work as a script read aloud in a room, it won't work as a video.
 
-**5. Visual storytelling.** Now — and only now — does design enter the picture. The [motion graphics](/motion-graphics/) serve the story. Every visual choice should amplify the narrative, not decorate it.
+**5. Visual storytelling.** Now, and only now, does design enter the picture. The [motion graphics](/motion-graphics/) serve the story. Every visual choice should amplify the narrative, not decorate it.
 
 ## Why Most Videos Get It Wrong
 
@@ -1818,14 +1818,14 @@ Most videos get storytelling wrong because they start at step five. They open Af
 
 The result is a video that looks professional but feels empty. All craft, no substance. The viewer watches it, acknowledges that it's well-made, and promptly forgets everything about it.
 
-The videos that work — the ones that drive conversions, get shared internally, and change how people think about a product — are the ones where the story came first.
+The videos that work, the ones that drive conversions, get shared internally, and change how people think about a product — are the ones where the story came first.
 
 If you want a video that tells a real story about your product or mission, [take a look at my process](/process/) or [get in touch](/contact/).
 
 ## Frequently Asked Questions
 
 **How do you find the right story for a product you've never used?**
-I interview the team — founders, product managers, customer success leads — and I read customer reviews and support tickets. The best stories come from real customer experiences, not marketing copy. The patterns in how customers describe their problem before finding the product are usually where the story lives.
+I interview the team (founders, product managers, customer success leads) and I read customer reviews and support tickets. The best stories come from real customer experiences, not marketing copy. The patterns in how customers describe their problem before finding the product are usually where the story lives.
 
 **Can storytelling work for highly technical products?**
 Absolutely. In fact, technical products need storytelling more than simple ones. The more complex the product, the more important it is to anchor the explanation in a human scenario. Nobody connects with a technical architecture diagram. Everyone connects with "your engineering team shipped a bug to production and spent three hours rolling it back."
@@ -1844,7 +1844,7 @@ A product tour shows features in sequence. A story creates tension, follows a ch
     category: "Craft & Process",
     tags: ["motion design framework", "explainer videos", "visual communication", "storytelling", "complex ideas"],
     excerpt: "After hundreds of projects, I've developed a framework for explaining complex ideas through motion design. It starts with finding the one thing that matters most.",
-    content: `Every project starts the same way. Someone has an idea, a product, a mission — and it's complex. They've been living inside it for months or years. They know every detail. And that's exactly the problem.
+    content: `Every project starts the same way. Someone has an idea, a product, a mission, and it's complex. They've been living inside it for months or years. They know every detail. And that's exactly the problem.
 
 The skill of explaining complex ideas isn't about knowing more. It's about knowing what to leave out. After hundreds of projects, I've distilled the process into a framework that works whether I'm explaining a SaaS platform, a medical device, or a city planning initiative.
 

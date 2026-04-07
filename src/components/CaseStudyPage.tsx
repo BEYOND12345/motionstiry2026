@@ -55,7 +55,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
             <span className="text-metadata mb-6 block">Additional Video</span>
             <VimeoEmbed
               vimeoId={project.secondaryVimeoId}
-              title={`${project.title} — Secondary`}
+              title={`${project.title}: Secondary`}
             />
           </FadeUp>
         )}

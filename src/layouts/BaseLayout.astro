@@ -96,7 +96,7 @@ const image = ogImage || `${siteUrl}/og-default.jpg`;
     to { opacity: 0; }
   }
 
-  /* Default page transition — cinematic slide */
+  /* Default page transition: cinematic slide */
   ::view-transition-old(root) {
     animation: fadeSlideOut 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
@@ -106,7 +106,7 @@ const image = ogImage || `${siteUrl}/og-default.jpg`;
     animation-delay: 0.1s;
   }
 
-  /* Nav bar persists across pages — no animation */
+  /* Nav bar persists across pages: no animation */
   ::view-transition-old(site-nav),
   ::view-transition-new(site-nav) {
     animation: none;
