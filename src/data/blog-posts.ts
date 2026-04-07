@@ -646,6 +646,24 @@ And the video was still running and performing 18 months later. For a deeper loo
 
 **Attributing all improvement to the video.** Be honest. If you launched a new video, redesigned the homepage, and changed your pricing at the same time, you can't credit the video for all of the improvement. Isolate variables where possible.
 
+## Two Real ROI Stories
+
+**Drivo: measuring sales cycle impact**
+
+Drivo made a 90-second video explaining their car park management platform to hospitality clients. They'd been struggling to get hoteliers interested through cold email. Text-based outreach wasn't converting because the product's value wasn't immediately obvious in a few lines of copy.
+
+After embedding the video into their outreach sequence, sending it before meeting requests rather than after, their prospect meetings became qualified conversations rather than blind pitches. The video did the education work before the call. Sales people stopped wasting time with prospects who weren't a fit, and the prospects who did take meetings arrived already understanding the product.
+
+The ROI in this case wasn't a direct revenue attribution. It was a compression of the sales cycle and an improvement in meeting quality. Those are harder to measure but more valuable than view counts.
+
+**Acodis: measuring brand impact**
+
+The Acodis video generated 40,000 YouTube views for a technical AI document processing platform. The client measured the impact in brand perception and reputation growth across their target markets. The video opened conversations with prospects who found them through the content, and improved the standing of the brand in markets where they were previously unknown.
+
+These aren't the same metric. Drivo was measuring pipeline efficiency. Acodis was measuring brand reach. Both are legitimate ways to measure video ROI, but you have to decide which one matters for your business before you brief the video, not after.
+
+The question I ask every client before we start: how will we know if this worked? If they can't answer that question, the brief isn't ready yet.
+
 If you're building a case for video investment, start by tracking these metrics for 30 days before production begins. The data will make the ROI case for you. [Get in touch](/contact/) if you want help structuring a video project with measurement built in from the start.
 
 ## FAQ
@@ -746,6 +764,22 @@ If your video passes the viewing test but fails the data test:
 - **Test variations.** Try different thumbnails, different page positions, or different surrounding copy.
 
 If your video passes both tests: congratulations. Now think about what your next video should be: a product demo, an onboarding series, or social cuts to extend reach. Check my guide on [what type of video your SaaS company needs](/blog/what-type-of-video-does-my-saas-company-need) for the logical next step.
+
+## What Good Actually Looks Like: A Real Benchmark
+
+The Method Recycling video is the clearest example I can point to.
+
+The product: a waste management platform that gives businesses real-time data on their waste and recycling. Not exactly a product category known for compelling content.
+
+The result: 62% video completion rate. 21% view rate from the relevant audience.
+
+To put that in context, industry benchmarks for branded online video sit at 30-40% average completion. For a B2B product in a category most viewers would categorise as "useful but unexciting," 62% means almost two thirds of people who started the video watched it to the end.
+
+That number came from the right concept. We focused the story on what the data changed, not on how the platform worked. The viewer understood the value before they understood the product. That's the sequence that produces high completion rates.
+
+What does that tell you about your own video? If your completion rate is below 40%, something is wrong in the first half. If it's below 25%, something is wrong in the first ten seconds. If nobody's making it past the halfway point, the story isn't pulling them forward.
+
+Start with your analytics. Then work backwards to find the moment viewers are leaving. That's where the problem is.
 
 ## FAQ
 
@@ -1096,9 +1130,15 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     category: "Craft & Process",
     tags: ["motion design brief", "SaaS video brief", "creative brief template", "video production planning"],
     excerpt: "A strong brief is the difference between a video that nails it in one round and a project that drags through endless revisions. Here's exactly what to include.",
-    content: `The single biggest factor in whether your motion design project goes smoothly or turns into an endless revision cycle? The brief. A clear, specific brief saves you money, saves time, and produces a better video. A vague one costs you all three.
+    content: `## Why Most Briefs Fail Before Production Starts
 
-After 500+ projects, I can tell you that the quality of the final video is directly proportional to the quality of the brief. Not the budget. Not the timeline. The brief.
+The most common reason a motion design project goes wrong isn't the animation. It isn't the budget or the timeline. It's the brief.
+
+In 15 years I've received briefs that were three paragraphs of company background with no mention of the audience, the platform it would live on, or what the viewer was supposed to do after watching. I've received 40-page brand documents that answered everything except the one question that mattered: what does this video need to accomplish?
+
+I've also received one-paragraph briefs from founders who knew exactly what they were trying to change in their prospect's understanding, and those projects almost always produced the best work.
+
+A good brief isn't long. It's clear. There's a difference.
 
 Here's exactly what to include, why each piece matters, and a template you can copy.
 
@@ -1230,6 +1270,9 @@ Ideally, the designer writes it (or collaborates on it) because they know what w
 **How detailed should style references be?**
 The more specific, the better. Don't just link a video and say "like this." Say "I like the colour palette and pacing of this one, but the illustration style should be more geometric and less organic." Specific feedback prevents misinterpretation.
 
+**What happens if I don't know the answers to all the brief questions?**
+Tell me that upfront. It's actually useful information. If you can't define what success looks like or who your primary audience is, those are strategic questions we should work out together before production starts. I'd rather spend an hour on a discovery call getting those answers than spend three weeks producing something that needs to be rebuilt because the brief wasn't right. Most of my best client relationships have started with "I'm not sure what we need, can you help us figure that out?"
+
 ---
 
 Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 500+ projects. motionstory.com.au`
@@ -1326,6 +1369,20 @@ Most SaaS companies should start with items 1 and 3 (a homepage explainer with s
 The most common mistake is jumping straight to a product demo when you need an explainer. A demo assumes the viewer already understands what your product is and why it matters. If they don't have that context, a feature walkthrough won't convert. It'll confuse.
 
 Start with the story (explainer), then go deeper (demo). Don't skip the first chapter.
+
+## Real Briefs, Real Formats
+
+Here are four projects where the client came in asking for one thing and ended up with something different, and better.
+
+**Wipster** came asking for a product overview video. What they actually needed was a video that explained the conceptual shift their product represented. Not just "here's how to use the feedback tool" but "here's how thinking about video feedback differently changes your whole production workflow." Different video. Different story. Same product.
+
+**Giraffe** came asking for an explainer about their city planning platform. What they actually needed was a video that worked for three completely different audiences simultaneously: architects, developers, and government planners, without making any of them feel like the video was made for someone else. That's not a format question. That's a strategic brief.
+
+**The RSPCA** needed a cause campaign video that didn't look like a charity video. The format challenge was to tell a genuine story about animal welfare without defaulting to the guilt-based advertising that people have learned to skip. Character-led animation that felt warm rather than heavy.
+
+**A cybersecurity SaaS** came asking for a product demo. What they actually needed was an awareness video. Their problem wasn't that prospects didn't understand the product, it was that prospects didn't understand why they needed the category at all. Demoing the product before establishing that need was the wrong sequence.
+
+In every case, the right format became obvious once the actual problem was clear. The format follows the strategy. Always start with what the video needs to change in the viewer's mind. The format follows from that.
 
 If you're not sure where to start, take a look at my [motion graphics work](/motion-graphics/) for inspiration, or [get in touch](/contact/) and I'll help you figure out the right approach for your stage and budget.
 
@@ -1474,6 +1531,18 @@ A studio is a team: usually a creative director, designers, animators, and somet
 This is where the market has been moving. Boutique studios (typically 1-4 people) offer the strategic thinking and process of a studio with the directness and affordability of a freelancer. You work directly with the creative lead, the process is structured but not bloated, and pricing sits in the $6,000-$15,000 range for most projects.
 
 The trade-off is capacity. A boutique studio might not be able to turn around five videos in three weeks. But for most SaaS companies that need one or two high-quality videos at a time, it's the best of both worlds.
+
+## Why This Distinction Matters More Than You Think
+
+I've worked on the agency side, the studio side, and as a solo specialist. Here's what I can tell you from all three.
+
+When you hire a studio, you're hiring their reputation and their capacity. The work on their website was made by a team that may not be the team working on your project. Ask the direct question: who specifically will be the creative lead on my project? The answer tells you more than any showreel.
+
+When you hire a freelance animator, you're hiring execution. If you have a fully developed concept, a locked script, and a clear visual direction, a skilled animator can bring it to life efficiently and cost-effectively. If you don't have those things, you'll be doing the creative direction yourself, and the quality of the output will reflect that.
+
+When you hire a specialist solo creative director, someone who brings both strategic thinking and production capability, you're paying for the thinking as much as the making. The brief gets challenged. The concept gets developed properly. The animation comes last, not first.
+
+For most SaaS companies with one or two considered videos per year, that third option delivers the best result for the budget. You're not paying for studio overhead you don't need. You're not doing the creative direction yourself. You get the senior thinking without the senior agency price tag.
 
 ## How to Decide: A Quick Framework
 
@@ -1771,7 +1840,15 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     category: "Craft & Process",
     tags: ["storytelling", "motion design", "video production", "creative process", "explainer videos"],
     excerpt: "Most explainer videos aren't stories. They're feature lists with a voiceover. Here's what actual storytelling looks like in motion design, and the process that produces it.",
-    content: `Most videos that claim to "tell your story" don't tell a story at all. They list features. They describe a company's history. They walk through a process in chronological order. That's not storytelling. That's information delivery with a voiceover.
+    content: `## The Word Everyone Uses and Almost Nobody Understands
+
+Every motion design studio says they do storytelling. Most of them don't.
+
+What they do is sequencing, moving from one piece of information to the next in a logical order. That's not storytelling. Storytelling requires tension. It requires a reason for the viewer to need to know what happens next. Without that, you have a well-organised presentation, not a story.
+
+I've been in briefs where the client has said "we want something that tells our story" and what they meant was "we want to explain our feature set in a compelling way." Those aren't the same thing. Features don't have stories. Problems do. Users do. The gap between where someone is and where they need to be, that's where the story lives.
+
+The motion design that works, the stuff people actually watch, share, and remember, creates that gap in the first ten seconds and resolves it in the last ten. Everything in between builds the bridge. That's the structure. The art is in making the bridge feel inevitable rather than constructed.
 
 Storytelling, the real kind, has specific mechanics. It creates tension. It follows a character. It makes deliberate choices about what to include and what to leave out. And in motion design, it's the difference between a video that people watch once and forget and one that changes how they think about your product.
 
@@ -2687,6 +2764,18 @@ These are called style frames, and they're the visual contract between the desig
 
 **Why style comes after storyboard, not before:** Because the storyboard reveals what you actually need to design. If you design the style first, you'll inevitably create frames that look beautiful but don't serve the story. The storyboard ensures that every design decision has a narrative purpose.
 
+## What Happens When You Skip the Concept
+
+I see this constantly. A client comes to me with a half-finished project from another studio. They've got beautiful style frames. Polished colour palettes, trendy illustration, perfect typography. But the video isn't working. Nobody can explain why.
+
+The reason is always the same: they jumped from brief to style frames. They skipped concept and treatment entirely. So the design looks good in isolation, but it doesn't serve any narrative. There's no through-line. No emotional arc. No reason for the viewer to keep watching after second five.
+
+I worked on a project for a city planning consultancy where the previous studio had produced three rounds of style frames before anyone had written a single line of script. Beautiful frames. Completely unusable, because nobody had decided what the video was actually about.
+
+We started over. Went back to the problem. Found the concept (a giraffe as a metaphor for seeing further and reaching higher). Built the treatment. Storyboarded it. Then designed the style to serve the story. The final video took less time to produce than the three failed rounds of style frames.
+
+The correct sequence is always: concept, treatment, storyboard, style, animate. Every time a project skips a step, it costs more to fix later than it would have cost to do properly in the first place.
+
 ## Step 6: Animate
 
 Animation is the final step. By the time an animator opens After Effects, every creative decision has been made. the concept, the narrative, the visual language, the composition, the pacing.
@@ -2767,6 +2856,16 @@ Animation-based onboarding should be measured like any other product investment:
 A typical SaaS onboarding animation package. welcome video, two to three feature walkthroughs, and a recovery sequence. costs $6,000 to $12,000 and takes four to six weeks to produce.
 
 Compare that to the lifetime value of the customers you're losing in week one. If your monthly churn rate drops even one percentage point from better onboarding, the payback period is measured in weeks, not months.
+
+## What This Looks Like in Practice: Atomic
+
+I worked with Atomic, an in-app messaging platform, on exactly this problem. Their product helps other SaaS companies communicate with users inside their apps. But Atomic's own onboarding had a gap: new customers understood the concept but got stuck on implementation.
+
+We created a short animated walkthrough that showed the entire flow from integration to first message. Not a screen recording with a cursor darting around a real interface. A clean, animated version that stripped away the noise and showed only the steps that mattered: connect the SDK, build your first card, push it to users, see the engagement data.
+
+The result was a video that lived inside their onboarding sequence and gave new customers a clear mental model before they touched a single line of code. It compressed the "I understand what to do" moment from days of documentation reading into 60 seconds of watching.
+
+This is the pattern that works: identify where users stall, build an animation that removes the uncertainty at that exact moment, and measure whether the stall disappears.
 
 ## Getting Started
 
@@ -3466,7 +3565,13 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     category: "Thought Leadership",
     tags: ["AI video tools", "motion design", "creative direction", "AI animation", "future of video"],
     excerpt: "AI video tools are improving fast. But concept, story, and specific customer insight remain stubbornly human skills. Here's where the line sits today.",
-    content: `AI video tools have improved dramatically. Runway, Pika, Sora. the output quality has gone from novelty to genuinely usable in some contexts. As a motion designer, I'd be foolish to ignore this. So let me give you an honest assessment of where things stand.
+    content: `I use AI tools every week. I'm not threatened by them, and I'm not pretending they don't exist. But I also watch founders pour money into AI generated video that looks impressive for about four seconds and communicates absolutely nothing. The technology has leapt forward. The strategic thinking behind most AI video has not moved at all.
+
+Here's what I mean. I recently finished a project for Method Recycling, a company that makes modular recycling stations for offices. The video needed to explain a product that looks simple but solves a genuinely complex behavioural problem: getting people to sort waste correctly in shared spaces. The final video hit a 62% completion rate, which is exceptional for a product explainer. Could AI have generated the animation frames? Possibly. Could AI have developed the concept that made the video work, the narrative structure that kept viewers watching, the editorial decisions about what to show and what to cut? Not close.
+
+That distinction, between production execution and strategic concept work, is where the real conversation about AI video should be happening. Most of the commentary I see focuses on output quality. That's the wrong question. The right question is: can the tool do the thinking that determines whether the video works?
+
+Let me break down where things actually stand.
 
 ## What AI Video Tools Do Well
 
