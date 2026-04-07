@@ -1910,7 +1910,7 @@ The wrong visual language creates a disconnect that the viewer feels even if the
 
 The first draft of any script is too long. The first storyboard has too many scenes. The first animation has too many elements on screen.
 
-Every round of editing should ask one question: "Does this serve the one thing?" If the answer is no. or even "sort of". it goes.
+Every round of editing should ask one question: "Does this serve the one thing?" If the answer is no, or even "sort of," it goes.
 
 The best explainer videos feel simple. But simplicity is the result of rigorous editing, not lazy thinking. It takes more work to explain something in 60 seconds than in five minutes.
 
@@ -1966,7 +1966,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     excerpt: "Video in cold outreach outperforms text. Here's the strategy for building, sending, and following up with video that actually books meetings.",
     content: `Cold outreach is broken. Reply rates on text-based cold emails are in the gutter. LinkedIn InMails get ignored. The same templates everyone's using produce the same terrible results.
 
-Video changes the equation. Not because it's novel. although that helps. but because it communicates more in 60 seconds than a 500-word email ever could. Here's how to use it strategically to book more sales meetings.
+Video changes the equation. Not because it's novel, although that helps, but because it communicates more in 60 seconds than a 500-word email ever could. Here's how to use it strategically to book more sales meetings.
 
 ## Why Video Outreach Works
 
@@ -1976,7 +1976,7 @@ A well-produced outreach video does three things a text email can't:
 - **It builds trust faster.** Video carries tone, confidence, and personality. A cold email is anonymous. A video is a person (or a product) that the prospect can evaluate in seconds.
 - **It gets forwarded.** When your prospect needs to loop in their team, they forward the video. That's your pitch reaching the decision-maker without you being in the room.
 
-The data backs this up. Emails with video see significantly higher click-through rates than text-only equivalents. But the difference isn't just the format. it's what's in the video.
+The data backs this up. Emails with video see significantly higher click-through rates than text-only equivalents. But the difference isn't just the format, it's what's in the video.
 
 ## The Outreach Video Strategy
 
@@ -2047,7 +2047,7 @@ Both approaches produce motion graphics. But only one compounds over time.
 
 ## Motion Design as Infrastructure
 
-When Stripe updates their website, every animation follows the same language. The easing curves, the timing, the way elements enter and exit. it's all systematic. When Slack introduces a new feature, the announcement video uses the same visual vocabulary as their onboarding animations, their social content, and their product UI.
+When Stripe updates their website, every animation follows the same language. The easing curves, the timing, the way elements enter and exit, it's all systematic. When Slack introduces a new feature, the announcement video uses the same visual vocabulary as their onboarding animations, their social content, and their product UI.
 
 This isn't an accident. These companies invested in motion design systems. documented rules for how things move, not just how they look.
 
@@ -2071,7 +2071,7 @@ The result: three pieces of video content that don't look like they came from th
 
 ## The Lesson: Build a System, Not a Video
 
-The most valuable thing I do for clients isn't producing a single video. It's establishing a motion design language that can be applied across every touchpoint. from the homepage to the help centre, from LinkedIn ads to investor decks.
+The most valuable thing I do for clients isn't producing a single video. It's establishing a motion design language that can be applied across every touchpoint, from the homepage to the help centre, from LinkedIn ads to investor decks.
 
 **A motion design system includes:**
 
@@ -2104,7 +2104,7 @@ A well-made 90-second explainer video, built within a considered motion design s
 
 That's not fifty pieces of content. It's one piece of infrastructure deployed across fifty touchpoints. That's how the big brands think about it.
 
-If you want to build a motion design system for your brand. not just a video. [let's talk](/contact/). Take a look at my [work](/work/) to see what systematic motion design looks like in practice.
+If you want to build a motion design system for your brand, not just a video, [let's talk](/contact/). Take a look at my [work](/work/) to see what systematic motion design looks like in practice.
 
 ---
 
@@ -2116,7 +2116,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     date: "2025-07-02",
     category: "Motion Design Strategy",
     tags: ["pitch deck animation", "startup fundraising", "motion design", "investor presentation", "SaaS pitch deck"],
-    excerpt: "Investors are pattern-matching, not watching a movie. Here's exactly where animation belongs in your pitch deck. and where it absolutely doesn't.",
+    excerpt: "Investors are pattern-matching, not watching a movie. Here's exactly where animation belongs in your pitch deck, and where it absolutely doesn't.",
     content: `I've worked on pitch deck animations for startups raising seed rounds through to Series B. The biggest mistake I see is treating the pitch deck as a creative canvas. It's not. It's a decision-making tool. Investors are pattern-matching against hundreds of other decks they've seen this quarter.
 
 Animation in a pitch deck works when it serves clarity. It fails when it serves ego.
@@ -2166,7 +2166,7 @@ Compare that to the cost of a failed fundraise because investors didn't understa
 
 ## What Investors Actually Respond To
 
-I've had founders tell me that their animated product slide was the moment in the pitch when investors leaned forward. Not because the animation was beautiful. because it made the product click.
+I've had founders tell me that their animated product slide was the moment in the pitch when investors leaned forward. Not because the animation was beautiful, because it made the product click.
 
 That's the job. Not to impress. To clarify.
 
@@ -2268,7 +2268,7 @@ Over 80% of LinkedIn video is watched without sound. If your ad depends on voice
 **What this means for motion design:**
 
 - **On-screen text is essential.** Every key message needs to be readable without audio. Large type, high contrast, enough time to read comfortably.
-- **Visual storytelling carries the narrative.** Use motion to show the transformation. from problem state to solution state. without requiring a single word of voiceover to follow the logic.
+- **Visual storytelling carries the narrative.** Use motion to show the transformation, from problem state to solution state, without requiring a single word of voiceover to follow the logic.
 - **Captions are a fallback, not a strategy.** Auto-captions help, but they're not a substitute for designing the ad to work visually first.
 
 ## Keep It Short: 15-30 Seconds
@@ -2454,7 +2454,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     date: "2025-04-23",
     category: "Motion Design Strategy",
     tags: ["animation vs live action", "visual communication", "motion design psychology", "SaaS explainer videos", "cognitive load"],
-    excerpt: "Animation isn't just a style preference. it's a cognitive advantage. Here's the psychology behind why animation explains complex products better than live video.",
+    excerpt: "Animation isn't just a style preference, it's a cognitive advantage. Here's the psychology behind why animation explains complex products better than live video.",
     content: `There's a reason the most complex products in the world. SaaS platforms, financial instruments, medical devices, infrastructure systems. are almost always explained with animation rather than live video. It's not a style preference. It's a cognitive advantage.
 
 The psychology is straightforward. Animation works better for complex products because of how the human brain processes visual information.
@@ -2465,7 +2465,7 @@ Most complex products involve processes you can't film. Data flowing between sys
 
 You can't point a camera at software doing something useful. You can film someone looking at a screen, but that shows the viewer nothing about what the product actually does.
 
-Animation makes the invisible visible. It can show data moving through a pipeline, decisions branching at each node, connections forming between previously isolated systems. This is what a [SaaS explainer video](/saas-explainer-videos/) does that no other format can. it visualises the mechanism.
+Animation makes the invisible visible. It can show data moving through a pipeline, decisions branching at each node, connections forming between previously isolated systems. This is what a [SaaS explainer video](/saas-explainer-videos/) does that no other format can: it visualises the mechanism.
 
 ## Animation Directs Attention Precisely
 
@@ -2495,7 +2495,7 @@ None of these questions are about the product. They're about the packaging. And 
 
 This might be the most counterintuitive point: showing less detail can produce more understanding.
 
-When you animate a complex process, you're forced to abstract it. A real database query involves millions of operations. An animated version shows a packet of data moving from point A to point B. That abstraction isn't a limitation. it's a feature.
+When you animate a complex process, you're forced to abstract it. A real database query involves millions of operations. An animated version shows a packet of data moving from point A to point B. That abstraction isn't a limitation, it's a feature.
 
 Abstraction allows the viewer to grasp the concept without getting lost in the implementation. They understand what happens (data is processed and a result appears) without needing to understand how it happens at a technical level.
 
@@ -2622,7 +2622,7 @@ The most effective motion design coordinates all three layers simultaneously:
 - Colour brightens (optimism, action)
 - Music builds to a resolved ending (completion, confidence)
 
-This isn't a formula. it's a framework. Every project has different requirements. But coordinating pacing, colour, and sound intentionally produces videos that don't just communicate information. They shape how the viewer feels about that information.
+This isn't a formula, it's a framework. Every project has different requirements. But coordinating pacing, colour, and sound intentionally produces videos that don't just communicate information. They shape how the viewer feels about that information.
 
 If you want to discuss how these elements might work for your next project, [get in touch](/contact/) or [see how my process works](/process/).
 
@@ -2637,7 +2637,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     category: "Craft & Process",
     tags: ["motion design process", "creative process", "animation production", "explainer video process", "storyboarding"],
     excerpt: "The correct order is problem, concept, treatment, storyboard, style, animate. Most studios do it backwards, and that's why most videos underperform.",
-    content: `The most expensive mistake in motion design production is starting with animation. It sounds obvious when you say it, but the majority of studios. and clients. skip straight to the visual execution before the concept is solid.
+    content: `The most expensive mistake in motion design production is starting with animation. It sounds obvious when you say it, but the majority of studios, and clients, skip straight to the visual execution before the concept is solid.
 
 They pick a style, choose colours, start animating, and then try to retrofit a message into frames that were designed without one. The result is a video that looks great and communicates nothing.
 
@@ -2671,7 +2671,7 @@ This is where the [story arc](/explainer-videos/) gets built. The problem, the t
 
 ## Step 4: Storyboard
 
-Now. and only now. does visual work begin. The storyboard translates the treatment into a sequence of key frames. Each frame represents a major moment in the video.
+Now, and only now, does visual work begin. The storyboard translates the treatment into a sequence of key frames. Each frame represents a major moment in the video.
 
 A good storyboard is rough. It's not about beautiful illustration. It's about composition, timing, and visual flow. Can the viewer follow the narrative from frame to frame? Does the eye move naturally through each scene? Are we showing, not telling?
 
@@ -2857,7 +2857,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     date: "2025-02-12",
     category: "Motion Design Strategy",
     tags: ["SaaS animation", "visual communication", "motion design", "product marketing", "explainer videos"],
-    excerpt: "Text describes features. Screenshots show static states. Animation shows the dynamic process that makes your SaaS product valuable. and that's what sells.",
+    excerpt: "Text describes features. Screenshots show static states. Animation shows the dynamic process that makes your SaaS product valuable, and that's what sells.",
     content: `Your SaaS product page probably has plenty of text and screenshots. Most do. And most fail to communicate what actually makes the product valuable.
 
 Here's the problem: text describes what your product does. Screenshots show what it looks like at a single frozen moment. Neither communicates the dynamic process that makes it useful.
@@ -2890,7 +2890,7 @@ This isn't a small thing. The difference between a viewer who understands your p
 
 ## Animation Compresses Time
 
-Some SaaS products deliver value over hours, days, or weeks. An analytics platform might collect data for seven days before the patterns become meaningful. An automation tool might save thirty minutes per day. but you can't demonstrate that in real time.
+Some SaaS products deliver value over hours, days, or weeks. An analytics platform might collect data for seven days before the patterns become meaningful. An automation tool might save thirty minutes per day, but you can't demonstrate that in real time.
 
 Animation compresses time naturally. A week of data collection becomes three seconds of animated progress. A month of accumulated time savings becomes a satisfying before-and-after comparison. The viewer grasps the long-term value proposition in moments rather than paragraphs.
 
@@ -2961,7 +2961,7 @@ More isn't better. These common mistakes turn useful motion into distracting dec
 
 - **Parallax on every section.** It was impressive in 2015. Now it slows page load, creates accessibility issues, and makes content harder to read.
 - **Complex entrance animations on above-the-fold content.** The hero section should load instantly. Making the user wait for a sequence of animations to play before they can see the headline is a conversion killer.
-- **Animation on text blocks.** Body text should appear and be readable immediately. Fading in paragraphs one at a time doesn't add value. it adds delay.
+- **Animation on text blocks.** Body text should appear and be readable immediately. Fading in paragraphs one at a time doesn't add value, it adds delay.
 - **Motion that repeats on scroll.** If an animation plays every time the user scrolls past it, it becomes irritating instead of engaging.
 - **Decoration with no function.** Floating particles, animated backgrounds, and ornamental motion that doesn't serve a purpose. If it doesn't help the user understand something or take an action, remove it.
 
@@ -3003,7 +3003,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     date: "2025-01-15",
     category: "Digital Marketing",
     tags: ["email marketing", "animated email", "GIF marketing", "email conversion", "motion design"],
-    excerpt: "Animated email content can double click-through rates. but Outlook blocks most of it. Here's what actually works across email clients and what to avoid.",
+    excerpt: "Animated email content can double click-through rates, but Outlook blocks most of it. Here's what actually works across email clients and what to avoid.",
     content: `Animation in email marketing can significantly increase click-through rates. It can also get blocked, break layouts, and slow load times to the point where nobody sees it. The difference comes down to knowing what format to use, where the landmines are, and how to test.
 
 ## The Format Options
@@ -3017,7 +3017,7 @@ The constraints:
 - The first frame is your fallback. Outlook and some older clients display only the first frame as a static image. Make sure it communicates the key message on its own.
 
 **MP4/Video (high impact, limited support):**
-Embedded video in email is supported by Apple Mail, iOS Mail, and a few others. For the rest. including Gmail and Outlook. it falls back to a static image with a play button that links to an external page.
+Embedded video in email is supported by Apple Mail, iOS Mail, and a few others. For the rest, including Gmail and Outlook, it falls back to a static image with a play button that links to an external page.
 
 When it works, it's powerful. When it doesn't, you need a fallback that's just as good.
 
@@ -3140,7 +3140,7 @@ An animated homepage uses motion design elements integrated directly into the pa
 
 This deserves its own section because it's the most common mistake I see. Companies autoplay their hero video muted, assuming the viewer will unmute. They won't.
 
-A muted autoplay video without captions is visual wallpaper. It moves, but it doesn't communicate. If your video's message depends on voiceover. and most do. muted autoplay undermines the entire investment.
+A muted autoplay video without captions is visual wallpaper. It moves, but it doesn't communicate. If your video's message depends on voiceover, and most do, muted autoplay undermines the entire investment.
 
 **Solutions:**
 
@@ -3223,7 +3223,7 @@ None of those clients asked for an explainer video. They asked for something tha
 
 The commoditisation of the explainer video category is actually good news for companies willing to invest in quality. When the baseline is generic, craft-driven work stands out more, not less.
 
-A motion design piece that starts with a strong concept, uses a distinctive visual language, and is edited to serve the specific audience has more impact than it did five years ago. because it's surrounded by mediocrity.
+A motion design piece that starts with a strong concept, uses a distinctive visual language, and is edited to serve the specific audience has more impact than it did five years ago, because it's surrounded by mediocrity.
 
 **What specialist motion design delivers that commodity can't:**
 
@@ -3429,7 +3429,7 @@ The worst product videos are the ones where every stakeholder got to add their r
 
 ## Problem 5: Never Deployed
 
-I've made [product demo videos](/product-demo-videos/) that were beautiful, on-message, and well-crafted. and then they got buried. Placed on a sub-page. Shared in one email. Posted once on LinkedIn. Then forgotten.
+I've made [product demo videos](/product-demo-videos/) that were beautiful, on-message, and well-crafted, and then they got buried. Placed on a sub-page. Shared in one email. Posted once on LinkedIn. Then forgotten.
 
 **Why it fails:** A video that nobody watches has zero ROI regardless of quality. Production is only half the job. Deployment is the other half.
 
@@ -3508,7 +3508,7 @@ This specificity comes from customer research, product knowledge, and editorial 
 
 AI can generate animation in a generic style. It can't generate animation that extends a specific brand system. that uses the exact right shade of blue at the exact right moment, that follows the brand's motion principles, that creates visual consistency across a library of content.
 
-Creating motion design that feels like it belongs to a specific brand. not just labelled with its logo. requires deep understanding of the brand's visual language, personality, and strategic positioning.
+Creating motion design that feels like it belongs to a specific brand, not just labelled with its logo, requires deep understanding of the brand's visual language, personality, and strategic positioning.
 
 ## Where the Line Sits Today
 
