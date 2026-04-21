@@ -2,6 +2,37 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
+import { BLOG_POSTS } from './src/data/blog-posts.ts';
+
+// Build a slug → date lookup for blog-post lastmod hints in the sitemap.
+const BLOG_LASTMOD = new Map(
+  BLOG_POSTS.map((post) => [post.slug, new Date(post.date)]),
+);
+
+// Main landing pages that deserve a priority boost over blog posts.
+const HIGH_PRIORITY_PAGES = new Set([
+  '/about/',
+  '/agencies/',
+  '/blog/',
+  '/causes/',
+  '/contact/',
+  '/explainer-videos/',
+  '/motion-graphics/',
+  '/process/',
+  '/product-demo-videos/',
+  '/saas-explainer-videos/',
+  '/saas-tech/',
+  '/work/',
+]);
+
+const LOW_PRIORITY_PAGES = new Set([
+  '/privacy-policy/',
+]);
+
+// Build timestamp used as lastmod for static pages that don't have their own
+// publish date (landing pages, case studies, etc.). Gives Google a useful
+// freshness signal on every deploy.
+const BUILD_DATE = new Date();
 
 export default defineConfig({
   site: 'https://motionstory.com.au',
@@ -10,6 +41,36 @@ export default defineConfig({
     react(),
     sitemap({
       filter: (page) => !page.includes('/thank-you/'),
+      serialize: (item) => {
+        const path = new URL(item.url).pathname;
+
+        if (path === '/') {
+          return { ...item, priority: 1.0, changefreq: 'weekly', lastmod: BUILD_DATE.toISOString() };
+        }
+
+        if (LOW_PRIORITY_PAGES.has(path)) {
+          return { ...item, priority: 0.3, changefreq: 'yearly', lastmod: BUILD_DATE.toISOString() };
+        }
+
+        if (HIGH_PRIORITY_PAGES.has(path)) {
+          return { ...item, priority: 0.9, changefreq: 'monthly', lastmod: BUILD_DATE.toISOString() };
+        }
+
+        if (path.startsWith('/casestudy/')) {
+          return { ...item, priority: 0.8, changefreq: 'monthly', lastmod: BUILD_DATE.toISOString() };
+        }
+
+        // Top-level slug → blog post. Use the post's own publish date.
+        const match = path.match(/^\/([^/]+)\/$/);
+        if (match) {
+          const postDate = BLOG_LASTMOD.get(match[1]);
+          if (postDate) {
+            return { ...item, priority: 0.7, changefreq: 'monthly', lastmod: postDate.toISOString() };
+          }
+        }
+
+        return { ...item, priority: 0.5, changefreq: 'monthly', lastmod: BUILD_DATE.toISOString() };
+      },
     }),
   ],
   vite: {
@@ -21,6 +82,9 @@ export default defineConfig({
       dedupe: ['react', 'react-dom'],
     },
   },
+  // NOTE: On Netlify, public/_redirects is authoritative (served as proper 301s
+  // at the edge before any HTML is rendered). Keep these entries in sync with
+  // public/_redirects. This config also powers dev-mode (npm run dev) redirects.
   redirects: {
     // Old homepage variants
     '/homepage/': '/',
@@ -60,8 +124,13 @@ export default defineConfig({
     // '/product-demo-videos/' now has its own page
     '/animated-onboarding-videos/': '/saas-explainer-videos/',
 
+    // Old SaaS/startup stories pages (from GSC Apr 2026)
+    '/stories-for-start-ups-animated-explainer-videos/': '/saas-explainer-videos/',
+    '/sas-platfrom-explainers/': '/saas-explainer-videos/',
+
     // Charity → causes
     '/charity-explainer-videos/': '/causes/',
+    '/stories-for-charities-nonprofits/': '/causes/',
 
     // Agency partnership → agencies
     '/agency-partnership/': '/agencies/',
@@ -108,6 +177,13 @@ export default defineConfig({
     '/other-project-slug/food-waste-programme/': '/casestudy/acir/',
     '/other-project-slug/licensys-smart-city/': '/work/',
     '/other-project-slug/luse-krue/': '/casestudy/redcross-covid-vacine-explainer/',
+    '/other-project-slug/oartech-product-demo/': '/work/',
+
+    // Old WP /folio/ slug → /casestudy/ (from GSC Apr 2026)
+    '/folio/good2pay/': '/casestudy/good2pay/',
+    '/folio/method-explainer-video/': '/casestudy/method-explainer-video/',
+    '/folio/shape-connect/': '/casestudy/shape-connect/',
+    '/folio/ipa-australia/': '/casestudy/ipa-australia/',
 
     // Duplicate case study
     '/casestudy/hey-you/': '/casestudy/heyyou-app/',
@@ -126,5 +202,23 @@ export default defineConfig({
     '/tax-other-projects/explainer/': '/work/',
     '/tax-other-projects/education/': '/work/',
     '/category/industry/': '/blog/',
+
+    // Old WP blog slugs that now 404 (from GSC "Not found", Apr 2026)
+    '/saas-explainer-videos-the-secret-sauce-for-saas/': '/saas-explainer-videos/',
+    '/best-animation-production-companies-in-australia/': '/find-the-perfect-animation-production-company/',
+    '/looking-for-animation-expert-who-understands-complex-products-instantly/': '/art-of-explaining-complex-ideas-motion-designers-framework/',
+    '/who-creates-the-best-product-demo-videos-complete-studio-comparison/': '/product-demo-videos/',
+    '/why-your-product-demo-isnt-converting-and-how-to-fix-it/': '/why-saas-demo-video-not-converting/',
+    '/new-features-ignored-by-existing-users-feature-adoption-animation/': '/onboard-saas-customers-using-animation-reduce-churn/',
+    '/visual-problem-solver-daniel-neale-sees-solutions-others-miss/': '/about/',
+    '/why-your-sales-presentations-arent-closing-deals-and-how-to-fix-it/': '/how-to-use-video-in-saas-sales-process/',
+    '/creative-director-who-animates-strategic-execution-combination/': '/about/',
+    '/need-someone-who-gets-complex-ideas-immediately-daniel-neale/': '/about/',
+    '/why-your-investor-pitch-isnt-getting-funded-and-how-to-fix-it/': '/motion-design-in-pitch-deck-what-investors-want/',
+    '/how-to-make-boring-presentations-engaging-without-being-cringe/': '/motion-design-in-pitch-deck-what-investors-want/',
+    '/explainer-video-specialist-united-states-daniel-neale/': '/about/',
+
+    // Missing /casestudy/ index (from GSC "Discovered" Apr 2026)
+    '/casestudy/': '/work/',
   },
 });

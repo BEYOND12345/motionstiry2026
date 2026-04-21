@@ -1,0 +1,195 @@
+# Netlify _redirects — proper 301s served at the edge.
+#
+# Priority: Netlify processes these BEFORE serving any static files from dist/,
+# so these take precedence over Astro's meta-refresh HTML redirects.
+#
+# Syntax: FROM  TO  STATUS[!]
+#   "!" = force, applies even if a file exists at the FROM path.
+#
+# Keep in sync with redirects in astro.config.mjs.
+
+# ───────────────────────────────────────────────────
+# Canonical host: www → apex, http → https
+# ───────────────────────────────────────────────────
+https://www.motionstory.com.au/*   https://motionstory.com.au/:splat   301!
+http://www.motionstory.com.au/*    https://motionstory.com.au/:splat   301!
+http://motionstory.com.au/*        https://motionstory.com.au/:splat   301!
+
+# ───────────────────────────────────────────────────
+# Old homepage variants
+# ───────────────────────────────────────────────────
+/homepage/                                           /                301!
+/animated-product-demos-product-explainer-animation/ /                301!
+
+# ───────────────────────────────────────────────────
+# Portfolio → /work/
+# ───────────────────────────────────────────────────
+/portfolio/                                   /work/   301!
+/animated-explainer-videos-and-motion-graphics/ /work/ 301!
+/work-project-detail/                         /work/   301!
+
+# ───────────────────────────────────────────────────
+# About / team pages → /about/
+# ───────────────────────────────────────────────────
+/about-team/    /about/   301!
+/our-story/     /about/   301!
+
+# ───────────────────────────────────────────────────
+# Old pricing pages → /contact/
+# ───────────────────────────────────────────────────
+/explainer-pricing-page/   /contact/   301!
+/pricing/                  /contact/   301!
+
+# ───────────────────────────────────────────────────
+# Old service pages → audience pages
+# ───────────────────────────────────────────────────
+/services/                          /saas-tech/                301!
+/explainer-video-company/           /explainer-videos/         301!
+/explainer-video-company-20024/     /explainer-videos/         301!
+/animation-production-company/      /explainer-videos/         301!
+/motion-graphic-production-company/ /motion-graphics/          301!
+/animated-video-service/            /explainer-videos/         301!
+/30s-explainer-videos/              /saas-tech/                301!
+/start-up-explainer-videos/         /saas-tech/                301!
+/finance-explainer-videos/          /saas-tech/                301!
+/animated-product-demos/            /product-demo-videos/      301!
+/technology-explainers/             /saas-explainer-videos/    301!
+/startup-explainer-videos/          /saas-explainer-videos/    301!
+/animated-onboarding-videos/        /saas-explainer-videos/    301!
+
+# New (from GSC Page-with-redirect report, Apr 2026)
+/stories-for-start-ups-animated-explainer-videos/   /saas-explainer-videos/   301!
+/sas-platfrom-explainers/                            /saas-explainer-videos/   301!
+
+# ───────────────────────────────────────────────────
+# Charity → /causes/
+# ───────────────────────────────────────────────────
+/charity-explainer-videos/             /causes/   301!
+/stories-for-charities-nonprofits/     /causes/   301!
+
+# ───────────────────────────────────────────────────
+# Agency partnership → /agencies/
+# ───────────────────────────────────────────────────
+/agency-partnership/   /agencies/   301!
+
+# ───────────────────────────────────────────────────
+# Landing pages → relevant audience pages
+# ───────────────────────────────────────────────────
+/landing-page-design-animation/              /saas-tech/              301!
+/landing-page-explainer-video-01/            /saas-tech/              301!
+/animation-production-company-2/             /saas-tech/              301!
+/landing-page-animated-video-services-01/    /saas-tech/              301!
+/landing-animated-product-demos-01/          /product-demo-videos/    301!
+/freelance-motion-graphic-designer/          /motion-graphics/        301!
+/freelance-motion-design-and-animation/      /saas-tech/              301!
+/motion-graphic-production/                  /motion-graphics/        301!
+
+# ───────────────────────────────────────────────────
+# Old standalone pages → new equivalents
+# ───────────────────────────────────────────────────
+/frequently-asked-questions-motion-story/   /         301!
+/client-testimonials-motion-story/          /work/    301!
+
+# ───────────────────────────────────────────────────
+# Consultation → /contact/
+# ───────────────────────────────────────────────────
+/book-a-consultation/     /contact/   301!
+/work-together/           /contact/   301!
+/thanks-now-book-a-call/  /contact/   301!
+
+# ───────────────────────────────────────────────────
+# Misc
+# ───────────────────────────────────────────────────
+/elementor-8558/              /   301!
+/motion-story-temporary/      /   301!
+
+# ───────────────────────────────────────────────────
+# /other-project-slug/* — old WP taxonomy
+# ───────────────────────────────────────────────────
+/other-project-slug/uts-future/                 /work/                                                 301!
+/other-project-slug/measuring-plastic-waste/    /casestudy/united-nations/                             301!
+/other-project-slug/legal-separation-kit/       /work/                                                 301!
+/other-project-slug/amsed/                      /casestudy/amsed/                                      301!
+/other-project-slug/uclusion/                   /work/                                                 301!
+/other-project-slug/qxmd-read/                  /casestudy/read-accessing-medical-journals/            301!
+/other-project-slug/oartech-product-demo/       /work/                                                 301!
+/other-project-slug/bresic-witney/              /casestudy/bresic-witney-a-different-estate-agent/     301!
+/other-project-slug/liquid-ai/                  /work/                                                 301!
+/other-project-slug/fracture-care/              /work/                                                 301!
+/other-project-slug/bat-nav/                    /casestudy/bat-nav-platform-explainer/                 301!
+/other-project-slug/class-supper/               /work/                                                 301!
+/other-project-slug/food-waste-programme/       /casestudy/acir/                                       301!
+/other-project-slug/licensys-smart-city/        /work/                                                 301!
+/other-project-slug/luse-krue/                  /casestudy/redcross-covid-vacine-explainer/            301!
+
+# ───────────────────────────────────────────────────
+# /folio/* — old WP portfolio slug → /casestudy/*
+# (New in Apr 2026 — from GSC Page-with-redirect report)
+# ───────────────────────────────────────────────────
+/folio/good2pay/               /casestudy/good2pay/                 301!
+/folio/method-explainer-video/ /casestudy/method-explainer-video/   301!
+/folio/shape-connect/          /casestudy/shape-connect/            301!
+/folio/ipa-australia/          /casestudy/ipa-australia/            301!
+/folio/*                       /work/                               301!
+
+# ───────────────────────────────────────────────────
+# Duplicate case study
+# ───────────────────────────────────────────────────
+/casestudy/hey-you/   /casestudy/heyyou-app/   301!
+
+# ───────────────────────────────────────────────────
+# Old WordPress taxonomy pages (from GSC data)
+# ───────────────────────────────────────────────────
+/caseandstudy-videotype/2d-motion-graphic/   /work/   301!
+/caseandstudy-videotype/product-demo/        /work/   301!
+/caseandstudy-videotype/*                    /work/   301!
+
+/cands-category/awareness/      /work/   301!
+/cands-category/music/          /work/   301!
+/cands-category/recent-work/    /work/   301!
+/cands-category/hero-video/     /work/   301!
+/cands-category/explainer/      /work/   301!
+/cands-category/app/            /work/   301!
+/cands-category/property/       /work/   301!
+/cands-category/*               /work/   301!
+
+/tax-other-projects/product-demo/   /work/   301!
+/tax-other-projects/explainer/      /work/   301!
+/tax-other-projects/education/      /work/   301!
+/tax-other-projects/*               /work/   301!
+
+/category/industry/   /blog/   301!
+/category/*           /blog/   301!
+
+# WordPress date archives → /blog/ (from GSC)
+/2022/*   /blog/   301!
+/2023/*   /blog/   301!
+/2024/*   /blog/   301!
+
+# ───────────────────────────────────────────────────
+# Old WP blog slugs that now 404 (from GSC "Not found", Apr 2026)
+# Mapped to closest existing page or blog post.
+# ───────────────────────────────────────────────────
+/saas-explainer-videos-the-secret-sauce-for-saas/                          /saas-explainer-videos/                                         301!
+/best-animation-production-companies-in-australia/                         /find-the-perfect-animation-production-company/                 301!
+/looking-for-animation-expert-who-understands-complex-products-instantly/  /art-of-explaining-complex-ideas-motion-designers-framework/    301!
+/who-creates-the-best-product-demo-videos-complete-studio-comparison/      /product-demo-videos/                                           301!
+/why-your-product-demo-isnt-converting-and-how-to-fix-it/                  /why-saas-demo-video-not-converting/                            301!
+/new-features-ignored-by-existing-users-feature-adoption-animation/        /onboard-saas-customers-using-animation-reduce-churn/           301!
+/visual-problem-solver-daniel-neale-sees-solutions-others-miss/            /about/                                                         301!
+/why-your-sales-presentations-arent-closing-deals-and-how-to-fix-it/       /how-to-use-video-in-saas-sales-process/                        301!
+/creative-director-who-animates-strategic-execution-combination/           /about/                                                         301!
+/need-someone-who-gets-complex-ideas-immediately-daniel-neale/             /about/                                                         301!
+/why-your-investor-pitch-isnt-getting-funded-and-how-to-fix-it/            /motion-design-in-pitch-deck-what-investors-want/               301!
+/how-to-make-boring-presentations-engaging-without-being-cringe/           /motion-design-in-pitch-deck-what-investors-want/               301!
+/explainer-video-specialist-united-states-daniel-neale/                    /about/                                                         301!
+
+# Emoji URLs — URL-encoded
+#   🎯 = %F0%9F%8E%AF   📈 = %F0%9F%93%88   ⚡️ = %E2%9A%A1%EF%B8%8F   💥 = %F0%9F%92%A5
+/%F0%9F%8E%AF-utilizing-explainer-videos-to-amplify-product-clarity-and-expand-your-user-base-in-2023-%F0%9F%93%88/   /saas-explainer-videos/   301!
+/how-explainer-videos-%E2%9A%A1%EF%B8%8Fsupercharge-startup-growth-the-definitive-guide-%F0%9F%92%A5/   /how-explainer-videos-supercharge-startup-growth/   301!
+
+# ───────────────────────────────────────────────────
+# Missing index pages / misc (from GSC "Discovered" Apr 2026)
+# ───────────────────────────────────────────────────
+/casestudy/   /work/   301!
