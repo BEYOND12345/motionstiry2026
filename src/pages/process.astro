@@ -12,6 +12,43 @@ const structuredData = {
     "cssSelector": ["h1", ".text-body"]
   }
 };
+
+const faqs = [
+  {
+    q: "How long does a typical motion design project take?",
+    a: "Most projects run 4 to 8 weeks from kickoff to final delivery. Phase one (script and concept) usually takes 1 to 2 weeks. Phase two (storyboard and style frames) takes about 2 weeks. Phase three (animation, sound, revisions) takes another 2 to 4 weeks. Tight timelines are possible for simpler pieces — I'll always be upfront about what's realistic and what's not.",
+  },
+  {
+    q: "How many rounds of revisions do I get?",
+    a: "Two structured revision rounds during animation, plus one structured review after storyboard and style frames. The structure matters: feedback is consolidated, not drip-fed, so the project keeps momentum. Scope changes mid-project are handled transparently — if they push timeline or cost, you'll know before any work starts.",
+  },
+  {
+    q: "What do I need to provide to get started?",
+    a: "Not a script. Just context. Who are you, who are you trying to reach, what do you want them to do next, and what's getting in the way right now. If you have a brand guide, existing decks, screenshots, or competitor references, those help. If you don't, we build the brief together in phase one.",
+  },
+  {
+    q: "Who will I actually be working with?",
+    a: "Me. Daniel Neale. I write the concepts, design the frames, animate the final piece, and respond to your feedback directly. No account managers, no handoffs to junior animators, no diluted feedback loops. That's the whole model — one senior creator, fewer people in the chain, clearer work.",
+  },
+  {
+    q: "Can you work to a fixed deadline?",
+    a: "Yes, if the timeline is realistic for the scope. I'll be honest early in the conversation about whether a date is achievable. If it's tight, we can sometimes reduce scope (shorter runtime, simpler visual direction, fewer revisions) to hit the date without cutting corners on the things that matter.",
+  },
+  {
+    q: "Do you offer ongoing motion design or retainer work?",
+    a: "Yes. A lot of SaaS and product-led clients work with me on a rolling basis — a series of feature videos, social cutdowns, quarterly updates, or ongoing campaign motion. After the first project ships, we can set up a lightweight retainer or book work project-by-project, whichever suits.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
 ---
 
 <PageLayout
@@ -30,6 +67,7 @@ const structuredData = {
         { "@type": "ListItem", "position": 2, "name": "Process", "item": "https://motionstory.com.au/process/" }
       ]
     })} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
 
   <div class="pt-32 pb-24 px-8 max-w-5xl mx-auto">
@@ -116,6 +154,26 @@ const structuredData = {
       </section>
 
     </div>
+
+    <!-- FAQ -->
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <span class="text-metadata mb-10 block">Frequently Asked Questions</span>
+      <h2 class="font-display text-3xl md:text-5xl font-bold tracking-tight leading-[0.9] mb-16">
+        Common questions<br />about the process.
+      </h2>
+      <div class="space-y-12">
+        {faqs.map((faq) => (
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start pb-12 border-b border-black/10 last:border-b-0 last:pb-0">
+            <div>
+              <h3 class="font-display text-lg font-medium tracking-tight">{faq.q}</h3>
+            </div>
+            <div class="md:col-span-2">
+              <p class="text-body">{faq.a}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
 
     <!-- CTA -->
     <section class="mb-32">

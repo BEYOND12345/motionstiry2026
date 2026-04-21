@@ -1,0 +1,94 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { ALL_PROJECTS } from '../data/projects';
+
+// Surface a handful of featured work so a wayward visitor has somewhere to go.
+const featuredProjects = ALL_PROJECTS.filter((p) => p.featured).slice(0, 4);
+---
+
+<PageLayout
+  title="Page Not Found | Motion Story"
+  description="The page you're looking for doesn't exist, but there's plenty of motion design work here worth seeing."
+  showCTA={false}
+>
+  <Fragment slot="head">
+    <meta name="robots" content="noindex,follow" />
+  </Fragment>
+
+  <div class="pt-32 pb-24 px-8 max-w-5xl mx-auto">
+    <span class="text-metadata mb-8 block">404</span>
+    <h1 class="font-display text-5xl md:text-8xl font-bold tracking-tight leading-[0.9] mb-8">
+      Page moved,<br />deleted, or imagined.
+    </h1>
+    <p class="text-body text-lg max-w-2xl mb-16">
+      This URL doesn't lead anywhere on the current site. It may have been a page from the old WordPress build, or maybe a typo. Either way, here's where to head next.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
+      <div>
+        <span class="text-metadata mb-6 block">Go somewhere</span>
+        <ul class="space-y-4">
+          <li>
+            <a href="/" class="group inline-flex items-baseline gap-3">
+              <span class="font-display text-xl font-medium group-hover:opacity-60 transition-opacity">Home</span>
+              <span class="text-metadata opacity-40 group-hover:opacity-100 transition-opacity">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="/work/" class="group inline-flex items-baseline gap-3">
+              <span class="font-display text-xl font-medium group-hover:opacity-60 transition-opacity">Work</span>
+              <span class="text-metadata opacity-40 group-hover:opacity-100 transition-opacity">44 projects</span>
+            </a>
+          </li>
+          <li>
+            <a href="/blog/" class="group inline-flex items-baseline gap-3">
+              <span class="font-display text-xl font-medium group-hover:opacity-60 transition-opacity">Blog</span>
+              <span class="text-metadata opacity-40 group-hover:opacity-100 transition-opacity">Insights on motion</span>
+            </a>
+          </li>
+          <li>
+            <a href="/about/" class="group inline-flex items-baseline gap-3">
+              <span class="font-display text-xl font-medium group-hover:opacity-60 transition-opacity">About</span>
+              <span class="text-metadata opacity-40 group-hover:opacity-100 transition-opacity">Who's behind this</span>
+            </a>
+          </li>
+          <li>
+            <a href="/contact/" class="group inline-flex items-baseline gap-3">
+              <span class="font-display text-xl font-medium group-hover:opacity-60 transition-opacity">Contact</span>
+              <span class="text-metadata opacity-40 group-hover:opacity-100 transition-opacity">Start a project</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <span class="text-metadata mb-6 block">Or see some featured work</span>
+        <ul class="space-y-4">
+          {featuredProjects.map((project) => (
+            <li>
+              <a
+                href={`/casestudy/${project.slug}/`}
+                class="group inline-flex items-baseline gap-3"
+              >
+                <span class="font-display text-xl font-medium group-hover:opacity-60 transition-opacity">
+                  {project.client}
+                </span>
+                <span class="text-metadata opacity-40 group-hover:opacity-100 transition-opacity">
+                  {project.category}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-12 border-t border-black/10">
+      <p class="text-metadata opacity-60">
+        If you got here via a link that used to work, drop a note to
+        <a href="mailto:daniel@motionstory.com.au" class="border-b border-black/20 hover:border-black transition-colors">daniel@motionstory.com.au</a>
+        and we'll fix it.
+      </p>
+    </div>
+  </div>
+</PageLayout>

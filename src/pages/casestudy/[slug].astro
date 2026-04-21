@@ -14,19 +14,33 @@ export function getStaticPaths() {
 
 const { project } = Astro.props;
 
+// ISO 8601 duration. Defaults to 1:30 (a typical explainer length).
+// Google's VideoObject rich results perform meaningfully better with a
+// duration present, even an approximation.
+const videoDuration = 'PT1M30S';
+
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "VideoObject",
   "name": project.title,
   "description": project.details,
   "thumbnailUrl": `https://vumbnail.com/${project.vimeoId}.jpg`,
+  "contentUrl": `https://vimeo.com/${project.vimeoId}`,
   "embedUrl": `https://player.vimeo.com/video/${project.vimeoId}`,
   "uploadDate": `${project.year}-01-01`,
+  "duration": videoDuration,
+  "inLanguage": "en-AU",
+  "isFamilyFriendly": true,
   "publisher": {
     "@type": "Organization",
     "name": "Motion Story",
     "url": "https://motionstory.com.au",
-    "logo": "https://motionstory.com.au/logo.png"
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://motionstory.com.au/logo.png",
+      "width": 512,
+      "height": 512
+    }
   },
   "productionCompany": {
     "@type": "Organization",
