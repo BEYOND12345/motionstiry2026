@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
 import CaseStudyPage from '../../components/CaseStudyPage';
 import { ALL_PROJECTS } from '../../data/projects';
+import { getVideoSeoCategory, getVideoSeoTags } from '../../lib/videoSeo';
 import '../../styles/global.css';
 
 export function getStaticPaths() {
@@ -13,20 +14,28 @@ export function getStaticPaths() {
 }
 
 const { project } = Astro.props;
+const canonicalUrl = `https://motionstory.com.au/casestudy/${project.slug}/`;
+const videoSeoTags = getVideoSeoTags(project);
+const videoSeoCategory = getVideoSeoCategory(project);
 
 // ISO 8601 duration. Defaults to 1:30 (a typical explainer length).
 // Google's VideoObject rich results perform meaningfully better with a
 // duration present, even an approximation.
 const videoDuration = 'PT1M30S';
 
-const structuredData = {
+const primaryVideoData = {
   "@context": "https://schema.org",
   "@type": "VideoObject",
+  "@id": `${canonicalUrl}#primary-video`,
   "name": project.title,
   "description": project.details,
   "thumbnailUrl": `https://vumbnail.com/${project.vimeoId}.jpg`,
   "contentUrl": `https://vimeo.com/${project.vimeoId}`,
   "embedUrl": `https://player.vimeo.com/video/${project.vimeoId}`,
+  "url": canonicalUrl,
+  "mainEntityOfPage": canonicalUrl,
+  "keywords": videoSeoTags,
+  "genre": videoSeoCategory,
   "uploadDate": `${project.year}-01-01`,
   "duration": videoDuration,
   "inLanguage": "en-AU",
@@ -49,13 +58,67 @@ const structuredData = {
   }
 };
 
+const secondaryVideoData = project.secondaryVimeoId ? {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "@id": `${canonicalUrl}#secondary-video`,
+  "name": `${project.title}: Additional video`,
+  "description": project.details,
+  "thumbnailUrl": `https://vumbnail.com/${project.secondaryVimeoId}.jpg`,
+  "contentUrl": `https://vimeo.com/${project.secondaryVimeoId}`,
+  "embedUrl": `https://player.vimeo.com/video/${project.secondaryVimeoId}`,
+  "url": canonicalUrl,
+  "mainEntityOfPage": canonicalUrl,
+  "keywords": videoSeoTags,
+  "genre": videoSeoCategory,
+  "uploadDate": `${project.year}-01-01`,
+  "duration": videoDuration,
+  "inLanguage": "en-AU",
+  "isFamilyFriendly": true,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Motion Story",
+    "url": "https://motionstory.com.au",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://motionstory.com.au/logo.png",
+      "width": 512,
+      "height": 512
+    }
+  },
+  "productionCompany": {
+    "@type": "Organization",
+    "name": "Motion Story",
+    "url": "https://motionstory.com.au"
+  }
+} : null;
+
+const webPageData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": canonicalUrl,
+  "url": canonicalUrl,
+  "name": `${project.title} | Motion Story`,
+  "description": project.description,
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Motion Story",
+    "url": "https://motionstory.com.au"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": `https://vumbnail.com/${project.vimeoId}.jpg`
+  },
+  "mainEntity": { "@id": `${canonicalUrl}#primary-video` }
+};
+
 const breadcrumbData = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://motionstory.com.au/" },
     { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://motionstory.com.au/work/" },
-    { "@type": "ListItem", "position": 3, "name": project.title, "item": `https://motionstory.com.au/casestudy/${project.slug}/` }
+    { "@type": "ListItem", "position": 3, "name": project.title, "item": canonicalUrl }
   ]
 };
 
@@ -75,11 +138,7 @@ const creativeWorkData = {
   },
   "genre": project.category,
   "dateCreated": project.year,
-  "video": {
-    "@type": "VideoObject",
-    "embedUrl": `https://player.vimeo.com/video/${project.vimeoId}`,
-    "thumbnailUrl": `https://vumbnail.com/${project.vimeoId}.jpg`
-  }
+  "video": { "@id": `${canonicalUrl}#primary-video` }
 };
 ---
 
@@ -87,9 +146,10 @@ const creativeWorkData = {
   title={`${project.title} | Motion Story`}
   description={project.description}
   ogImage={`https://vumbnail.com/${project.vimeoId}.jpg`}
+  canonicalUrl={canonicalUrl}
 >
   <Fragment slot="head">
-    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <script type="application/ld+json" set:html={JSON.stringify([webPageData, primaryVideoData, ...(secondaryVideoData ? [secondaryVideoData] : [])])} />
     <script type="application/ld+json" set:html={JSON.stringify(creativeWorkData)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbData)} />
   </Fragment>

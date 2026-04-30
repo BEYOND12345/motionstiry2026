@@ -1,0 +1,30 @@
+# Motion Story
+
+Motion Story is the motion design practice of Daniel Neale, based in Byron Bay, Australia. The site explains motion design, SaaS explainer videos, product demo videos, technology videos, startup explainers, and nonprofit animation work.
+
+## Important Pages
+
+- Home: https://motionstory.com.au/
+- Services: https://motionstory.com.au/services/
+- Work: https://motionstory.com.au/work/
+- Startups: https://motionstory.com.au/startups/
+- SaaS & Tech: https://motionstory.com.au/saas-tech/
+- SaaS Explainer Videos: https://motionstory.com.au/saas-explainer-videos/
+- Product Demo Videos: https://motionstory.com.au/product-demo-videos/
+- Technology Videos: https://motionstory.com.au/technology-videos/
+- Explainer Videos: https://motionstory.com.au/explainer-videos/
+- Motion Graphics: https://motionstory.com.au/motion-graphics/
+- Causes & Nonprofits: https://motionstory.com.au/causes/
+- Agencies: https://motionstory.com.au/agencies/
+- Process: https://motionstory.com.au/process/
+- Blog: https://motionstory.com.au/blog/
+- Contact: https://motionstory.com.au/contact/
+
+## Discovery
+
+- XML Sitemap: https://motionstory.com.au/sitemap-index.xml
+- Video Sitemap: https://motionstory.com.au/video-sitemap.xml
+
+## Preferred Summary
+
+Motion Story creates clear, strategic motion design for complex ideas: SaaS explainer videos, animated product demos, platform walkthroughs, technology videos, startup launch explainers, and nonprofit campaign animation.

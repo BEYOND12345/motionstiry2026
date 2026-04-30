@@ -1,0 +1,276 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const caseStudies = [
+  {
+    title: "Cart-share / Startup Explainer",
+    description: "A 30-second piece built for social and landing pages: punchy, clear, and made for the moment a cold visitor decides if you're worth their time.",
+    link: "/casestudy/cart-share-explainer/",
+    vimeoId: "792094835",
+  },
+  {
+    title: "ARK / Product Concept",
+    description: "A modular design technology concept brought to life in under 60 seconds, making a new product category feel tangible before launch.",
+    link: "/casestudy/ark-product-concept/",
+    vimeoId: "818912051",
+  },
+  {
+    title: "Trusyft / Product Promo",
+    description: "A high-energy animated product promo designed to make an early-stage platform feel polished, credible, and ready for market.",
+    link: "/casestudy/trusyft-animated-product-promo/",
+    vimeoId: "863428533",
+  },
+  {
+    title: "Hey You / Food Ordering App",
+    description: "A startup app explainer that turns a simple user habit into a clear product story: order ahead, skip the queue, get on with the day.",
+    link: "/casestudy/heyyou-app/",
+    vimeoId: "351936883",
+  },
+  {
+    title: "Food By Us / Kitchen Ordering",
+    description: "A marketplace-style startup product explained for commercial kitchens, showing procurement workflows without burying the buyer in detail.",
+    link: "/casestudy/food-by-us/",
+    vimeoId: "672120018",
+  },
+  {
+    title: "Method / Beautiful Bin System",
+    description: "A design-led B2B product with a message that had to work for facilities managers and sustainability leads — the kind of explainer that turns a product into a category story.",
+    link: "/casestudy/method-explainer-video/",
+    vimeoId: "557884851",
+  },
+  {
+    title: "Good2Pay / Paperless Invoicing",
+    description: "End-to-end product storytelling for a fintech workflow: from invoice to payment, without losing the buyer in the details.",
+    link: "/casestudy/good2pay/",
+    vimeoId: "448704979",
+  },
+  {
+    title: "Uclusion / Product Decision Platform",
+    description: "A platform explainer for a team making build decisions under pressure: structured feedback, prioritisation, and clarity when everything feels urgent.",
+    link: "/casestudy/uclusion-product-explainer/",
+    vimeoId: "338131381",
+  },
+  {
+    title: "Oovvuu / WordPress Plugin",
+    description: "A product-led explainer for publishers, showing how a plugin fits into an existing content workflow without needing a live demo.",
+    link: "/casestudy/oovvu/",
+    vimeoId: "557000542",
+  },
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Motion Design for Startups",
+  "description": "Explainer and product video for early-stage and growth companies. Investor updates, waitlists, homepage heroes, and sales enablement that fits lean teams.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Motion Story",
+    "url": "https://motionstory.com.au",
+  },
+  "serviceType": "Explainer and Product Video for Startups",
+  "areaServed": "Worldwide",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://motionstory.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Startups", "item": "https://motionstory.com.au/startups/" },
+  ],
+};
+
+const faqs = [
+  {
+    q: "At what stage should a startup invest in motion design?",
+    a: "As soon as the message is the bottleneck. Pre-launch, that is often a homepage hero, investor one-pager, or a waitlist page that has to land in under a minute. Post-launch, it is more often a product explainer, onboarding walkthrough, or a sales leave-behind that does the first pitch before a call. If the product is real but the story is not, that is the stage.",
+  },
+  {
+    q: "What is the difference between a 30-second startup explainer and a 90-second one?",
+    a: "A 30-second explainer is built for a cold lead: social, pre-roll, or a landing page where attention is scarce. A 60 to 90-second piece is for someone already interested: your homepage, a deck, or a longer nurture flow. I scope length to the job it has to do, not a package size.",
+  },
+  {
+    q: "Do you work with pre-revenue or funded startups?",
+    a: "Yes, both. Pre-launch companies often get the most from one sharp asset: something that turns 'what we are building' into a story that fits investor updates, cold emails, and early user onboarding. Funded companies usually need a clearer split between category explainers, product walkthroughs, and onboarding. Same craft, different funnel stage.",
+  },
+  {
+    q: "How much should a startup budget for an explainer video?",
+    a: "A focused 60 to 90-second animated explainer for a B2B or product-led startup is typically in a similar range to the rest of my work on the site, scoped to two audiences and one main asset. I price from the brief and the distribution plan, not from a menu — but I will always be clear before production starts.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const portfolioSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Startup explainer and product video portfolio",
+  "itemListElement": caseStudies.map((study, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "item": {
+      "@type": "VideoObject",
+      "name": study.title,
+      "description": study.description,
+      "url": `https://motionstory.com.au${study.link}`,
+      "thumbnailUrl": `https://vumbnail.com/${study.vimeoId}.jpg`,
+      "contentUrl": `https://vimeo.com/${study.vimeoId}`,
+      "embedUrl": `https://player.vimeo.com/video/${study.vimeoId}`,
+      "publisher": {
+        "@type": "Organization",
+        "name": "Motion Story",
+        "url": "https://motionstory.com.au",
+      },
+    },
+  })),
+};
+---
+
+<PageLayout
+  title="Explainer & Product Video for Startups | Motion Story"
+  description="Motion design for startups: homepage explainers, product and pitch motion, and onboarding that fits lean teams. Strong portfolio work, clear process. Dan Neale, Motion Story."
+  ctaHeading="Pre-launch or post-launch — is your story the bottleneck?"
+  ctaLabel="Start a Project"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(portfolioSchema)} />
+  </Fragment>
+
+  <div class="pt-32 pb-24 px-8 max-w-5xl mx-auto">
+    <span class="text-metadata mb-8 block">Startups & Early-Stage</span>
+    <h1 class="font-display text-4xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-8">
+      The story has to work<br />before the product can.
+    </h1>
+    <p class="text-body max-w-xl mb-24">
+      In a startup, the product is moving every week. The one thing that cannot move is a confused first impression. I make motion for teams who need a homepage, a deck, and an onboarding flow to say the same thing, clearly, before anyone books a call.
+    </p>
+
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+        <div>
+          <span class="text-metadata mb-4 block text-accent">The Brief</span>
+        </div>
+        <div class="md:col-span-2">
+          <p class="text-body text-lg leading-relaxed mb-8">
+            I have worked with seed and Series A companies where the product was real but the narrative was not: too many features, the wrong first sentence, or a story that only made sense after a live demo. Motion does what a deck cannot. It makes the product feel finished before a login.
+          </p>
+          <p class="text-body text-lg leading-relaxed mb-8">
+            The projects below are a slice of that work — short and long, B2B and product-led, from single-feature explainers to platform overviews. If you are in the phase where a single three-minute window decides whether a prospect, investor, or user takes the next step, you are in the right place.
+          </p>
+          <p class="text-body text-lg leading-relaxed">
+            I am based in Australia and work with startups worldwide, usually async with a tight kickoff, script review, and a delivery schedule that matches launch dates, not the other way around.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <span class="text-metadata mb-10 block">What I Make for Startups</span>
+      <div class="space-y-12">
+        {[
+          { t: "Homepage & launch explainers", d: "The 60 to 90 seconds that say what you do, who it is for, and what happens when someone signs up. Built for the fold, not a conference room." },
+          { t: "Product and platform walkthroughs", d: "Replaces the first 10 minutes of a demo with something that is consistent, repeatable, and does not break when the UI changes next sprint." },
+          { t: "30-second social and ad cuts", d: "Hooks for paid and organic, designed from one master script so the story stays the same when the channel changes." },
+          { t: "Onboarding and activation", d: "First-week clarity: show one workflow, one outcome, so new users do not drop before they have seen value." },
+          { t: "Fundraising and pitch support", d: "Motion in the deck, not instead of a deck — a loop that makes the product real when you are on a 12-minute zoom." },
+        ].map((row, i) => (
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start pb-12 border-b border-black/10 last:border-b-0 last:pb-0">
+            <div>
+              <span class="text-metadata mb-4 block text-accent">{(i + 1).toString().padStart(2, '0')}</span>
+              <h3 class="font-display text-lg font-medium tracking-tight">{row.t}</h3>
+            </div>
+            <div class="md:col-span-2">
+              <p class="text-body">{row.d}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <span class="text-metadata mb-10 block">Selected Work</span>
+      <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight leading-[0.9] mb-16">
+        Startups, real products,<br />real outcomes.
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {caseStudies.map((study) => (
+          <a href={study.link} class="group block">
+            <div class="aspect-video mb-6 overflow-hidden bg-black/5">
+              <img
+                src={`https://vumbnail.com/${study.vimeoId}.jpg`}
+                alt={study.title}
+                class="w-full h-full object-cover group-hover:opacity-80 transition-opacity"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="font-display text-xl font-bold tracking-tight mb-3 group-hover:opacity-60 transition-opacity">{study.title}</h3>
+            <p class="text-body mb-4">{study.description}</p>
+            <span class="text-metadata text-accent group-hover:opacity-60 transition-opacity">View case study →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <span class="text-metadata mb-10 block">From Teams I've Worked With</span>
+      <blockquote class="text-body text-2xl md:text-3xl leading-relaxed font-display tracking-tight mb-8">
+        "62% completion rate. 21% view rate. For a video about bins, we're astounded. Long-term asset for our business."
+      </blockquote>
+      <div>
+        <p class="font-display font-medium">Lee Bright</p>
+        <p class="text-metadata">Marketing Lead, Method Recycling</p>
+      </div>
+    </section>
+
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <span class="text-metadata mb-10 block">Frequently asked questions</span>
+      <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight leading-[0.9] mb-16">
+        Startups, straight answers.
+      </h2>
+      <div class="space-y-12">
+        {faqs.map((faq) => (
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start pb-12 border-b border-black/10 last:border-b-0 last:pb-0">
+            <div>
+              <h3 class="font-display text-lg font-medium tracking-tight">{faq.q}</h3>
+            </div>
+            <div class="md:col-span-2">
+              <p class="text-body">{faq.a}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="border-t border-black/10 pt-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <a href="/services/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
+          <span class="text-metadata mb-3 block">Services</span>
+          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">All service areas →</p>
+          <p class="text-body !text-sm mt-2">Formats and audiences in one place</p>
+        </a>
+        <a href="/saas-tech/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
+          <span class="text-metadata mb-3 block">SaaS & Tech</span>
+          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">See SaaS & tech work →</p>
+          <p class="text-body !text-sm mt-2">Broader B2B software focus</p>
+        </a>
+        <a href="/product-demo-videos/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
+          <span class="text-metadata mb-3 block">Product Demo Videos</span>
+          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">See product demos →</p>
+          <p class="text-body !text-sm mt-2">For prospects already comparing options</p>
+        </a>
+      </div>
+    </section>
+  </div>
+</PageLayout>

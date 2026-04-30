@@ -22,6 +22,20 @@ http://motionstory.com.au/*        https://motionstory.com.au/:splat   301!
 /animated-product-demos-product-explainer-animation/ /                301!
 
 # ───────────────────────────────────────────────────
+# Canonical trailing slash variants
+# ───────────────────────────────────────────────────
+/explainer-videos      /explainer-videos/      301!
+/saas-explainer-videos /saas-explainer-videos/ 301!
+/product-demo-videos   /product-demo-videos/   301!
+/motion-graphics       /motion-graphics/       301!
+/services              /services/              301!
+/startups              /startups/              301!
+/technology-videos     /technology-videos/     301!
+/work                  /work/                  301!
+/blog                  /blog/                  301!
+/contact               /contact/               301!
+
+# ───────────────────────────────────────────────────
 # Portfolio → /work/
 # ───────────────────────────────────────────────────
 /portfolio/                                   /work/   301!
@@ -43,22 +57,25 @@ http://motionstory.com.au/*        https://motionstory.com.au/:splat   301!
 # ───────────────────────────────────────────────────
 # Old service pages → audience pages
 # ───────────────────────────────────────────────────
-/services/                          /saas-tech/                301!
+# /services/ is a real page — no redirect
 /explainer-video-company/           /explainer-videos/         301!
 /explainer-video-company-20024/     /explainer-videos/         301!
 /animation-production-company/      /explainer-videos/         301!
 /motion-graphic-production-company/ /motion-graphics/          301!
 /animated-video-service/            /explainer-videos/         301!
-/30s-explainer-videos/              /saas-tech/                301!
-/start-up-explainer-videos/         /saas-tech/                301!
+/30s-explainer-videos/              /startups/                 301!
+/start-up-explainer-videos/         /startups/                 301!
 /finance-explainer-videos/          /saas-tech/                301!
 /animated-product-demos/            /product-demo-videos/      301!
+/product-demos/                     /product-demo-videos/      301!
+/tech-videos/                       /technology-videos/        301!
+/technology-video/                  /technology-videos/        301!
 /technology-explainers/             /saas-explainer-videos/    301!
-/startup-explainer-videos/          /saas-explainer-videos/    301!
+/startup-explainer-videos/          /startups/                 301!
 /animated-onboarding-videos/        /saas-explainer-videos/    301!
 
 # New (from GSC Page-with-redirect report, Apr 2026)
-/stories-for-start-ups-animated-explainer-videos/   /saas-explainer-videos/   301!
+/stories-for-start-ups-animated-explainer-videos/   /startups/   301!
 /sas-platfrom-explainers/                            /saas-explainer-videos/   301!
 
 # ───────────────────────────────────────────────────

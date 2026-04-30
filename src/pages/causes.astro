@@ -15,6 +15,12 @@ const caseStudies = [
     vimeoId: "792094663",
   },
   {
+    title: "Red Cross / Covid Vaccine Explainer",
+    description: "Public health information made calm, clear, and trustworthy during a moment when confusion had real consequences.",
+    link: "/casestudy/redcross-covid-vacine-explainer/",
+    vimeoId: "762086291",
+  },
+  {
     title: "United Nations / Plastic Waste Data",
     description: "A data-driven animation for the United Nations that transforms global plastic waste statistics into a visual narrative designed for international policy discussions.",
     link: "/casestudy/united-nations/",
@@ -25,6 +31,30 @@ const caseStudies = [
     description: "An animation for ACIR's food waste reduction programme. Complex supply chain data turned into a clear visual argument for action.",
     link: "/casestudy/acir/",
     vimeoId: "557016672",
+  },
+  {
+    title: "Solar My School / Empowering Schools",
+    description: "A community-focused climate story showing how schools can reduce energy costs and carbon footprints through solar.",
+    link: "/casestudy/solar-my-school/",
+    vimeoId: "401121460",
+  },
+  {
+    title: "NSW Gov / Pinch Point Explained",
+    description: "Infrastructure policy and traffic data turned into a clear explanation of how congestion is identified, analysed, and improved.",
+    link: "/casestudy/nsw-gov-pinch-point-explainer/",
+    vimeoId: "306054358",
+  },
+  {
+    title: "IPA / Electric Car Road Tax",
+    description: "A public-policy explainer for the electric vehicle era, turning a technical road-funding debate into a visual argument.",
+    link: "/casestudy/ipa-australia/",
+    vimeoId: "441916573",
+  },
+  {
+    title: "NeatStreets / Report Hazards",
+    description: "A civic technology explainer showing how residents can report hazards and connect local issues to council workflows.",
+    link: "/casestudy/neat-streets-app/",
+    vimeoId: "244918295",
   },
 ];
 
@@ -50,6 +80,30 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 2, "name": "Causes & Nonprofits", "item": "https://motionstory.com.au/causes/" },
   ],
 };
+
+const portfolioSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Charity, nonprofit, and government motion design portfolio",
+  "itemListElement": caseStudies.map((study, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "item": {
+      "@type": "VideoObject",
+      "name": study.title,
+      "description": study.description,
+      "url": `https://motionstory.com.au${study.link}`,
+      "thumbnailUrl": `https://vumbnail.com/${study.vimeoId}.jpg`,
+      "contentUrl": `https://vimeo.com/${study.vimeoId}`,
+      "embedUrl": `https://player.vimeo.com/video/${study.vimeoId}`,
+      "publisher": {
+        "@type": "Organization",
+        "name": "Motion Story",
+        "url": "https://motionstory.com.au",
+      },
+    },
+  })),
+};
 ---
 
 <PageLayout
@@ -61,6 +115,7 @@ const breadcrumbSchema = {
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(portfolioSchema)} />
   </Fragment>
 
   {/* Hero */}
@@ -124,15 +179,15 @@ const breadcrumbSchema = {
     {/* Cross-links */}
     <section class="border-t border-black/10 pt-16">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <a href="/services/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
+          <span class="text-metadata mb-3 block">Services</span>
+          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">All service areas →</p>
+          <p class="text-body !text-sm mt-2">Find the right page for the brief</p>
+        </a>
         <a href="/work/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
           <span class="text-metadata mb-3 block">Work</span>
           <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">See all work →</p>
           <p class="text-body !text-sm mt-2">50+ projects delivered worldwide</p>
-        </a>
-        <a href="/process/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
-          <span class="text-metadata mb-3 block">Process</span>
-          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">How I work →</p>
-          <p class="text-body !text-sm mt-2">Three phases. No wasted time.</p>
         </a>
         <a href="/contact/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
           <span class="text-metadata mb-3 block">Contact</span>

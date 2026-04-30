@@ -22,6 +22,9 @@ const HIGH_PRIORITY_PAGES = new Set([
   '/product-demo-videos/',
   '/saas-explainer-videos/',
   '/saas-tech/',
+  '/services/',
+  '/startups/',
+  '/technology-videos/',
   '/work/',
 ]);
 
@@ -106,26 +109,28 @@ export default defineConfig({
     '/explainer-pricing-page/': '/contact/',
     '/pricing/': '/contact/',
 
-    // Old service pages → audience pages
-    '/services/': '/saas-tech/',
+    // '/services/' is now a real hub page (src/pages/services.astro)
     '/explainer-video-company/': '/explainer-videos/',
     '/explainer-video-company-20024/': '/explainer-videos/',
     '/animation-production-company/': '/explainer-videos/',
     '/motion-graphic-production-company/': '/motion-graphics/',
     '/animated-video-service/': '/explainer-videos/',
-    '/30s-explainer-videos/': '/saas-tech/',
-    '/start-up-explainer-videos/': '/saas-tech/',
+    '/30s-explainer-videos/': '/startups/',
+    '/start-up-explainer-videos/': '/startups/',
     '/finance-explainer-videos/': '/saas-tech/',
     '/animated-product-demos/': '/product-demo-videos/',
+    '/product-demos/': '/product-demo-videos/',
+    '/tech-videos/': '/technology-videos/',
+    '/technology-video/': '/technology-videos/',
     // '/saas-explainer-videos/' now has its own page
     '/technology-explainers/': '/saas-explainer-videos/',
-    '/startup-explainer-videos/': '/saas-explainer-videos/',
+    '/startup-explainer-videos/': '/startups/',
     // '/explainer-videos/' now has its own page
     // '/product-demo-videos/' now has its own page
     '/animated-onboarding-videos/': '/saas-explainer-videos/',
 
     // Old SaaS/startup stories pages (from GSC Apr 2026)
-    '/stories-for-start-ups-animated-explainer-videos/': '/saas-explainer-videos/',
+    '/stories-for-start-ups-animated-explainer-videos/': '/startups/',
     '/sas-platfrom-explainers/': '/saas-explainer-videos/',
 
     // Charity → causes

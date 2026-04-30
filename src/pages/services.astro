@@ -1,0 +1,126 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Motion design services | Motion Story",
+  "description": "Explainer video, product demos, motion graphics, and campaign motion. By industry: startups, SaaS, agencies, and nonprofits.",
+  "url": "https://motionstory.com.au/services/",
+  "isPartOf": { "@type": "WebSite", "name": "Motion Story", "url": "https://motionstory.com.au" },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://motionstory.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://motionstory.com.au/services/" },
+  ],
+};
+
+const byAudience = [
+  {
+    href: "/startups/",
+    label: "Startups & early-stage",
+    blurb: "Launch explainers, waitlist pages, 30s cuts, and the first product story that has to work before a login.",
+  },
+  {
+    href: "/saas-tech/",
+    label: "SaaS & technology",
+    blurb: "Platform walkthroughs, product demos, onboarding, and the motion that shortens the sales cycle.",
+  },
+  {
+    href: "/agencies/",
+    label: "Agencies & studios",
+    blurb: "Senior production capacity: white label or direct, on brand and on deadline.",
+  },
+  {
+    href: "/causes/",
+    label: "Causes & nonprofits",
+    blurb: "High-stakes mission work for charities, NGOs, and government: clarity without noise.",
+  },
+];
+
+const byFormat = [
+  { href: "/explainer-videos/", label: "Explainer videos", blurb: "The broad craft: make the idea land in under two minutes." },
+  { href: "/motion-graphics/", label: "Motion graphics", blurb: "Brand systems, data, UI, and typographic design in motion." },
+  { href: "/saas-explainer-videos/", label: "SaaS explainer videos", blurb: "Software stories built for the homepage and the top of the funnel." },
+  { href: "/product-demo-videos/", label: "Product demo videos", blurb: "Interface-led walkthroughs that stand in for the first call." },
+  { href: "/technology-videos/", label: "Technology videos", blurb: "Engineering, platforms, and technical buyers — explained clearly." },
+];
+---
+
+<PageLayout
+  title="Motion design services | Motion Story"
+  description="Explainer video, product demos, motion graphics, and technology comms. Startups, SaaS, agencies, and nonprofits. Based in Australia, work worldwide."
+  ctaHeading="Not sure which service fits?"
+  ctaLabel="Request a call"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </Fragment>
+
+  <div class="pt-32 pb-24 px-8 max-w-5xl mx-auto">
+    <span class="text-metadata mb-8 block">Services</span>
+    <h1 class="font-display text-4xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-8">
+      What I make, and who it's for.
+    </h1>
+    <p class="text-body max-w-xl mb-6">
+      Most projects are some mix of a clear offer, a defined audience, and a format. Pick the path that matches your brief — you will find portfolio work and a focused write-up on every page.
+    </p>
+    <p class="text-body max-w-xl mb-24 text-black/70">
+      The pages below are the same routes we have used for years on the old site, rebuilt with faster delivery, better SEO, and a single, consistent process.
+    </p>
+
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <h2 class="font-display text-2xl md:text-4xl font-bold tracking-tight mb-4">By audience</h2>
+      <p class="text-body max-w-2xl mb-12">When the brief starts with "who is this for" — pre-seed, enterprise buyer, or campaign partner — start here.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {byAudience.map((item) => (
+          <a href={item.href} class="group p-8 border border-black/10 hover:border-black/20 transition-colors block">
+            <h3 class="font-display text-xl font-bold tracking-tight mb-3 group-hover:opacity-60 transition-opacity">{item.label}</h3>
+            <p class="text-body !text-sm mb-4">{item.blurb}</p>
+            <span class="text-metadata text-accent">View page →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-32 pb-32 border-b border-black/10">
+      <h2 class="font-display text-2xl md:text-4xl font-bold tracking-tight mb-4">By video type</h2>
+      <p class="text-body max-w-2xl mb-12">When the brief starts with the format — explainer, product demo, pure motion, or a technical technology story — start here.</p>
+      <div class="space-y-6">
+        {byFormat.map((item) => (
+          <a
+            href={item.href}
+            class="group flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 py-6 border-b border-black/10 last:border-b-0"
+          >
+            <span class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">{item.label}</span>
+            <span class="text-body !text-sm max-w-xl md:text-right">{item.blurb}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-32 border-b border-black/10 pb-32">
+      <h2 class="font-display text-2xl md:text-4xl font-bold tracking-tight mb-4">The full body of work</h2>
+      <p class="text-body max-w-2xl mb-8">Every project, filterable, with case study links and embedded work.</p>
+      <a href="/work/" class="inline-block text-body border-b border-black/20 hover:border-black transition-colors pb-1">Browse all work →</a>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <a href="/process/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
+        <span class="text-metadata mb-3 block">Process</span>
+        <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">How a project runs →</p>
+        <p class="text-body !text-sm mt-2">Script, storyboard, design, sound — what you review and when</p>
+      </a>
+      <a href="/contact/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
+        <span class="text-metadata mb-3 block">Contact</span>
+        <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">Start a project →</p>
+        <p class="text-body !text-sm mt-2">Scope, budget ballpark, and timeline in one pass</p>
+      </a>
+    </section>
+  </div>
+</PageLayout>

@@ -177,6 +177,7 @@ export default function Homepage() {
               <span className="text-metadata mb-10 block">Who I Work With</span>
               <div className="grid grid-cols-1 gap-16">
                 {[
+                  { title: "Startups & Early-Stage", desc: "Homepage heroes, launch explainers, and the first product story that has to land before a login. Built for pre-launch to Series A.", href: "/startups/" },
                   { title: "SaaS & Tech Companies", desc: "Product demos, platform explainers, onboarding animation. I help software companies show what they've built, clearly.", href: "/saas-tech/" },
                   { title: "Agencies & Studios", desc: "Senior motion design production when your team needs capacity. White label or direct. Reliable delivery, no hand-holding required.", href: "/agencies/" },
                   { title: "Causes & Nonprofits", desc: "Motion design for missions that matter. When the stakes are real and the brief needs to cut through noise, not add to it.", href: "/causes/" }
@@ -344,6 +345,10 @@ export default function Homepage() {
               <div>
                 <span className="text-metadata mb-4 block">Work</span>
                 <div className="flex flex-col gap-2">
+                  <a href="/services/" className="text-body !text-sm hover:text-black transition-colors">Services</a>
+                  <a href="/startups/" className="text-body !text-sm hover:text-black transition-colors">Startups</a>
+                  <a href="/product-demo-videos/" className="text-body !text-sm hover:text-black transition-colors">Product Demo Videos</a>
+                  <a href="/technology-videos/" className="text-body !text-sm hover:text-black transition-colors">Technology Videos</a>
                   <a href="/saas-tech/" className="text-body !text-sm hover:text-black transition-colors">SaaS & Tech</a>
                   <a href="/agencies/" className="text-body !text-sm hover:text-black transition-colors">Agencies</a>
                   <a href="/causes/" className="text-body !text-sm hover:text-black transition-colors">Causes & Nonprofits</a>

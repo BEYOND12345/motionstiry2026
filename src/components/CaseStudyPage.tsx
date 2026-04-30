@@ -38,6 +38,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
             <p className="text-body max-w-2xl mt-6 mb-12">
               {project.description}
             </p>
+            <p className="text-metadata mb-6">Watch the video case study</p>
           </FadeUp>
         </div>
 
@@ -46,6 +47,8 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
             <VimeoEmbed
               vimeoId={project.vimeoId}
               title={project.title}
+              loadImmediately
+              loading="eager"
             />
           </div>
         </FadeUp>
