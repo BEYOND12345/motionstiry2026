@@ -22,20 +22,6 @@ http://motionstory.com.au/*        https://motionstory.com.au/:splat   301!
 /animated-product-demos-product-explainer-animation/ /                301!
 
 # ───────────────────────────────────────────────────
-# Canonical trailing slash variants
-# ───────────────────────────────────────────────────
-/explainer-videos      /explainer-videos/      301!
-/saas-explainer-videos /saas-explainer-videos/ 301!
-/product-demo-videos   /product-demo-videos/   301!
-/motion-graphics       /motion-graphics/       301!
-/services              /services/              301!
-/startups              /startups/              301!
-/technology-videos     /technology-videos/     301!
-/work                  /work/                  301!
-/blog                  /blog/                  301!
-/contact               /contact/               301!
-
-# ───────────────────────────────────────────────────
 # Portfolio → /work/
 # ───────────────────────────────────────────────────
 /portfolio/                                   /work/   301!
