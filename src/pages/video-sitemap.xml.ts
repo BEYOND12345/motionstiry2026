@@ -1,6 +1,8 @@
 import { ALL_PROJECTS } from '../data/projects';
 import { getVideoSeoCategory, getVideoSeoTags } from '../lib/videoSeo';
 
+export const prerender = true;
+
 const SITE_URL = 'https://motionstory.com.au';
 
 function escapeXml(value: string) {
