@@ -10,6 +10,270 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "why-motion-design-project-fails-before-animation",
+    title: "Why Your Motion Design Project Is Failing Before Animation Even Starts",
+    date: "2026-05-05",
+    category: "Craft & Process",
+    tags: ["motion design process", "storyboarding", "explainer video production", "SaaS video strategy", "animation project management"],
+    excerpt: "Most motion design projects do not fail in animation. They fail when the story, concept, and visual thread are not solved before anyone opens After Effects.",
+    content: `I've been making motion graphics for fifteen years. And I can tell you the exact moment most projects go wrong.
+
+It's not in the animation. It's not in the voiceover. It's not even in the script.
+
+It's the moment someone opens After Effects before they've figured out the story.
+
+For SaaS founders, marketers, agencies, and anyone who has ever paid for a video and wondered why it didn't work, this is the part of the process that matters most. The best [motion design projects](/work/) are not rescued in animation. They are set up properly before animation starts.
+
+## The Style Frame Trap
+
+Here's what most studios do. They get a script, they get excited, and they go straight to style frames. Beautiful, polished, impressive-looking frames that show exactly how the video will look.
+
+The client loves them. Signs off. Everyone moves forward.
+
+Then the animation comes back and something's wrong. The story doesn't flow. Scenes cut strangely. The voiceover says one thing and the visuals are doing something else entirely. Revisions start. Budgets blow out. Timelines slip.
+
+I've seen it hundreds of times. And I've had other motion designers tell me the same thing: starting with style frames is one of the biggest mistakes in this industry.
+
+Because you've answered the question "what will it look like" before you've answered "what is it trying to say."
+
+## Animation Is Time-Based Work
+
+When I take on a new project, one of the first things I do is put the script into a text-to-speech tool and listen to it. Not read it. Listen to it.
+
+Because that's how the viewer is going to experience it. They're not reading your script. They're hearing a voice, watching movement, processing both at the same time. Half of them are doing something else while it plays.
+
+When you hear a script instead of reading it, you catch things. You notice which words land with weight. You feel where the pace drags. You identify the moment the viewer might check out if you don't do something visually interesting.
+
+One word can mean something completely different when you hear it versus when you read it. And if you build a whole visual metaphor around the wrong word, you've lost the viewer without realising it.
+
+That's time-based work. You're not designing a poster. You're designing a sequence.
+
+## What I Actually Do in the First Ten Minutes
+
+When I get a new brief, I do two things before I open any design or animation software.
+
+First, I talk to the client. And while we're talking, I'm doodling. Not designing. Just letting ideas surface visually while I hear what they care about, what they're trying to achieve, and what their audience actually needs to understand.
+
+Second, I check the brand guidelines. Not to be constrained by them, but because they often contain the seed of the visual idea. There might be a shape, a pattern, or a symbol from the product itself that can become the thread that holds the whole story together.
+
+That thread is what I'm always looking for. The cohesive visual element that can carry the narrative from the first frame to the last. It is a major part of my [motion design process](/process/), especially for complex SaaS, technology, and product stories.
+
+## The Dot, the Square, and the Thing That Makes It Stick
+
+On a project for [Wipster](/casestudy/wipster-product-overview/), I found it in their product icon. A play button dot. I used that dot to push through the entire narrative. It guided the viewer's eye. It became a visual anchor they followed without even realising it.
+
+On another project, a simple square kept appearing in the brand elements. Sounds boring. But a square can frame a character. It can become a data point. It can expand to fill a scene or shrink to a tiny detail on screen. Used with intention, that one shape creates a through-line the viewer unconsciously follows.
+
+This is what I mean when I say motion design is problem-solving first, aesthetics second.
+
+The visual idea has to solve multiple problems at once. It has to carry the story, align to the brand, keep the viewer engaged, and work at every point in the sequence. If an idea only solves one of those problems, it's not the right idea yet.
+
+## Script First. Concept Second. Story Third. Style Frames Last.
+
+The order matters more than most people realise.
+
+Script gives you the content. Concept gives you the creative frame for that content. Story gives you the sequence that makes it land. Style frames, finally, give you the visual language to execute it.
+
+Skip any of those steps, or do them out of order, and you're making decisions without the information you need. You'll end up going back. And going back in motion design is expensive, because animation time is not cheap.
+
+A task that takes one hour to change in a storyboard can take eight hours in animation. That's the real cost of getting the process wrong.
+
+## How to Avoid the Expensive Revision Cycle
+
+Before you approve style frames, ask three questions:
+
+- **What is the story doing?** If the answer is just "explaining the product", the thinking is not finished yet.
+- **What is the visual thread?** There should be a cohesive idea that carries the viewer from the first frame to the last.
+- **Has the script been listened to out loud?** If it only works on the page, it does not work yet.
+
+This is especially important for [SaaS and technology videos](/saas-tech/), where the product is often complex, abstract, or hard to visualise. The earlier you solve the story, the better the finished animation will be.
+
+## The Real Job
+
+Motion design is not decoration. It is a way of making difficult ideas easier to understand.
+
+The animation matters. The voiceover matters. The design matters. But they only work when the thinking underneath them is clear.
+
+If you've got a product that's hard to explain, or you've been through the revision cycle from hell before, I'd love to talk about how to do it differently.
+
+---
+
+Dan Neale is the founder of Motion Story, a boutique motion design studio based in Byron Bay. He's been making motion graphics for SaaS companies, government, nonprofits, and agencies for fifteen years. motionstory.com.au`
+  },
+  {
+    slug: "storyboard-that-ships-on-time",
+    title: "The Storyboard That Actually Ships On Time (And Why Most Don't)",
+    date: "2026-05-05",
+    category: "Craft & Process",
+    tags: ["storyboarding", "motion design production", "animation handoff", "agency motion design", "video production process"],
+    excerpt: "A storyboard that impresses a client and a storyboard that an animator can actually use are not always the same thing. Here's what makes motion design production run cleanly.",
+    content: `A storyboard that an animator can actually use doesn't always look like a storyboard that impresses a client.
+
+The one that impresses a client has beautiful frames, polished illustrations, and looks almost like finished art.
+
+The one that an animator can actually use has transitions worked out. It has text that matches the voiceover exactly. It shows position, location, and movement for every graphic element on screen. And it tells a complete story from first frame to last without any guessing.
+
+Those are two very different documents. And many studios confuse them.
+
+For production companies, creative directors, and agencies briefing motion design work, the storyboard is not just a creative document. It is the thing that determines whether the project ships cleanly or gets rebuilt in animation.
+
+## The Transition Problem Nobody Talks About
+
+Most storyboards show you what each scene looks like. The best storyboards show you what happens between scenes.
+
+Transitions are where motion design either flows or breaks. A match cut, where an element morphs from one state to another, has to be planned. The graphic in frame 4 has to be positioned correctly to become the graphic in frame 5. If that isn't figured out on paper first, you find out in the animation suite. At which point it costs significantly more to fix.
+
+I animate my own storyboards sometimes, and I hand them to production studios sometimes. Either way, the brief is the same: no guessing. Every transition accounted for. Every position intentional.
+
+When I hand off a storyboard and the animator comes back with a first draft that's ninety percent there, that's because the storyboard did the work. The animator wasn't inventing the story. They were executing it.
+
+## Text on Screen Is Not Decoration
+
+One of the most common mistakes I see in motion graphics, especially from teams doing it in-house, is text that doesn't match the voiceover.
+
+The voiceover says one thing. The on-screen text says something slightly different. Or longer. Or it introduces a concept the voiceover hasn't reached yet.
+
+The viewer's brain is trying to read and listen at the same time. When those two things don't align, it creates confusion. The viewer doesn't know which one to pay attention to. And a confused viewer stops paying attention altogether.
+
+Every word on screen should either repeat exactly what's being said, or reinforce it visually. Not add to it. Not explain it further. Reinforce it.
+
+That decision has to happen in the storyboard, not in the edit.
+
+## How I Know a Storyboard Is Ready to Hand Off
+
+There's a checklist in my head that I run through before anything moves to design or animation.
+
+- **Does it have a clear beginning, middle, and end?** Not just content, but story. A hook that earns the viewer's attention, a middle that builds understanding, and an end with a clear call to action.
+- **Does the voiceover align to every visual moment?** Have I actually listened to it, not just read it?
+- **Has the client seen the concept and confirmed they understand where it's going?** Not the finished design. The story.
+- **Have I caught the design decisions that could blow the budget later?** The character that's too complex. The scene that requires 3D. The transition that looks simple on paper but takes twelve hours to animate.
+
+When all of those are yes, and the storyboard is ninety-five percent signed off, the path from here to delivered is straightforward. Not always easy, but straightforward.
+
+There are no surprises waiting in the animation phase because we found them all in the storyboard phase.
+
+## Budget Shapes the Process
+
+On a five to ten thousand dollar project, I always storyboard first. No exceptions. But I won't write a full creative concept document. We go: brief, listening session, storyboard sequence, client review, then design.
+
+On larger projects, or projects with significant stakes and multiple stakeholders, I add a concept phase before the storyboard. I'll show a small number of frames that define the creative direction and get everyone aligned before I build the full sequence.
+
+That concept phase exists because large organisations have a lot of people on the boat. A creative director. A marketing manager. Legal. The CEO who sees the draft and has opinions. Getting everyone aligned on the story before it becomes a polished storyboard saves weeks of revision cycles later.
+
+I learned that on a [Red Cross project](/casestudy/redcross-covid-vacine-explainer/) during COVID. We were explaining vaccine stockpiling across different countries. The stakes were real. I needed everyone to understand the creative direction before a single design element was built. Getting that concept signed off first meant the rest of the project ran cleanly.
+
+## The Handoff That Makes Animators' Lives Easier
+
+When I pass a storyboard to an animator, I want them to have one experience: clarity.
+
+They should be able to look at any frame and know exactly what's happening. What's moving, where it's moving from, where it's going, what the text says, and what the voiceover is saying at that moment.
+
+They shouldn't need a phone call to interpret it. They shouldn't be making creative decisions because the brief didn't cover them. Those decisions should already be made.
+
+A storyboard that creates that kind of clarity isn't just a creative document. It's a project management tool. It's how you get a first draft animation that's ninety percent there instead of a first draft that needs to be rebuilt from scratch.
+
+## Why Agencies and Production Companies Need This
+
+For agencies, the cost of a weak storyboard is not just animation time. It is client confidence.
+
+When a first draft comes back messy, the client does not see the process failure. They see the agency failing to deliver. A clear storyboard protects the production, the timeline, and the relationship.
+
+That's why I work this way for [agency motion design projects](/agencies/). The goal is not to make the storyboard impressive. The goal is to make the finished video predictable.
+
+If you're a production company, agency, or creative director who needs a motion designer that hands off clean, I'd be happy to talk about how I work.
+
+---
+
+Dan Neale is the founder of Motion Story, a boutique motion design studio based in Byron Bay. He's been making motion graphics for SaaS companies, government, nonprofits, and agencies for fifteen years. motionstory.com.au`
+  },
+  {
+    slug: "you-dont-need-to-know-how-to-draw-storyboards",
+    title: "You Don't Need to Know How to Draw to Create Better Storyboards",
+    date: "2026-05-05",
+    category: "Explainer Video Strategy",
+    tags: ["storyboard for video", "explainer video script", "motion design briefing", "video production", "complex product communication"],
+    excerpt: "Storyboarding is not really about drawing. It is about sequencing, story structure, and knowing what your viewer needs to understand before animation begins.",
+    content: `Most people think storyboarding is an artistic skill. Something for animators and film directors. Not for them.
+
+That's wrong. And it's costing them.
+
+Because every motion design project has a storyboard phase, whether you're involved in it or not. And if you're not involved, someone else is making decisions about how to tell your story. Those decisions are either right or wrong. And you won't find out which until the animation comes back.
+
+Understanding what makes a storyboard good or bad doesn't require drawing ability. It requires understanding story structure, sequencing, and what your viewer actually needs to understand.
+
+That's something you already know more about than you think.
+
+## What Storyboarding Actually Is
+
+A storyboard is a sequence of rough frames that show how a story unfolds over time.
+
+For a sixty-second video, I'm thinking in roughly six sequences, each around ten seconds. Within those sequences, I'm thinking about what the viewer needs to understand, what they're hearing, what they're seeing, and how those two things work together.
+
+That's it. That's the structure. The drawing is just how I communicate the thinking.
+
+If I can't draw a storyboard that tells a complete story, the problem isn't my drawing ability. The problem is the story isn't clear yet.
+
+## Why Most Briefs Are the Real Problem
+
+When a client comes to me with a script, the first thing I do is check whether the script works as a story. Not as a document. As something someone will hear.
+
+Most amateur scripts, and I say that without judgement, don't follow a storytelling framework. They're written the way you'd write a product description. Feature by feature. Benefit by benefit. Logically structured but narratively flat.
+
+That works fine as a brochure. It doesn't work for video, because video is experienced in real time. The viewer can't go back and re-read. If they lose the thread, they're gone.
+
+So before I open Illustrator, I'll often restructure the script into a storytelling framework. Problem, stakes, solution, proof, call to action. It's not complicated. But it changes everything about how the story lands.
+
+Then I listen to it. Out loud. Because the ear catches things the eye misses. A word that reads fine but sounds awkward. A line that runs too long for the breath it takes. A transition point where the viewer will check out if the visual doesn't earn their attention back.
+
+This is why a good [explainer video script](/how-to-write-a-explainer-video-script/) is only the beginning. The storyboard turns that script into a sequence the viewer can follow.
+
+## The Cohesive Element That Makes It Memorable
+
+The thing that separates motion design that gets remembered from motion design that just fills a slot is a cohesive visual element. Something that threads through the whole story.
+
+It could be a shape from your brand. A symbol from your product. A character. A colour used with intention. It doesn't have to be obvious. It just has to be consistent.
+
+I worked on a project where a simple square kept appearing in the brand elements. On its own, unremarkable. But used consistently, that square framed scenes, highlighted data points, became a character prop, and drew the viewer's eye to what mattered.
+
+The viewer doesn't consciously notice it. That's the point. They just feel like the video hangs together. It feels considered. It feels like someone thought it through.
+
+That's what a good storyboard delivers. The thinking done upfront so the execution feels effortless.
+
+## What You Should Ask Before Signing Off
+
+If you're a business owner, marketer, founder, or product team commissioning a motion design project, here's what I'd ask the studio or designer before you see a single style frame.
+
+- **Show me the storyboard first.** Not the finished frames. The story sequence. I want to see that the narrative makes sense before anyone invests time in making it look good.
+- **Read the script out loud to me.** Or better yet, let me hear it with a temp voiceover. I want to know if it sounds right, not just reads right.
+- **Tell me what the cohesive visual element is.** What's the thread? What's going to hold this together from first frame to last?
+
+If those three questions have clear answers, you're working with someone who has actually thought it through. If they go straight to showing you beautiful design work, be cautious. The hard thinking might not have happened yet.
+
+## The Real Cost of Getting It Wrong
+
+I tell clients this all the time: a change in a storyboard takes one hour. The same change in animation can take eight.
+
+That's not an exaggeration. Animation is time-intensive work. Rebuilding a scene, repositioning elements, recutting a sequence because the story wasn't right, that's how projects blow budgets and miss deadlines.
+
+The storyboard phase exists to catch all of that on paper. Where it's cheap. Where you can move frames around, cross out ideas, and start a sequence again. That's not inefficiency. That's the most efficient thing you can do.
+
+When the storyboard is locked, the concept is clear, the client is aligned, and the story holds together from first frame to last, the animation phase is predictable. The first draft comes back and it's ninety percent there. Because there was nothing left to guess.
+
+That's what a good process delivers. Not perfection. Predictability. And in a creative project, predictability is worth a lot.
+
+## Better Storyboards Make Better Videos
+
+You do not need to draw well to understand storyboards. You need to know what the viewer needs to understand, what order they need to understand it in, and where the story might lose them.
+
+That matters whether you're making a [SaaS explainer video](/saas-explainer-videos/), a [technology video](/technology-videos/), a product demo, or a cause campaign.
+
+If you've got a product or service that's genuinely hard to explain, and you want to talk through how to approach it, I'm always happy to have that conversation.
+
+---
+
+Dan Neale is the founder of Motion Story, a boutique motion design studio based in Byron Bay. He's been making motion graphics for SaaS companies, government, nonprofits, and agencies for fifteen years. motionstory.com.au`
+  },
+  {
     slug: "how-explainer-videos-supercharge-startup-growth",
     title: "How SaaS Explainer Videos Drive Real Growth",
     date: "2026-04-06",
