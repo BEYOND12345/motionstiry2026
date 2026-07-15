@@ -41,18 +41,16 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "How much does a SaaS explainer video cost?", "acceptedAnswer": { "@type": "Answer", "text": "Most SaaS explainer videos range from $8,000 to $25,000 depending on length and complexity. Every project is scoped individually." } },
-    { "@type": "Question", "name": "How long does a SaaS explainer take?", "acceptedAnswer": { "@type": "Answer", "text": "Typical turnaround is 4 to 6 weeks from kickoff to final delivery." } },
-    { "@type": "Question", "name": "What's the difference working with Motion Story?", "acceptedAnswer": { "@type": "Answer", "text": "You work directly with Dan — the person writing, designing, and animating — throughout the project. No account managers, no handoffs." } },
+    { "@type": "Question", "name": "How much does a SaaS explainer video cost?", "acceptedAnswer": { "@type": "Answer", "text": "From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront." } },
+    { "@type": "Question", "name": "What's the difference working with Motion Story?", "acceptedAnswer": { "@type": "Answer", "text": "You work with Dan throughout — concept, storyboard, design, illustration, and animation. No account managers, no handoffs. Agencies welcome, white label or direct." } },
   ],
 };
 ---
 
 <PageLayout
+  showCTA={false}
   title="SaaS Explainer Videos | Motion Story"
   description="SaaS explainer videos for complex software. Clear product stories for sales, onboarding, and landing pages. Work directly with Dan."
-  ctaHeading="Got a SaaS product that's hard to explain?"
-  ctaLabel="Start a Conversation"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
@@ -63,22 +61,21 @@ const faqSchema = {
   <ServiceLanding
     eyebrow="SaaS Explainer Videos"
     headline={["Your software is invisible.", "Your explainer shouldn't be."]}
-    lede="SaaS explainers that show what your product does — before the sales call."
-    answer="SaaS explainer videos for product teams — platform stories, homepage heroes, and onboarding motion that make complex software obvious before the demo."
+    lede="SaaS explainers that show what your product does, before the sales call."
+    emailSubject="SaaS explainer video"
     work={work}
     moreWork={moreWork}
     quote="40,000 views on YouTube, which increased brand perception and reputation."
     quoteBy="Simon Lehman"
     quoteRole="Marketing Manager, Acodis"
     faqs={[
-      { label: "Cost", body: "Typically $8,000–$25,000 depending on length and complexity. Fixed quote per project." },
-      { label: "Timeline", body: "Most SaaS explainers take 4–6 weeks from kickoff to final delivery." },
-      { label: "How we work", body: "You work directly with Dan — script, design, and animation. No account managers, no handoffs." },
+      { label: "Cost", body: "From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront." },
+      { label: "How we work", body: "You work with Dan throughout — concept, storyboard, design, illustration, and animation. Agencies welcome, white label or direct." },
     ]}
     links={[
       { href: "/product-demo-videos/", eyebrow: "Demos", label: "Product demo videos →" },
       { href: "/technology-videos/", eyebrow: "Tech", label: "Technology videos →" },
-      { href: "/contact/", eyebrow: "Next", label: "Start a project →" },
+      { href: "/work/", eyebrow: "Work", label: "See all work →" },
     ]}
   />
 </PageLayout>

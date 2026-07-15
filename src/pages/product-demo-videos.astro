@@ -41,18 +41,17 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    { "@type": "Question", "name": "How much does a product demo video cost?", "acceptedAnswer": { "@type": "Answer", "text": "From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront." } },
     { "@type": "Question", "name": "What's the difference between an animated product demo and a screen recording?", "acceptedAnswer": { "@type": "Answer", "text": "An animated product demo is crafted motion design that shows your software at its best. You control pacing and narrative — and it doesn't break every time your UI changes." } },
-    { "@type": "Question", "name": "How long does a product demo video take?", "acceptedAnswer": { "@type": "Answer", "text": "Most product demo videos are delivered within 4–6 weeks from kickoff." } },
-    { "@type": "Question", "name": "What's the difference working with Motion Story?", "acceptedAnswer": { "@type": "Answer", "text": "You work directly with Dan — the person writing, designing, and animating — throughout the project. No account managers, no handoffs." } },
+    { "@type": "Question", "name": "What's the difference working with Motion Story?", "acceptedAnswer": { "@type": "Answer", "text": "You work with Dan throughout — concept, storyboard, design, illustration, and animation. No account managers, no handoffs." } },
   ],
 };
 ---
 
 <PageLayout
+  showCTA={false}
   title="Product Demo Videos | Motion Story"
   description="Animated product demo videos that show your software in action — no login required. Built for landing pages, sales decks, and onboarding."
-  ctaHeading="Got a product worth showing off?"
-  ctaLabel="Start a Conversation"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
@@ -63,22 +62,22 @@ const faqSchema = {
   <ServiceLanding
     eyebrow="Product Demo Videos"
     headline={["Your product does incredible things.", "Nobody's seeing it."]}
-    lede="Animated demos that show your software working — clearly, without a login."
-    answer="Animated product demo videos for landing pages, sales decks, and onboarding — clearer than a screen recording, and they don't break when your UI changes."
+    lede="Animated demos that show your software working, clearly, without a login."
+    emailSubject="Product demo video"
     work={work}
     moreWork={moreWork}
     quote="62% completion rate. 21% view rate. This will be a long-term asset for our business."
     quoteBy="Lee Bright"
     quoteRole="Marketing Lead, Method Recycling"
     faqs={[
-      { label: "vs screen recording", body: "Animated demos stay polished when your UI changes. You control pacing, focus, and the story." },
-      { label: "Timeline", body: "Most product demos take 4–6 weeks from kickoff to final delivery." },
-      { label: "How we work", body: "You work directly with Dan — script, design, and animation. No account managers, no handoffs." },
+      { label: "Cost", body: "From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront." },
+      { label: "vs screen recording", body: "Animated demos stay polished when your UI changes. You control the story." },
+      { label: "How we work", body: "You work with Dan throughout — concept, storyboard, design, illustration, and animation. Agencies welcome, white label or direct." },
     ]}
     links={[
       { href: "/saas-explainer-videos/", eyebrow: "SaaS", label: "SaaS explainer videos →" },
       { href: "/technology-videos/", eyebrow: "Tech", label: "Technology videos →" },
-      { href: "/contact/", eyebrow: "Next", label: "Start a project →" },
+      { href: "/work/", eyebrow: "Work", label: "See all work →" },
     ]}
   />
 </PageLayout>

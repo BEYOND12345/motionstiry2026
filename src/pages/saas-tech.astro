@@ -39,10 +39,9 @@ const breadcrumbSchema = {
 ---
 
 <PageLayout
+  showCTA={false}
   title="Motion Design for SaaS & Tech | Motion Story"
   description="Product demos, platform explainers, and onboarding animation for SaaS and tech. Work directly with Dan."
-  ctaHeading="Got a product that's hard to explain?"
-  ctaLabel="Start a Conversation"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
@@ -53,20 +52,21 @@ const breadcrumbSchema = {
     eyebrow="SaaS & Tech"
     headline={["Your product is brilliant.", "Your demo isn't explaining it."]}
     lede="Product demos, platform explainers, and onboarding motion for software that needs to be understood fast."
-    answer="Motion design for SaaS and tech companies — product demos, platform explainers, and onboarding animation. Direct with Dan, no handoffs."
+    emailSubject="SaaS motion design"
     work={work}
     moreWork={moreWork}
     quote="40,000 views on YouTube, which increased brand perception and reputation."
     quoteBy="Simon Lehman"
     quoteRole="Marketing Manager, Acodis"
     faqs={[
-      { label: "What I make", body: "Product demos, platform explainers, onboarding animation, pitch pieces, and short-form for LinkedIn and paid." },
-      { label: "How we work", body: "You work directly with Dan — script, design, and animation. No account managers, no handoffs." },
+      { label: "Cost", body: "From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront." },
+      { label: "What I make", body: "Product demos, platform explainers, onboarding animation, and short-form for LinkedIn and paid." },
+      { label: "How we work", body: "You work with Dan throughout — concept, storyboard, design, illustration, and animation. Agencies welcome, white label or direct." },
     ]}
     links={[
       { href: "/saas-explainer-videos/", eyebrow: "SaaS", label: "SaaS explainer videos →" },
       { href: "/product-demo-videos/", eyebrow: "Demos", label: "Product demo videos →" },
-      { href: "/contact/", eyebrow: "Next", label: "Start a project →" },
+      { href: "/work/", eyebrow: "Work", label: "See all work →" },
     ]}
   />
 </PageLayout>

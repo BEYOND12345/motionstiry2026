@@ -39,10 +39,9 @@ const breadcrumbSchema = {
 ---
 
 <PageLayout
+  showCTA={false}
   title="Motion Design for Charities & Nonprofits | Motion Story"
   description="Motion design for causes, charities, nonprofits, and government. Complex missions made immediately clear."
-  ctaHeading="Got a mission that's hard to communicate?"
-  ctaLabel="Talk About Your Project"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
@@ -52,18 +51,19 @@ const breadcrumbSchema = {
   <ServiceLanding
     eyebrow="Causes & Nonprofits"
     headline={["Important work deserves", "to be understood."]}
-    lede="Motion for charities, nonprofits, and government — clarity without noise."
-    answer="Motion design for causes, charities, nonprofits, and government — complex missions made immediately clear."
+    lede="Motion for charities, nonprofits, and government: clarity without noise."
+    emailSubject="Nonprofit motion design"
     work={work}
     moreWork={moreWork}
     faqs={[
+      { label: "Cost", body: "From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront." },
       { label: "The stakes", body: "A confusing message doesn't just lose attention — it loses donors, volunteers, and the people the programme is meant to help." },
-      { label: "How we work", body: "You work directly with Dan — script, design, and animation. No account managers, no handoffs." },
+      { label: "How we work", body: "You work with Dan throughout — concept, storyboard, design, illustration, and animation. Agencies welcome, white label or direct." },
     ]}
     links={[
       { href: "/explainer-videos/", eyebrow: "Explainers", label: "Explainer videos →" },
       { href: "/work/", eyebrow: "Work", label: "See all work →" },
-      { href: "/contact/", eyebrow: "Next", label: "Start a project →" },
+      { href: "/process/", eyebrow: "Process", label: "How I work →" },
     ]}
   />
 </PageLayout>

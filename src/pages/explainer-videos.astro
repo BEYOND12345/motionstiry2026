@@ -41,18 +41,16 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "How much does an explainer video cost?", "acceptedAnswer": { "@type": "Answer", "text": "Explainer video production typically ranges from $5,000 to $25,000+ depending on length, complexity, and style. Every project is scoped individually — no cookie-cutter packages." } },
-    { "@type": "Question", "name": "How long does it take to produce an explainer video?", "acceptedAnswer": { "@type": "Answer", "text": "Most projects take 4 to 8 weeks from kickoff to final delivery, including scripting, storyboarding, design, animation, and revisions." } },
-    { "@type": "Question", "name": "What's the difference working with Motion Story?", "acceptedAnswer": { "@type": "Answer", "text": "You work directly with Dan — the person writing, designing, and animating your explainer — throughout the project. No account managers, no handoffs." } },
+    { "@type": "Question", "name": "How much does an explainer video cost?", "acceptedAnswer": { "@type": "Answer", "text": "From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront." } },
+    { "@type": "Question", "name": "What's the difference working with Motion Story?", "acceptedAnswer": { "@type": "Answer", "text": "You work with Dan throughout — concept, storyboard, design, illustration, and animation. No account managers, no handoffs. Agencies welcome, white label or direct." } },
   ],
 };
 ---
 
 <PageLayout
+  showCTA={false}
   title="Explainer Video Production | Motion Story"
   description="Explainer video production for SaaS, tech, and nonprofits. Motion design that makes people understand and care. Based in Australia."
-  ctaHeading="Got something complex to explain?"
-  ctaLabel="Start a Conversation"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
@@ -63,21 +61,20 @@ const faqSchema = {
   <ServiceLanding
     eyebrow="Explainer Videos"
     headline={["Explainers for ideas", "that don't explain themselves."]}
-    lede="Complex products, platforms, and missions — made clear in 60 to 180 seconds."
-    answer="Animated explainer video production for SaaS, tech, nonprofits, and government. You work directly with Dan — script, design, and animation — from brief to final film."
+    lede="Complex products, platforms, and missions, made clear in 60 to 180 seconds."
+    emailSubject="Explainer video"
     work={work}
     moreWork={moreWork}
     quote="What would normally take hours to explain now takes 90 seconds."
     quoteBy="AMSED"
     faqs={[
-      { label: "Cost", body: "Typically $5,000–$25,000+ depending on length and complexity. Fixed quote per project." },
-      { label: "Timeline", body: "Most explainers take 4–8 weeks from kickoff to final delivery." },
-      { label: "How we work", body: "You work directly with Dan — script, design, and animation. No account managers, no handoffs." },
+      { label: "Cost", body: "From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront." },
+      { label: "How we work", body: "You work with Dan throughout — concept, storyboard, design, illustration, and animation. Agencies welcome, white label or direct." },
     ]}
     links={[
       { href: "/technology-videos/", eyebrow: "Tech", label: "Technology videos →" },
       { href: "/saas-explainer-videos/", eyebrow: "SaaS", label: "SaaS explainer videos →" },
-      { href: "/contact/", eyebrow: "Next", label: "Start a project →" },
+      { href: "/work/", eyebrow: "Work", label: "See all work →" },
     ]}
   />
 </PageLayout>

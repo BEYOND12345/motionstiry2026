@@ -23,11 +23,8 @@ interface Props {
   /** Headline lines — each becomes a line break on md+ */
   headline: string[];
   lede: string;
-  /** Definitive answer for Ads message-match + AI citation */
-  answer?: string;
-  ctaLabel?: string;
-  ctaHref?: string;
-  differentiator?: string;
+  /** Prefill for mailto subject */
+  emailSubject?: string;
   work: WorkItem[];
   moreWork?: WorkItem[];
   quote?: string;
@@ -41,10 +38,7 @@ const {
   eyebrow,
   headline,
   lede,
-  answer,
-  ctaLabel = 'Start a Project →',
-  ctaHref = '/contact/',
-  differentiator = 'Work directly with the storyteller throughout your project.',
+  emailSubject = 'Project enquiry',
   work,
   moreWork = [],
   quote,
@@ -53,12 +47,31 @@ const {
   faqs = [],
   links = [],
 } = Astro.props;
+
+const mailHref = `mailto:daniel@motionstory.com.au?subject=${encodeURIComponent(emailSubject)}`;
+const [featured, ...rest] = work;
+
+const clients = ['United Nations', 'TransferWise', 'Atomic', 'Mosaic', 'RSPCA', 'Meltwater'];
+
+const credentials = [
+  {
+    label: 'Full pipeline',
+    body: 'Concept, storyboard, design, illustration, and animation — one senior maker throughout. No account managers. No handoffs.',
+  },
+  {
+    label: 'Story first',
+    body: 'Creative built for completion and clarity. If it is not a strong story, people do not watch to the end — and the metrics show it.',
+  },
+  {
+    label: 'Career depth',
+    body: 'United Nations. TransferWise\'s first video, working directly with their CEO. 1,000+ films. Motion design is all I have ever done.',
+  },
+];
 ---
 
 <div class="landing">
-  {/* Hero */}
   <header class="landing-hero">
-    <span class="text-metadata landing-reveal" style="--d: 0">{eyebrow}</span>
+    <span class="landing-eyebrow landing-reveal" style="--d: 0">{eyebrow}</span>
     <h1 class="landing-title landing-reveal" style="--d: 1">
       {headline.map((line, i) => (
         <>
@@ -72,49 +85,70 @@ const {
         </>
       ))}
     </h1>
-    <p class="landing-lede text-body landing-reveal" style="--d: 2">{lede}</p>
-    {answer && (
-      <p class="landing-answer landing-reveal" style="--d: 3">{answer}</p>
-    )}
-    <div class="landing-cta-row landing-reveal" style={`--d: ${answer ? 4 : 3}`}>
-      <a href={ctaHref} class="landing-cta">
-        {ctaLabel}
-      </a>
-      {differentiator && (
-        <p class="landing-diff">
-          <span class="landing-diff-bar" aria-hidden="true" />
-          {differentiator}
-        </p>
-      )}
-    </div>
+    <p class="landing-lede landing-reveal" style="--d: 2">{lede}</p>
   </header>
 
-  {/* Work */}
-  <section id="selected-work" class="landing-section landing-reveal" style={`--d: ${answer ? 5 : 4}`}>
+  <section id="selected-work" class="landing-section landing-reveal" style="--d: 3">
     <div class="landing-section-head">
-      <span class="text-metadata">Selected Work</span>
-      <span class="text-metadata landing-count">{String(work.length + moreWork.length).padStart(2, '0')}</span>
+      <span class="landing-eyebrow">Selected Work</span>
+      <span class="landing-eyebrow landing-count">{String(work.length + moreWork.length).padStart(2, '0')}</span>
     </div>
 
-    <div class="landing-work-grid">
-      {work.map((study, i) => (
-        <article class="landing-work-card group">
-          <span class="landing-work-index text-metadata">{String(i + 1).padStart(2, '0')}</span>
-          <VimeoEmbed
-            client:visible
-            vimeoId={study.vimeoId}
-            title={study.title}
-            loading={i === 0 ? 'eager' : 'lazy'}
-            autoColor={true}
-            className="landing-work-media"
-          />
-          <a href={study.link} class="landing-work-meta">
-            <h2 class="landing-work-title">{study.title}</h2>
-            <span class="landing-work-link">View case study →</span>
-          </a>
-        </article>
-      ))}
-    </div>
+    <p class="landing-clients landing-reveal" style="--d: 3">
+      {clients.join(' · ')}
+    </p>
+
+    {featured && (
+      <article class="landing-featured group">
+        <span class="landing-work-index">01</span>
+        <VimeoEmbed
+          client:visible
+          vimeoId={featured.vimeoId}
+          title={featured.title}
+          loading="eager"
+          autoColor={true}
+          className="landing-featured-media"
+        />
+        <a href={featured.link} class="landing-work-meta">
+          <h2 class="landing-featured-title">{featured.title}</h2>
+          <span class="landing-work-link">View case study →</span>
+        </a>
+      </article>
+    )}
+
+    {quote && (
+      <figure class="landing-proof">
+        <blockquote class="landing-proof-quote">“{quote}”</blockquote>
+        {(quoteBy || quoteRole) && (
+          <figcaption class="landing-proof-cap">
+            {quoteBy && <span class="landing-proof-by">{quoteBy}</span>}
+            {quoteRole && <span class="landing-proof-role">{quoteRole}</span>}
+          </figcaption>
+        )}
+      </figure>
+    )}
+
+    {rest.length > 0 && (
+      <div class="landing-work-grid">
+        {rest.map((study, i) => (
+          <article class="landing-work-card group">
+            <span class="landing-work-index">{String(i + 2).padStart(2, '0')}</span>
+            <VimeoEmbed
+              client:visible
+              vimeoId={study.vimeoId}
+              title={study.title}
+              loading="lazy"
+              autoColor={true}
+              className="landing-work-media"
+            />
+            <a href={study.link} class="landing-work-meta">
+              <h2 class="landing-work-title">{study.title}</h2>
+              <span class="landing-work-link">View case study →</span>
+            </a>
+          </article>
+        ))}
+      </div>
+    )}
 
     {moreWork.length > 0 && (
       <div class="landing-more-grid">
@@ -133,30 +167,26 @@ const {
       </div>
     )}
 
-    <div class="landing-mid-cta">
-      <a href={ctaHref} class="landing-cta">{ctaLabel}</a>
-      <p class="landing-all-work">
-        <a href="/work/">See all work →</a>
-      </p>
+    <p class="landing-all-work landing-all-work--end">
+      <a href="/work/">See all work →</a>
+    </p>
+  </section>
+
+  <section class="landing-section">
+    <span class="landing-eyebrow landing-section-label">Why the work lasts</span>
+    <div class="landing-cred">
+      {credentials.map((item) => (
+        <div class="landing-cred-row">
+          <h3 class="landing-cred-label">{item.label}</h3>
+          <p class="landing-cred-body">{item.body}</p>
+        </div>
+      ))}
     </div>
   </section>
 
-  {/* Quote */}
-  {quote && (
-    <section class="landing-section landing-quote-section">
-      <blockquote class="landing-quote">
-        <span class="landing-quote-mark" aria-hidden="true">“</span>
-        {quote}
-      </blockquote>
-      {quoteBy && <p class="font-display font-medium tracking-tight">{quoteBy}</p>}
-      {quoteRole && <p class="text-metadata mt-1">{quoteRole}</p>}
-    </section>
-  )}
-
-  {/* FAQ */}
   {faqs.length > 0 && (
     <section class="landing-section">
-      <span class="text-metadata block mb-10">Questions</span>
+      <span class="landing-eyebrow landing-section-label">Questions</span>
       <div class="landing-faq">
         {faqs.map((faq) => (
           <div class="landing-faq-row">
@@ -168,15 +198,19 @@ const {
     </section>
   )}
 
-  {/* Cross-links */}
   {links.length > 0 && (
     <nav class="landing-links" aria-label="Related pages">
       {links.map((link) => (
         <a href={link.href} class="landing-link-card group">
-          <span class="text-metadata mb-3 block">{link.eyebrow}</span>
+          <span class="landing-eyebrow mb-4 block">{link.eyebrow}</span>
           <p class="landing-link-label">{link.label}</p>
         </a>
       ))}
     </nav>
   )}
+
+  <a href={mailHref} class="landing-float" aria-label="Email Dan to start a project">
+    <span class="landing-float-label">Email Dan</span>
+    <span class="landing-float-arrow" aria-hidden="true">→</span>
+  </a>
 </div>

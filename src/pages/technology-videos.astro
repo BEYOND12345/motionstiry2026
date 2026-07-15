@@ -50,10 +50,9 @@ const faqSchema = {
 ---
 
 <PageLayout
+  showCTA={false}
   title="Technology Videos | Motion Story"
   description="Technology explainer videos for SaaS, platforms, and deep-tech. Clear stories for complex products. Work directly with Dan."
-  ctaHeading="Got technology that's hard to explain?"
-  ctaLabel="Start a Conversation"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
@@ -64,21 +63,22 @@ const faqSchema = {
   <ServiceLanding
     eyebrow="Technology Videos"
     headline={["Complex technology.", "Clear story."]}
-    lede="Technology videos that make platforms and deep products understandable — without dumbing them down."
-    answer="Technology explainer videos for SaaS, platforms, and deep-tech — clear stories for buyers, users, and stakeholders. Work directly with Dan."
+    lede="Technology videos that make platforms and deep products understandable, without dumbing them down."
+    emailSubject="Technology video"
     work={work}
     moreWork={moreWork}
     quote="40,000 views on YouTube, which increased brand perception and reputation."
     quoteBy="Simon Lehman"
     quoteRole="Marketing Manager, Acodis"
     faqs={[
+      { label: "Cost", body: "From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront." },
       { label: "Who it's for", body: "SaaS, platforms, deep-tech, and B2B products that need buyers and stakeholders to get it fast." },
-      { label: "How we work", body: "You work directly with Dan — script, design, and animation. No account managers, no handoffs." },
+      { label: "How we work", body: "You work with Dan throughout — concept, storyboard, design, illustration, and animation. Agencies welcome, white label or direct." },
     ]}
     links={[
       { href: "/product-demo-videos/", eyebrow: "Demos", label: "Product demo videos →" },
       { href: "/saas-explainer-videos/", eyebrow: "SaaS", label: "SaaS explainer videos →" },
-      { href: "/contact/", eyebrow: "Next", label: "Start a project →" },
+      { href: "/work/", eyebrow: "Work", label: "See all work →" },
     ]}
   />
 </PageLayout>

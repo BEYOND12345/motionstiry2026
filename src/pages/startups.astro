@@ -39,10 +39,9 @@ const breadcrumbSchema = {
 ---
 
 <PageLayout
+  showCTA={false}
   title="Explainer & Product Video for Startups | Motion Story"
   description="Explainer and product video for startups. Launch stories, homepage heroes, and demos that work before a login."
-  ctaHeading="Got a product that's hard to explain?"
-  ctaLabel="Start a Conversation"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
@@ -52,21 +51,22 @@ const breadcrumbSchema = {
   <ServiceLanding
     eyebrow="Startups"
     headline={["Make the idea land", "before the login."]}
-    lede="Explainers and product videos for early-stage teams — clear enough for a cold visitor, sharp enough for investors."
-    answer="Explainer and product video for startups — homepage heroes, waitlist stories, and demos that land before the login."
+    lede="Explainers and product videos for early-stage teams: clear enough for a cold visitor, sharp enough for investors."
+    emailSubject="Startup explainer video"
     work={work}
     moreWork={moreWork}
     quote="62% completion rate. 21% view rate. Long-term asset for our business."
     quoteBy="Lee Bright"
     quoteRole="Marketing Lead, Method Recycling"
     faqs={[
+      { label: "Cost", body: "From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront." },
       { label: "Fit for startups", body: "Homepage heroes, waitlist videos, investor updates, and the first product story that has to work cold." },
-      { label: "How we work", body: "You work directly with Dan — script, design, and animation. No account managers, no handoffs." },
+      { label: "How we work", body: "You work with Dan throughout — concept, storyboard, design, illustration, and animation. Agencies welcome, white label or direct." },
     ]}
     links={[
       { href: "/explainer-videos/", eyebrow: "Explainers", label: "Explainer videos →" },
       { href: "/product-demo-videos/", eyebrow: "Demos", label: "Product demo videos →" },
-      { href: "/contact/", eyebrow: "Next", label: "Start a project →" },
+      { href: "/work/", eyebrow: "Work", label: "See all work →" },
     ]}
   />
 </PageLayout>

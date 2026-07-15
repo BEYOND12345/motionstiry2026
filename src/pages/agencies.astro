@@ -39,10 +39,9 @@ const breadcrumbSchema = {
 ---
 
 <PageLayout
+  showCTA={false}
   title="Motion Design for Agencies & Studios | Motion Story"
   description="Senior motion design for agencies and studios. White label or direct. Work directly with Dan."
-  ctaHeading="Let's see if we're a fit."
-  ctaLabel="Get in Touch"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
@@ -52,20 +51,19 @@ const breadcrumbSchema = {
   <ServiceLanding
     eyebrow="Agencies & Studios"
     headline={["Your client needs motion.", "You need bandwidth."]}
-    lede="Senior animation production for agencies — white label or direct. Your relationship. My craft."
-    answer="Senior motion design for branding agencies and creative studios — white label or direct with the client. You keep the relationship; I handle production."
-    ctaLabel="Get in Touch →"
+    lede="Senior animation production for agencies: white label or direct. Your relationship. My craft."
+    emailSubject="Agency motion production"
     work={work}
     moreWork={moreWork}
     faqs={[
+      { label: "Cost", body: "From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront." },
       { label: "White label", body: "You brief me. I deliver finished files under your agency name." },
-      { label: "Direct with client", body: "Bring me in as the motion specialist. I work alongside your team on production." },
-      { label: "What I produce", body: "Platform explainers, product demos, brand films, campaign motion, social, and data visualisation." },
+      { label: "Direct with client", body: "Bring me in as the motion specialist alongside your team." },
     ]}
     links={[
       { href: "/work/", eyebrow: "Work", label: "See all work →" },
       { href: "/process/", eyebrow: "Process", label: "How I work →" },
-      { href: "/contact/", eyebrow: "Next", label: "Get in touch →" },
+      { href: "/explainer-videos/", eyebrow: "Explainers", label: "Explainer videos →" },
     ]}
   />
 </PageLayout>
