@@ -20,7 +20,7 @@ export default function VimeoEmbed({
   const [isLoaded, setIsLoaded] = useState(loadImmediately);
 
   return (
-    <div className={`relative aspect-video bg-gray-100 overflow-hidden ${className}`}>
+    <div className={`relative aspect-video bg-black/[0.04] overflow-hidden ${className}`}>
       {!isLoaded && (
         <button
           onClick={() => setIsLoaded(true)}
@@ -30,12 +30,12 @@ export default function VimeoEmbed({
           <img
             src={`https://vumbnail.com/${vimeoId}.jpg`}
             alt={title}
-            className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover/play:grayscale-0 group-hover/play:scale-100 ${autoColor ? 'grayscale-0 scale-100' : 'grayscale scale-105'}`}
+            className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/play:scale-[1.02] ${autoColor ? 'grayscale-0' : 'grayscale group-hover/play:grayscale-0 scale-[1.04]'}`}
             loading={loading}
           />
-          <div className="absolute inset-0 bg-black/10 group-hover/play:bg-black/20 transition-colors duration-500" />
-          <div className="relative w-16 h-16 rounded-full border border-white flex items-center justify-center opacity-80 group-hover/play:opacity-100 transition-opacity duration-500">
-            <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-white border-b-[8px] border-b-transparent ml-1" />
+          <div className="absolute inset-0 bg-black/15 group-hover/play:bg-black/25 transition-colors duration-500" />
+          <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-full border border-white/90 flex items-center justify-center opacity-90 group-hover/play:opacity-100 group-hover/play:scale-105 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] bg-black/10 backdrop-blur-[2px]">
+            <div className="w-0 h-0 border-t-[7px] border-t-transparent border-l-[11px] border-l-white border-b-[7px] border-b-transparent ml-0.5" />
           </div>
         </button>
       )}

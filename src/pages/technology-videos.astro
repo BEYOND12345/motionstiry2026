@@ -1,93 +1,31 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import ServiceLanding from '../components/ServiceLanding.astro';
 
-const caseStudies = [
-  {
-    title: "Mosaic / Strategic Data Planning",
-    description: "A technology platform story built for finance teams with complex planning workflows and multiple user roles.",
-    link: "/casestudy/mosaic-platform-explained/",
-    vimeoId: "879242129",
-  },
-  {
-    title: "Acodis / AI Document Processing",
-    description: "AI-powered data extraction explained for a technical audience without making the product feel abstract or academic.",
-    link: "/casestudy/acodis/",
-    vimeoId: "580088673",
-  },
-  {
-    title: "Atomic / In-App Messaging",
-    description: "A clear product narrative for a technical in-app messaging platform selling to both product and engineering teams.",
-    link: "/casestudy/atomic-in-app-messaging/",
-    vimeoId: "861022443",
-  },
-  {
-    title: "Wipster / Video Feedback Tool",
-    description: "A concise technology video that demonstrates workflow logic and collaboration value in under 90 seconds.",
-    link: "/casestudy/wipster-product-overview/",
-    vimeoId: "648360270",
-  },
-  {
-    title: "Ranalytic / RF Scanner",
-    description: "A technical hardware-and-software story showing how RF scanning works, what it detects, and why that matters to buyers.",
-    link: "/casestudy/ranalytic-rf-scanner/",
-    vimeoId: "759713697",
-  },
-  {
-    title: "Bat Nav / Big Battery Power",
-    description: "Energy infrastructure and battery navigation technology made understandable for stakeholders outside the engineering team.",
-    link: "/casestudy/bat-nav-platform-explainer/",
-    vimeoId: "479992275",
-  },
-  {
-    title: "Giraffe / Designing Cities",
-    description: "Urban planning technology explained through spatial data, visual workflows, and a clear story about better city design.",
-    link: "/casestudy/giraffe/",
-    vimeoId: "762112642",
-  },
-  {
-    title: "READ / Medical Journals",
-    description: "A medical research platform explained for clinicians who need to find, filter, and act on evidence quickly.",
-    link: "/casestudy/read-accessing-medical-journals/",
-    vimeoId: "245112003",
-  },
-  {
-    title: "InfoView / Digital Expense Management",
-    description: "Digital expense management shown as a complete workflow, from receipt capture to approval and reporting.",
-    link: "/casestudy/infoview/",
-    vimeoId: "404852749",
-  },
-  {
-    title: "Shape Connect / Website Security",
-    description: "Website security infrastructure visualised for non-technical decision-makers: threats, detection, and response in motion.",
-    link: "/casestudy/shape-connect/",
-    vimeoId: "320632556",
-  },
-  {
-    title: "Senate Matching / Data Matching",
-    description: "A data matching platform made legible by showing how disconnected records become unified, useful information.",
-    link: "/casestudy/senate-matching/",
-    vimeoId: "301736476",
-  },
+const work = [
+  { title: "Mosaic / Strategic Data Planning", link: "/casestudy/mosaic-platform-explained/", vimeoId: "879242129" },
+  { title: "Acodis / AI Document Processing", link: "/casestudy/acodis/", vimeoId: "580088673" },
+  { title: "Atomic / In-App Messaging", link: "/casestudy/atomic-in-app-messaging/", vimeoId: "861022443" },
+  { title: "Giraffe / Designing Cities", link: "/casestudy/giraffe/", vimeoId: "762112642" },
+  { title: "Wipster / Video Feedback Tool", link: "/casestudy/wipster-product-overview/", vimeoId: "648360270" },
+  { title: "Bat Nav / Big Battery Power", link: "/casestudy/bat-nav-platform-explainer/", vimeoId: "479992275" },
 ];
 
-const services = [
-  { title: "Technology explainer videos", desc: "Translate technical concepts into clear, watchable stories for decision-makers." },
-  { title: "Platform walkthrough videos", desc: "Show complex systems in context without overwhelming the viewer." },
-  { title: "Feature release videos", desc: "Explain new capabilities quickly for product marketing and customer updates." },
-  { title: "Onboarding technology videos", desc: "Help new users reach value sooner with guided visual workflows." },
-  { title: "Sales support videos", desc: "Give your team a reusable technology demo asset for outbound and proposals." },
+const moreWork = [
+  { title: "Ranalytic / RF Scanner", link: "/casestudy/ranalytic-rf-scanner/", vimeoId: "759713697" },
+  { title: "Shape Connect / Website Security", link: "/casestudy/shape-connect/", vimeoId: "320632556" },
+  { title: "InfoView / Digital Expense Management", link: "/casestudy/infoview/", vimeoId: "404852749" },
+  { title: "Senate Matching / Data Matching", link: "/casestudy/senate-matching/", vimeoId: "301736476" },
+  { title: "READ / Medical Journals", link: "/casestudy/read-accessing-medical-journals/", vimeoId: "245112003" },
+  { title: "Class Trust / Accounting Software", link: "/casestudy/class-trust-motion-graphic-explainer/", vimeoId: "485803845" },
 ];
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Technology Videos",
-  "description": "Technology videos and animated explainers for software and platform companies.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Motion Story",
-    "url": "https://motionstory.com.au",
-  },
+  "description": "Technology explainer videos that make technical products understandable for buyers, users, and stakeholders.",
+  "provider": { "@type": "Organization", "name": "Motion Story", "url": "https://motionstory.com.au" },
   "serviceType": "Technology Video Production",
   "areaServed": "Worldwide",
 };
@@ -101,160 +39,46 @@ const breadcrumbSchema = {
   ],
 };
 
-const faqs = [
-  {
-    q: "What are technology videos?",
-    a: "Technology videos are focused explainers that make technical products understandable for buyers, users, and stakeholders. They combine product context, interface storytelling, and clear motion design so viewers understand what the technology does and why it matters.",
-  },
-  {
-    q: "Who are technology videos for?",
-    a: "They are typically used by SaaS companies, platform teams, deep-tech startups, and B2B product businesses. The audience can include prospects, investors, onboarding users, or internal teams that need a shared understanding of complex systems.",
-  },
-  {
-    q: "How long should a technology video be?",
-    a: "Most high-performing technology videos are 60 to 120 seconds. That is enough time to frame the problem, show the core workflow, and communicate outcomes without losing attention.",
-  },
-  {
-    q: "What's the difference between a technology video and a product demo?",
-    a: "A product demo usually focuses on showing a specific interface workflow. A technology video can be broader, combining category education, product context, architecture-level explanation, and the value story for different stakeholders.",
-  },
-];
-
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": faqs.map((f) => ({
-    "@type": "Question",
-    "name": f.q,
-    "acceptedAnswer": { "@type": "Answer", "text": f.a },
-  })),
-};
-
-const portfolioSchema = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Technology video portfolio",
-  "itemListElement": caseStudies.map((study, index) => ({
-    "@type": "ListItem",
-    "position": index + 1,
-    "item": {
-      "@type": "VideoObject",
-      "name": study.title,
-      "description": study.description,
-      "url": `https://motionstory.com.au${study.link}`,
-      "thumbnailUrl": `https://vumbnail.com/${study.vimeoId}.jpg`,
-      "contentUrl": `https://vimeo.com/${study.vimeoId}`,
-      "embedUrl": `https://player.vimeo.com/video/${study.vimeoId}`,
-      "publisher": {
-        "@type": "Organization",
-        "name": "Motion Story",
-        "url": "https://motionstory.com.au",
-      },
-    },
-  })),
+  "mainEntity": [
+    { "@type": "Question", "name": "What are technology videos?", "acceptedAnswer": { "@type": "Answer", "text": "Technology videos make technical products understandable for buyers, users, and stakeholders — combining product context, interface storytelling, and clear motion design." } },
+    { "@type": "Question", "name": "What's the difference working with Motion Story?", "acceptedAnswer": { "@type": "Answer", "text": "You work directly with Dan — the person writing, designing, and animating — throughout the project. No account managers, no handoffs." } },
+  ],
 };
 ---
 
 <PageLayout
   title="Technology Videos | Motion Story"
-  description="Technology videos that explain complex platforms clearly. Product storytelling, platform walkthroughs, and animated explainers for tech teams."
-  ctaHeading="Need a clearer story for your technology?"
-  ctaLabel="Start a Project"
+  description="Technology explainer videos for SaaS, platforms, and deep-tech. Clear stories for complex products. Work directly with Dan."
+  ctaHeading="Got technology that's hard to explain?"
+  ctaLabel="Start a Conversation"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(portfolioSchema)} />
   </Fragment>
 
-  <div class="pt-32 pb-24 px-8 max-w-5xl mx-auto">
-    <span class="text-metadata mb-8 block">Technology Videos</span>
-    <h1 class="font-display text-4xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-8">
-      Complex technology,<br />clearly explained.
-    </h1>
-    <p class="text-body max-w-xl mb-24">
-      Your product might be technically strong, but most buyers do not evaluate technology from a spec sheet. They evaluate clarity. Technology videos bridge that gap by turning complexity into a story people can follow in minutes.
-    </p>
-
-    <section class="mb-32 pb-32 border-b border-black/10">
-      <span class="text-metadata mb-10 block">What I Make</span>
-      <div class="space-y-12">
-        {services.map((service, i) => (
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start pb-12 border-b border-black/10 last:border-b-0 last:pb-0">
-            <div>
-              <span class="text-metadata mb-4 block text-accent">{(i + 1).toString().padStart(2, '0')}</span>
-              <h3 class="font-display text-lg font-medium tracking-tight">{service.title}</h3>
-            </div>
-            <div class="md:col-span-2">
-              <p class="text-body">{service.desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-
-    <section class="mb-32 pb-32 border-b border-black/10">
-      <span class="text-metadata mb-10 block">Selected Technology Work</span>
-      <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight leading-[0.9] mb-16">
-        Technology videos,<br />real platforms.
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        {caseStudies.map(study => (
-          <a href={study.link} class="group block">
-            <div class="aspect-video mb-6 overflow-hidden bg-black/5">
-              <img
-                src={`https://vumbnail.com/${study.vimeoId}.jpg`}
-                alt={study.title}
-                class="w-full h-full object-cover group-hover:opacity-80 transition-opacity"
-                loading="lazy"
-              />
-            </div>
-            <h3 class="font-display text-xl font-bold tracking-tight mb-3 group-hover:opacity-60 transition-opacity">{study.title}</h3>
-            <p class="text-body mb-4">{study.description}</p>
-            <span class="text-metadata text-accent group-hover:opacity-60 transition-opacity">View Case Study →</span>
-          </a>
-        ))}
-      </div>
-    </section>
-
-    <section class="mb-32 pb-32 border-b border-black/10">
-      <span class="text-metadata mb-10 block">Frequently Asked Questions</span>
-      <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight leading-[0.9] mb-16">
-        Common questions<br />about technology videos.
-      </h2>
-      <div class="space-y-12">
-        {faqs.map((faq) => (
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start pb-12 border-b border-black/10 last:border-b-0 last:pb-0">
-            <div>
-              <h3 class="font-display text-lg font-medium tracking-tight">{faq.q}</h3>
-            </div>
-            <div class="md:col-span-2">
-              <p class="text-body">{faq.a}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-
-    <section class="border-t border-black/10 pt-16">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <a href="/services/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
-          <span class="text-metadata mb-3 block">Services</span>
-          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">All service areas →</p>
-          <p class="text-body !text-sm mt-2">Audience and format pages in one place</p>
-        </a>
-        <a href="/product-demo-videos/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
-          <span class="text-metadata mb-3 block">Product Demo Videos</span>
-          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">See product demos →</p>
-          <p class="text-body !text-sm mt-2">Workflow-focused walkthroughs</p>
-        </a>
-        <a href="/startups/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
-          <span class="text-metadata mb-3 block">Startups</span>
-          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">See startup work →</p>
-          <p class="text-body !text-sm mt-2">Launch, pitch, and early product stories</p>
-        </a>
-      </div>
-    </section>
-  </div>
+  <ServiceLanding
+    eyebrow="Technology Videos"
+    headline={["Complex technology.", "Clear story."]}
+    lede="Technology videos that make platforms and deep products understandable — without dumbing them down."
+    answer="Technology explainer videos for SaaS, platforms, and deep-tech — clear stories for buyers, users, and stakeholders. Work directly with Dan."
+    work={work}
+    moreWork={moreWork}
+    quote="40,000 views on YouTube, which increased brand perception and reputation."
+    quoteBy="Simon Lehman"
+    quoteRole="Marketing Manager, Acodis"
+    faqs={[
+      { label: "Who it's for", body: "SaaS, platforms, deep-tech, and B2B products that need buyers and stakeholders to get it fast." },
+      { label: "How we work", body: "You work directly with Dan — script, design, and animation. No account managers, no handoffs." },
+    ]}
+    links={[
+      { href: "/product-demo-videos/", eyebrow: "Demos", label: "Product demo videos →" },
+      { href: "/saas-explainer-videos/", eyebrow: "SaaS", label: "SaaS explainer videos →" },
+      { href: "/contact/", eyebrow: "Next", label: "Start a project →" },
+    ]}
+  />
 </PageLayout>

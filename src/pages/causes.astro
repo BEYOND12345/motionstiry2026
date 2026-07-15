@@ -1,73 +1,29 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import ServiceLanding from '../components/ServiceLanding.astro';
 
-const caseStudies = [
-  {
-    title: "RSPCA / Cat Care Programme",
-    description: "An animation for RSPCA's cat welfare programme that balances emotion with practical information, getting the message across without manipulation.",
-    link: "/casestudy/rspca-cat-care-explainer/",
-    vimeoId: "762085540",
-  },
-  {
-    title: "RSPCA / Workplace Giving",
-    description: "A motion piece for RSPCA's workplace giving programme. The brief was to drive corporate sign-ups by making the impact of regular contributions immediately clear.",
-    link: "/casestudy/rspca-work-place-giving/",
-    vimeoId: "792094663",
-  },
-  {
-    title: "Red Cross / Covid Vaccine Explainer",
-    description: "Public health information made calm, clear, and trustworthy during a moment when confusion had real consequences.",
-    link: "/casestudy/redcross-covid-vacine-explainer/",
-    vimeoId: "762086291",
-  },
-  {
-    title: "United Nations / Plastic Waste Data",
-    description: "A data-driven animation for the United Nations that transforms global plastic waste statistics into a visual narrative designed for international policy discussions.",
-    link: "/casestudy/united-nations/",
-    vimeoId: "540393117",
-  },
-  {
-    title: "ACIR / Food Waste Programme",
-    description: "An animation for ACIR's food waste reduction programme. Complex supply chain data turned into a clear visual argument for action.",
-    link: "/casestudy/acir/",
-    vimeoId: "557016672",
-  },
-  {
-    title: "Solar My School / Empowering Schools",
-    description: "A community-focused climate story showing how schools can reduce energy costs and carbon footprints through solar.",
-    link: "/casestudy/solar-my-school/",
-    vimeoId: "401121460",
-  },
-  {
-    title: "NSW Gov / Pinch Point Explained",
-    description: "Infrastructure policy and traffic data turned into a clear explanation of how congestion is identified, analysed, and improved.",
-    link: "/casestudy/nsw-gov-pinch-point-explainer/",
-    vimeoId: "306054358",
-  },
-  {
-    title: "IPA / Electric Car Road Tax",
-    description: "A public-policy explainer for the electric vehicle era, turning a technical road-funding debate into a visual argument.",
-    link: "/casestudy/ipa-australia/",
-    vimeoId: "441916573",
-  },
-  {
-    title: "NeatStreets / Report Hazards",
-    description: "A civic technology explainer showing how residents can report hazards and connect local issues to council workflows.",
-    link: "/casestudy/neat-streets-app/",
-    vimeoId: "244918295",
-  },
+const work = [
+  { title: "RSPCA / Cat Care Programme", link: "/casestudy/rspca-cat-care-explainer/", vimeoId: "762085540" },
+  { title: "United Nations / Plastic Waste Data", link: "/casestudy/united-nations/", vimeoId: "540393117" },
+  { title: "Red Cross / Covid Vaccine Explainer", link: "/casestudy/redcross-covid-vacine-explainer/", vimeoId: "762086291" },
+  { title: "RSPCA / Workplace Giving", link: "/casestudy/rspca-work-place-giving/", vimeoId: "792094663" },
+  { title: "ACIR / Food Waste Programme", link: "/casestudy/acir/", vimeoId: "557016672" },
+  { title: "NSW Gov / Pinch Point Explained", link: "/casestudy/nsw-gov-pinch-point-explainer/", vimeoId: "306054358" },
+];
+
+const moreWork = [
+  { title: "Solar My School", link: "/casestudy/solar-my-school/", vimeoId: "401121460" },
+  { title: "IPA / Electric Car Road Tax", link: "/casestudy/ipa-australia/", vimeoId: "441916573" },
+  { title: "NeatStreets / Report Hazards", link: "/casestudy/neat-streets-app/", vimeoId: "244918295" },
+  { title: "Method / Beautiful Bin System", link: "/casestudy/method-explainer-video/", vimeoId: "557884851" },
 ];
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Motion Design for Charities & Nonprofits",
-  "description": "Motion design for causes, charities, nonprofits, and government organisations. Complex missions made immediately clear.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Motion Story",
-    "url": "https://motionstory.com.au",
-  },
+  "description": "Motion design for causes, charities, nonprofits, and government organisations.",
+  "provider": { "@type": "Organization", "name": "Motion Story", "url": "https://motionstory.com.au" },
   "serviceType": "Motion Design for Nonprofits and Government",
   "areaServed": "Worldwide",
 };
@@ -80,121 +36,34 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 2, "name": "Causes & Nonprofits", "item": "https://motionstory.com.au/causes/" },
   ],
 };
-
-const portfolioSchema = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Charity, nonprofit, and government motion design portfolio",
-  "itemListElement": caseStudies.map((study, index) => ({
-    "@type": "ListItem",
-    "position": index + 1,
-    "item": {
-      "@type": "VideoObject",
-      "name": study.title,
-      "description": study.description,
-      "url": `https://motionstory.com.au${study.link}`,
-      "thumbnailUrl": `https://vumbnail.com/${study.vimeoId}.jpg`,
-      "contentUrl": `https://vimeo.com/${study.vimeoId}`,
-      "embedUrl": `https://player.vimeo.com/video/${study.vimeoId}`,
-      "publisher": {
-        "@type": "Organization",
-        "name": "Motion Story",
-        "url": "https://motionstory.com.au",
-      },
-    },
-  })),
-};
 ---
 
 <PageLayout
   title="Motion Design for Charities & Nonprofits | Motion Story"
-  description="Motion design for causes, charities, nonprofits, and government organisations. Complex missions made immediately clear. Dan Neale, Motion Story."
+  description="Motion design for causes, charities, nonprofits, and government. Complex missions made immediately clear."
   ctaHeading="Got a mission that's hard to communicate?"
   ctaLabel="Talk About Your Project"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(portfolioSchema)} />
   </Fragment>
 
-  {/* Hero */}
-  <div class="pt-32 pb-24 px-8 max-w-5xl mx-auto">
-    <span class="text-metadata mb-8 block">Causes & Nonprofits</span>
-    <h1 class="font-display text-4xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-8">
-      Important work deserves<br />to be understood.
-    </h1>
-    <p class="text-body max-w-xl mb-24">
-      Charities, nonprofits, and government organisations often have the most complex stories to tell, and the smallest tolerance for something that doesn't land.
-    </p>
-
-    {/* Body */}
-    <section class="mb-32 pb-32 border-b border-black/10">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-        <div>
-          <span class="text-metadata mb-4 block text-accent">The Work</span>
-        </div>
-        <div class="md:col-span-2">
-          <p class="text-body text-lg leading-relaxed mb-8">
-            A confusing message doesn't just lose attention. For a cause, it loses donors. It loses volunteers. It loses the people whose lives depend on the program working.
-          </p>
-          <p class="text-body text-lg leading-relaxed mb-8">
-            I've made work for the RSPCA, the United Nations, and government data programs. Projects where the stakes are real and the brief needed to cut through noise, not add to it.
-          </p>
-          <p class="text-body text-lg leading-relaxed mb-8">
-            The approach is the same as any other brief: find the one thing that matters, build the motion design around that, and strip everything else out.
-          </p>
-          <p class="text-body text-lg leading-relaxed">
-            Your cause is hard to explain because it's complicated. That's not a limitation. That's exactly the brief I'm built for.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    {/* Case Studies */}
-    <section class="mb-32 pb-32 border-b border-black/10">
-      <span class="text-metadata mb-10 block">Selected Work</span>
-      <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight leading-[0.9] mb-16">
-        Causes I've<br />worked on.
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        {caseStudies.map(study => (
-          <a href={study.link} class="group block">
-            <div class="aspect-video mb-6 overflow-hidden bg-black/5">
-              <img
-                src={`https://vumbnail.com/${study.vimeoId}.jpg`}
-                alt={study.title}
-                class="w-full h-full object-cover group-hover:opacity-80 transition-opacity"
-                loading="lazy"
-              />
-            </div>
-            <h3 class="font-display text-xl font-bold tracking-tight mb-3 group-hover:opacity-60 transition-opacity">{study.title}</h3>
-            <p class="text-body mb-4">{study.description}</p>
-            <span class="text-metadata text-accent group-hover:opacity-60 transition-opacity">View Case Study →</span>
-          </a>
-        ))}
-      </div>
-    </section>
-
-    {/* Cross-links */}
-    <section class="border-t border-black/10 pt-16">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <a href="/services/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
-          <span class="text-metadata mb-3 block">Services</span>
-          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">All service areas →</p>
-          <p class="text-body !text-sm mt-2">Find the right page for the brief</p>
-        </a>
-        <a href="/work/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
-          <span class="text-metadata mb-3 block">Work</span>
-          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">See all work →</p>
-          <p class="text-body !text-sm mt-2">50+ projects delivered worldwide</p>
-        </a>
-        <a href="/contact/" class="group p-8 border border-black/10 hover:border-black/20 transition-colors">
-          <span class="text-metadata mb-3 block">Contact</span>
-          <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">Start a conversation →</p>
-          <p class="text-body !text-sm mt-2">Quick response, no sales pitch</p>
-        </a>
-      </div>
-    </section>
-  </div>
+  <ServiceLanding
+    eyebrow="Causes & Nonprofits"
+    headline={["Important work deserves", "to be understood."]}
+    lede="Motion for charities, nonprofits, and government — clarity without noise."
+    answer="Motion design for causes, charities, nonprofits, and government — complex missions made immediately clear."
+    work={work}
+    moreWork={moreWork}
+    faqs={[
+      { label: "The stakes", body: "A confusing message doesn't just lose attention — it loses donors, volunteers, and the people the programme is meant to help." },
+      { label: "How we work", body: "You work directly with Dan — script, design, and animation. No account managers, no handoffs." },
+    ]}
+    links={[
+      { href: "/explainer-videos/", eyebrow: "Explainers", label: "Explainer videos →" },
+      { href: "/work/", eyebrow: "Work", label: "See all work →" },
+      { href: "/contact/", eyebrow: "Next", label: "Start a project →" },
+    ]}
+  />
 </PageLayout>

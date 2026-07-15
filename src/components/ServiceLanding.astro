@@ -1,0 +1,182 @@
+---
+import VimeoEmbed from './VimeoEmbed';
+
+export interface WorkItem {
+  title: string;
+  link: string;
+  vimeoId: string;
+}
+
+export interface FaqItem {
+  label: string;
+  body: string;
+}
+
+export interface CrossLink {
+  href: string;
+  eyebrow: string;
+  label: string;
+}
+
+interface Props {
+  eyebrow: string;
+  /** Headline lines — each becomes a line break on md+ */
+  headline: string[];
+  lede: string;
+  /** Definitive answer for Ads message-match + AI citation */
+  answer?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  differentiator?: string;
+  work: WorkItem[];
+  moreWork?: WorkItem[];
+  quote?: string;
+  quoteBy?: string;
+  quoteRole?: string;
+  faqs?: FaqItem[];
+  links?: CrossLink[];
+}
+
+const {
+  eyebrow,
+  headline,
+  lede,
+  answer,
+  ctaLabel = 'Start a Project →',
+  ctaHref = '/contact/',
+  differentiator = 'Work directly with the storyteller throughout your project.',
+  work,
+  moreWork = [],
+  quote,
+  quoteBy,
+  quoteRole,
+  faqs = [],
+  links = [],
+} = Astro.props;
+---
+
+<div class="landing">
+  {/* Hero */}
+  <header class="landing-hero">
+    <span class="text-metadata landing-reveal" style="--d: 0">{eyebrow}</span>
+    <h1 class="landing-title landing-reveal" style="--d: 1">
+      {headline.map((line, i) => (
+        <>
+          {i > 0 && (
+            <>
+              {' '}
+              <br class="hidden md:block" />
+            </>
+          )}
+          {line}
+        </>
+      ))}
+    </h1>
+    <p class="landing-lede text-body landing-reveal" style="--d: 2">{lede}</p>
+    {answer && (
+      <p class="landing-answer landing-reveal" style="--d: 3">{answer}</p>
+    )}
+    <div class="landing-cta-row landing-reveal" style={`--d: ${answer ? 4 : 3}`}>
+      <a href={ctaHref} class="landing-cta">
+        {ctaLabel}
+      </a>
+      {differentiator && (
+        <p class="landing-diff">
+          <span class="landing-diff-bar" aria-hidden="true" />
+          {differentiator}
+        </p>
+      )}
+    </div>
+  </header>
+
+  {/* Work */}
+  <section id="selected-work" class="landing-section landing-reveal" style={`--d: ${answer ? 5 : 4}`}>
+    <div class="landing-section-head">
+      <span class="text-metadata">Selected Work</span>
+      <span class="text-metadata landing-count">{String(work.length + moreWork.length).padStart(2, '0')}</span>
+    </div>
+
+    <div class="landing-work-grid">
+      {work.map((study, i) => (
+        <article class="landing-work-card group">
+          <span class="landing-work-index text-metadata">{String(i + 1).padStart(2, '0')}</span>
+          <VimeoEmbed
+            client:visible
+            vimeoId={study.vimeoId}
+            title={study.title}
+            loading={i === 0 ? 'eager' : 'lazy'}
+            autoColor={true}
+            className="landing-work-media"
+          />
+          <a href={study.link} class="landing-work-meta">
+            <h2 class="landing-work-title">{study.title}</h2>
+            <span class="landing-work-link">View case study →</span>
+          </a>
+        </article>
+      ))}
+    </div>
+
+    {moreWork.length > 0 && (
+      <div class="landing-more-grid">
+        {moreWork.map((study) => (
+          <a href={study.link} class="landing-more-card group">
+            <div class="landing-more-thumb">
+              <img
+                src={`https://vumbnail.com/${study.vimeoId}.jpg`}
+                alt={study.title}
+                loading="lazy"
+              />
+            </div>
+            <h3 class="landing-more-title">{study.title}</h3>
+          </a>
+        ))}
+      </div>
+    )}
+
+    <div class="landing-mid-cta">
+      <a href={ctaHref} class="landing-cta">{ctaLabel}</a>
+      <p class="landing-all-work">
+        <a href="/work/">See all work →</a>
+      </p>
+    </div>
+  </section>
+
+  {/* Quote */}
+  {quote && (
+    <section class="landing-section landing-quote-section">
+      <blockquote class="landing-quote">
+        <span class="landing-quote-mark" aria-hidden="true">“</span>
+        {quote}
+      </blockquote>
+      {quoteBy && <p class="font-display font-medium tracking-tight">{quoteBy}</p>}
+      {quoteRole && <p class="text-metadata mt-1">{quoteRole}</p>}
+    </section>
+  )}
+
+  {/* FAQ */}
+  {faqs.length > 0 && (
+    <section class="landing-section">
+      <span class="text-metadata block mb-10">Questions</span>
+      <div class="landing-faq">
+        {faqs.map((faq) => (
+          <div class="landing-faq-row">
+            <h3 class="landing-faq-label">{faq.label}</h3>
+            <p class="text-body">{faq.body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {/* Cross-links */}
+  {links.length > 0 && (
+    <nav class="landing-links" aria-label="Related pages">
+      {links.map((link) => (
+        <a href={link.href} class="landing-link-card group">
+          <span class="text-metadata mb-3 block">{link.eyebrow}</span>
+          <p class="landing-link-label">{link.label}</p>
+        </a>
+      ))}
+    </nav>
+  )}
+</div>
