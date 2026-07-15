@@ -208,6 +208,13 @@ export default defineConfig({
     '/tax-other-projects/education/': '/work/',
     '/category/industry/': '/blog/',
 
+    // Thin / legacy stubs pruned from the blog
+    '/hey-80s-kids-thats-me/': '/about/',
+    '/wip-style-frames-for-a-top-secret-project/': '/why-motion-design-project-fails-before-animation/',
+    '/wip-the-storyboard/': '/storyboard-that-ships-on-time/',
+    '/amsed-motion-graphic/': '/casestudy/amsed/',
+    '/telling-a-story-in-30-seconds/': '/how-to-get-past-3-second-watch-rule/',
+
     // Old WP blog slugs that now 404 (from GSC "Not found", Apr 2026)
     '/saas-explainer-videos-the-secret-sauce-for-saas/': '/saas-explainer-videos/',
     '/best-animation-production-companies-in-australia/': '/find-the-perfect-animation-production-company/',

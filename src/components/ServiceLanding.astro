@@ -18,6 +18,11 @@ export interface CrossLink {
   label: string;
 }
 
+export interface RelatedReading {
+  href: string;
+  label: string;
+}
+
 interface Props {
   eyebrow: string;
   /** Headline lines — each becomes a line break on md+ */
@@ -30,6 +35,7 @@ interface Props {
   quoteRole?: string;
   faqs?: FaqItem[];
   links?: CrossLink[];
+  relatedReading?: RelatedReading[];
 }
 
 const {
@@ -43,6 +49,7 @@ const {
   quoteRole,
   faqs = [],
   links = [],
+  relatedReading = [],
 } = Astro.props;
 
 const [featured, ...rest] = work;
@@ -189,6 +196,20 @@ const credentials = [
             <h3 class="landing-faq-label">{faq.label}</h3>
             <p class="text-body">{faq.body}</p>
           </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {relatedReading.length > 0 && (
+    <section class="landing-section">
+      <span class="landing-eyebrow landing-section-label">Related reading</span>
+      <div class="landing-cred">
+        {relatedReading.map((item) => (
+          <a href={item.href} class="landing-cred-row group" style="text-decoration: none; color: inherit;">
+            <h3 class="landing-cred-label group-hover:opacity-55 transition-opacity">{item.label} →</h3>
+            <p class="landing-cred-body">From the Motion Story blog</p>
+          </a>
         ))}
       </div>
     </section>

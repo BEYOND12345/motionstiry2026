@@ -170,6 +170,20 @@ http://motionstory.com.au/*        https://motionstory.com.au/:splat   301!
 /2024/*   /blog/   301!
 
 # ───────────────────────────────────────────────────
+# Wrong /blog/{slug} paths (posts live at /{slug}/)
+# Keep /blog/ index intact — do not splat the index.
+# ───────────────────────────────────────────────────
+/blog/:slug/   /:slug/   301!
+/blog/:slug    /:slug/   301!
+
+# Thin / legacy stubs pruned from the blog index
+/hey-80s-kids-thats-me/                        /about/                                              301!
+/wip-style-frames-for-a-top-secret-project/    /why-motion-design-project-fails-before-animation/  301!
+/wip-the-storyboard/                           /storyboard-that-ships-on-time/                     301!
+/amsed-motion-graphic/                         /casestudy/amsed/                                   301!
+/telling-a-story-in-30-seconds/                /how-to-get-past-3-second-watch-rule/               301!
+
+# ───────────────────────────────────────────────────
 # Old WP blog slugs that now 404 (from GSC "Not found", Apr 2026)
 # Mapped to closest existing page or blog post.
 # ───────────────────────────────────────────────────

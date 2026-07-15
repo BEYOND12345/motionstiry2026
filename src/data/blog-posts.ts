@@ -321,11 +321,11 @@ That might sound like a lot until you compare it to the cost of a sales team spe
 
 If you're thinking about a SaaS explainer video, the first step is getting clear on what you need it to do. Is it a homepage hero? A sales tool? An onboarding asset? The answer shapes everything: length, tone, level of product detail, and where the video lives.
 
-I work with SaaS companies from seed stage to Series B, and the brief is always the same: take something complex and make it clear. If that sounds like what you need, take a look at my SaaS explainer video work or get in touch.
+I work with SaaS companies from seed stage to Series B, and the brief is always the same: take something complex and make it clear. See [SaaS explainer videos](/saas-explainer-videos/), [product demo videos](/product-demo-videos/), and [startup explainers](/startups/) — or [email me](mailto:daniel@motionstory.com.au?subject=SaaS%20explainer%20video) to talk through the brief.
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 500+ projects. motionstory.com.au`
+Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. motionstory.com.au`
   },
   {
     slug: "how-to-write-a-explainer-video-script",
@@ -393,11 +393,11 @@ Writing an explainer video script is different from writing a blog post or a sal
 
 Once the script is locked, it becomes the foundation for everything: storyboarding, style frames, animation, and voiceover. A strong script makes every stage faster and cheaper. A weak one creates expensive revisions.
 
-If you'd rather have someone handle the script and production together, that's how I work. Every project at Motion Story starts with the script, and I don't move to design until the words are right. See how the process works or get in touch to talk through your project.
+If you'd rather have someone handle the script and production together, that's how I work. Every project at Motion Story starts with the script, and I don't move to design until the words are right. See [how the process works](/process/), [explainer video production](/explainer-videos/), or [email me](mailto:daniel@motionstory.com.au?subject=Explainer%20video%20script) to talk through your project.
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 500+ projects. motionstory.com.au`
+Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. motionstory.com.au`
   },
   {
     slug: "live-action-or-animated-video",
@@ -461,11 +461,11 @@ Ask yourself three questions:
 - **Where will this video live?** Homepage explainers and product demos work best as animation. Social content and brand films can go either way. Testimonials should almost always be live action.
 - **What's my budget and timeline?** Animation is typically faster and more affordable. If you're working with a tight timeline or a modest budget, animation gives you more production value per dollar.
 
-For most businesses explaining a digital product or complex service, animation is the right starting point. It's what I specialise in at Motion Story, taking complex products and missions and making them clear through motion design. If you're weighing up your options, get in touch and I can help you figure out the right approach for your project.
+For most businesses explaining a digital product or complex service, animation is the right starting point. It's what I specialise in at Motion Story — taking complex products and missions and making them clear through motion design. See [explainer videos](/explainer-videos/), [product demo videos](/product-demo-videos/), and [motion graphics](/motion-graphics/), or [email me](mailto:daniel@motionstory.com.au?subject=Animated%20vs%20live%20action) if you want help choosing.
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 500+ projects. motionstory.com.au`
+Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. motionstory.com.au`
   },
   {
     slug: "why-most-saas-videos-get-ignored",
@@ -496,7 +496,7 @@ A video needs a deliberate distribution plan the same way a blog post or a produ
 
 The video is on your website, but it's in the wrong place. Below the fold on a page nobody visits. On the "About" page when it should be on the homepage. In the blog sidebar instead of embedded in sales outreach templates.
 
-Placement determines whether the video gets watched. A perfect video in the wrong location is an invisible video. I covered this in detail in my piece on [why SaaS demo videos don't convert](/blog/why-saas-demo-video-not-converting).
+Placement determines whether the video gets watched. A perfect video in the wrong location is an invisible video. I covered this in detail in my piece on [why SaaS demo videos don't convert](/why-saas-demo-video-not-converting).
 
 ### Reason 3: No Supporting Context
 
@@ -546,7 +546,7 @@ Before you publish your next SaaS video, complete this checklist. It takes 30 mi
 - **Configure video analytics.** Use Wistia, Vidyard, or YouTube analytics to track play rate, watch-through rate, and click-through rate.
 - **Schedule a review.** Put a 30-day review on your calendar. Compare post-video metrics to the baseline.
 
-For a detailed guide on what metrics to track and how to calculate ROI, read my piece on [measuring video ROI for SaaS](/blog/how-to-measure-roi-motion-design-video-saas). And if you want to know whether your video is performing before the data comes in, try the [10-second test](/blog/10-second-test-is-your-video-working).
+For a detailed guide on what metrics to track and how to calculate ROI, read my piece on [measuring video ROI for SaaS](/how-to-measure-roi-motion-design-video-saas). And if you want to know whether your video is performing before the data comes in, try the [10-second test](/10-second-test-is-your-video-working).
 
 ## The 80/20 of Video Publishing
 
@@ -668,7 +668,7 @@ You don't need to produce a dozen videos at once. Start with the highest-leverag
 
 These three assets cover the moments where video has the most measurable impact. You can build from there.
 
-For a framework on how to structure this investment, read my guide on [measuring video ROI for SaaS](/blog/how-to-measure-roi-motion-design-video-saas). And if you want to see how I produce these types of videos, visit my [process page](/process/).
+For a framework on how to structure this investment, read my guide on [measuring video ROI for SaaS](/how-to-measure-roi-motion-design-video-saas). And if you want to see how I produce these types of videos, visit my [process page](/process/).
 
 ## FAQ
 
@@ -777,7 +777,7 @@ If it's cold (SEO, paid ads, social) → Explainer. If it's warm (direct, brande
 **What do you want homepage visitors to do?**
 If the goal is trial signups → Explainer (lower commitment, wider appeal). If the goal is demo bookings → Product demo (higher qualification, specific interest).
 
-For more on matching the right video type to your goals, read my guide on [what type of video your SaaS company needs](/blog/what-type-of-video-does-my-saas-company-need). And if you want to see examples of both types, visit my [work page](/work/).
+For more on matching the right video type to your goals, read my guide on [what type of video your SaaS company needs](/what-type-of-video-does-my-saas-company-need). And if you want to see examples of both types, visit my [work page](/work/).
 
 ## FAQ
 
@@ -898,7 +898,7 @@ A client launched a 75-second animated explainer on their homepage. Here's what 
 **Video cost:** $14,000
 **First-year ROI:** 149%
 
-And the video was still running and performing 18 months later. For a deeper look at which video types generate these kinds of results, check out my comparison of [homepage video vs product demo](/blog/homepage-video-vs-product-demo-saas).
+And the video was still running and performing 18 months later. For a deeper look at which video types generate these kinds of results, check out my comparison of [homepage video vs product demo](/homepage-video-vs-product-demo-saas).
 
 ## Common ROI Mistakes
 
@@ -989,7 +989,7 @@ Now look at the numbers. These five metrics tell you whether the video is actual
 
 **Benchmark:** 50-70% for a 60-second video. 35-50% for a 90-second video. Under 30% means the video is losing people.
 
-**What low watch-through means:** The video is too long, the middle section drags, or the opening hook isn't strong enough to carry viewers through. Check your retention graph. The steepest drop-off point tells you exactly where you're losing them. For help with openings, read my piece on [the 3-second watch rule](/blog/how-to-get-past-3-second-watch-rule).
+**What low watch-through means:** The video is too long, the middle section drags, or the opening hook isn't strong enough to carry viewers through. Check your retention graph. The steepest drop-off point tells you exactly where you're losing them. For help with openings, read my piece on [the 3-second watch rule](/how-to-get-past-3-second-watch-rule).
 
 ### Metric 3: Click-Through or Conversion Rate
 
@@ -1013,7 +1013,7 @@ Now look at the numbers. These five metrics tell you whether the video is actual
 
 **Benchmark:** This varies hugely by context, but any measurable positive movement within 60-90 days of launching the video is a win.
 
-**What no impact means:** The video might be working for awareness but not influencing behaviour. Or it might be reaching the wrong audience. This is where you need to look at the video's role in the broader funnel. I cover this more in my guide on [measuring video ROI](/blog/how-to-measure-roi-motion-design-video-saas).
+**What no impact means:** The video might be working for awareness but not influencing behaviour. Or it might be reaching the wrong audience. This is where you need to look at the video's role in the broader funnel. I cover this more in my guide on [measuring video ROI](/how-to-measure-roi-motion-design-video-saas).
 
 ## The Action Plan
 
@@ -1027,7 +1027,7 @@ If your video passes the viewing test but fails the data test:
 - **Match the video to the right page.** A product demo on the homepage might not convert as well as an explainer. Match the content to the viewer's stage.
 - **Test variations.** Try different thumbnails, different page positions, or different surrounding copy.
 
-If your video passes both tests: congratulations. Now think about what your next video should be: a product demo, an onboarding series, or social cuts to extend reach. Check my guide on [what type of video your SaaS company needs](/blog/what-type-of-video-does-my-saas-company-need) for the logical next step.
+If your video passes both tests: congratulations. Now think about what your next video should be: a product demo, an onboarding series, or social cuts to extend reach. Check my guide on [what type of video your SaaS company needs](/what-type-of-video-does-my-saas-company-need) for the logical next step.
 
 ## What Good Actually Looks Like: A Real Benchmark
 
@@ -1131,7 +1131,7 @@ A video that works on your homepage won't necessarily work on LinkedIn. The paci
 
 **Watch your analytics.** Most video platforms show you a retention graph. Look at where the drop-off happens. If it's in the first five seconds, your opening needs work. If it's at 30 seconds, your middle section is the problem.
 
-**Create multiple openings.** For social ads, produce two or three variations of the first three seconds and test which one holds attention best. The rest of the video can be identical. Just swap the hook. I talk more about testing and measuring in my guide on [the 10-second test](/blog/10-second-test-is-your-video-working).
+**Create multiple openings.** For social ads, produce two or three variations of the first three seconds and test which one holds attention best. The rest of the video can be identical. Just swap the hook. I talk more about testing and measuring in my guide on [the 10-second test](/10-second-test-is-your-video-working).
 
 If your SaaS videos are getting views but losing viewers early, the fix is almost always in the first five seconds. Get those right and the rest of the video has a chance to do its job. Take a look at [my explainer video work](/explainer-videos/) to see how I approach openings, or [get in touch](/contact/) to discuss your project.
 
@@ -1194,7 +1194,7 @@ Most SaaS demo videos are 2-3 minutes. Most viewers drop off after 60 seconds. Y
 
 **How to fix it:** Cut it to 60-90 seconds. Pick the three features that matter most to your primary audience and show those well. You can always create separate videos for the deeper features. A tight video that keeps viewers through the CTA outperforms a comprehensive one that loses them at the halfway mark.
 
-I cover the science of attention and watch time in more detail in my piece on [how to get past the 3-second watch rule](/blog/how-to-get-past-3-second-watch-rule).
+I cover the science of attention and watch time in more detail in my piece on [how to get past the 3-second watch rule](/how-to-get-past-3-second-watch-rule).
 
 ## Reason 3: There's No Clear Call to Action
 
@@ -1212,7 +1212,7 @@ You put the video on your homepage. Good. But it's below the fold, after 500 wor
 
 **How to fix it:** Match the video to the right context. Homepage hero videos should be above the fold, auto-playing (muted), with a prominent play button. Sales enablement videos should be sent directly by reps, not linked from a general page. Product demos should live on a dedicated demo page or within the product itself.
 
-For a deeper dive into where different video types belong, read my guide on [homepage video vs product demo](/blog/homepage-video-vs-product-demo-saas).
+For a deeper dive into where different video types belong, read my guide on [homepage video vs product demo](/homepage-video-vs-product-demo-saas).
 
 ## A Real Example of What Deployment Actually Looks Like
 
@@ -1302,7 +1302,7 @@ Here are the three main ways to work with a motion designer, and how to figure o
 
 **The downside:** Every new project starts from scratch. The designer doesn't accumulate deep knowledge of your product or brand. There's a ramp-up cost each time, re-learning your positioning, your audience, your visual language.
 
-**When to choose this:** You need 1-3 videos per year and each one is a distinct project with its own brief. You're not at the stage where video content is a continuous stream. If this sounds like you, start by putting together a solid brief. I've laid out exactly how in my guide on [how to brief a motion designer](/blog/how-to-brief-a-motion-designer-saas-video).
+**When to choose this:** You need 1-3 videos per year and each one is a distinct project with its own brief. You're not at the stage where video content is a continuous stream. If this sounds like you, start by putting together a solid brief. I've laid out exactly how in my guide on [how to brief a motion designer](/how-to-brief-a-motion-designer-saas-video).
 
 ## 2. Retainer Engagement
 
@@ -1477,7 +1477,7 @@ The designer needs to understand your product well enough to tell its story. Pro
 - **Length:** Ideal runtime (60 seconds? 90 seconds?)
 - **Deliverables:** What formats do you need? (16:9 hero, 1:1 social, 9:16 stories)
 - **Timeline:** When do you need the final video? Work backwards from there.
-- **Budget:** Be honest about your budget range. It helps the designer propose the right scope. See my [pricing guide](/blog/how-much-does-saas-motion-design-video-cost) for context on what different budgets get you.
+- **Budget:** Be honest about your budget range. It helps the designer propose the right scope. See my [pricing guide](/how-much-does-saas-motion-design-video-cost) for context on what different budgets get you.
 - **Stakeholders:** Who needs to approve at each stage? Name them. The fewer, the faster.
 
 ## The Free Brief Template
@@ -1612,7 +1612,7 @@ After 15 years of making videos for SaaS companies, here's how I'd break down th
 
 **What they should do:** Lead with a provocative question or a relatable pain point. Show the product briefly. End with a clear call to action. These aren't mini-explainers. They're attention hooks.
 
-**When you need them:** When you're running paid acquisition campaigns. Many companies get these as cut-downs from their homepage explainer, which is cost-effective. I discuss how to make the first few seconds count in my piece on [getting past the 3-second watch rule](/blog/how-to-get-past-3-second-watch-rule).
+**When you need them:** When you're running paid acquisition campaigns. Many companies get these as cut-downs from their homepage explainer, which is cost-effective. I discuss how to make the first few seconds count in my piece on [getting past the 3-second watch rule](/how-to-get-past-3-second-watch-rule).
 
 **Budget range:** $1,500-$4,000 per cut if produced standalone. Often $500-$1,000 each if cut from an existing longer video.
 
@@ -1704,7 +1704,7 @@ Now compare that to outsourcing. At $10,000-$15,000 per video from a quality stu
 
 **You need strategic variety.** An in-house designer brings one perspective, one style, and one skill set. A studio brings a team with diverse approaches. For hero content (your homepage explainer, your product launch video, your investor piece) variety and outside perspective matter.
 
-**You don't have a creative director.** A motion designer without creative direction will produce motion design. But will it serve your business goals? Will the messaging be right? Will it convert? Without someone senior shaping the brief and the strategy, you're getting execution without thinking. That's a problem I cover in more depth in my piece on [why SaaS demo videos don't convert](/blog/why-saas-demo-video-not-converting).
+**You don't have a creative director.** A motion designer without creative direction will produce motion design. But will it serve your business goals? Will the messaging be right? Will it convert? Without someone senior shaping the brief and the strategy, you're getting execution without thinking. That's a problem I cover in more depth in my piece on [why SaaS demo videos don't convert](/why-saas-demo-video-not-converting).
 
 **You can't attract senior talent.** The best motion designers want to work on diverse projects across multiple brands. Unless your company is a recognised brand with interesting creative challenges, you'll struggle to attract (and retain) top-tier talent. You'll end up hiring a mid-level generalist and wondering why the work doesn't match your expectations.
 
@@ -1726,7 +1726,7 @@ Here's what the smartest SaaS companies do:
 4. **Are we prepared to invest in equipment, software, and training?** Motion design requires specific tools. If you're not budgeting for the setup, you'll get subpar results.
 5. **What happens when they leave?** In-house hires leave. When they do, your video production stops. With an external partner, the relationship and the process continue.
 
-If you're currently evaluating your options and want to understand what a studio engagement looks like, take a look at my [process](/process/) or read about the different [ways to work with a motion designer](/blog/three-ways-to-work-with-motion-designer).
+If you're currently evaluating your options and want to understand what a studio engagement looks like, take a look at my [process](/process/) or read about the different [ways to work with a motion designer](/three-ways-to-work-with-motion-designer).
 
 ## FAQ
 
@@ -1827,7 +1827,7 @@ Happy to manage → Freelancer is fine. Want it managed for me → Studio.
 **5. How important is creative strategy?**
 I know what I want → Freelancer. I need help figuring it out → Studio.
 
-For more context on matching the right video type to your goals, read my guide on [what type of video your SaaS company actually needs](/blog/what-type-of-video-does-my-saas-company-need). And if you're weighing the cost side, check out my [SaaS video pricing breakdown](/blog/how-much-does-saas-motion-design-video-cost).
+For more context on matching the right video type to your goals, read my guide on [what type of video your SaaS company actually needs](/what-type-of-video-does-my-saas-company-need). And if you're weighing the cost side, check out my [SaaS video pricing breakdown](/how-much-does-saas-motion-design-video-cost).
 
 ## One More Thing: Check the Portfolio, Not the Model
 
@@ -1895,7 +1895,7 @@ Tight deadlines. If you need a finished video in two weeks instead of five, that
 ## How to Get the Best Value
 
 1. **Start with one video.** Don't commit to a package of five videos before you've seen how a studio works. Build the relationship with a single project.
-2. **Invest in the brief.** The more clarity you provide upfront, the less you spend on revisions and strategic exploration. I've written a guide on [how to brief a motion designer](/blog/how-to-brief-a-motion-designer-saas-video) that can save you time and money.
+2. **Invest in the brief.** The more clarity you provide upfront, the less you spend on revisions and strategic exploration. I've written a guide on [how to brief a motion designer](/how-to-brief-a-motion-designer-saas-video) that can save you time and money.
 3. **Choose the right tier for your stage.** A seed-stage startup doesn't need a $20,000 production. A Series B company shouldn't be paying $3,000 for their main sales tool.
 4. **Think about lifespan.** A $12,000 video that stays relevant for three years costs $4,000 per year. A $4,000 video that needs replacing in six months costs $8,000 per year.
 
@@ -1961,7 +1961,7 @@ Full-service agencies with 50+ staff that offer motion design as one of many ser
 
 ### Freelance Motion Designers
 
-Individual designers working independently. Some are exceptional: senior creatives who left agencies to work directly with clients. Others are junior generalists padding their portfolio. Rates vary wildly: $3,000-$8,000 for a 60-second video. The upside is cost savings and direct communication. The risk is bandwidth, consistency, and what happens when they get sick or overloaded. I've written more about the studio vs freelancer decision in my piece on [motion design studio vs freelance animator](/blog/motion-design-studio-vs-freelance-animator).
+Individual designers working independently. Some are exceptional: senior creatives who left agencies to work directly with clients. Others are junior generalists padding their portfolio. Rates vary wildly: $3,000-$8,000 for a 60-second video. The upside is cost savings and direct communication. The risk is bandwidth, consistency, and what happens when they get sick or overloaded. I've written more about the studio vs freelancer decision in my piece on [motion design studio vs freelance animator](/motion-design-studio-vs-freelance-animator).
 
 ## What to Look for in Their Portfolio
 
@@ -1979,7 +1979,7 @@ Here's what the market actually looks like in 2026:
 - **Mid-range SaaS explainer (60-90 seconds, custom illustration, UI animation):** $8,000-$15,000
 - **Premium production (90-120 seconds, character animation, multiple scenes, social cuts included):** $15,000-$30,000
 
-If someone quotes you $1,500 for a SaaS explainer, you'll get templated work. If someone quotes you $50,000, ask what you're getting that you wouldn't at $20,000. For more detail on what drives pricing, read my breakdown on [how much a SaaS motion design video costs](/blog/how-much-does-saas-motion-design-video-cost).
+If someone quotes you $1,500 for a SaaS explainer, you'll get templated work. If someone quotes you $50,000, ask what you're getting that you wouldn't at $20,000. For more detail on what drives pricing, read my breakdown on [how much a SaaS motion design video costs](/how-much-does-saas-motion-design-video-cost).
 
 ## My Honest Recommendation
 
@@ -3902,87 +3902,6 @@ If you need the kind of work that AI can't produce. concept-driven, story-led, s
 ---
 
 Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 500+ projects. motionstory.com.au`
-  },
-  {
-    slug: "wip-the-storyboard",
-    title: "WIP: The Storyboard",
-    date: "2024-10-03",
-    category: "Software & Tools",
-    tags: ["Storyboarding", "Creative process", "Explainer video production"],
-    excerpt: "One of the most important parts of the creative process behind making an explainer video is the storyboard. A good storyboard will give everybody on the team a clear vision.",
-    content: `One of the most important parts of the creative process behind making an explainer video is the storyboard.
-
-## Why Storyboards Matter
-
-A good storyboard will give everybody on the team a clear vision of how the animation will look and work in production. The time spent in this stage ironing out the sequences and defining the actions in the animation will ensure a smooth and refined story when the animator starts to make the graphics move and there won't be any big surprises when the first draft is ready for review.`
-  },
-  {
-    slug: "wip-style-frames-for-a-top-secret-project",
-    title: "WIP: Style Frames For A Top Secret Project",
-    date: "2024-09-09",
-    category: "Explainer Video Strategy",
-    tags: ["Style frames", "Design process", "Explainer video production"],
-    excerpt: "Creating a unique explainer video is not just about picking a random style out of a bag. It's about crafting a visual language that will attract your audience to watch from beginning to end.",
-    content: `Creating a unique explainer video is not just about picking a random style out of a bag. It's about crafting a visual language, this will attract your audience to watch the video from the beginning to the end.
-
-## Why Style Frames Matter
-
-Because if they don't watch the entire video, they won't understand what you do. That's why every video we create looks unique and engaging.
-
-## This Project
-
-Check out this style frame we have designed for a ground-breaking new employment platform!`
-  },
-  {
-    slug: "hey-80s-kids-thats-me",
-    title: "Hey 80's Kids (That's Me!)",
-    date: "2024-08-14",
-    category: "Informational",
-    tags: ["Character animation", "Fun projects", "Motion design"],
-    excerpt: "Hey 80's kids, we had some spare time in between the design and animation stages of projects this week so we decided to flex our character animation muscle.",
-    content: `Hey 80's kids, we had some spare time in between the design and animation stages of projects this week so we decided to flex our character animation muscle and team up with the talented John Trivelli to create this Gif.`
-  },
-  {
-    slug: "amsed-motion-graphic",
-    title: "AMSED Motion Graphic",
-    date: "2024-07-22",
-    category: "Industry",
-    tags: ["Case study", "Motion graphics", "Brand animation", "Client work"],
-    excerpt: "Take a look at this Motionstory we created for AMSED. We were briefed by the AMSED team to create an animated story that explained their core service offering and represented the brand's values.",
-    content: `Take a look at this Motionstory we created for AMSED.
-
-## The Brief
-
-We were briefed by the AMSED team to create an animated story that explained their core service offering and represented the brand's values.
-
-## The Approach
-
-We created an attractive visual language; using dots and icons that interact seamlessly. The dots are key to staying on brand \u2014 inspired by an Aboriginal dot painting and the AMSED logo.
-
-## The Result
-
-The video is now used as a tool to summarise their service offering to new clients. What would normally take hours to explain, now takes 90 seconds.`
-  },
-  {
-    slug: "telling-a-story-in-30-seconds",
-    title: "Telling A Story In 30 Seconds",
-    date: "2024-06-28",
-    category: "Informational",
-    tags: ["Guide", "How to"],
-    excerpt: "We were approached by the founder of NeatStreets to help them communicate the true value of the road fault reporting app.",
-    content: `We were approached by the founder of NeatStreets to help them communicate the true value of the road fault reporting app.
-
-They were having problems explaining why people should use it and the benefits it could have for the users.
-
-## The Framework
-
-So we put our heads together and put pens to paper and came up with a conceptual framework telling a story in 30 seconds!
-
-We created the framework by identifying the key problem the product solved. Then matched them to a sequence of images that would unfold into a problem-solution format.
-
-## The Results
-
-A clear and concise video that engages with a broad audience with a demonstration on how the app works and the problem they solve in just 30 seconds.`
   },
   {
     slug: "how-to-use-video-as-a-marketing-tool",
