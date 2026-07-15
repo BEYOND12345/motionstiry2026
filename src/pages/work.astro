@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import PortfolioPage from '../components/PortfolioPage';
+import EmailFloat from '../components/EmailFloat.astro';
 import '../styles/global.css';
 
 const structuredData = {
@@ -42,4 +43,5 @@ const structuredData = {
   <main id="main-content">
     <PortfolioPage client:load />
   </main>
+  <EmailFloat subject="Portfolio enquiry" />
 </BaseLayout>

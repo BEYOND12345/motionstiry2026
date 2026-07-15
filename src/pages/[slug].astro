@@ -95,6 +95,8 @@ function renderContent(content: string): string {
   activeNav="Blog"
   ogType="article"
   publishedDate={post.date}
+  showCTA={false}
+  floatSubject="Blog enquiry"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />

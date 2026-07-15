@@ -23,8 +23,6 @@ interface Props {
   /** Headline lines — each becomes a line break on md+ */
   headline: string[];
   lede: string;
-  /** Prefill for mailto subject */
-  emailSubject?: string;
   work: WorkItem[];
   moreWork?: WorkItem[];
   quote?: string;
@@ -38,7 +36,6 @@ const {
   eyebrow,
   headline,
   lede,
-  emailSubject = 'Project enquiry',
   work,
   moreWork = [],
   quote,
@@ -48,7 +45,6 @@ const {
   links = [],
 } = Astro.props;
 
-const mailHref = `mailto:daniel@motionstory.com.au?subject=${encodeURIComponent(emailSubject)}`;
 const [featured, ...rest] = work;
 
 const clients = ['United Nations', 'TransferWise', 'Atomic', 'Mosaic', 'RSPCA', 'Meltwater'];
@@ -208,9 +204,4 @@ const credentials = [
       ))}
     </nav>
   )}
-
-  <a href={mailHref} class="landing-float" aria-label="Email Dan to start a project">
-    <span class="landing-float-label">Email Dan</span>
-    <span class="landing-float-arrow" aria-hidden="true">→</span>
-  </a>
 </div>

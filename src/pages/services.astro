@@ -7,7 +7,6 @@ const serviceSchema = {
   "name": "Motion design services | Motion Story",
   "description": "Explainer video, product demos, motion graphics, and campaign motion. By industry: startups, SaaS, agencies, and nonprofits.",
   "url": "https://motionstory.com.au/services/",
-  "isPartOf": { "@type": "WebSite", "name": "Motion Story", "url": "https://motionstory.com.au" },
 };
 
 const breadcrumbSchema = {
@@ -22,7 +21,7 @@ const breadcrumbSchema = {
 const byAudience = [
   { href: "/startups/", label: "Startups", blurb: "Launch explainers, waitlists, and the first product story." },
   { href: "/saas-tech/", label: "SaaS & technology", blurb: "Demos, platform explainers, onboarding." },
-  { href: "/agencies/", label: "Agencies & studios", blurb: "Senior production — white label or direct." },
+  { href: "/agencies/", label: "Agencies & studios", blurb: "Senior production: white label or direct." },
   { href: "/causes/", label: "Causes & nonprofits", blurb: "Mission work with clarity, not noise." },
 ];
 
@@ -31,57 +30,66 @@ const byFormat = [
   { href: "/motion-graphics/", label: "Motion graphics", blurb: "Brand, data, UI, and campaign motion." },
   { href: "/saas-explainer-videos/", label: "SaaS explainer videos", blurb: "Software stories for the top of the funnel." },
   { href: "/product-demo-videos/", label: "Product demo videos", blurb: "Walkthroughs that stand in for the first call." },
-  { href: "/technology-videos/", label: "Technology videos", blurb: "Platforms and technical buyers — explained clearly." },
+  { href: "/technology-videos/", label: "Technology videos", blurb: "Platforms and technical buyers, explained clearly." },
 ];
 ---
 
 <PageLayout
   title="Motion design services | Motion Story"
-  description="Explainer video, product demos, motion graphics, and technology comms. Startups, SaaS, agencies, and nonprofits."
-  ctaHeading="Not sure which service fits?"
-  ctaLabel="Request a call"
+  description="Explainer video, product demos, motion graphics, and technology comms. Startups, SaaS, agencies, and nonprofits. From $5,000."
+  showCTA={false}
+  floatSubject="Motion design services"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   </Fragment>
 
-  <div class="pt-32 pb-24 px-8 max-w-5xl mx-auto">
-    <span class="text-metadata mb-6 block">Services</span>
-    <h1 class="font-display text-4xl md:text-7xl font-bold tracking-tight leading-[0.9] mb-6">
-      What I make,<br class="hidden md:block" /> and who it's for.
-    </h1>
-    <p class="text-body max-w-lg mb-16">
-      Pick the path that matches your brief. Every page leads with the work.
-    </p>
+  <div class="landing">
+    <header class="landing-hero">
+      <span class="landing-eyebrow">Services</span>
+      <h1 class="landing-title">What I make, and who it is for.</h1>
+      <p class="landing-lede">Pick the path that matches your brief. Every page leads with the work.</p>
+    </header>
 
-    <section class="mb-24 pb-24 border-b border-black/10">
-      <span class="text-metadata mb-10 block">By audience</span>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <p class="landing-clients">United Nations · TransferWise · Atomic · Mosaic · RSPCA · Meltwater</p>
+
+    <section class="landing-section">
+      <span class="landing-eyebrow landing-section-label">By audience</span>
+      <div class="landing-cred">
         {byAudience.map((item) => (
-          <a href={item.href} class="group block pb-8 border-b border-black/10">
-            <h2 class="font-display text-xl font-bold tracking-tight mb-2 group-hover:opacity-60 transition-opacity">{item.label} →</h2>
-            <p class="text-body">{item.blurb}</p>
+          <a href={item.href} class="landing-cred-row group" style="text-decoration: none; color: inherit;">
+            <h2 class="landing-cred-label group-hover:opacity-55 transition-opacity">{item.label} →</h2>
+            <p class="landing-cred-body">{item.blurb}</p>
           </a>
         ))}
       </div>
     </section>
 
-    <section class="mb-24 pb-24 border-b border-black/10">
-      <span class="text-metadata mb-10 block">By format</span>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <section class="landing-section">
+      <span class="landing-eyebrow landing-section-label">By format</span>
+      <div class="landing-cred">
         {byFormat.map((item) => (
-          <a href={item.href} class="group block pb-8 border-b border-black/10">
-            <h2 class="font-display text-xl font-bold tracking-tight mb-2 group-hover:opacity-60 transition-opacity">{item.label} →</h2>
-            <p class="text-body">{item.blurb}</p>
+          <a href={item.href} class="landing-cred-row group" style="text-decoration: none; color: inherit;">
+            <h2 class="landing-cred-label group-hover:opacity-55 transition-opacity">{item.label} →</h2>
+            <p class="landing-cred-body">{item.blurb}</p>
           </a>
         ))}
       </div>
     </section>
 
-    <p class="text-metadata">
-      Work directly with the storyteller throughout your project.{" "}
-      <a href="/contact/" class="border-b border-black/20 pb-0.5 hover:border-black transition-colors">Start a project →</a>
-    </p>
+    <section class="landing-section">
+      <span class="landing-eyebrow landing-section-label">Questions</span>
+      <div class="landing-faq">
+        <div class="landing-faq-row">
+          <h3 class="landing-faq-label">Cost</h3>
+          <p class="text-body">From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront.</p>
+        </div>
+        <div class="landing-faq-row">
+          <h3 class="landing-faq-label">How we work</h3>
+          <p class="text-body">You work with Dan throughout — concept, storyboard, design, illustration, and animation. Agencies welcome, white label or direct.</p>
+        </div>
+      </div>
+    </section>
   </div>
 </PageLayout>

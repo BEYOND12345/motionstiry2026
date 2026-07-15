@@ -3,6 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import CTA from '../components/CTA.astro';
+import EmailFloat from '../components/EmailFloat.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -12,6 +13,8 @@ interface Props {
   canonicalUrl?: string;
   ogImage?: string;
   showCTA?: boolean;
+  showFloat?: boolean;
+  floatSubject?: string;
   ctaHeading?: string;
   ctaLabel?: string;
   ogType?: string;
@@ -25,6 +28,8 @@ const {
   canonicalUrl,
   ogImage,
   showCTA = true,
+  showFloat = true,
+  floatSubject = 'Project enquiry',
   ctaHeading,
   ctaLabel,
   ogType,
@@ -42,5 +47,6 @@ const {
     </main>
     {showCTA && <CTA heading={ctaHeading} label={ctaLabel} />}
     <Footer />
+    {showFloat && <EmailFloat subject={floatSubject} />}
   </div>
 </BaseLayout>

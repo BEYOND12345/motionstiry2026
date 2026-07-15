@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Homepage from '../components/Homepage';
+import EmailFloat from '../components/EmailFloat.astro';
 import '../styles/global.css';
 
 const structuredData = {
@@ -126,4 +127,5 @@ const structuredData = {
   </Fragment>
 
   <Homepage client:load />
+  <EmailFloat subject="Project enquiry" />
 </BaseLayout>

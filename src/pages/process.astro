@@ -15,6 +15,10 @@ const structuredData = {
 
 const faqs = [
   {
+    q: "How much does a project cost?",
+    a: "From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront after we understand the brief — no cookie-cutter packages.",
+  },
+  {
     q: "How long does a typical motion design project take?",
     a: "Most projects run 4 to 8 weeks from kickoff to final delivery. Phase one (script and concept) usually takes 1 to 2 weeks. Phase two (storyboard and style frames) takes about 2 weeks. Phase three (animation, sound, revisions) takes another 2 to 4 weeks. Tight timelines are possible for simpler pieces — I'll always be upfront about what's realistic and what's not.",
   },
@@ -28,7 +32,7 @@ const faqs = [
   },
   {
     q: "Who will I actually be working with?",
-    a: "Me. Daniel Neale. I write the concepts, design the frames, animate the final piece, and respond to your feedback directly. No account managers, no handoffs to junior animators, no diluted feedback loops. That's the whole model — one senior creator, fewer people in the chain, clearer work.",
+    a: "Me. Daniel Neale. I write the concepts, design the frames, illustrate, animate the final piece, and respond to your feedback directly. No account managers, no handoffs to junior animators. That end-to-end craft is the model — 1,000+ films into a career spent entirely in motion.",
   },
   {
     q: "Can you work to a fixed deadline?",
@@ -53,10 +57,10 @@ const faqSchema = {
 
 <PageLayout
   title="How I Work | Motion Design Process | Motion Story"
-  description="The process that turns complex briefs into clear motion design. Three phases. No wasted time. Dan Neale, Motion Story."
+  description="The process that turns complex briefs into clear motion design. Three phases. From $5,000. Dan Neale, Motion Story."
   activeNav="Process"
-  ctaHeading="You don't need a video. You need people to understand what you do."
-  ctaLabel="Book a Discovery Call"
+  showCTA={false}
+  floatSubject="Motion design process"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
@@ -178,9 +182,12 @@ const faqSchema = {
     <!-- CTA -->
     <section class="mb-32">
       <h2 class="font-display text-3xl font-bold tracking-tight mb-8">You don't need a video. You need people to understand what you do.</h2>
-      <p class="text-body text-lg leading-relaxed">
-        The video is the outcome. Clarity is the goal. If that's how you want to work, let's talk.
+      <p class="text-body text-lg leading-relaxed mb-6">
+        The video is the outcome. Clarity is the goal. From $5,000 — most projects land around $10,000–$15,000.
       </p>
+      <a href="mailto:daniel@motionstory.com.au?subject=Motion%20design%20process" class="font-display text-lg font-medium border-b border-black/20 pb-1 hover:border-black transition-colors">
+        Email Dan →
+      </a>
     </section>
   </div>
 </PageLayout>

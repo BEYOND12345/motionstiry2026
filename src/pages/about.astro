@@ -18,9 +18,9 @@ const structuredData = {
     "knowsAbout": [
       "Motion Design",
       "Creative Direction",
+      "Explainer Videos",
       "Product Videos",
-      "Platform Explainers",
-      "Data Visualisation",
+      "Storyboarding",
       "SaaS Marketing"
     ],
     "sameAs": [
@@ -33,10 +33,10 @@ const structuredData = {
 
 <PageLayout
   title="About Dan Neale | Motion Story"
-  description="Dan Neale is a motion designer and creative director based in Byron Bay. Over a decade making complex ideas immediately clear for SaaS companies, agencies, and nonprofits."
+  description="Dan Neale — motion designer and creative director. United Nations, TransferWise, 1,000+ films. Full pipeline: concept to animation. Byron Bay."
   activeNav="About"
-  ctaHeading="Ready to work together?"
-  ctaLabel="Start a Project"
+  showCTA={false}
+  floatSubject="About Motion Story"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
@@ -49,85 +49,63 @@ const structuredData = {
     })} />
   </Fragment>
 
-  <div class="pt-32 pb-24 px-8 max-w-5xl mx-auto">
-    <span class="text-metadata mb-8 block">About</span>
-    <h1 class="font-display text-4xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-16">
-      I've been doing this<br />for a long time. Here's<br />why that matters.
-    </h1>
+  <div class="landing">
+    <header class="landing-hero">
+      <span class="landing-eyebrow">About</span>
+      <h1 class="landing-title">Motion design is who I am. It is all I have ever done.</h1>
+      <p class="landing-lede">Dan Neale — concept, storyboard, design, illustration, and animation. One senior maker throughout.</p>
+    </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32">
-      <div>
-        <p class="text-body text-lg leading-relaxed mb-8">
-          My name is Dan Neale.<br />
-          I'm a motion designer and creative director based in Byron Bay, Australia.
-        </p>
-        <p class="text-body text-lg leading-relaxed mb-8">
-          I started Motion Story over a decade ago. Back then I was doing what most studios do: taking every brief, building a team, trying to be everything to everyone.
-        </p>
-        <p class="text-body text-lg leading-relaxed">
-          That worked for a while. Then I got better at the actual job. Figuring out what a brief really needs before spending a dollar on production. And I realised the studio model was getting in the way of doing the work properly.
-        </p>
-        <p class="text-body text-lg leading-relaxed mt-8">
-          So I simplified.
-        </p>
-      </div>
-      <div>
-        <p class="text-body text-lg leading-relaxed mb-8">
-          Now I work directly with founders, CMOs, and creative directors at SaaS and tech companies. I also partner with agencies as a senior production resource. The person who quietly delivers when a client brief lands and the in-house team doesn't have the bandwidth.
-        </p>
-        <p class="text-body text-lg leading-relaxed mb-8">
-          And I work with organisations whose missions genuinely matter: charities, nonprofits, government programs. Where the communication isn't just a marketing asset, it's the difference between someone understanding and someone not.
-        </p>
-        <p class="text-body text-lg leading-relaxed mb-8">
-          I've made motion design for Employment Hero, Wipster, the United Nations, the RSPCA, Mosaic, Trudi, Method Recycling, Acodis, and 50+ others. Complex products. Real stakes.
-        </p>
-        <p class="text-body text-lg leading-relaxed">
-          Some of the briefs were wrong. I said so. The work was better for it.
-        </p>
-      </div>
-    </div>
+    <p class="landing-clients">United Nations · TransferWise · Atomic · Mosaic · RSPCA · Meltwater · Employment Hero · Wipster</p>
 
-    <!-- Founder -->
-    <section class="mb-32">
-      <span class="text-metadata mb-10 block">Founder</span>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
-        <div class="aspect-square overflow-hidden bg-gray-100 flex items-center justify-center">
-          <span class="text-metadata opacity-30">Photo</span>
+    <section class="landing-section">
+      <div class="landing-cred">
+        <div class="landing-cred-row">
+          <h2 class="landing-cred-label">Career depth</h2>
+          <p class="landing-cred-body">United Nations. TransferWise's first video, working directly with their CEO. 1,000+ films across a career spent entirely in motion. I have been making explainers since the category existed.</p>
         </div>
-        <div class="md:col-span-2">
-          <h2 class="font-display text-3xl font-bold tracking-tight mb-4">Dan Neale</h2>
-          <p class="text-body text-lg leading-relaxed font-medium mb-6">How I actually work.</p>
-          <p class="text-body text-lg leading-relaxed mb-6">
-            I take on a limited number of projects at a time. That's intentional. When I'm on your project, I'm on your project, not splitting attention across twenty concurrent jobs.
-          </p>
-          <p class="text-body text-lg leading-relaxed mb-6">
-            I'll challenge your brief before I agree to it. I'll tell you if you're trying to say too many things at once. I'll find the one thing that actually needs to be said, and then make it look and feel exactly right.
-          </p>
-          <p class="text-body text-lg leading-relaxed mb-8">
-            If you're looking for someone to take a brief and execute it without asking questions, I'm probably not the right fit. If you want someone who'll find the thing that actually matters and build the motion design around that, let's talk.
-          </p>
-          <div class="flex gap-8">
-            <a href="https://www.linkedin.com/in/danielneale" class="text-metadata border-b border-black/10 pb-1 hover:border-black transition-colors" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://vimeo.com/motionstory" class="text-metadata border-b border-black/10 pb-1 hover:border-black transition-colors" target="_blank" rel="noopener">Vimeo</a>
-          </div>
+        <div class="landing-cred-row">
+          <h2 class="landing-cred-label">Full pipeline</h2>
+          <p class="landing-cred-body">I storyboard, design, illustrate, and animate. I develop the concepts and creative direction. No account managers. No handoffs to juniors. That rare end-to-end craft is the point.</p>
+        </div>
+        <div class="landing-cred-row">
+          <h2 class="landing-cred-label">Story that performs</h2>
+          <p class="landing-cred-body">Creative execution built for completion and clarity. If the story is not strong, people do not watch to the end — and engagement metrics show it. These films are investments that sit on a site for years.</p>
+        </div>
+        <div class="landing-cred-row">
+          <h2 class="landing-cred-label">Agencies</h2>
+          <p class="landing-cred-body">I work exceptionally well with creative agencies — white label or direct. Much of the award-winning work never carries my name. That is fine. The craft does.</p>
         </div>
       </div>
     </section>
 
-    <!-- Stats -->
-    <section>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-8 py-16 border-t border-b border-black/10">
-        {[
-          { number: "50+", label: "Projects Delivered" },
-          { number: "12+", label: "Years Experience" },
-          { number: "6", label: "Countries Served" },
-        ].map(stat => (
-          <div class="text-center">
-            <p class="font-display text-4xl font-bold tracking-tight mb-2">{stat.number}</p>
-            <span class="text-metadata">{stat.label}</span>
-          </div>
-        ))}
+    <section class="landing-section">
+      <span class="landing-eyebrow landing-section-label">Questions</span>
+      <div class="landing-faq">
+        <div class="landing-faq-row">
+          <h3 class="landing-faq-label">Cost</h3>
+          <p class="text-body">From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront.</p>
+        </div>
+        <div class="landing-faq-row">
+          <h3 class="landing-faq-label">How I work</h3>
+          <p class="text-body">Limited concurrent projects, on purpose. I challenge the brief before production. If you want silent execution with no questions, I am not the fit. If you want the story found and built properly, email me.</p>
+        </div>
       </div>
     </section>
+
+    <nav class="landing-links" aria-label="Related pages">
+      <a href="/work/" class="landing-link-card group">
+        <span class="landing-eyebrow mb-4 block">Work</span>
+        <p class="landing-link-label">See all work →</p>
+      </a>
+      <a href="/process/" class="landing-link-card group">
+        <span class="landing-eyebrow mb-4 block">Process</span>
+        <p class="landing-link-label">How I work →</p>
+      </a>
+      <a href="/explainer-videos/" class="landing-link-card group">
+        <span class="landing-eyebrow mb-4 block">Explainers</span>
+        <p class="landing-link-label">Explainer videos →</p>
+      </a>
+    </nav>
   </div>
 </PageLayout>

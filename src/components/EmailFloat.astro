@@ -1,0 +1,14 @@
+---
+interface Props {
+  subject?: string;
+  label?: string;
+}
+
+const { subject = 'Project enquiry', label = 'Email Dan' } = Astro.props;
+const href = `mailto:daniel@motionstory.com.au?subject=${encodeURIComponent(subject)}`;
+---
+
+<a href={href} class="landing-float" aria-label="Email Dan to start a project">
+  <span class="landing-float-label">{label}</span>
+  <span class="landing-float-arrow" aria-hidden="true">→</span>
+</a>
