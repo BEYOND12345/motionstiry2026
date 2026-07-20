@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/global.css';
+
+/**
+ * BOOKING_EMBED_SRC — Calendly embed for the 20-minute project call.
+ * TODO(dan): Swap to Cal.com / SavvyCal if the scheduler changes.
+ */
+const BOOKING_EMBED_SRC =
+  'https://calendly.com/motion-story/interested-schedule-a-call?hide_event_type_details=1&hide_gdpr_banner=1';
+---
+
+<BaseLayout
+  title="Book a 20-Minute Project Call | Motion Story"
+  description="Book a 20-minute project call with the creative director. Straight answers on approach, timing, and fit — no slide deck, no sales pitch."
+  canonicalUrl="https://motionstory.com.au/book/"
+>
+  <Fragment slot="head">
+    <meta name="robots" content="noindex, follow" />
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'book_call_page_view', page: 'book' });
+    </script>
+  </Fragment>
+
+  <div class="min-h-screen bg-white text-black">
+    <header class="border-b border-black/5">
+      <div class="mx-auto flex max-w-7xl items-center px-5 py-5 sm:px-6 lg:px-12">
+        <a href="/" class="font-display text-lg font-bold tracking-tight">Motion Story.</a>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-4xl px-5 py-12 sm:px-6 md:py-16 lg:px-12">
+      <h1 class="font-display text-4xl font-bold tracking-tight md:text-6xl">
+        Book a 20-minute project call.
+      </h1>
+      <p class="mt-6 max-w-xl text-[15px] leading-relaxed text-black/55 md:text-[16px]">
+        Tell me what you're working on. I'll come back with straight answers on approach, timing, and whether I'm the right person for it. No slide deck, no sales pitch.
+      </p>
+
+      <div class="mt-10 min-h-[700px] w-full border border-black/8 bg-black/[0.02]">
+        <div
+          class="calendly-inline-widget"
+          data-url={BOOKING_EMBED_SRC}
+          style="min-width:320px;height:700px;"
+        />
+      </div>
+
+      <ul class="mt-12 space-y-3 border-t border-black/8 pt-10">
+        <li class="text-[13px] leading-relaxed text-black/50">Direct call with the creative director.</li>
+        <li class="text-[13px] leading-relaxed text-black/50">20 years of senior craft, SaaS specialisation.</li>
+        <li class="text-[13px] leading-relaxed text-black/50">Not currently hiring — briefs only.</li>
+      </ul>
+    </main>
+
+    <footer class="border-t border-black/10 px-5 py-12 sm:px-6 lg:px-12">
+      <div class="mx-auto max-w-7xl">
+        <p class="font-display text-lg font-bold tracking-tight">Motion Story.</p>
+        <p class="mt-4 text-[11px] uppercase tracking-[0.14em] text-black/35">
+          Featured on Behance · Clutch-awarded
+        </p>
+        <p class="mt-2 text-[13px] text-black/35">Not currently hiring — briefs only.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async is:inline></script>
+  <script is:inline>
+    // TODO(dan): Fire `book_call_confirmed` when Calendly reports a successful booking.
+    // Calendly posts a message event; wire when ready, e.g.:
+    // window.addEventListener('message', function (e) {
+    //   if (e.data.event && e.data.event === 'calendly.event_scheduled') {
+    //     window.dataLayer = window.dataLayer || [];
+    //     window.dataLayer.push({ event: 'book_call_confirmed', page: 'book' });
+    //   }
+    // });
+  </script>
+</BaseLayout>
