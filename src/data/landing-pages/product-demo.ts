@@ -1,10 +1,8 @@
 import type { LandingPageConfig } from '../../components/LandingPage/types';
 import { SAAS_TRUST_LOGOS } from './trust-logos';
+import { TESTIMONIAL_METHOD } from './testimonials';
 
-/**
- * Config for /landing-animated-product-demos-01/
- * TODO(dan): Confirm featuredWork + testimonial for the demo ad group.
- */
+/** Config for /landing-animated-product-demos-01/ */
 export const productDemoLanding: LandingPageConfig = {
   slug: 'product-demo',
   seo: {
@@ -51,7 +49,6 @@ export const productDemoLanding: LandingPageConfig = {
     body: 'Big agencies bury the craft under account managers and juniors. Solo freelancers can execute but rarely own the story. This studio sits between — big-agency thinking without the overheads, senior craft with direct access.',
   },
   featuredWork: {
-    // TODO(dan): Swap for strongest product-demo pieces if different from explainers.
     projects: [
       {
         thumbnail: 'https://vumbnail.com/861022443.jpg',
@@ -73,13 +70,7 @@ export const productDemoLanding: LandingPageConfig = {
       },
     ],
   },
-  // TODO(dan): Replace if a stronger demo-specific testimonial is preferred.
-  testimonial: {
-    quote: '40,000 views on YouTube, which increased brand perception and reputation.',
-    name: 'Simon Lehman',
-    role: 'Marketing Manager',
-    company: 'Acodis',
-  },
+  testimonial: TESTIMONIAL_METHOD,
   process: {
     steps: [
       {

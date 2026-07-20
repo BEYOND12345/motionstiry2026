@@ -1,22 +1,22 @@
 import type { LandingPageConfig } from '../../components/LandingPage/types';
 import { SAAS_TRUST_LOGOS } from './trust-logos';
-import { TESTIMONIAL_ACODIS } from './testimonials';
+import { TESTIMONIAL_AMSED } from './testimonials';
 
-/** Config for /landing-page-explainer-video-01/ */
-export const explainerVideoLanding: LandingPageConfig = {
-  slug: 'explainer-video',
+/** Config for /product-launch-video/ */
+export const productLaunchLanding: LandingPageConfig = {
+  slug: 'product-launch',
   seo: {
-    titleTag: 'Explainer Videos For Complex Products | Motion Story',
+    titleTag: 'Product Launch Videos That Land | Motion Story',
     metaDescription:
-      'Explainer videos for SaaS and tech teams. Work directly with the creative director — script, storyboard, animation. 20 years of senior craft.',
-    canonicalPath: '/landing-page-explainer-video-01/',
+      'Product launch videos for SaaS and tech. Work directly with the creative director — story, craft, and timing built for the moment you ship.',
+    canonicalPath: '/product-launch-video/',
   },
   hero: {
-    h1: 'Explainer Videos For Complex Products',
+    h1: 'Product Launch Videos That Land',
     subhead:
       'Work directly with the creative director. 20 years of senior craft — no account managers, no handoffs, no juniors.',
-    videoSrc: '861022443',
-    fullShowreelUrl: '861022443',
+    videoSrc: '863428533',
+    fullShowreelUrl: '863428533',
   },
   trustStrip: {
     line: 'Trusted by hundreds of SaaS and tech companies.',
@@ -24,19 +24,19 @@ export const explainerVideoLanding: LandingPageConfig = {
   },
   coreSell: {
     leadCopy:
-      "I won't just take your script. I'll rewrite it, storyboard it, get the timings right, and make sure the hooks land — built around how people actually watch. One person owns the whole thing, concept to delivery.",
+      "A launch isn't a feature list with music. I'll shape the story, the hook, and the proof so the film earns attention on day one — and still works in sales decks months later. One person owns the whole thing, concept to delivery.",
     proofPoints: [
       {
-        title: 'Original ideation from the ground up',
-        body: 'Concept and narrative developed with you, not templated from a library.',
+        title: 'Built for the launch moment',
+        body: 'Messaging, pacing, and length tuned for announcement day — not a generic explainer with a new title.',
       },
       {
-        title: 'Story structure, not just animation',
-        body: 'The script and storyboard get the same attention as every frame.',
+        title: 'Story that carries past week one',
+        body: 'Assets your team can keep using on the site, in outreach, and in investor updates.',
       },
       {
-        title: 'Delivered on time, complexity handled',
-        body: 'Technical detail translated so it serves the story, not the other way around.',
+        title: 'Complexity handled under pressure',
+        body: 'Tight timelines without losing craft. Clear scope, clear delivery.',
       },
       {
         title: 'Senior craft on every frame',
@@ -51,26 +51,26 @@ export const explainerVideoLanding: LandingPageConfig = {
   featuredWork: {
     projects: [
       {
+        thumbnail: 'https://vumbnail.com/863428533.jpg',
+        client: 'Trusyft',
+        oneLineResult: 'Cinematic product promo built for launch energy.',
+        videoUrl: '863428533',
+      },
+      {
+        thumbnail: 'https://vumbnail.com/394326130.jpg',
+        client: 'Meltwater',
+        oneLineResult: 'Brand story for a media intelligence platform.',
+        videoUrl: '394326130',
+      },
+      {
         thumbnail: 'https://vumbnail.com/861022443.jpg',
         client: 'Atomic',
-        oneLineResult: 'In-app messaging made clear for product and sales.',
+        oneLineResult: 'Product capability made clear for go-to-market.',
         videoUrl: '861022443',
-      },
-      {
-        thumbnail: 'https://vumbnail.com/879242129.jpg',
-        client: 'Mosaic',
-        oneLineResult: 'Complex data planning platform, explained simply.',
-        videoUrl: '879242129',
-      },
-      {
-        thumbnail: 'https://vumbnail.com/580088673.jpg',
-        client: 'Acodis',
-        oneLineResult: '40,000 YouTube views — brand perception lift.',
-        videoUrl: '580088673',
       },
     ],
   },
-  testimonial: TESTIMONIAL_ACODIS,
+  testimonial: TESTIMONIAL_AMSED,
   process: {
     steps: [
       {
@@ -96,12 +96,12 @@ export const explainerVideoLanding: LandingPageConfig = {
       {
         question: 'What do projects involve?',
         answer:
-          'Every project runs concept → script → storyboard → design → animation → delivery. I own the whole chain. Timelines are usually 4–8 weeks depending on scope.',
+          'Every project runs concept → script → storyboard → design → animation → delivery. I own the whole chain. Timelines are usually 4–8 weeks depending on scope — tighter when the launch date is fixed.',
       },
       {
         question: 'What kinds of companies do you work with?',
         answer:
-          'Mostly SaaS and tech companies with complex products that need to be made obvious. Also creative and design agencies bringing in a senior motion specialist.',
+          'SaaS and tech teams shipping a new product, major feature, or repositioning. Also product marketing leads who need a launch film that sales will actually use.',
       },
       {
         question: 'Are you hiring?',
@@ -119,7 +119,7 @@ export const explainerVideoLanding: LandingPageConfig = {
     formIntro: 'Or send a brief — I reply within one business day.',
   },
   form: {
-    textareaLabel: 'What are you trying to explain?',
+    textareaLabel: 'What are you launching?',
     submitButtonLabel: 'Send brief',
     redirectTo: '/thank-you',
   },
