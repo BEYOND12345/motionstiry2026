@@ -142,7 +142,7 @@ export default defineConfig({
 
     // Landing pages → relevant audience pages
     '/landing-page-design-animation/': '/saas-tech/',
-    '/landing-page-explainer-video-01/': '/saas-tech/',
+    // /landing-page-explainer-video-01/ is a live Ads landing (do not redirect)
     '/animation-production-company-2/': '/saas-tech/',
     '/landing-page-animated-video-services-01/': '/saas-tech/',
     '/landing-animated-product-demos-01/': '/product-demo-videos/',
@@ -154,10 +154,10 @@ export default defineConfig({
     '/frequently-asked-questions-motion-story/': '/',
     '/client-testimonials-motion-story/': '/work/',
 
-    // Consultation → contact
-    '/book-a-consultation/': '/contact/',
-    '/work-together/': '/contact/',
-    '/thanks-now-book-a-call/': '/contact/',
+    // Consultation → booking page
+    '/book-a-consultation/': '/book/',
+    '/work-together/': '/book/',
+    '/thanks-now-book-a-call/': '/book/',
 
     // Thank you pages
     // '/thank-you/' now has its own page
