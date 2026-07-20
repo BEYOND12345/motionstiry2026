@@ -1,54 +1,67 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/global.css';
 
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Message Sent",
-  "description": "Thanks for reaching out. I'll get back to you shortly.",
+  "name": "Thanks — I'll be in touch",
+  "description": "I read every brief personally and reply within one business day.",
   "url": "https://motionstory.com.au/thank-you/",
   "isPartOf": { "@type": "WebSite", "name": "Motion Story", "url": "https://motionstory.com.au" }
 };
 ---
 
-<PageLayout
-  title="Message Sent | Motion Story"
-  description="Thanks for reaching out. I'll get back to you shortly."
-  showCTA={false}
+<BaseLayout
+  title="Thanks — I'll Be in Touch | Motion Story"
+  description="I read every brief personally and reply within one business day. Prefer to talk now? Book a 20-minute project call."
+  canonicalUrl="https://motionstory.com.au/thank-you/"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
     <meta name="robots" content="noindex, nofollow" />
+    <!-- TODO(dan): Wire Google Ads conversion label, e.g. AW-XXXXXXXX/YYYY -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      // Google Ads conversion trigger — fires reliably on this page load
+      window.dataLayer.push({ event: 'generate_lead', event_category: 'conversion', page: 'thank-you' });
+      // gtag('event', 'conversion', { send_to: 'AW-XXXXXXXX/YYYY' });
+    </script>
   </Fragment>
-  <div class="pt-32 pb-24 px-8 max-w-3xl mx-auto text-center">
-    <span class="text-metadata mb-8 block">Message Sent</span>
-    <h1 class="font-display text-4xl md:text-7xl font-bold tracking-tight leading-[0.9] mb-8">
-      Thanks for<br />reaching out.
-    </h1>
-    <p class="text-body max-w-md mx-auto mb-12">
-      I'll read your message and get back to you within a day or two. If it's urgent, email me directly.
-    </p>
-    <a
-      href="mailto:daniel@motionstory.com.au"
-      class="font-display text-lg font-bold tracking-tight hover:opacity-50 transition-opacity border-b border-black/20 pb-2"
-    >
-      daniel@motionstory.com.au
-    </a>
-  </div>
 
-  <!-- Custom CTA linking to work instead of repeating email -->
-  <section class="border-t border-black/10 bg-black/[0.01]">
-    <div class="max-w-6xl mx-auto px-8 py-32 text-center">
-      <span class="text-metadata mb-8 block">While You're Here</span>
-      <h2 class="font-display text-3xl md:text-6xl font-bold tracking-tight mb-12">
-        See what I've made.
-      </h2>
+  <div class="min-h-screen bg-white text-black">
+    <header class="border-b border-black/5">
+      <div class="mx-auto flex max-w-7xl items-center px-5 py-5 sm:px-6 lg:px-12">
+        <a href="/" class="font-display text-lg font-bold tracking-tight">Motion Story.</a>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-3xl px-5 py-24 md:px-8 md:py-32 lg:px-12">
+      <h1 class="font-display text-4xl font-bold tracking-tight leading-[0.95] md:text-6xl lg:text-7xl">
+        Thanks — I'll be in touch.
+      </h1>
+      <p class="mt-8 max-w-md text-[15px] leading-relaxed text-black/55 md:text-[16px]">
+        I read every brief personally and reply within one business day. If you'd rather book a time now, grab a slot below.
+      </p>
       <a
-        href="/work/"
-        class="inline-block px-12 py-5 border border-black hover:bg-black hover:text-white transition-all duration-300 text-metadata"
+        href="/book/"
+        class="mt-10 inline-flex min-h-[52px] items-center justify-center bg-black px-8 py-4 text-[12px] font-medium uppercase tracking-[0.14em] text-white transition-opacity hover:opacity-80"
+        onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'book_call_click',event_category:'conversion',page:'thank-you'});"
       >
-        See My Work
+        Book a 20-minute project call
       </a>
-    </div>
-  </section>
-</PageLayout>
+    </main>
+
+    <footer class="border-t border-black/10 px-5 py-12 sm:px-6 lg:px-12">
+      <div class="mx-auto max-w-7xl">
+        <p class="font-display text-lg font-bold tracking-tight">Motion Story.</p>
+        <p class="mt-4 text-[11px] uppercase tracking-[0.14em] text-black/35">
+          Featured on Behance · Clutch-awarded
+        </p>
+        <p class="mt-2 text-[13px] text-black/35">Not currently hiring — briefs only.</p>
+      </div>
+    </footer>
+  </div>
+</BaseLayout>
