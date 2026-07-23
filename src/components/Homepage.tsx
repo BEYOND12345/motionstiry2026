@@ -134,7 +134,7 @@ export default function Homepage() {
                 Simple.
               </h1>
               <p className="text-body max-w-md mb-12">
-                Motion design for ideas that are hard to explain. I work with SaaS companies, agencies, and nonprofits, turning complex products and missions into something people immediately get.
+                Small studio, big impact. I help SaaS companies and agencies distill hard ideas into clear animation and design — storytelling that brings the vision to life. You work directly with me, not a production chain.
               </p>
 
               <a
@@ -157,17 +157,17 @@ export default function Homepage() {
                 </div>
                 <h3 className="text-heading mb-10">Daniel Neale</h3>
                 <p className="text-body mb-6">
-                  Director, founder, and occasional creative producer. Trained as a graphic designer, built a career in motion design, now working as a creative director. 15 years and 500+ projects deep.
+                  Creative director and animator. Trained as a graphic designer, making motion since 2010 — 1,000+ films deep. Skip the big studio. Work directly with someone senior who is also great on the tools.
                 </p>
                 <p className="text-body mb-6">
-                  That depth means I can read a brief and see minutes of detailed animation before anything hits the timeline. I draw from every project I've done: SaaS platforms, government campaigns, nonprofits, startups. I apply what works.
+                  I integrate with your team like a fractional creative partner: storytelling, planning, and craft. Clients use the work to win investment, launch products, educate teams, and explain complex platforms. SaaS, startups, agencies — any size, as long as the idea needs clarity.
                 </p>
                 <p className="text-body mb-12">
-                  I'm a passionate, obsessive storyteller who loves turning dry, complex subjects into something clear and engaging. Also a father, a surfer, and a big-time animal lover. I put everything into the work.
+                  Obsessive about making dry subjects clear and watchable. Also a father, a surfer, and a big-time animal lover. I put everything into the work.
                 </p>
                 <div className="flex gap-12">
                   <a href="https://www.behance.net/danielneale" className="text-metadata border-b border-black/5 pb-2 hover:border-black transition-colors" target="_blank" rel="noopener">Behance</a>
-                  <a href="https://vimeo.com/motionstory" className="text-metadata border-b border-black/5 pb-2 hover:border-black transition-colors" target="_blank" rel="noopener">Vimeo</a>
+                  <a href="https://vimeo.com/wearemotionstory" className="text-metadata border-b border-black/5 pb-2 hover:border-black transition-colors" target="_blank" rel="noopener">Vimeo</a>
                 </div>
               </div>
             </section>
@@ -177,9 +177,9 @@ export default function Homepage() {
               <span className="text-metadata mb-10 block">Who I Work With</span>
               <div className="grid grid-cols-1 gap-16">
                 {[
+                  { title: "SaaS & Tech Companies", desc: "Product demos, platform explainers, release animations, onboarding. I help software companies show what they've built — and why it matters — clearly.", href: "/saas-tech/" },
+                  { title: "Agencies & Studios", desc: "Lean on senior storytelling and motion craft. White label or collaborative creative direction when your team needs depth without another layer of production.", href: "/agencies/" },
                   { title: "Startups & Early-Stage", desc: "Homepage heroes, launch explainers, and the first product story that has to land before a login. Built for pre-launch to Series A.", href: "/startups/" },
-                  { title: "SaaS & Tech Companies", desc: "Product demos, platform explainers, onboarding animation. I help software companies show what they've built, clearly.", href: "/saas-tech/" },
-                  { title: "Agencies & Studios", desc: "Senior motion design production when your team needs capacity. White label or direct. Reliable delivery, no hand-holding required.", href: "/agencies/" },
                   { title: "Causes & Nonprofits", desc: "Motion design for missions that matter. When the stakes are real and the brief needs to cut through noise, not add to it.", href: "/causes/" }
                 ].map((client, i) => (
                   <a key={i} href={client.href} className="group block">
@@ -337,7 +337,7 @@ export default function Homepage() {
               <div>
                 <span className="text-metadata mb-4 block">Connect</span>
                 <div className="flex flex-col gap-2">
-                  <a href="https://vimeo.com/motionstory" className="text-body !text-sm hover:text-black transition-colors" target="_blank" rel="noopener">Vimeo</a>
+                  <a href="https://vimeo.com/wearemotionstory" className="text-body !text-sm hover:text-black transition-colors" target="_blank" rel="noopener">Vimeo</a>
                   <a href="https://www.linkedin.com/company/motionstory" className="text-body !text-sm hover:text-black transition-colors" target="_blank" rel="noopener">LinkedIn</a>
                   <a href="https://www.behance.net/motionstory" className="text-body !text-sm hover:text-black transition-colors" target="_blank" rel="noopener">Behance</a>
                 </div>
