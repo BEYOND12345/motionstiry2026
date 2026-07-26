@@ -2,6 +2,19 @@ import type { LandingPageConfig } from '../../components/LandingPage/types';
 import { SAAS_TRUST_LOGOS } from './trust-logos';
 import { TESTIMONIAL_ACODIS } from './testimonials';
 
+function piece(
+  vimeoId: string,
+  client: string,
+  oneLineResult: string
+): LandingPageConfig['featuredWork']['projects'][number] {
+  return {
+    thumbnail: `https://vumbnail.com/${vimeoId}.jpg`,
+    client,
+    oneLineResult,
+    videoUrl: vimeoId,
+  };
+}
+
 /** Config for /landing-page-explainer-video-01/ */
 export const explainerVideoLanding: LandingPageConfig = {
   slug: 'explainer-video',
@@ -19,7 +32,7 @@ export const explainerVideoLanding: LandingPageConfig = {
     fullShowreelUrl: '861022443',
   },
   trustStrip: {
-    line: 'Trusted by hundreds of SaaS and tech companies.',
+    line: 'Trusted by leading SaaS and tech companies.',
     logos: [...SAAS_TRUST_LOGOS],
   },
   coreSell: {
@@ -50,24 +63,15 @@ export const explainerVideoLanding: LandingPageConfig = {
   },
   featuredWork: {
     projects: [
-      {
-        thumbnail: 'https://vumbnail.com/861022443.jpg',
-        client: 'Atomic',
-        oneLineResult: 'In-app messaging made clear for product and sales.',
-        videoUrl: '861022443',
-      },
-      {
-        thumbnail: 'https://vumbnail.com/879242129.jpg',
-        client: 'Mosaic',
-        oneLineResult: 'Complex data planning platform, explained simply.',
-        videoUrl: '879242129',
-      },
-      {
-        thumbnail: 'https://vumbnail.com/580088673.jpg',
-        client: 'Acodis',
-        oneLineResult: '40,000 YouTube views — brand perception lift.',
-        videoUrl: '580088673',
-      },
+      piece('861022443', 'Atomic', 'In-app messaging made clear for product and sales.'),
+      piece('879242129', 'Mosaic', 'Complex data planning platform, explained simply.'),
+      piece('580088673', 'Acodis', '40,000 YouTube views — brand perception lift.'),
+      piece('648360270', 'Wipster', 'Video feedback workflows made obvious.'),
+      piece('866174146', 'Trudi', 'AI property management — product made clear.'),
+      piece('394326130', 'Meltwater', 'Brand story for a media intelligence platform.'),
+      piece('863428533', 'Trusyft', 'Cinematic product promo with launch energy.'),
+      piece('762112642', 'Giraffe', 'Urban planning tech explained through animation.'),
+      piece('540393117', 'United Nations', 'Global plastic waste data made policy-ready.'),
     ],
   },
   testimonial: TESTIMONIAL_ACODIS,
@@ -99,18 +103,19 @@ export const explainerVideoLanding: LandingPageConfig = {
           'Every project runs concept → script → storyboard → design → animation → delivery. I own the whole chain. Timelines are usually 4–8 weeks depending on scope.',
       },
       {
+        question: 'Who will I work with?',
+        answer:
+          'Me. Dan Neale — creative director and maker. No account managers, no handoffs, no juniors on your project.',
+      },
+      {
+        question: 'Do you rewrite the script?',
+        answer:
+          "Yes — that's usually where the film is won or lost. I'll structure the story, tighten the hooks, and make sure every line earns its place before a single frame is animated.",
+      },
+      {
         question: 'What kinds of companies do you work with?',
         answer:
           'Mostly SaaS and tech companies with complex products that need to be made obvious. Also creative and design agencies bringing in a senior motion specialist.',
-      },
-      {
-        question: 'Are you hiring?',
-        answer: 'No — this page is for teams commissioning work.',
-      },
-      {
-        question: 'How do we start?',
-        answer:
-          'Book a 20-minute call or send a brief through the form. I reply within one business day.',
       },
     ],
   },

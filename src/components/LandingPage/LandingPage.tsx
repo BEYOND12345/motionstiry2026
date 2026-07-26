@@ -206,6 +206,11 @@ function ContactForm({
     trackGenerateLead(config.slug);
   }
 
+  const labelClass =
+    'mb-3 block text-[11px] font-medium uppercase tracking-[0.14em] text-white/45';
+  const fieldClass =
+    'w-full border-b border-white/25 bg-transparent py-3 text-base text-white outline-none transition-colors placeholder:text-white/30 focus:border-white';
+
   return (
     <form
       id="brief"
@@ -213,20 +218,20 @@ function ContactForm({
       method="POST"
       onSubmit={onSubmit}
       noValidate
-      className="mt-14 scroll-mt-28 space-y-10 border-t border-black/10 pt-12 sm:mt-16 sm:pt-14 md:scroll-mt-32"
+      className="mt-14 scroll-mt-28 space-y-10 border-t border-white/15 pt-12 sm:mt-16 sm:pt-14 md:scroll-mt-32"
     >
       <input type="hidden" name="_next" value={THANK_YOU_URL} />
       <input type="hidden" name="_subject" value={`Ads brief — ${config.slug}`} />
 
       {error && (
-        <p role="alert" className="text-sm text-red-600">
+        <p role="alert" className="text-sm text-red-300">
           {error}
         </p>
       )}
 
       <div className="grid gap-8 md:grid-cols-2">
         <div>
-          <label htmlFor={ids.name} className="mb-3 block text-[11px] font-medium uppercase tracking-[0.14em] text-black/50">
+          <label htmlFor={ids.name} className={labelClass}>
             Name
           </label>
           <input
@@ -235,11 +240,11 @@ function ContactForm({
             type="text"
             required
             autoComplete="name"
-            className="w-full border-b border-black/20 bg-transparent py-3 text-base outline-none transition-colors focus:border-black"
+            className={fieldClass}
           />
         </div>
         <div>
-          <label htmlFor={ids.email} className="mb-3 block text-[11px] font-medium uppercase tracking-[0.14em] text-black/50">
+          <label htmlFor={ids.email} className={labelClass}>
             Work email
           </label>
           <input
@@ -248,13 +253,13 @@ function ContactForm({
             type="email"
             required
             autoComplete="email"
-            className="w-full border-b border-black/20 bg-transparent py-3 text-base outline-none transition-colors focus:border-black"
+            className={fieldClass}
           />
         </div>
       </div>
 
       <div>
-        <label htmlFor={ids.company} className="mb-3 block text-[11px] font-medium uppercase tracking-[0.14em] text-black/50">
+        <label htmlFor={ids.company} className={labelClass}>
           Company
         </label>
         <input
@@ -263,12 +268,12 @@ function ContactForm({
           type="text"
           required
           autoComplete="organization"
-          className="w-full border-b border-black/20 bg-transparent py-3 text-base outline-none transition-colors focus:border-black"
+          className={fieldClass}
         />
       </div>
 
       <div>
-        <label htmlFor={ids.brief} className="mb-3 block text-[11px] font-medium uppercase tracking-[0.14em] text-black/50">
+        <label htmlFor={ids.brief} className={labelClass}>
           {config.form.textareaLabel}
         </label>
         <textarea
@@ -276,13 +281,13 @@ function ContactForm({
           name="message"
           required
           rows={5}
-          className="w-full resize-y border-b border-black/20 bg-transparent py-3 text-base outline-none transition-colors focus:border-black"
+          className={`${fieldClass} resize-y`}
         />
       </div>
 
       <button
         type="submit"
-        className="inline-flex min-h-[48px] w-full items-center justify-center bg-black px-8 py-4 text-[12px] font-medium uppercase tracking-[0.14em] text-white transition-opacity hover:opacity-80 sm:w-auto"
+        className="inline-flex min-h-[48px] w-full items-center justify-center bg-white px-8 py-4 text-[12px] font-medium uppercase tracking-[0.14em] text-black transition-opacity hover:opacity-80 sm:w-auto"
       >
         {config.form.submitButtonLabel}
       </button>
@@ -464,17 +469,17 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
           </div>
         </section>
 
-        {/* 5. Featured work — exactly 3 */}
+        {/* 5. Featured work */}
         <section className="mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-12 lg:py-32">
           <div className="mb-10 flex flex-wrap items-end justify-between gap-x-6 gap-y-2 sm:mb-12">
             <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl">
               Featured work
             </h2>
             <span className="text-[10px] uppercase tracking-[0.16em] text-black/35 sm:text-[11px]">
-              Three pieces
+              {config.featuredWork.projects.length} pieces
             </span>
           </div>
-          <div className="grid gap-10 md:grid-cols-3 md:gap-8 lg:gap-10">
+          <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-10">
             {config.featuredWork.projects.map((project) => (
               <button
                 key={project.videoUrl + project.client}
@@ -534,7 +539,27 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
           </ol>
         </section>
 
-        {/* 8. FAQ */}
+        {/* 8. Final CTA + form — black band so the conversion block stands out */}
+        <section id="final-cta" className="bg-black text-white">
+          <div className="mx-auto max-w-3xl scroll-mt-28 px-5 py-20 sm:px-6 sm:py-24 md:scroll-mt-32 lg:px-12 lg:py-32">
+            <h2 className="font-display text-[1.85rem] font-bold tracking-tight sm:text-3xl lg:text-5xl">
+              {config.finalCta.headline}
+            </h2>
+            <p className="mt-4 text-[15px] leading-relaxed text-white/55 sm:mt-5 sm:text-[16px]">
+              {config.finalCta.formIntro}
+            </p>
+            <a
+              href={BOOKING_PATH}
+              onClick={onBook}
+              className="mt-8 inline-flex min-h-[52px] w-full max-w-md items-center justify-center bg-white px-6 py-4 text-center text-[11px] font-medium uppercase tracking-[0.14em] text-black transition-opacity hover:opacity-80 sm:mt-10 sm:w-auto sm:min-w-[260px] sm:px-10 sm:text-[12px]"
+            >
+              Book a 20-minute project call
+            </a>
+            <ContactForm config={config} />
+          </div>
+        </section>
+
+        {/* 9. FAQ — after the form */}
         <section className="mx-auto max-w-3xl px-5 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-24">
           <h2 className="mb-10 font-display text-2xl font-bold tracking-tight sm:mb-12">Questions</h2>
           <div className="divide-y divide-black/10 border-y border-black/10">
@@ -564,27 +589,6 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
               );
             })}
           </div>
-        </section>
-
-        {/* 9. Final CTA + form */}
-        <section
-          id="final-cta"
-          className="mx-auto max-w-3xl scroll-mt-28 px-5 pb-24 pt-8 sm:px-6 sm:pb-28 sm:pt-10 md:scroll-mt-32 lg:px-12 lg:pb-40"
-        >
-          <h2 className="font-display text-[1.85rem] font-bold tracking-tight sm:text-3xl lg:text-5xl">
-            {config.finalCta.headline}
-          </h2>
-          <p className="mt-4 text-[15px] leading-relaxed text-black/50 sm:mt-5 sm:text-[16px]">
-            {config.finalCta.formIntro}
-          </p>
-          <a
-            href={BOOKING_PATH}
-            onClick={onBook}
-            className="mt-8 inline-flex min-h-[52px] w-full max-w-md items-center justify-center bg-black px-6 py-4 text-center text-[11px] font-medium uppercase tracking-[0.14em] text-white transition-opacity hover:opacity-80 sm:mt-10 sm:w-auto sm:min-w-[260px] sm:px-10 sm:text-[12px]"
-          >
-            Book a 20-minute project call
-          </a>
-          <ContactForm config={config} />
         </section>
       </main>
 
