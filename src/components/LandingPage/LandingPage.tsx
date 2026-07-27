@@ -469,17 +469,14 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
           </div>
         </section>
 
-        {/* 5. Featured work */}
+        {/* 5. Featured work — 3×2 style project grid */}
         <section className="mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-12 lg:py-32">
-          <div className="mb-10 flex flex-wrap items-end justify-between gap-x-6 gap-y-2 sm:mb-12">
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-x-6 gap-y-2 sm:mb-12 md:mb-14">
             <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl">
               Featured work
             </h2>
-            <span className="text-[10px] uppercase tracking-[0.16em] text-black/35 sm:text-[11px]">
-              {config.featuredWork.projects.length} pieces
-            </span>
           </div>
-          <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3 md:gap-x-10 md:gap-y-14">
             {config.featuredWork.projects.map((project) => (
               <button
                 key={project.videoUrl + project.client}
@@ -494,13 +491,21 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-black/10 transition-colors group-hover:bg-black/25" />
-                  <span className="absolute bottom-4 left-4 flex h-11 w-11 items-center justify-center rounded-full border border-white/90 bg-black/15">
-                    <span className="ml-0.5 h-0 w-0 border-y-[6px] border-l-[10px] border-y-transparent border-l-white" />
+                  <div className="absolute inset-0 bg-black/15 transition-colors group-hover:bg-black/30" />
+                  <span className="absolute inset-0 flex items-center justify-center">
+                    <span className="flex h-14 w-14 items-center justify-center rounded-full border border-white/90 bg-white/15 backdrop-blur-[2px] transition-transform duration-300 group-hover:scale-105 md:h-16 md:w-16">
+                      <span className="ml-1 h-0 w-0 border-y-[9px] border-l-[14px] border-y-transparent border-l-white" />
+                    </span>
                   </span>
                 </div>
-                <p className="mt-5 font-display text-lg font-bold tracking-tight">{project.client}</p>
-                <p className="mt-2 text-[15px] leading-relaxed text-black/50">{project.oneLineResult}</p>
+                <p className="mt-4 flex items-center gap-2.5 font-display text-[15px] font-bold italic tracking-tight text-black md:text-[17px]">
+                  <span
+                    className="inline-block h-0 w-0 shrink-0 border-y-[5px] border-l-[8px] border-y-transparent"
+                    style={{ borderLeftColor: 'var(--landing-accent, #FF0000)' }}
+                    aria-hidden="true"
+                  />
+                  <span>{project.oneLineResult || project.client}</span>
+                </p>
               </button>
             ))}
           </div>

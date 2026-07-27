@@ -62,16 +62,14 @@ export const explainerVideoLanding: LandingPageConfig = {
     body: 'Big agencies bury the craft under account managers and juniors. Solo freelancers can execute but rarely own the story. This studio sits between — big-agency thinking without the overheads, senior craft with direct access.',
   },
   featuredWork: {
+    // 3×2 grid — short titles under each thumbnail (reference layout)
     projects: [
-      piece('861022443', 'Atomic', 'In-app messaging made clear for product and sales.'),
-      piece('879242129', 'Mosaic', 'Complex data planning platform, explained simply.'),
-      piece('580088673', 'Acodis', '40,000 YouTube views — brand perception lift.'),
-      piece('648360270', 'Wipster', 'Video feedback workflows made obvious.'),
-      piece('866174146', 'Trudi', 'AI property management — product made clear.'),
-      piece('394326130', 'Meltwater', 'Brand story for a media intelligence platform.'),
-      piece('863428533', 'Trusyft', 'Cinematic product promo with launch energy.'),
-      piece('762112642', 'Giraffe', 'Urban planning tech explained through animation.'),
-      piece('540393117', 'United Nations', 'Global plastic waste data made policy-ready.'),
+      piece('866174146', 'Trudi', 'Trudi Product Demo'),
+      piece('306054358', 'NSW Government', 'NSW Pinch Point Explained'),
+      piece('557884851', 'Method Recycling', 'Method Recycling'),
+      piece('879242129', 'Mosaic', 'Mosaic Platform Explained'),
+      piece('580088673', 'Acodis', 'Acodis AI Explainer'),
+      piece('762085540', 'RSPCA', 'RSPCA Cat Care'),
     ],
   },
   testimonial: TESTIMONIAL_ACODIS,
