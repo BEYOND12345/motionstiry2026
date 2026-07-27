@@ -1,7 +1,7 @@
 import type { LandingPageConfig } from '../../components/LandingPage/types';
 import { getLandingShowcaseWork } from './showcase-work';
 import { SAAS_TRUST_LOGOS } from './trust-logos';
-import { TESTIMONIAL_ACODIS } from './testimonials';
+import { TESTIMONIAL_BATNAV } from './testimonials';
 
 /** Config for /saas-tech/ */
 export const saasTechLanding: LandingPageConfig = {
@@ -52,7 +52,7 @@ export const saasTechLanding: LandingPageConfig = {
   featuredWork: {
     projects: getLandingShowcaseWork(),
   },
-  testimonial: TESTIMONIAL_ACODIS,
+  testimonial: TESTIMONIAL_BATNAV,
   process: {
     steps: [
       {

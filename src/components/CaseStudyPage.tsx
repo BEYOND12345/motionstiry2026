@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import type { Project } from "../data/projects";
+import { getReviewForClient, pickVerifiedReviews } from "../data/reviews";
 import VimeoEmbed from "./VimeoEmbed";
 import PageTransition, { FadeUp, SlideUp, AnimatedSection } from "./PageTransition";
 
@@ -16,6 +17,9 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
   const relatedProjects = allProjects
     .filter(p => p.id !== project.id && p.category === project.category)
     .slice(0, 3);
+
+  const clientReview = getReviewForClient(project.client);
+  const review = clientReview ?? pickVerifiedReviews(project.slug, 1)[0];
 
   return (
     <div className="min-h-screen bg-white text-black">
@@ -88,6 +92,22 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
               <p className="font-display text-lg font-medium">Motion Story</p>
               <p className="text-body text-sm">Byron Bay, NSW</p>
             </div>
+          </FadeUp>
+        </div>
+      </AnimatedSection>
+
+      {/* Client review */}
+      <AnimatedSection className="border-t border-black/10 bg-black/[0.01]">
+        <div className="max-w-6xl mx-auto px-8 py-24">
+          <FadeUp>
+            <span className="text-metadata mb-10 block">
+              {clientReview ? `What ${review.company} said` : "What clients say"}
+            </span>
+            <blockquote className="font-display text-2xl md:text-4xl font-medium tracking-tight leading-snug max-w-4xl mb-10">
+              "{review.quote}"
+            </blockquote>
+            <p className="font-display font-medium text-sm">{review.name}</p>
+            <p className="text-metadata">{review.role}, {review.company}</p>
           </FadeUp>
         </div>
       </AnimatedSection>

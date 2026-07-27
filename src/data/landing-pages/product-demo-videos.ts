@@ -1,7 +1,7 @@
 import type { LandingPageConfig } from '../../components/LandingPage/types';
 import { getLandingShowcaseWork } from './showcase-work';
 import { SAAS_TRUST_LOGOS } from './trust-logos';
-import { TESTIMONIAL_METHOD } from './testimonials';
+import { TESTIMONIAL_FINNIMORE } from './testimonials';
 
 /** Config for /product-demo-videos/ */
 export const productDemoVideosLanding: LandingPageConfig = {
@@ -52,7 +52,7 @@ export const productDemoVideosLanding: LandingPageConfig = {
   featuredWork: {
     projects: getLandingShowcaseWork(),
   },
-  testimonial: TESTIMONIAL_METHOD,
+  testimonial: TESTIMONIAL_FINNIMORE,
   process: {
     steps: [
       {

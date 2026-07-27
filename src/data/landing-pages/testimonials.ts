@@ -24,3 +24,34 @@ export const TESTIMONIAL_AMSED: Testimonial = {
   role: 'Client',
   company: 'AMSED',
 };
+
+export const TESTIMONIAL_ACODIS_TEAM: Testimonial = {
+  quote:
+    'It felt like Motion Story was part of our team, even though we were both sitting at the other end of the globe.',
+  name: 'Simon Lehmann',
+  role: 'Head of Marketing',
+  company: 'Acodis',
+};
+
+export const TESTIMONIAL_NSW_GOV: Testimonial = {
+  quote:
+    'They went above and beyond the scope of work to get it right. They were passionate about the project.',
+  name: 'Nicola Saltman',
+  role: 'Senior Sustainability Engagement Officer',
+  company: 'NSW Government',
+};
+
+export const TESTIMONIAL_BATNAV: Testimonial = {
+  quote: "The quality of Motion Story's animation was spectacular.",
+  name: 'Dave West',
+  role: 'Founder',
+  company: 'BatNav',
+};
+
+export const TESTIMONIAL_FINNIMORE: Testimonial = {
+  quote:
+    'They covered all of their bases and made sure that we were really happy at every stage of the project.',
+  name: 'Mary & James Finnimore',
+  role: 'CEO',
+  company: 'Technology management company',
+};

@@ -1,7 +1,7 @@
 import type { LandingPageConfig } from '../../components/LandingPage/types';
 import { getLandingShowcaseWork } from './showcase-work';
 import { SAAS_TRUST_LOGOS } from './trust-logos';
-import { TESTIMONIAL_AMSED } from './testimonials';
+import { TESTIMONIAL_NSW_GOV } from './testimonials';
 
 /** Config for /product-launch-video/ */
 export const productLaunchLanding: LandingPageConfig = {
@@ -52,7 +52,7 @@ export const productLaunchLanding: LandingPageConfig = {
   featuredWork: {
     projects: getLandingShowcaseWork(),
   },
-  testimonial: TESTIMONIAL_AMSED,
+  testimonial: TESTIMONIAL_NSW_GOV,
   process: {
     steps: [
       {

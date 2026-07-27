@@ -79,6 +79,25 @@ export interface ClientReview {
   project: string;
 }
 
+/** Deterministically rotate through the verified reviews so pages vary without repeating. */
+export function pickVerifiedReviews(seed: string, count: number): ClientReview[] {
+  const pool = VERIFIED_CLIENT_REVIEWS;
+  let hash = 0;
+  for (const ch of seed) hash = (hash * 31 + ch.charCodeAt(0)) % pool.length;
+  return Array.from({ length: Math.min(count, pool.length) }, (_, i) => pool[(hash + i) % pool.length]);
+}
+
+/** Review written by this specific client, when one exists. */
+export function getReviewForClient(client: string): ClientReview | undefined {
+  const c = client.toLowerCase();
+  if (c.includes('acodis')) return VERIFIED_CLIENT_REVIEWS.find((r) => r.company === 'Acodis');
+  if (c.includes('nsw')) return VERIFIED_CLIENT_REVIEWS.find((r) => r.company === 'NSW Government');
+  if (c.includes('method')) return VERIFIED_CLIENT_REVIEWS.find((r) => r.company === 'Method Recycling');
+  if (c.includes('bat')) return VERIFIED_CLIENT_REVIEWS.find((r) => r.company === 'BatNav');
+  if (c.includes('carter') || c.includes('carta')) return VERIFIED_CLIENT_REVIEWS.find((r) => r.company === 'Carta Coin');
+  return undefined;
+}
+
 export const VERIFIED_CLIENT_REVIEWS: ClientReview[] = [
   {
     quote:

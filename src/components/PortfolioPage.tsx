@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../lib/utils";
 import { ALL_PROJECTS, sortProjectsShowcaseFirst } from "../data/projects";
+import { GOOGLE_RATING } from "../data/reviews";
 import PageTransition, { FadeUp, SlideUp, AnimatedSection } from "./PageTransition";
 
 const ORDERED_PROJECTS = sortProjectsShowcaseFirst(ALL_PROJECTS);
@@ -29,10 +30,13 @@ export default function PortfolioPage() {
 
       {/* Project Count */}
       <div className="px-8 max-w-7xl mx-auto mb-16">
-        <div className="border-b border-black/10 pb-6">
+        <div className="border-b border-black/10 pb-6 flex flex-wrap items-baseline justify-between gap-4">
           <span className="text-metadata opacity-30">
             Strongest pieces first
           </span>
+          <a href="/reviews/" className="text-metadata hover:text-black transition-colors">
+            <span className="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · {GOOGLE_RATING.count} reviews →
+          </a>
         </div>
       </div>
 
