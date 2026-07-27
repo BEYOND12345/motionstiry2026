@@ -449,7 +449,7 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
         </section>
 
         {/* 4. Middle ground */}
-        <section className="bg-black text-white">
+        <section className="band-black">
           <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 sm:gap-12 sm:px-6 sm:py-24 md:grid-cols-2 md:gap-20 lg:gap-28 lg:px-12 lg:py-36">
             <div className="flex flex-col justify-center gap-3 sm:gap-4 md:gap-5">
               {middleLines.map((line, i) => (
@@ -512,7 +512,7 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
         </section>
 
         {/* 6. Testimonial */}
-        <section className="bg-black text-white">
+        <section className="band-black">
           <div className="mx-auto max-w-5xl px-5 py-20 sm:px-6 sm:py-24 lg:px-12 lg:py-32">
             <blockquote className="font-display text-[1.4rem] font-medium leading-[1.28] tracking-tight sm:text-[1.75rem] sm:leading-[1.25] lg:text-[2.75rem] lg:leading-[1.15]">
               “{config.testimonial.quote}”
@@ -549,7 +549,7 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
         </section>
 
         {/* 8. Final CTA + form — black band so the conversion block stands out */}
-        <section id="final-cta" className="bg-black text-white">
+        <section id="final-cta" className="site-cta">
           <div className="mx-auto max-w-3xl scroll-mt-28 px-5 py-20 sm:px-6 sm:py-24 md:scroll-mt-32 lg:px-12 lg:py-32">
             <h2 className="font-display text-[1.85rem] font-bold tracking-tight sm:text-3xl lg:text-5xl">
               {config.finalCta.headline}

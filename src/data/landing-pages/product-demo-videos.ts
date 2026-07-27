@@ -83,7 +83,7 @@ export const productDemoVideosLanding: LandingPageConfig = {
       {
         question: 'Who will I work with?',
         answer:
-          'Me. Dan Neale — creative director and maker. No account managers, no handoffs, no juniors on your project.',
+          'Me. Dan Neale — creative director. No account managers. When a job needs extra hands, I bring in specialists I trust and direct.',
       },
       {
         question: 'What kinds of companies do you work with?',
@@ -98,7 +98,7 @@ export const productDemoVideosLanding: LandingPageConfig = {
     ],
   },
   finalCta: {
-    headline: 'Talk to the person who actually makes the work.',
+    headline: 'Talk to the creative director.',
     formIntro: 'Or send a brief — I reply within one business day.',
   },
   form: {

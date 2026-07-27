@@ -15,7 +15,7 @@ export default function PortfolioPage() {
       <div className="grain-overlay" />
 
       {/* Header */}
-      <div className="bg-black text-white">
+      <div className="band-black">
         <PageTransition className="pt-32 pb-20 px-8 max-w-7xl mx-auto">
           <SlideUp>
             <h1 className="font-display text-4xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-8">

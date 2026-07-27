@@ -41,7 +41,7 @@ export const saasExplainerLanding: LandingPageConfig = {
       },
       {
         title: 'Senior craft on every frame',
-        body: 'No juniors, no handoffs. The person you brief is the person who animates.',
+        body: 'No juniors, no account managers. The person you brief is the person responsible for the work.',
       },
     ],
   },
@@ -83,7 +83,7 @@ export const saasExplainerLanding: LandingPageConfig = {
       {
         question: 'Who will I work with?',
         answer:
-          'Me. Dan Neale — creative director and maker. No account managers, no handoffs, no juniors on your project.',
+          'Me. Dan Neale — creative director. No account managers. When a job needs extra hands, I bring in specialists I trust and direct.',
       },
       {
         question: 'Do you rewrite the script?',
@@ -98,7 +98,7 @@ export const saasExplainerLanding: LandingPageConfig = {
     ],
   },
   finalCta: {
-    headline: 'Talk to the person who actually makes the work.',
+    headline: 'Talk to the creative director.',
     formIntro: 'Or send a brief — I reply within one business day.',
   },
   form: {

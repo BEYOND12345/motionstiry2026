@@ -41,7 +41,7 @@ export const productLaunchLanding: LandingPageConfig = {
       },
       {
         title: 'Senior craft on every frame',
-        body: 'No juniors, no handoffs. The person you brief is the person who animates.',
+        body: 'No juniors, no account managers. The person you brief is the person responsible for the work.',
       },
     ],
   },
@@ -97,7 +97,7 @@ export const productLaunchLanding: LandingPageConfig = {
     ],
   },
   finalCta: {
-    headline: 'Talk to the person who actually makes the work.',
+    headline: 'Talk to the creative director.',
     formIntro: 'Or send a brief — I reply within one business day.',
   },
   form: {

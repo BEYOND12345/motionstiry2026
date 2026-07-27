@@ -97,7 +97,7 @@ export const productDemoLanding: LandingPageConfig = {
     ],
   },
   finalCta: {
-    headline: 'Talk to the person who actually makes the work.',
+    headline: 'Talk to the creative director.',
     formIntro: 'Or send a brief — I reply within one business day.',
   },
   form: {

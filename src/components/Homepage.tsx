@@ -207,7 +207,7 @@ export default function Homepage() {
             {/* Results / Testimonials */}
             <section className="mb-48">
               <span className="text-metadata mb-10 block">Results</span>
-              <div className="bg-black text-white p-8 md:p-12">
+              <div className="band-black p-8 md:p-12">
               <div className="mb-16 flex items-baseline gap-4">
                 <span className="font-display text-3xl font-bold tracking-tight">{GOOGLE_RATING.score}</span>
                 <span className="text-accent tracking-[0.2em]" aria-label="Five stars">★★★★★</span>
