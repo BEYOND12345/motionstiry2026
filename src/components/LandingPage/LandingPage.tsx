@@ -353,7 +353,7 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
     >
       <header className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/90 pt-[env(safe-area-inset-top)] backdrop-blur-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-6 sm:py-5 lg:px-12">
-          <a href="/" className="font-display text-[1.15rem] font-bold tracking-tight sm:text-xl">
+          <a href="/" className="brand-mark text-[1.15rem] tracking-tight sm:text-xl">
             Motion Story.
           </a>
           <a
@@ -613,7 +613,7 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
       {/* 10. Footer */}
       <footer className="site-footer px-5 py-12 pb-[calc(6.5rem+env(safe-area-inset-bottom))] sm:px-6 sm:py-14 md:pb-14 lg:px-12">
         <div className="mx-auto max-w-7xl">
-          <p className="font-display text-lg font-bold tracking-tight">
+          <p className="brand-mark text-lg tracking-tight">
             Motion Story<span className="text-accent">.</span>
           </p>
           <p className="mt-4 text-[11px] uppercase tracking-[0.14em] text-black/40">

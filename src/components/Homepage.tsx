@@ -413,7 +413,7 @@ export default function Homepage() {
             </div>
             <div className="pt-5 border-t border-black/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <a href="#top" className="text-metadata hover:text-black transition-colors">Back to Top</a>
-              <span className="text-metadata">Motion Story<span className="text-accent">.</span> Complexity Explained.</span>
+              <span className="text-metadata"><span className="brand-mark text-[13px]">Motion Story</span><span className="text-accent">.</span> Complexity Explained.</span>
             </div>
           </footer>
         </aside>
@@ -491,7 +491,7 @@ export default function Homepage() {
 
               <div className="pt-12 border-t border-black/10">
                 <span className="text-metadata mb-6 block">Start a Project</span>
-                <h2 className="font-display text-2xl md:text-[28px] font-semibold tracking-tight mb-8">
+                <h2 className="font-display text-2xl md:text-[28px] font-bold tracking-tight uppercase mb-8">
                   Got something<br />
                   complex to explain?
                 </h2>
