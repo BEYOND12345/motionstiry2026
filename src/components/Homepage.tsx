@@ -491,7 +491,7 @@ export default function Homepage() {
 
               <div className="pt-12 border-t border-black/10">
                 <span className="text-metadata mb-6 block">Start a Project</span>
-                <h2 className="font-display text-2xl md:text-[28px] font-bold tracking-tight uppercase mb-8">
+                <h2 className="font-display text-2xl md:text-[28px] font-semibold tracking-tight mb-8">
                   Got something<br />
                   complex to explain?
                 </h2>
