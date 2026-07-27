@@ -1,8 +1,10 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import { GOOGLE_RATING, pickVerifiedReviews } from '../data/reviews';
+import { GOOGLE_RATING, VERIFIED_CLIENT_REVIEWS } from '../data/reviews';
+import { getShowcaseProjects } from '../data/projects';
 
-const aboutReviews = pickVerifiedReviews('about', 3);
+const strapline = VERIFIED_CLIENT_REVIEWS[0]; // Acodis — "part of our team"
+const aboutWork = getShowcaseProjects().slice(0, 3);
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -54,142 +56,208 @@ const structuredData = {
     })} />
   </Fragment>
 
-  <div class="landing">
-    <header class="landing-hero">
-      <span class="landing-eyebrow">About</span>
-      <h1 class="landing-title">I'm Dan. Motion Story is me.</h1>
-      <p class="landing-lede">Creative director, and the person who makes the work. I help companies understand their own product and build the narrative around it — stories that work across sales funnels, onboarding, launches, and social.</p>
-    </header>
-
-    <p class="landing-clients">United Nations · TransferWise · Amex · Cartier · Atomic · Mosaic · RSPCA · Meltwater · Wipster</p>
-
-    <!-- The story -->
-    <section class="landing-section">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-16 items-start">
-        <div>
-          <div class="aspect-[4/5] overflow-hidden mb-6">
-            <img src="/daniel-neale.jpg" alt="Dan Neale, creative director of Motion Story" class="w-full h-full object-cover" loading="eager" />
-          </div>
-          <p class="text-metadata">Dan Neale</p>
-          <p class="text-metadata opacity-40">Byron Bay, Australia</p>
-        </div>
-        <div class="md:col-span-2 space-y-8 max-w-2xl">
-          <p class="text-body text-lg leading-relaxed">
-            Motion Story has been me since 2012 — making motion since 2010, back when the explainer video first became a thing. You brief me, I run the project. No account manager in between, no junior animating it while a senior name sits on the website. When a job needs extra hands I bring in specialists I trust and direct — but nothing gets handed off. The person you talk to is the person responsible for the work.
-          </p>
-          <p class="text-body text-lg leading-relaxed">
-            Fifteen years and 500-plus projects in, mostly for people with something genuinely hard to explain. Software that does six things at once. A process nobody can describe in a sentence. A product where the value is real but invisible. It's taken the work from the United Nations to TransferWise's first-ever video, made directly with their CEO — to Amex, Cartier, and a long line of SaaS companies whose products you can't point a camera at.
-          </p>
-          <p class="text-body text-lg leading-relaxed">
-            A quick honest bit: I'm not on social media. Barely touch it. Haven't updated my LinkedIn in about two years and I've made my peace with that. It's not strategy — I'm just quiet, and I'd rather be working or outside than posting about working. That's the type of bloke I am. So no big feed, no showreel going viral. People find me through the work.
-          </p>
-          <p class="text-body text-lg leading-relaxed">
-            The rest of life is Byron Bay: I'm a father, a surfer, and a big-time animal lover. I put everything into the work — it's the only way I know how to do it.
-          </p>
+  <!-- Hero -->
+  <section class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-end">
+      <div class="md:col-span-8">
+        <span class="text-metadata mb-8 block">About</span>
+        <h1 class="font-display text-5xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-10">
+          I'm Dan.<br />Motion Story<br />is me.
+        </h1>
+        <p class="text-body text-lg max-w-md mb-12">
+          Creative director. I help companies understand their own product — and build the story around it.
+        </p>
+        <div class="flex flex-wrap gap-10">
+          <a href="/contact/" class="group flex items-center gap-3">
+            <span class="text-accent text-2xl">→</span>
+            <span class="text-nav-item">Start a project</span>
+          </a>
+          <a href="#work" class="group flex items-center gap-3">
+            <span class="text-accent text-2xl">↓</span>
+            <span class="text-nav-item">See the work</span>
+          </a>
         </div>
       </div>
-    </section>
+      <div class="md:col-span-4">
+        <div class="aspect-[4/5] overflow-hidden mb-4">
+          <img src="/daniel-neale.jpg" alt="Dan Neale, creative director of Motion Story" class="w-full h-full object-cover" loading="eager" />
+        </div>
+        <p class="text-metadata">Dan Neale — Byron Bay, Australia</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Who I work with -->
-    <section class="landing-section">
-      <span class="landing-eyebrow landing-section-label">Who I work with</span>
-      <div class="space-y-8 max-w-2xl">
-        <p class="text-body text-lg leading-relaxed">
-          All sorts, from all over. Firm managers in New York, startups in New Zealand, mum and dad shops here in Byron Bay. I work remotely, always have — if you're in the US, the work happens while you sleep.
+  <!-- Stat strip -->
+  <section class="border-y border-black/10">
+    <div class="max-w-7xl mx-auto px-8 grid grid-cols-2 md:grid-cols-4">
+      <div class="py-10 md:border-r border-black/10">
+        <p class="font-display text-2xl md:text-3xl font-bold tracking-tight">2012</p>
+        <p class="text-metadata mt-2">Motion Story founded</p>
+      </div>
+      <div class="py-10 md:border-r border-black/10 md:pl-8">
+        <p class="font-display text-2xl md:text-3xl font-bold tracking-tight">500+</p>
+        <p class="text-metadata mt-2">Projects delivered</p>
+      </div>
+      <div class="py-10 md:border-r border-black/10 md:pl-8">
+        <p class="font-display text-2xl md:text-3xl font-bold tracking-tight">5.0 <span class="text-accent text-lg align-middle">★</span></p>
+        <p class="text-metadata mt-2">{GOOGLE_RATING.count} Google reviews</p>
+      </div>
+      <div class="py-10 md:pl-8">
+        <p class="font-display text-2xl md:text-3xl font-bold tracking-tight">Remote</p>
+        <p class="text-metadata mt-2">NYC to NZ, always have</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 The story -->
+  <section class="px-8 max-w-7xl mx-auto py-28">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+      <div class="md:col-span-4">
+        <span class="text-metadata block"><span class="text-accent">01</span> — The story</span>
+      </div>
+      <div class="md:col-span-7 space-y-8">
+        <p class="font-display text-2xl md:text-3xl font-medium tracking-tight leading-snug">
+          You brief me, I run the project. No account managers, no juniors animating while a senior name sits on the website.
         </p>
-        <p class="text-body text-lg leading-relaxed">
-          I'm not a big studio and I won't pretend to be. I don't have producers, so the massive, sprawling, twenty-people-on-a-call jobs aren't my thing — honestly, I'm not that interested in them either. But the nice projects, the stylish ones, the well-thought-out meaningful ones? That's me. A good alternative to a big studio, without the overhead.
+        <p class="text-body text-lg leading-relaxed max-w-xl">
+          Making motion since 2010, running Motion Story since 2012. When a job is big I bring in specialists I direct — but nothing gets handed off.
         </p>
-        <p class="text-body text-lg leading-relaxed">
-          For creative agencies, this is where I'm most useful: I slot into your team to ideate and build the narrative with you — creative direction, not just execution. White label or direct, your call.
+        <p class="text-body text-lg leading-relaxed max-w-xl">
+          Honest bit: I'm not on social media. I'd rather be working — or outside — than posting about working. People find me through the work. The rest is Byron Bay: father, surfer, big-time animal lover.
         </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- What I actually do -->
-    <section class="landing-section">
-      <span class="landing-eyebrow landing-section-label">What I actually do</span>
-      <div class="space-y-8 max-w-2xl">
-        <p class="text-body text-lg leading-relaxed">
-          More than design and animation. What I really specialise in is helping companies understand their own product — and then creating the narrative and story around it. One strong story that gets used everywhere: sales funnels, onboarding, launches, social. I think deeply, I think big picture, and I think in narrative, story, and strategy — worked out before anyone opens After Effects.
-        </p>
-        <p class="text-body text-lg leading-relaxed">
-          I'm not just a doer, I'm a creator. That's the difference between me and a freelancer you hand a script to.
-        </p>
-        <p class="text-body text-lg leading-relaxed">
-          Here's the thing I'm actually good at: send me a brief, or just talk me through a project on a call, and I can see it. The whole thing — backwards, forwards, every component, finished — in my head while we're still talking. And I can get it onto paper so you see exactly what I see.
-        </p>
-        <p class="text-body text-lg leading-relaxed">
-          That's the gold. That's what makes the rest of the project run smoothly and come out unique instead of generic. A chatbot will write you a script — I've seen those projects, and it gets it wrong in ways you don't notice until it's too late. This part needs a human who's done it a thousand times.
-        </p>
+  <!-- 02 What I actually do -->
+  <section class="px-8 max-w-7xl mx-auto pb-28">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+      <div class="md:col-span-4">
+        <span class="text-metadata block"><span class="text-accent">02</span> — What I actually do</span>
       </div>
-    </section>
-
-    <!-- How I like to work -->
-    <section class="landing-section">
-      <span class="landing-eyebrow landing-section-label">How I like to work</span>
-      <div class="space-y-8 max-w-2xl">
-        <p class="text-body text-lg leading-relaxed">
-          The brief is where most videos go wrong, not the animation. Founders and engineers brief badly because they try to include everything — but a viewer gives you eight seconds and one idea. I'd rather have six bullet points than a twelve-page document.
+      <div class="md:col-span-7">
+        <p class="font-display text-2xl md:text-3xl font-medium tracking-tight leading-snug mb-12">
+          More than animation. Narrative, story, and strategy — worked out before anyone opens After Effects.
         </p>
-        <p class="text-body text-lg leading-relaxed">
-          Then it's concept, storyboard, style, animation — in that order, always. A change costs an hour at storyboard and eight hours once it's animated.
-        </p>
-        <p class="text-body text-lg leading-relaxed">
-          If you're a SaaS company, bring me in early. Let me do the storyboarding, the story, the heavy lifting up front. Bring in your other creatives too if you want — I'll work around them. Think of me as a fractional creative director you can drop into a project. No hand-holding; I work like part of the team.
-        </p>
-        <p class="text-body text-lg leading-relaxed">
-          And if the brief's wrong, I'll tell you. You're not paying me to nod.
-        </p>
+        <ul class="space-y-0 border-t border-black/10">
+          <li class="py-6 border-b border-black/10 flex gap-6">
+            <span class="text-accent shrink-0">→</span>
+            <p class="text-body">Product narratives that work everywhere — sales funnels, onboarding, launches, social.</p>
+          </li>
+          <li class="py-6 border-b border-black/10 flex gap-6">
+            <span class="text-accent shrink-0">→</span>
+            <p class="text-body">Talk me through a project and I can see the whole thing, finished, while we're still on the call. Then I get it on paper so you see it too.</p>
+          </li>
+          <li class="py-6 border-b border-black/10 flex gap-6">
+            <span class="text-accent shrink-0">→</span>
+            <p class="text-body">Concept → storyboard → style → animation. Always that order. A change costs an hour at storyboard, eight once it's animated.</p>
+          </li>
+          <li class="py-6 border-b border-black/10 flex gap-6">
+            <span class="text-accent shrink-0">→</span>
+            <p class="text-body">Not just a doer — a creator. The difference between me and a freelancer you hand a script to.</p>
+          </li>
+        </ul>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="landing-section">
-      <span class="landing-eyebrow landing-section-label">What clients say</span>
-      <p class="landing-clients" style="margin-bottom: 3rem;">
-        {GOOGLE_RATING.score} ★★★★★ on Google · {GOOGLE_RATING.count} reviews · <a href="/reviews/" style="border-bottom: 1px solid currentColor;">All reviews</a>
+  <!-- Testimonial strapline — full-bleed black band -->
+  <section class="bg-black text-white">
+    <div class="max-w-7xl mx-auto px-8 py-28">
+      <blockquote class="font-display text-3xl md:text-5xl font-bold tracking-tight leading-[1.05] max-w-4xl mb-12">
+        “{strapline.quote}”
+      </blockquote>
+      <div class="flex flex-wrap items-baseline gap-x-6 gap-y-3 mb-16">
+        <p class="text-metadata !text-white">{strapline.name} — {strapline.role}, {strapline.company}</p>
+        <a href="/reviews/" class="text-metadata !text-white/50 hover:!text-white transition-colors">
+          <span class="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · All reviews →
+        </a>
+      </div>
+      <p class="font-display text-sm md:text-base font-medium tracking-tight text-white/35">
+        United Nations · TransferWise · Amex · Cartier · Atomic · Mosaic · RSPCA · Meltwater · Wipster
       </p>
-      <div class="landing-cred">
-        {aboutReviews.map((review) => (
-          <div class="landing-cred-row">
-            <h3 class="landing-cred-label">{review.company}</h3>
-            <p class="landing-cred-body">“{review.quote}” — {review.name}, {review.role}</p>
+    </div>
+  </section>
+
+  <!-- 03 The work -->
+  <section id="work" class="px-8 max-w-7xl mx-auto py-28">
+    <div class="flex flex-wrap items-baseline justify-between gap-4 mb-14">
+      <span class="text-metadata"><span class="text-accent">03</span> — The work</span>
+      <a href="/work/" class="text-metadata hover:text-black transition-colors">Full portfolio →</a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {aboutWork.map((project) => (
+        <a href={`/casestudy/${project.slug}/`} class="group block">
+          <div class="aspect-video overflow-hidden bg-black/[0.04] mb-4">
+            <img
+              src={`https://vumbnail.com/${project.vimeoId}.jpg`}
+              alt={project.title}
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-700"
+              loading="lazy"
+            />
           </div>
-        ))}
-      </div>
-    </section>
+          <p class="font-display text-base font-medium group-hover:opacity-60 transition-opacity">{project.title}</p>
+          <p class="text-metadata opacity-50">{project.client}</p>
+        </a>
+      ))}
+    </div>
+  </section>
 
-    <section class="landing-section">
-      <span class="landing-eyebrow landing-section-label">Questions</span>
-      <div class="landing-faq">
-        <div class="landing-faq-row">
-          <h3 class="landing-faq-label">Cost</h3>
-          <p class="text-body">From $5,000. I prefer projects around $10,000–$15,000. Fixed quote upfront.</p>
-        </div>
-        <div class="landing-faq-row">
-          <h3 class="landing-faq-label">Timeline</h3>
-          <p class="text-body">Most projects take 3–6 weeks from kickoff to delivery.</p>
-        </div>
-        <div class="landing-faq-row">
-          <h3 class="landing-faq-label">Capacity</h3>
-          <p class="text-body">Limited concurrent projects, on purpose. If you want silent execution with no questions, I am not the fit. If you want the story found and built properly, get in touch.</p>
+  <!-- 04 Working with me -->
+  <section class="px-8 max-w-7xl mx-auto pb-28">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+      <div class="md:col-span-4">
+        <span class="text-metadata block"><span class="text-accent">04</span> — Working with me</span>
+      </div>
+      <div class="md:col-span-7">
+        <ul class="space-y-0 border-t border-black/10">
+          <li class="py-6 border-b border-black/10 flex gap-6">
+            <span class="text-accent shrink-0">→</span>
+            <p class="text-body">Send six bullet points, not a twelve-page document. A viewer gives you eight seconds and one idea.</p>
+          </li>
+          <li class="py-6 border-b border-black/10 flex gap-6">
+            <span class="text-accent shrink-0">→</span>
+            <p class="text-body">Bring me in early. I'll do the story and storyboard heavy lifting up front.</p>
+          </li>
+          <li class="py-6 border-b border-black/10 flex gap-6">
+            <span class="text-accent shrink-0">→</span>
+            <p class="text-body">Agencies: I slot into your team to ideate and build the narrative — creative direction, not just execution. White label or direct.</p>
+          </li>
+          <li class="py-6 border-b border-black/10 flex gap-6">
+            <span class="text-accent shrink-0">→</span>
+            <p class="text-body">Big, sprawling, twenty-people-on-a-call jobs aren't my thing. The stylish, well-thought-out, meaningful ones are.</p>
+          </li>
+          <li class="py-6 border-b border-black/10 flex gap-6">
+            <span class="text-accent shrink-0">→</span>
+            <p class="text-body">If the brief's wrong, I'll tell you. You're not paying me to nod.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 The practical bits -->
+  <section class="px-8 max-w-7xl mx-auto pb-28">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+      <div class="md:col-span-4">
+        <span class="text-metadata block"><span class="text-accent">05</span> — The practical bits</span>
+      </div>
+      <div class="md:col-span-7">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
+          <div>
+            <p class="text-metadata mb-3">Cost</p>
+            <p class="text-body">From $5,000. Most projects land $10,000–$15,000. Fixed quote upfront.</p>
+          </div>
+          <div>
+            <p class="text-metadata mb-3">Timeline</p>
+            <p class="text-body">Most projects take 3–6 weeks from kickoff to delivery.</p>
+          </div>
+          <div>
+            <p class="text-metadata mb-3">Capacity</p>
+            <p class="text-body">Limited concurrent projects, on purpose. Get in early.</p>
+          </div>
         </div>
       </div>
-    </section>
-
-    <nav class="landing-links" aria-label="Related pages">
-      <a href="/work/" class="landing-link-card group">
-        <span class="landing-eyebrow mb-4 block">Work</span>
-        <p class="landing-link-label">See all work →</p>
-      </a>
-      <a href="/process/" class="landing-link-card group">
-        <span class="landing-eyebrow mb-4 block">Process</span>
-        <p class="landing-link-label">How I work →</p>
-      </a>
-      <a href="/explainer-videos/" class="landing-link-card group">
-        <span class="landing-eyebrow mb-4 block">Explainers</span>
-        <p class="landing-link-label">Explainer videos →</p>
-      </a>
-    </nav>
-  </div>
+    </div>
+  </section>
 </PageLayout>
