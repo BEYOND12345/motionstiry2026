@@ -609,6 +609,39 @@ export const ALL_PROJECTS: Project[] = [
 
 export const FEATURED_PROJECTS = ALL_PROJECTS.filter(p => p.featured);
 
+/**
+ * Curated 9 for sitewide portfolio emphasis — landings, homepage expands, /work/ sort order.
+ * Keep this list as the primary “inspire” set; full archive remains ALL_PROJECTS.
+ */
+export const SHOWCASE_PROJECT_IDS = [
+  'trudi',
+  'atomic',
+  'mosaic',
+  'acodis',
+  'method-recycling',
+  'wipster',
+  'meltwater',
+  'rspca-cats',
+  'united-nations',
+] as const;
+
+export function getShowcaseProjects(): Project[] {
+  return SHOWCASE_PROJECT_IDS.map((id) => ALL_PROJECTS.find((p) => p.id === id)).filter(
+    (p): p is Project => Boolean(p)
+  );
+}
+
+/** Featured/showcase pieces first, then the rest of the archive in original order. */
+export function sortProjectsShowcaseFirst(projects: Project[] = ALL_PROJECTS): Project[] {
+  const rank = new Map<string, number>(SHOWCASE_PROJECT_IDS.map((id, i) => [id, i]));
+  return [...projects].sort((a, b) => {
+    const ar = rank.get(a.id) ?? 1000;
+    const br = rank.get(b.id) ?? 1000;
+    if (ar !== br) return ar - br;
+    return Number(a.index) - Number(b.index);
+  });
+}
+
 export function getProjectsByCategory(category: string): Project[] {
   if (category === "All") return ALL_PROJECTS;
   return ALL_PROJECTS.filter(p => p.category === category);

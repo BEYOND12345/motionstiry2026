@@ -1,4 +1,5 @@
 import type { LandingPageConfig } from '../../components/LandingPage/types';
+import { getLandingShowcaseWork } from './showcase-work';
 import { SAAS_TRUST_LOGOS } from './trust-logos';
 import { TESTIMONIAL_METHOD } from './testimonials';
 
@@ -49,26 +50,7 @@ export const productDemoLanding: LandingPageConfig = {
     body: 'Big agencies bury the craft under account managers and juniors. Solo freelancers can execute but rarely own the story. This studio sits between — big-agency thinking without the overheads, senior craft with direct access.',
   },
   featuredWork: {
-    projects: [
-      {
-        thumbnail: 'https://vumbnail.com/861022443.jpg',
-        client: 'Atomic',
-        oneLineResult: 'In-app messaging made clear for product and sales.',
-        videoUrl: '861022443',
-      },
-      {
-        thumbnail: 'https://vumbnail.com/866174146.jpg',
-        client: 'Trudi',
-        oneLineResult: 'AI property management — product workflows made obvious.',
-        videoUrl: '866174146',
-      },
-      {
-        thumbnail: 'https://vumbnail.com/648360270.jpg',
-        client: 'Wipster',
-        oneLineResult: 'Video feedback workflows explained for product and sales.',
-        videoUrl: '648360270',
-      },
-    ],
+    projects: getLandingShowcaseWork(),
   },
   testimonial: TESTIMONIAL_METHOD,
   process: {

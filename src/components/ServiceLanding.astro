@@ -1,5 +1,6 @@
 ---
 import VimeoEmbed from './VimeoEmbed';
+import { ALL_PROJECTS, getShowcaseProjects } from '../data/projects';
 
 export interface WorkItem {
   title: string;
@@ -54,7 +55,31 @@ const {
 
 const [featured, ...rest] = work;
 
-const clients = ['United Nations', 'TransferWise', 'Atomic', 'Mosaic', 'RSPCA', 'Meltwater'];
+const usedVimeoIds = new Set([...work, ...moreWork].map((item) => item.vimeoId));
+const paddedMoreWork: WorkItem[] = [...moreWork];
+for (const project of [...getShowcaseProjects(), ...ALL_PROJECTS]) {
+  if (paddedMoreWork.length >= 9) break;
+  if (usedVimeoIds.has(project.vimeoId)) continue;
+  usedVimeoIds.add(project.vimeoId);
+  paddedMoreWork.push({
+    title: project.title,
+    link: `/casestudy/${project.slug}/`,
+    vimeoId: project.vimeoId,
+  });
+}
+
+const clients = [
+  'Atomic',
+  'Wipster',
+  'Mosaic',
+  'Trudi',
+  'United Nations',
+  'Method',
+  'AWS',
+  'Amex',
+  'Cartier',
+  'HSBC Bank',
+];
 
 const credentials = [
   {
@@ -67,7 +92,7 @@ const credentials = [
   },
   {
     label: 'Career depth',
-    body: 'United Nations. TransferWise\'s first video, working directly with their CEO. 1,000+ films. Motion design is all I have ever done.',
+    body: 'United Nations. TransferWise\'s first video, working directly with their CEO. 1,000+ films since 2010. Small studio, big impact — you work with me directly.',
   },
 ];
 ---
@@ -153,9 +178,9 @@ const credentials = [
       </div>
     )}
 
-    {moreWork.length > 0 && (
+    {paddedMoreWork.length > 0 && (
       <div class="landing-more-grid">
-        {moreWork.map((study) => (
+        {paddedMoreWork.map((study) => (
           <a href={study.link} class="landing-more-card group">
             <div class="landing-more-thumb">
               <img
@@ -171,7 +196,7 @@ const credentials = [
     )}
 
     <p class="landing-all-work landing-all-work--end">
-      <a href="/work/">See all work →</a>
+      <a href="/work/">See the full portfolio →</a>
     </p>
   </section>
 

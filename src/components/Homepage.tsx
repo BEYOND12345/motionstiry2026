@@ -1,7 +1,15 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ALL_PROJECTS, type Project } from "../data/projects";
+import {
+  ALL_PROJECTS,
+  SHOWCASE_PROJECT_IDS,
+  sortProjectsShowcaseFirst,
+  type Project,
+} from "../data/projects";
 import VimeoEmbed from "./VimeoEmbed";
+
+const SHOWCASE_ORDERED = sortProjectsShowcaseFirst(ALL_PROJECTS);
+const DEFAULT_EXPANDED = new Set<string>(SHOWCASE_PROJECT_IDS);
 
 // --- Components ---
 
@@ -97,7 +105,7 @@ const ProjectRow = ({
 };
 
 export default function Homepage() {
-  const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set(["atomic", "trudi", "giraffe", "mosaic", "good2pay", "infoview", "heyyou", "cart-share", "uclusion"]));
+  const [expandedIds, setExpandedIds] = useState<Set<string>>(DEFAULT_EXPANDED);
 
   return (
     <div className="min-h-screen bg-white text-black selection:bg-accent selection:text-white">
@@ -373,15 +381,15 @@ export default function Homepage() {
         <main className="split-right" id="portfolio">
           <div className="pt-12">
             <div className="px-4 md:px-16 py-8 border-b border-black/10 flex flex-col gap-2">
-              <span className="text-metadata">Featured Work</span>
+              <span className="text-metadata">Portfolio</span>
               <span className="text-metadata opacity-30">
-                {ALL_PROJECTS.length} Projects
+                {ALL_PROJECTS.length} films — open any row to watch
               </span>
             </div>
 
             <div className="pb-32">
               <AnimatePresence mode="popLayout">
-                {ALL_PROJECTS.map((project) => (
+                {SHOWCASE_ORDERED.map((project) => (
                   <motion.div
                     key={project.id}
                     layout
@@ -403,6 +411,15 @@ export default function Homepage() {
                   </motion.div>
                 ))}
               </AnimatePresence>
+            </div>
+
+            <div className="px-4 md:px-16 pb-16 border-b border-black/10">
+              <a
+                href="/work/"
+                className="text-metadata border-b border-black/20 pb-1 hover:border-black transition-colors"
+              >
+                Browse the full portfolio →
+              </a>
             </div>
 
             <section className="px-4 md:px-16 py-16 md:py-48 border-t border-black/10">

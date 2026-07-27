@@ -469,7 +469,7 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
           </div>
         </section>
 
-        {/* 5. Featured work — 3×2 style project grid */}
+        {/* 5. Featured work — 3×3 project grid */}
         <section className="mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-12 lg:py-32">
           <div className="mb-10 flex flex-wrap items-end justify-between gap-x-6 gap-y-2 sm:mb-12 md:mb-14">
             <h2 className="font-display text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl">

@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../lib/utils";
-import { ALL_PROJECTS } from "../data/projects";
+import { ALL_PROJECTS, sortProjectsShowcaseFirst } from "../data/projects";
 import PageTransition, { FadeUp, SlideUp, AnimatedSection } from "./PageTransition";
+
+const ORDERED_PROJECTS = sortProjectsShowcaseFirst(ALL_PROJECTS);
 
 export default function PortfolioPage() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
@@ -15,12 +17,12 @@ export default function PortfolioPage() {
       <PageTransition className="pt-32 pb-16 px-8 max-w-7xl mx-auto">
         <SlideUp>
           <h1 className="font-display text-4xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-8">
-            A decade of making<br />complexity look simple.
+            The work.<br />Start here.
           </h1>
         </SlideUp>
         <FadeUp>
           <p className="text-body max-w-lg">
-            Motion design for SaaS companies, platforms, agencies, and nonprofits. Every project here started with something hard to explain and ended with something people actually watched.
+            {ALL_PROJECTS.length} films for SaaS, platforms, agencies, and causes. Every project started with something hard to explain — and ended with something people actually watched.
           </p>
         </FadeUp>
       </PageTransition>
@@ -29,7 +31,7 @@ export default function PortfolioPage() {
       <div className="px-8 max-w-7xl mx-auto mb-16">
         <div className="border-b border-black/10 pb-6">
           <span className="text-metadata opacity-30">
-            {ALL_PROJECTS.length} Projects
+            {ALL_PROJECTS.length} Projects · strongest pieces first
           </span>
         </div>
       </div>
@@ -41,7 +43,7 @@ export default function PortfolioPage() {
             layout
             className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16"
           >
-            {ALL_PROJECTS.map((project, i) => (
+            {ORDERED_PROJECTS.map((project, i) => (
               <motion.a
                 key={project.id}
                 href={`/casestudy/${project.slug}/`}

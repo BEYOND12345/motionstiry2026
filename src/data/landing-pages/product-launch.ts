@@ -1,4 +1,5 @@
 import type { LandingPageConfig } from '../../components/LandingPage/types';
+import { getLandingShowcaseWork } from './showcase-work';
 import { SAAS_TRUST_LOGOS } from './trust-logos';
 import { TESTIMONIAL_AMSED } from './testimonials';
 
@@ -49,26 +50,7 @@ export const productLaunchLanding: LandingPageConfig = {
     body: 'Big agencies bury the craft under account managers and juniors. Solo freelancers can execute but rarely own the story. This studio sits between — big-agency thinking without the overheads, senior craft with direct access.',
   },
   featuredWork: {
-    projects: [
-      {
-        thumbnail: 'https://vumbnail.com/863428533.jpg',
-        client: 'Trusyft',
-        oneLineResult: 'Cinematic product promo built for launch energy.',
-        videoUrl: '863428533',
-      },
-      {
-        thumbnail: 'https://vumbnail.com/394326130.jpg',
-        client: 'Meltwater',
-        oneLineResult: 'Brand story for a media intelligence platform.',
-        videoUrl: '394326130',
-      },
-      {
-        thumbnail: 'https://vumbnail.com/861022443.jpg',
-        client: 'Atomic',
-        oneLineResult: 'Product capability made clear for go-to-market.',
-        videoUrl: '861022443',
-      },
-    ],
+    projects: getLandingShowcaseWork(),
   },
   testimonial: TESTIMONIAL_AMSED,
   process: {

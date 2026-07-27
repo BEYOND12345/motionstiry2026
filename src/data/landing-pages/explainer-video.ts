@@ -1,19 +1,7 @@
 import type { LandingPageConfig } from '../../components/LandingPage/types';
+import { getLandingShowcaseWork } from './showcase-work';
 import { SAAS_TRUST_LOGOS } from './trust-logos';
 import { TESTIMONIAL_ACODIS } from './testimonials';
-
-function piece(
-  vimeoId: string,
-  client: string,
-  oneLineResult: string
-): LandingPageConfig['featuredWork']['projects'][number] {
-  return {
-    thumbnail: `https://vumbnail.com/${vimeoId}.jpg`,
-    client,
-    oneLineResult,
-    videoUrl: vimeoId,
-  };
-}
 
 /** Config for /landing-page-explainer-video-01/ */
 export const explainerVideoLanding: LandingPageConfig = {
@@ -62,15 +50,7 @@ export const explainerVideoLanding: LandingPageConfig = {
     body: 'Big agencies bury the craft under account managers and juniors. Solo freelancers can execute but rarely own the story. This studio sits between — big-agency thinking without the overheads, senior craft with direct access.',
   },
   featuredWork: {
-    // 3×2 grid — short titles under each thumbnail (reference layout)
-    projects: [
-      piece('866174146', 'Trudi', 'Trudi Product Demo'),
-      piece('306054358', 'NSW Government', 'NSW Pinch Point Explained'),
-      piece('557884851', 'Method Recycling', 'Method Recycling'),
-      piece('879242129', 'Mosaic', 'Mosaic Platform Explained'),
-      piece('580088673', 'Acodis', 'Acodis AI Explainer'),
-      piece('762085540', 'RSPCA', 'RSPCA Cat Care'),
-    ],
+    projects: getLandingShowcaseWork(),
   },
   testimonial: TESTIMONIAL_ACODIS,
   process: {
