@@ -7,6 +7,7 @@ import {
   type Project,
 } from "../data/projects";
 import VimeoEmbed from "./VimeoEmbed";
+import { GOOGLE_RATING, FEATURED_GOOGLE_REVIEWS } from "../data/reviews";
 
 const SHOWCASE_ORDERED = sortProjectsShowcaseFirst(ALL_PROJECTS);
 const DEFAULT_EXPANDED = new Set<string>(SHOWCASE_PROJECT_IDS);
@@ -206,6 +207,11 @@ export default function Homepage() {
             {/* Results / Testimonials */}
             <section className="mb-48">
               <span className="text-metadata mb-10 block">Results</span>
+              <div className="mb-16 flex items-baseline gap-4">
+                <span className="font-display text-3xl font-bold tracking-tight">{GOOGLE_RATING.score}</span>
+                <span className="text-accent tracking-[0.2em]" aria-label="Five stars">★★★★★</span>
+                <span className="text-metadata">on Google · {GOOGLE_RATING.count} reviews</span>
+              </div>
               <div className="space-y-16">
                 <div>
                   <p className="text-body text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
@@ -251,6 +257,17 @@ export default function Homepage() {
                     <p className="text-metadata">Director of Communications, Infrastructure Australia</p>
                   </div>
                 </div>
+                {FEATURED_GOOGLE_REVIEWS.map((review) => (
+                  <div key={review.name}>
+                    <p className="text-body text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
+                      "{review.quote}"
+                    </p>
+                    <div>
+                      <p className="font-display font-medium text-sm">{review.name}</p>
+                      <p className="text-metadata">Google review</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </section>
 

@@ -1,5 +1,8 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import { GOOGLE_RATING, GOOGLE_REVIEWS } from '../data/reviews';
+
+const CONTACT_REVIEWS = [GOOGLE_REVIEWS[1], GOOGLE_REVIEWS[5]];
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -66,6 +69,22 @@ const structuredData = {
             <a href="mailto:daniel@motionstory.com.au?subject=Discovery%20call%20request" class="text-metadata border-b border-black/20 pb-1 hover:border-black transition-colors">
               Request a 20-minute discovery call →
             </a>
+          </div>
+        </div>
+
+        <div class="border-t border-black/10 pt-12">
+          <div class="flex items-baseline gap-3 mb-8">
+            <span class="font-display text-2xl font-bold tracking-tight">{GOOGLE_RATING.score}</span>
+            <span class="text-accent tracking-[0.2em]" aria-label="Five stars">★★★★★</span>
+            <span class="text-metadata">on Google · {GOOGLE_RATING.count} reviews</span>
+          </div>
+          <div class="space-y-8">
+            {CONTACT_REVIEWS.map((review) => (
+              <div>
+                <p class="text-body mb-3">"{review.quote}"</p>
+                <p class="text-metadata">{review.name} · Google review</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

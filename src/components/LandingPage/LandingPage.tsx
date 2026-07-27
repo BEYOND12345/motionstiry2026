@@ -522,6 +522,10 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
               <p className="mt-2 text-[11px] uppercase tracking-[0.14em] text-black/40">
                 {config.testimonial.role}, {config.testimonial.company}
               </p>
+              <p className="mt-8 text-[11px] uppercase tracking-[0.14em] text-black/40">
+                <span style={{ color: 'var(--landing-accent, #FF0000)' }}>★★★★★</span>
+                {' '}5.0 on Google · 10 reviews
+              </p>
             </footer>
           </div>
         </section>
