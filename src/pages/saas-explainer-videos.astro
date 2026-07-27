@@ -1,86 +1,50 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
-import ServiceLanding from '../components/ServiceLanding.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LandingPage from '../components/LandingPage/LandingPage';
+import { saasExplainerLanding } from '../data/landing-pages/saas-explainer';
+import '../styles/global.css';
 
-const work = [
-  { title: "Mosaic / Strategic Data Planning", link: "/casestudy/mosaic-platform-explained/", vimeoId: "879242129" },
-  { title: "Atomic / In-App Messaging", link: "/casestudy/atomic-in-app-messaging/", vimeoId: "861022443" },
-  { title: "Acodis / AI Document Processing", link: "/casestudy/acodis/", vimeoId: "580088673" },
-  { title: "Trudi / AI Property Management", link: "/casestudy/property-management-explainer-video/", vimeoId: "866174146" },
-  { title: "Wipster / Video Feedback Tool", link: "/casestudy/wipster-product-overview/", vimeoId: "648360270" },
-  { title: "Good2Pay / Paperless Invoicing", link: "/casestudy/good2pay/", vimeoId: "448704979" },
-];
-
-const moreWork = [
-  { title: "InfoView / Digital Expense Management", link: "/casestudy/infoview/", vimeoId: "404852749" },
-  { title: "Class Trust / Accounting Software", link: "/casestudy/class-trust-motion-graphic-explainer/", vimeoId: "485803845" },
-  { title: "Giraffe / Designing Cities", link: "/casestudy/giraffe/", vimeoId: "762112642" },
-  { title: "Shape Connect / Website Security", link: "/casestudy/shape-connect/", vimeoId: "320632556" },
-];
+const config = saasExplainerLanding;
 
 const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "SaaS Explainer Videos",
-  "description": "SaaS explainer videos that turn complex software into clear, compelling stories. Product demos, platform explainers, and onboarding animation.",
-  "provider": { "@type": "Organization", "name": "Motion Story", "url": "https://motionstory.com.au" },
-  "serviceType": "SaaS Explainer Video Production",
-  "areaServed": "Worldwide",
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://motionstory.com.au/" },
-    { "@type": "ListItem", "position": 2, "name": "SaaS Explainer Videos", "item": "https://motionstory.com.au/saas-explainer-videos/" },
-  ],
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'SaaS Explainer Videos',
+  description: config.seo.metaDescription,
+  provider: { '@type': 'Organization', name: 'Motion Story', url: 'https://motionstory.com.au' },
+  serviceType: 'SaaS Explainer Videos',
+  areaServed: 'Worldwide',
 };
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "How much does a SaaS explainer video cost?", "acceptedAnswer": { "@type": "Answer", "text": "From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront." } },
-    { "@type": "Question", "name": "What's the difference working with Motion Story?", "acceptedAnswer": { "@type": "Answer", "text": "You work with Dan throughout — concept, storyboard, design, illustration, and animation. No account managers, no handoffs. Agencies welcome, white label or direct." } },
-  ],
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: config.faq.items.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: f.answer },
+  })),
 };
 ---
 
-<PageLayout
-  showCTA={false}
-  floatSubject="SaaS explainer video"
-  title="SaaS Explainer Videos | Motion Story"
-  description="SaaS explainer videos for complex software. Clear product stories for sales, onboarding, and landing pages. Work directly with Dan."
+<BaseLayout
+  title={config.seo.titleTag}
+  description={config.seo.metaDescription}
+  canonicalUrl={`https://motionstory.com.au${config.seo.canonicalPath}`}
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <!-- TODO(dan): Replace with live GA4 + Google Ads IDs -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      // gtag('js', new Date());
+      // gtag('config', 'G-XXXXXXXX');
+      // gtag('config', 'AW-XXXXXXXX');
+    </script>
   </Fragment>
 
-  <ServiceLanding
-    eyebrow="SaaS Explainer Videos"
-    headline={["Your software is invisible.", "Your explainer shouldn't be."]}
-    lede="SaaS explainers that show what your product does, before the sales call."
-    work={work}
-    moreWork={moreWork}
-    quote="40,000 views on YouTube, which increased brand perception and reputation."
-    quoteBy="Simon Lehman"
-    quoteRole="Marketing Manager, Acodis"
-    faqs={[
-      { label: "Cost", body: "From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront." },
-      { label: "How we work", body: "You work with Dan throughout — concept, storyboard, design, illustration, and animation. Agencies welcome, white label or direct." },
-    ]}
-    relatedReading={[
-      { href: "/how-explainer-videos-supercharge-startup-growth/", label: "How SaaS explainer videos drive growth" },
-      { href: "/how-to-write-a-explainer-video-script/", label: "How to write an explainer video script" },
-      { href: "/how-much-does-saas-motion-design-video-cost/", label: "What SaaS motion design videos cost" },
-    ]}
-    links={[
-      { href: "/product-demo-videos/", eyebrow: "Demos", label: "Product demo videos →" },
-      { href: "/technology-videos/", eyebrow: "Tech", label: "Technology videos →" },
-      { href: "/work/", eyebrow: "Work", label: "See all work →" },
-    ]}
-  />
-</PageLayout>
+  <LandingPage client:load config={config} />
+</BaseLayout>
