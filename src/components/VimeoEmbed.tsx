@@ -7,6 +7,8 @@ interface VimeoEmbedProps {
   autoColor?: boolean;
   loadImmediately?: boolean;
   loading?: "eager" | "lazy";
+  /** Privacy hash for unlisted Vimeo videos */
+  vimeoHash?: string;
 }
 
 export default function VimeoEmbed({
@@ -16,6 +18,7 @@ export default function VimeoEmbed({
   autoColor = false,
   loadImmediately = false,
   loading = "lazy",
+  vimeoHash,
 }: VimeoEmbedProps) {
   const [isLoaded, setIsLoaded] = useState(loadImmediately);
 
@@ -41,7 +44,7 @@ export default function VimeoEmbed({
       )}
       {isLoaded && (
         <iframe
-          src={`https://player.vimeo.com/video/${vimeoId}?${loadImmediately ? "" : "autoplay=1&"}title=0&byline=0&portrait=0`}
+          src={`https://player.vimeo.com/video/${vimeoId}?${vimeoHash ? `h=${vimeoHash}&` : ""}${loadImmediately ? "" : "autoplay=1&"}title=0&byline=0&portrait=0`}
           className="absolute inset-0 w-full h-full"
           allow="autoplay; fullscreen; picture-in-picture"
           allowFullScreen

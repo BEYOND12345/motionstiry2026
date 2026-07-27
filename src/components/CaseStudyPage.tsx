@@ -46,6 +46,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
           <div style={{ viewTransitionName: `project-${project.slug}` }}>
             <VimeoEmbed
               vimeoId={project.vimeoId}
+              vimeoHash={project.vimeoHash}
               title={project.title}
               loadImmediately
               loading="eager"

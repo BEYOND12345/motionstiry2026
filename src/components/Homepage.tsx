@@ -76,6 +76,7 @@ const ProjectRow = ({
             <div className="px-4 md:px-16 pb-16">
               <VimeoEmbed
                 vimeoId={project.vimeoId}
+                vimeoHash={project.vimeoHash}
                 title={project.title}
                 className="mb-12"
                 autoColor
