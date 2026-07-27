@@ -204,55 +204,50 @@ const credentials = [
   </section>
 
   <section class="landing-section">
-    <span class="landing-eyebrow landing-section-label">Why the work lasts</span>
-    <div class="landing-cred">
-      {credentials.map((item) => (
-        <div class="landing-cred-row">
-          <h3 class="landing-cred-label">{item.label}</h3>
-          <p class="landing-cred-body">{item.body}</p>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <section class="landing-section">
-    <span class="landing-eyebrow landing-section-label">What clients say</span>
     <blockquote class="font-display text-xl md:text-2xl font-medium tracking-tight leading-snug max-w-2xl mb-6">
       “{pageReview.quote}”
     </blockquote>
-    <p class="text-metadata mb-10">{pageReview.name} — {pageReview.role}, {pageReview.company}</p>
+    <p class="text-metadata mb-4">{pageReview.name} — {pageReview.role}, {pageReview.company}</p>
     <p class="text-metadata">
       <span class="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · <a href="/reviews/" class="border-b border-black/20 hover:border-black transition-colors">All reviews →</a>
     </p>
   </section>
 
-  {faqs.length > 0 && (
-    <section class="landing-section">
-      <span class="landing-eyebrow landing-section-label">Questions</span>
-      <div class="landing-faq">
-        {faqs.map((faq) => (
-          <div class="landing-faq-row">
-            <h3 class="landing-faq-label">{faq.label}</h3>
-            <p class="text-body">{faq.body}</p>
+  <section class="landing-section">
+    <span class="landing-eyebrow landing-section-label">Details</span>
+    <div class="fold">
+      {credentials.map((item) => (
+        <details class="fold-item">
+          <summary>{item.label}</summary>
+          <div class="fold-body">
+            <p>{item.body}</p>
           </div>
-        ))}
-      </div>
-    </section>
-  )}
-
-  {relatedReading.length > 0 && (
-    <section class="landing-section">
-      <span class="landing-eyebrow landing-section-label">Related reading</span>
-      <div class="landing-cred">
-        {relatedReading.map((item) => (
-          <a href={item.href} class="landing-cred-row group" style="text-decoration: none; color: inherit;">
-            <h3 class="landing-cred-label group-hover:opacity-55 transition-opacity">{item.label} →</h3>
-            <p class="landing-cred-body">From the Motion Story blog</p>
-          </a>
-        ))}
-      </div>
-    </section>
-  )}
+        </details>
+      ))}
+      {faqs.map((faq) => (
+        <details class="fold-item">
+          <summary>{faq.label}</summary>
+          <div class="fold-body">
+            <p>{faq.body}</p>
+          </div>
+        </details>
+      ))}
+      {relatedReading.length > 0 && (
+        <details class="fold-item">
+          <summary>Related reading</summary>
+          <div class="fold-body">
+            <ul>
+              {relatedReading.map((item) => (
+                <li>
+                  <a href={item.href} class="border-b border-black/20 hover:border-black transition-colors">{item.label} →</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </details>
+      )}
+    </div>
+  </section>
 
   {links.length > 0 && (
     <nav class="landing-links" aria-label="Related pages">

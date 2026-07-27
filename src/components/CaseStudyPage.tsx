@@ -96,19 +96,19 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
         </div>
       </AnimatedSection>
 
-      {/* Client review */}
-      <AnimatedSection className="band-black">
-        <div className="max-w-6xl mx-auto px-8 py-24">
+      {/* Client review — quiet, one line of proof */}
+      <AnimatedSection className="border-t border-black/10">
+        <div className="max-w-6xl mx-auto px-8 py-20">
           <FadeUp>
-            <span className="text-metadata !text-white/40 mb-10 block">
-              {clientReview ? `What ${review.company} said` : "What clients say"}
-            </span>
-            <blockquote className="font-display text-2xl md:text-4xl font-bold tracking-tight leading-snug max-w-4xl mb-10">
+            <blockquote className="font-display text-xl md:text-2xl font-medium tracking-tight leading-snug max-w-3xl mb-6">
               "{review.quote}"
             </blockquote>
-            <p className="font-display font-medium text-sm">{review.name}</p>
-            <p className="text-metadata !text-white/40 mb-8">{review.role}, {review.company}</p>
-            <a href="/reviews/" className="text-metadata !text-white/40 hover:!text-white transition-colors">
+            <p className="font-display font-medium text-sm mb-1">{review.name}</p>
+            <p className="text-metadata mb-8">
+              {review.role}, {review.company}
+              {clientReview ? "" : " · Client review"}
+            </p>
+            <a href="/reviews/" className="text-metadata hover:text-black transition-colors">
               <span className="text-accent">★★★★★</span> 5.0 on Google · All reviews →
             </a>
           </FadeUp>

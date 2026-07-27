@@ -12,7 +12,25 @@ import { GOOGLE_RATING } from "../data/reviews";
 const SHOWCASE_ORDERED = sortProjectsShowcaseFirst(ALL_PROJECTS);
 const DEFAULT_EXPANDED = new Set<string>(SHOWCASE_PROJECT_IDS);
 
-// --- Components ---
+const CLIENTS = [
+  "United Nations",
+  "RSPCA",
+  "Red Cross",
+  "NSW Government",
+  "Wipster",
+  "Aon",
+  "UTS",
+  "Cotton Australia",
+  "Oovvuu",
+  "IPA",
+];
+
+const AUDIENCES = [
+  { title: "SaaS & Tech", desc: "Product demos, platform explainers, release animations, onboarding.", href: "/saas-tech/" },
+  { title: "Agencies & Studios", desc: "White label or collaborative creative direction — senior craft without another production layer.", href: "/agencies/" },
+  { title: "Startups", desc: "Launch explainers and the first product story that has to land before a login.", href: "/startups/" },
+  { title: "Causes & Nonprofits", desc: "Mission work with clarity, not noise.", href: "/causes/" },
+];
 
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -37,7 +55,7 @@ const CustomCursor = () => {
 const ProjectRow = ({
   project,
   isExpanded,
-  onToggle
+  onToggle,
 }: {
   project: Project;
   isExpanded: boolean;
@@ -118,14 +136,14 @@ export default function Homepage() {
         {/* Left Side: Messaging & Story */}
         <aside className="split-left relative">
           <header id="top">
-            <div className="flex items-center justify-start mb-24">
+            <div className="flex items-center justify-start mb-16">
               <nav className="flex items-center gap-10">
                 {[
                   { label: "Work", href: "#work" },
                   { label: "About", href: "#profile" },
                   { label: "Blog", href: "/blog/" },
                   { label: "Start a Project", href: "#contact" },
-                ].map(item => (
+                ].map((item) => (
                   <a
                     key={item.label}
                     href={item.href}
@@ -137,19 +155,22 @@ export default function Homepage() {
               </nav>
             </div>
 
-            <div className="mb-32" id="work">
-              <h1 className="text-display mb-10">
+            <div className="mb-10" id="work">
+              <h1 className="text-display mb-6">
                 Complex<br />
                 Made<br />
                 Simple.
               </h1>
-              <p className="text-body max-w-md mb-12">
+              <p className="text-body max-w-md mb-6">
                 Small studio, big impact. I help SaaS companies and agencies distill hard ideas into clear animation and design — storytelling that brings the vision to life. You work directly with me, not a production chain.
               </p>
-
+              <p className="text-metadata mb-3">Clients</p>
+              <p className="font-display text-[13px] md:text-sm font-medium tracking-tight text-black/40 leading-relaxed mb-8">
+                {CLIENTS.join(" · ")}
+              </p>
               <a
                 href="/work/"
-                className="text-nav-item relative group flex items-center gap-4 mt-16"
+                className="text-nav-item relative group flex items-center gap-4"
               >
                 <span className="text-accent text-2xl">→</span>
                 See all work
@@ -157,153 +178,123 @@ export default function Homepage() {
             </div>
           </header>
 
-          <div className="space-y-32 mb-24">
-            {/* Profile Section */}
-            <section id="profile" className="mb-48">
-              <span className="text-metadata mb-8 block">Profile</span>
-              <div className="max-w-2xl">
-                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden mb-12">
+          {/* Continuous column — hairline sections, no orphan gaps */}
+          <div className="divide-y divide-black/10 border-t border-black/10">
+            <section id="profile" className="py-8">
+              <span className="text-metadata mb-5 block">Profile</span>
+              <div className="flex gap-5 items-start mb-5">
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden shrink-0">
                   <img src="/daniel-neale.jpg" alt="Daniel Neale" className="w-full h-full object-cover" />
                 </div>
-                <h3 className="text-heading mb-10">Daniel Neale</h3>
-                <p className="text-body mb-6">
-                  Creative director and animator. Trained as a graphic designer, making motion since 2010 — 1,000+ films deep. Skip the big studio. Work directly with someone senior who is also great on the tools.
-                </p>
-                <p className="text-body mb-6">
-                  I integrate with your team like a fractional creative partner: storytelling, planning, and craft. Clients use the work to win investment, launch products, educate teams, and explain complex platforms. SaaS, startups, agencies — any size, as long as the idea needs clarity.
-                </p>
-                <p className="text-body mb-12">
-                  Obsessive about making dry subjects clear and watchable. Also a father, a surfer, and a big-time animal lover. I put everything into the work.
-                </p>
-                <div className="flex gap-12">
-                  <a href="https://www.behance.net/danielneale" className="text-metadata border-b border-black/5 pb-2 hover:border-black transition-colors" target="_blank" rel="noopener">Behance</a>
-                  <a href="https://vimeo.com/wearemotionstory" className="text-metadata border-b border-black/5 pb-2 hover:border-black transition-colors" target="_blank" rel="noopener">Vimeo</a>
+                <div>
+                  <h3 className="font-display text-lg md:text-xl font-bold tracking-tight mb-1">Daniel Neale</h3>
+                  <p className="text-body max-w-md">
+                    Creative director. Making motion since 2010. Small studio, big impact — you work with me directly.
+                  </p>
                 </div>
+              </div>
+              <div className="fold max-w-xl">
+                <details className="fold-item">
+                  <summary>More about how I work</summary>
+                  <div className="fold-body">
+                    <p className="mb-3">
+                      Fractional creative partner: storytelling, planning, and craft. SaaS, startups, agencies — any size, as long as the idea needs clarity.
+                    </p>
+                    <p>
+                      Obsessive about making dry subjects clear and watchable. Also a father, a surfer, and a big-time animal lover.
+                    </p>
+                  </div>
+                </details>
               </div>
             </section>
 
-            {/* Who I Work With */}
-            <section id="clients" className="mb-48">
-              <span className="text-metadata mb-10 block">Who I Work With</span>
-              <div className="grid grid-cols-1 gap-16">
-                {[
-                  { title: "SaaS & Tech Companies", desc: "Product demos, platform explainers, release animations, onboarding. I help software companies show what they've built — and why it matters — clearly.", href: "/saas-tech/" },
-                  { title: "Agencies & Studios", desc: "Lean on senior storytelling and motion craft. White label or collaborative creative direction when your team needs depth without another layer of production.", href: "/agencies/" },
-                  { title: "Startups & Early-Stage", desc: "Homepage heroes, launch explainers, and the first product story that has to land before a login. Built for pre-launch to Series A.", href: "/startups/" },
-                  { title: "Causes & Nonprofits", desc: "Motion design for missions that matter. When the stakes are real and the brief needs to cut through noise, not add to it.", href: "/causes/" }
-                ].map((client, i) => (
-                  <a key={i} href={client.href} className="group block">
-                    <h4 className="text-project-title mb-4 group-hover:opacity-70 transition-opacity">
-                      {client.title}
-                    </h4>
-                    <p className="text-body max-w-md">
-                      {client.desc}
-                    </p>
-                  </a>
+            <section id="clients" className="py-8">
+              <span className="text-metadata mb-4 block">Who I Work With</span>
+              <div className="fold max-w-xl">
+                {AUDIENCES.map((client) => (
+                  <details key={client.href} className="fold-item">
+                    <summary>{client.title}</summary>
+                    <div className="fold-body">
+                      <p className="mb-3">{client.desc}</p>
+                      <p>
+                        <a href={client.href} className="border-b border-black/20 hover:border-black transition-colors">
+                          See work →
+                        </a>
+                      </p>
+                    </div>
+                  </details>
                 ))}
               </div>
             </section>
 
-            {/* Results — one quote, then a quiet pointer to the rest */}
-            <section className="mb-48">
-              <span className="text-metadata mb-10 block">Results</span>
-              <blockquote className="font-display text-xl md:text-2xl font-medium tracking-tight leading-snug mb-8">
+            <section className="py-8">
+              <blockquote className="font-display text-base md:text-lg font-medium tracking-tight leading-snug mb-4 max-w-lg">
                 “62% completion rate. 21% view rate. For a video about bins, we're astounded. Long-term asset for our business.”
               </blockquote>
-              <p className="font-display font-medium text-sm mb-1">Lee Bright</p>
-              <p className="text-metadata mb-12">Marketing Lead, Method Recycling</p>
+              <p className="font-display font-medium text-sm mb-0.5">Lee Bright</p>
+              <p className="text-metadata mb-4">Marketing Lead, Method Recycling</p>
+              <p className="text-metadata">
+                <span className="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · {GOOGLE_RATING.count} reviews
+                <span className="mx-2 opacity-30">·</span>
+                <a href="/reviews/" className="border-b border-black/15 hover:border-black transition-colors">
+                  All reviews →
+                </a>
+              </p>
+            </section>
 
-              <div className="border-t border-black/10 pt-8 flex flex-wrap items-baseline justify-between gap-4">
-                <p className="text-metadata">
-                  <span className="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · {GOOGLE_RATING.count} reviews
-                </p>
-                <a href="/reviews/" className="group flex items-center gap-3">
+            <section className="py-7">
+              <div className="flex flex-wrap items-baseline justify-between gap-3">
+                <div>
+                  <span className="text-metadata mb-1 block">Thinking</span>
+                  <p className="text-body max-w-sm">
+                    How complex ideas land. When to use video. What demos get wrong.
+                  </p>
+                </div>
+                <a href="/blog/" className="group flex items-center gap-3 shrink-0">
                   <span className="text-accent text-xl">→</span>
-                  <span className="text-metadata group-hover:text-black transition-colors">All reviews</span>
+                  <span className="text-metadata group-hover:text-black transition-colors">Read the blog</span>
                 </a>
               </div>
             </section>
 
-            {/* Clients */}
-            <section className="mb-48">
-              <span className="text-metadata mb-10 block">Clients</span>
-              <div className="flex flex-wrap gap-x-8 gap-y-5">
-                {[
-                  "United Nations",
-                  "RSPCA",
-                  "Red Cross",
-                  "NSW Government",
-                  "Wipster",
-                  "Aon",
-                  "UTS",
-                  "Cotton Australia",
-                  "Oovvuu",
-                  "IPA",
-                ].map(name => (
-                  <span
-                    key={name}
-                    className="font-display text-sm md:text-base font-medium tracking-tight opacity-30"
-                  >
-                    {name}
-                  </span>
-                ))}
-              </div>
-            </section>
-
-            {/* Blog */}
-            <section className="mb-48">
-              <span className="text-metadata mb-6 block">Thinking</span>
-              <p className="text-body mb-8">
-                How to make complex ideas land. When to use video. What most demos get wrong.
-              </p>
-              <a
-                href="/blog/"
-                className="group flex items-center gap-4"
-              >
-                <span className="text-accent text-2xl">→</span>
-                <span className="text-nav-item">Read the blog</span>
-              </a>
-            </section>
-
-            {/* Contact Form */}
-            <section id="contact" className="mb-48">
-              <span className="text-metadata mb-10 block">Start a Project</span>
-              <form className="space-y-12" action="https://formspree.io/f/xaqlpada" method="POST">
+            <section id="contact" className="py-8">
+              <span className="text-metadata mb-6 block">Start a Project</span>
+              <form className="space-y-6" action="https://formspree.io/f/xaqlpada" method="POST">
                 <input type="hidden" name="_next" value="https://motionstory.com.au/thank-you/" />
                 <div className="group">
-                  <label htmlFor="hp-name" className="text-metadata mb-4 block transition-colors group-focus-within:text-black">Name</label>
+                  <label htmlFor="hp-name" className="text-metadata mb-2 block transition-colors group-focus-within:text-black">Name</label>
                   <input
                     id="hp-name"
                     type="text"
                     name="name"
                     placeholder="Your name"
                     required
-                    className="w-full bg-transparent border-b border-black/10 py-6 focus:outline-none focus:border-black transition-colors text-body"
+                    className="w-full bg-transparent border-b border-black/10 py-3 focus:outline-none focus:border-black transition-colors text-body"
                   />
                 </div>
                 <div className="group">
-                  <label htmlFor="hp-email" className="text-metadata mb-4 block transition-colors group-focus-within:text-black">Email</label>
+                  <label htmlFor="hp-email" className="text-metadata mb-2 block transition-colors group-focus-within:text-black">Email</label>
                   <input
                     id="hp-email"
                     type="email"
                     name="email"
                     placeholder="you@example.com"
                     required
-                    className="w-full bg-transparent border-b border-black/10 py-6 focus:outline-none focus:border-black transition-colors text-body"
+                    className="w-full bg-transparent border-b border-black/10 py-3 focus:outline-none focus:border-black transition-colors text-body"
                   />
                 </div>
                 <div className="group">
-                  <label htmlFor="hp-message" className="text-metadata mb-4 block transition-colors group-focus-within:text-black">Tell me about your project</label>
+                  <label htmlFor="hp-message" className="text-metadata mb-2 block transition-colors group-focus-within:text-black">Tell me about your project</label>
                   <textarea
                     id="hp-message"
                     name="message"
                     placeholder="What are you working on? What's the challenge?"
-                    rows={4}
+                    rows={3}
                     required
-                    className="w-full bg-transparent border-b border-black/10 py-6 focus:outline-none focus:border-black transition-colors text-body resize-none"
+                    className="w-full bg-transparent border-b border-black/10 py-3 focus:outline-none focus:border-black transition-colors text-body resize-none"
                   />
                 </div>
-                <button className="group/btn relative overflow-hidden w-full py-8 border border-black/10 hover:border-black transition-all duration-500">
+                <button className="group/btn relative overflow-hidden w-full py-4 border border-black/15 hover:border-black transition-all duration-500">
                   <span className="text-metadata relative z-10">Send it through</span>
                   <div className="absolute inset-0 bg-black/[0.02] translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500" />
                 </button>
@@ -311,43 +302,39 @@ export default function Homepage() {
             </section>
           </div>
 
-          <footer className="site-footer p-8 md:p-12">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-12 mb-12">
+          <footer className="mt-8 border-t border-black/10 bg-white pt-8 pb-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-8">
               <div>
-                <span className="text-metadata !text-white/40 mb-4 block">Connect</span>
-                <div className="flex flex-col gap-2">
-                  <a href="https://vimeo.com/wearemotionstory" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors" target="_blank" rel="noopener">Vimeo</a>
-                  <a href="https://www.linkedin.com/company/motionstory" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors" target="_blank" rel="noopener">LinkedIn</a>
-                  <a href="https://www.behance.net/motionstory" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors" target="_blank" rel="noopener">Behance</a>
+                <span className="text-metadata mb-3 block">Connect</span>
+                <div className="flex flex-col gap-1.5">
+                  <a href="https://vimeo.com/wearemotionstory" className="text-body !text-sm hover:text-black transition-colors" target="_blank" rel="noopener">Vimeo</a>
+                  <a href="https://www.linkedin.com/company/motionstory" className="text-body !text-sm hover:text-black transition-colors" target="_blank" rel="noopener">LinkedIn</a>
+                  <a href="https://www.behance.net/motionstory" className="text-body !text-sm hover:text-black transition-colors" target="_blank" rel="noopener">Behance</a>
                 </div>
               </div>
               <div>
-                <span className="text-metadata !text-white/40 mb-4 block">Work</span>
-                <div className="flex flex-col gap-2">
-                  <a href="/services/" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors">Services</a>
-                  <a href="/startups/" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors">Startups</a>
-                  <a href="/product-demo-videos/" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors">Product Demo Videos</a>
-                  <a href="/technology-videos/" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors">Technology Videos</a>
-                  <a href="/saas-tech/" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors">SaaS & Tech</a>
-                  <a href="/agencies/" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors">Agencies</a>
-                  <a href="/causes/" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors">Causes & Nonprofits</a>
+                <span className="text-metadata mb-3 block">Work</span>
+                <div className="flex flex-col gap-1.5">
+                  <a href="/services/" className="text-body !text-sm hover:text-black transition-colors">Services</a>
+                  <a href="/startups/" className="text-body !text-sm hover:text-black transition-colors">Startups</a>
+                  <a href="/saas-tech/" className="text-body !text-sm hover:text-black transition-colors">SaaS & Tech</a>
+                  <a href="/agencies/" className="text-body !text-sm hover:text-black transition-colors">Agencies</a>
+                  <a href="/causes/" className="text-body !text-sm hover:text-black transition-colors">Causes</a>
                 </div>
               </div>
               <div>
-                <span className="text-metadata !text-white/40 mb-4 block">Studio</span>
-                <p className="text-body !text-sm !text-white/60">Byron Bay, NSW</p>
-                <p className="text-body !text-sm !text-white/60">Australia</p>
-                <div className="flex flex-col gap-2 mt-4">
-                  <a href="/about/" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors">About</a>
-                  <a href="/reviews/" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors">Reviews</a>
+                <span className="text-metadata mb-3 block">Studio</span>
+                <p className="text-body !text-sm">Byron Bay, NSW</p>
+                <p className="text-body !text-sm mb-2">Australia</p>
+                <div className="flex flex-col gap-1.5">
+                  <a href="/about/" className="text-body !text-sm hover:text-black transition-colors">About</a>
+                  <a href="/reviews/" className="text-body !text-sm hover:text-black transition-colors">Reviews</a>
                 </div>
               </div>
             </div>
-            <div className="pt-8 border-t border-white/10 flex flex-col items-start gap-4">
-              <a href="#top" className="text-metadata !text-white/40 hover:!text-white transition-colors">Back to Top</a>
-              <div className="flex flex-col gap-1">
-                <span className="text-metadata !text-white/40">Motion Story<span className="text-accent">.</span> Complexity Explained.</span>
-              </div>
+            <div className="pt-5 border-t border-black/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <a href="#top" className="text-metadata hover:text-black transition-colors">Back to Top</a>
+              <span className="text-metadata">Motion Story<span className="text-accent">.</span> Complexity Explained.</span>
             </div>
           </footer>
         </aside>
@@ -362,7 +349,7 @@ export default function Homepage() {
               </span>
             </div>
 
-            <div className="pb-32">
+            <div className="pb-24">
               <AnimatePresence mode="popLayout">
                 {SHOWCASE_ORDERED.map((project) => (
                   <motion.div
@@ -376,7 +363,7 @@ export default function Homepage() {
                     <ProjectRow
                       project={project}
                       isExpanded={expandedIds.has(project.id)}
-                      onToggle={() => setExpandedIds(prev => {
+                      onToggle={() => setExpandedIds((prev) => {
                         const next = new Set(prev);
                         if (next.has(project.id)) next.delete(project.id);
                         else next.add(project.id);
@@ -388,7 +375,7 @@ export default function Homepage() {
               </AnimatePresence>
             </div>
 
-            <div className="px-4 md:px-16 pb-16 border-b border-black/10">
+            <div className="px-4 md:px-16 pb-12 border-b border-black/10">
               <a
                 href="/work/"
                 className="text-metadata border-b border-black/20 pb-1 hover:border-black transition-colors"
@@ -397,33 +384,33 @@ export default function Homepage() {
               </a>
             </div>
 
-            <section className="px-4 md:px-16 py-16 md:py-48 border-t border-black/10">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-24 mb-32">
+            <section className="px-4 md:px-16 py-16 md:py-20">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
                 <div>
-                  <span className="text-metadata mb-8 block">What I Make</span>
-                  <ul className="space-y-4">
-                    {["Product Demos", "Platform Explainers", "Onboarding Animation", "Data Visualisation", "Campaign Motion"].map(item => (
+                  <span className="text-metadata mb-5 block">What I Make</span>
+                  <ul className="space-y-3">
+                    {["Product Demos", "Platform Explainers", "Onboarding Animation", "Data Visualisation", "Campaign Motion"].map((item) => (
                       <li key={item} className="text-body !text-sm">{item}</li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <span className="text-metadata mb-8 block">Who It's For</span>
-                  <ul className="space-y-4">
-                    {["SaaS & Tech Companies", "Agencies & Studios", "Causes & Nonprofits", "Government & Data", "Startups"].map(item => (
+                  <span className="text-metadata mb-5 block">Who It's For</span>
+                  <ul className="space-y-3">
+                    {["SaaS & Tech Companies", "Agencies & Studios", "Causes & Nonprofits", "Government & Data", "Startups"].map((item) => (
                       <li key={item} className="text-body !text-sm">{item}</li>
                     ))}
                   </ul>
                 </div>
               </div>
 
-              <div className="pt-24 border-t border-black/5">
-                <span className="text-metadata mb-12 block">Start a Project</span>
-                <h2 className="font-display text-2xl md:text-[32px] font-bold tracking-tight uppercase mb-16">
+              <div className="pt-12 border-t border-black/10">
+                <span className="text-metadata mb-6 block">Start a Project</span>
+                <h2 className="font-display text-2xl md:text-[28px] font-bold tracking-tight uppercase mb-8">
                   Got something<br />
                   complex to explain?
                 </h2>
-                <a href="mailto:daniel@motionstory.com.au" className="font-display text-lg md:text-2xl font-bold tracking-tight hover:opacity-50 transition-opacity border-b border-black/20 pb-4 break-all">
+                <a href="mailto:daniel@motionstory.com.au" className="font-display text-lg md:text-xl font-bold tracking-tight hover:opacity-50 transition-opacity border-b border-black/20 pb-3 break-all">
                   daniel@motionstory.com.au
                 </a>
               </div>

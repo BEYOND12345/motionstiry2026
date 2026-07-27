@@ -297,7 +297,7 @@ function ContactForm({
 
 export default function LandingPage({ config }: { config: LandingPageConfig }) {
   const [lightbox, setLightbox] = useState<LandingPageConfig['featuredWork']['projects'][number] | null>(null);
-  const [faqOpen, setFaqOpen] = useState<number | null>(0);
+  const [faqOpen, setFaqOpen] = useState<number | null>(null);
   const [stickyVisible, setStickyVisible] = useState(false);
 
   useEffect(() => {
@@ -438,12 +438,14 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
           <p className="max-w-4xl font-display text-[1.4rem] font-medium leading-[1.28] tracking-tight sm:text-[1.75rem] sm:leading-[1.25] lg:text-[2.5rem] lg:leading-[1.18]">
             {config.coreSell.leadCopy}
           </p>
-          <div className="mt-12 grid gap-px bg-black/8 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="fold mt-12 max-w-2xl sm:mt-16">
             {config.coreSell.proofPoints.map((point) => (
-              <div key={point.title} className="bg-white p-7 sm:p-8 md:p-10">
-                <h2 className="font-display text-lg font-bold tracking-tight">{point.title}</h2>
-                <p className="mt-3 text-[15px] leading-relaxed text-black/50 sm:mt-4">{point.body}</p>
-              </div>
+              <details key={point.title} className="fold-item">
+                <summary>{point.title}</summary>
+                <div className="fold-body">
+                  <p>{point.body}</p>
+                </div>
+              </details>
             ))}
           </div>
         </section>
@@ -511,41 +513,48 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
           </div>
         </section>
 
-        {/* 6. Testimonial */}
-        <section className="band-black">
-          <div className="mx-auto max-w-5xl px-5 py-20 sm:px-6 sm:py-24 lg:px-12 lg:py-32">
-            <blockquote className="font-display text-[1.4rem] font-medium leading-[1.28] tracking-tight sm:text-[1.75rem] sm:leading-[1.25] lg:text-[2.75rem] lg:leading-[1.15]">
+        {/* 6. Testimonial — quiet editorial, not a black wall */}
+        <section className="border-y border-black/8">
+          <div className="mx-auto max-w-5xl px-5 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-24">
+            <blockquote className="font-display text-[1.25rem] font-medium leading-[1.3] tracking-tight sm:text-[1.5rem] lg:text-[2rem] lg:leading-[1.2] max-w-3xl">
               “{config.testimonial.quote}”
             </blockquote>
-            <footer className="mt-10 sm:mt-12">
-              <p className="font-display text-sm font-bold tracking-tight">{config.testimonial.name}</p>
-              <p className="mt-2 text-[11px] uppercase tracking-[0.14em] text-white/40">
+            <footer className="mt-8 sm:mt-10">
+              <p className="font-display text-sm font-medium tracking-tight">{config.testimonial.name}</p>
+              <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-black/40">
                 {config.testimonial.role}, {config.testimonial.company}
               </p>
-              <p className="mt-8 text-[11px] uppercase tracking-[0.14em] text-white/40">
-                <span style={{ color: 'var(--landing-accent, #FF0000)' }}>★★★★★</span>
-                {' '}5.0 on Google · 10 reviews
+              <p className="mt-6 text-[11px] uppercase tracking-[0.14em] text-black/35">
+                <span className="text-accent">★★★★★</span>
+                {' '}5.0 on Google ·{' '}
+                <a href="/reviews/" className="border-b border-black/15 hover:border-black transition-colors">
+                  All reviews →
+                </a>
               </p>
             </footer>
           </div>
         </section>
 
-        {/* 7. Process */}
+        {/* 7. Process — labels visible, detail folded */}
         <section className="mx-auto max-w-7xl px-5 py-20 sm:px-6 sm:py-24 lg:px-12 lg:py-28">
           <h2 className="mb-10 font-display text-2xl font-bold tracking-tight sm:mb-12 md:text-3xl lg:text-4xl">
             Owned end to end
           </h2>
-          <ol className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          <div className="fold max-w-2xl">
             {config.process.steps.map((step, i) => (
-              <li key={step.label} className="border-t border-black/12 pt-6">
-                <span className="text-[11px] uppercase tracking-[0.16em] text-black/30">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <p className="mt-4 font-display text-lg font-bold tracking-tight lg:text-xl">{step.label}</p>
-                <p className="mt-3 text-[14px] leading-relaxed text-black/50">{step.body}</p>
-              </li>
+              <details key={step.label} className="fold-item">
+                <summary>
+                  <span className="text-black/35 mr-3 text-[11px] uppercase tracking-[0.14em] font-sans font-normal">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  {step.label}
+                </summary>
+                <div className="fold-body">
+                  <p>{step.body}</p>
+                </div>
+              </details>
             ))}
-          </ol>
+          </div>
         </section>
 
         {/* 8. Final CTA + form — black band so the conversion block stands out */}
@@ -585,7 +594,7 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
                     <span className="font-display text-[15px] font-bold tracking-tight sm:text-base md:text-lg">
                       {faq.question}
                     </span>
-                    <span className="mt-0.5 shrink-0 text-xl text-black/25" aria-hidden="true">
+                    <span className="mt-0.5 shrink-0 text-xl text-accent" aria-hidden="true">
                       {open ? '−' : '+'}
                     </span>
                   </button>
@@ -601,16 +610,16 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
         </section>
       </main>
 
-      {/* 10. Footer — red rule separates black form band from utility */}
+      {/* 10. Footer */}
       <footer className="site-footer px-5 py-12 pb-[calc(6.5rem+env(safe-area-inset-bottom))] sm:px-6 sm:py-14 md:pb-14 lg:px-12">
         <div className="mx-auto max-w-7xl">
           <p className="font-display text-lg font-bold tracking-tight">
             Motion Story<span className="text-accent">.</span>
           </p>
-          <p className="mt-4 text-[11px] uppercase tracking-[0.14em] text-white/40">
+          <p className="mt-4 text-[11px] uppercase tracking-[0.14em] text-black/40">
             Featured on Behance · Clutch-awarded
           </p>
-          <p className="mt-2 text-[13px] text-white/40">Not currently hiring — briefs only.</p>
+          <p className="mt-2 text-[13px] text-black/40">Not currently hiring — briefs only.</p>
         </div>
       </footer>
 

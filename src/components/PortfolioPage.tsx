@@ -15,23 +15,21 @@ export default function PortfolioPage() {
       <div className="grain-overlay" />
 
       {/* Header */}
-      <div className="band-black">
-        <PageTransition className="pt-32 pb-20 px-8 max-w-7xl mx-auto">
-          <SlideUp>
-            <h1 className="font-display text-4xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-8">
-              The work.<br />Start here.
-            </h1>
-          </SlideUp>
-          <FadeUp>
-            <p className="text-body !text-white/60 max-w-lg mb-10">
-              Selected films for SaaS, platforms, agencies, and causes. Every project started with something hard to explain — and ended with something people actually watched.
-            </p>
-            <a href="/reviews/" className="text-metadata !text-white/40 hover:!text-white transition-colors">
-              <span className="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · {GOOGLE_RATING.count} reviews →
-            </a>
-          </FadeUp>
-        </PageTransition>
-      </div>
+      <PageTransition className="pt-32 pb-16 px-8 max-w-7xl mx-auto">
+        <SlideUp>
+          <h1 className="font-display text-4xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-8">
+            The work.<br />Start here.
+          </h1>
+        </SlideUp>
+        <FadeUp>
+          <p className="text-body max-w-lg mb-8">
+            Selected films for SaaS, platforms, agencies, and causes.
+          </p>
+          <a href="/reviews/" className="text-metadata hover:text-black transition-colors">
+            <span className="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · {GOOGLE_RATING.count} reviews →
+          </a>
+        </FadeUp>
+      </PageTransition>
 
       {/* Project Count */}
       <div className="px-8 max-w-7xl mx-auto mt-16 mb-16">
