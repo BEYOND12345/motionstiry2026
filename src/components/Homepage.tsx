@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ALL_PROJECTS,
@@ -10,7 +10,9 @@ import VimeoEmbed from "./VimeoEmbed";
 import { GOOGLE_RATING } from "../data/reviews";
 
 const SHOWCASE_ORDERED = sortProjectsShowcaseFirst(ALL_PROJECTS);
-const DEFAULT_EXPANDED = new Set<string>(SHOWCASE_PROJECT_IDS);
+/** Strongest pieces the reel cycles through — one open at a time */
+const REEL_IDS = [...SHOWCASE_PROJECT_IDS];
+const REEL_HOLD_MS = 7200;
 
 const CLIENTS = [
   "United Nations",
@@ -56,13 +58,15 @@ const ProjectRow = ({
   project,
   isExpanded,
   onToggle,
+  rowRef,
 }: {
   project: Project;
   isExpanded: boolean;
   onToggle: () => void;
+  rowRef?: (el: HTMLDivElement | null) => void;
 }) => {
   return (
-    <div className="border-b border-border overflow-hidden">
+    <div ref={rowRef} className="border-b border-border overflow-hidden" data-project-id={project.id}>
       <motion.div
         initial={false}
         animate={{ backgroundColor: isExpanded ? "rgba(0,0,0,0.02)" : "rgba(0,0,0,0)" }}
@@ -99,6 +103,7 @@ const ProjectRow = ({
                 title={project.title}
                 className="mb-12"
                 autoColor
+                loading="eager"
               />
 
               <div className="max-w-2xl">
@@ -112,6 +117,7 @@ const ProjectRow = ({
                 <a
                   href={`/casestudy/${project.slug}/`}
                   className="text-metadata border-b border-black/20 pb-1 hover:border-black transition-colors"
+                  onClick={(e) => e.stopPropagation()}
                 >
                   View Case Study
                 </a>
@@ -125,7 +131,80 @@ const ProjectRow = ({
 };
 
 export default function Homepage() {
-  const [expandedIds, setExpandedIds] = useState<Set<string>>(DEFAULT_EXPANDED);
+  const [activeId, setActiveId] = useState<string | null>(REEL_IDS[0] ?? null);
+  const [reelEnabled, setReelEnabled] = useState(false);
+  const [hoverPaused, setHoverPaused] = useState(false);
+  const [userControlled, setUserControlled] = useState(false);
+  const portfolioRef = useRef<HTMLElement>(null);
+  const rowRefs = useRef(new Map<string, HTMLDivElement>());
+  const reelIndex = useRef(0);
+
+  // Desktop + motion OK → enable the spotlight reel
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const sync = () => setReelEnabled(desktop.matches && !reduce.matches);
+    sync();
+    desktop.addEventListener("change", sync);
+    reduce.addEventListener("change", sync);
+    return () => {
+      desktop.removeEventListener("change", sync);
+      reduce.removeEventListener("change", sync);
+    };
+  }, []);
+
+  // Advance through showcase pieces one at a time
+  useEffect(() => {
+    if (!reelEnabled || hoverPaused || userControlled) return;
+
+    const tick = window.setInterval(() => {
+      reelIndex.current = (reelIndex.current + 1) % REEL_IDS.length;
+      setActiveId(REEL_IDS[reelIndex.current]);
+    }, REEL_HOLD_MS);
+
+    return () => window.clearInterval(tick);
+  }, [reelEnabled, hoverPaused, userControlled]);
+
+  // Ease the open project into view inside the right scroller
+  useEffect(() => {
+    if (!activeId || !reelEnabled) return;
+    const scroller = portfolioRef.current;
+    const row = rowRefs.current.get(activeId);
+    if (!scroller || !row) return;
+
+    const scrollToActive = () => {
+      const scrollerRect = scroller.getBoundingClientRect();
+      const rowRect = row.getBoundingClientRect();
+      const offset = rowRect.top - scrollerRect.top + scroller.scrollTop - 72;
+      scroller.scrollTo({ top: Math.max(0, offset), behavior: "smooth" });
+    };
+
+    // Once immediately, again after the accordion has opened
+    scrollToActive();
+    const t = window.setTimeout(scrollToActive, 450);
+    return () => window.clearTimeout(t);
+  }, [activeId, reelEnabled]);
+
+  const setRowRef = useCallback((id: string, el: HTMLDivElement | null) => {
+    if (el) rowRefs.current.set(id, el);
+    else rowRefs.current.delete(id);
+  }, []);
+
+  const onToggle = (id: string) => {
+    setUserControlled(true);
+    setActiveId((prev) => (prev === id ? null : id));
+    const idx = REEL_IDS.findIndex((rid) => rid === id);
+    if (idx >= 0) reelIndex.current = idx;
+  };
+
+  const onPortfolioEnter = () => setHoverPaused(true);
+  const onPortfolioLeave = () => {
+    setHoverPaused(false);
+    // Hand control back to the reel once the cursor leaves
+    setUserControlled(false);
+  };
+
+  const reelRunning = reelEnabled && !hoverPaused && !userControlled;
 
   return (
     <div className="min-h-screen bg-white text-black selection:bg-accent selection:text-white">
@@ -339,14 +418,39 @@ export default function Homepage() {
           </footer>
         </aside>
 
-        {/* Right Side: Work Listicle (Accordion) */}
-        <main className="split-right" id="portfolio">
+        {/* Right Side: Portfolio spotlight reel */}
+        <main
+          ref={portfolioRef}
+          className="split-right"
+          id="portfolio"
+          onPointerEnter={onPortfolioEnter}
+          onPointerLeave={onPortfolioLeave}
+        >
           <div className="pt-12">
-            <div className="px-4 md:px-16 py-8 border-b border-black/10 flex flex-col gap-2">
-              <span className="text-metadata">Portfolio</span>
-              <span className="text-metadata opacity-30">
-                Open any row to watch
-              </span>
+            <div className="px-4 md:px-16 py-8 border-b border-black/10 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+              <div>
+                <span className="text-metadata block">Portfolio</span>
+                <span className="text-metadata opacity-30">
+                  {reelEnabled
+                    ? reelRunning
+                      ? "Playing through · hover to pause"
+                      : "Paused · click a row to open"
+                    : "Open any row to watch"}
+                </span>
+              </div>
+              {reelEnabled && (
+                <span
+                  className="text-metadata flex items-center gap-2 opacity-40"
+                  aria-hidden="true"
+                >
+                  <span
+                    className={`inline-block h-1.5 w-1.5 rounded-full bg-accent ${
+                      reelRunning ? "animate-pulse" : ""
+                    }`}
+                  />
+                  {reelRunning ? "Live" : "Still"}
+                </span>
+              )}
             </div>
 
             <div className="pb-24">
@@ -362,13 +466,9 @@ export default function Homepage() {
                   >
                     <ProjectRow
                       project={project}
-                      isExpanded={expandedIds.has(project.id)}
-                      onToggle={() => setExpandedIds((prev) => {
-                        const next = new Set(prev);
-                        if (next.has(project.id)) next.delete(project.id);
-                        else next.add(project.id);
-                        return next;
-                      })}
+                      isExpanded={activeId === project.id}
+                      onToggle={() => onToggle(project.id)}
+                      rowRef={(el) => setRowRef(project.id, el)}
                     />
                   </motion.div>
                 ))}
