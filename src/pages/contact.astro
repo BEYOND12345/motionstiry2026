@@ -72,17 +72,17 @@ const structuredData = {
           </div>
         </div>
 
-        <div class="border-t border-black/10 pt-12">
+        <div class="bg-black text-white p-8 md:p-10">
           <div class="flex items-baseline gap-3 mb-8">
             <span class="font-display text-2xl font-bold tracking-tight">{GOOGLE_RATING.score}</span>
             <span class="text-accent tracking-[0.2em]" aria-label="Five stars">★★★★★</span>
-            <a href="/reviews/" class="text-metadata border-b border-black/20 pb-1 hover:border-black transition-colors">on Google · {GOOGLE_RATING.count} reviews →</a>
+            <a href="/reviews/" class="text-metadata !text-white/40 border-b border-white/20 pb-1 hover:border-white hover:!text-white transition-colors">on Google · {GOOGLE_RATING.count} reviews →</a>
           </div>
           <div class="space-y-8">
             {CONTACT_REVIEWS.map((review) => (
               <div>
-                <p class="text-body mb-3">"{review.quote}"</p>
-                <p class="text-metadata">{review.name} · Google review</p>
+                <p class="text-body !text-white/80 mb-3">"{review.quote}"</p>
+                <p class="text-metadata !text-white/40">{review.name} · Google review</p>
               </div>
             ))}
           </div>
