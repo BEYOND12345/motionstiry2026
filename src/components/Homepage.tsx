@@ -427,30 +427,15 @@ export default function Homepage() {
           onPointerLeave={onPortfolioLeave}
         >
           <div className="pt-12">
-            <div className="px-4 md:px-16 py-8 border-b border-black/10 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
-              <div>
-                <span className="text-metadata block">Portfolio</span>
-                <span className="text-metadata opacity-30">
-                  {reelEnabled
-                    ? reelRunning
-                      ? "Playing through · hover to pause"
-                      : "Paused · click a row to open"
-                    : "Open any row to watch"}
-                </span>
-              </div>
-              {reelEnabled && (
-                <span
-                  className="text-metadata flex items-center gap-2 opacity-40"
-                  aria-hidden="true"
-                >
-                  <span
-                    className={`inline-block h-1.5 w-1.5 rounded-full bg-accent ${
-                      reelRunning ? "animate-pulse" : ""
-                    }`}
-                  />
-                  {reelRunning ? "Live" : "Still"}
-                </span>
-              )}
+            <div className="px-4 md:px-16 py-8 border-b border-black/10 flex flex-col gap-2">
+              <span className="text-metadata block">Portfolio</span>
+              <span className="text-metadata opacity-30">
+                {reelEnabled
+                  ? reelRunning
+                    ? "Playing through · hover to pause"
+                    : "Paused · click a row to open"
+                  : "Open any row to watch"}
+              </span>
             </div>
 
             <div className="pb-24">
