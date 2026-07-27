@@ -56,7 +56,7 @@ const {
 
 const [featured, ...rest] = work;
 
-const pageReviews = pickVerifiedReviews(eyebrow, 3);
+const pageReview = pickVerifiedReviews(eyebrow, 1)[0];
 
 const usedVimeoIds = new Set([...work, ...moreWork].map((item) => item.vimeoId));
 const paddedMoreWork: WorkItem[] = [...moreWork];
@@ -215,21 +215,15 @@ const credentials = [
     </div>
   </section>
 
-  <section class="band-black band-black-breakout my-16 md:my-24">
-    <div class="band-black-inner">
-      <span class="text-metadata !text-white/40 mb-8 block">What clients say</span>
-      <p class="text-metadata !text-white/55 mb-14">
-        <span class="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · {GOOGLE_RATING.count} reviews · <a href="/reviews/" class="!text-white/55 hover:!text-white transition-colors border-b border-white/25 hover:border-accent">All reviews</a>
-      </p>
-      <div class="space-y-12">
-        {pageReviews.map((review) => (
-          <div>
-            <p class="font-display text-lg md:text-2xl font-medium tracking-tight leading-snug mb-4 max-w-3xl">“{review.quote}”</p>
-            <p class="text-metadata !text-white/40">{review.name} — {review.role}, {review.company}</p>
-          </div>
-        ))}
-      </div>
-    </div>
+  <section class="landing-section">
+    <span class="landing-eyebrow landing-section-label">What clients say</span>
+    <blockquote class="font-display text-xl md:text-2xl font-medium tracking-tight leading-snug max-w-2xl mb-6">
+      “{pageReview.quote}”
+    </blockquote>
+    <p class="text-metadata mb-10">{pageReview.name} — {pageReview.role}, {pageReview.company}</p>
+    <p class="text-metadata">
+      <span class="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · <a href="/reviews/" class="border-b border-black/20 hover:border-black transition-colors">All reviews →</a>
+    </p>
   </section>
 
   {faqs.length > 0 && (

@@ -7,7 +7,7 @@ import {
   type Project,
 } from "../data/projects";
 import VimeoEmbed from "./VimeoEmbed";
-import { GOOGLE_RATING, FEATURED_GOOGLE_REVIEWS } from "../data/reviews";
+import { GOOGLE_RATING } from "../data/reviews";
 
 const SHOWCASE_ORDERED = sortProjectsShowcaseFirst(ALL_PROJECTS);
 const DEFAULT_EXPANDED = new Set<string>(SHOWCASE_PROJECT_IDS);
@@ -204,79 +204,23 @@ export default function Homepage() {
               </div>
             </section>
 
-            {/* Results / Testimonials */}
+            {/* Results — one quote, then a quiet pointer to the rest */}
             <section className="mb-48">
               <span className="text-metadata mb-10 block">Results</span>
-              <div className="band-black p-8 md:p-12">
-              <div className="mb-16 flex items-baseline gap-4">
-                <span className="font-display text-3xl font-bold tracking-tight">{GOOGLE_RATING.score}</span>
-                <span className="text-accent tracking-[0.2em]" aria-label="Five stars">★★★★★</span>
-                <span className="text-metadata !text-white/40">on Google · {GOOGLE_RATING.count} reviews</span>
-              </div>
-              <div className="space-y-16">
-                <div>
-                  <p className="text-body !text-white text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
-                    "62% completion rate. 21% view rate. For a video about bins, we're astounded. Long-term asset for our business."
-                  </p>
-                  <div>
-                    <p className="font-display font-medium text-sm">Lee Bright</p>
-                    <p className="text-metadata !text-white/40">Marketing Lead, Method Recycling</p>
-                  </div>
-                </div>
-                <div>
-                  <p className="text-body !text-white text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
-                    "40,000 views on YouTube, which increased brand perception and reputation."
-                  </p>
-                  <div>
-                    <p className="font-display font-medium text-sm">Simon Lehmann</p>
-                    <p className="text-metadata !text-white/40">Head of Marketing, Acodis</p>
-                  </div>
-                </div>
-                <div>
-                  <p className="text-body !text-white text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
-                    "Working with Daniel was incredible. Easy to brainstorm, pivot ideas, and collaborate at each stage. 10/10 would use again."
-                  </p>
-                  <div>
-                    <p className="font-display font-medium text-sm">Matty Sirois</p>
-                  </div>
-                </div>
-                <div>
-                  <p className="text-body !text-white text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
-                    "Creative, efficient, and seamless. Daniel grasped our core message and crafted something that resonated with our audience immediately."
-                  </p>
-                  <div>
-                    <p className="font-display font-medium text-sm">Kris Deep</p>
-                    <p className="text-metadata !text-white/40">Founder, Pulseee</p>
-                  </div>
-                </div>
-                <div>
-                  <p className="text-body !text-white text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
-                    "Without this video, our campaign would have never reached such a huge audience. The road user charge has now been approved in SA and VIC. Daniel's work was pivotal."
-                  </p>
-                  <div>
-                    <p className="font-display font-medium text-sm">Michael Player</p>
-                    <p className="text-metadata !text-white/40">Director of Communications, Infrastructure Australia</p>
-                  </div>
-                </div>
-                {FEATURED_GOOGLE_REVIEWS.map((review) => (
-                  <div key={review.name}>
-                    <p className="text-body !text-white text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
-                      "{review.quote}"
-                    </p>
-                    <div>
-                      <p className="font-display font-medium text-sm">{review.name}</p>
-                      <p className="text-metadata !text-white/40">Google review</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <a
-                href="/reviews/"
-                className="group flex items-center gap-4 mt-16"
-              >
-                <span className="text-accent text-2xl">→</span>
-                <span className="text-nav-item !text-white group-hover:opacity-70 transition-opacity">Read all reviews</span>
-              </a>
+              <blockquote className="font-display text-xl md:text-2xl font-medium tracking-tight leading-snug mb-8">
+                “62% completion rate. 21% view rate. For a video about bins, we're astounded. Long-term asset for our business.”
+              </blockquote>
+              <p className="font-display font-medium text-sm mb-1">Lee Bright</p>
+              <p className="text-metadata mb-12">Marketing Lead, Method Recycling</p>
+
+              <div className="border-t border-black/10 pt-8 flex flex-wrap items-baseline justify-between gap-4">
+                <p className="text-metadata">
+                  <span className="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · {GOOGLE_RATING.count} reviews
+                </p>
+                <a href="/reviews/" className="group flex items-center gap-3">
+                  <span className="text-accent text-xl">→</span>
+                  <span className="text-metadata group-hover:text-black transition-colors">All reviews</span>
+                </a>
               </div>
             </section>
 

@@ -2,7 +2,7 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import { GOOGLE_RATING, GOOGLE_REVIEWS } from '../data/reviews';
 
-const CONTACT_REVIEWS = [GOOGLE_REVIEWS[1], GOOGLE_REVIEWS[5]];
+const contactReview = GOOGLE_REVIEWS[1]; // Tate Shepherd
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -72,20 +72,14 @@ const structuredData = {
           </div>
         </div>
 
-        <div class="bg-black text-white p-8 md:p-10">
-          <div class="flex items-baseline gap-3 mb-8">
-            <span class="font-display text-2xl font-bold tracking-tight">{GOOGLE_RATING.score}</span>
-            <span class="text-accent tracking-[0.2em]" aria-label="Five stars">★★★★★</span>
-            <a href="/reviews/" class="text-metadata !text-white/40 border-b border-white/20 pb-1 hover:border-white hover:!text-white transition-colors">on Google · {GOOGLE_RATING.count} reviews →</a>
-          </div>
-          <div class="space-y-8">
-            {CONTACT_REVIEWS.map((review) => (
-              <div>
-                <p class="text-body !text-white/80 mb-3">"{review.quote}"</p>
-                <p class="text-metadata !text-white/40">{review.name} · Google review</p>
-              </div>
-            ))}
-          </div>
+        <div class="border-t border-black/10 pt-12">
+          <blockquote class="font-display text-lg font-medium tracking-tight leading-snug mb-6">
+            “{contactReview.quote}”
+          </blockquote>
+          <p class="text-metadata mb-8">{contactReview.name} · Google review</p>
+          <p class="text-metadata">
+            <span class="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · <a href="/reviews/" class="border-b border-black/20 hover:border-black transition-colors">All reviews →</a>
+          </p>
         </div>
       </div>
 
