@@ -383,7 +383,7 @@ export default function Homepage() {
             <div className="px-4 md:px-16 py-8 border-b border-black/10 flex flex-col gap-2">
               <span className="text-metadata">Portfolio</span>
               <span className="text-metadata opacity-30">
-                {ALL_PROJECTS.length} films — open any row to watch
+                Open any row to watch
               </span>
             </div>
 

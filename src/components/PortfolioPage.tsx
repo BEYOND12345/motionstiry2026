@@ -22,7 +22,7 @@ export default function PortfolioPage() {
         </SlideUp>
         <FadeUp>
           <p className="text-body max-w-lg">
-            {ALL_PROJECTS.length} films for SaaS, platforms, agencies, and causes. Every project started with something hard to explain — and ended with something people actually watched.
+            Selected films for SaaS, platforms, agencies, and causes. Every project started with something hard to explain — and ended with something people actually watched.
           </p>
         </FadeUp>
       </PageTransition>
@@ -31,7 +31,7 @@ export default function PortfolioPage() {
       <div className="px-8 max-w-7xl mx-auto mb-16">
         <div className="border-b border-black/10 pb-6">
           <span className="text-metadata opacity-30">
-            {ALL_PROJECTS.length} Projects · strongest pieces first
+            Strongest pieces first
           </span>
         </div>
       </div>
