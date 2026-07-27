@@ -227,8 +227,8 @@ export default function Homepage() {
                     "40,000 views on YouTube, which increased brand perception and reputation."
                   </p>
                   <div>
-                    <p className="font-display font-medium text-sm">Simon Lehman</p>
-                    <p className="text-metadata">Marketing Manager, Acodis</p>
+                    <p className="font-display font-medium text-sm">Simon Lehmann</p>
+                    <p className="text-metadata">Head of Marketing, Acodis</p>
                   </div>
                 </div>
                 <div>
@@ -269,6 +269,13 @@ export default function Homepage() {
                   </div>
                 ))}
               </div>
+              <a
+                href="/reviews/"
+                className="group flex items-center gap-4 mt-16"
+              >
+                <span className="text-accent text-2xl">→</span>
+                <span className="text-nav-item">Read all reviews</span>
+              </a>
             </section>
 
             {/* Clients */}

@@ -76,7 +76,7 @@ const structuredData = {
           <div class="flex items-baseline gap-3 mb-8">
             <span class="font-display text-2xl font-bold tracking-tight">{GOOGLE_RATING.score}</span>
             <span class="text-accent tracking-[0.2em]" aria-label="Five stars">★★★★★</span>
-            <span class="text-metadata">on Google · {GOOGLE_RATING.count} reviews</span>
+            <a href="/reviews/" class="text-metadata border-b border-black/20 pb-1 hover:border-black transition-colors">on Google · {GOOGLE_RATING.count} reviews →</a>
           </div>
           <div class="space-y-8">
             {CONTACT_REVIEWS.map((review) => (

@@ -1,0 +1,73 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { GOOGLE_RATING, GOOGLE_REVIEWS, VERIFIED_CLIENT_REVIEWS } from '../data/reviews';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://motionstory.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Reviews", "item": "https://motionstory.com.au/reviews/" },
+  ],
+};
+---
+
+<PageLayout
+  title="Client Reviews | Motion Story"
+  description="What clients say about working with Motion Story. 5.0 on Google, plus verified client reviews from SaaS, government, and nonprofit projects."
+  canonicalUrl="https://motionstory.com.au/reviews/"
+  floatSubject="Project enquiry"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </Fragment>
+
+  <div class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+    <span class="text-metadata mb-8 block">Reviews</span>
+    <h1 class="font-display text-4xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-10">
+      Don't take<br />my word for it.
+    </h1>
+    <div class="flex items-baseline gap-4 mb-24">
+      <span class="font-display text-3xl font-bold tracking-tight">{GOOGLE_RATING.score}</span>
+      <span class="text-accent tracking-[0.2em]" aria-label="Five stars">★★★★★</span>
+      <span class="text-metadata">on Google · {GOOGLE_RATING.count} reviews</span>
+    </div>
+
+    <!-- Verified client reviews -->
+    <section class="mb-32">
+      <div class="border-b border-black/10 pb-6 mb-16">
+        <span class="text-metadata opacity-30">Verified client reviews</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-20">
+        {VERIFIED_CLIENT_REVIEWS.map((review) => (
+          <article>
+            <p class="font-display text-xl md:text-2xl font-medium tracking-tight leading-snug mb-8">
+              "{review.quote}"
+            </p>
+            <p class="font-display font-medium text-sm">{review.name}</p>
+            <p class="text-metadata mb-2">{review.role}, {review.company}</p>
+            <p class="text-metadata opacity-40">{review.project}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Google reviews -->
+    <section>
+      <div class="border-b border-black/10 pb-6 mb-16">
+        <span class="text-metadata opacity-30">Google reviews</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16">
+        {GOOGLE_REVIEWS.map((review) => (
+          <article>
+            <p class="text-body text-lg leading-relaxed font-display tracking-tight mb-6">
+              "{review.quote}"
+            </p>
+            <p class="font-display font-medium text-sm">{review.name}</p>
+            <p class="text-metadata">Google review</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  </div>
+</PageLayout>

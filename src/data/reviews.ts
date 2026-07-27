@@ -69,3 +69,81 @@ export const GOOGLE_REVIEWS: GoogleReview[] = [
 
 /** Strongest, most specific reviews for high-visibility placements. */
 export const FEATURED_GOOGLE_REVIEWS: GoogleReview[] = GOOGLE_REVIEWS.slice(0, 6);
+
+/** Verified client reviews (Clutch) — full attribution with role and company. */
+export interface ClientReview {
+  quote: string;
+  name: string;
+  role: string;
+  company: string;
+  project: string;
+}
+
+export const VERIFIED_CLIENT_REVIEWS: ClientReview[] = [
+  {
+    quote:
+      'It felt like Motion Story was part of our team, even though we were both sitting at the other end of the globe.',
+    name: 'Simon Lehmann',
+    role: 'Head of Marketing',
+    company: 'Acodis',
+    project: 'Animated explainer for a SaaS company',
+  },
+  {
+    quote:
+      'They went above and beyond the scope of work to get it right. They were passionate about the project.',
+    name: 'Nicola Saltman',
+    role: 'Senior Sustainability Engagement Officer',
+    company: 'NSW Government',
+    project: 'Animation for a solar schools program',
+  },
+  {
+    quote: 'They continually demonstrated their understanding of our business.',
+    name: 'Lee Bright',
+    role: 'Marketing Team Lead',
+    company: 'Method Recycling',
+    project: 'Explainer video production',
+  },
+  {
+    quote: "The quality of Motion Story's animation was spectacular.",
+    name: 'Dave West',
+    role: 'Founder',
+    company: 'BatNav',
+    project: 'Animated explainer and voiceover',
+  },
+  {
+    quote: 'They were a solid team, and we were so pleased with their work.',
+    name: 'Stephanie Lee',
+    role: 'Wellbeing Project Advisor',
+    company: 'Centre for Corporate Health',
+    project: 'Series of 12+ animations on psychological health',
+  },
+  {
+    quote:
+      'They covered all of their bases and made sure that we were really happy at every stage of the project.',
+    name: 'Mary & James Finnimore',
+    role: 'CEO & Sales and Marketing Assistant',
+    company: 'Technology management company',
+    project: 'Two explainer videos',
+  },
+  {
+    quote: 'Motion Story understood our vision, and they executed it the way I wanted them to do.',
+    name: 'Omer Mohammad',
+    role: 'Owner',
+    company: 'Carta Coin',
+    project: '90-second animated explainer',
+  },
+  {
+    quote: 'They really thought about how they could best help us on our project.',
+    name: 'Anthony Painter',
+    role: 'Director of Operations',
+    company: 'Ellus & Krue',
+    project: 'Brand motion graphics for skincare',
+  },
+  {
+    quote: 'They were very flexible to work within our available time frames.',
+    name: 'Jessica Gatt',
+    role: 'Managing Director',
+    company: 'Logix Consulting',
+    project: 'Educational animation for marine consulting',
+  },
+];

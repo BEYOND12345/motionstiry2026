@@ -5,8 +5,8 @@ type Testimonial = LandingPageConfig['testimonial'];
 /** Approved client quotes used across Ads landings — mix per page. */
 export const TESTIMONIAL_ACODIS: Testimonial = {
   quote: '40,000 views on YouTube, which increased brand perception and reputation.',
-  name: 'Simon Lehman',
-  role: 'Marketing Manager',
+  name: 'Simon Lehmann',
+  role: 'Head of Marketing',
   company: 'Acodis',
 };
 
