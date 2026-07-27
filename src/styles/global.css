@@ -9,6 +9,24 @@
   --color-border: rgba(0, 0, 0, 0.08);
   --color-muted: #666666;
   --color-accent: #FF0000;
+
+  --animate-ads-marquee: ads-marquee 120s linear infinite;
+}
+
+@keyframes ads-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ads-work-marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
 }
 
 html {
@@ -265,7 +283,40 @@ body.homepage-layout {
   margin: 0;
 }
 
-/* Floating mailto — refined, brand-aligned */
+/* ── Red-on-black system ──
+   Black = proof / close. Red hairline = seam between statement and utility. */
+.band-black {
+  background: #000;
+  color: #fff;
+}
+
+.band-black-breakout {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.band-black-inner {
+  max-width: 74rem;
+  margin: 0 auto;
+  padding: 5rem 2.25rem;
+}
+
+.site-cta {
+  background: #000;
+  color: #fff;
+}
+
+.site-footer {
+  background: #000;
+  color: #fff;
+  border-top: 2px solid var(--color-accent);
+}
+
+/* Floating mailto — black chip, red edge, reads over light and dark */
 .landing-float {
   position: fixed;
   right: 1.5rem;
@@ -275,30 +326,32 @@ body.homepage-layout {
   align-items: center;
   gap: 0.65rem;
   padding: 0.95rem 1.3rem;
-  background: #fff;
-  color: var(--color-fg);
+  background: #000;
+  color: #fff;
   border: 1px solid var(--color-accent);
   font-family: var(--font-display);
   font-size: 0.9375rem;
   font-weight: 500;
   letter-spacing: -0.015em;
   line-height: 1;
-  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.06);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease, box-shadow 0.35s ease;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.22);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, color 0.3s ease, box-shadow 0.35s ease;
 }
 
 .landing-float:hover {
-  color: var(--color-accent);
+  background: var(--color-accent);
+  color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 14px 44px rgba(255, 0, 0, 0.28);
 }
 
 .landing-float-arrow {
   color: var(--color-accent);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
 }
 
 .landing-float:hover .landing-float-arrow {
+  color: #fff;
   transform: translateX(2px);
 }
 
@@ -746,6 +799,9 @@ body.homepage-layout {
 @media (max-width: 640px) {
   .landing {
     padding: 7.5rem 1.5rem 5.5rem;
+  }
+  .band-black-inner {
+    padding: 3.5rem 1.5rem;
   }
   .landing-hero {
     margin-bottom: 4.5rem;

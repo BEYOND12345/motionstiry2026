@@ -15,28 +15,30 @@ export default function PortfolioPage() {
       <div className="grain-overlay" />
 
       {/* Header */}
-      <PageTransition className="pt-32 pb-16 px-8 max-w-7xl mx-auto">
-        <SlideUp>
-          <h1 className="font-display text-4xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-8">
-            The work.<br />Start here.
-          </h1>
-        </SlideUp>
-        <FadeUp>
-          <p className="text-body max-w-lg">
-            Selected films for SaaS, platforms, agencies, and causes. Every project started with something hard to explain — and ended with something people actually watched.
-          </p>
-        </FadeUp>
-      </PageTransition>
+      <div className="bg-black text-white">
+        <PageTransition className="pt-32 pb-20 px-8 max-w-7xl mx-auto">
+          <SlideUp>
+            <h1 className="font-display text-4xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-8">
+              The work.<br />Start here.
+            </h1>
+          </SlideUp>
+          <FadeUp>
+            <p className="text-body !text-white/60 max-w-lg mb-10">
+              Selected films for SaaS, platforms, agencies, and causes. Every project started with something hard to explain — and ended with something people actually watched.
+            </p>
+            <a href="/reviews/" className="text-metadata !text-white/40 hover:!text-white transition-colors">
+              <span className="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · {GOOGLE_RATING.count} reviews →
+            </a>
+          </FadeUp>
+        </PageTransition>
+      </div>
 
       {/* Project Count */}
-      <div className="px-8 max-w-7xl mx-auto mb-16">
-        <div className="border-b border-black/10 pb-6 flex flex-wrap items-baseline justify-between gap-4">
+      <div className="px-8 max-w-7xl mx-auto mt-16 mb-16">
+        <div className="border-b border-black/10 pb-6">
           <span className="text-metadata opacity-30">
             Strongest pieces first
           </span>
-          <a href="/reviews/" className="text-metadata hover:text-black transition-colors">
-            <span className="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · {GOOGLE_RATING.count} reviews →
-          </a>
         </div>
       </div>
 
@@ -97,23 +99,23 @@ export default function PortfolioPage() {
         </AnimatePresence>
       </div>
 
-      {/* CTA */}
-      <AnimatedSection className="border-t border-black/10 bg-black/[0.01]">
-        <div className="max-w-6xl mx-auto px-8 py-32 text-center">
+      {/* CTA — red rule on site footer below separates statement from utility */}
+      <AnimatedSection className="site-cta">
+        <div className="max-w-6xl mx-auto px-8 py-28 md:py-32 text-center">
           <FadeUp>
-            <span className="text-metadata mb-8 block">Start a Project</span>
+            <span className="text-metadata !text-white/40 mb-8 block">Start a Project</span>
           </FadeUp>
           <SlideUp>
-            <p className="text-body max-w-xl mx-auto mb-12">
-              "Motion design doesn't just explain your product. It makes people care about it before they've even tried it."
-            </p>
+            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-10">
+              Got something complex<br />to explain?
+            </h2>
           </SlideUp>
           <FadeUp>
             <a
               href="mailto:daniel@motionstory.com.au"
-              className="font-display text-lg md:text-2xl font-bold tracking-tight hover:opacity-50 transition-opacity border-b border-black/20 pb-2 break-all"
+              className="font-display text-lg md:text-2xl font-bold tracking-tight border-b border-white/25 pb-2 hover:border-accent transition-colors break-all"
             >
-              daniel@motionstory.com.au
+              daniel@motionstory.com.au <span className="text-accent">→</span>
             </a>
           </FadeUp>
         </div>

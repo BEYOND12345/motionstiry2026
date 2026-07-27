@@ -97,7 +97,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
       </AnimatedSection>
 
       {/* Client review */}
-      <AnimatedSection className="bg-black text-white">
+      <AnimatedSection className="band-black">
         <div className="max-w-6xl mx-auto px-8 py-24">
           <FadeUp>
             <span className="text-metadata !text-white/40 mb-10 block">
@@ -166,11 +166,11 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
         </AnimatedSection>
       )}
 
-      {/* CTA */}
-      <AnimatedSection className="border-t border-black/10 bg-black/[0.01]">
-        <div className="max-w-6xl mx-auto px-8 py-32 text-center">
+      {/* CTA — red rule on site footer below separates statement from utility */}
+      <AnimatedSection className="site-cta">
+        <div className="max-w-6xl mx-auto px-8 py-28 md:py-32 text-center">
           <FadeUp>
-            <span className="text-metadata mb-8 block">Start a Project</span>
+            <span className="text-metadata !text-white/40 mb-8 block">Start a Project</span>
           </FadeUp>
           <SlideUp>
             <h2 className="font-display text-3xl md:text-6xl font-bold tracking-tight mb-12">
@@ -181,11 +181,13 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
             <div className="flex flex-col items-center gap-6">
               <a
                 href="/contact/"
-                className="inline-block px-12 py-5 border border-black hover:bg-black hover:text-white transition-all duration-300 text-metadata"
+                className="inline-block px-12 py-5 border border-white text-metadata !text-white hover:bg-white hover:!text-black transition-all duration-300"
               >
-                Start a Project
+                Start a Project <span className="text-accent">→</span>
               </a>
-              <a href="mailto:daniel@motionstory.com.au" className="text-metadata text-accent hover:opacity-60 transition-opacity">daniel@motionstory.com.au</a>
+              <a href="mailto:daniel@motionstory.com.au" className="text-metadata !text-white/40 hover:!text-accent transition-colors">
+                daniel@motionstory.com.au
+              </a>
             </div>
           </FadeUp>
         </div>

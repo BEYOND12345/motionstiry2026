@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
 import CaseStudyPage from '../../components/CaseStudyPage';
+import Footer from '../../components/Footer.astro';
 import EmailFloat from '../../components/EmailFloat.astro';
 import { ALL_PROJECTS } from '../../data/projects';
 import { getVideoSeoCategory, getVideoSeoTags } from '../../lib/videoSeo';
@@ -157,5 +158,6 @@ const creativeWorkData = {
 
   <Nav />
   <CaseStudyPage project={project} allProjects={ALL_PROJECTS} client:load />
+  <Footer />
   <EmailFloat subject={`${project.title} — project enquiry`} />
 </BaseLayout>

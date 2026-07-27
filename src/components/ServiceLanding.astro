@@ -215,16 +215,16 @@ const credentials = [
     </div>
   </section>
 
-  <section class="landing-section">
-    <div class="bg-black text-white px-8 py-16 md:px-14 md:py-20">
+  <section class="band-black band-black-breakout my-16 md:my-24">
+    <div class="band-black-inner">
       <span class="text-metadata !text-white/40 mb-8 block">What clients say</span>
-      <p class="text-metadata !text-white/60 mb-14">
-        <span class="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · {GOOGLE_RATING.count} reviews · <a href="/reviews/" class="!text-white/60 hover:!text-white transition-colors" style="border-bottom: 1px solid currentColor;">All reviews</a>
+      <p class="text-metadata !text-white/55 mb-14">
+        <span class="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · {GOOGLE_RATING.count} reviews · <a href="/reviews/" class="!text-white/55 hover:!text-white transition-colors border-b border-white/25 hover:border-accent">All reviews</a>
       </p>
       <div class="space-y-12">
         {pageReviews.map((review) => (
           <div>
-            <p class="font-display text-lg md:text-xl font-medium tracking-tight leading-snug mb-4 max-w-3xl">“{review.quote}”</p>
+            <p class="font-display text-lg md:text-2xl font-medium tracking-tight leading-snug mb-4 max-w-3xl">“{review.quote}”</p>
             <p class="text-metadata !text-white/40">{review.name} — {review.role}, {review.company}</p>
           </div>
         ))}

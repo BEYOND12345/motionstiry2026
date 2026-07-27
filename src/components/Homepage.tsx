@@ -207,32 +207,33 @@ export default function Homepage() {
             {/* Results / Testimonials */}
             <section className="mb-48">
               <span className="text-metadata mb-10 block">Results</span>
+              <div className="bg-black text-white p-8 md:p-12">
               <div className="mb-16 flex items-baseline gap-4">
                 <span className="font-display text-3xl font-bold tracking-tight">{GOOGLE_RATING.score}</span>
                 <span className="text-accent tracking-[0.2em]" aria-label="Five stars">★★★★★</span>
-                <span className="text-metadata">on Google · {GOOGLE_RATING.count} reviews</span>
+                <span className="text-metadata !text-white/40">on Google · {GOOGLE_RATING.count} reviews</span>
               </div>
               <div className="space-y-16">
                 <div>
-                  <p className="text-body text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
+                  <p className="text-body !text-white text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
                     "62% completion rate. 21% view rate. For a video about bins, we're astounded. Long-term asset for our business."
                   </p>
                   <div>
                     <p className="font-display font-medium text-sm">Lee Bright</p>
-                    <p className="text-metadata">Marketing Lead, Method Recycling</p>
+                    <p className="text-metadata !text-white/40">Marketing Lead, Method Recycling</p>
                   </div>
                 </div>
                 <div>
-                  <p className="text-body text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
+                  <p className="text-body !text-white text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
                     "40,000 views on YouTube, which increased brand perception and reputation."
                   </p>
                   <div>
                     <p className="font-display font-medium text-sm">Simon Lehmann</p>
-                    <p className="text-metadata">Head of Marketing, Acodis</p>
+                    <p className="text-metadata !text-white/40">Head of Marketing, Acodis</p>
                   </div>
                 </div>
                 <div>
-                  <p className="text-body text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
+                  <p className="text-body !text-white text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
                     "Working with Daniel was incredible. Easy to brainstorm, pivot ideas, and collaborate at each stage. 10/10 would use again."
                   </p>
                   <div>
@@ -240,31 +241,31 @@ export default function Homepage() {
                   </div>
                 </div>
                 <div>
-                  <p className="text-body text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
+                  <p className="text-body !text-white text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
                     "Creative, efficient, and seamless. Daniel grasped our core message and crafted something that resonated with our audience immediately."
                   </p>
                   <div>
                     <p className="font-display font-medium text-sm">Kris Deep</p>
-                    <p className="text-metadata">Founder, Pulseee</p>
+                    <p className="text-metadata !text-white/40">Founder, Pulseee</p>
                   </div>
                 </div>
                 <div>
-                  <p className="text-body text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
+                  <p className="text-body !text-white text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
                     "Without this video, our campaign would have never reached such a huge audience. The road user charge has now been approved in SA and VIC. Daniel's work was pivotal."
                   </p>
                   <div>
                     <p className="font-display font-medium text-sm">Michael Player</p>
-                    <p className="text-metadata">Director of Communications, Infrastructure Australia</p>
+                    <p className="text-metadata !text-white/40">Director of Communications, Infrastructure Australia</p>
                   </div>
                 </div>
                 {FEATURED_GOOGLE_REVIEWS.map((review) => (
                   <div key={review.name}>
-                    <p className="text-body text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
+                    <p className="text-body !text-white text-lg md:text-xl leading-relaxed font-display tracking-tight mb-6">
                       "{review.quote}"
                     </p>
                     <div>
                       <p className="font-display font-medium text-sm">{review.name}</p>
-                      <p className="text-metadata">Google review</p>
+                      <p className="text-metadata !text-white/40">Google review</p>
                     </div>
                   </div>
                 ))}
@@ -274,8 +275,9 @@ export default function Homepage() {
                 className="group flex items-center gap-4 mt-16"
               >
                 <span className="text-accent text-2xl">→</span>
-                <span className="text-nav-item">Read all reviews</span>
+                <span className="text-nav-item !text-white group-hover:opacity-70 transition-opacity">Read all reviews</span>
               </a>
+              </div>
             </section>
 
             {/* Clients */}
@@ -365,38 +367,42 @@ export default function Homepage() {
             </section>
           </div>
 
-          <footer>
+          <footer className="site-footer p-8 md:p-12">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-12 mb-12">
               <div>
-                <span className="text-metadata mb-4 block">Connect</span>
+                <span className="text-metadata !text-white/40 mb-4 block">Connect</span>
                 <div className="flex flex-col gap-2">
-                  <a href="https://vimeo.com/wearemotionstory" className="text-body !text-sm hover:text-black transition-colors" target="_blank" rel="noopener">Vimeo</a>
-                  <a href="https://www.linkedin.com/company/motionstory" className="text-body !text-sm hover:text-black transition-colors" target="_blank" rel="noopener">LinkedIn</a>
-                  <a href="https://www.behance.net/motionstory" className="text-body !text-sm hover:text-black transition-colors" target="_blank" rel="noopener">Behance</a>
+                  <a href="https://vimeo.com/wearemotionstory" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors" target="_blank" rel="noopener">Vimeo</a>
+                  <a href="https://www.linkedin.com/company/motionstory" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors" target="_blank" rel="noopener">LinkedIn</a>
+                  <a href="https://www.behance.net/motionstory" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors" target="_blank" rel="noopener">Behance</a>
                 </div>
               </div>
               <div>
-                <span className="text-metadata mb-4 block">Work</span>
+                <span className="text-metadata !text-white/40 mb-4 block">Work</span>
                 <div className="flex flex-col gap-2">
-                  <a href="/services/" className="text-body !text-sm hover:text-black transition-colors">Services</a>
-                  <a href="/startups/" className="text-body !text-sm hover:text-black transition-colors">Startups</a>
-                  <a href="/product-demo-videos/" className="text-body !text-sm hover:text-black transition-colors">Product Demo Videos</a>
-                  <a href="/technology-videos/" className="text-body !text-sm hover:text-black transition-colors">Technology Videos</a>
-                  <a href="/saas-tech/" className="text-body !text-sm hover:text-black transition-colors">SaaS & Tech</a>
-                  <a href="/agencies/" className="text-body !text-sm hover:text-black transition-colors">Agencies</a>
-                  <a href="/causes/" className="text-body !text-sm hover:text-black transition-colors">Causes & Nonprofits</a>
+                  <a href="/services/" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors">Services</a>
+                  <a href="/startups/" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors">Startups</a>
+                  <a href="/product-demo-videos/" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors">Product Demo Videos</a>
+                  <a href="/technology-videos/" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors">Technology Videos</a>
+                  <a href="/saas-tech/" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors">SaaS & Tech</a>
+                  <a href="/agencies/" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors">Agencies</a>
+                  <a href="/causes/" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors">Causes & Nonprofits</a>
                 </div>
               </div>
               <div>
-                <span className="text-metadata mb-4 block">Studio</span>
-                <p className="text-body !text-sm text-black">Byron Bay, NSW</p>
-                <p className="text-body !text-sm text-black">Australia</p>
+                <span className="text-metadata !text-white/40 mb-4 block">Studio</span>
+                <p className="text-body !text-sm !text-white/60">Byron Bay, NSW</p>
+                <p className="text-body !text-sm !text-white/60">Australia</p>
+                <div className="flex flex-col gap-2 mt-4">
+                  <a href="/about/" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors">About</a>
+                  <a href="/reviews/" className="text-body !text-sm !text-white/60 hover:!text-white transition-colors">Reviews</a>
+                </div>
               </div>
             </div>
-            <div className="pt-8 border-t border-black/10 flex flex-col items-start gap-4">
-              <a href="#top" className="text-metadata hover:text-black transition-colors">Back to Top</a>
+            <div className="pt-8 border-t border-white/10 flex flex-col items-start gap-4">
+              <a href="#top" className="text-metadata !text-white/40 hover:!text-white transition-colors">Back to Top</a>
               <div className="flex flex-col gap-1">
-                <span className="text-metadata">Motion Story. Complexity Explained.</span>
+                <span className="text-metadata !text-white/40">Motion Story<span className="text-accent">.</span> Complexity Explained.</span>
               </div>
             </div>
           </footer>

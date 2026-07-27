@@ -601,14 +601,16 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
         </section>
       </main>
 
-      {/* 10. Footer */}
-      <footer className="border-t border-black/10 px-5 py-12 pb-[calc(6.5rem+env(safe-area-inset-bottom))] sm:px-6 sm:py-14 md:pb-14 lg:px-12">
+      {/* 10. Footer — red rule separates black form band from utility */}
+      <footer className="site-footer px-5 py-12 pb-[calc(6.5rem+env(safe-area-inset-bottom))] sm:px-6 sm:py-14 md:pb-14 lg:px-12">
         <div className="mx-auto max-w-7xl">
-          <p className="font-display text-lg font-bold tracking-tight">Motion Story.</p>
-          <p className="mt-4 text-[11px] uppercase tracking-[0.14em] text-black/35">
+          <p className="font-display text-lg font-bold tracking-tight">
+            Motion Story<span className="text-accent">.</span>
+          </p>
+          <p className="mt-4 text-[11px] uppercase tracking-[0.14em] text-white/40">
             Featured on Behance · Clutch-awarded
           </p>
-          <p className="mt-2 text-[13px] text-black/35">Not currently hiring — briefs only.</p>
+          <p className="mt-2 text-[13px] text-white/40">Not currently hiring — briefs only.</p>
         </div>
       </footer>
 

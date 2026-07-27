@@ -22,9 +22,9 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Motion Design for Agencies & Studios",
-  "description": "Senior motion design production for branding agencies, design studios, and integrated creative shops. White label or direct.",
+  "description": "Senior creative direction and motion design for agencies. Lean on deep storytelling expertise — white label or collaborative. Work directly with Dan Neale.",
   "provider": { "@type": "Organization", "name": "Motion Story", "url": "https://motionstory.com.au" },
-  "serviceType": "Motion Design Production for Agencies",
+  "serviceType": "Motion Design and Creative Direction for Agencies",
   "areaServed": "Worldwide",
 };
 
@@ -39,10 +39,9 @@ const breadcrumbSchema = {
 ---
 
 <PageLayout
-  showCTA={false}
   floatSubject="Agency motion production"
   title="Motion Design for Agencies & Studios | Motion Story"
-  description="Senior motion design for agencies and studios. White label or direct. Work directly with Dan."
+  description="Senior creative direction and motion for agencies. White label or collaborative. Skip the production chain — work directly with Dan."
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
@@ -51,14 +50,14 @@ const breadcrumbSchema = {
 
   <ServiceLanding
     eyebrow="Agencies & Studios"
-    headline={["Your client needs motion.", "You need bandwidth."]}
-    lede="Senior animation production for agencies: white label or direct. Your relationship. My craft."
+    headline={["Your client needs motion.", "You need senior craft."]}
+    lede="Lean on deep storytelling expertise. White label production or collaborative creative direction — your relationship, my craft. No junior handoffs."
     work={work}
     moreWork={moreWork}
     faqs={[
       { label: "Cost", body: "From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront." },
       { label: "White label", body: "You brief me. I deliver finished files under your agency name." },
-      { label: "Direct with client", body: "Bring me in as the motion specialist alongside your team." },
+      { label: "Creative direction", body: "Bring me in as a senior storytelling / motion lead alongside your team — planning and vision, not just frames." },
     ]}
     relatedReading={[
       { href: "/how-to-brief-a-motion-designer-saas-video/", label: "How to brief a motion designer" },
