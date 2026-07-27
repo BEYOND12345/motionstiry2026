@@ -713,6 +713,19 @@ export const ALL_PROJECTS: Project[] = [
     vimeoId: "844474770",
     featured: false,
   },
+  {
+    id: "raa-insurance",
+    index: "53",
+    title: "RAA / Insurance Programme",
+    client: "RAA",
+    slug: "raa-insurance-programme",
+    category: "SaaS & Tech",
+    year: "2020",
+    description: "Making an insurance programme clear and easy to act on.",
+    details: "Animated an explainer for RAA's insurance programme. Insurance is dense by nature — the piece strips the programme back to what members actually need to know, told in a warm, straightforward visual language that keeps people watching to the end.",
+    vimeoId: "435940717",
+    featured: false,
+  },
 ];
 
 export const FEATURED_PROJECTS = ALL_PROJECTS.filter(p => p.featured);
