@@ -216,17 +216,19 @@ const credentials = [
   </section>
 
   <section class="landing-section">
-    <span class="landing-eyebrow landing-section-label">What clients say</span>
-    <p class="landing-clients" style="margin-bottom: 3rem;">
-      {GOOGLE_RATING.score} ★★★★★ on Google · {GOOGLE_RATING.count} reviews · <a href="/reviews/" style="border-bottom: 1px solid currentColor;">All reviews</a>
-    </p>
-    <div class="landing-cred">
-      {pageReviews.map((review) => (
-        <div class="landing-cred-row">
-          <h3 class="landing-cred-label">{review.company}</h3>
-          <p class="landing-cred-body">“{review.quote}” — {review.name}, {review.role}</p>
-        </div>
-      ))}
+    <div class="bg-black text-white px-8 py-16 md:px-14 md:py-20">
+      <span class="text-metadata !text-white/40 mb-8 block">What clients say</span>
+      <p class="text-metadata !text-white/60 mb-14">
+        <span class="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · {GOOGLE_RATING.count} reviews · <a href="/reviews/" class="!text-white/60 hover:!text-white transition-colors" style="border-bottom: 1px solid currentColor;">All reviews</a>
+      </p>
+      <div class="space-y-12">
+        {pageReviews.map((review) => (
+          <div>
+            <p class="font-display text-lg md:text-xl font-medium tracking-tight leading-snug mb-4 max-w-3xl">“{review.quote}”</p>
+            <p class="text-metadata !text-white/40">{review.name} — {review.role}, {review.company}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 

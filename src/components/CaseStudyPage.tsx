@@ -97,17 +97,20 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
       </AnimatedSection>
 
       {/* Client review */}
-      <AnimatedSection className="border-t border-black/10 bg-black/[0.01]">
+      <AnimatedSection className="bg-black text-white">
         <div className="max-w-6xl mx-auto px-8 py-24">
           <FadeUp>
-            <span className="text-metadata mb-10 block">
+            <span className="text-metadata !text-white/40 mb-10 block">
               {clientReview ? `What ${review.company} said` : "What clients say"}
             </span>
-            <blockquote className="font-display text-2xl md:text-4xl font-medium tracking-tight leading-snug max-w-4xl mb-10">
+            <blockquote className="font-display text-2xl md:text-4xl font-bold tracking-tight leading-snug max-w-4xl mb-10">
               "{review.quote}"
             </blockquote>
             <p className="font-display font-medium text-sm">{review.name}</p>
-            <p className="text-metadata">{review.role}, {review.company}</p>
+            <p className="text-metadata !text-white/40 mb-8">{review.role}, {review.company}</p>
+            <a href="/reviews/" className="text-metadata !text-white/40 hover:!text-white transition-colors">
+              <span className="text-accent">★★★★★</span> 5.0 on Google · All reviews →
+            </a>
           </FadeUp>
         </div>
       </AnimatedSection>

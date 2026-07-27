@@ -512,17 +512,17 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
         </section>
 
         {/* 6. Testimonial */}
-        <section className="border-y border-black/8 bg-black/[0.015]">
+        <section className="bg-black text-white">
           <div className="mx-auto max-w-5xl px-5 py-20 sm:px-6 sm:py-24 lg:px-12 lg:py-32">
             <blockquote className="font-display text-[1.4rem] font-medium leading-[1.28] tracking-tight sm:text-[1.75rem] sm:leading-[1.25] lg:text-[2.75rem] lg:leading-[1.15]">
               “{config.testimonial.quote}”
             </blockquote>
             <footer className="mt-10 sm:mt-12">
               <p className="font-display text-sm font-bold tracking-tight">{config.testimonial.name}</p>
-              <p className="mt-2 text-[11px] uppercase tracking-[0.14em] text-black/40">
+              <p className="mt-2 text-[11px] uppercase tracking-[0.14em] text-white/40">
                 {config.testimonial.role}, {config.testimonial.company}
               </p>
-              <p className="mt-8 text-[11px] uppercase tracking-[0.14em] text-black/40">
+              <p className="mt-8 text-[11px] uppercase tracking-[0.14em] text-white/40">
                 <span style={{ color: 'var(--landing-accent, #FF0000)' }}>★★★★★</span>
                 {' '}5.0 on Google · 10 reviews
               </p>
