@@ -28,7 +28,7 @@ const CLIENTS = [
 ];
 
 const AUDIENCES = [
-  { title: "SaaS & Tech", desc: "Product demos, platform explainers, release animations, onboarding.", href: "/saas-tech/" },
+  { title: "SaaS & Tech", desc: "SaaS explainer videos and product demo videos for complex software.", href: "/saas-explainer-videos/" },
   { title: "Agencies & Studios", desc: "White label or collaborative creative direction — senior craft without another production layer.", href: "/agencies/" },
   { title: "Startups", desc: "Launch explainers and the first product story that has to land before a login.", href: "/startups/" },
   { title: "Causes & Nonprofits", desc: "Mission work with clarity, not noise.", href: "/causes/" },
@@ -394,9 +394,9 @@ export default function Homepage() {
               <div>
                 <span className="text-metadata mb-3 block">Work</span>
                 <div className="flex flex-col gap-1.5">
+                  <a href="/saas-explainer-videos/" className="text-body !text-sm hover:text-black transition-colors">SaaS explainer videos</a>
+                  <a href="/product-demo-videos/" className="text-body !text-sm hover:text-black transition-colors">Product demo videos</a>
                   <a href="/services/" className="text-body !text-sm hover:text-black transition-colors">Services</a>
-                  <a href="/startups/" className="text-body !text-sm hover:text-black transition-colors">Startups</a>
-                  <a href="/saas-tech/" className="text-body !text-sm hover:text-black transition-colors">SaaS & Tech</a>
                   <a href="/agencies/" className="text-body !text-sm hover:text-black transition-colors">Agencies</a>
                   <a href="/causes/" className="text-body !text-sm hover:text-black transition-colors">Causes</a>
                 </div>

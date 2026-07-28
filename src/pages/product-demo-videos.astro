@@ -9,11 +9,21 @@ const config = productDemoVideosLanding;
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Product Demo Videos',
+  name: 'Product Demo Video',
   description: config.seo.metaDescription,
   provider: { '@type': 'Organization', name: 'Motion Story', url: 'https://motionstory.com.au' },
-  serviceType: 'Product Demo Videos',
+  serviceType: 'Product Demo Video',
   areaServed: 'Worldwide',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://motionstory.com.au/' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://motionstory.com.au/services/' },
+    { '@type': 'ListItem', position: 3, name: 'Product Demo Videos', item: 'https://motionstory.com.au/product-demo-videos/' },
+  ],
 };
 
 const faqSchema = {
@@ -34,6 +44,7 @@ const faqSchema = {
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
     <!-- TODO(dan): Replace with live GA4 + Google Ads IDs -->
     <script is:inline>

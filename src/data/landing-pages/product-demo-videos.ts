@@ -7,15 +7,15 @@ import { TESTIMONIAL_FINNIMORE } from './testimonials';
 export const productDemoVideosLanding: LandingPageConfig = {
   slug: 'product-demo-videos',
   seo: {
-    titleTag: 'Product Demo Videos | Motion Story',
+    titleTag: 'Product Demo Video | Motion Story',
     metaDescription:
-      'Animated product demo videos that show your software in action — no login required. Built for landing pages, sales decks, and onboarding.',
+      'Animated product demo video that shows your software in action — no login required. Built for landing pages, sales decks, and onboarding. Work with the creative director.',
     canonicalPath: '/product-demo-videos/',
   },
   hero: {
-    h1: 'Product Demo Videos That Actually Explain It',
+    h1: 'Product Demo Videos That Actually Sell',
     subhead:
-      'Work directly with the creative director. 20 years of senior craft — no account managers, no handoffs, no juniors.',
+      'An animated product demo video your sales team can send — no login, no fumbled walkthrough. Senior craft, end to end.',
     videoSrc: '866174146',
     fullShowreelUrl: '866174146',
   },
@@ -76,19 +76,24 @@ export const productDemoVideosLanding: LandingPageConfig = {
   faq: {
     items: [
       {
+        question: 'What is a product demo video?',
+        answer:
+          'A short animated walkthrough — usually 60 to 120 seconds — that shows how your product works and what happens when someone uses it. Designed for sales decks, landing pages, and follow-up emails.',
+      },
+      {
+        question: 'How is this different from a SaaS explainer video?',
+        answer:
+          'A product demo video shows the product in action. A SaaS explainer video sells the story and the why. If buyers still don’t get what you do, start with the explainer. If they get it and need proof of how it works, commission a demo.',
+      },
+      {
         question: 'What do projects involve?',
         answer:
-          'Every project runs concept → script → storyboard → design → animation → delivery. I own the whole chain. Timelines are usually 4–8 weeks depending on scope.',
+          'Every product demo video runs concept → script → storyboard → design → animation → delivery. I own the whole chain. Timelines are usually 4–8 weeks depending on scope.',
       },
       {
         question: 'Who will I work with?',
         answer:
           'Me. Dan Neale — creative director. No account managers. When a job needs extra hands, I bring in specialists I trust and direct.',
-      },
-      {
-        question: 'What kinds of companies do you work with?',
-        answer:
-          'SaaS teams commissioning demos for landing pages, sales decks, and onboarding. Also product marketing leads at scale-ups who want a demo their sales team will actually use.',
       },
       {
         question: 'Do you need access to our product?',
@@ -98,11 +103,11 @@ export const productDemoVideosLanding: LandingPageConfig = {
     ],
   },
   finalCta: {
-    headline: 'Talk to the creative director.',
+    headline: 'Need a product demo video?',
     formIntro: 'Or send a brief — I reply within one business day.',
   },
   form: {
-    textareaLabel: 'What does your product do?',
+    textareaLabel: 'What should your product demo video show?',
     submitButtonLabel: 'Send brief',
     redirectTo: '/thank-you',
   },

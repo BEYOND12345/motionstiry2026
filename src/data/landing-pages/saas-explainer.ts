@@ -7,15 +7,15 @@ import { TESTIMONIAL_ACODIS_TEAM } from './testimonials';
 export const saasExplainerLanding: LandingPageConfig = {
   slug: 'saas-explainer',
   seo: {
-    titleTag: 'SaaS Explainer Videos | Motion Story',
+    titleTag: 'SaaS Explainer Video | Motion Story',
     metaDescription:
-      'SaaS explainer videos for complex software. Clear product stories for sales, onboarding, and landing pages. Work directly with the creative director.',
+      'SaaS explainer video production for complex software. Clear product stories for landing pages, sales, and onboarding. Work directly with the creative director.',
     canonicalPath: '/saas-explainer-videos/',
   },
   hero: {
-    h1: 'Explainer Videos For Complex Products',
+    h1: 'SaaS Explainer Videos for Complex Software',
     subhead:
-      'Work directly with the creative director. 20 years of senior craft — no account managers, no handoffs, no juniors.',
+      'A SaaS explainer video that makes your product obvious — before the demo call. Senior craft, no account managers, no handoffs.',
     videoSrc: '879242129',
     fullShowreelUrl: '879242129',
   },
@@ -76,19 +76,24 @@ export const saasExplainerLanding: LandingPageConfig = {
   faq: {
     items: [
       {
+        question: 'What is a SaaS explainer video?',
+        answer:
+          'A short animated film — usually 60 to 90 seconds — that shows what your software does and why it matters, without a login or a live walkthrough. Built for homepages, sales decks, and ads.',
+      },
+      {
+        question: 'How is this different from a product demo video?',
+        answer:
+          'A SaaS explainer video sells the story and the value. A product demo video walks through how it works. Most teams need the explainer first; many later add a demo. See product demo videos if you already have demand and need a sales asset.',
+      },
+      {
         question: 'What do projects involve?',
         answer:
-          'Every project runs concept → script → storyboard → design → animation → delivery. I own the whole chain. Timelines are usually 4–8 weeks depending on scope.',
+          'Every SaaS explainer video runs concept → script → storyboard → design → animation → delivery. I own the whole chain. Timelines are usually 4–8 weeks depending on scope.',
       },
       {
         question: 'Who will I work with?',
         answer:
           'Me. Dan Neale — creative director. No account managers. When a job needs extra hands, I bring in specialists I trust and direct.',
-      },
-      {
-        question: 'Do you rewrite the script?',
-        answer:
-          "Yes — that's usually where the film is won or lost. I'll structure the story, tighten the hooks, and make sure every line earns its place before a single frame is animated.",
       },
       {
         question: 'What kinds of companies do you work with?',
@@ -98,11 +103,11 @@ export const saasExplainerLanding: LandingPageConfig = {
     ],
   },
   finalCta: {
-    headline: 'Talk to the creative director.',
+    headline: 'Ready for a SaaS explainer video?',
     formIntro: 'Or send a brief — I reply within one business day.',
   },
   form: {
-    textareaLabel: 'What are you trying to explain?',
+    textareaLabel: 'What should your SaaS explainer video explain?',
     submitButtonLabel: 'Send brief',
     redirectTo: '/thank-you',
   },

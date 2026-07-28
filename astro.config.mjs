@@ -21,7 +21,6 @@ const HIGH_PRIORITY_PAGES = new Set([
   '/process/',
   '/product-demo-videos/',
   '/saas-explainer-videos/',
-  '/saas-tech/',
   '/services/',
   '/startups/',
   '/technology-videos/',
@@ -117,7 +116,7 @@ export default defineConfig({
     '/animated-video-service/': '/explainer-videos/',
     '/30s-explainer-videos/': '/startups/',
     '/start-up-explainer-videos/': '/startups/',
-    '/finance-explainer-videos/': '/saas-tech/',
+    '/finance-explainer-videos/': '/saas-explainer-videos/',
     '/animated-product-demos/': '/product-demo-videos/',
     '/product-demos/': '/product-demo-videos/',
     '/tech-videos/': '/technology-videos/',
@@ -128,6 +127,7 @@ export default defineConfig({
     // '/explainer-videos/' now has its own page
     // '/product-demo-videos/' now has its own page
     '/animated-onboarding-videos/': '/saas-explainer-videos/',
+    '/saas-tech/': '/saas-explainer-videos/',
 
     // Old SaaS/startup stories pages (from GSC Apr 2026)
     '/stories-for-start-ups-animated-explainer-videos/': '/startups/',
@@ -141,13 +141,13 @@ export default defineConfig({
     '/agency-partnership/': '/agencies/',
 
     // Landing pages → relevant audience pages
-    '/landing-page-design-animation/': '/saas-tech/',
+    '/landing-page-design-animation/': '/saas-explainer-videos/',
     // /landing-page-explainer-video-01/ is a live Ads landing (do not redirect)
-    '/animation-production-company-2/': '/saas-tech/',
-    '/landing-page-animated-video-services-01/': '/saas-tech/',
+    '/animation-production-company-2/': '/saas-explainer-videos/',
+    '/landing-page-animated-video-services-01/': '/saas-explainer-videos/',
     // /landing-animated-product-demos-01/ is a live Ads landing (do not redirect)
     '/freelance-motion-graphic-designer/': '/motion-graphics/',
-    '/freelance-motion-design-and-animation/': '/saas-tech/',
+    '/freelance-motion-design-and-animation/': '/saas-explainer-videos/',
     '/motion-graphic-production/': '/motion-graphics/',
 
     // Old standalone pages → new equivalents
