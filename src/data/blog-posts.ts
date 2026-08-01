@@ -10,6 +10,76 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "built-side-product-running-motion-studio",
+    title: "I Built a Side Product While Running a Motion Studio — Here’s Why",
+    date: "2026-08-02",
+    category: "Thought Leadership",
+    tags: ["side product", "SMASH Invoices", "product design", "voice invoicing", "Motion Story"],
+    excerpt:
+      "I’m Dan from Motion Story. By day I animate SaaS products. On the side I still run Good Hands Handyman — and I built SMASH so I could send a quote or invoice by voice before I left the job.",
+    content: `Most days I’m in the studio explaining other people’s software.
+
+That’s Motion Story. [Product demos](/product-demo-videos/), [platform explainers](/saas-explainer-videos/), onboarding animation — the work of making a complex SaaS idea feel simple in 60–90 seconds. Byron Bay. Clients from startups through to bigger tech brands. Hands on the timeline, not the tools.
+
+Except I still have days on the tools too.
+
+I run Good Hands Handyman. Same person. Same week, sometimes. One morning I’m animating an in-app messaging flow. Next afternoon I’m in someone’s kitchen talking through a tap, a door, a patch-and-paint job. That split isn’t a brand story I invented for LinkedIn. It’s just how my life works.
+
+And it’s why SMASH exists.
+
+## The part that kept losing me jobs
+
+On handyman jobs, the work wasn’t the hard bit. The admin was.
+
+Customer standing there, wanting a number. I’d do the “I’ll email you a quote tonight” thing. Drive to the next job. Get home tired. Open the laptop. Stare at the invoice app. Typing has never been my friend — I’m dyslexic, and sitting down to write line items always felt heavier than the job itself.
+
+By the time I sent the quote, someone else had already sent theirs.
+
+Most jobs aren’t lost on price. They’re lost to whoever quoted first.
+
+## I tried the “smart” shortcut
+
+Like a lot of people, I asked ChatGPT to help me estimate faster.
+
+The wording was fine. The money wasn’t.
+
+It guessed rates. It didn’t know my call-out, my travel, my material markup, or what I actually charge in this area. For a handyman business, wrong prices aren’t a cute AI demo — they’re how you lose money or look unserious.
+
+I didn’t need prettier paragraphs. I needed my catalog — my labour, my fees, my materials — spoken on site, checked, and sent before I left the driveway.
+
+## So I built the thing I actually needed
+
+That’s SMASH.
+
+Not another job-management suite. Not a template farm. A [voice to invoice](https://smashinvoices.com/voice-invoicing) workflow for people who hate typing:
+
+Talk for about 30 seconds → verify the priced lines → send the quote or invoice before you leave the job.
+
+Same loop for an instant quote on site, then the invoice when the work’s done. Built for my own jobs first. Still used on my own jobs.
+
+If you want the longer founder version, it’s here: [Meet the founder](https://smashinvoices.com/founder).
+
+## Why this sits on Motion Story’s blog
+
+Because the through-line isn’t “tradie tips.” It’s product.
+
+I spend my studio hours making other companies’ software make sense on screen. SMASH is the product I made when the admin in my own trade business wouldn’t. Same obsession: strip the friction until the story is obvious — talk, check, send.
+
+I’m not quitting Motion Story. Client work is still the day job. Good Hands keeps me honest about what field software feels like when your hands are dirty. SMASH is the side build that stuck because it solved a real hole in that week.
+
+## If you’re in the same mess
+
+If you quote and invoice for service work, and “I’ll do the paperwork tonight” keeps eating jobs or Sundays, that’s the problem I built for.
+
+Start here: [voice to invoice](https://smashinvoices.com/voice-invoicing) — send it before you leave the job.
+
+I built it for me. Other people on the tools can use it too.
+
+---
+
+Dan Neale — Motion Story · Good Hands Handyman · SMASH Invoices`,
+  },
+  {
     slug: "why-motion-design-project-fails-before-animation",
     title: "Why Your Motion Design Project Is Failing Before Animation Even Starts",
     date: "2026-05-05",
