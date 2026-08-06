@@ -1,8 +1,8 @@
-import type { LandingPageConfig } from '../../components/LandingPage/types';
+import type { SpineLandingConfig } from '../../components/LandingPage/spine-types';
 
-type Testimonial = LandingPageConfig['testimonial'];
+type Testimonial = SpineLandingConfig['testimonial'];
 
-/** Approved client quotes used across Ads landings — mix per page. */
+/** Approved client quotes used across Ads landings. Mix per page. */
 export const TESTIMONIAL_ACODIS: Testimonial = {
   quote: '40,000 views on YouTube, which increased brand perception and reputation.',
   name: 'Simon Lehmann',

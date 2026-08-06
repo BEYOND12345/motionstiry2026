@@ -304,9 +304,12 @@ body.homepage-layout {
 }
 
 /* ── Red-on-black system ──
-   Black = proof / close. Red hairline = seam between statement and utility. */
+   Black = proof / close. Soft depth, not flat ink.
+   Red hairline = seam between statement and utility. */
 .band-black {
-  background: #000;
+  background:
+    radial-gradient(ellipse 90% 70% at 50% -30%, rgba(255, 255, 255, 0.06), transparent 55%),
+    linear-gradient(180deg, #121212 0%, #0a0a0a 45%, #070707 100%);
   color: #fff;
 }
 
@@ -326,14 +329,17 @@ body.homepage-layout {
 }
 
 .site-cta {
-  background: #000;
+  background:
+    radial-gradient(ellipse 100% 80% at 50% 0%, rgba(255, 255, 255, 0.055), transparent 52%),
+    linear-gradient(180deg, #121212 0%, #0a0a0a 42%, #070707 100%);
   color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .site-footer {
   background: #fff;
-  color: #000;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: #0a0a0a;
+  border-top: 1px solid rgba(10, 10, 10, 0.1);
 }
 
 /* Floating mailto — black chip, red edge, reads over light and dark */

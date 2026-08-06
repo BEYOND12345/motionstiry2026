@@ -1,104 +1,77 @@
-import type { LandingPageConfig } from '../../components/LandingPage/types';
-import { getLandingShowcaseWork } from './showcase-work';
-import { SAAS_TRUST_LOGOS } from './trust-logos';
+import type { SpineLandingConfig } from '../../components/LandingPage/spine-types';
 import { TESTIMONIAL_METHOD } from './testimonials';
+import {
+  SPINE_CLOSE,
+  SPINE_GUIDE,
+  SPINE_PLAN,
+  SPINE_PROOF_CASES,
+  SPINE_TICKER_ROW_A,
+  SPINE_TICKER_ROW_B,
+  SPINE_VALUE,
+  SPINE_CORE_FAQS,
+} from './spine-shared';
 
 /** Config for /landing-animated-product-demos-01/ */
-export const productDemoLanding: LandingPageConfig = {
+export const productDemoLanding: SpineLandingConfig = {
   slug: 'product-demo',
   seo: {
     titleTag: 'Product Demo Videos That Sell Your Software | Motion Story',
     metaDescription:
-      "Animated product demos for SaaS teams. Sales-ready videos, no login required. Script, storyboard, animation by a creative director with 20 years' craft.",
+      'Animated product demos for SaaS teams. Sales ready videos, no login required. Script, storyboard, animation by a creative director.',
     canonicalPath: '/landing-animated-product-demos-01/',
   },
   hero: {
-    h1: 'Product Demo Videos That Sell Your Software',
-    subhead:
-      'Work directly with the creative director. 20 years of senior craft — no account managers, no handoffs, no juniors.',
+    eyebrow: 'Product demo videos',
+    h1: 'Product demos that sell your software.',
+    subhead: 'Clear. On brand. Ready for sales.',
     videoSrc: '861022443',
     fullShowreelUrl: '861022443',
+    primaryCta: 'Book a call',
+    secondaryCta: 'See the work',
   },
   trustStrip: {
-    line: 'Trusted by hundreds of SaaS and tech companies.',
-    logos: [...SAAS_TRUST_LOGOS],
+    line: 'Trusted by teams who need clarity',
+    rowA: SPINE_TICKER_ROW_A,
+    rowB: SPINE_TICKER_ROW_B,
   },
-  coreSell: {
-    leadCopy:
-      "Screenshots don't sell and screen recordings bore. I'll script, storyboard and animate a demo your sales team can actually send — no login required, no fumbled walkthrough, just your product's value in under two minutes.",
-    proofPoints: [
-      {
-        title: 'Built for landing pages and sales decks',
-        body: "Format and length that fits where you'll actually use it.",
-      },
-      {
-        title: 'Complexity translated, not dumbed down',
-        body: 'Technical detail shaped so it serves the story.',
-      },
-      {
-        title: 'Sales-ready in weeks, not quarters',
-        body: 'Fast turnaround because one person owns the whole chain.',
-      },
-      {
-        title: 'Senior craft on every frame',
-        body: 'No juniors, no handoffs, no templated animation libraries.',
-      },
+  value: SPINE_VALUE,
+  guide: SPINE_GUIDE,
+  plan: {
+    ...SPINE_PLAN,
+    steps: [
+      { label: 'We talk', body: 'Scope, audience, where the demo has to work.' },
+      SPINE_PLAN.steps[1],
+      SPINE_PLAN.steps[2],
     ],
   },
-  middleGround: {
-    headline: 'Not an agency. Not a freelancer.',
-    body: 'Big agencies bury the craft under account managers and juniors. Solo freelancers can execute but rarely own the story. This studio sits between — big-agency thinking without the overheads, senior craft with direct access.',
+  proof: {
+    eyebrow: 'Selected work',
+    headline: 'Selected product demos.',
+    cases: SPINE_PROOF_CASES,
   },
-  featuredWork: {
-    projects: getLandingShowcaseWork(),
+  stakes: {
+    eyebrow: 'What’s at stake',
+    headline: 'The first film buyers see sets the ceiling for trust.',
+    body: '',
+  },
+  success: {
+    headline: SPINE_CLOSE.headline,
+    body: 'One video. The buyer already gets it.',
   },
   testimonial: TESTIMONIAL_METHOD,
-  process: {
-    steps: [
-      {
-        label: 'Project call',
-        body: "20 minutes. Scope, timing, whether I'm the right fit.",
-      },
-      {
-        label: 'Script & storyboard',
-        body: 'Rewritten for clarity and hooks. Shared before a single frame is animated.',
-      },
-      {
-        label: 'Design & animation',
-        body: 'Concept, style frames, full production.',
-      },
-      {
-        label: 'Delivery',
-        body: 'Final files, revisions handled, ready to ship.',
-      },
-    ],
-  },
   faq: {
     items: [
       {
-        question: 'What do projects involve?',
+        question: 'What is a product demo video?',
         answer:
-          'Every project runs concept → script → storyboard → design → animation → delivery. I own the whole chain. Timelines are usually 4–8 weeks depending on scope.',
+          'A short animated walkthrough that shows how your product works. Built for landing pages, sales decks, and follow up emails.',
       },
-      {
-        question: 'What kinds of companies do you work with?',
-        answer:
-          'SaaS teams commissioning demos for landing pages, sales decks, and onboarding. Also product marketing leads at scale-ups who want a demo their sales team will actually use.',
-      },
-      {
-        question: 'Are you hiring?',
-        answer: 'No — this page is for teams commissioning work.',
-      },
-      {
-        question: 'How do we start?',
-        answer:
-          'Book a 20-minute call or send a brief through the form. I reply within one business day.',
-      },
+      ...SPINE_CORE_FAQS,
     ],
   },
   finalCta: {
-    headline: 'Talk to the creative director.',
-    formIntro: 'Or send a brief — I reply within one business day.',
+    headline: SPINE_CLOSE.headline,
+    formIntro: SPINE_CLOSE.formIntro,
   },
   form: {
     textareaLabel: 'What does your product do?',

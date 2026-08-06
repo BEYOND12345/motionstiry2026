@@ -1,105 +1,70 @@
-import type { LandingPageConfig } from '../../components/LandingPage/types';
-import { getLandingShowcaseWork } from './showcase-work';
-import { SAAS_TRUST_LOGOS } from './trust-logos';
+import type { SpineLandingConfig } from '../../components/LandingPage/spine-types';
 import { TESTIMONIAL_ACODIS } from './testimonials';
+import {
+  SPINE_CLOSE,
+  SPINE_GUIDE,
+  SPINE_PLAN,
+  SPINE_PROOF_CASES,
+  SPINE_TICKER_ROW_A,
+  SPINE_TICKER_ROW_B,
+  SPINE_VALUE,
+  SPINE_CORE_FAQS,
+} from './spine-shared';
 
 /** Config for /landing-page-explainer-video-01/ */
-export const explainerVideoLanding: LandingPageConfig = {
+export const explainerVideoLanding: SpineLandingConfig = {
   slug: 'explainer-video',
   seo: {
     titleTag: 'Explainer Videos For Complex Products | Motion Story',
     metaDescription:
-      'Explainer videos for SaaS and tech teams. Work directly with the creative director — script, storyboard, animation. 20 years of senior craft.',
+      'Explainer videos for SaaS and tech teams. Work directly with the creative director. Script, storyboard, animation.',
     canonicalPath: '/landing-page-explainer-video-01/',
   },
   hero: {
-    h1: 'Explainer Videos For Complex Products',
-    subhead:
-      'Work directly with the creative director. 20 years of senior craft — no account managers, no handoffs, no juniors.',
+    eyebrow: 'Explainer videos',
+    h1: 'Explainer videos for complex products.',
+    subhead: 'Complex made clear.',
     videoSrc: '861022443',
     fullShowreelUrl: '861022443',
+    primaryCta: 'Book a call',
+    secondaryCta: 'See the work',
   },
   trustStrip: {
-    line: 'Trusted by leading SaaS and tech companies.',
-    logos: [...SAAS_TRUST_LOGOS],
+    line: 'Trusted by teams who need clarity',
+    rowA: SPINE_TICKER_ROW_A,
+    rowB: SPINE_TICKER_ROW_B,
   },
-  coreSell: {
-    leadCopy:
-      "I won't just take your script. I'll rewrite it, storyboard it, get the timings right, and make sure the hooks land — built around how people actually watch. One person owns the whole thing, concept to delivery.",
-    proofPoints: [
-      {
-        title: 'Original ideation from the ground up',
-        body: 'Concept and narrative developed with you, not templated from a library.',
-      },
-      {
-        title: 'Story structure, not just animation',
-        body: 'The script and storyboard get the same attention as every frame.',
-      },
-      {
-        title: 'Delivered on time, complexity handled',
-        body: 'Technical detail translated so it serves the story, not the other way around.',
-      },
-      {
-        title: 'Senior craft on every frame',
-        body: 'No juniors, no account managers. The person you brief is the person responsible for the work.',
-      },
-    ],
+  value: SPINE_VALUE,
+  guide: SPINE_GUIDE,
+  plan: SPINE_PLAN,
+  proof: {
+    eyebrow: 'Selected work',
+    headline: 'Selected work.',
+    cases: SPINE_PROOF_CASES,
   },
-  middleGround: {
-    headline: 'Not an agency. Not a freelancer.',
-    body: 'Big agencies bury the craft under account managers and juniors. Solo freelancers can execute but rarely own the story. This studio sits between — big-agency thinking without the overheads, senior craft with direct access.',
+  stakes: {
+    eyebrow: 'What’s at stake',
+    headline: 'The first film buyers see sets the ceiling for trust.',
+    body: '',
   },
-  featuredWork: {
-    projects: getLandingShowcaseWork(),
+  success: {
+    headline: SPINE_CLOSE.headline,
+    body: 'One story. The buyer already gets it.',
   },
   testimonial: TESTIMONIAL_ACODIS,
-  process: {
-    steps: [
-      {
-        label: 'Project call',
-        body: "20 minutes. Scope, timing, whether I'm the right fit.",
-      },
-      {
-        label: 'Script & storyboard',
-        body: 'Rewritten for clarity and hooks. Shared before a single frame is animated.',
-      },
-      {
-        label: 'Design & animation',
-        body: 'Concept, style frames, full production.',
-      },
-      {
-        label: 'Delivery',
-        body: 'Final files, revisions handled, ready to ship.',
-      },
-    ],
-  },
   faq: {
     items: [
       {
-        question: 'What do projects involve?',
+        question: 'What is an explainer video?',
         answer:
-          'Every project runs concept → script → storyboard → design → animation → delivery. I own the whole chain. Timelines are usually 4–8 weeks depending on scope.',
+          'A short animated film that makes a complex product or idea obvious. Built for pages, decks, and sales.',
       },
-      {
-        question: 'Who will I work with?',
-        answer:
-          'Me. Dan Neale — creative director. No account managers. When a job needs extra hands, I bring in specialists I trust and direct.',
-      },
-      {
-        question: 'Do you rewrite the script?',
-        answer:
-          "Yes — that's usually where the film is won or lost. I'll structure the story, tighten the hooks, and make sure every line earns its place before a single frame is animated.",
-      },
-      {
-        question: 'What kinds of companies do you work with?',
-        answer:
-          'Mostly SaaS and tech companies with complex products that need to be made obvious. Also creative and design agencies bringing in a senior motion specialist.',
-      },
+      ...SPINE_CORE_FAQS,
     ],
   },
   finalCta: {
-    headline: 'Talk to the creative director.',
-    formIntro: 'Or send a brief — I reply within one business day.',
+    headline: SPINE_CLOSE.headline,
+    formIntro: SPINE_CLOSE.formIntro,
   },
   form: {
     textareaLabel: 'What are you trying to explain?',

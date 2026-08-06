@@ -1,104 +1,80 @@
-import type { LandingPageConfig } from '../../components/LandingPage/types';
-import { getLandingShowcaseWork } from './showcase-work';
-import { SAAS_TRUST_LOGOS } from './trust-logos';
+import type { SpineLandingConfig } from '../../components/LandingPage/spine-types';
 import { TESTIMONIAL_NSW_GOV } from './testimonials';
+import {
+  SPINE_CLOSE,
+  SPINE_GUIDE,
+  SPINE_PLAN,
+  SPINE_PROOF_CASES,
+  SPINE_TICKER_ROW_A,
+  SPINE_TICKER_ROW_B,
+  SPINE_VALUE,
+  SPINE_CORE_FAQS,
+} from './spine-shared';
 
 /** Config for /product-launch-video/ */
-export const productLaunchLanding: LandingPageConfig = {
+export const productLaunchLanding: SpineLandingConfig = {
   slug: 'product-launch',
   seo: {
     titleTag: 'Product Launch Videos That Land | Motion Story',
     metaDescription:
-      'Product launch videos for SaaS and tech. Work directly with the creative director — story, craft, and timing built for the moment you ship.',
+      'Product launch videos for SaaS and tech. Work directly with the creative director. Story, craft, and timing built for the moment you ship.',
     canonicalPath: '/product-launch-video/',
   },
   hero: {
-    h1: 'Product Launch Videos That Land',
-    subhead:
-      'Work directly with the creative director. 20 years of senior craft — no account managers, no handoffs, no juniors.',
+    eyebrow: 'Product launch videos',
+    h1: 'Product launch videos that land.',
+    subhead: 'Built for the moment you ship.',
     videoSrc: '863428533',
     fullShowreelUrl: '863428533',
+    primaryCta: 'Book a call',
+    secondaryCta: 'See the work',
   },
   trustStrip: {
-    line: 'Trusted by hundreds of SaaS and tech companies.',
-    logos: [...SAAS_TRUST_LOGOS],
+    line: 'Trusted by teams who need clarity',
+    rowA: SPINE_TICKER_ROW_A,
+    rowB: SPINE_TICKER_ROW_B,
   },
-  coreSell: {
-    leadCopy:
-      "A launch isn't a feature list with music. I'll shape the story, the hook, and the proof so the film earns attention on day one — and still works in sales decks months later. One person owns the whole thing, concept to delivery.",
-    proofPoints: [
+  value: SPINE_VALUE,
+  guide: SPINE_GUIDE,
+  plan: {
+    ...SPINE_PLAN,
+    steps: [
+      { label: 'We talk', body: 'Scope, launch date, where the film has to work.' },
+      SPINE_PLAN.steps[1],
       {
-        title: 'Built for the launch moment',
-        body: 'Messaging, pacing, and length tuned for announcement day — not a generic explainer with a new title.',
-      },
-      {
-        title: 'Story that carries past week one',
-        body: 'Assets your team can keep using on the site, in outreach, and in investor updates.',
-      },
-      {
-        title: 'Complexity handled under pressure',
-        body: 'Tight timelines without losing craft. Clear scope, clear delivery.',
-      },
-      {
-        title: 'Senior craft on every frame',
-        body: 'No juniors, no account managers. The person you brief is the person responsible for the work.',
+        label: 'We make the film',
+        body: 'Design, animation, delivery. Built for the launch window.',
       },
     ],
   },
-  middleGround: {
-    headline: 'Not an agency. Not a freelancer.',
-    body: 'Big agencies bury the craft under account managers and juniors. Solo freelancers can execute but rarely own the story. This studio sits between — big-agency thinking without the overheads, senior craft with direct access.',
+  proof: {
+    eyebrow: 'Selected work',
+    headline: 'Selected launch work.',
+    cases: SPINE_PROOF_CASES,
   },
-  featuredWork: {
-    projects: getLandingShowcaseWork(),
+  stakes: {
+    eyebrow: 'What’s at stake',
+    headline: 'The first film buyers see sets the ceiling for trust.',
+    body: '',
+  },
+  success: {
+    headline: SPINE_CLOSE.headline,
+    body: 'One story. Ready for launch day.',
   },
   testimonial: TESTIMONIAL_NSW_GOV,
-  process: {
-    steps: [
-      {
-        label: 'Project call',
-        body: "20 minutes. Scope, timing, whether I'm the right fit.",
-      },
-      {
-        label: 'Script & storyboard',
-        body: 'Rewritten for clarity and hooks. Shared before a single frame is animated.',
-      },
-      {
-        label: 'Design & animation',
-        body: 'Concept, style frames, full production.',
-      },
-      {
-        label: 'Delivery',
-        body: 'Final files, revisions handled, ready to ship.',
-      },
-    ],
-  },
   faq: {
     items: [
       {
-        question: 'What do projects involve?',
+        question: 'What is a product launch video?',
         answer:
-          'Every project runs concept → script → storyboard → design → animation → delivery. I own the whole chain. Timelines are usually 4–8 weeks depending on scope — tighter when the launch date is fixed.',
+          'A film built for the moment you ship: the hook, the story, and proof sales can keep using after launch week.',
       },
-      {
-        question: 'What kinds of companies do you work with?',
-        answer:
-          'SaaS and tech teams shipping a new product, major feature, or repositioning. Also product marketing leads who need a launch film that sales will actually use.',
-      },
-      {
-        question: 'Are you hiring?',
-        answer: 'No — this page is for teams commissioning work.',
-      },
-      {
-        question: 'How do we start?',
-        answer:
-          'Book a 20-minute call or send a brief through the form. I reply within one business day.',
-      },
+      ...SPINE_CORE_FAQS,
     ],
   },
   finalCta: {
-    headline: 'Talk to the creative director.',
-    formIntro: 'Or send a brief — I reply within one business day.',
+    headline: SPINE_CLOSE.headline,
+    formIntro: SPINE_CLOSE.formIntro,
   },
   form: {
     textareaLabel: 'What are you launching?',

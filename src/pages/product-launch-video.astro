@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import LandingPage from '../components/LandingPage/LandingPage';
+import SpineLandingPage from '../components/LandingPage/SpineLandingPage';
 import { productLaunchLanding } from '../data/landing-pages/product-launch';
 import '../styles/global.css';
 
@@ -46,5 +46,5 @@ const faqSchema = {
     </script>
   </Fragment>
 
-  <LandingPage client:load config={config} />
+  <SpineLandingPage client:load config={config} />
 </BaseLayout>

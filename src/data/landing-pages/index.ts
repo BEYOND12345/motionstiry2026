@@ -7,6 +7,11 @@ export { saasExplainerLanding } from './saas-explainer';
 export { getLandingShowcaseWork } from './showcase-work';
 export { SAAS_TRUST_LOGOS } from './trust-logos';
 export {
+  SPINE_PROOF_CASES,
+  SPINE_GUIDE,
+  SPINE_PLAN,
+} from './spine-shared';
+export {
   TESTIMONIAL_ACODIS,
   TESTIMONIAL_METHOD,
   TESTIMONIAL_AMSED,
