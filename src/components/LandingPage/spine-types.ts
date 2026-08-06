@@ -4,6 +4,8 @@ export type SpineCase = {
   body: string;
   outcome: string;
   videoUrl: string;
+  /** Privacy hash for unlisted Vimeo videos */
+  vimeoHash?: string;
   posterUrl?: string;
 };
 

@@ -29,16 +29,19 @@ function StoryFilm({
   videoUrl,
   title,
   posterUrl,
+  vimeoHash,
   priority = false,
 }: {
   videoUrl: string;
   title: string;
   posterUrl?: string;
+  vimeoHash?: string;
   priority?: boolean;
 }) {
   const [playing, setPlaying] = useState(false);
   const [allowPreview, setAllowPreview] = useState(false);
   const id = vimeoIdFrom(videoUrl);
+  const hashQuery = vimeoHash ? `h=${vimeoHash}&` : '';
   const poster = posterUrl ?? `https://vumbnail.com/${id}.jpg`;
 
   useEffect(() => {
@@ -54,7 +57,7 @@ function StoryFilm({
     <div className="spine-film relative aspect-video w-full overflow-hidden rounded-[10px]">
       {playing ? (
         <iframe
-          src={`https://player.vimeo.com/video/${id}?autoplay=1&title=0&byline=0&portrait=0`}
+          src={`https://player.vimeo.com/video/${id}?${hashQuery}autoplay=1&title=0&byline=0&portrait=0`}
           className="absolute inset-0 h-full w-full"
           allow="autoplay; fullscreen; picture-in-picture"
           allowFullScreen
@@ -74,7 +77,7 @@ function StoryFilm({
           />
           {allowPreview && (
             <iframe
-              src={`https://player.vimeo.com/video/${id}?background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0`}
+              src={`https://player.vimeo.com/video/${id}?${hashQuery}background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0`}
               className="absolute inset-0 h-full w-full scale-[1.02] opacity-90"
               allow="autoplay; fullscreen"
               title={`${title} preview`}
@@ -194,6 +197,7 @@ function ProofRow({ project, index }: { project: SpineCase; index: number }) {
       film={
         <StoryFilm
           videoUrl={project.videoUrl}
+          vimeoHash={project.vimeoHash}
           title={`${project.client}: ${project.useCase}`}
         />
       }

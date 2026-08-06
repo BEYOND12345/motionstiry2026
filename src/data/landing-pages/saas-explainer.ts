@@ -4,7 +4,7 @@ import {
   SPINE_CLOSE,
   SPINE_GUIDE,
   SPINE_PLAN,
-  SPINE_PROOF_CASES,
+  SPINE_PROOF_SAAS_EXPLAINER,
   SPINE_TICKER_ROW_A,
   SPINE_TICKER_ROW_B,
   SPINE_VALUE,
@@ -40,7 +40,7 @@ export const saasExplainerLanding: SpineLandingConfig = {
   proof: {
     eyebrow: 'Selected work',
     headline: 'Selected SaaS work.',
-    cases: SPINE_PROOF_CASES,
+    cases: SPINE_PROOF_SAAS_EXPLAINER,
   },
   stakes: {
     eyebrow: 'What’s at stake',

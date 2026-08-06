@@ -4,7 +4,7 @@ import {
   SPINE_CLOSE,
   SPINE_GUIDE,
   SPINE_PLAN,
-  SPINE_PROOF_CASES,
+  SPINE_PROOF_PRODUCT_LAUNCH,
   SPINE_TICKER_ROW_A,
   SPINE_TICKER_ROW_B,
   SPINE_VALUE,
@@ -50,7 +50,7 @@ export const productLaunchLanding: SpineLandingConfig = {
   proof: {
     eyebrow: 'Selected work',
     headline: 'Selected launch work.',
-    cases: SPINE_PROOF_CASES,
+    cases: SPINE_PROOF_PRODUCT_LAUNCH,
   },
   stakes: {
     eyebrow: 'What’s at stake',

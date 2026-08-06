@@ -1,4 +1,5 @@
 import type { SpineCase, SpineLandingConfig } from '../../components/LandingPage/spine-types';
+import { ALL_PROJECTS, type Project } from '../projects';
 
 /** Shared ticker rows for Ads / money landings */
 export const SPINE_TICKER_ROW_A = [
@@ -57,121 +58,99 @@ export const SPINE_PLAN: SpineLandingConfig['plan'] = {
   ],
 };
 
-/** Full portfolio set used across spine landings */
-export const SPINE_PROOF_CASES: SpineCase[] = [
-  {
-    client: 'Trudi',
-    useCase: 'AI property management, without a login.',
+function projectToCase(p: Project): SpineCase {
+  const useCase = p.title.includes(' / ') ? p.title.split(' / ')[1]! : p.title;
+  return {
+    client: p.client,
+    useCase,
     body: '',
-    outcome: 'Sales ready walkthrough of the core product flows.',
-    videoUrl: '866174146',
-  },
-  {
-    client: 'Atomic',
-    useCase: 'In app messaging that feels native.',
-    body: '',
-    outcome: 'Feature demo for decks and launch pages.',
-    videoUrl: '861022443',
-  },
-  {
-    client: 'Wipster',
-    useCase: 'Video review, from feedback to delivery.',
-    body: '',
-    outcome: 'A product overview that explains the system.',
-    videoUrl: '648360270',
-  },
-  {
-    client: 'Acodis',
-    useCase: 'AI document processing, made watchable.',
-    body: '',
-    outcome: 'Technical product, clear enough for any buyer.',
-    videoUrl: '580088673',
-  },
-  {
-    client: 'Mosaic',
-    useCase: 'Strategic data planning, made clear.',
-    body: '',
-    outcome: 'Platform explainer for complex data workflows.',
-    videoUrl: '879242129',
-  },
-  {
-    client: 'Nisient',
-    useCase: 'Quantum security, made decisive.',
-    body: '',
-    outcome: 'Deep tech, clear enough for decision makers.',
-    videoUrl: '1213121904',
-  },
-  {
-    client: 'Cloud Trace',
-    useCase: 'A cloud platform, grounded in clarity.',
-    body: '',
-    outcome: 'SaaS explainer that shows what the product does.',
-    videoUrl: '940525709',
-  },
-  {
-    client: 'Trusyft',
-    useCase: 'Product promo with cinematic clarity.',
-    body: '',
-    outcome: 'Animated product story built to convert.',
-    videoUrl: '863428533',
-  },
-  {
-    client: 'Giraffe',
-    useCase: 'Urban planning tech, explained simply.',
-    body: '',
-    outcome: 'Spatial product story for architects and planners.',
-    videoUrl: '762112642',
-  },
-  {
-    client: 'Meltwater',
-    useCase: 'Media intelligence at brand scale.',
-    body: '',
-    outcome: 'Brand story for a global SaaS platform.',
-    videoUrl: '394326130',
-  },
-  {
-    client: 'Method Recycling',
-    useCase: 'A product story that changed behaviour.',
-    body: '',
-    outcome: 'Explainer for a design led recycling system.',
-    videoUrl: '557884851',
-  },
-  {
-    client: 'Hey You',
-    useCase: 'Food ordering, made effortless.',
-    body: '',
-    outcome: 'App story from browse to skip the queue.',
-    videoUrl: '351936883',
-  },
-  {
-    client: 'Shape Connect',
-    useCase: 'Website security, made human.',
-    body: '',
-    outcome: 'Complex infrastructure for non technical buyers.',
-    videoUrl: '320632556',
-  },
-  {
-    client: 'Good2Pay',
-    useCase: 'Paperless invoicing, end to end.',
-    body: '',
-    outcome: 'Workflow demo from invoice to payment.',
-    videoUrl: '448704979',
-  },
-  {
-    client: 'Oovvuu',
-    useCase: 'Video publishing for content teams.',
-    body: '',
-    outcome: 'Plugin walkthrough from discovery to playback.',
-    videoUrl: '557000542',
-  },
-  {
-    client: 'Uclusion',
-    useCase: 'Product decisions, driven by feedback.',
-    body: '',
-    outcome: 'Platform story for teams prioritising what to build.',
-    videoUrl: '338131381',
-  },
-];
+    outcome: p.description,
+    videoUrl: p.vimeoId,
+    vimeoHash: p.vimeoHash,
+  };
+}
+
+/** Build spine proof rows from portfolio project ids (order preserved). */
+export function spineCases(...ids: string[]): SpineCase[] {
+  const byId = new Map(ALL_PROJECTS.map((p) => [p.id, p]));
+  return ids.map((id) => {
+    const project = byId.get(id);
+    if (!project) throw new Error(`Unknown portfolio project id: ${id}`);
+    return projectToCase(project);
+  });
+}
+
+/**
+ * Per-landing proof mixes — exclusive split of the site portfolio.
+ * Each film appears on one landing only (see landing-portfolio-mix canvas).
+ */
+export const SPINE_PROOF_PRODUCT_DEMO_ADS = spineCases(
+  'trudi',
+  'wipster',
+  'good2pay',
+  'oovvuu',
+  'method-product',
+  'heyyou',
+  'food-by-us',
+  'driv0',
+  'braums',
+  'bambora',
+  'ark',
+);
+
+export const SPINE_PROOF_PRODUCT_DEMO_SEO = spineCases(
+  'trulet',
+  'infoview',
+  'class-trust',
+  'swell',
+  'joineree',
+  'uclusion',
+  'senate-matching',
+  'read-medical',
+  'amplify',
+  'ranalytic',
+  'cart-share',
+);
+
+export const SPINE_PROOF_SAAS_EXPLAINER = spineCases(
+  'mosaic',
+  'acodis',
+  'nisient',
+  'cloud-trace',
+  'giraffe',
+  'bat-nav',
+  'insignia',
+  'shape-connect',
+  'carter-coin',
+  'altius-map',
+  'altius-eap',
+  'amex-closed-loop',
+);
+
+export const SPINE_PROOF_EXPLAINER = spineCases(
+  'atomic',
+  'meltwater',
+  'united-nations',
+  'rspca-cats',
+  'redcross',
+  'solar-my-school',
+  'nsw-gov',
+  'lxrp',
+  'ipa',
+  'raa-insurance',
+  'neat-streets',
+  'rspca-giving',
+);
+
+export const SPINE_PROOF_PRODUCT_LAUNCH = spineCases(
+  'trusyft',
+  'method-recycling',
+  'eluse-krue',
+  'bark-busters',
+  'bresic-witney',
+  'amsed',
+  'acir',
+);
 
 /** Shared buyer FAQs for all spine landings */
 export const SPINE_CORE_FAQS: SpineLandingConfig['faq']['items'] = [
