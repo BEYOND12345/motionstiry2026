@@ -54,7 +54,7 @@ function StoryFilm({
   }, [priority]);
 
   return (
-    <div className="spine-film relative aspect-video w-full overflow-hidden rounded-[10px]">
+    <div className="spine-film relative aspect-video w-full overflow-hidden">
       {playing ? (
         <iframe
           src={`https://player.vimeo.com/video/${id}?${hashQuery}autoplay=1&title=0&byline=0&portrait=0`}
@@ -88,11 +88,11 @@ function StoryFilm({
           <button
             type="button"
             onClick={() => setPlaying(true)}
-            className="absolute inset-0 z-10 flex items-center justify-center bg-[rgba(8,8,8,0.22)] transition-colors hover:bg-[rgba(8,8,8,0.34)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            className="absolute inset-0 z-10 flex items-center justify-center bg-black/20 transition-colors hover:bg-black/32 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             aria-label={`Play: ${title}`}
           >
-            <span className="flex h-14 w-14 items-center justify-center rounded-full border border-white/85 bg-[rgba(8,8,8,0.28)] shadow-[0_8px_28px_rgba(0,0,0,0.35)] backdrop-blur-[2px] sm:h-16 sm:w-16">
-              <span className="ml-1 h-0 w-0 border-y-[10px] border-l-[16px] border-y-transparent border-l-white" />
+            <span className="spine-play flex h-[56px] w-[56px] items-center justify-center rounded-full sm:h-[64px] sm:w-[64px]">
+              <span className="ml-0.5 h-0 w-0 border-y-[9px] border-l-[15px] border-y-transparent border-l-white sm:border-y-[10px] sm:border-l-[16px]" />
             </span>
           </button>
         </>
@@ -115,10 +115,10 @@ function Reveal({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 18 }}
+      initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-8% 0px' }}
-      transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1], delay }}
+      viewport={{ once: true, margin: '-6% 0px' }}
+      transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1], delay }}
     >
       {children}
     </motion.div>
@@ -207,16 +207,16 @@ function ProofRow({ project, index }: { project: SpineCase; index: number }) {
           <h3 className="mt-3 font-display text-[1.75rem] font-bold tracking-tight text-[color:var(--spine-ink)] sm:text-[2.15rem] lg:text-[2.5rem]">
             {project.client}
           </h3>
-          <p className="spine-lede mt-3 max-w-[22ch] font-display text-[1.05rem] font-medium leading-[1.25] tracking-tight sm:text-[1.2rem]">
+          <p className="spine-lede mt-3 max-w-[28ch] font-display text-[1.1rem] font-medium leading-[1.28] tracking-[-0.018em] sm:text-[1.25rem]">
             {project.useCase}
           </p>
           {project.outcome ? (
-            <p className="spine-body mt-5 max-w-sm text-[14px] leading-[1.55] sm:text-[15px]">
+            <p className="spine-body mt-5 max-w-[38ch] !text-[15px] !leading-[1.5]">
               {project.outcome}
             </p>
           ) : null}
           {project.body ? (
-            <p className="spine-body mt-3 max-w-sm text-[14px] leading-[1.55] sm:text-[15px]">
+            <p className="spine-body mt-3 max-w-[38ch] !text-[15px] !leading-[1.5]">
               {project.body}
             </p>
           ) : null}
@@ -284,55 +284,122 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
     >
       <style>{`
         .spine-landing {
+          /* Semantic palette — contrast tuned for ≥4.5:1 body on paper */
           --spine-ink: #0a0a0a;
-          --spine-ink-soft: #141414;
+          --spine-ink-soft: #111111;
           --spine-paper: #ffffff;
-          --spine-fog: #f4f4f4;
+          --spine-fog: #f5f5f7;
           --spine-line: rgba(10, 10, 10, 0.08);
-          --spine-line-strong: rgba(10, 10, 10, 0.12);
-          --spine-eyebrow: rgba(10, 10, 10, 0.38);
-          --spine-body: rgba(10, 10, 10, 0.52);
-          --spine-lede: rgba(10, 10, 10, 0.68);
+          --spine-line-strong: rgba(10, 10, 10, 0.14);
+          --spine-eyebrow: rgba(10, 10, 10, 0.48);
+          --spine-body: rgba(10, 10, 10, 0.66);
+          --spine-lede: rgba(10, 10, 10, 0.78);
           --spine-cta: #0a0a0a;
+          --spine-radius: 14px;
+          --spine-radius-control: 980px;
           background: var(--spine-paper);
           color: var(--spine-ink);
+          -webkit-font-smoothing: antialiased;
+          text-rendering: optimizeLegibility;
         }
         .spine-landing .spine-band-paper { background: var(--spine-paper); }
         .spine-landing .spine-band-fog { background: var(--spine-fog); }
         .spine-landing .spine-eyebrow {
-          font-size: 11px;
+          font-size: 12px;
           font-weight: 500;
-          letter-spacing: 0.16em;
-          text-transform: uppercase;
+          letter-spacing: 0.02em;
+          text-transform: none;
           color: var(--spine-eyebrow);
         }
         .spine-landing .spine-eyebrow.text-accent { color: var(--spine-accent); }
-        .spine-landing .spine-body { color: var(--spine-body); }
-        .spine-landing .spine-lede { color: var(--spine-lede); }
+        .spine-landing .spine-body {
+          color: var(--spine-body);
+          font-size: 17px;
+          line-height: 1.47;
+          letter-spacing: -0.011em;
+        }
+        .spine-landing .spine-lede {
+          color: var(--spine-lede);
+          letter-spacing: -0.015em;
+        }
         .spine-landing .spine-film {
+          border-radius: var(--spine-radius);
           background: var(--spine-ink-soft);
           box-shadow:
-            0 1px 0 rgba(255, 255, 255, 0.04) inset,
-            0 18px 40px -28px rgba(10, 10, 10, 0.45);
+            0 0 0 0.5px rgba(10, 10, 10, 0.06),
+            0 2px 4px rgba(10, 10, 10, 0.04),
+            0 22px 44px -20px rgba(10, 10, 10, 0.28);
+        }
+        .spine-landing .spine-play {
+          border: 0.5px solid rgba(255, 255, 255, 0.55);
+          background: rgba(255, 255, 255, 0.18);
+          backdrop-filter: blur(20px) saturate(1.4);
+          -webkit-backdrop-filter: blur(20px) saturate(1.4);
+          box-shadow:
+            0 1px 0 rgba(255, 255, 255, 0.35) inset,
+            0 10px 28px rgba(0, 0, 0, 0.28);
+          transition: transform 0.22s cubic-bezier(0.25, 0.1, 0.25, 1), background 0.22s ease;
+        }
+        .spine-landing button:hover .spine-play {
+          transform: scale(1.04);
+          background: rgba(255, 255, 255, 0.26);
         }
         .spine-landing .spine-btn-ink {
           background: var(--spine-cta);
           color: #fff;
-          box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset;
+          border-radius: var(--spine-radius-control);
+          box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08) inset;
+          transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
         }
-        .spine-landing .spine-btn-ink:hover { opacity: 0.88; }
-        .spine-landing .spine-ticker-name { color: rgba(10, 10, 10, 0.58); }
-        .spine-landing .spine-ticker-dot { color: var(--spine-accent); opacity: 0.85; }
+        .spine-landing .spine-btn-ink:hover { opacity: 0.9; }
+        .spine-landing .spine-btn-ink:active { transform: scale(0.985); }
+        .spine-landing .spine-btn-label {
+          font-size: 15px;
+          font-weight: 500;
+          letter-spacing: -0.01em;
+          text-transform: none;
+        }
+        .spine-landing .spine-link-quiet {
+          font-size: 15px;
+          font-weight: 500;
+          letter-spacing: -0.01em;
+          text-transform: none;
+          color: var(--spine-body);
+          transition: color 0.2s ease;
+        }
+        .spine-landing .spine-link-quiet:hover { color: var(--spine-ink); }
+        .spine-landing .spine-ticker-name { color: rgba(10, 10, 10, 0.62); }
+        .spine-landing .spine-ticker-dot { color: var(--spine-accent); opacity: 0.9; }
         .spine-landing .spine-rule { border-color: var(--spine-line); }
+        .spine-landing .spine-glass {
+          background: rgba(255, 255, 255, 0.72);
+          backdrop-filter: blur(24px) saturate(1.6);
+          -webkit-backdrop-filter: blur(24px) saturate(1.6);
+          border-bottom: 0.5px solid rgba(10, 10, 10, 0.08);
+        }
+        .spine-landing .spine-glass-bar {
+          background: rgba(255, 255, 255, 0.78);
+          backdrop-filter: blur(24px) saturate(1.6);
+          -webkit-backdrop-filter: blur(24px) saturate(1.6);
+          border-top: 0.5px solid rgba(10, 10, 10, 0.08);
+        }
         .spine-landing .site-cta {
           background:
             radial-gradient(ellipse 100% 80% at 50% 0%, rgba(255, 255, 255, 0.06), transparent 52%),
             linear-gradient(180deg, #131313 0%, #0a0a0a 45%, #070707 100%);
-          border-top: 1px solid rgba(255, 255, 255, 0.07);
+          border-top: 0.5px solid rgba(255, 255, 255, 0.08);
         }
+        .spine-landing .spine-btn-accent {
+          background: var(--spine-accent, #FF0000);
+          color: #fff;
+          border-radius: var(--spine-radius-control);
+          transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        .spine-landing .spine-btn-accent:hover { opacity: 0.92; }
+        .spine-landing .spine-btn-accent:active { transform: scale(0.985); }
         .spine-ticker-mask {
-          mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
-          -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
         }
         .spine-ticker-track {
           animation: spine-ticker-scroll 48s linear infinite;
@@ -353,10 +420,27 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
             animation: none !important;
             transform: none !important;
           }
+          .spine-landing .spine-play,
+          .spine-landing .spine-btn-ink,
+          .spine-landing .spine-btn-accent {
+            transition: none !important;
+          }
+        }
+        @media (prefers-contrast: more) {
+          .spine-landing {
+            --spine-eyebrow: rgba(10, 10, 10, 0.72);
+            --spine-body: rgba(10, 10, 10, 0.86);
+            --spine-lede: rgba(10, 10, 10, 0.92);
+            --spine-line: rgba(10, 10, 10, 0.22);
+          }
+          .spine-landing .spine-glass,
+          .spine-landing .spine-glass-bar {
+            background: rgba(255, 255, 255, 0.94);
+          }
         }
       `}</style>
 
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-[color:var(--spine-line)] bg-white/92 pt-[env(safe-area-inset-top)] backdrop-blur-sm">
+      <header className="spine-glass fixed inset-x-0 top-0 z-50 pt-[env(safe-area-inset-top)]">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 sm:px-6 sm:py-4 lg:px-12">
           <a href="/" className="brand-mark text-[1.1rem] tracking-tight text-[color:var(--spine-ink)] sm:text-xl">
             Motion Story.
@@ -364,7 +448,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
           <a
             href={BOOKING_PATH}
             onClick={onBook}
-            className="hidden text-[11px] font-medium uppercase tracking-[0.16em] text-[color:var(--spine-body)] transition-colors hover:text-[color:var(--spine-ink)] md:inline"
+            className="spine-link-quiet hidden min-h-[44px] items-center md:inline-flex"
           >
             Book a call
           </a>
@@ -380,39 +464,39 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
           <div className="mx-auto grid max-w-7xl items-start gap-8 px-5 pt-8 pb-10 sm:gap-10 sm:px-6 sm:pt-10 sm:pb-12 lg:grid-cols-12 lg:gap-12 lg:px-12 lg:pt-12 lg:pb-14">
             <motion.div
               className="min-w-0 lg:col-span-5"
-              initial={reduce ? false : { opacity: 0, y: 14 }}
+              initial={reduce ? false : { opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
             >
               <p className="spine-eyebrow mb-4">{config.hero.eyebrow}</p>
-              <h1 className="font-display text-[clamp(2.1rem,4.8vw,3.75rem)] font-bold leading-[0.95] tracking-tight text-[color:var(--spine-ink)]">
+              <h1 className="font-display text-[clamp(2.25rem,5vw,3.85rem)] font-bold leading-[1.02] tracking-[-0.025em] text-[color:var(--spine-ink)] text-balance">
                 {config.hero.h1}
               </h1>
-              <p className="spine-body mt-5 max-w-sm text-[15px] leading-[1.5] sm:text-[16px]">
+              <p className="spine-body mt-5 max-w-[34ch]">
                 {config.hero.subhead}
               </p>
-              <div id="hero-cta" className="mt-7 flex flex-wrap items-center gap-x-7 gap-y-3">
+              <div id="hero-cta" className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
                 <a
                   href={BOOKING_PATH}
                   onClick={onBook}
-                  className="spine-btn-ink inline-flex min-h-[48px] items-center justify-center rounded-[10px] px-8 py-3.5 text-[11px] font-medium uppercase tracking-[0.14em] transition-opacity sm:text-[12px]"
+                  className="spine-btn-ink spine-btn-label inline-flex min-h-[48px] items-center justify-center px-7 py-3.5"
                 >
                   {config.hero.primaryCta}
                 </a>
                 <a
                   href="#work"
-                  className="inline-flex min-h-[44px] items-center text-[11px] font-medium uppercase tracking-[0.14em] text-[color:var(--spine-eyebrow)] transition-colors hover:text-[color:var(--spine-ink)]"
+                  className="spine-link-quiet inline-flex min-h-[44px] items-center"
                 >
-                  {config.hero.secondaryCta} →
+                  {config.hero.secondaryCta}
                 </a>
               </div>
             </motion.div>
 
             <motion.div
               className="min-w-0 lg:col-span-7"
-              initial={reduce ? false : { opacity: 0, y: 18 }}
+              initial={reduce ? false : { opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.55, delay: 0.06, ease: [0.25, 0.1, 0.25, 1] }}
             >
               <StoryFilm
                 videoUrl={config.hero.videoSrc}
@@ -487,7 +571,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
                     <h3 className="mt-2.5 font-display text-xl font-bold tracking-tight text-[color:var(--spine-ink)] sm:text-2xl">
                       {step.label}
                     </h3>
-                    <p className="spine-body mt-2.5 text-[15px] leading-[1.5]">{step.body}</p>
+                    <p className="spine-body mt-2.5 !text-[15px] !leading-[1.5]">{step.body}</p>
                   </li>
                 </Reveal>
               ))}
@@ -503,8 +587,9 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
                 <p className="font-display text-[1.25rem] font-medium leading-[1.35] tracking-tight text-[color:var(--spine-ink)] sm:text-[1.5rem]">
                   “{config.testimonial.quote}”
                 </p>
-                <footer className="mt-6 text-[11px] uppercase tracking-[0.12em] text-[color:var(--spine-eyebrow)]">
-                  {config.testimonial.name} · {config.testimonial.company}
+                <footer className="mt-6 text-[14px] tracking-[-0.01em] text-[color:var(--spine-eyebrow)]">
+                  {config.testimonial.name}
+                  <span className="text-[color:var(--spine-body)]"> · {config.testimonial.company}</span>
                 </footer>
               </blockquote>
             </Reveal>
@@ -524,28 +609,28 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
                 height={96}
               />
             </div>
-            <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-white/40">
+            <p className="text-[13px] font-medium tracking-[-0.01em] text-white/50">
               {config.guide.eyebrow}
             </p>
-            <h2 className="mt-4 font-display text-[clamp(1.75rem,3.8vw,2.65rem)] font-bold leading-[1.08] tracking-tight text-white">
+            <h2 className="mt-4 font-display text-[clamp(1.85rem,3.8vw,2.75rem)] font-bold leading-[1.1] tracking-[-0.022em] text-white text-balance">
               {config.success.headline}
             </h2>
-            <p className="mt-4 text-[15px] leading-relaxed text-white/55 sm:text-[16px]">
+            <p className="mx-auto mt-4 max-w-[36ch] text-[17px] leading-[1.47] tracking-[-0.011em] text-white/62">
               {config.guide.body}
             </p>
-            <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6">
+            <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-5">
               <a
                 href={BOOKING_PATH}
                 onClick={onBook}
-                className="inline-flex min-h-[52px] w-full max-w-xs items-center justify-center rounded-[10px] bg-[color:var(--spine-accent,#FF0000)] px-8 py-4 text-center text-[11px] font-medium uppercase tracking-[0.14em] text-white transition-opacity hover:opacity-90 sm:w-auto sm:min-w-[200px] sm:text-[12px]"
+                className="spine-btn-accent spine-btn-label inline-flex min-h-[48px] w-full max-w-xs items-center justify-center px-8 py-3.5 text-center sm:w-auto sm:min-w-[180px]"
               >
                 Book a call
               </a>
               <a
                 href="/contact/"
-                className="inline-flex min-h-[44px] items-center text-[11px] font-medium uppercase tracking-[0.14em] text-white/45 transition-colors hover:text-white"
+                className="inline-flex min-h-[44px] items-center text-[15px] font-medium tracking-[-0.01em] text-white/55 transition-colors hover:text-white"
               >
-                Send a brief →
+                Send a brief
               </a>
             </div>
           </div>
@@ -563,19 +648,22 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
                 <div key={faq.question}>
                   <button
                     type="button"
-                    className="flex w-full items-start justify-between gap-5 py-5 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--spine-ink)]"
+                    className="flex min-h-[52px] w-full items-center justify-between gap-5 py-5 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--spine-ink)]"
                     aria-expanded={open}
                     onClick={() => setFaqOpen(open ? null : i)}
                   >
-                    <span className="font-display text-[15px] font-bold tracking-tight text-[color:var(--spine-ink)] sm:text-base">
+                    <span className="font-display text-[17px] font-semibold tracking-[-0.015em] text-[color:var(--spine-ink)]">
                       {faq.question}
                     </span>
-                    <span className="mt-0.5 shrink-0 text-xl text-accent" aria-hidden="true">
+                    <span
+                      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-lg leading-none text-accent"
+                      aria-hidden="true"
+                    >
                       {open ? '−' : '+'}
                     </span>
                   </button>
                   {open && (
-                    <p className="spine-body max-w-xl pb-6 text-[15px] leading-relaxed">
+                    <p className="spine-body max-w-xl pb-6 !text-[16px]">
                       {faq.answer}
                     </p>
                   )}
@@ -591,10 +679,10 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
           <p className="brand-mark text-lg tracking-tight text-[color:var(--spine-ink)]">
             Motion Story<span className="text-accent">.</span>
           </p>
-          <p className="mt-3 text-[11px] uppercase tracking-[0.14em] text-[color:var(--spine-eyebrow)]">
+          <p className="mt-3 text-[14px] tracking-[-0.01em] text-[color:var(--spine-eyebrow)]">
             Product demo videos for SaaS · Byron Bay
           </p>
-          <p className="mt-2 text-[13px] text-[color:var(--spine-body)]">
+          <p className="mt-2 text-[15px] text-[color:var(--spine-body)]">
             <a
               href="/saas-explainer-videos/"
               className="border-b border-black/15 transition-colors hover:border-[color:var(--spine-ink)] hover:text-[color:var(--spine-ink)]"
@@ -606,7 +694,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
       </footer>
 
       <div
-        className={`fixed inset-x-0 bottom-0 z-50 border-t border-[color:var(--spine-line)] bg-white/95 px-3.5 pt-3.5 pb-[max(0.875rem,env(safe-area-inset-bottom))] backdrop-blur-sm transition-transform duration-300 md:hidden ${
+        className={`spine-glass-bar fixed inset-x-0 bottom-0 z-50 px-3.5 pt-3.5 pb-[max(0.875rem,env(safe-area-inset-bottom))] transition-transform duration-300 md:hidden ${
           stickyVisible ? 'translate-y-0' : 'pointer-events-none translate-y-full'
         }`}
         aria-hidden={!stickyVisible}
@@ -615,7 +703,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
           href={BOOKING_PATH}
           onClick={onBook}
           tabIndex={stickyVisible ? 0 : -1}
-          className="spine-btn-ink flex min-h-[48px] w-full items-center justify-center rounded-[10px] px-4 py-3.5 text-center text-[11px] font-medium uppercase tracking-[0.14em]"
+          className="spine-btn-ink spine-btn-label flex min-h-[48px] w-full items-center justify-center px-4 py-3.5 text-center"
         >
           Book a call
         </a>

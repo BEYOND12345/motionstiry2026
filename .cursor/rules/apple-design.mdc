@@ -1,0 +1,11 @@
+---
+description: Apple HIG design review and improvement for Motion Story UI
+globs: ["**/*.tsx", "**/*.astro", "**/*.css"]
+alwaysApply: false
+---
+
+When reviewing or improving UI, follow `.cursor/skills/apple-design/SKILL.md`.
+Load relevant files from `.cursor/skills/apple-design/references/hig/` before recommending changes.
+Preserve Motion Story brand: white / ink / #FF0000, Space Grotesk + Inter, Poppins wordmark, first-person voice.
+Apply HIG principles (contrast, type scale, sentence-case UI labels, materials, motion restraint, ≥44px targets) without turning the site into a generic Apple clone.
+
