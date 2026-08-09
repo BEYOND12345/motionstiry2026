@@ -7,6 +7,8 @@ export interface WorkItem {
   title: string;
   link: string;
   vimeoId: string;
+  /** Privacy hash for unlisted Vimeo videos */
+  vimeoHash?: string;
 }
 
 export interface FaqItem {
@@ -25,6 +27,11 @@ export interface RelatedReading {
   label: string;
 }
 
+export interface CredentialItem {
+  label: string;
+  body: string;
+}
+
 interface Props {
   eyebrow: string;
   /** Headline lines — each becomes a line break on md+ */
@@ -38,6 +45,8 @@ interface Props {
   faqs?: FaqItem[];
   links?: CrossLink[];
   relatedReading?: RelatedReading[];
+  /** Override the default Details credentials block */
+  credentials?: CredentialItem[];
 }
 
 const {
@@ -52,6 +61,7 @@ const {
   faqs = [],
   links = [],
   relatedReading = [],
+  credentials: credentialsProp,
 } = Astro.props;
 
 const [featured, ...rest] = work;
@@ -84,20 +94,22 @@ const clients = [
   'HSBC Bank',
 ];
 
-const credentials = [
+const defaultCredentials: CredentialItem[] = [
   {
     label: 'Full pipeline',
-    body: 'Concept, storyboard, design, illustration, and animation — one creative director responsible throughout. No account managers.',
+    body: 'Concept, storyboard, design, illustration, and animation. One creative director responsible throughout. No account managers.',
   },
   {
     label: 'Story first',
-    body: 'Creative built for completion and clarity. If it is not a strong story, people do not watch to the end — and the metrics show it.',
+    body: 'Creative built for completion and clarity. If it is not a strong story, people do not watch to the end, and the metrics show it.',
   },
   {
     label: 'Career depth',
-    body: 'United Nations. TransferWise\'s first video, working directly with their CEO. 1,000+ films since 2010. Small studio, big impact — you work with me directly.',
+    body: "United Nations. TransferWise's first video, working directly with their CEO. 1,000+ films since 2010. Small studio, big impact. You work with me directly.",
   },
 ];
+
+const credentials = credentialsProp ?? defaultCredentials;
 ---
 
 <div class="landing">
@@ -135,6 +147,7 @@ const credentials = [
         <VimeoEmbed
           client:visible
           vimeoId={featured.vimeoId}
+          vimeoHash={featured.vimeoHash}
           title={featured.title}
           loading="eager"
           autoColor={true}
@@ -167,6 +180,7 @@ const credentials = [
             <VimeoEmbed
               client:visible
               vimeoId={study.vimeoId}
+              vimeoHash={study.vimeoHash}
               title={study.title}
               loading="lazy"
               autoColor={true}

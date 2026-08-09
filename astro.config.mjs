@@ -147,7 +147,7 @@ export default defineConfig({
     '/landing-page-animated-video-services-01/': '/saas-explainer-videos/',
     // /landing-animated-product-demos-01/ is a live Ads landing (do not redirect)
     '/freelance-motion-graphic-designer/': '/motion-graphics/',
-    '/freelance-motion-design-and-animation/': '/saas-explainer-videos/',
+    '/freelance-motion-design-and-animation/': '/motion-graphics/',
     '/motion-graphic-production/': '/motion-graphics/',
 
     // Old standalone pages → new equivalents
