@@ -1,14 +1,20 @@
 ---
 interface Props {
+  /** Kept for call-site compatibility; mailto is plain by request */
   subject?: string;
   label?: string;
 }
 
-const { subject = 'Project enquiry', label = 'Email Dan' } = Astro.props;
-const href = `mailto:daniel@motionstory.com.au?subject=${encodeURIComponent(subject)}`;
+const { label = 'Email Dan' } = Astro.props;
+const href = 'mailto:daniel@motionstory.com.au';
 ---
 
-<a href={href} class="landing-float" aria-label="Email Dan to start a project">
+<a
+  href={href}
+  class="landing-float"
+  aria-label="Email Dan"
+  data-astro-reload
+>
   <span class="landing-float-label">{label}</span>
   <span class="landing-float-arrow" aria-hidden="true">→</span>
 </a>

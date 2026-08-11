@@ -3,7 +3,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 import VimeoEmbed from '../components/VimeoEmbed';
 
 const BOOKING = '/book/';
-const EMAIL = 'mailto:daniel@motionstory.com.au?subject=Freelance%20motion%20brief';
+const EMAIL = 'mailto:daniel@motionstory.com.au';
 
 const why = [
   'Twenty years of premium studio experience, direct access',
@@ -260,6 +260,7 @@ const faqSchema = {
         </a>
         <a
           href={EMAIL}
+          data-astro-reload
           class="inline-flex min-h-[44px] items-center text-[15px] font-medium tracking-[-0.01em] text-white/55 transition-colors hover:text-white"
         >
           Or email me directly

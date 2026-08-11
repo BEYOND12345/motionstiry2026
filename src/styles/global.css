@@ -347,7 +347,7 @@ body.homepage-layout {
   position: fixed;
   right: 1.5rem;
   bottom: 1.5rem;
-  z-index: 60;
+  z-index: 10001;
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
@@ -360,6 +360,7 @@ body.homepage-layout {
   font-weight: 500;
   letter-spacing: -0.015em;
   line-height: 1;
+  pointer-events: auto;
   box-shadow: 0 10px 36px rgba(0, 0, 0, 0.22);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, color 0.3s ease, box-shadow 0.35s ease;
 }
