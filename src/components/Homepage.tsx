@@ -280,8 +280,8 @@ export default function Homepage() {
                       Fractional creative partner: storytelling, planning, and craft. SaaS, startups, agencies — any size, as long as the idea needs clarity.
                     </p>
                     <p className="mb-3">
-                      <a href="/fractional-creative-director/" className="border-b border-black/20 hover:border-black transition-colors">
-                        Fractional creative director sprints →
+                      <a href="/creative-business-designer/" className="border-b border-black/20 hover:border-black transition-colors">
+                        Creative business designer →
                       </a>
                     </p>
                     <p>

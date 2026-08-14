@@ -6,6 +6,7 @@ import { SPINE_TICKER_ROW_A, SPINE_TICKER_ROW_B } from '../data/landing-pages/sp
 
 const BOOKING = '/book/';
 const EMAIL = 'mailto:daniel@motionstory.com.au';
+const SESSION_FROM = 'From $1,500';
 
 const clients = [
   'United Nations',
@@ -23,87 +24,85 @@ const clients = [
 const tickerA = [...SPINE_TICKER_ROW_A, ...SPINE_TICKER_ROW_A];
 const tickerB = [...SPINE_TICKER_ROW_B, ...SPINE_TICKER_ROW_B];
 
-const credentials = [
-  {
-    label: 'Career depth',
-    body: "United Nations. TransferWise's first video, working directly with their CEO. 1,000+ films since 2010. Small studio, big impact. You work with me directly.",
-  },
-  {
-    label: 'Direction plus delivery',
-    body: 'I consolidate the idea, then ship the visual. Not a strategy deck that sits unused. Landing pages, video, identity, funnels, and related systems.',
-  },
-  {
-    label: 'Built for early teams',
-    body: 'Startups and SaaS that need to look real before the product is finished. Clear vision. Believable execution.',
-  },
-];
-
-const skills = [
-  {
-    label: 'Product video',
-    body: 'Explainers, demos, and promo films that make software make sense cold.',
-    note: 'Live work',
-  },
-  {
-    label: 'Landing pages',
-    body: 'A first site that says what you do, who it is for, and why it matters.',
-    note: 'Placeholder proof',
-  },
-  {
-    label: 'Sales funnels',
-    body: 'Story and assets across the path from cold visitor to booked call.',
-    note: 'Placeholder proof',
-  },
-  {
-    label: 'Brief identity',
-    body: 'Enough brand to look intentional. Logo, type, colour, and a simple system.',
-    note: 'Placeholder proof',
-  },
-  {
-    label: 'Infographics',
-    body: 'Complex offers and processes made readable in one visual.',
-    note: 'Live work',
-  },
-  {
-    label: 'Story systems',
-    body: 'Messaging, story maps, and the format plan that keeps everything consistent.',
-    note: 'Live work',
-  },
-];
-
-const packages = [
-  {
-    name: 'Clarity Sprint',
-    time: '2-3 days',
-    price: 'From $4,500',
-    body: 'Workshop, messaging, story map, and the recommended format. You leave with a clear vision and a plan to ship.',
-  },
-  {
-    name: 'Launch Sprint',
-    time: '1-2 weeks',
-    price: 'From $9,500',
-    body: 'Clarity plus one primary asset: landing page, promo video, brief identity, or explainer-style piece.',
-  },
-  {
-    name: 'Build Sprint',
-    time: '3-4 weeks',
-    price: 'From $18,000',
-    body: 'Clarity plus a small visual system. Typically landing page, identity starter, and promo or explainer, scoped to fit.',
-  },
+const heroOutcomes = [
+  'Website live in days',
+  'Pitch deck and video ready before your next meeting',
+  'App prototype in your hands in a fortnight',
+  'Sales funnel built in two weeks',
+  'A rough idea turned into something real, fast',
 ];
 
 const steps = [
   {
-    label: 'Brief',
-    body: '15-min call. You tell me the problem, audience, and what needs to ship.',
+    label: 'We talk',
+    body: `A paid problem-solving session. An hour or a day, depending on the size of it. ${SESSION_FROM}. You bring the mess. We map out what's actually wrong and what to do about it.`,
   },
   {
-    label: 'Plan',
-    body: 'I scope the sprint, timeline, and deliverables. Fixed quote upfront.',
+    label: 'I build it',
+    body: 'Not a report. Not a deck of recommendations you file away. The actual thing: the website, the video, the prototype, the funnel.',
   },
   {
-    label: 'Make',
-    body: 'We ideate, then I build. You get updates. We ship on time.',
+    label: 'You get on with running your business',
+    body: 'One contact. No agency, no committee, no six-week onboarding.',
+  },
+];
+
+const builds = [
+  {
+    label: 'Software and app prototyping',
+    body: "Working prototypes, not mockups. I build my own apps, so I know what's realistic and what's a fantasy your developer will quietly hate you for.",
+  },
+  {
+    label: 'Video and motion graphics',
+    body: 'Twenty years of it. Explainers, product demos, brand films, launch content. This is my craft.',
+  },
+  {
+    label: 'Websites',
+    body: 'Fast, sharp, built to convert. Days, not months.',
+  },
+  {
+    label: 'Automation and technical problem-solving',
+    body: 'Quotes taking too long. Leads leaking out of a bad funnel. Manual work eating your week. Usually solvable.',
+  },
+  {
+    label: 'Big ideas and strategy',
+    body: "Marketing thinking, positioning, launch plans. Including getting your brief sharp enough to hand to a bigger agency if that's genuinely what you need.",
+  },
+];
+
+const fits = [
+  {
+    q: "I've got an idea but nothing to show for it.",
+    a: 'A short sprint and you walk away with a live site and a story that makes it sound real.',
+  },
+  {
+    q: "I'm pitching for money and I'm not ready.",
+    a: 'Deck and video, done before the meeting.',
+  },
+  {
+    q: "I've built it but nobody knows about it.",
+    a: 'A launch plan. And I build the assets, not just the plan.',
+  },
+  {
+    q: "People still don't get what we do.",
+    a: 'Video content strategy, then I make the videos.',
+  },
+  {
+    q: "I know what's next but I've got no time to work it out.",
+    a: 'A working session and a clear roadmap. What to do, in what order, what it costs.',
+  },
+];
+
+const ownProducts = [
+  {
+    name: 'Freewheel',
+    body: 'Cycling tour and navigation app.',
+    href: null as string | null,
+  },
+  {
+    name: 'SMASH Invoices',
+    body: 'Voice-to-invoice app for tradies.',
+    href: 'https://smashinvoices.com/',
   },
 ];
 
@@ -117,64 +116,52 @@ const work = [
 ];
 
 const [featured, ...rest] = work;
-const proofReview = VERIFIED_CLIENT_REVIEWS.find((r) => r.company === 'Method Recycling') ?? VERIFIED_CLIENT_REVIEWS[2];
+const proofReview =
+  VERIFIED_CLIENT_REVIEWS.find((r) => r.company === 'Method Recycling') ?? VERIFIED_CLIENT_REVIEWS[2];
 const pageReview = VERIFIED_CLIENT_REVIEWS[0];
 
 const faqs = [
   {
-    label: 'Who this is for',
-    body: 'Early-stage SaaS, software, and startups. Also founders in industrial, retail, or project businesses who need the same vision-to-visual help.',
+    label: 'What does a session cost?',
+    body: `Paid problem-solving session, ${SESSION_FROM}. An hour or a day depending on the size of it. Filters tyre-kickers. You pay for the thinking.`,
   },
   {
-    label: 'What you get',
-    body: 'Direction and delivery. A clear story and the asset that makes it real: video, landing page, identity, funnel assets, or a mix.',
+    label: 'What happens after the session?',
+    body: 'If there is something to build, I quote the build and make it. Website, video, prototype, funnel, or a mix. Fixed quote before production starts.',
   },
   {
-    label: 'Sprints vs project motion',
-    body: 'Sprints start with ideation and end with a scoped deliverable. Classic motion projects can sit inside a Launch or Build sprint when video is the right format.',
+    label: 'Who will I work with?',
+    body: 'Me. Dan Neale. One contact. No agency layer.',
   },
   {
-    label: 'Where I work',
-    body: 'Based in Byron Bay, Australia. Remote with clients worldwide.',
-  },
-  {
-    label: 'How to start',
-    body: 'Book a 15-min call. We pick the sprint that fits. Fixed quote before work begins.',
+    label: 'Where are you based?',
+    body: 'Byron Bay, Australia. Remote with clients worldwide.',
   },
 ];
 
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Fractional Creative Director',
+  name: 'Creative Business Designer',
   description:
-    'Fractional creative director for SaaS and startups. Vision-to-visual sprints: clarity, landing pages, identity, sales funnels, and promo video. Work directly with Dan Neale.',
+    'Creative business designer under Motion Story. Paid problem-solving sessions, then build: websites, video, app prototypes, sales funnels. Work directly with Dan Neale.',
   provider: {
     '@type': 'Person',
     name: 'Daniel Neale',
-    jobTitle: 'Creative Director',
+    jobTitle: 'Creative Business Designer',
     url: 'https://motionstory.com.au/about/',
     image: 'https://motionstory.com.au/daniel-neale.jpg',
     worksFor: { '@type': 'Organization', name: 'Motion Story', url: 'https://motionstory.com.au' },
   },
-  serviceType: 'Fractional Creative Direction',
+  serviceType: 'Creative Business Design',
   areaServed: ['Australia', 'Worldwide'],
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Fractional Creative Director sprints',
-    itemListElement: packages.map((pkg) => ({
-      '@type': 'Offer',
-      name: pkg.name,
-      description: pkg.body,
-      priceCurrency: 'AUD',
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        priceCurrency: 'AUD',
-        minPrice: pkg.price.replace(/[^0-9]/g, ''),
-        description: pkg.time,
-      },
-      url: 'https://motionstory.com.au/fractional-creative-director/',
-    })),
+  offers: {
+    '@type': 'Offer',
+    name: 'Problem-solving session',
+    priceCurrency: 'AUD',
+    price: '1500',
+    description: 'Paid problem-solving session. An hour or a day depending on scope.',
+    url: 'https://motionstory.com.au/creative-business-designer/',
   },
 };
 
@@ -186,8 +173,8 @@ const breadcrumbSchema = {
     {
       '@type': 'ListItem',
       position: 2,
-      name: 'Fractional Creative Director',
-      item: 'https://motionstory.com.au/fractional-creative-director/',
+      name: 'Creative Business Designer',
+      item: 'https://motionstory.com.au/creative-business-designer/',
     },
   ],
 };
@@ -204,9 +191,9 @@ const faqSchema = {
 ---
 
 <PageLayout
-  floatSubject="Fractional creative director sprint"
-  title="Fractional Creative Director for SaaS & Startups | Motion Story"
-  description="Fractional creative director for SaaS and startups. Vision-to-visual sprints from $4,500. Clarity, landing pages, video, identity, and sales funnels. Work with Dan."
+  floatSubject="Creative business designer session"
+  title="Creative Business Designer | Motion Story"
+  description="What's holding your business back? Paid problem-solving sessions, then I build it. Websites, video, app prototypes, sales funnels. 20 years. Work with Dan."
   showCTA={false}
 >
   <Fragment slot="head">
@@ -217,37 +204,43 @@ const faqSchema = {
 
   <div class="landing">
     <header class="landing-hero">
-      <span class="landing-eyebrow landing-reveal" style="--d: 0">Fractional creative director</span>
+      <span class="landing-eyebrow landing-reveal" style="--d: 0">Creative business designer</span>
       <h1 class="landing-title landing-reveal" style="--d: 1">
-        Fractional Creative Director for startups that need to look real.
+        What's holding your business back?
       </h1>
       <p class="landing-lede landing-reveal" style="--d: 2">
-        Ideate the story. Ship the visual. Landing page, video, identity, sales funnel, or whatever format makes the idea believable.
+        I can bring your vision to life.
       </p>
-      <div class="mt-8 flex flex-wrap items-center gap-5 landing-reveal" style="--d: 3">
+      <ul class="mt-8 space-y-3 max-w-xl landing-reveal" style="--d: 3">
+        {heroOutcomes.map((item) => (
+          <li class="flex gap-3 text-[17px] leading-[1.45] tracking-[-0.011em] text-[#333]">
+            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="mt-8 text-[17px] leading-[1.5] tracking-[-0.011em] text-[#555] max-w-xl landing-reveal" style="--d: 4">
+        Work directly with a creative business designer. 20 years of it.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-5 landing-reveal" style="--d: 5">
         <a
           href={BOOKING}
           class="inline-flex min-h-[48px] items-center justify-center rounded-[10px] bg-black px-7 py-3.5 text-[15px] font-medium tracking-[-0.01em] text-white transition-opacity hover:opacity-90"
         >
-          Book a 15-min call
+          Book a problem-solving session
         </a>
-        <a
-          href="#selected-work"
-          class="inline-flex min-h-[44px] items-center text-[15px] font-medium tracking-[-0.01em] text-[#555] border-b border-black/20 hover:border-black hover:text-black transition-colors"
-        >
-          See the work ↓
-        </a>
+        <span class="text-[14px] tracking-[-0.01em] text-[#888]">{SESSION_FROM}</span>
       </div>
     </header>
 
-    <p class="landing-clients landing-reveal" style="--d: 4">
+    <p class="landing-clients landing-reveal" style="--d: 6">
       {clients.join(' · ')}
     </p>
   </div>
 
   <section class="fcd-ticker border-y border-black/10" aria-label="Trusted by">
     <div class="mx-auto max-w-7xl px-8 pt-8 sm:pt-9">
-      <p class="landing-eyebrow text-center !mb-0 tracking-[0.18em]">Trusted by teams who needed clarity fast</p>
+      <p class="landing-eyebrow text-center !mb-0 tracking-[0.18em]">Twenty years of client work through Motion Story</p>
     </div>
     <div class="mt-5 space-y-0 pb-7 sm:mt-6 sm:pb-8">
       <div class="fcd-ticker-mask">
@@ -280,7 +273,7 @@ const faqSchema = {
           <div class="aspect-[4/5] overflow-hidden mb-4 max-w-sm">
             <img
               src="/daniel-neale.jpg"
-              alt="Dan Neale, fractional creative director at Motion Story"
+              alt="Dan Neale, creative business designer at Motion Story"
               class="w-full h-full object-cover"
               loading="eager"
               width="640"
@@ -290,106 +283,96 @@ const faqSchema = {
           <p class="text-metadata">Dan Neale · Byron Bay, Australia</p>
         </div>
         <div class="md:col-span-8">
-          <span class="landing-eyebrow landing-section-label">Your director</span>
-          <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-5 max-w-[16ch]">
-            You brief me. I run the sprint.
+          <span class="landing-eyebrow landing-section-label">How it works</span>
+          <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-5 max-w-[18ch]">
+            One person. One session. Then it gets built.
           </h2>
           <p class="text-[17px] leading-[1.5] tracking-[-0.011em] text-[#555] max-w-xl mb-10">
-            Creative director since 2010. I help early companies consolidate what they do, then turn it into something people can believe: websites, video, identity, and funnel assets.
+            Most people sell you advice or sell you production. I do both, which is why this is simple.
           </p>
-          <div class="landing-cred !mt-0">
-            {credentials.map((item) => (
-              <div class="landing-cred-row">
-                <h3 class="landing-cred-label">{item.label}</h3>
-                <p class="landing-cred-body">{item.body}</p>
-              </div>
+          <ol class="space-y-8 max-w-xl">
+            {steps.map((step, i) => (
+              <li>
+                <p class="landing-eyebrow !text-accent mb-2">0{i + 1}</p>
+                <h3 class="font-display text-xl md:text-2xl font-bold tracking-tight mb-2">{step.label}</h3>
+                <p class="text-[16px] leading-[1.5] tracking-[-0.011em] text-[#555]">{step.body}</p>
+              </li>
             ))}
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="landing-section !pt-0">
-      <div class="border-y border-black/10 grid grid-cols-2 md:grid-cols-4">
-        <div class="py-8 md:border-r border-black/10">
-          <p class="font-display text-2xl md:text-3xl font-bold tracking-tight">2010</p>
-          <p class="text-metadata mt-2">Making motion</p>
-        </div>
-        <div class="py-8 md:border-r border-black/10 md:pl-8">
-          <p class="font-display text-2xl md:text-3xl font-bold tracking-tight">1,000+</p>
-          <p class="text-metadata mt-2">Films delivered</p>
-        </div>
-        <div class="py-8 md:border-r border-black/10 md:pl-8">
-          <p class="font-display text-2xl md:text-3xl font-bold tracking-tight">{GOOGLE_RATING.score}</p>
-          <p class="text-metadata mt-2">Google rating</p>
-        </div>
-        <div class="py-8 md:pl-8">
-          <p class="font-display text-2xl md:text-3xl font-bold tracking-tight">Direct</p>
-          <p class="text-metadata mt-2">No agency layer</p>
+          </ol>
         </div>
       </div>
     </section>
 
     <section class="landing-section">
-      <span class="landing-eyebrow landing-section-label">What I ship</span>
-      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-3 max-w-[18ch]">
-        Wider than motion. Still story first.
+      <span class="landing-eyebrow landing-section-label">What I can build</span>
+      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-10 max-w-[16ch]">
+        From idea to the actual thing.
       </h2>
-      <p class="text-[17px] leading-[1.5] tracking-[-0.011em] text-[#555] max-w-xl mb-10">
-        Video is proven. Websites, identity, and funnels are in the same practice. Placeholder notes mark proof still coming onto this page.
-      </p>
       <div class="landing-cred">
-        {skills.map((item) => (
+        {builds.map((item) => (
           <div class="landing-cred-row">
-            <div>
-              <h3 class="landing-cred-label">{item.label}</h3>
-              <p class="mt-2 text-[12px] font-medium uppercase tracking-[0.08em] text-[#999]">{item.note}</p>
-            </div>
+            <h3 class="landing-cred-label">{item.label}</h3>
             <p class="landing-cred-body">{item.body}</p>
           </div>
         ))}
       </div>
     </section>
 
-    <section class="landing-section" id="sprints">
-      <span class="landing-eyebrow landing-section-label">Sprints</span>
-      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-3 max-w-[16ch]">
-        Three ways to start.
+    <section class="landing-section">
+      <span class="landing-eyebrow landing-section-label">Is this you?</span>
+      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-10 max-w-[14ch]">
+        If this sounds familiar.
       </h2>
-      <p class="text-[17px] leading-[1.5] tracking-[-0.011em] text-[#555] max-w-xl mb-10">
-        Time-boxed. Fixed quote. Direction and delivery in one engagement.
-      </p>
-      <div class="landing-cred">
-        {packages.map((pkg) => (
-          <div class="landing-cred-row">
-            <div>
-              <h3 class="landing-cred-label">{pkg.name}</h3>
-              <p class="mt-2 text-[13px] font-medium tracking-[-0.01em] text-[#888]">
-                {pkg.time} · {pkg.price}
-              </p>
-            </div>
-            <div>
-              <p class="landing-cred-body !mb-5">{pkg.body}</p>
-              <a
-                href={BOOKING}
-                class="inline-flex min-h-[44px] items-center text-[15px] font-medium tracking-[-0.01em] text-black border-b border-black/25 hover:border-black transition-colors"
-              >
-                Book this sprint →
-              </a>
-            </div>
+      <div class="landing-faq">
+        {fits.map((item) => (
+          <div class="landing-faq-row">
+            <h3 class="landing-faq-label">“{item.q}”</h3>
+            <p class="text-body">{item.a}</p>
           </div>
         ))}
       </div>
     </section>
 
+    <section class="landing-section">
+      <span class="landing-eyebrow landing-section-label">Proof</span>
+      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-5 max-w-[20ch]">
+        Client work. And my own products.
+      </h2>
+      <p class="text-[17px] leading-[1.5] tracking-[-0.011em] text-[#555] max-w-xl mb-10">
+        Twenty years of client work through Motion Story. Explainer and motion graphics for tech companies and brands, alongside top Australian agencies.
+      </p>
+      <p class="text-[17px] leading-[1.5] tracking-[-0.011em] text-[#333] max-w-xl mb-6 font-medium">
+        And I build my own things:
+      </p>
+      <ul class="divide-y divide-black/10 border-y border-black/10 max-w-xl mb-12">
+        {ownProducts.map((item) => (
+          <li class="py-5">
+            {item.href ? (
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-display text-xl font-bold tracking-tight border-b border-black/20 hover:border-black transition-colors"
+              >
+                {item.name}
+              </a>
+            ) : (
+              <span class="font-display text-xl font-bold tracking-tight">{item.name}</span>
+            )}
+            <p class="mt-2 text-[16px] leading-[1.5] tracking-[-0.011em] text-[#555]">{item.body}</p>
+          </li>
+        ))}
+      </ul>
+      <p class="text-[16px] leading-[1.5] tracking-[-0.011em] text-[#555] max-w-xl">
+        Concept to shipped product, both of them. Same hands.
+      </p>
+    </section>
+
     <section id="selected-work" class="landing-section">
       <div class="landing-section-head">
-        <span class="landing-eyebrow">Selected work</span>
+        <span class="landing-eyebrow">Selected client work</span>
         <span class="landing-eyebrow landing-count">{String(work.length).padStart(2, '0')}</span>
       </div>
-      <p class="landing-clients !mt-0 !mb-8">
-        Clarity and craft for SaaS and early products. Same thinking when the format is a site or funnel.
-      </p>
 
       {featured && (
         <article class="landing-featured group">
@@ -453,19 +436,18 @@ const faqSchema = {
     </section>
 
     <section class="landing-section">
-      <span class="landing-eyebrow landing-section-label">How it works</span>
-      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-10 max-w-[14ch]">
-        Three steps.
+      <span class="landing-eyebrow landing-section-label">Why I do this</span>
+      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-5 max-w-[18ch]">
+        I think like a builder, not a supplier.
       </h2>
-      <ol class="grid gap-0 border-t border-black/10 md:grid-cols-3">
-        {steps.map((step, i) => (
-          <li class="border-b border-black/10 py-7 md:border-b-0 md:border-r md:px-8 md:py-9 md:first:pl-0 md:last:border-r-0 md:last:pr-0">
-            <p class="landing-eyebrow !text-accent mb-3">0{i + 1}</p>
-            <h3 class="font-display text-xl md:text-2xl font-bold tracking-tight mb-2">{step.label}</h3>
-            <p class="text-[16px] leading-[1.5] tracking-[-0.011em] text-[#555]">{step.body}</p>
-          </li>
-        ))}
-      </ol>
+      <div class="max-w-xl space-y-5 text-[17px] leading-[1.5] tracking-[-0.011em] text-[#555]">
+        <p>
+          I'm building my own products alongside this work. So I don't think like a supplier waiting for a brief. I think like someone who's had to solve the same problems you're solving.
+        </p>
+        <p>
+          I'd rather spend my time with people building real things than making another corporate video. If that's you, we'll get on.
+        </p>
+      </div>
     </section>
 
     <section class="landing-section">
@@ -493,19 +475,19 @@ const faqSchema = {
           height="96"
         />
       </div>
-      <p class="text-[13px] font-medium tracking-[-0.01em] text-white/50 mb-4">Your director</p>
       <h2 class="font-display text-3xl md:text-5xl font-bold tracking-tight mb-5 text-balance">
-        Ready to make the idea look real?
+        Tell me what's holding you back.
       </h2>
-      <p class="mx-auto max-w-md text-[17px] leading-[1.5] tracking-[-0.011em] text-white/60 mb-10">
-        Book a short call. We pick the sprint that fits and get to work.
+      <p class="mx-auto max-w-md text-[17px] leading-[1.5] tracking-[-0.011em] text-white/60 mb-3">
+        Book a problem-solving session and let's work out what to do about it.
       </p>
+      <p class="text-[14px] tracking-[-0.01em] text-white/40 mb-10">{SESSION_FROM}</p>
       <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6">
         <a
           href={BOOKING}
           class="inline-flex min-h-[48px] items-center justify-center rounded-[10px] bg-accent px-8 py-3.5 text-[15px] font-medium tracking-[-0.01em] text-white transition-opacity hover:opacity-90"
         >
-          Book a 15-min call
+          Book a session
         </a>
         <a
           href={EMAIL}
@@ -583,10 +565,6 @@ const faqSchema = {
       margin: 0 auto;
       padding: 0 2rem;
       gap: 0.5rem 0;
-    }
-
-    .fcd-ticker-dot:last-child {
-      display: none;
     }
   }
 </style>

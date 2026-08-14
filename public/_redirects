@@ -87,6 +87,7 @@ http://motionstory.com.au/*        https://motionstory.com.au/:splat   301!
 /freelance-motion-graphic-designer/          /motion-graphics/        301!
 /freelance-motion-design-and-animation/      /motion-graphics/        301!
 /motion-graphic-production/                  /motion-graphics/        301!
+/fractional-creative-director/               /creative-business-designer/  301!
 
 # ───────────────────────────────────────────────────
 # Old standalone pages → new equivalents
