@@ -4,7 +4,7 @@ export { productDemoVideosLanding } from './product-demo-videos';
 export { productLaunchLanding } from './product-launch';
 export { saasTechLanding } from './saas-tech';
 export { saasExplainerLanding } from './saas-explainer';
-export { creativeBusinessDesignerLanding } from './creative-business-designer';
+export { creativeBusinessDesignerOffer } from './creative-business-designer';
 export { getLandingShowcaseWork } from './showcase-work';
 export { SAAS_TRUST_LOGOS } from './trust-logos';
 export {

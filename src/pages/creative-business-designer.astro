@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SpineLandingPage from '../components/LandingPage/SpineLandingPage';
-import { creativeBusinessDesignerLanding } from '../data/landing-pages/creative-business-designer';
+import CreativeBusinessLanding from '../components/LandingPage/CreativeBusinessLanding';
+import { creativeBusinessDesignerOffer } from '../data/landing-pages/creative-business-designer';
 import '../styles/global.css';
 
-const config = creativeBusinessDesignerLanding;
+const config = creativeBusinessDesignerOffer;
 
 const serviceSchema = {
   '@context': 'https://schema.org',
@@ -68,5 +68,5 @@ const faqSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
 
-  <SpineLandingPage client:load config={config} />
+  <CreativeBusinessLanding client:load config={config} />
 </BaseLayout>
