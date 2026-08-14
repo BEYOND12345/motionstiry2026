@@ -1,0 +1,370 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import VimeoEmbed from '../components/VimeoEmbed';
+
+const BOOKING = '/book/';
+const EMAIL = 'mailto:daniel@motionstory.com.au';
+
+const forWhom = [
+  'SaaS and software teams who need the product to make sense cold',
+  'New startups still sorting what they are and how to say it',
+  'Founders who need a landing page, video, or identity before the next raise or launch',
+  'Industrial, retail, and project businesses that need the same clarity',
+];
+
+const skill = [
+  'Consolidate messy ideas into a clear vision',
+  'Pick the format that makes the story believable',
+  'Ship it: landing page, identity, video, or visual system',
+];
+
+const packages = [
+  {
+    name: 'Clarity Sprint',
+    time: '2-3 days',
+    price: 'From $4,500',
+    body: 'Workshop, messaging, story map, and the recommended format. You leave with a clear vision and a plan to ship.',
+  },
+  {
+    name: 'Launch Sprint',
+    time: '1-2 weeks',
+    price: 'From $9,500',
+    body: 'Clarity plus one primary asset: landing page, promo video, brief identity, or explainer-style piece.',
+  },
+  {
+    name: 'Build Sprint',
+    time: '3-4 weeks',
+    price: 'From $18,000',
+    body: 'Clarity plus a small visual system. Typically landing page, identity starter, and promo or explainer, scoped to fit.',
+  },
+];
+
+const formats = [
+  'Landing page',
+  'Brief identity',
+  'Promotional video',
+  'Explainer or product story',
+  'Infographic',
+  'Related storytelling assets',
+];
+
+const steps = [
+  {
+    label: 'Brief',
+    body: '15-min call. You tell me the problem, audience, and what needs to ship.',
+  },
+  {
+    label: 'Plan',
+    body: 'I scope the sprint, timeline, and deliverables. Fixed quote upfront.',
+  },
+  {
+    label: 'Make',
+    body: 'We ideate, then I build. You get updates. We ship on time.',
+  },
+];
+
+const work = [
+  { title: 'Cart-share / Startup Explainer', link: '/casestudy/cart-share-explainer/', vimeoId: '792094835' },
+  { title: 'Atomic / In-App Messaging', link: '/casestudy/atomic-in-app-messaging/', vimeoId: '861022443' },
+  { title: 'Trusyft / Product Promo', link: '/casestudy/trusyft-animated-product-promo/', vimeoId: '863428533' },
+  { title: 'Wipster / Video Feedback Tool', link: '/casestudy/wipster-product-overview/', vimeoId: '648360270' },
+  { title: 'ARK / Product Concept', link: '/casestudy/ark-product-concept/', vimeoId: '818912051' },
+  { title: 'Good2Pay / Paperless Invoicing', link: '/casestudy/good2pay/', vimeoId: '448704979' },
+];
+
+const [featured, ...rest] = work;
+
+const faqs = [
+  {
+    label: 'Who this is for',
+    body: 'Early-stage SaaS, software, and startups. Also founders in industrial, retail, or project businesses who need the same vision-to-visual help.',
+  },
+  {
+    label: 'What you get',
+    body: 'Direction and delivery. Not a strategy deck that sits unused. A clear story and the asset that makes it real.',
+  },
+  {
+    label: 'Sprints vs project motion',
+    body: 'Sprints start with ideation and end with a scoped deliverable. Classic motion projects can sit inside a Launch or Build sprint when video is the right format.',
+  },
+  {
+    label: 'Where I work',
+    body: 'Based in Byron Bay, Australia. Remote with clients worldwide.',
+  },
+  {
+    label: 'How to start',
+    body: 'Book a 15-min call. We pick the sprint that fits. Fixed quote before work begins.',
+  },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Fractional Creative Director',
+  description:
+    'Fractional creative director for SaaS and startups. Vision-to-visual sprints: clarity, landing pages, identity, and promo video. Work directly with Dan Neale.',
+  provider: {
+    '@type': 'Person',
+    name: 'Daniel Neale',
+    jobTitle: 'Creative Director',
+    url: 'https://motionstory.com.au/about/',
+    worksFor: { '@type': 'Organization', name: 'Motion Story', url: 'https://motionstory.com.au' },
+  },
+  serviceType: 'Fractional Creative Direction',
+  areaServed: ['Australia', 'Worldwide'],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Fractional Creative Director sprints',
+    itemListElement: packages.map((pkg) => ({
+      '@type': 'Offer',
+      name: pkg.name,
+      description: pkg.body,
+      priceCurrency: 'AUD',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        priceCurrency: 'AUD',
+        minPrice: pkg.price.replace(/[^0-9]/g, ''),
+        description: pkg.time,
+      },
+      url: 'https://motionstory.com.au/fractional-creative-director/',
+    })),
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://motionstory.com.au/' },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Fractional Creative Director',
+      item: 'https://motionstory.com.au/fractional-creative-director/',
+    },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.label,
+    acceptedAnswer: { '@type': 'Answer', text: f.body },
+  })),
+};
+---
+
+<PageLayout
+  floatSubject="Fractional creative director sprint"
+  title="Fractional Creative Director for SaaS & Startups | Motion Story"
+  description="Fractional creative director for SaaS and startups. Vision-to-visual sprints from $4,500. Clarity, landing pages, identity, and promo video. Work with Dan."
+  showCTA={false}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <div class="landing">
+    <header class="landing-hero">
+      <span class="landing-eyebrow landing-reveal" style="--d: 0">Fractional creative director</span>
+      <h1 class="landing-title landing-reveal" style="--d: 1">
+        Fractional Creative Director for startups that need to look real.
+      </h1>
+      <p class="landing-lede landing-reveal" style="--d: 2">
+        Ideate the story. Ship the visual. Landing page, video, identity, or whatever format makes the idea believable.
+      </p>
+      <div class="mt-8 landing-reveal" style="--d: 3">
+        <a
+          href={BOOKING}
+          class="inline-flex min-h-[48px] items-center justify-center rounded-[10px] bg-black px-7 py-3.5 text-[15px] font-medium tracking-[-0.01em] text-white transition-opacity hover:opacity-90"
+        >
+          Book a 15-min call
+        </a>
+      </div>
+    </header>
+
+    <section class="landing-section">
+      <span class="landing-eyebrow landing-section-label">Who this is for</span>
+      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-8 max-w-[18ch]">
+        Early companies that need clarity, not another deck.
+      </h2>
+      <ul class="space-y-4 max-w-xl">
+        {forWhom.map((item) => (
+          <li class="flex gap-3 text-[17px] leading-[1.45] tracking-[-0.011em] text-[#333]">
+            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="landing-section">
+      <span class="landing-eyebrow landing-section-label">What I do</span>
+      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-8 max-w-[16ch]">
+        Inception to visualisation.
+      </h2>
+      <ul class="divide-y divide-black/10 border-y border-black/10 max-w-xl">
+        {skill.map((item) => (
+          <li class="py-4 text-[17px] leading-[1.45] tracking-[-0.011em] text-[#333]">
+            {item}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="landing-section" id="sprints">
+      <span class="landing-eyebrow landing-section-label">Sprints</span>
+      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-3 max-w-[16ch]">
+        Three ways to start.
+      </h2>
+      <p class="text-[17px] leading-[1.5] tracking-[-0.011em] text-[#555] max-w-xl mb-10">
+        Time-boxed. Fixed quote. Direction and delivery in one engagement.
+      </p>
+      <div class="landing-cred">
+        {packages.map((pkg) => (
+          <div class="landing-cred-row">
+            <div>
+              <h3 class="landing-cred-label">{pkg.name}</h3>
+              <p class="mt-2 text-[13px] font-medium tracking-[-0.01em] text-[#888]">
+                {pkg.time} · {pkg.price}
+              </p>
+            </div>
+            <div>
+              <p class="landing-cred-body !mb-5">{pkg.body}</p>
+              <a
+                href={BOOKING}
+                class="inline-flex min-h-[44px] items-center text-[15px] font-medium tracking-[-0.01em] text-black border-b border-black/25 hover:border-black transition-colors"
+              >
+                Book this sprint →
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="landing-section">
+      <span class="landing-eyebrow landing-section-label">Formats</span>
+      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-8 max-w-[18ch]">
+        Whatever makes the idea believable.
+      </h2>
+      <ul class="divide-y divide-black/10 border-y border-black/10 max-w-xl">
+        {formats.map((item) => (
+          <li class="py-4 text-[17px] leading-[1.45] tracking-[-0.011em] text-[#333]">
+            {item}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section id="selected-work" class="landing-section">
+      <div class="landing-section-head">
+        <span class="landing-eyebrow">Selected work</span>
+        <span class="landing-eyebrow landing-count">{String(work.length).padStart(2, '0')}</span>
+      </div>
+      <p class="text-[17px] leading-[1.5] tracking-[-0.011em] text-[#555] max-w-xl mb-10">
+        Proof of clarity and craft for SaaS and early products. The same thinking applies when the format is a site or identity.
+      </p>
+
+      {featured && (
+        <article class="landing-featured group">
+          <span class="landing-work-index">01</span>
+          <VimeoEmbed
+            client:visible
+            vimeoId={featured.vimeoId}
+            title={featured.title}
+            loading="eager"
+            autoColor={true}
+            className="landing-featured-media"
+          />
+          <a href={featured.link} class="landing-work-meta">
+            <h2 class="landing-featured-title">{featured.title}</h2>
+            <span class="landing-work-link">View case study →</span>
+          </a>
+        </article>
+      )}
+
+      <div class="landing-work-grid">
+        {rest.map((study, i) => (
+          <article class="landing-work-card group">
+            <span class="landing-work-index">{String(i + 2).padStart(2, '0')}</span>
+            <VimeoEmbed
+              client:visible
+              vimeoId={study.vimeoId}
+              title={study.title}
+              loading="lazy"
+              autoColor={true}
+              className="landing-work-media"
+            />
+            <a href={study.link} class="landing-work-meta">
+              <h2 class="landing-work-title">{study.title}</h2>
+              <span class="landing-work-link">View case study →</span>
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <p class="landing-all-work landing-all-work--end">
+        <a href="/work/">See the full portfolio →</a>
+      </p>
+    </section>
+
+    <section class="landing-section">
+      <span class="landing-eyebrow landing-section-label">How it works</span>
+      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-10 max-w-[14ch]">
+        Three steps.
+      </h2>
+      <ol class="grid gap-0 border-t border-black/10 md:grid-cols-3">
+        {steps.map((step, i) => (
+          <li class="border-b border-black/10 py-7 md:border-b-0 md:border-r md:px-8 md:py-9 md:first:pl-0 md:last:border-r-0 md:last:pr-0">
+            <p class="landing-eyebrow !text-accent mb-3">0{i + 1}</p>
+            <h3 class="font-display text-xl md:text-2xl font-bold tracking-tight mb-2">{step.label}</h3>
+            <p class="text-[16px] leading-[1.5] tracking-[-0.011em] text-[#555]">{step.body}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="landing-section">
+      <span class="landing-eyebrow landing-section-label">FAQ</span>
+      <div class="landing-faq">
+        {faqs.map((faq) => (
+          <div class="landing-faq-row">
+            <h3 class="landing-faq-label">{faq.label}</h3>
+            <p class="text-body">{faq.body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+
+  <section class="site-cta">
+    <div class="max-w-3xl mx-auto px-8 py-24 md:py-28 text-center">
+      <h2 class="font-display text-3xl md:text-5xl font-bold tracking-tight mb-5 text-balance">
+        Ready to make the idea look real?
+      </h2>
+      <p class="mx-auto max-w-md text-[17px] leading-[1.5] tracking-[-0.011em] text-white/60 mb-10">
+        Book a short call. We pick the sprint that fits and get to work.
+      </p>
+      <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6">
+        <a
+          href={BOOKING}
+          class="inline-flex min-h-[48px] items-center justify-center rounded-[10px] bg-accent px-8 py-3.5 text-[15px] font-medium tracking-[-0.01em] text-white transition-opacity hover:opacity-90"
+        >
+          Book a 15-min call
+        </a>
+        <a
+          href={EMAIL}
+          data-astro-reload
+          class="inline-flex min-h-[44px] items-center text-[15px] font-medium tracking-[-0.01em] text-white/55 transition-colors hover:text-white"
+        >
+          Or email me directly
+        </a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

@@ -17,6 +17,7 @@ const HIGH_PRIORITY_PAGES = new Set([
   '/causes/',
   '/contact/',
   '/explainer-videos/',
+  '/fractional-creative-director/',
   '/motion-graphics/',
   '/process/',
   '/product-demo-videos/',

@@ -279,6 +279,11 @@ export default function Homepage() {
                     <p className="mb-3">
                       Fractional creative partner: storytelling, planning, and craft. SaaS, startups, agencies — any size, as long as the idea needs clarity.
                     </p>
+                    <p className="mb-3">
+                      <a href="/fractional-creative-director/" className="border-b border-black/20 hover:border-black transition-colors">
+                        Fractional creative director sprints →
+                      </a>
+                    </p>
                     <p>
                       Obsessive about making dry subjects clear and watchable. Also a father, a surfer, and a big-time animal lover.
                     </p>
