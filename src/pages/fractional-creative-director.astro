@@ -1,21 +1,74 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import VimeoEmbed from '../components/VimeoEmbed';
+import { GOOGLE_RATING, VERIFIED_CLIENT_REVIEWS } from '../data/reviews';
+import { SPINE_TICKER_ROW_A, SPINE_TICKER_ROW_B } from '../data/landing-pages/spine-shared';
 
 const BOOKING = '/book/';
 const EMAIL = 'mailto:daniel@motionstory.com.au';
 
-const forWhom = [
-  'SaaS and software teams who need the product to make sense cold',
-  'New startups still sorting what they are and how to say it',
-  'Founders who need a landing page, video, or identity before the next raise or launch',
-  'Industrial, retail, and project businesses that need the same clarity',
+const clients = [
+  'United Nations',
+  'TransferWise',
+  'Atomic',
+  'Wipster',
+  'Mosaic',
+  'Method',
+  'Amex',
+  'AWS',
+  'NSW Government',
+  'RSPCA',
 ];
 
-const skill = [
-  'Consolidate messy ideas into a clear vision',
-  'Pick the format that makes the story believable',
-  'Ship it: landing page, identity, video, or visual system',
+const tickerA = [...SPINE_TICKER_ROW_A, ...SPINE_TICKER_ROW_A];
+const tickerB = [...SPINE_TICKER_ROW_B, ...SPINE_TICKER_ROW_B];
+
+const credentials = [
+  {
+    label: 'Career depth',
+    body: "United Nations. TransferWise's first video, working directly with their CEO. 1,000+ films since 2010. Small studio, big impact. You work with me directly.",
+  },
+  {
+    label: 'Direction plus delivery',
+    body: 'I consolidate the idea, then ship the visual. Not a strategy deck that sits unused. Landing pages, video, identity, funnels, and related systems.',
+  },
+  {
+    label: 'Built for early teams',
+    body: 'Startups and SaaS that need to look real before the product is finished. Clear vision. Believable execution.',
+  },
+];
+
+const skills = [
+  {
+    label: 'Product video',
+    body: 'Explainers, demos, and promo films that make software make sense cold.',
+    note: 'Live work',
+  },
+  {
+    label: 'Landing pages',
+    body: 'A first site that says what you do, who it is for, and why it matters.',
+    note: 'Placeholder proof',
+  },
+  {
+    label: 'Sales funnels',
+    body: 'Story and assets across the path from cold visitor to booked call.',
+    note: 'Placeholder proof',
+  },
+  {
+    label: 'Brief identity',
+    body: 'Enough brand to look intentional. Logo, type, colour, and a simple system.',
+    note: 'Placeholder proof',
+  },
+  {
+    label: 'Infographics',
+    body: 'Complex offers and processes made readable in one visual.',
+    note: 'Live work',
+  },
+  {
+    label: 'Story systems',
+    body: 'Messaging, story maps, and the format plan that keeps everything consistent.',
+    note: 'Live work',
+  },
 ];
 
 const packages = [
@@ -37,15 +90,6 @@ const packages = [
     price: 'From $18,000',
     body: 'Clarity plus a small visual system. Typically landing page, identity starter, and promo or explainer, scoped to fit.',
   },
-];
-
-const formats = [
-  'Landing page',
-  'Brief identity',
-  'Promotional video',
-  'Explainer or product story',
-  'Infographic',
-  'Related storytelling assets',
 ];
 
 const steps = [
@@ -73,6 +117,8 @@ const work = [
 ];
 
 const [featured, ...rest] = work;
+const proofReview = VERIFIED_CLIENT_REVIEWS.find((r) => r.company === 'Method Recycling') ?? VERIFIED_CLIENT_REVIEWS[2];
+const pageReview = VERIFIED_CLIENT_REVIEWS[0];
 
 const faqs = [
   {
@@ -81,7 +127,7 @@ const faqs = [
   },
   {
     label: 'What you get',
-    body: 'Direction and delivery. Not a strategy deck that sits unused. A clear story and the asset that makes it real.',
+    body: 'Direction and delivery. A clear story and the asset that makes it real: video, landing page, identity, funnel assets, or a mix.',
   },
   {
     label: 'Sprints vs project motion',
@@ -102,12 +148,13 @@ const serviceSchema = {
   '@type': 'Service',
   name: 'Fractional Creative Director',
   description:
-    'Fractional creative director for SaaS and startups. Vision-to-visual sprints: clarity, landing pages, identity, and promo video. Work directly with Dan Neale.',
+    'Fractional creative director for SaaS and startups. Vision-to-visual sprints: clarity, landing pages, identity, sales funnels, and promo video. Work directly with Dan Neale.',
   provider: {
     '@type': 'Person',
     name: 'Daniel Neale',
     jobTitle: 'Creative Director',
     url: 'https://motionstory.com.au/about/',
+    image: 'https://motionstory.com.au/daniel-neale.jpg',
     worksFor: { '@type': 'Organization', name: 'Motion Story', url: 'https://motionstory.com.au' },
   },
   serviceType: 'Fractional Creative Direction',
@@ -159,7 +206,7 @@ const faqSchema = {
 <PageLayout
   floatSubject="Fractional creative director sprint"
   title="Fractional Creative Director for SaaS & Startups | Motion Story"
-  description="Fractional creative director for SaaS and startups. Vision-to-visual sprints from $4,500. Clarity, landing pages, identity, and promo video. Work with Dan."
+  description="Fractional creative director for SaaS and startups. Vision-to-visual sprints from $4,500. Clarity, landing pages, video, identity, and sales funnels. Work with Dan."
   showCTA={false}
 >
   <Fragment slot="head">
@@ -175,45 +222,133 @@ const faqSchema = {
         Fractional Creative Director for startups that need to look real.
       </h1>
       <p class="landing-lede landing-reveal" style="--d: 2">
-        Ideate the story. Ship the visual. Landing page, video, identity, or whatever format makes the idea believable.
+        Ideate the story. Ship the visual. Landing page, video, identity, sales funnel, or whatever format makes the idea believable.
       </p>
-      <div class="mt-8 landing-reveal" style="--d: 3">
+      <div class="mt-8 flex flex-wrap items-center gap-5 landing-reveal" style="--d: 3">
         <a
           href={BOOKING}
           class="inline-flex min-h-[48px] items-center justify-center rounded-[10px] bg-black px-7 py-3.5 text-[15px] font-medium tracking-[-0.01em] text-white transition-opacity hover:opacity-90"
         >
           Book a 15-min call
         </a>
+        <a
+          href="#selected-work"
+          class="inline-flex min-h-[44px] items-center text-[15px] font-medium tracking-[-0.01em] text-[#555] border-b border-black/20 hover:border-black hover:text-black transition-colors"
+        >
+          See the work ↓
+        </a>
       </div>
     </header>
 
+    <p class="landing-clients landing-reveal" style="--d: 4">
+      {clients.join(' · ')}
+    </p>
+  </div>
+
+  <section class="fcd-ticker border-y border-black/10" aria-label="Trusted by">
+    <div class="mx-auto max-w-7xl px-8 pt-8 sm:pt-9">
+      <p class="landing-eyebrow text-center !mb-0 tracking-[0.18em]">Trusted by teams who needed clarity fast</p>
+    </div>
+    <div class="mt-5 space-y-0 pb-7 sm:mt-6 sm:pb-8">
+      <div class="fcd-ticker-mask">
+        <div class="fcd-ticker-track">
+          {tickerA.map((name) => (
+            <span class="fcd-ticker-item">
+              <span class="fcd-ticker-name">{name}</span>
+              <span class="fcd-ticker-dot" aria-hidden="true">·</span>
+            </span>
+          ))}
+        </div>
+      </div>
+      <div class="fcd-ticker-mask">
+        <div class="fcd-ticker-track fcd-ticker-reverse">
+          {tickerB.map((name) => (
+            <span class="fcd-ticker-item">
+              <span class="fcd-ticker-name">{name}</span>
+              <span class="fcd-ticker-dot" aria-hidden="true">·</span>
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="landing">
     <section class="landing-section">
-      <span class="landing-eyebrow landing-section-label">Who this is for</span>
-      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-8 max-w-[18ch]">
-        Early companies that need clarity, not another deck.
-      </h2>
-      <ul class="space-y-4 max-w-xl">
-        {forWhom.map((item) => (
-          <li class="flex gap-3 text-[17px] leading-[1.45] tracking-[-0.011em] text-[#333]">
-            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-start">
+        <div class="md:col-span-4">
+          <div class="aspect-[4/5] overflow-hidden mb-4 max-w-sm">
+            <img
+              src="/daniel-neale.jpg"
+              alt="Dan Neale, fractional creative director at Motion Story"
+              class="w-full h-full object-cover"
+              loading="eager"
+              width="640"
+              height="800"
+            />
+          </div>
+          <p class="text-metadata">Dan Neale · Byron Bay, Australia</p>
+        </div>
+        <div class="md:col-span-8">
+          <span class="landing-eyebrow landing-section-label">Your director</span>
+          <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-5 max-w-[16ch]">
+            You brief me. I run the sprint.
+          </h2>
+          <p class="text-[17px] leading-[1.5] tracking-[-0.011em] text-[#555] max-w-xl mb-10">
+            Creative director since 2010. I help early companies consolidate what they do, then turn it into something people can believe: websites, video, identity, and funnel assets.
+          </p>
+          <div class="landing-cred !mt-0">
+            {credentials.map((item) => (
+              <div class="landing-cred-row">
+                <h3 class="landing-cred-label">{item.label}</h3>
+                <p class="landing-cred-body">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section !pt-0">
+      <div class="border-y border-black/10 grid grid-cols-2 md:grid-cols-4">
+        <div class="py-8 md:border-r border-black/10">
+          <p class="font-display text-2xl md:text-3xl font-bold tracking-tight">2010</p>
+          <p class="text-metadata mt-2">Making motion</p>
+        </div>
+        <div class="py-8 md:border-r border-black/10 md:pl-8">
+          <p class="font-display text-2xl md:text-3xl font-bold tracking-tight">1,000+</p>
+          <p class="text-metadata mt-2">Films delivered</p>
+        </div>
+        <div class="py-8 md:border-r border-black/10 md:pl-8">
+          <p class="font-display text-2xl md:text-3xl font-bold tracking-tight">{GOOGLE_RATING.score}</p>
+          <p class="text-metadata mt-2">Google rating</p>
+        </div>
+        <div class="py-8 md:pl-8">
+          <p class="font-display text-2xl md:text-3xl font-bold tracking-tight">Direct</p>
+          <p class="text-metadata mt-2">No agency layer</p>
+        </div>
+      </div>
     </section>
 
     <section class="landing-section">
-      <span class="landing-eyebrow landing-section-label">What I do</span>
-      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-8 max-w-[16ch]">
-        Inception to visualisation.
+      <span class="landing-eyebrow landing-section-label">What I ship</span>
+      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-3 max-w-[18ch]">
+        Wider than motion. Still story first.
       </h2>
-      <ul class="divide-y divide-black/10 border-y border-black/10 max-w-xl">
-        {skill.map((item) => (
-          <li class="py-4 text-[17px] leading-[1.45] tracking-[-0.011em] text-[#333]">
-            {item}
-          </li>
+      <p class="text-[17px] leading-[1.5] tracking-[-0.011em] text-[#555] max-w-xl mb-10">
+        Video is proven. Websites, identity, and funnels are in the same practice. Placeholder notes mark proof still coming onto this page.
+      </p>
+      <div class="landing-cred">
+        {skills.map((item) => (
+          <div class="landing-cred-row">
+            <div>
+              <h3 class="landing-cred-label">{item.label}</h3>
+              <p class="mt-2 text-[12px] font-medium uppercase tracking-[0.08em] text-[#999]">{item.note}</p>
+            </div>
+            <p class="landing-cred-body">{item.body}</p>
+          </div>
         ))}
-      </ul>
+      </div>
     </section>
 
     <section class="landing-section" id="sprints">
@@ -247,27 +382,13 @@ const faqSchema = {
       </div>
     </section>
 
-    <section class="landing-section">
-      <span class="landing-eyebrow landing-section-label">Formats</span>
-      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-8 max-w-[18ch]">
-        Whatever makes the idea believable.
-      </h2>
-      <ul class="divide-y divide-black/10 border-y border-black/10 max-w-xl">
-        {formats.map((item) => (
-          <li class="py-4 text-[17px] leading-[1.45] tracking-[-0.011em] text-[#333]">
-            {item}
-          </li>
-        ))}
-      </ul>
-    </section>
-
     <section id="selected-work" class="landing-section">
       <div class="landing-section-head">
         <span class="landing-eyebrow">Selected work</span>
         <span class="landing-eyebrow landing-count">{String(work.length).padStart(2, '0')}</span>
       </div>
-      <p class="text-[17px] leading-[1.5] tracking-[-0.011em] text-[#555] max-w-xl mb-10">
-        Proof of clarity and craft for SaaS and early products. The same thinking applies when the format is a site or identity.
+      <p class="landing-clients !mt-0 !mb-8">
+        Clarity and craft for SaaS and early products. Same thinking when the format is a site or funnel.
       </p>
 
       {featured && (
@@ -287,6 +408,14 @@ const faqSchema = {
           </a>
         </article>
       )}
+
+      <figure class="landing-proof">
+        <blockquote class="landing-proof-quote">“{proofReview.quote}”</blockquote>
+        <figcaption class="landing-proof-cap">
+          <span class="landing-proof-by">{proofReview.name}</span>
+          <span class="landing-proof-role">{proofReview.role}, {proofReview.company}</span>
+        </figcaption>
+      </figure>
 
       <div class="landing-work-grid">
         {rest.map((study, i) => (
@@ -310,6 +439,16 @@ const faqSchema = {
 
       <p class="landing-all-work landing-all-work--end">
         <a href="/work/">See the full portfolio →</a>
+      </p>
+    </section>
+
+    <section class="landing-section">
+      <blockquote class="font-display text-xl md:text-2xl font-medium tracking-tight leading-snug max-w-2xl mb-6">
+        “{pageReview.quote}”
+      </blockquote>
+      <p class="text-metadata mb-4">{pageReview.name} · {pageReview.role}, {pageReview.company}</p>
+      <p class="text-metadata">
+        <span class="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · <a href="/reviews/" class="border-b border-black/20 hover:border-black transition-colors">All reviews →</a>
       </p>
     </section>
 
@@ -343,7 +482,18 @@ const faqSchema = {
   </div>
 
   <section class="site-cta">
-    <div class="max-w-3xl mx-auto px-8 py-24 md:py-28 text-center">
+    <div class="max-w-xl mx-auto px-8 py-24 md:py-28 text-center">
+      <div class="mx-auto mb-8 h-20 w-20 overflow-hidden rounded-full ring-1 ring-white/15 sm:h-24 sm:w-24">
+        <img
+          src="/daniel-neale.jpg"
+          alt="Dan Neale"
+          class="h-full w-full object-cover"
+          loading="lazy"
+          width="96"
+          height="96"
+        />
+      </div>
+      <p class="text-[13px] font-medium tracking-[-0.01em] text-white/50 mb-4">Your director</p>
       <h2 class="font-display text-3xl md:text-5xl font-bold tracking-tight mb-5 text-balance">
         Ready to make the idea look real?
       </h2>
@@ -368,3 +518,75 @@ const faqSchema = {
     </div>
   </section>
 </PageLayout>
+
+<style>
+  .fcd-ticker-mask {
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  }
+
+  .fcd-ticker-track {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    animation: fcd-ticker-scroll 48s linear infinite;
+  }
+
+  .fcd-ticker-track.fcd-ticker-reverse {
+    animation-name: fcd-ticker-scroll-reverse;
+    animation-duration: 56s;
+  }
+
+  .fcd-ticker-item {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .fcd-ticker-name {
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: rgba(10, 10, 10, 0.62);
+    white-space: nowrap;
+  }
+
+  .fcd-ticker-dot {
+    margin: 0 1.5rem;
+    color: var(--color-accent, #ff0000);
+    opacity: 0.9;
+  }
+
+  @media (min-width: 640px) {
+    .fcd-ticker-dot {
+      margin: 0 2rem;
+    }
+  }
+
+  @keyframes fcd-ticker-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes fcd-ticker-scroll-reverse {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fcd-ticker-track {
+      animation: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 0 2rem;
+      gap: 0.5rem 0;
+    }
+
+    .fcd-ticker-dot:last-child {
+      display: none;
+    }
+  }
+</style>
