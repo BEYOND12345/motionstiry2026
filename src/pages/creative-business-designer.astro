@@ -8,23 +8,10 @@ const BOOKING = '/book/';
 const EMAIL = 'mailto:daniel@motionstory.com.au';
 const SESSION_FROM = 'From $1,500';
 
-const clients = [
-  'United Nations',
-  'TransferWise',
-  'Atomic',
-  'Wipster',
-  'Mosaic',
-  'Method',
-  'Amex',
-  'AWS',
-  'NSW Government',
-  'RSPCA',
-];
-
 const tickerA = [...SPINE_TICKER_ROW_A, ...SPINE_TICKER_ROW_A];
 const tickerB = [...SPINE_TICKER_ROW_B, ...SPINE_TICKER_ROW_B];
 
-const heroOutcomes = [
+const outcomes = [
   'Website live in days',
   'Pitch deck and video ready before your next meeting',
   'App prototype in your hands in a fortnight',
@@ -42,7 +29,7 @@ const steps = [
     body: 'Not a report. Not a deck of recommendations you file away. The actual thing: the website, the video, the prototype, the funnel.',
   },
   {
-    label: 'You get on with running your business',
+    label: 'You run the business',
     body: 'One contact. No agency, no committee, no six-week onboarding.',
   },
 ];
@@ -202,63 +189,69 @@ const faqSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
 
-  <div class="landing">
-    <header class="landing-hero">
-      <span class="landing-eyebrow landing-reveal" style="--d: 0">Creative business designer</span>
-      <h1 class="landing-title landing-reveal" style="--d: 1">
-        What's holding your business back?
-      </h1>
-      <p class="landing-lede landing-reveal" style="--d: 2">
-        I can bring your vision to life.
-      </p>
-      <ul class="mt-8 space-y-3 max-w-xl landing-reveal" style="--d: 3">
-        {heroOutcomes.map((item) => (
-          <li class="flex gap-3 text-[17px] leading-[1.45] tracking-[-0.011em] text-[#333]">
-            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-      <p class="mt-8 text-[17px] leading-[1.5] tracking-[-0.011em] text-[#555] max-w-xl landing-reveal" style="--d: 4">
-        Work directly with a creative business designer. 20 years of it.
-      </p>
-      <div class="mt-8 flex flex-wrap items-center gap-5 landing-reveal" style="--d: 5">
-        <a
-          href={BOOKING}
-          class="inline-flex min-h-[48px] items-center justify-center rounded-[10px] bg-black px-7 py-3.5 text-[15px] font-medium tracking-[-0.01em] text-white transition-opacity hover:opacity-90"
-        >
-          Book a problem-solving session
+  <!-- 01 HERO: problem + person in first viewport -->
+  <section class="cbd-hero">
+    <div class="cbd-hero-grid">
+      <div class="cbd-hero-copy">
+        <span class="landing-eyebrow landing-reveal" style="--d: 0">Creative business designer</span>
+        <h1 class="cbd-title landing-reveal" style="--d: 1">
+          What's holding your business back?
+        </h1>
+        <p class="cbd-lede landing-reveal" style="--d: 2">
+          I can bring your vision to life.
+        </p>
+        <p class="cbd-support landing-reveal" style="--d: 3">
+          Work directly with a creative business designer. 20 years of it.
+        </p>
+        <div class="cbd-hero-cta landing-reveal" style="--d: 4">
+          <a href={BOOKING} class="cbd-btn-ink">
+            Book a problem-solving session
+          </a>
+          <span class="cbd-price">{SESSION_FROM}</span>
+        </div>
+        <a href="#work" class="cbd-jump landing-reveal" style="--d: 5">
+          See the work ↓
         </a>
-        <span class="text-[14px] tracking-[-0.01em] text-[#888]">{SESSION_FROM}</span>
       </div>
-    </header>
+      <div class="cbd-hero-photo landing-reveal" style="--d: 2">
+        <div class="cbd-photo-frame">
+          <img
+            src="/daniel-neale.jpg"
+            alt="Dan Neale, creative business designer at Motion Story"
+            width="720"
+            height="900"
+            loading="eager"
+          />
+        </div>
+        <p class="text-metadata mt-4">Dan Neale · Byron Bay</p>
+      </div>
+    </div>
+  </section>
 
-    <p class="landing-clients landing-reveal" style="--d: 6">
-      {clients.join(' · ')}
-    </p>
-  </div>
-
-  <section class="fcd-ticker border-y border-black/10" aria-label="Trusted by">
-    <div class="mx-auto max-w-7xl px-8 pt-8 sm:pt-9">
-      <p class="landing-eyebrow text-center !mb-0 tracking-[0.18em]">Twenty years of client work through Motion Story</p>
+  <!-- 02 TRUST -->
+  <section class="cbd-ticker border-y border-black/10" aria-label="Trusted by">
+    <div class="mx-auto max-w-7xl px-5 pt-8 sm:px-6 sm:pt-9 lg:px-12">
+      <p class="landing-eyebrow text-center !mb-0 tracking-[0.18em]">
+        Twenty years of client work through Motion Story
+      </p>
     </div>
     <div class="mt-5 space-y-0 pb-7 sm:mt-6 sm:pb-8">
-      <div class="fcd-ticker-mask">
-        <div class="fcd-ticker-track">
+      <div class="cbd-ticker-mask">
+        <div class="cbd-ticker-track">
           {tickerA.map((name) => (
-            <span class="fcd-ticker-item">
-              <span class="fcd-ticker-name">{name}</span>
-              <span class="fcd-ticker-dot" aria-hidden="true">·</span>
+            <span class="cbd-ticker-item">
+              <span class="cbd-ticker-name">{name}</span>
+              <span class="cbd-ticker-dot" aria-hidden="true">·</span>
             </span>
           ))}
         </div>
       </div>
-      <div class="fcd-ticker-mask">
-        <div class="fcd-ticker-track fcd-ticker-reverse">
+      <div class="cbd-ticker-mask">
+        <div class="cbd-ticker-track cbd-ticker-reverse">
           {tickerB.map((name) => (
-            <span class="fcd-ticker-item">
-              <span class="fcd-ticker-name">{name}</span>
-              <span class="fcd-ticker-dot" aria-hidden="true">·</span>
+            <span class="cbd-ticker-item">
+              <span class="cbd-ticker-name">{name}</span>
+              <span class="cbd-ticker-dot" aria-hidden="true">·</span>
             </span>
           ))}
         </div>
@@ -266,113 +259,40 @@ const faqSchema = {
     </div>
   </section>
 
-  <div class="landing">
-    <section class="landing-section">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-start">
-        <div class="md:col-span-4">
-          <div class="aspect-[4/5] overflow-hidden mb-4 max-w-sm">
-            <img
-              src="/daniel-neale.jpg"
-              alt="Dan Neale, creative business designer at Motion Story"
-              class="w-full h-full object-cover"
-              loading="eager"
-              width="640"
-              height="800"
-            />
-          </div>
-          <p class="text-metadata">Dan Neale · Byron Bay, Australia</p>
-        </div>
-        <div class="md:col-span-8">
-          <span class="landing-eyebrow landing-section-label">How it works</span>
-          <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-5 max-w-[18ch]">
-            One person. One session. Then it gets built.
-          </h2>
-          <p class="text-[17px] leading-[1.5] tracking-[-0.011em] text-[#555] max-w-xl mb-10">
-            Most people sell you advice or sell you production. I do both, which is why this is simple.
-          </p>
-          <ol class="space-y-8 max-w-xl">
-            {steps.map((step, i) => (
-              <li>
-                <p class="landing-eyebrow !text-accent mb-2">0{i + 1}</p>
-                <h3 class="font-display text-xl md:text-2xl font-bold tracking-tight mb-2">{step.label}</h3>
-                <p class="text-[16px] leading-[1.5] tracking-[-0.011em] text-[#555]">{step.body}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section class="landing-section">
-      <span class="landing-eyebrow landing-section-label">What I can build</span>
-      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-10 max-w-[16ch]">
-        From idea to the actual thing.
+  <!-- 03 VALUE -->
+  <section class="cbd-band">
+    <div class="cbd-value">
+      <h2 class="cbd-value-title">
+        One person. One session. Then it gets built.
       </h2>
-      <div class="landing-cred">
-        {builds.map((item) => (
-          <div class="landing-cred-row">
-            <h3 class="landing-cred-label">{item.label}</h3>
-            <p class="landing-cred-body">{item.body}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-
-    <section class="landing-section">
-      <span class="landing-eyebrow landing-section-label">Is this you?</span>
-      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-10 max-w-[14ch]">
-        If this sounds familiar.
-      </h2>
-      <div class="landing-faq">
-        {fits.map((item) => (
-          <div class="landing-faq-row">
-            <h3 class="landing-faq-label">“{item.q}”</h3>
-            <p class="text-body">{item.a}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-
-    <section class="landing-section">
-      <span class="landing-eyebrow landing-section-label">Proof</span>
-      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-5 max-w-[20ch]">
-        Client work. And my own products.
-      </h2>
-      <p class="text-[17px] leading-[1.5] tracking-[-0.011em] text-[#555] max-w-xl mb-10">
-        Twenty years of client work through Motion Story. Explainer and motion graphics for tech companies and brands, alongside top Australian agencies.
+      <p class="cbd-value-body">
+        Most people sell you advice or sell you production. I do both, which is why this is simple.
       </p>
-      <p class="text-[17px] leading-[1.5] tracking-[-0.011em] text-[#333] max-w-xl mb-6 font-medium">
-        And I build my own things:
-      </p>
-      <ul class="divide-y divide-black/10 border-y border-black/10 max-w-xl mb-12">
-        {ownProducts.map((item) => (
-          <li class="py-5">
-            {item.href ? (
-              <a
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="font-display text-xl font-bold tracking-tight border-b border-black/20 hover:border-black transition-colors"
-              >
-                {item.name}
-              </a>
-            ) : (
-              <span class="font-display text-xl font-bold tracking-tight">{item.name}</span>
-            )}
-            <p class="mt-2 text-[16px] leading-[1.5] tracking-[-0.011em] text-[#555]">{item.body}</p>
-          </li>
+    </div>
+  </section>
+
+  <!-- 04 OUTCOMES (moved out of hero) -->
+  <section class="cbd-band cbd-band-fog border-y border-black/10">
+    <div class="cbd-shell">
+      <span class="landing-eyebrow landing-section-label">What that looks like</span>
+      <ul class="cbd-outcomes">
+        {outcomes.map((item) => (
+          <li>{item}</li>
         ))}
       </ul>
-      <p class="text-[16px] leading-[1.5] tracking-[-0.011em] text-[#555] max-w-xl">
-        Concept to shipped product, both of them. Same hands.
-      </p>
-    </section>
+    </div>
+  </section>
 
-    <section id="selected-work" class="landing-section">
+  <!-- 05 WORK EARLY -->
+  <div class="landing !pt-16 md:!pt-20">
+    <section id="work" class="landing-section !pt-0 scroll-mt-24">
       <div class="landing-section-head">
-        <span class="landing-eyebrow">Selected client work</span>
+        <span class="landing-eyebrow">Selected work</span>
         <span class="landing-eyebrow landing-count">{String(work.length).padStart(2, '0')}</span>
       </div>
+      <p class="landing-clients !mt-0 !mb-8">
+        Explainer and motion for tech companies and brands, alongside top Australian agencies.
+      </p>
 
       {featured && (
         <article class="landing-featured group">
@@ -425,19 +345,86 @@ const faqSchema = {
       </p>
     </section>
 
-    <section class="landing-section">
-      <blockquote class="font-display text-xl md:text-2xl font-medium tracking-tight leading-snug max-w-2xl mb-6">
-        “{pageReview.quote}”
-      </blockquote>
-      <p class="text-metadata mb-4">{pageReview.name} · {pageReview.role}, {pageReview.company}</p>
-      <p class="text-metadata">
-        <span class="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · <a href="/reviews/" class="border-b border-black/20 hover:border-black transition-colors">All reviews →</a>
-      </p>
+    <!-- 06 PLAN -->
+    <section id="plan" class="landing-section scroll-mt-24">
+      <span class="landing-eyebrow landing-section-label">How it works</span>
+      <h2 class="font-display text-[clamp(1.85rem,3.8vw,2.85rem)] font-bold tracking-tight leading-[1.05] mb-10 max-w-[16ch]">
+        Three steps. No production maze.
+      </h2>
+      <ol class="grid gap-0 border-t border-black/10 md:grid-cols-3">
+        {steps.map((step, i) => (
+          <li class="border-b border-black/10 py-7 md:border-b-0 md:border-r md:px-8 md:py-9 md:first:pl-0 md:last:border-r-0 md:last:pr-0">
+            <p class="landing-eyebrow !text-accent mb-3">0{i + 1}</p>
+            <h3 class="font-display text-xl md:text-2xl font-bold tracking-tight mb-2">{step.label}</h3>
+            <p class="text-[16px] leading-[1.5] tracking-[-0.011em] text-[#555]">{step.body}</p>
+          </li>
+        ))}
+      </ol>
     </section>
 
+    <!-- 07 BUILD -->
+    <section class="landing-section">
+      <span class="landing-eyebrow landing-section-label">What I can build</span>
+      <h2 class="font-display text-[clamp(1.85rem,3.8vw,2.85rem)] font-bold tracking-tight leading-[1.05] mb-10 max-w-[14ch]">
+        From idea to the actual thing.
+      </h2>
+      <div class="landing-cred">
+        {builds.map((item) => (
+          <div class="landing-cred-row">
+            <h3 class="landing-cred-label">{item.label}</h3>
+            <p class="landing-cred-body">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- 08 FIT -->
+    <section class="landing-section">
+      <span class="landing-eyebrow landing-section-label">Is this you?</span>
+      <h2 class="font-display text-[clamp(1.85rem,3.8vw,2.85rem)] font-bold tracking-tight leading-[1.05] mb-8 max-w-[14ch]">
+        If this sounds familiar.
+      </h2>
+      <div class="fold max-w-3xl">
+        {fits.map((item) => (
+          <details class="fold-item">
+            <summary>{item.q}</summary>
+            <div class="fold-body">
+              <p>{item.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- 09 OWN PRODUCTS -->
+    <section class="landing-section">
+      <span class="landing-eyebrow landing-section-label">And I build my own things</span>
+      <h2 class="font-display text-[clamp(1.85rem,3.8vw,2.85rem)] font-bold tracking-tight leading-[1.05] mb-5 max-w-[18ch]">
+        Concept to shipped product. Same hands.
+      </h2>
+      <p class="text-[17px] leading-[1.5] tracking-[-0.011em] text-[#555] max-w-xl mb-10">
+        Client work through Motion Story. Plus products I own end to end.
+      </p>
+      <div class="cbd-products">
+        {ownProducts.map((item) => (
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cbd-product"
+          >
+            <span class="cbd-product-name">{item.name}</span>
+            <span class="cbd-product-body">{item.body}</span>
+            <span class="cbd-product-link">Visit →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- 10 WHY -->
     <section class="landing-section">
       <span class="landing-eyebrow landing-section-label">Why I do this</span>
-      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-5 max-w-[18ch]">
+      <h2 class="font-display text-[clamp(1.85rem,3.8vw,2.85rem)] font-bold tracking-tight leading-[1.05] mb-5 max-w-[16ch]">
         I think like a builder, not a supplier.
       </h2>
       <div class="max-w-xl space-y-5 text-[17px] leading-[1.5] tracking-[-0.011em] text-[#555]">
@@ -448,6 +435,16 @@ const faqSchema = {
           I'd rather spend my time with people building real things than making another corporate video. If that's you, we'll get on.
         </p>
       </div>
+    </section>
+
+    <section class="landing-section">
+      <blockquote class="font-display text-xl md:text-2xl font-medium tracking-tight leading-snug max-w-2xl mb-6">
+        “{pageReview.quote}”
+      </blockquote>
+      <p class="text-metadata mb-4">{pageReview.name} · {pageReview.role}, {pageReview.company}</p>
+      <p class="text-metadata">
+        <span class="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · <a href="/reviews/" class="border-b border-black/20 hover:border-black transition-colors">All reviews →</a>
+      </p>
     </section>
 
     <section class="landing-section">
@@ -502,29 +499,263 @@ const faqSchema = {
 </PageLayout>
 
 <style>
-  .fcd-ticker-mask {
+  .cbd-hero {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 8.5rem 1.5rem 3.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .cbd-hero {
+      padding: 9.5rem 3rem 4.5rem;
+    }
+  }
+
+  .cbd-hero-grid {
+    display: grid;
+    gap: 2.5rem;
+    align-items: end;
+  }
+
+  @media (min-width: 900px) {
+    .cbd-hero-grid {
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: 3.5rem;
+      align-items: end;
+    }
+  }
+
+  .cbd-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4.35rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+    margin: 1.25rem 0 1.25rem;
+    color: var(--color-fg);
+    text-wrap: balance;
+  }
+
+  .cbd-lede {
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    color: var(--color-fg);
+    margin: 0 0 1rem;
+    max-width: 22ch;
+  }
+
+  .cbd-support {
+    font-size: 1.0625rem;
+    line-height: 1.5;
+    letter-spacing: -0.011em;
+    color: #555;
+    max-width: 28rem;
+    margin: 0;
+  }
+
+  .cbd-hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .cbd-btn-ink {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #0a0a0a;
+    color: #fff;
+    padding: 0.875rem 1.75rem;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    transition: opacity 0.2s ease;
+  }
+
+  .cbd-btn-ink:hover {
+    opacity: 0.9;
+  }
+
+  .cbd-price {
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    color: #888;
+  }
+
+  .cbd-jump {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: #555;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .cbd-jump:hover {
+    color: #0a0a0a;
+    border-color: #0a0a0a;
+  }
+
+  .cbd-photo-frame {
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: #f0f0f0;
+  }
+
+  .cbd-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .cbd-band {
+    padding: 3.5rem 0;
+  }
+
+  @media (min-width: 768px) {
+    .cbd-band {
+      padding: 4.5rem 0;
+    }
+  }
+
+  .cbd-band-fog {
+    background:
+      radial-gradient(120% 80% at 50% 0%, rgba(255, 0, 0, 0.035), transparent 55%),
+      #fafafa;
+  }
+
+  .cbd-value {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .cbd-value-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3.6vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    text-wrap: balance;
+    color: var(--color-fg);
+    margin: 0;
+  }
+
+  .cbd-value-body {
+    margin: 1.25rem auto 0;
+    max-width: 34rem;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: -0.011em;
+    color: #555;
+  }
+
+  .cbd-shell {
+    max-width: 74rem;
+    margin: 0 auto;
+    padding: 0 2.25rem;
+  }
+
+  .cbd-outcomes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 40rem;
+  }
+
+  .cbd-outcomes li {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2.5vw, 1.85rem);
+    font-weight: 600;
+    letter-spacing: -0.022em;
+    line-height: 1.25;
+    color: rgba(10, 10, 10, 0.78);
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .cbd-outcomes li:first-child {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .cbd-products {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    max-width: 42rem;
+  }
+
+  .cbd-product {
+    display: grid;
+    gap: 0.35rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+  }
+
+  .cbd-product:hover {
+    opacity: 0.7;
+  }
+
+  .cbd-product-name {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .cbd-product-body {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+  }
+
+  .cbd-product-link {
+    margin-top: 0.35rem;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: #0a0a0a;
+  }
+
+  .cbd-ticker-mask {
     overflow: hidden;
     mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
   }
 
-  .fcd-ticker-track {
+  .cbd-ticker-track {
     display: flex;
     width: max-content;
     align-items: center;
-    animation: fcd-ticker-scroll 48s linear infinite;
+    animation: cbd-ticker-scroll 48s linear infinite;
   }
 
-  .fcd-ticker-track.fcd-ticker-reverse {
-    animation-name: fcd-ticker-scroll-reverse;
+  .cbd-ticker-track.cbd-ticker-reverse {
+    animation-name: cbd-ticker-scroll-reverse;
     animation-duration: 56s;
   }
 
-  .fcd-ticker-item {
+  .cbd-ticker-item {
     display: inline-flex;
     align-items: center;
   }
 
-  .fcd-ticker-name {
+  .cbd-ticker-name {
     font-family: var(--font-display);
     font-size: clamp(1.35rem, 2.4vw, 1.85rem);
     font-weight: 700;
@@ -533,30 +764,30 @@ const faqSchema = {
     white-space: nowrap;
   }
 
-  .fcd-ticker-dot {
+  .cbd-ticker-dot {
     margin: 0 1.5rem;
     color: var(--color-accent, #ff0000);
     opacity: 0.9;
   }
 
   @media (min-width: 640px) {
-    .fcd-ticker-dot {
+    .cbd-ticker-dot {
       margin: 0 2rem;
     }
   }
 
-  @keyframes fcd-ticker-scroll {
+  @keyframes cbd-ticker-scroll {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
   }
 
-  @keyframes fcd-ticker-scroll-reverse {
+  @keyframes cbd-ticker-scroll-reverse {
     from { transform: translateX(-50%); }
     to { transform: translateX(0); }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .fcd-ticker-track {
+    .cbd-ticker-track {
       animation: none;
       flex-wrap: wrap;
       justify-content: center;
@@ -564,7 +795,6 @@ const faqSchema = {
       max-width: 72rem;
       margin: 0 auto;
       padding: 0 2rem;
-      gap: 0.5rem 0;
     }
   }
 </style>
