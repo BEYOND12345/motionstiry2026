@@ -445,13 +445,13 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
           <a href="/" className="brand-mark text-[1.1rem] tracking-tight text-[color:var(--spine-ink)] sm:text-xl">
             Motion Story.
           </a>
-          <a
-            href={BOOKING_PATH}
-            onClick={onBook}
-            className="spine-link-quiet hidden min-h-[44px] items-center md:inline-flex"
-          >
-            Book a call
-          </a>
+            <a
+              href={BOOKING_PATH}
+              onClick={onBook}
+              className="spine-link-quiet hidden min-h-[44px] items-center md:inline-flex"
+            >
+              {config.hero.primaryCta}
+            </a>
         </div>
       </header>
 
@@ -537,25 +537,64 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
           </div>
         </section>
 
-        {/* 4. Work: alternating offset, top-aligned */}
-        <div id="work" className="scroll-mt-24">
-          <div className="mx-auto max-w-7xl px-5 pt-14 sm:px-6 sm:pt-16 lg:px-12 lg:pt-20">
-            <Reveal>
-              <p className="spine-eyebrow mb-3">{config.proof.eyebrow}</p>
+        {/* 4. Problem (optional StoryBrand beat) */}
+        {config.problem ? (
+          <section className="border-b border-[color:var(--spine-line)]">
+            <div className="mx-auto max-w-7xl px-5 py-14 sm:px-6 sm:py-16 lg:px-12 lg:py-20">
+              <Reveal>
+                <p className="spine-eyebrow mb-3">{config.problem.eyebrow}</p>
+                <h2 className="max-w-[18ch] font-display text-[clamp(1.85rem,3.8vw,2.85rem)] font-bold leading-[1.05] tracking-tight text-[color:var(--spine-ink)]">
+                  {config.problem.headline}
+                </h2>
+              </Reveal>
+              <div className="mt-10 divide-y divide-[color:var(--spine-line)] border-y border-[color:var(--spine-line)]">
+                {config.problem.items.map((item, i) => (
+                  <Reveal key={item.label} delay={i * 0.04}>
+                    <div className="grid gap-3 py-7 md:grid-cols-[minmax(12rem,18rem)_1fr] md:gap-10 md:py-8">
+                      <h3 className="font-display text-[17px] font-semibold tracking-[-0.015em] text-[color:var(--spine-ink)] md:text-[18px]">
+                        {item.label}
+                      </h3>
+                      <p className="spine-body max-w-xl !text-[16px] !leading-[1.55]">{item.body}</p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {/* 5. Guide: empathy + authority */}
+        <section id="guide" className="scroll-mt-24 border-b border-[color:var(--spine-line)]">
+          <div className="mx-auto grid max-w-7xl items-start gap-10 px-5 py-14 sm:gap-12 sm:px-6 sm:py-16 lg:grid-cols-12 lg:gap-14 lg:px-12 lg:py-20">
+            <Reveal className="lg:col-span-4">
+              <div className="aspect-[4/5] overflow-hidden bg-black/[0.04]">
+                <img
+                  src={config.guide.photoSrc}
+                  alt={config.guide.name}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                  width={640}
+                  height={800}
+                />
+              </div>
+              <p className="spine-eyebrow mt-4 !normal-case !tracking-[-0.01em]">
+                {config.guide.name} · {config.guide.role}
+              </p>
+            </Reveal>
+            <Reveal className="lg:col-span-8" delay={0.05}>
+              <p className="spine-eyebrow mb-3">{config.guide.eyebrow}</p>
               <h2 className="max-w-[16ch] font-display text-[clamp(1.85rem,3.8vw,2.85rem)] font-bold leading-[1.05] tracking-tight text-[color:var(--spine-ink)]">
-                {config.proof.headline}
+                {config.guide.headline}
               </h2>
+              <p className="spine-body mt-5 max-w-xl !text-[17px] !leading-[1.55]">
+                {config.guide.body}
+              </p>
             </Reveal>
           </div>
-          <div className="mt-4 sm:mt-6">
-            {config.proof.cases.map((project, i) => (
-              <ProofRow key={project.client + project.videoUrl} project={project} index={i} />
-            ))}
-          </div>
-        </div>
+        </section>
 
-        {/* 5. Plan */}
-        <section id="plan" className="scroll-mt-24 border-y border-[color:var(--spine-line)]">
+        {/* 6. Plan */}
+        <section id="plan" className="scroll-mt-24 border-b border-[color:var(--spine-line)]">
           <div className="mx-auto max-w-7xl px-5 py-14 sm:px-6 sm:py-16 lg:px-12 lg:py-20">
             <Reveal>
               <p className="spine-eyebrow mb-4">{config.plan.eyebrow}</p>
@@ -576,11 +615,59 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
                 </Reveal>
               ))}
             </ol>
+            <Reveal delay={0.12}>
+              <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
+                <a
+                  href={BOOKING_PATH}
+                  onClick={onBook}
+                  className="spine-btn-ink spine-btn-label inline-flex min-h-[48px] items-center justify-center px-7 py-3.5"
+                >
+                  {config.hero.primaryCta}
+                </a>
+                <a href="#work" className="spine-link-quiet inline-flex min-h-[44px] items-center">
+                  {config.hero.secondaryCta}
+                </a>
+              </div>
+            </Reveal>
           </div>
         </section>
 
-        {/* 6. Testimonial: quiet, on its own */}
-        <section className="border-b border-[color:var(--spine-line)]">
+        {/* 7. Stakes / failure */}
+        <section className="spine-band-fog border-b border-[color:var(--spine-line)]">
+          <div className="mx-auto max-w-3xl px-5 py-14 text-center sm:px-6 sm:py-16 lg:py-20">
+            <Reveal>
+              <p className="spine-eyebrow mb-4">{config.stakes.eyebrow}</p>
+              <h2 className="font-display text-[clamp(1.75rem,3.6vw,2.75rem)] font-bold leading-[1.1] tracking-tight text-[color:var(--spine-ink)] text-balance">
+                {config.stakes.headline}
+              </h2>
+              {config.stakes.body ? (
+                <p className="spine-body mx-auto mt-5 max-w-xl text-[16px] leading-[1.55] sm:text-[17px]">
+                  {config.stakes.body}
+                </p>
+              ) : null}
+            </Reveal>
+          </div>
+        </section>
+
+        {/* 8. Success proof */}
+        <div id="work" className="scroll-mt-24">
+          <div className="mx-auto max-w-7xl px-5 pt-14 sm:px-6 sm:pt-16 lg:px-12 lg:pt-20">
+            <Reveal>
+              <p className="spine-eyebrow mb-3">{config.proof.eyebrow}</p>
+              <h2 className="max-w-[16ch] font-display text-[clamp(1.85rem,3.8vw,2.85rem)] font-bold leading-[1.05] tracking-tight text-[color:var(--spine-ink)]">
+                {config.proof.headline}
+              </h2>
+            </Reveal>
+          </div>
+          <div className="mt-4 sm:mt-6">
+            {config.proof.cases.map((project, i) => (
+              <ProofRow key={project.client + project.videoUrl} project={project} index={i} />
+            ))}
+          </div>
+        </div>
+
+        {/* 9. Testimonial */}
+        <section className="border-y border-[color:var(--spine-line)]">
           <div className="mx-auto max-w-2xl px-5 py-14 text-center sm:px-6 sm:py-16 lg:py-20">
             <Reveal>
               <blockquote>
@@ -596,7 +683,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
           </div>
         </section>
 
-        {/* 7. Close: director + book / brief link only */}
+        {/* 10. Close: director + book */}
         <section id="final-cta" className="site-cta">
           <div className="mx-auto max-w-xl scroll-mt-24 px-5 py-16 text-center sm:px-6 sm:py-20 md:scroll-mt-28 lg:py-24">
             <div className="mx-auto mb-8 h-20 w-20 overflow-hidden rounded-full ring-1 ring-white/15 sm:h-24 sm:w-24">
@@ -616,7 +703,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
               {config.success.headline}
             </h2>
             <p className="mx-auto mt-4 max-w-[36ch] text-[17px] leading-[1.47] tracking-[-0.011em] text-white/62">
-              {config.guide.body}
+              {config.success.body || config.guide.body}
             </p>
             <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-5">
               <a
@@ -624,7 +711,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
                 onClick={onBook}
                 className="spine-btn-accent spine-btn-label inline-flex min-h-[48px] w-full max-w-xs items-center justify-center px-8 py-3.5 text-center sm:w-auto sm:min-w-[180px]"
               >
-                Book a call
+                {config.hero.primaryCta}
               </a>
               <a
                 href="/contact/"
@@ -636,7 +723,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
           </div>
         </section>
 
-        {/* 8. FAQ */}
+        {/* 11. FAQ */}
         <section className="mx-auto max-w-3xl px-5 py-14 sm:px-6 sm:py-16 lg:px-12 lg:py-20">
           <h2 className="mb-7 font-display text-2xl font-bold tracking-tight text-[color:var(--spine-ink)]">
             Questions
@@ -680,14 +767,14 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
             Motion Story<span className="text-accent">.</span>
           </p>
           <p className="mt-3 text-[14px] tracking-[-0.01em] text-[color:var(--spine-eyebrow)]">
-            Product demo videos for SaaS · Byron Bay
+            {config.footerLine ?? 'Product demo videos for SaaS · Byron Bay'}
           </p>
           <p className="mt-2 text-[15px] text-[color:var(--spine-body)]">
             <a
-              href="/saas-explainer-videos/"
+              href="/services/"
               className="border-b border-black/15 transition-colors hover:border-[color:var(--spine-ink)] hover:text-[color:var(--spine-ink)]"
             >
-              Looking for a SaaS explainer instead?
+              See all services
             </a>
           </p>
         </div>
@@ -705,7 +792,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
           tabIndex={stickyVisible ? 0 : -1}
           className="spine-btn-ink spine-btn-label flex min-h-[48px] w-full items-center justify-center px-4 py-3.5 text-center"
         >
-          Book a call
+          {config.hero.primaryCta}
         </a>
       </div>
     </div>

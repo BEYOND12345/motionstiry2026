@@ -39,6 +39,12 @@ export type SpineLandingConfig = {
     headline: string;
     body: string;
   };
+  /** Optional problem section (StoryBrand: external / internal / philosophical) */
+  problem?: {
+    eyebrow: string;
+    headline: string;
+    items: { label: string; body: string }[];
+  };
   /** Guide — empathy + authority */
   guide: {
     eyebrow: string;
@@ -66,6 +72,8 @@ export type SpineLandingConfig = {
     headline: string;
     body: string;
   };
+  /** Optional footer blurb under the wordmark */
+  footerLine?: string;
   /** Success vision before CTA */
   success: {
     headline: string;
