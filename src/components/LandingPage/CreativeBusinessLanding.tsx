@@ -1,623 +1,439 @@
-import { useEffect, useState, type CSSProperties, type ReactNode } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { useReducedMotion, motion } from 'framer-motion';
+import type { LucideIcon } from 'lucide-react';
 import {
-  SESSION_FROM,
-  creativeBusinessDesignerOffer,
-  type CreativeBusinessOfferConfig,
-} from '../../data/landing-pages/creative-business-designer';
+  ArrowDown,
+  ArrowRight,
+  Check,
+  Cpu,
+  Film,
+  Globe,
+  Lightbulb,
+  MessageCircleQuestion,
+  Smartphone,
+  Wrench,
+} from 'lucide-react';
+import type { ReactNode } from 'react';
 
-declare global {
-  interface Window {
-    dataLayer?: Record<string, unknown>[];
-    gtag?: (...args: unknown[]) => void;
-  }
-}
+const BOOKING = '/book/';
+const CTA_LABEL = 'Book a problem-solving session';
 
-const BOOKING_PATH = '/book/';
+const SPEED_ITEMS = [
+  'Website live in days',
+  'Pitch deck and video ready before your next meeting',
+  'App prototype in your hands in a fortnight',
+  'Sales funnel built in two weeks',
+  'A rough idea turned into something real, fast',
+] as const;
 
-function pushEvent(name: string, params: Record<string, unknown> = {}) {
-  if (typeof window === 'undefined') return;
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ event: name, ...params });
-  if (typeof window.gtag === 'function') {
-    window.gtag('event', name, params);
-  }
-}
+const STEPS = [
+  {
+    title: 'We talk',
+    body: 'A paid problem-solving session — an hour or a day, depending on the size of it. You bring the mess. We map out what\'s actually wrong and what to do about it.',
+  },
+  {
+    title: 'I build it',
+    body: 'Not a report. Not a deck of recommendations you file away. The actual thing — the website, the video, the prototype, the funnel.',
+  },
+  {
+    title: 'You get on with running your business',
+    body: 'One contact. No agency, no committee, no six-week onboarding.',
+  },
+] as const;
 
-function Reveal({
-  children,
-  className = '',
-  delay = 0,
-}: {
-  children: ReactNode;
-  className?: string;
-  delay?: number;
-}) {
+type Capability = {
+  title: string;
+  description: string;
+  outcome: string;
+  Icon: LucideIcon;
+};
+
+const CAPABILITIES: Capability[] = [
+  {
+    title: 'Software & app prototyping',
+    description: 'Working prototypes, not mockups — built by someone who ships apps.',
+    outcome: 'Working prototype in a fortnight',
+    Icon: Smartphone,
+  },
+  {
+    title: 'Video & motion graphics',
+    description: 'Explainers, product demos, brand films, and launch content.',
+    outcome: 'Ready before your next meeting',
+    Icon: Film,
+  },
+  {
+    title: 'Websites',
+    description: 'Fast, sharp, built to convert. Days, not months.',
+    outcome: 'Live in days',
+    Icon: Globe,
+  },
+  {
+    title: 'Automation & technical problem-solving',
+    description: 'Quotes, funnels, and manual work eating your week. Usually solvable.',
+    outcome: 'Hours back in your week',
+    Icon: Wrench,
+  },
+  {
+    title: 'Big ideas & strategy',
+    description: 'Positioning, launch plans, and briefs sharp enough for a bigger agency.',
+    outcome: 'Clear next move',
+    Icon: Lightbulb,
+  },
+];
+
+const MIRRORS = [
+  {
+    quote: "I've got an idea but nothing to show for it.",
+    answer: 'A short sprint and you walk away with a live site and a story that makes it sound real.',
+  },
+  {
+    quote: "I'm pitching for money and I'm not ready.",
+    answer: 'Deck and video, done before the meeting.',
+  },
+  {
+    quote: "I've built it but nobody knows about it.",
+    answer: 'A launch plan — and I build the assets, not just the plan.',
+  },
+  {
+    quote: 'People still don\'t get what we do.',
+    answer: 'Video content strategy, then I make the videos.',
+  },
+  {
+    quote: "I know what's next but I've got no time to work it out.",
+    answer: 'A working session and a clear roadmap. What to do, in what order, what it costs.',
+  },
+] as const;
+
+const PRODUCTS = [
+  {
+    name: 'Freewheel',
+    body: 'Cycling tour and navigation app.',
+    href: 'https://freewheeltours.com/',
+    Icon: Cpu,
+  },
+  {
+    name: 'SMASH Invoices',
+    body: 'Voice-to-invoice app for tradies.',
+    href: 'https://smashinvoices.com/',
+    Icon: Smartphone,
+  },
+] as const;
+
+const CLIENT_STRIP = [
+  'United Nations',
+  'TransferWise',
+  'Atomic',
+  'Wipster',
+  'Method',
+  'Amex',
+  'AWS',
+  'NSW Government',
+] as const;
+
+function FadeUp({ children, className = '' }: { children: ReactNode; className?: string }) {
   const reduce = useReducedMotion();
   if (reduce) return <div className={className}>{children}</div>;
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 10 }}
+      initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-6% 0px' }}
-      transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1], delay }}
+      viewport={{ once: true, margin: '-8% 0px' }}
+      transition={{ duration: 0.4, ease: 'easeOut' }}
     >
       {children}
     </motion.div>
   );
 }
 
-function TickerRow({ items, reverse = false }: { items: string[]; reverse?: boolean }) {
-  const doubled = [...items, ...items];
+function PrimaryButton({ href = BOOKING, className = '' }: { href?: string; className?: string }) {
   return (
-    <div className="spine-ticker-mask relative overflow-hidden py-3 sm:py-3.5">
-      <div className={`spine-ticker-track flex w-max items-center gap-0 ${reverse ? 'spine-ticker-reverse' : ''}`}>
-        {doubled.map((name, i) => (
-          <span key={`${name}-${i}`} className="inline-flex items-center">
-            <span className="spine-ticker-name font-display text-[1.35rem] font-bold tracking-tight sm:text-[1.6rem] md:text-[1.85rem]">
-              {name}
-            </span>
-            <span className="spine-ticker-dot mx-5 sm:mx-7 md:mx-8" aria-hidden="true">
-              ·
-            </span>
-          </span>
-        ))}
-      </div>
-    </div>
+    <a
+      href={href}
+      className={`inline-flex min-h-[48px] items-center justify-center rounded-lg bg-accent px-8 py-4 text-[15px] font-medium tracking-[-0.01em] text-white transition duration-150 ease-out hover:-translate-y-px hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent active:translate-y-0 ${className}`}
+    >
+      {CTA_LABEL}
+    </a>
   );
 }
 
-type Props = {
-  config?: CreativeBusinessOfferConfig;
-};
-
-export default function CreativeBusinessLanding({
-  config = creativeBusinessDesignerOffer,
-}: Props) {
-  const [faqOpen, setFaqOpen] = useState<number | null>(0);
-  const [stickyVisible, setStickyVisible] = useState(false);
-  const reduce = useReducedMotion();
-
-  useEffect(() => {
-    const onScroll = () => setStickyVisible(window.scrollY > 520);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  const onBook = () => {
-    pushEvent('book_call_click', {
-      event_category: 'conversion',
-      slug: config.slug,
-    });
-  };
-
-  const accentStyle = {
-    '--spine-accent': config.accentColor,
-  } as CSSProperties;
-
+export default function CreativeBusinessLanding() {
   return (
-    <div className="spine-landing min-h-screen bg-[color:var(--spine-fog)] text-[color:var(--spine-ink)]" style={accentStyle}>
-      <style>{`
-        .spine-landing {
-          --spine-ink: #0a0a0a;
-          --spine-fog: #f7f7f5;
-          --spine-eyebrow: rgba(10, 10, 10, 0.55);
-          --spine-body: rgba(10, 10, 10, 0.72);
-          --spine-line: rgba(10, 10, 10, 0.1);
-          --spine-cta: #0a0a0a;
-          --spine-radius-control: 10px;
-        }
-        .spine-landing .spine-eyebrow {
-          font-family: var(--font-sans);
-          font-size: 0.6875rem;
-          font-weight: 500;
-          letter-spacing: 0.14em;
-          text-transform: uppercase;
-          color: var(--spine-eyebrow);
-        }
-        .spine-landing .spine-body {
-          font-size: 17px;
-          line-height: 1.55;
-          letter-spacing: -0.011em;
-          color: var(--spine-body);
-        }
-        .spine-landing .spine-band-fog {
-          background:
-            radial-gradient(120% 80% at 50% 0%, rgba(255, 0, 0, 0.03), transparent 55%),
-            #fafafa;
-        }
-        .spine-landing .spine-btn-ink {
-          background: var(--spine-cta);
-          color: #fff;
-          border-radius: var(--spine-radius-control);
-          transition: opacity 0.2s ease;
-        }
-        .spine-landing .spine-btn-ink:hover { opacity: 0.9; }
-        .spine-landing .spine-btn-label {
-          font-size: 15px;
-          font-weight: 500;
-          letter-spacing: -0.01em;
-        }
-        .spine-landing .spine-link-quiet {
-          font-size: 15px;
-          font-weight: 500;
-          letter-spacing: -0.01em;
-          color: var(--spine-body);
-          transition: color 0.2s ease;
-        }
-        .spine-landing .spine-link-quiet:hover { color: var(--spine-ink); }
-        .spine-landing .spine-ticker-name { color: rgba(10, 10, 10, 0.62); }
-        .spine-landing .spine-ticker-dot { color: var(--spine-accent); opacity: 0.9; }
-        .spine-landing .spine-glass {
-          background: rgba(255, 255, 255, 0.72);
-          backdrop-filter: blur(24px) saturate(1.6);
-          -webkit-backdrop-filter: blur(24px) saturate(1.6);
-          border-bottom: 0.5px solid rgba(10, 10, 10, 0.08);
-        }
-        .spine-landing .spine-glass-bar {
-          background: rgba(255, 255, 255, 0.78);
-          backdrop-filter: blur(24px) saturate(1.6);
-          -webkit-backdrop-filter: blur(24px) saturate(1.6);
-          border-top: 0.5px solid rgba(10, 10, 10, 0.08);
-        }
-        .spine-landing .site-cta {
-          background:
-            radial-gradient(ellipse 100% 80% at 50% 0%, rgba(255, 255, 255, 0.06), transparent 52%),
-            linear-gradient(180deg, #131313 0%, #0a0a0a 45%, #070707 100%);
-          border-top: 0.5px solid rgba(255, 255, 255, 0.08);
-        }
-        .spine-landing .spine-btn-accent {
-          background: var(--spine-accent, #FF0000);
-          color: #fff;
-          border-radius: var(--spine-radius-control);
-          transition: opacity 0.2s ease;
-        }
-        .spine-landing .spine-btn-accent:hover { opacity: 0.92; }
-        .spine-ticker-mask {
-          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-          -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-        }
-        .spine-ticker-track {
-          animation: spine-ticker-scroll 48s linear infinite;
-        }
-        .spine-ticker-track.spine-ticker-reverse {
-          animation-name: spine-ticker-scroll-reverse;
-        }
-        @keyframes spine-ticker-scroll {
-          from { transform: translate3d(0, 0, 0); }
-          to { transform: translate3d(-50%, 0, 0); }
-        }
-        @keyframes spine-ticker-scroll-reverse {
-          from { transform: translate3d(-50%, 0, 0); }
-          to { transform: translate3d(0, 0, 0); }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .spine-ticker-track {
-            animation: none !important;
-            transform: none !important;
-          }
-        }
-      `}</style>
-
-      <header className="spine-glass fixed inset-x-0 top-0 z-50 pt-[env(safe-area-inset-top)]">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 sm:px-6 sm:py-4 lg:px-12">
-          <a href="/" className="brand-mark text-[1.1rem] tracking-tight text-[color:var(--spine-ink)] sm:text-xl">
-            Motion Story.
+    <div className="min-h-screen bg-[#FAFAF8] text-black selection:bg-accent selection:text-white">
+      {/* Minimal brand bar */}
+      <header className="border-b border-black/8 bg-[#FAFAF8]/80 backdrop-blur-md">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-8">
+          <a href="/" className="brand-mark text-lg tracking-tight">
+            Motion Story<span className="text-accent">.</span>
           </a>
           <a
-            href={BOOKING_PATH}
-            onClick={onBook}
-            className="spine-link-quiet hidden min-h-[44px] items-center md:inline-flex"
+            href={BOOKING}
+            className="text-[14px] font-medium tracking-[-0.01em] text-black/55 transition-colors hover:text-black"
           >
             Book a session
           </a>
         </div>
       </header>
 
-      <main
-        id="main-content"
-        className="pb-[calc(5.5rem+env(safe-area-inset-bottom))] pt-[calc(4.25rem+env(safe-area-inset-top))] md:pb-0 md:pt-[4.75rem]"
-      >
-        <section>
-          <div className="mx-auto grid max-w-7xl items-end gap-8 px-5 pt-8 pb-10 sm:gap-10 sm:px-6 sm:pt-10 sm:pb-12 lg:grid-cols-12 lg:gap-12 lg:px-12 lg:pt-12 lg:pb-14">
-            <motion.div
-              className="min-w-0 lg:col-span-7"
-              initial={reduce ? false : { opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              <p className="spine-eyebrow mb-4">{config.hero.eyebrow}</p>
-              <h1 className="font-display text-[clamp(2.25rem,5vw,3.85rem)] font-bold leading-[1.02] tracking-[-0.025em] text-[color:var(--spine-ink)] text-balance">
-                {config.hero.h1}
-              </h1>
-              <p className="mt-5 max-w-[28ch] font-display text-[clamp(1.35rem,2.4vw,1.85rem)] font-medium leading-[1.25] tracking-[-0.02em] text-[color:var(--spine-ink)]">
-                {config.hero.subhead}
-              </p>
-              <p className="spine-body mt-5 max-w-[36ch]">
-                Work directly with a creative business designer. 20 years of it.
-              </p>
-              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
-                <a
-                  href={BOOKING_PATH}
-                  onClick={onBook}
-                  className="spine-btn-ink spine-btn-label inline-flex min-h-[48px] items-center justify-center px-7 py-3.5"
+      {/* 3.1 HERO */}
+      <section className="flex min-h-[85vh] items-center">
+        <div className="mx-auto w-full max-w-6xl px-5 py-16 md:px-8 md:py-24">
+          <FadeUp>
+            <p className="mb-5 text-[11px] font-medium uppercase tracking-[0.14em] text-accent">
+              Creative business designer
+            </p>
+            <h1 className="max-w-[16ch] font-display text-4xl font-bold tracking-tight text-balance sm:text-5xl md:text-6xl md:leading-[1.05]">
+              What's holding your business back?
+            </h1>
+            <p className="mt-5 max-w-[28ch] font-display text-xl font-medium tracking-tight text-black/55 md:text-2xl">
+              I can bring your vision to life.
+            </p>
+
+            <ul className="mt-10 flex flex-col gap-3 md:flex-row md:flex-wrap md:gap-2.5">
+              {SPEED_ITEMS.map((item) => (
+                <li
+                  key={item}
+                  className="inline-flex items-start gap-2.5 rounded-full border border-black/10 bg-white px-4 py-2.5 text-[14px] leading-snug tracking-[-0.01em] text-black/80 md:items-center"
                 >
-                  {config.hero.primaryCta}
-                </a>
-                <span className="text-[14px] tracking-[-0.01em] text-[color:var(--spine-eyebrow)]">
-                  {SESSION_FROM}
-                </span>
-              </div>
-              <a href="#plan" className="spine-link-quiet mt-5 inline-flex min-h-[44px] items-center">
-                {config.hero.secondaryCta} ↓
-              </a>
-            </motion.div>
-
-            <motion.div
-              className="min-w-0 lg:col-span-5"
-              initial={reduce ? false : { opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.06, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              <div className="aspect-[4/5] overflow-hidden bg-black/[0.04]">
-                <img
-                  src={config.guide.photoSrc}
-                  alt={config.guide.name}
-                  className="h-full w-full object-cover"
-                  width={720}
-                  height={900}
-                  loading="eager"
-                  fetchPriority="high"
-                />
-              </div>
-              <p className="spine-eyebrow mt-4 !normal-case !tracking-[-0.01em]">
-                {config.guide.name} · Byron Bay
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        <section className="spine-band-fog border-y border-[color:var(--spine-line)]" aria-label={config.trustStrip.line}>
-          <div className="mx-auto max-w-7xl px-5 pt-8 sm:px-6 sm:pt-9 lg:px-12">
-            <p className="spine-eyebrow text-center tracking-[0.18em]">{config.trustStrip.line}</p>
-          </div>
-          <div className="mt-5 space-y-0 pb-7 sm:mt-6 sm:pb-8">
-            <TickerRow items={config.trustStrip.rowA} />
-            <TickerRow items={config.trustStrip.rowB} reverse />
-          </div>
-        </section>
-
-        <section className="spine-band-fog border-b border-[color:var(--spine-line)]">
-          <div className="mx-auto max-w-3xl px-5 py-14 text-center sm:px-6 sm:py-16 lg:py-20">
-            <Reveal>
-              <h2 className="font-display text-[clamp(1.75rem,3.6vw,2.75rem)] font-bold leading-[1.1] tracking-tight text-[color:var(--spine-ink)] text-balance">
-                {config.value.headline}
-              </h2>
-              <p className="spine-body mx-auto mt-5 max-w-xl text-[16px] leading-[1.55] sm:text-[17px]">
-                {config.value.body}
-              </p>
-            </Reveal>
-          </div>
-        </section>
-
-        <section className="border-b border-[color:var(--spine-line)]">
-          <div className="mx-auto max-w-7xl px-5 py-14 sm:px-6 sm:py-16 lg:px-12 lg:py-20">
-            <Reveal>
-              <p className="spine-eyebrow mb-3">What that looks like</p>
-              <ul className="mt-6 max-w-3xl divide-y divide-[color:var(--spine-line)] border-y border-[color:var(--spine-line)]">
-                {config.outcomes.map((item) => (
-                  <li
-                    key={item}
-                    className="py-4 font-display text-[clamp(1.2rem,2.4vw,1.75rem)] font-semibold leading-[1.25] tracking-[-0.022em] text-[color:var(--spine-ink)]"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-          </div>
-        </section>
-
-        <section className="border-b border-[color:var(--spine-line)]">
-          <div className="mx-auto max-w-7xl px-5 py-14 sm:px-6 sm:py-16 lg:px-12 lg:py-20">
-            <Reveal>
-              <p className="spine-eyebrow mb-3">{config.problem.eyebrow}</p>
-              <h2 className="max-w-[18ch] font-display text-[clamp(1.85rem,3.8vw,2.85rem)] font-bold leading-[1.05] tracking-tight text-[color:var(--spine-ink)]">
-                {config.problem.headline}
-              </h2>
-            </Reveal>
-            <div className="mt-10 divide-y divide-[color:var(--spine-line)] border-y border-[color:var(--spine-line)]">
-              {config.problem.items.map((item, i) => (
-                <Reveal key={item.label} delay={i * 0.04}>
-                  <div className="grid gap-3 py-7 md:grid-cols-[minmax(12rem,20rem)_1fr] md:gap-10 md:py-8">
-                    <h3 className="font-display text-[17px] font-semibold tracking-[-0.015em] text-[color:var(--spine-ink)] md:text-[18px]">
-                      “{item.label}”
-                    </h3>
-                    <p className="spine-body max-w-xl !text-[16px]">{item.body}</p>
-                  </div>
-                </Reveal>
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent md:mt-0" strokeWidth={1.5} aria-hidden="true" />
+                  <span>{item}</span>
+                </li>
               ))}
+            </ul>
+
+            <p className="mt-10 text-[14px] tracking-[-0.01em] text-black/50 md:text-[15px]">
+              Work directly with a creative business designer. 20 years of it.
+            </p>
+            <div className="mt-4">
+              <PrimaryButton />
             </div>
-          </div>
-        </section>
+          </FadeUp>
+        </div>
+      </section>
 
-        <section id="guide" className="scroll-mt-24 border-b border-[color:var(--spine-line)]">
-          <div className="mx-auto grid max-w-7xl items-start gap-10 px-5 py-14 sm:gap-12 sm:px-6 sm:py-16 lg:grid-cols-12 lg:gap-14 lg:px-12 lg:py-20">
-            <Reveal className="lg:col-span-4">
-              <div className="aspect-[4/5] overflow-hidden bg-black/[0.04]">
-                <img
-                  src={config.guide.photoSrc}
-                  alt={config.guide.name}
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                  width={640}
-                  height={800}
-                />
-              </div>
-              <p className="spine-eyebrow mt-4 !normal-case !tracking-[-0.01em]">
-                {config.guide.name} · {config.guide.role}
-              </p>
-            </Reveal>
-            <Reveal className="lg:col-span-8" delay={0.05}>
-              <p className="spine-eyebrow mb-3">{config.guide.eyebrow}</p>
-              <h2 className="max-w-[18ch] font-display text-[clamp(1.85rem,3.8vw,2.85rem)] font-bold leading-[1.05] tracking-tight text-[color:var(--spine-ink)]">
-                {config.guide.headline}
-              </h2>
-              <p className="spine-body mt-5 max-w-xl !text-[17px]">{config.guide.body}</p>
-            </Reveal>
-          </div>
-        </section>
+      {/* 3.2 HOW IT WORKS */}
+      <section className="border-t border-black/8 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-5 md:px-8">
+          <FadeUp>
+            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.14em] text-accent">How it works</p>
+            <h2 className="max-w-[18ch] font-display text-3xl font-bold tracking-tight md:text-4xl">
+              One person. One session. Then it gets built.
+            </h2>
+            <p className="mt-5 max-w-prose text-base leading-relaxed text-black/60 md:text-lg">
+              Most people sell you advice or sell you production. I do both, which is why this is simple.
+            </p>
+          </FadeUp>
 
-        <section id="plan" className="scroll-mt-24 border-b border-[color:var(--spine-line)]">
-          <div className="mx-auto max-w-7xl px-5 py-14 sm:px-6 sm:py-16 lg:px-12 lg:py-20">
-            <Reveal>
-              <p className="spine-eyebrow mb-4">{config.plan.eyebrow}</p>
-              <h2 className="max-w-[16ch] font-display text-[clamp(1.85rem,3.8vw,2.85rem)] font-bold leading-[1.05] tracking-tight text-[color:var(--spine-ink)]">
-                {config.plan.headline}
-              </h2>
-            </Reveal>
-            <ol className="mt-10 grid gap-0 border-t border-[color:var(--spine-line)] md:grid-cols-3">
-              {config.plan.steps.map((step, i) => (
-                <Reveal key={step.label} delay={i * 0.05}>
-                  <li className="border-b border-[color:var(--spine-line)] py-7 md:border-b-0 md:border-r md:px-8 md:py-9 md:first:pl-0 md:last:border-r-0 md:last:pr-0">
-                    <p className="spine-eyebrow text-accent">0{i + 1}</p>
-                    <h3 className="mt-2.5 font-display text-xl font-bold tracking-tight text-[color:var(--spine-ink)] sm:text-2xl">
-                      {step.label}
-                    </h3>
-                    <p className="spine-body mt-2.5 !text-[15px] !leading-[1.5]">{step.body}</p>
-                  </li>
-                </Reveal>
-              ))}
-            </ol>
-            <Reveal delay={0.12}>
-              <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <div className="relative mt-14 grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-8">
+            {STEPS.map((step, i) => (
+              <FadeUp key={step.title}>
+                <div className="relative">
+                  {i < STEPS.length - 1 && (
+                    <div
+                      className="pointer-events-none absolute top-8 right-[-1.25rem] hidden h-px w-8 bg-black/15 md:block lg:right-[-1.5rem] lg:w-10"
+                      aria-hidden="true"
+                    />
+                  )}
+                  <p className="font-display text-5xl font-bold text-accent/25" aria-hidden="true">
+                    0{i + 1}
+                  </p>
+                  <h3 className="mt-3 font-display text-xl font-semibold tracking-tight">{step.title}</h3>
+                  <p className="mt-3 max-w-prose text-[15px] leading-relaxed text-black/60">{step.body}</p>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3.3 WHAT I CAN BUILD */}
+      <section className="border-t border-black/8 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-5 md:px-8">
+          <FadeUp>
+            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.14em] text-accent">What I can build</p>
+            <h2 className="max-w-[16ch] font-display text-3xl font-bold tracking-tight md:text-4xl">
+              From idea to the actual thing.
+            </h2>
+          </FadeUp>
+
+          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {CAPABILITIES.map((card) => (
+              <FadeUp key={card.title}>
+                <article className="flex h-full flex-col rounded-2xl border border-black/10 bg-white p-8 shadow-sm transition duration-150 ease-out hover:border-accent/40 hover:shadow-md">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
+                    <card.Icon className="h-6 w-6 text-accent" strokeWidth={1.5} aria-hidden="true" />
+                  </div>
+                  <h3 className="font-display text-xl font-semibold tracking-tight">{card.title}</h3>
+                  <p className="mt-3 text-[15px] leading-relaxed text-black/65">{card.description}</p>
+                  <p className="mt-auto pt-6 text-[13px] font-medium tracking-[-0.01em] text-black/40">
+                    {card.outcome}
+                  </p>
+                </article>
+              </FadeUp>
+            ))}
+
+            <FadeUp>
+              <article className="flex h-full flex-col rounded-2xl border border-dashed border-black/15 bg-transparent p-8">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-black/5">
+                  <MessageCircleQuestion className="h-6 w-6 text-black/45" strokeWidth={1.5} aria-hidden="true" />
+                </div>
+                <h3 className="font-display text-xl font-semibold tracking-tight text-black/70">Something else? Ask.</h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-black/50">
+                  If the problem doesn't fit a box, bring it anyway.
+                </p>
                 <a
-                  href={BOOKING_PATH}
-                  onClick={onBook}
-                  className="spine-btn-ink spine-btn-label inline-flex min-h-[48px] items-center justify-center px-7 py-3.5"
+                  href={BOOKING}
+                  className="mt-auto inline-flex min-h-[44px] items-center gap-2 pt-6 text-[14px] font-medium tracking-[-0.01em] text-accent transition-opacity hover:opacity-80"
                 >
-                  {config.hero.primaryCta}
+                  {CTA_LABEL}
+                  <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
                 </a>
-                <span className="text-[14px] tracking-[-0.01em] text-[color:var(--spine-eyebrow)]">
-                  {SESSION_FROM}
-                </span>
-              </div>
-            </Reveal>
+              </article>
+            </FadeUp>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="build" className="scroll-mt-24 border-b border-[color:var(--spine-line)]">
-          <div className="mx-auto max-w-7xl px-5 py-14 sm:px-6 sm:py-16 lg:px-12 lg:py-20">
-            <Reveal>
-              <p className="spine-eyebrow mb-3">What I can build</p>
-              <h2 className="max-w-[16ch] font-display text-[clamp(1.85rem,3.8vw,2.85rem)] font-bold leading-[1.05] tracking-tight text-[color:var(--spine-ink)]">
-                From idea to the actual thing.
-              </h2>
-            </Reveal>
-            <div className="mt-10 divide-y divide-[color:var(--spine-line)] border-y border-[color:var(--spine-line)]">
-              {config.builds.map((item, i) => (
-                <Reveal key={item.label} delay={i * 0.03}>
-                  <div className="grid gap-3 py-7 md:grid-cols-[minmax(12rem,18rem)_1fr] md:gap-10 md:py-8">
-                    <h3 className="font-display text-[18px] font-semibold tracking-[-0.015em] text-[color:var(--spine-ink)]">
-                      {item.label}
-                    </h3>
-                    <p className="spine-body max-w-xl !text-[16px]">{item.body}</p>
+      {/* 3.4 IS THIS YOU? */}
+      <section className="border-t border-black/8 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-5 md:px-8">
+          <FadeUp>
+            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.14em] text-accent">Is this you?</p>
+            <h2 className="max-w-[14ch] font-display text-3xl font-bold tracking-tight md:text-4xl">
+              If this sounds familiar.
+            </h2>
+          </FadeUp>
+
+          <div className="mt-12">
+            {MIRRORS.map((row) => (
+              <FadeUp key={row.quote}>
+                <div className="grid grid-cols-1 gap-4 border-b border-black/10 py-8 last:border-b-0 md:grid-cols-2 md:gap-10 md:py-9">
+                  <p className="font-display text-xl italic leading-snug tracking-tight text-black/85">
+                    “{row.quote}”
+                  </p>
+                  <div>
+                    <p className="text-[16px] leading-relaxed text-black/65 md:text-[17px]">{row.answer}</p>
+                    <a
+                      href="#book"
+                      className="mt-4 inline-flex min-h-[44px] items-center gap-1.5 text-[14px] font-medium tracking-[-0.01em] text-accent transition-opacity hover:opacity-80"
+                    >
+                      Book a session
+                      <ArrowDown className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />
+                    </a>
                   </div>
-                </Reveal>
-              ))}
-            </div>
+                </div>
+              </FadeUp>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="spine-band-fog border-b border-[color:var(--spine-line)]">
-          <div className="mx-auto max-w-3xl px-5 py-14 text-center sm:px-6 sm:py-16 lg:py-20">
-            <Reveal>
-              <p className="spine-eyebrow mb-4">{config.stakes.eyebrow}</p>
-              <h2 className="font-display text-[clamp(1.75rem,3.6vw,2.75rem)] font-bold leading-[1.1] tracking-tight text-[color:var(--spine-ink)] text-balance">
-                {config.stakes.headline}
-              </h2>
-              <p className="spine-body mx-auto mt-5 max-w-xl text-[16px] leading-[1.55] sm:text-[17px]">
-                {config.stakes.body}
-              </p>
-            </Reveal>
-          </div>
-        </section>
+      {/* 3.5 PROOF */}
+      <section className="border-t border-black/8 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-5 md:px-8">
+          <FadeUp>
+            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.14em] text-accent">Proof</p>
+            <h2 className="max-w-[18ch] font-display text-3xl font-bold tracking-tight md:text-4xl">
+              Concept to shipped product. Same hands.
+            </h2>
+          </FadeUp>
 
-        <section id="proof" className="scroll-mt-24 border-b border-[color:var(--spine-line)]">
-          <div className="mx-auto max-w-7xl px-5 py-14 sm:px-6 sm:py-16 lg:px-12 lg:py-20">
-            <Reveal>
-              <p className="spine-eyebrow mb-3">Proof</p>
-              <h2 className="max-w-[20ch] font-display text-[clamp(1.85rem,3.8vw,2.85rem)] font-bold leading-[1.05] tracking-tight text-[color:var(--spine-ink)]">
-                Client work. And my own products.
-              </h2>
-              <p className="spine-body mt-5 max-w-xl !text-[17px]">
-                Twenty years of client work through Motion Story for tech companies, brands, and agencies. And I build my own things.
-              </p>
-            </Reveal>
-            <div className="mt-10 max-w-2xl divide-y divide-[color:var(--spine-line)] border-y border-[color:var(--spine-line)]">
-              {config.products.map((item) => (
+          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+            {PRODUCTS.map((product) => (
+              <FadeUp key={product.name}>
                 <a
-                  key={item.name}
-                  href={item.href}
+                  href={product.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex flex-col gap-2 py-7 transition-opacity hover:opacity-70"
+                  className="group flex h-full flex-col rounded-2xl border border-black/10 bg-white p-8 shadow-sm transition duration-150 ease-out hover:border-accent/40 hover:shadow-md"
                 >
-                  <span className="font-display text-2xl font-bold tracking-tight text-[color:var(--spine-ink)]">
-                    {item.name}
-                  </span>
-                  <span className="spine-body !text-[16px]">{item.body}</span>
-                  <span className="text-[14px] font-medium tracking-[-0.01em] text-[color:var(--spine-ink)]">
-                    Visit →
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10">
+                    <product.Icon className="h-7 w-7 text-accent" strokeWidth={1.5} aria-hidden="true" />
+                  </div>
+                  <h3 className="font-display text-2xl font-semibold tracking-tight">{product.name}</h3>
+                  <p className="mt-2 text-[15px] leading-relaxed text-black/60">{product.body}</p>
+                  <span className="mt-auto inline-flex min-h-[44px] items-center gap-1.5 pt-6 text-[14px] font-medium tracking-[-0.01em] text-black/70 transition-colors group-hover:text-accent">
+                    Visit
+                    <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
                   </span>
                 </a>
-              ))}
-            </div>
-            <p className="spine-body mt-8 max-w-xl !text-[16px]">
-              Concept to shipped product, both of them. Same hands.
+              </FadeUp>
+            ))}
+          </div>
+
+          <FadeUp className="mt-14">
+            <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-black/40">
+              20 years of client work through Motion Story
             </p>
-          </div>
-        </section>
-
-        <section className="border-b border-[color:var(--spine-line)]">
-          <div className="mx-auto max-w-7xl px-5 py-14 sm:px-6 sm:py-16 lg:px-12 lg:py-20">
-            <Reveal>
-              <p className="spine-eyebrow mb-3">{config.why.eyebrow}</p>
-              <h2 className="max-w-[16ch] font-display text-[clamp(1.85rem,3.8vw,2.85rem)] font-bold leading-[1.05] tracking-tight text-[color:var(--spine-ink)]">
-                {config.why.headline}
-              </h2>
-              <div className="mt-6 max-w-xl space-y-5">
-                {config.why.paragraphs.map((p) => (
-                  <p key={p.slice(0, 24)} className="spine-body !text-[17px]">
-                    {p}
-                  </p>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-        </section>
-
-        <section className="border-b border-[color:var(--spine-line)]">
-          <div className="mx-auto max-w-2xl px-5 py-14 text-center sm:px-6 sm:py-16 lg:py-20">
-            <Reveal>
-              <blockquote>
-                <p className="font-display text-[1.25rem] font-medium leading-[1.35] tracking-tight text-[color:var(--spine-ink)] sm:text-[1.5rem]">
-                  “{config.testimonial.quote}”
-                </p>
-                <footer className="mt-6 text-[14px] tracking-[-0.01em] text-[color:var(--spine-eyebrow)]">
-                  {config.testimonial.name}
-                  <span className="text-[color:var(--spine-body)]"> · {config.testimonial.company}</span>
-                </footer>
-              </blockquote>
-            </Reveal>
-          </div>
-        </section>
-
-        <section id="final-cta" className="site-cta">
-          <div className="mx-auto max-w-xl scroll-mt-24 px-5 py-16 text-center sm:px-6 sm:py-20 md:scroll-mt-28 lg:py-24">
-            <div className="mx-auto mb-8 h-20 w-20 overflow-hidden rounded-full ring-1 ring-white/15 sm:h-24 sm:w-24">
-              <img
-                src={config.guide.photoSrc}
-                alt={config.guide.name}
-                className="h-full w-full object-cover"
-                loading="lazy"
-                width={96}
-                height={96}
-              />
-            </div>
-            <p className="text-[13px] font-medium tracking-[-0.01em] text-white/50">{config.guide.eyebrow}</p>
-            <h2 className="mt-4 font-display text-[clamp(1.85rem,3.8vw,2.75rem)] font-bold leading-[1.1] tracking-[-0.022em] text-white text-balance">
-              {config.success.headline}
-            </h2>
-            <p className="mx-auto mt-4 max-w-[36ch] text-[17px] leading-[1.47] tracking-[-0.011em] text-white/62">
-              {config.success.body}
+            <p className="mt-4 max-w-3xl text-[14px] leading-relaxed tracking-[-0.01em] text-black/45 md:text-[15px]">
+              {CLIENT_STRIP.join(' · ')}
             </p>
-            <p className="mt-3 text-[14px] tracking-[-0.01em] text-white/40">{SESSION_FROM}</p>
-            <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-5">
-              <a
-                href={BOOKING_PATH}
-                onClick={onBook}
-                className="spine-btn-accent spine-btn-label inline-flex min-h-[48px] w-full max-w-xs items-center justify-center px-8 py-3.5 text-center sm:w-auto sm:min-w-[200px]"
-              >
-                Book a session
-              </a>
-              <a
-                href="mailto:daniel@motionstory.com.au"
-                className="inline-flex min-h-[44px] items-center text-[15px] font-medium tracking-[-0.01em] text-white/55 transition-colors hover:text-white"
-              >
-                Or email me directly
-              </a>
-            </div>
-          </div>
-        </section>
+          </FadeUp>
+        </div>
+      </section>
 
-        <section className="mx-auto max-w-3xl px-5 py-14 sm:px-6 sm:py-16 lg:px-12 lg:py-20">
-          <h2 className="mb-7 font-display text-2xl font-bold tracking-tight text-[color:var(--spine-ink)]">
-            Questions
-          </h2>
-          <div className="divide-y divide-[color:var(--spine-line)] border-y border-[color:var(--spine-line)]">
-            {config.faq.items.map((faq, i) => {
-              const open = faqOpen === i;
-              return (
-                <div key={faq.question}>
-                  <button
-                    type="button"
-                    className="flex min-h-[52px] w-full items-center justify-between gap-5 py-5 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--spine-ink)]"
-                    aria-expanded={open}
-                    onClick={() => setFaqOpen(open ? null : i)}
-                  >
-                    <span className="font-display text-[17px] font-semibold tracking-[-0.015em] text-[color:var(--spine-ink)]">
-                      {faq.question}
-                    </span>
-                    <span
-                      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-lg leading-none text-accent"
-                      aria-hidden="true"
-                    >
-                      {open ? '−' : '+'}
-                    </span>
-                  </button>
-                  {open && <p className="spine-body max-w-xl pb-6 !text-[16px]">{faq.answer}</p>}
+      {/* 3.6 WHY I DO THIS */}
+      <section className="border-t border-black/8 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-5 md:px-8">
+          <FadeUp>
+            <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-12">
+              <div className="md:col-span-3">
+                <div className="aspect-[4/5] max-w-[200px] overflow-hidden">
+                  <img
+                    src="/daniel-neale.jpg"
+                    alt="Dan Neale"
+                    className="h-full w-full object-cover"
+                    width={400}
+                    height={500}
+                    loading="lazy"
+                  />
                 </div>
-              );
-            })}
-          </div>
-        </section>
-      </main>
+              </div>
+              <div className="md:col-span-7">
+                <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.14em] text-accent">Why I do this</p>
+                <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
+                  I think like a builder, not a supplier.
+                </h2>
+                <div className="mt-6 max-w-prose space-y-5 text-base leading-relaxed text-black/65 md:text-lg">
+                  <p>
+                    I'm building my own products alongside this work. So I don't think like a supplier waiting for a
+                    brief — I think like someone who's had to solve the same problems you're solving.
+                  </p>
+                  <p>
+                    I'd rather spend my time with people building real things than making another corporate video. If
+                    that's you, we'll get on.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
 
-      <footer className="site-footer px-5 py-10 pb-[calc(6.5rem+env(safe-area-inset-bottom))] sm:px-6 sm:py-12 md:pb-12 lg:px-12">
-        <div className="mx-auto max-w-7xl">
-          <p className="brand-mark text-lg tracking-tight text-[color:var(--spine-ink)]">
+      {/* 3.7 FINAL CTA */}
+      <section id="book" className="scroll-mt-24 border-t border-black/8 bg-accent/[0.06] py-20 md:py-24">
+        <div className="mx-auto max-w-6xl px-5 text-center md:px-8">
+          <FadeUp>
+            <h2 className="font-display text-3xl font-bold tracking-tight text-balance md:text-4xl">
+              Tell me what's holding you back.
+            </h2>
+            <p className="mx-auto mt-4 max-w-prose text-base leading-relaxed text-black/60 md:text-lg">
+              Book a problem-solving session and let's work out what to do about it.
+            </p>
+            <div className="mt-8 flex justify-center">
+              <PrimaryButton />
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
+      <footer className="border-t border-black/8 py-10">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 md:flex-row md:items-center md:justify-between md:px-8">
+          <p className="brand-mark text-base tracking-tight">
             Motion Story<span className="text-accent">.</span>
           </p>
-          <p className="mt-3 text-[14px] tracking-[-0.01em] text-[color:var(--spine-eyebrow)]">{config.footerLine}</p>
-          <p className="mt-2 text-[15px] text-[color:var(--spine-body)]">
-            <a
-              href="/services/"
-              className="border-b border-black/15 transition-colors hover:border-[color:var(--spine-ink)] hover:text-[color:var(--spine-ink)]"
-            >
-              See all services
-            </a>
-          </p>
+          <p className="text-[13px] tracking-[-0.01em] text-black/40">Creative business design · Byron Bay</p>
         </div>
       </footer>
-
-      <div
-        className={`spine-glass-bar fixed inset-x-0 bottom-0 z-50 px-3.5 pt-3.5 pb-[max(0.875rem,env(safe-area-inset-bottom))] transition-transform duration-300 md:hidden ${
-          stickyVisible ? 'translate-y-0' : 'pointer-events-none translate-y-full'
-        }`}
-        aria-hidden={!stickyVisible}
-      >
-        <a
-          href={BOOKING_PATH}
-          onClick={onBook}
-          tabIndex={stickyVisible ? 0 : -1}
-          className="spine-btn-ink spine-btn-label flex min-h-[48px] w-full items-center justify-center px-4 py-3.5 text-center"
-        >
-          Book a session
-        </a>
-      </div>
     </div>
   );
 }

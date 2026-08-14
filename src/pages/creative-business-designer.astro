@@ -1,16 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CreativeBusinessLanding from '../components/LandingPage/CreativeBusinessLanding';
-import { creativeBusinessDesignerOffer } from '../data/landing-pages/creative-business-designer';
 import '../styles/global.css';
 
-const config = creativeBusinessDesignerOffer;
+const title = 'Creative Business Designer | Motion Story';
+const description =
+  "What's holding your business back? Paid problem-solving sessions, then I build it. Websites, apps, sales funnels, video, and strategy. 20 years. Work with Dan.";
 
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Creative Business Designer',
-  description: config.seo.metaDescription,
+  description,
   provider: {
     '@type': 'Person',
     name: 'Daniel Neale',
@@ -21,14 +22,6 @@ const serviceSchema = {
   },
   serviceType: 'Creative Business Design',
   areaServed: ['Australia', 'Worldwide'],
-  offers: {
-    '@type': 'Offer',
-    name: 'Problem-solving session',
-    priceCurrency: 'AUD',
-    price: '1500',
-    description: 'Paid problem-solving session. An hour or a day depending on scope.',
-    url: 'https://motionstory.com.au/creative-business-designer/',
-  },
 };
 
 const breadcrumbSchema = {
@@ -45,28 +38,17 @@ const breadcrumbSchema = {
     },
   ],
 };
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: config.faq.items.map((f) => ({
-    '@type': 'Question',
-    name: f.question,
-    acceptedAnswer: { '@type': 'Answer', text: f.answer },
-  })),
-};
 ---
 
 <BaseLayout
-  title={config.seo.titleTag}
-  description={config.seo.metaDescription}
-  canonicalUrl={`https://motionstory.com.au${config.seo.canonicalPath}`}
+  title={title}
+  description={description}
+  canonicalUrl="https://motionstory.com.au/creative-business-designer/"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
 
-  <CreativeBusinessLanding client:load config={config} />
+  <CreativeBusinessLanding client:load />
 </BaseLayout>
