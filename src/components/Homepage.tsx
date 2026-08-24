@@ -273,7 +273,7 @@ export default function Homepage() {
                 Simple.
               </h1>
               <p className="text-body mb-8 max-w-md">
-                Small studio, big impact. I help SaaS companies and agencies distill hard ideas into clear animation and design — storytelling that brings the vision to life. You work directly with me, not a production chain.
+                Motion design for forward-thinking brands. When something is hard to explain, I make it clear: motion, illustration, storyboarding, creative and art direction for tech companies, agencies, and teams of any size. Small studio consultant. Embedded with your team or working independently.
               </p>
               <div className="max-w-md">
                 <ClientTicker
@@ -303,7 +303,7 @@ export default function Homepage() {
                 <div>
                   <h3 className="mb-1 font-display text-lg font-bold tracking-tight md:text-xl">Daniel Neale</h3>
                   <p className="text-body max-w-md">
-                    Creative director. Making motion since 2010. Small studio, big impact — you work with me directly.
+                    Independent motion designer and director. Making brands move since 2010. Small studio, big impact: work directly with me.
                   </p>
                 </div>
               </div>
@@ -312,7 +312,7 @@ export default function Homepage() {
                   <summary>More about how I work</summary>
                   <div className="fold-body">
                     <p className="mb-3">
-                      Fractional creative partner: storytelling, planning, and craft. SaaS, startups, agencies — any size, as long as the idea needs clarity.
+                      Best fit: a big challenge or something complex to explain. I handle the craft end to end, then stay close through delivery.
                     </p>
                     <p className="mb-3">
                       <a href="/creative-business-designer/" className="border-b border-black/20 transition-colors hover:border-black">
