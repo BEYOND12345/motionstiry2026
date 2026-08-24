@@ -296,7 +296,7 @@ export default function Homepage() {
           <div className="divide-y divide-black/10 border-t border-black/10">
             <section id="profile" className="py-8">
               <span className="mb-5 block text-metadata">Profile</span>
-              <div className="mb-5 flex items-start gap-5">
+              <div className="flex items-start gap-5">
                 <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full md:h-16 md:w-16">
                   <img src="/daniel-neale.jpg" alt="Daniel Neale" className="h-full w-full object-cover" />
                 </div>
@@ -307,23 +307,28 @@ export default function Homepage() {
                   </p>
                 </div>
               </div>
-              <div className="fold max-w-xl">
-                <details className="fold-item">
-                  <summary>More about how I work</summary>
-                  <div className="fold-body">
-                    <p className="mb-3">
-                      Best fit: a big challenge or something complex to explain. I handle the craft end to end, then stay close through delivery.
-                    </p>
-                    <p className="mb-3">
-                      <a href="/creative-business-designer/" className="border-b border-black/20 transition-colors hover:border-black">
-                        Creative business designer →
-                      </a>
-                    </p>
-                    <p>
-                      Obsessive about making dry subjects clear and watchable. Also a father, a surfer, and a big-time animal lover.
-                    </p>
-                  </div>
-                </details>
+            </section>
+
+            <section id="why" className="py-8">
+              <span className="mb-5 block text-metadata">Why me</span>
+              <div className="max-w-md space-y-4">
+                <p className="font-display text-base font-medium leading-snug tracking-tight md:text-lg">
+                  A bit of an idea rebel. I love business, I love complexity, and I love finding the simple way to say something hard.
+                </p>
+                <p className="text-body">
+                  I don't just make things move. I get into the why and how a business works, then solve that through visual storytelling: animated film, social content, presentations.
+                </p>
+                <p className="text-body">
+                  Give me a back-of-the-napkin brief and I'll still find a way to make it work. I don't wait to be told what to draw. I visualise the vision and make it believable. That's the craft: storytelling that sells the idea.
+                </p>
+                <p className="text-body">
+                  <a href="/creative-business-designer/" className="border-b border-black/20 transition-colors hover:border-black">
+                    Creative business designer →
+                  </a>
+                </p>
+                <p className="text-body !text-sm text-black/50">
+                  Father, surfer, big-time animal lover. Obsessive about making dry subjects clear and watchable.
+                </p>
               </div>
             </section>
 
