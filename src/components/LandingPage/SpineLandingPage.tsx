@@ -1,5 +1,6 @@
 import { useEffect, useState, type CSSProperties, type ReactNode } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
+import ClientTicker from '../ClientTicker';
 import { vimeoIdFrom } from './types';
 import type { SpineCase, SpineLandingConfig } from './spine-types';
 
@@ -122,37 +123,6 @@ function Reveal({
     >
       {children}
     </motion.div>
-  );
-}
-
-function TickerRow({
-  items,
-  reverse = false,
-  duration = 48,
-}: {
-  items: string[];
-  reverse?: boolean;
-  duration?: number;
-}) {
-  const loop = [...items, ...items];
-  return (
-    <div className="spine-ticker-mask relative overflow-hidden py-3 sm:py-3.5">
-      <div
-        className={`spine-ticker-track flex w-max items-center gap-0 ${reverse ? 'spine-ticker-reverse' : ''}`}
-        style={{ animationDuration: `${duration}s` }}
-      >
-        {loop.map((name, i) => (
-          <span key={`${name}-${i}`} className="flex items-center">
-            <span className="spine-ticker-name font-display text-[1.35rem] font-bold tracking-tight sm:text-[1.6rem] md:text-[1.85rem]">
-              {name}
-            </span>
-            <span className="spine-ticker-dot mx-5 sm:mx-7 md:mx-8" aria-hidden="true">
-              ·
-            </span>
-          </span>
-        ))}
-      </div>
-    </div>
   );
 }
 
@@ -368,8 +338,6 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
           transition: color 0.2s ease;
         }
         .spine-landing .spine-link-quiet:hover { color: var(--spine-ink); }
-        .spine-landing .spine-ticker-name { color: rgba(10, 10, 10, 0.62); }
-        .spine-landing .spine-ticker-dot { color: var(--spine-accent); opacity: 0.9; }
         .spine-landing .spine-rule { border-color: var(--spine-line); }
         .spine-landing .spine-glass {
           background: rgba(255, 255, 255, 0.72);
@@ -397,29 +365,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
         }
         .spine-landing .spine-btn-accent:hover { opacity: 0.92; }
         .spine-landing .spine-btn-accent:active { transform: scale(0.985); }
-        .spine-ticker-mask {
-          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-          -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-        }
-        .spine-ticker-track {
-          animation: spine-ticker-scroll 48s linear infinite;
-        }
-        .spine-ticker-track.spine-ticker-reverse {
-          animation-name: spine-ticker-scroll-reverse;
-        }
-        @keyframes spine-ticker-scroll {
-          from { transform: translate3d(0, 0, 0); }
-          to { transform: translate3d(-50%, 0, 0); }
-        }
-        @keyframes spine-ticker-scroll-reverse {
-          from { transform: translate3d(-50%, 0, 0); }
-          to { transform: translate3d(0, 0, 0); }
-        }
         @media (prefers-reduced-motion: reduce) {
-          .spine-ticker-track {
-            animation: none !important;
-            transform: none !important;
-          }
           .spine-landing .spine-play,
           .spine-landing .spine-btn-ink,
           .spine-landing .spine-btn-accent {
@@ -508,16 +454,15 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
           </div>
         </section>
 
-        {/* 2. Client ticker: two bold moving rows */}
-        <section className="spine-band-fog border-y border-[color:var(--spine-line)]" aria-label={config.trustStrip.line}>
-          <div className="mx-auto max-w-7xl px-5 pt-8 sm:px-6 sm:pt-9 lg:px-12">
-            <p className="spine-eyebrow text-center tracking-[0.18em]">
-              {config.trustStrip.line}
-            </p>
-          </div>
-          <div className="mt-5 space-y-0 pb-7 sm:mt-6 sm:pb-8">
-            <TickerRow items={config.trustStrip.rowA} duration={42} />
-            <TickerRow items={config.trustStrip.rowB} reverse duration={52} />
+        {/* 2. Client ticker: shared bold dual-row trust signal */}
+        <section className="spine-band-fog border-y border-[color:var(--spine-line)] px-0 py-8 sm:py-9">
+          <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-12">
+            <ClientTicker
+              label={config.trustStrip.line}
+              rowA={config.trustStrip.rowA}
+              rowB={config.trustStrip.rowB}
+              align="center"
+            />
           </div>
         </section>
 

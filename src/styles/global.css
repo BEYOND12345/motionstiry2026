@@ -173,8 +173,9 @@ body.homepage-layout {
 .split-right {
   width: 55%;
   height: 100%;
-  overflow-y: auto;
-  scrollbar-width: thin;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Project Row */
@@ -218,6 +219,11 @@ body.homepage-layout {
     height: auto;
     padding: 3rem 2rem;
     border-right: none;
+    overflow: visible;
+  }
+  .split-right {
+    padding-left: 0;
+    padding-right: 0;
   }
   .project-row {
     padding: 2rem;
