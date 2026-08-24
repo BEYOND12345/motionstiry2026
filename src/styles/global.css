@@ -151,7 +151,7 @@ body.homepage-layout {
 .split-left {
   width: 45%;
   height: 100%;
-  padding: 4.5rem 4rem;
+  padding: 4.5rem 5.5rem 4.5rem 4rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

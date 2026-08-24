@@ -275,12 +275,14 @@ export default function Homepage() {
               <p className="text-body mb-8 max-w-md">
                 Small studio, big impact. I help SaaS companies and agencies distill hard ideas into clear animation and design — storytelling that brings the vision to life. You work directly with me, not a production chain.
               </p>
-              <ClientTicker
-                label="Clients"
-                compact
-                rowA={CLIENT_ROW_A}
-                rowB={CLIENT_ROW_B}
-              />
+              <div className="max-w-md">
+                <ClientTicker
+                  label="Clients"
+                  compact
+                  rowA={CLIENT_ROW_A}
+                  rowB={CLIENT_ROW_B}
+                />
+              </div>
               <a
                 href="/work/"
                 className="text-nav-item group relative mt-10 flex items-center gap-4"

@@ -62,13 +62,21 @@ export default function ClientTicker({
   align = "left",
 }: ClientTickerProps) {
   return (
-    <section className="ms-ticker" aria-label={label}>
+    <section
+      className={`ms-ticker ${compact ? "ms-ticker-compact" : ""}`}
+      aria-label={label}
+    >
       <style>{`
         .ms-ticker-name { color: rgba(10, 10, 10, 0.72); }
         .ms-ticker-dot { color: #FF0000; opacity: 0.9; }
         .ms-ticker-mask {
-          mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-          -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+        }
+        .ms-ticker.ms-ticker-compact .ms-ticker-mask {
+          /* Harder right fade so the reel never crowds the portfolio gutter */
+          mask-image: linear-gradient(90deg, #000 0%, #000 82%, transparent 100%);
+          -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 82%, transparent 100%);
         }
         .ms-ticker-track {
           animation: ms-ticker-scroll 48s linear infinite;
@@ -109,7 +117,7 @@ export default function ClientTicker({
           {label}
         </p>
       ) : null}
-      <div className="-mx-1 space-y-0">
+      <div className={compact ? "space-y-0" : "-mx-1 space-y-0"}>
         <TickerRow items={rowA} duration={42} compact={compact} />
         <TickerRow items={rowB} reverse duration={52} compact={compact} />
       </div>
