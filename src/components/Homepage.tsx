@@ -1,10 +1,14 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
-import { getShowcaseProjects, type Project } from "../data/projects";
+import { sortProjectsShowcaseFirst, type Project } from "../data/projects";
 import ClientTicker from "./ClientTicker";
 import { GOOGLE_RATING } from "../data/reviews";
 
-const SHOWCASE = getShowcaseProjects();
+/** Full archive — strongest pieces first, then everything else. */
+const PORTFOLIO = sortProjectsShowcaseFirst();
+
+/** Seconds per project so a long archive still rolls slowly. */
+const REEL_SECONDS_PER_PROJECT = 11;
 
 const CLIENT_ROW_A = [
   "United Nations",
@@ -99,6 +103,7 @@ function WorkVerticalCarousel({
   const [paused, setPaused] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
   const loop = useMemo(() => [...projects, ...projects], [projects]);
+  const durationSec = Math.max(60, projects.length * REEL_SECONDS_PER_PROJECT);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -132,7 +137,7 @@ function WorkVerticalCarousel({
         <div
           className="hp-work-reel-track flex flex-col gap-10 px-4 py-8 md:gap-12 md:px-12 lg:px-14"
           style={{
-            animation: "hp-work-reel-up 90s linear infinite",
+            animation: `hp-work-reel-up ${durationSec}s linear infinite`,
             animationPlayState: paused ? "paused" : "running",
           }}
         >
@@ -461,7 +466,7 @@ export default function Homepage() {
           </div>
 
           <div className="min-h-0 flex-1">
-            <WorkVerticalCarousel projects={SHOWCASE} onSelect={setLightbox} />
+            <WorkVerticalCarousel projects={PORTFOLIO} onSelect={setLightbox} />
           </div>
 
           <div className="shrink-0 border-t border-black/10 px-4 py-6 md:px-12 lg:px-14">
