@@ -2,6 +2,7 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import { GOOGLE_RATING, VERIFIED_CLIENT_REVIEWS } from '../data/reviews';
 import { getShowcaseProjects } from '../data/projects';
+import { PROFILE_LEDE, SITE_DESCRIPTION, WHY_ME } from '../data/site-copy';
 
 const strapline = VERIFIED_CLIENT_REVIEWS[0];
 const aboutWork = getShowcaseProjects().slice(0, 3);
@@ -18,9 +19,10 @@ const structuredData = {
   "mainEntity": {
     "@type": "Person",
     "name": "Dan Neale",
-    "jobTitle": "Creative Director",
+    "jobTitle": "Motion Designer and Director",
     "worksFor": { "@type": "Organization", "name": "Motion Story" },
     "knowsAbout": [
+      "Motion Graphics",
       "Motion Design",
       "Creative Direction",
       "Storytelling",
@@ -28,6 +30,7 @@ const structuredData = {
       "Product Videos",
       "Storyboarding",
       "SaaS Marketing",
+      "Startup Marketing",
       "Agency Creative Direction"
     ],
     "sameAs": [
@@ -40,7 +43,7 @@ const structuredData = {
 
 <PageLayout
   title="About Dan Neale | Motion Story"
-  description="Meet Dan Neale — the creative director behind Motion Story. 500+ projects since 2012, from the United Nations to TransferWise's first video. Byron Bay."
+  description={SITE_DESCRIPTION}
   activeNav="About"
   ctaHeading="Tell me about the project. I'll tell you what I see."
   floatSubject="About Motion Story"
@@ -65,7 +68,7 @@ const structuredData = {
           I'm Dan.<br /><span class="brand-mark">Motion Story</span><br />is me.
         </h1>
         <p class="text-body text-lg max-w-md mb-12">
-          Creative director. I help companies understand their own product — and build the story around it.
+          {PROFILE_LEDE}
         </p>
         <div class="flex flex-wrap gap-10">
           <a href="/contact/" class="group flex items-center gap-3">
@@ -117,10 +120,16 @@ const structuredData = {
       </div>
       <div class="md:col-span-7 space-y-6">
         <p class="font-display text-2xl md:text-3xl font-medium tracking-tight leading-snug">
-          You brief me, I run the project.
+          {WHY_ME.lead}
         </p>
         <p class="text-body text-lg leading-relaxed max-w-xl">
-          Making motion since 2010, Motion Story since 2012. No account managers. When a job is big I bring in specialists I direct — but nothing gets handed off. People find me through the work.
+          {WHY_ME.body}
+        </p>
+        <p class="text-body text-lg leading-relaxed max-w-xl">
+          {WHY_ME.close}
+        </p>
+        <p class="text-body text-lg leading-relaxed max-w-xl">
+          Making motion since 2010, Motion Story since 2012. No account managers. When a job is big I bring in specialists I direct, but nothing gets handed off. People find me through the work.
         </p>
         <p class="text-body text-lg leading-relaxed max-w-xl">
           Also built <a href="https://smashinvoices.com/" class="border-b border-black/20 hover:border-black transition-colors">SMASH Invoices</a> — a side product for quoting and invoicing by voice on the tools.

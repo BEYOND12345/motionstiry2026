@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { sortProjectsShowcaseFirst, type Project } from "../data/projects";
+import { HERO_LEDE, PROFILE_LEDE, WHY_ME } from "../data/site-copy";
 import ClientTicker from "./ClientTicker";
 import { GOOGLE_RATING } from "../data/reviews";
 
@@ -273,7 +274,7 @@ export default function Homepage() {
                 Simple.
               </h1>
               <p className="text-body mb-8 max-w-md">
-                Motion design for forward-thinking brands. When something is hard to explain, I make it clear: motion, illustration, storyboarding, creative and art direction for tech companies, agencies, and teams of any size. Small studio consultant. Embedded with your team or working independently.
+                {HERO_LEDE}
               </p>
               <div className="max-w-md">
                 <ClientTicker
@@ -303,7 +304,7 @@ export default function Homepage() {
                 <div>
                   <h3 className="mb-1 font-display text-lg font-bold tracking-tight md:text-xl">Daniel Neale</h3>
                   <p className="text-body max-w-md">
-                    Independent motion designer and director. Making brands move since 2010. Small studio, big impact: work directly with me.
+                    {PROFILE_LEDE}
                   </p>
                 </div>
               </div>
@@ -313,13 +314,13 @@ export default function Homepage() {
               <span className="mb-5 block text-metadata">Why me</span>
               <div className="max-w-md space-y-4">
                 <p className="font-display text-base font-medium leading-snug tracking-tight md:text-lg">
-                  A bit of an idea rebel. I love business, I love complexity, and I love finding the simple way to say something hard.
+                  {WHY_ME.lead}
                 </p>
                 <p className="text-body">
-                  I don't just make things move. I get into the why and how a business works, then solve that through visual storytelling: animated film, social content, presentations.
+                  {WHY_ME.body}
                 </p>
                 <p className="text-body">
-                  Give me a back-of-the-napkin brief and I'll still find a way to make it work. I don't wait to be told what to draw. I visualise the vision and make it believable. That's the craft: storytelling that sells the idea.
+                  {WHY_ME.close}
                 </p>
                 <p className="text-body">
                   <a href="/creative-business-designer/" className="border-b border-black/20 transition-colors hover:border-black">
@@ -327,7 +328,7 @@ export default function Homepage() {
                   </a>
                 </p>
                 <p className="text-body !text-sm text-black/50">
-                  Father, surfer, big-time animal lover. Obsessive about making dry subjects clear and watchable.
+                  {WHY_ME.aside}
                 </p>
               </div>
             </section>

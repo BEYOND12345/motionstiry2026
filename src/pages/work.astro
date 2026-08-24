@@ -6,11 +6,14 @@ import PortfolioPage from '../components/PortfolioPage';
 import EmailFloat from '../components/EmailFloat.astro';
 import '../styles/global.css';
 
+const workDescription =
+  "Motion graphics portfolio for startups, SaaS, agencies, and tech brands. Complex ideas made clear.";
+
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Motion Design Portfolio — Motion Story",
-  "description": "Motion design work for SaaS companies, platforms, agencies, and nonprofits. A decade of making complexity look simple.",
+  "name": "Motion Graphics Portfolio — Motion Story",
+  "description": workDescription,
   "url": "https://motionstory.com.au/work/",
   "isPartOf": {
     "@type": "WebSite",
@@ -26,8 +29,8 @@ const structuredData = {
 ---
 
 <BaseLayout
-  title="Motion Design Portfolio | Motion Story"
-  description="Motion design work for SaaS companies, platforms, agencies, and nonprofits. A decade of making complexity look simple."
+  title="Motion Graphics Portfolio | Motion Story"
+  description={workDescription}
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />

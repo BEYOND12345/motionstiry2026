@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Homepage from '../components/Homepage';
 import EmailFloat from '../components/EmailFloat.astro';
+import { SITE_DESCRIPTION, SITE_DESCRIPTION_LONG, SITE_TITLE } from '../data/site-copy';
 import '../styles/global.css';
 
 const structuredData = {
@@ -14,7 +15,7 @@ const structuredData = {
       "alternateName": "Motion Story Studio",
       "url": "https://motionstory.com.au",
       "logo": "https://motionstory.com.au/logo.png",
-      "description": "Independent motion designer and director. Dan Neale makes complex ideas clear for tech brands and agencies: motion, illustration, storyboarding, creative and art direction. Small studio, Byron Bay; clients worldwide.",
+      "description": SITE_DESCRIPTION_LONG,
       "foundingDate": "2010",
       "founder": {
         "@type": "Person",
@@ -36,12 +37,14 @@ const structuredData = {
         { "@type": "Place", "name": "Worldwide" }
       ],
       "knowsAbout": [
+        "Motion Graphics",
         "Motion Design",
         "Creative Direction",
         "Storytelling",
         "Product Demo Videos",
         "Platform Explainers",
         "SaaS Marketing",
+        "Startup Marketing",
         "Agency Creative Direction"
       ],
       "hasOfferCatalog": {
@@ -100,8 +103,8 @@ const structuredData = {
       "@type": "WebPage",
       "@id": "https://motionstory.com.au/#webpage",
       "url": "https://motionstory.com.au",
-      "name": "Motion Story — Motion Design for Complex Ideas | Byron Bay",
-      "description": "Motion design for forward-thinking brands. When something is hard to explain, Dan Neale makes it clear. Tech, agencies, and teams worldwide. Based in Byron Bay, Australia.",
+      "name": "Motion Story — Motion Graphics for Complex Ideas | Byron Bay",
+      "description": SITE_DESCRIPTION,
       "isPartOf": { "@id": "https://motionstory.com.au/#website" },
       "about": { "@id": "https://motionstory.com.au/#organization" },
       "speakable": {
@@ -114,8 +117,8 @@ const structuredData = {
 ---
 
 <BaseLayout
-  title="Motion Story | Motion Design for Complex Ideas | Byron Bay"
-  description="Motion design for forward-thinking brands. When something is hard to explain, Dan Neale makes it clear. Tech, agencies, and teams worldwide. Byron Bay."
+  title={SITE_TITLE}
+  description={SITE_DESCRIPTION}
   bodyClass="homepage-layout"
 >
   <Fragment slot="head">

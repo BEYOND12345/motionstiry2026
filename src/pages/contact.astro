@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import { GOOGLE_RATING, GOOGLE_REVIEWS } from '../data/reviews';
+import { SITE_DESCRIPTION } from '../data/site-copy';
 
 const contactReview = GOOGLE_REVIEWS[1]; // Tate Shepherd
 
@@ -25,7 +26,7 @@ const structuredData = {
 
 <PageLayout
   title="Start a Project | Motion Story"
-  description="Tell Dan about your project. Motion design for complex ideas."
+  description={`Start a project with Dan. ${SITE_DESCRIPTION}`}
   activeNav="Start a Project"
   showCTA={false}
   showFloat={false}
