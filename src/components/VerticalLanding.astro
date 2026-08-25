@@ -25,19 +25,31 @@ const { config } = Astro.props;
 
 <div class="vl">
   <header class="vl-hero">
-    <p class="vl-eyebrow">{config.eyebrow}</p>
-    <h1 class="vl-title">
-      {config.headline.map((line, i) => (
-        <>
-          {i > 0 && <br />}
-          {line}
-        </>
-      ))}
-    </h1>
-    <p class="vl-lede">{config.lede}</p>
-    <div class="vl-hero-cta">
-      <a href="/book/" class="vl-btn">Book a call</a>
-      <a href="#work" class="vl-link">See the work</a>
+    <div class="vl-hero-copy">
+      <p class="vl-eyebrow">{config.eyebrow}</p>
+      <h1 class="vl-title">
+        {config.headline.map((line, i) => (
+          <>
+            {i > 0 && <br />}
+            {line}
+          </>
+        ))}
+      </h1>
+      <p class="vl-lede">{config.lede}</p>
+      <div class="vl-hero-cta">
+        <a href="/book/" class="vl-btn">Book a call</a>
+        <a href="#work" class="vl-link">See the work</a>
+      </div>
+    </div>
+    <div class="vl-hero-film">
+      <VimeoEmbed
+        client:load
+        vimeoId={config.heroVideo.vimeoId}
+        vimeoHash={config.heroVideo.vimeoHash}
+        title={config.heroVideo.title}
+        loading="eager"
+        autoColor={true}
+      />
     </div>
   </header>
 
@@ -165,8 +177,26 @@ const { config } = Astro.props;
   }
 
   .vl-hero {
-    max-width: 40rem;
+    display: grid;
+    gap: 2rem;
     margin-bottom: 3rem;
+    align-items: start;
+  }
+
+  @media (min-width: 900px) {
+    .vl-hero {
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+  }
+
+  .vl-hero-copy {
+    max-width: 34rem;
+  }
+
+  .vl-hero-film {
+    min-width: 0;
   }
 
   .vl-title {

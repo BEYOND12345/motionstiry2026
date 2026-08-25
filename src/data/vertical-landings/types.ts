@@ -21,6 +21,12 @@ export type VerticalLandingConfig = {
   eyebrow: string;
   headline: string[];
   lede: string;
+  /** Unique hero film — must not also appear in `cases` */
+  heroVideo: {
+    vimeoId: string;
+    vimeoHash?: string;
+    title: string;
+  };
   tickerLabel?: string;
   tickerRowA: string[];
   tickerRowB: string[];

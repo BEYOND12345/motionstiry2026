@@ -10,6 +10,10 @@ export const saasVerticalLanding: VerticalLandingConfig = {
   eyebrow: 'SaaS explainer videos',
   headline: ['SaaS explainer', 'videos.'],
   lede: 'Demonstrate what your software does, how it works, and the value it provides — in a fraction of the time. With your SaaS in action on-screen, viewers start learning immediately.',
+  heroVideo: {
+    vimeoId: '866174146',
+    title: 'Trudi / AI Property Management',
+  },
   tickerLabel: 'Trusted by teams who need clarity',
   tickerRowA: [
     'Wipster',
