@@ -1,0 +1,461 @@
+---
+/**
+ * Canonical vertical landing template.
+ * Structure (same on every vertical):
+ * 1. Hero — eyebrow, H1, lede, CTA
+ * 2. Client ticker
+ * 3. Work stack — video + tags + writeup (Wayback style)
+ * 4. Value + benefits
+ * 5. Quote
+ * 6. FAQ
+ * 7. Related links
+ *
+ * No giant portrait. Work first. Shared nav/footer via PageLayout.
+ */
+import VimeoEmbed from './VimeoEmbed';
+import ClientTicker from './ClientTicker';
+import type { VerticalLandingConfig } from '../data/vertical-landings/types';
+
+interface Props {
+  config: VerticalLandingConfig;
+}
+
+const { config } = Astro.props;
+---
+
+<div class="vl">
+  <header class="vl-hero">
+    <p class="vl-eyebrow">{config.eyebrow}</p>
+    <h1 class="vl-title">
+      {config.headline.map((line, i) => (
+        <>
+          {i > 0 && <br />}
+          {line}
+        </>
+      ))}
+    </h1>
+    <p class="vl-lede">{config.lede}</p>
+    <div class="vl-hero-cta">
+      <a href="/book/" class="vl-btn">Book a call</a>
+      <a href="#work" class="vl-link">See the work</a>
+    </div>
+  </header>
+
+  <section class="vl-ticker" aria-label={config.tickerLabel ?? 'Clients'}>
+    <ClientTicker
+      client:load
+      label={config.tickerLabel ?? 'Clients'}
+      rowA={config.tickerRowA}
+      rowB={config.tickerRowB}
+      compact
+    />
+  </section>
+
+  <section id="work" class="vl-work">
+    <div class="vl-section-head">
+      <p class="vl-eyebrow">{config.workEyebrow ?? 'Selected work'}</p>
+      <p class="vl-count">{String(config.cases.length).padStart(2, '0')}</p>
+    </div>
+
+    <div class="vl-cases">
+      {config.cases.map((study, i) => (
+        <article class="vl-case">
+          <div class="vl-case-copy">
+            <p class="vl-case-index">{String(i + 1).padStart(2, '0')}</p>
+            <h2 class="vl-case-title">{study.client}</h2>
+            {study.tags && <p class="vl-case-tags">{study.tags}</p>}
+            <p class="vl-case-body">{study.body}</p>
+            <a href={study.link} class="vl-case-link">View case study →</a>
+          </div>
+          <div class="vl-case-film">
+            <VimeoEmbed
+              client:visible
+              vimeoId={study.vimeoId}
+              vimeoHash={study.vimeoHash}
+              title={study.title}
+              loading={i === 0 ? 'eager' : 'lazy'}
+              autoColor={true}
+            />
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <p class="vl-all-work">
+      <a href="/work/">See the full portfolio →</a>
+    </p>
+  </section>
+
+  <section class="vl-value">
+    <h2 class="vl-value-title">{config.value.headline}</h2>
+    <p class="vl-value-body">{config.value.body}</p>
+  </section>
+
+  <section class="vl-benefits">
+    <p class="vl-eyebrow">{config.benefits.headline}</p>
+    <ul class="vl-benefit-list">
+      {config.benefits.items.map((item) => (
+        <li>
+          <span class="text-accent" aria-hidden="true">→</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="vl-quote">
+    <blockquote>
+      <p>“{config.quote.text}”</p>
+      <footer>
+        {config.quote.name}
+        <span> — {config.quote.role}</span>
+      </footer>
+    </blockquote>
+  </section>
+
+  <section class="vl-faq">
+    <p class="vl-eyebrow">Questions</p>
+    <div class="fold">
+      {config.faqs.map((faq) => (
+        <details class="fold-item">
+          <summary>{faq.question}</summary>
+          <div class="fold-body">
+            <p>{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  {config.links.length > 0 && (
+    <nav class="vl-links" aria-label="Related pages">
+      {config.links.map((link) => (
+        <a href={link.href} class="vl-link-card">
+          <span class="vl-eyebrow">{link.eyebrow}</span>
+          <p>{link.label}</p>
+        </a>
+      ))}
+    </nav>
+  )}
+</div>
+
+<style>
+  .vl {
+    max-width: 74rem;
+    margin: 0 auto;
+    padding: 8.5rem 1.5rem 6rem;
+  }
+
+  @media (min-width: 768px) {
+    .vl {
+      padding: 9.5rem 2.25rem 8rem;
+    }
+  }
+
+  .vl-eyebrow {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #7a7a7a;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .vl-hero {
+    max-width: 40rem;
+    margin-bottom: 3rem;
+  }
+
+  .vl-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.35rem, 5.6vw, 4.15rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin: 1.25rem 0 1.5rem;
+    color: var(--color-fg);
+    text-wrap: balance;
+  }
+
+  .vl-lede {
+    max-width: 34rem;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 0 0 1.75rem;
+  }
+
+  .vl-hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem 1.75rem;
+  }
+
+  .vl-btn {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.75rem;
+    background: #0a0a0a;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: opacity 0.2s ease;
+  }
+
+  .vl-btn:hover {
+    opacity: 0.85;
+  }
+
+  .vl-link {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: #555;
+    transition: color 0.2s ease;
+  }
+
+  .vl-link:hover {
+    color: #0a0a0a;
+  }
+
+  .vl-ticker {
+    margin: 0 -0.25rem 3.5rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(10, 10, 10, 0.1);
+    border-bottom: 1px solid rgba(10, 10, 10, 0.1);
+  }
+
+  .vl-section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .vl-count {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    letter-spacing: 0.14em;
+    color: #b0b0b0;
+    margin: 0;
+  }
+
+  .vl-cases {
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+  }
+
+  .vl-case {
+    display: grid;
+    gap: 1.75rem;
+  }
+
+  @media (min-width: 900px) {
+    .vl-case {
+      grid-template-columns: minmax(16rem, 0.9fr) minmax(0, 1.4fr);
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .vl-case:nth-child(even) .vl-case-copy {
+      order: 2;
+    }
+
+    .vl-case:nth-child(even) .vl-case-film {
+      order: 1;
+    }
+  }
+
+  .vl-case-index {
+    font-size: 0.6875rem;
+    letter-spacing: 0.14em;
+    color: #ff0000;
+    margin: 0 0 0.75rem;
+    text-transform: uppercase;
+  }
+
+  .vl-case-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.65rem, 3vw, 2.35rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    margin: 0 0 0.75rem;
+  }
+
+  .vl-case-tags {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8a8a8a;
+    margin: 0 0 1rem;
+  }
+
+  .vl-case-body {
+    font-size: 0.9875rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 0 0 1.25rem;
+    max-width: 36rem;
+  }
+
+  .vl-case-link {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    border-bottom: 1px solid rgba(10, 10, 10, 0.2);
+    padding-bottom: 0.15rem;
+    transition: border-color 0.2s ease;
+  }
+
+  .vl-case-link:hover {
+    border-color: #0a0a0a;
+  }
+
+  .vl-all-work {
+    margin: 3rem 0 0;
+    font-size: 0.875rem;
+  }
+
+  .vl-all-work a {
+    border-bottom: 1px solid rgba(10, 10, 10, 0.2);
+    padding-bottom: 0.15rem;
+  }
+
+  .vl-all-work a:hover {
+    border-color: #0a0a0a;
+  }
+
+  .vl-value {
+    margin-top: 5.5rem;
+    padding-top: 3.5rem;
+    border-top: 1px solid rgba(10, 10, 10, 0.1);
+    max-width: 40rem;
+  }
+
+  .vl-value-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    margin: 0 0 1rem;
+  }
+
+  .vl-value-body {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+  }
+
+  .vl-benefits {
+    margin-top: 3rem;
+    max-width: 36rem;
+  }
+
+  .vl-benefit-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .vl-benefit-list li {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.9875rem;
+    line-height: 1.5;
+    color: #333;
+  }
+
+  .vl-quote {
+    margin-top: 4.5rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(10, 10, 10, 0.1);
+    max-width: 40rem;
+  }
+
+  .vl-quote p {
+    font-family: var(--font-display);
+    font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.35;
+    margin: 0 0 1rem;
+  }
+
+  .vl-quote footer {
+    font-size: 0.8125rem;
+    color: #7a7a7a;
+  }
+
+  .vl-faq {
+    margin-top: 4.5rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(10, 10, 10, 0.1);
+  }
+
+  .vl-faq .vl-eyebrow {
+    margin-bottom: 1.5rem;
+  }
+
+  .vl-links {
+    display: grid;
+    gap: 1px;
+    margin-top: 4.5rem;
+    border-top: 1px solid rgba(10, 10, 10, 0.1);
+    background: rgba(10, 10, 10, 0.08);
+  }
+
+  @media (min-width: 700px) {
+    .vl-links {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .vl-link-card {
+    display: block;
+    background: #fff;
+    padding: 1.75rem 0 1.75rem 0;
+    transition: opacity 0.2s ease;
+  }
+
+  @media (min-width: 700px) {
+    .vl-link-card {
+      padding: 2rem 1.5rem 2rem 0;
+    }
+
+    .vl-link-card:nth-child(even) {
+      padding-left: 1.5rem;
+    }
+  }
+
+  .vl-link-card:hover {
+    opacity: 0.7;
+  }
+
+  .vl-link-card .vl-eyebrow {
+    margin-bottom: 0.75rem;
+  }
+
+  .vl-link-card p {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+</style>

@@ -1,15 +1,14 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import SpineLandingPage from '../components/LandingPage/SpineLandingPage';
-import { saasExplainerLanding } from '../data/landing-pages/saas-explainer';
-import '../styles/global.css';
+import PageLayout from '../layouts/PageLayout.astro';
+import VerticalLanding from '../components/VerticalLanding.astro';
+import { saasVerticalLanding } from '../data/vertical-landings/saas';
 
-const config = saasExplainerLanding;
+const config = saasVerticalLanding;
 
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'SaaS Explainer Video',
+  name: 'SaaS Explainer Videos',
   description: config.seo.metaDescription,
   provider: { '@type': 'Organization', name: 'Motion Story', url: 'https://motionstory.com.au' },
   serviceType: 'SaaS Explainer Video',
@@ -29,7 +28,7 @@ const breadcrumbSchema = {
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: config.faq.items.map((f) => ({
+  mainEntity: config.faqs.map((f) => ({
     '@type': 'Question',
     name: f.question,
     acceptedAnswer: { '@type': 'Answer', text: f.answer },
@@ -37,25 +36,18 @@ const faqSchema = {
 };
 ---
 
-<BaseLayout
+<PageLayout
   title={config.seo.titleTag}
   description={config.seo.metaDescription}
   canonicalUrl={`https://motionstory.com.au${config.seo.canonicalPath}`}
+  floatSubject="SaaS explainer video"
+  ctaHeading="Clarify your SaaS story in minutes."
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-    <!-- TODO(dan): Replace with live GA4 + Google Ads IDs -->
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-      // gtag('js', new Date());
-      // gtag('config', 'G-XXXXXXXX');
-      // gtag('config', 'AW-XXXXXXXX');
-    </script>
   </Fragment>
 
-  <SpineLandingPage client:load config={config} />
-</BaseLayout>
+  <VerticalLanding config={config} />
+</PageLayout>
