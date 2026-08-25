@@ -194,6 +194,7 @@ export default defineConfig({
 
     // Duplicate case study
     '/casestudy/hey-you/': '/casestudy/heyyou-app/',
+    '/casestudy/senate-matching/': '/casestudy/data-republic/',
 
     // Old WordPress taxonomy pages (from GSC data)
     '/caseandstudy-videotype/2d-motion-graphic/': '/work/',

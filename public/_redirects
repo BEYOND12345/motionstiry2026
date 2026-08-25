@@ -142,6 +142,7 @@ http://motionstory.com.au/*        https://motionstory.com.au/:splat   301!
 # Duplicate case study
 # ───────────────────────────────────────────────────
 /casestudy/hey-you/   /casestudy/heyyou-app/   301!
+/casestudy/senate-matching/   /casestudy/data-republic/   301!
 
 # ───────────────────────────────────────────────────
 # Old WordPress taxonomy pages (from GSC data)

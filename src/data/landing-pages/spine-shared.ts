@@ -105,7 +105,8 @@ export const SPINE_PROOF_PRODUCT_DEMO_SEO = spineCases(
   'swell',
   'joineree',
   'uclusion',
-  'senate-matching',
+  'oartech',
+  'propspeed',
   'read-medical',
   'amplify',
   'ranalytic',
@@ -122,6 +123,9 @@ export const SPINE_PROOF_SAAS_EXPLAINER = spineCases(
   'insignia',
   'shape-connect',
   'carter-coin',
+  'liquid-ai',
+  'data-republic',
+  'aon-conversations',
   'altius-map',
   'altius-eap',
   'amex-closed-loop',
@@ -140,6 +144,7 @@ export const SPINE_PROOF_EXPLAINER = spineCases(
   'raa-insurance',
   'neat-streets',
   'rspca-giving',
+  'cotton-australia',
 );
 
 export const SPINE_PROOF_PRODUCT_LAUNCH = spineCases(
