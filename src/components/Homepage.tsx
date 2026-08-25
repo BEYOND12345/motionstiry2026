@@ -428,7 +428,39 @@ export default function Homepage() {
           </div>
 
           <footer className="mt-8 border-t border-black/10 bg-white pb-6 pt-8">
-            <div className="mb-8 grid grid-cols-2 gap-8 md:grid-cols-3">
+            <div className="mb-8 grid grid-cols-2 gap-8 md:grid-cols-4">
+              <div>
+                <span className="mb-3 block text-metadata">Work</span>
+                <div className="flex flex-col gap-1.5">
+                  <a href="/work/" className="text-body !text-sm transition-colors hover:text-black">All work</a>
+                  <a href="/saas-explainer-videos/" className="text-body !text-sm transition-colors hover:text-black">SaaS explainer videos</a>
+                  <a href="/product-demo-videos/" className="text-body !text-sm transition-colors hover:text-black">Product demo videos</a>
+                  <a href="/explainer-videos/" className="text-body !text-sm transition-colors hover:text-black">Explainer videos</a>
+                  <a href="/motion-graphics/" className="text-body !text-sm transition-colors hover:text-black">Motion graphics</a>
+                </div>
+              </div>
+              <div>
+                <span className="mb-3 block text-metadata">Audiences</span>
+                <div className="flex flex-col gap-1.5">
+                  <a href="/startups/" className="text-body !text-sm transition-colors hover:text-black">Startups</a>
+                  <a href="/technology-videos/" className="text-body !text-sm transition-colors hover:text-black">Technology</a>
+                  <a href="/agencies/" className="text-body !text-sm transition-colors hover:text-black">Agencies</a>
+                  <a href="/causes/" className="text-body !text-sm transition-colors hover:text-black">Causes & nonprofits</a>
+                  <a href="/creative-business-designer/" className="text-body !text-sm transition-colors hover:text-black">Creative business designer</a>
+                  <a href="/services/" className="text-body !text-sm transition-colors hover:text-black">All services</a>
+                </div>
+              </div>
+              <div>
+                <span className="mb-3 block text-metadata">Studio</span>
+                <div className="flex flex-col gap-1.5">
+                  <a href="/about/" className="text-body !text-sm transition-colors hover:text-black">About</a>
+                  <a href="/process/" className="text-body !text-sm transition-colors hover:text-black">Process</a>
+                  <a href="/reviews/" className="text-body !text-sm transition-colors hover:text-black">Reviews</a>
+                  <a href="/blog/" className="text-body !text-sm transition-colors hover:text-black">Blog</a>
+                  <a href="/book/" className="text-body !text-sm transition-colors hover:text-black">Book a call</a>
+                  <a href="/contact/" className="text-body !text-sm transition-colors hover:text-black">Start a project</a>
+                </div>
+              </div>
               <div>
                 <span className="mb-3 block text-metadata">Connect</span>
                 <div className="flex flex-col gap-1.5">
@@ -436,25 +468,8 @@ export default function Homepage() {
                   <a href="https://www.linkedin.com/company/motionstory" className="text-body !text-sm transition-colors hover:text-black" target="_blank" rel="noopener">LinkedIn</a>
                   <a href="https://www.behance.net/motionstory" className="text-body !text-sm transition-colors hover:text-black" target="_blank" rel="noopener">Behance</a>
                 </div>
-              </div>
-              <div>
-                <span className="mb-3 block text-metadata">Work</span>
-                <div className="flex flex-col gap-1.5">
-                  <a href="/saas-explainer-videos/" className="text-body !text-sm transition-colors hover:text-black">SaaS explainer videos</a>
-                  <a href="/product-demo-videos/" className="text-body !text-sm transition-colors hover:text-black">Product demo videos</a>
-                  <a href="/services/" className="text-body !text-sm transition-colors hover:text-black">Services</a>
-                  <a href="/agencies/" className="text-body !text-sm transition-colors hover:text-black">Agencies</a>
-                  <a href="/causes/" className="text-body !text-sm transition-colors hover:text-black">Causes</a>
-                </div>
-              </div>
-              <div>
-                <span className="mb-3 block text-metadata">Studio</span>
-                <p className="text-body !text-sm">Byron Bay, NSW</p>
-                <p className="text-body !text-sm mb-2">Australia</p>
-                <div className="flex flex-col gap-1.5">
-                  <a href="/about/" className="text-body !text-sm transition-colors hover:text-black">About</a>
-                  <a href="/reviews/" className="text-body !text-sm transition-colors hover:text-black">Reviews</a>
-                </div>
+                <p className="text-body !text-sm mt-3">Byron Bay, NSW</p>
+                <p className="text-body !text-sm">Australia</p>
               </div>
             </div>
             <div className="flex flex-col gap-2 border-t border-black/10 pt-5 sm:flex-row sm:items-center sm:justify-between">
