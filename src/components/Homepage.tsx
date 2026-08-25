@@ -440,14 +440,12 @@ export default function Homepage() {
                 </div>
               </div>
               <div>
-                <span className="mb-3 block text-metadata">Audiences</span>
+                <span className="mb-3 block text-metadata">Industries</span>
                 <div className="flex flex-col gap-1.5">
                   <a href="/startups/" className="text-body !text-sm transition-colors hover:text-black">Startups</a>
                   <a href="/technology-videos/" className="text-body !text-sm transition-colors hover:text-black">Technology</a>
                   <a href="/agencies/" className="text-body !text-sm transition-colors hover:text-black">Agencies</a>
                   <a href="/causes/" className="text-body !text-sm transition-colors hover:text-black">Causes & nonprofits</a>
-                  <a href="/creative-business-designer/" className="text-body !text-sm transition-colors hover:text-black">Creative business designer</a>
-                  <a href="/services/" className="text-body !text-sm transition-colors hover:text-black">All services</a>
                 </div>
               </div>
               <div>
