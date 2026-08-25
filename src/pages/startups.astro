@@ -2,29 +2,30 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import ServiceLanding from '../components/ServiceLanding.astro';
 
+/** Work set restored from the archived /start-up-explainer-videos/ page. */
 const work = [
-  { title: "Cart-share / Startup Explainer", link: "/casestudy/cart-share-explainer/", vimeoId: "792094835" },
-  { title: "Trusyft / Product Promo", link: "/casestudy/trusyft-animated-product-promo/", vimeoId: "863428533" },
   { title: "ARK / Product Concept", link: "/casestudy/ark-product-concept/", vimeoId: "818912051" },
-  { title: "Hey You / Food Ordering App", link: "/casestudy/heyyou-app/", vimeoId: "351936883" },
-  { title: "Good2Pay / Paperless Invoicing", link: "/casestudy/good2pay/", vimeoId: "448704979" },
-  { title: "Method / Beautiful Bin System", link: "/casestudy/method-explainer-video/", vimeoId: "557884851" },
+  { title: "Cart-share / Startup Explainer", link: "/casestudy/cart-share-explainer/", vimeoId: "792094835" },
+  { title: "Ranalytic / RF Scanner", link: "/casestudy/ranalytic-rf-scanner/", vimeoId: "759713697" },
+  { title: "Trulet / AI Property Management", link: "/casestudy/trulet-property/", vimeoId: "341479251" },
+  { title: "Joineree / Marketplace Recruitment", link: "/casestudy/joineree-recruitment-explainer/", vimeoId: "338133495" },
+  { title: "Bat Nav / Big Battery Power", link: "/casestudy/bat-nav-platform-explainer/", vimeoId: "479992275" },
 ];
 
 const moreWork = [
+  { title: "Trusyft / Product Promo", link: "/casestudy/trusyft-animated-product-promo/", vimeoId: "863428533" },
+  { title: "Hey You / Food Ordering App", link: "/casestudy/heyyou-app/", vimeoId: "351936883" },
+  { title: "Good2Pay / Paperless Invoicing", link: "/casestudy/good2pay/", vimeoId: "448704979" },
   { title: "Food By Us / Kitchen Ordering", link: "/casestudy/food-by-us/", vimeoId: "672120018" },
-  { title: "Uclusion / Product Decision Platform", link: "/casestudy/uclusion-product-explainer/", vimeoId: "338131381" },
-  { title: "Oovvuu / WordPress Plugin", link: "/casestudy/oovvu/", vimeoId: "557000542" },
-  { title: "Atomic / In-App Messaging", link: "/casestudy/atomic-in-app-messaging/", vimeoId: "861022443" },
 ];
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Motion Design for Startups",
-  "description": "Explainer and product video for early-stage and growth companies.",
+  "name": "Start-Up Explainer Videos",
+  "description": "Explainer and product video for startups. Launch stories that help people understand what you do and trust you to do it.",
   "provider": { "@type": "Organization", "name": "Motion Story", "url": "https://motionstory.com.au" },
-  "serviceType": "Explainer and Product Video for Startups",
+  "serviceType": "Start-Up Explainer Videos",
   "areaServed": "Worldwide",
 };
 
@@ -40,8 +41,8 @@ const breadcrumbSchema = {
 
 <PageLayout
   floatSubject="Startup explainer video"
-  title="Explainer & Product Video for Startups | Motion Story"
-  description="Explainer and product video for startups. Launch stories, homepage heroes, and demos that work before a login."
+  title="Stories for Startups | Start-Up Explainer Videos | Motion Story"
+  description="Whether you're disrupting a marketplace or creating a new one, people need to understand what you do. Startup explainer videos by Dan Neale, Motion Story."
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
@@ -50,14 +51,15 @@ const breadcrumbSchema = {
 
   <ServiceLanding
     eyebrow="Startups"
-    headline={["Make the idea land", "before the login."]}
-    lede="Explainers and product videos for early-stage teams: clear enough for a cold visitor, sharp enough for investors."
+    headline={["Stories for", "startups."]}
+    lede="Whether you're disrupting a marketplace or creating a whole new one, you need people to understand what you do and trust you to do it well. With a dynamic visual story, you can connect with investors, show the value your product brings, and clarify doubts about the next big idea."
     work={work}
     moreWork={moreWork}
     quote="62% completion rate. 21% view rate. Long-term asset for our business."
     quoteBy="Lee Bright"
     quoteRole="Marketing Lead, Method Recycling"
     faqs={[
+      { label: "Convince & scale", body: "Get customers believing in what you're doing. Convince more investors to back your idea. Reinforce your brand and convey your character." },
       { label: "Cost", body: "From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront." },
       { label: "Fit for startups", body: "Homepage heroes, waitlist videos, investor updates, and the first product story that has to work cold." },
       { label: "How we work", body: "You work with Dan throughout — concept, storyboard, design, illustration, and animation. Agencies welcome, white label or direct." },
@@ -70,7 +72,7 @@ const breadcrumbSchema = {
     ]}
     links={[
       { href: "/creative-business-designer/", eyebrow: "Sessions", label: "Creative business designer →" },
-      { href: "/explainer-videos/", eyebrow: "Explainers", label: "Explainer videos →" },
+      { href: "/saas-explainer-videos/", eyebrow: "SaaS", label: "SaaS explainer videos →" },
       { href: "/product-demo-videos/", eyebrow: "Demos", label: "Product demo videos →" },
       { href: "/work/", eyebrow: "Work", label: "See all work →" },
     ]}

@@ -3,20 +3,60 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { GOOGLE_RATING, VERIFIED_CLIENT_REVIEWS } from '../data/reviews';
 import '../styles/global.css';
 
-// Acodis "part of our team" — the strongest quote for a booking decision.
 const bookReview = VERIFIED_CLIENT_REVIEWS[0];
 
 /**
- * BOOKING_EMBED_SRC — Calendly embed for the 20-minute project call.
- * TODO(dan): Swap to Cal.com / SavvyCal if the scheduler changes.
+ * BOOKING_EMBED_SRC — Calendly embed for the project call.
+ * Duration should match the live Calendly event type.
  */
 const BOOKING_EMBED_SRC =
   'https://calendly.com/motion-story/interested-schedule-a-call?hide_event_type_details=1&hide_gdpr_banner=1';
+
+const helpWith = [
+  'Create a storytelling strategy',
+  'Define the best type of video and format',
+  'Learn about process-based pricing',
+];
+
+const expect = [
+  {
+    title: 'Brainstorm a creative idea',
+    body: "We'll discuss a tailored creative idea to explain your product in a way that's clear, engaging, and aligned with your goals.",
+  },
+  {
+    title: 'Outline next steps',
+    body: "We'll map out timeline, scope, and process so you have a clear path forward.",
+  },
+  {
+    title: 'Discuss project costs',
+    body: "You'll get a realistic sense of what similar projects cost, and how we can work within your budget.",
+  },
+];
+
+const quotes = [
+  {
+    quote:
+      'For a video about bins, we are pretty astounded by the results. It has a 62% completion rate and a 21% view rate. This will be a long-term asset for our business.',
+    name: 'Lee Bright',
+    role: 'Marketing Lead, Method Recycling',
+  },
+  {
+    quote: bookReview.quote,
+    name: bookReview.name,
+    role: `${bookReview.role}, ${bookReview.company}`,
+  },
+  {
+    quote:
+      'Daniel and the team were incredible to work with. We had a larger explainer video project to work on and Motion Story made it easy to brainstorm, pivot ideas and collaborate at each stage.',
+    name: 'Matty Sirros',
+    role: 'Marketing Manager, Atomic',
+  },
+];
 ---
 
 <BaseLayout
-  title="Book a 20-Minute Project Call | Motion Story"
-  description="Book a 20-minute project call with the creative director. Straight answers on approach, timing, and fit — no slide deck, no sales pitch."
+  title="Book a Project Call | Motion Story"
+  description="Clarify your project in minutes. Book a call with Dan Neale: storytelling strategy, video format, next steps, and pricing. Motion graphics for startups and tech."
   canonicalUrl="https://motionstory.com.au/book/"
 >
   <Fragment slot="head">
@@ -35,23 +75,42 @@ const BOOKING_EMBED_SRC =
     </header>
 
     <main class="mx-auto max-w-4xl px-5 py-12 sm:px-6 md:py-16 lg:px-12">
-      <h1 class="font-display text-4xl font-bold tracking-tight md:text-6xl">
-        Book a 20-minute project call.
+      <p class="text-metadata mb-5">Strategy call</p>
+      <h1 class="font-display text-4xl font-bold tracking-tight md:text-6xl max-w-3xl">
+        Clarify your project in minutes.
       </h1>
+      <p class="mt-6 max-w-xl text-[15px] leading-relaxed text-black/55 md:text-[16px]">
+        Schedule a call and I'll untangle the brief. You'll leave knowing what you need, what format fits, and what to do next to produce a successful film.
+      </p>
 
-      <div class="mt-8 flex items-start gap-5 max-w-xl">
+      <div class="mt-10 flex items-start gap-5 max-w-xl">
         <img
           src="/daniel-neale.jpg"
           alt="Dan Neale"
           class="h-16 w-16 shrink-0 rounded-full object-cover md:h-20 md:w-20"
           loading="eager"
         />
-        <p class="text-[15px] leading-relaxed text-black/55 md:text-[16px]">
-          You'll be talking to me — Dan, the creative director, and the person responsible for the work. Talk me through the project and I can usually see the whole thing — every component, finished — while we're still on the call. Tell me about it, and I'll tell you what I see. No slide deck, no sales pitch, no handover to a sales team.
-        </p>
+        <div>
+          <p class="font-display text-base font-bold tracking-tight mb-1">Dan Neale</p>
+          <p class="text-[15px] leading-relaxed text-black/55">
+            Independent motion designer and director. You'll talk to me directly — no sales handoff.
+          </p>
+        </div>
       </div>
 
-      <div class="mt-10 min-h-[700px] w-full border border-black/8 bg-black/[0.02]">
+      <section class="mt-12 border-t border-black/8 pt-10">
+        <h2 class="font-display text-xl font-bold tracking-tight mb-5">What I can help you with</h2>
+        <ul class="space-y-3">
+          {helpWith.map((item) => (
+            <li class="flex gap-3 text-[15px] leading-relaxed text-black/65">
+              <span class="text-accent shrink-0">→</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <div class="mt-12 min-h-[700px] w-full border border-black/8 bg-black/[0.02]">
         <div
           class="calendly-inline-widget"
           data-url={BOOKING_EMBED_SRC}
@@ -59,21 +118,42 @@ const BOOKING_EMBED_SRC =
         />
       </div>
 
-      <ul class="mt-12 space-y-3 border-t border-black/8 pt-10">
-        <li class="text-[13px] leading-relaxed text-black/50">Direct call with the creative director.</li>
-        <li class="text-[13px] leading-relaxed text-black/50">20 years of senior craft, SaaS specialisation.</li>
-        <li class="text-[13px] leading-relaxed text-black/50">Not currently hiring — briefs only.</li>
-      </ul>
+      <section class="mt-16 border-t border-black/8 pt-12">
+        <p class="text-metadata mb-4">A strategy call with a storyteller</p>
+        <h2 class="font-display text-2xl md:text-3xl font-bold tracking-tight mb-5 max-w-2xl">
+          Create the aha moment with animation.
+        </h2>
+        <p class="text-[15px] leading-relaxed text-black/55 max-w-2xl md:text-[16px]">
+          In a focused session we'll dive into animation strategy, pricing, competitor context, or where to start. You walk away with actionable ideas and a clear sense of how motion graphics can solve the business challenge.
+        </p>
 
-      <div class="mt-12 border-t border-black/8 pt-10">
-        <blockquote class="font-display text-lg font-medium tracking-tight leading-snug max-w-xl mb-4">
-          “{bookReview.quote}”
-        </blockquote>
-        <p class="text-[13px] text-black/50 mb-6">{bookReview.name} — {bookReview.role}, {bookReview.company}</p>
-        <p class="text-[11px] uppercase tracking-[0.14em] text-black/40">
+        <h3 class="mt-10 mb-6 font-display text-lg font-bold tracking-tight">What to expect</h3>
+        <div class="grid gap-8 sm:grid-cols-3">
+          {expect.map((item) => (
+            <div>
+              <p class="font-display text-base font-bold tracking-tight mb-2">{item.title}</p>
+              <p class="text-[14px] leading-relaxed text-black/50">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mt-16 border-t border-black/8 pt-12">
+        <p class="text-metadata mb-8">Real stories, real results</p>
+        <div class="space-y-10">
+          {quotes.map((q) => (
+            <blockquote class="max-w-2xl">
+              <p class="font-display text-lg font-medium tracking-tight leading-snug mb-3">
+                “{q.quote}”
+              </p>
+              <p class="text-[13px] text-black/45">{q.name} — {q.role}</p>
+            </blockquote>
+          ))}
+        </div>
+        <p class="mt-10 text-[11px] uppercase tracking-[0.14em] text-black/40">
           <span class="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · {GOOGLE_RATING.count} reviews
         </p>
-      </div>
+      </section>
     </main>
 
     <footer class="site-footer px-5 py-12 sm:px-6 lg:px-12">
@@ -88,14 +168,4 @@ const BOOKING_EMBED_SRC =
   </div>
 
   <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async is:inline></script>
-  <script is:inline>
-    // TODO(dan): Fire `book_call_confirmed` when Calendly reports a successful booking.
-    // Calendly posts a message event; wire when ready, e.g.:
-    // window.addEventListener('message', function (e) {
-    //   if (e.data.event && e.data.event === 'calendly.event_scheduled') {
-    //     window.dataLayer = window.dataLayer || [];
-    //     window.dataLayer.push({ event: 'book_call_confirmed', page: 'book' });
-    //   }
-    // });
-  </script>
 </BaseLayout>
