@@ -1,56 +1,46 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import ServiceLanding from '../components/ServiceLanding.astro';
+import VerticalLanding from '../components/VerticalLanding.astro';
+import { explainerVerticalLanding } from '../data/vertical-landings/explainer';
 
-const work = [
-  { title: "Mosaic / Strategic Data Planning", link: "/casestudy/mosaic-platform-explained/", vimeoId: "879242129" },
-  { title: "Atomic / In-App Messaging", link: "/casestudy/atomic-in-app-messaging/", vimeoId: "861022443" },
-  { title: "Acodis / AI Document Processing", link: "/casestudy/acodis/", vimeoId: "580088673" },
-  { title: "Giraffe / Designing Cities", link: "/casestudy/giraffe/", vimeoId: "762112642" },
-  { title: "Wipster / Video Feedback Tool", link: "/casestudy/wipster-product-overview/", vimeoId: "648360270" },
-  { title: "Bat Nav / Big Battery Power", link: "/casestudy/bat-nav-platform-explainer/", vimeoId: "479992275" },
-];
-
-const moreWork = [
-  { title: "Ranalytic / RF Scanner", link: "/casestudy/ranalytic-rf-scanner/", vimeoId: "759713697" },
-  { title: "United Nations / Plastic Waste Data", link: "/casestudy/united-nations/", vimeoId: "540393117" },
-  { title: "Trudi / AI Property Management", link: "/casestudy/property-management-explainer-video/", vimeoId: "866174146" },
-  { title: "Shape Connect / Website Security", link: "/casestudy/shape-connect/", vimeoId: "320632556" },
-];
+const config = explainerVerticalLanding;
 
 const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Explainer Video Production",
-  "description": "Animated explainer video production for SaaS, tech, nonprofits, and government. From 60-second overviews to 3-minute deep dives.",
-  "provider": { "@type": "Organization", "name": "Motion Story", "url": "https://motionstory.com.au" },
-  "serviceType": "Explainer Video Production",
-  "areaServed": "Worldwide",
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Explainer Video Production',
+  description: config.seo.metaDescription,
+  provider: { '@type': 'Organization', name: 'Motion Story', url: 'https://motionstory.com.au' },
+  serviceType: 'Explainer Video Production',
+  areaServed: 'Worldwide',
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://motionstory.com.au/" },
-    { "@type": "ListItem", "position": 2, "name": "Explainer Videos", "item": "https://motionstory.com.au/explainer-videos/" },
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://motionstory.com.au/' },
+    { '@type': 'ListItem', position: 2, name: 'Explainer Videos', item: 'https://motionstory.com.au/explainer-videos/' },
   ],
 };
 
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "How much does an explainer video cost?", "acceptedAnswer": { "@type": "Answer", "text": "From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront." } },
-    { "@type": "Question", "name": "What's the difference working with Motion Story?", "acceptedAnswer": { "@type": "Answer", "text": "You work with Dan throughout — creative direction, story, and craft. When a job needs extra hands he directs them. Agencies welcome, white label or direct." } },
-  ],
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: config.faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: f.answer },
+  })),
 };
 ---
 
 <PageLayout
+  title={config.seo.titleTag}
+  description={config.seo.metaDescription}
+  canonicalUrl={`https://motionstory.com.au${config.seo.canonicalPath}`}
   floatSubject="Explainer video"
-  title="Explainer Video Production | Motion Story"
-  description="Explainer video production for SaaS, tech, and nonprofits. Motion design that makes people understand and care. Based in Australia."
+  ctaHeading="Clarify the story in minutes."
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
@@ -58,27 +48,5 @@ const faqSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
 
-  <ServiceLanding
-    eyebrow="Explainer Videos"
-    headline={["Explainers for ideas", "that don't explain themselves."]}
-    lede="Complex products, platforms, and missions, made clear in 60 to 180 seconds."
-    work={work}
-    moreWork={moreWork}
-    quote="What would normally take hours to explain now takes 90 seconds."
-    quoteBy="AMSED"
-    faqs={[
-      { label: "Cost", body: "From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront." },
-      { label: "How we work", body: "You work with Dan throughout — concept, storyboard, design, illustration, and animation. Agencies welcome, white label or direct." },
-    ]}
-    relatedReading={[
-      { href: "/how-to-write-a-explainer-video-script/", label: "How to write an explainer video script" },
-      { href: "/live-action-or-animated-video/", label: "Animated vs live action video" },
-      { href: "/why-motion-design-project-fails-before-animation/", label: "Why projects fail before animation" },
-    ]}
-    links={[
-      { href: "/technology-videos/", eyebrow: "Tech", label: "Technology videos →" },
-      { href: "/saas-explainer-videos/", eyebrow: "SaaS", label: "SaaS explainer videos →" },
-      { href: "/work/", eyebrow: "Work", label: "See all work →" },
-    ]}
-  />
+  <VerticalLanding config={config} />
 </PageLayout>

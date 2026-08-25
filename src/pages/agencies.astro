@@ -1,73 +1,52 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import ServiceLanding from '../components/ServiceLanding.astro';
+import VerticalLanding from '../components/VerticalLanding.astro';
+import { agenciesVerticalLanding } from '../data/vertical-landings/agencies';
 
-const work = [
-  { title: "Aon / Conversations", link: "/casestudy/aon-conversations/", vimeoId: "649763018" },
-  { title: "Wipster / Video Feedback Tool", link: "/casestudy/wipster-product-overview/", vimeoId: "648360270" },
-  { title: "Meltwater / Brand Story", link: "/casestudy/meltwater/", vimeoId: "394326130" },
-  { title: "Atomic / In-App Messaging", link: "/casestudy/atomic-in-app-messaging/", vimeoId: "861022443" },
-  { title: "United Nations / Plastic Waste Data", link: "/casestudy/united-nations/", vimeoId: "540393117" },
-  { title: "Mosaic / Strategic Data Planning", link: "/casestudy/mosaic-platform-explained/", vimeoId: "879242129" },
-];
-
-const moreWork = [
-  { title: "Acodis / AI Document Processing", link: "/casestudy/acodis/", vimeoId: "580088673" },
-  { title: "Giraffe / Designing Cities", link: "/casestudy/giraffe/", vimeoId: "762112642" },
-  { title: "Method / Beautiful Bin System", link: "/casestudy/method-explainer-video/", vimeoId: "557884851" },
-  { title: "Trudi / AI Property Management", link: "/casestudy/property-management-explainer-video/", vimeoId: "866174146" },
-];
+const config = agenciesVerticalLanding;
 
 const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Motion Design for Agencies & Studios",
-  "description": "Senior creative direction and motion design for agencies. Lean on deep storytelling expertise — white label or collaborative. Work directly with Dan Neale.",
-  "provider": { "@type": "Organization", "name": "Motion Story", "url": "https://motionstory.com.au" },
-  "serviceType": "Motion Design and Creative Direction for Agencies",
-  "areaServed": "Worldwide",
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Agency Motion Design Partnership',
+  description: config.seo.metaDescription,
+  provider: { '@type': 'Organization', name: 'Motion Story', url: 'https://motionstory.com.au' },
+  serviceType: 'Agency Creative Direction and Motion Design',
+  areaServed: 'Worldwide',
 };
 
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://motionstory.com.au/" },
-    { "@type": "ListItem", "position": 2, "name": "Agencies & Studios", "item": "https://motionstory.com.au/agencies/" },
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://motionstory.com.au/' },
+    { '@type': 'ListItem', position: 2, name: 'Agencies', item: 'https://motionstory.com.au/agencies/' },
   ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: config.faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: f.answer },
+  })),
 };
 ---
 
 <PageLayout
-  floatSubject="Agency motion production"
-  title="Motion Design for Agencies & Studios | Motion Story"
-  description="Senior creative direction and motion for agencies. White label or collaborative. Skip the production chain — work directly with Dan."
+  title={config.seo.titleTag}
+  description={config.seo.metaDescription}
+  canonicalUrl={`https://motionstory.com.au${config.seo.canonicalPath}`}
+  floatSubject="Agency partnership"
+  ctaHeading="Talk through the brief."
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
 
-  <ServiceLanding
-    eyebrow="Agencies & Studios"
-    headline={["Your client needs motion.", "You need senior craft."]}
-    lede="Lean on deep storytelling expertise. White label production or collaborative creative direction — your relationship, my craft. No junior handoffs."
-    work={work}
-    moreWork={moreWork}
-    faqs={[
-      { label: "Cost", body: "From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront." },
-      { label: "White label", body: "You brief me. I deliver finished files under your agency name." },
-      { label: "Creative direction", body: "Bring me in as a senior storytelling / motion lead alongside your team — planning and vision, not just frames." },
-    ]}
-    relatedReading={[
-      { href: "/how-to-brief-a-motion-designer-saas-video/", label: "How to brief a motion designer" },
-      { href: "/three-ways-to-work-with-motion-designer/", label: "Three ways to work with a motion designer" },
-      { href: "/motion-design-studio-vs-freelance-animator/", label: "Studio vs freelance animator" },
-    ]}
-    links={[
-      { href: "/work/", eyebrow: "Work", label: "See all work →" },
-      { href: "/process/", eyebrow: "Process", label: "How I work →" },
-      { href: "/explainer-videos/", eyebrow: "Explainers", label: "Explainer videos →" },
-    ]}
-  />
+  <VerticalLanding config={config} />
 </PageLayout>

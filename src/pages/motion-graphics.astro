@@ -1,60 +1,15 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import VimeoEmbed from '../components/VimeoEmbed';
+import VerticalLanding from '../components/VerticalLanding.astro';
+import { motionGraphicsVerticalLanding } from '../data/vertical-landings/motion-graphics';
 
-const BOOKING = '/book/';
-const EMAIL = 'mailto:daniel@motionstory.com.au';
-
-const why = [
-  'Twenty years of premium studio experience, direct access',
-  'Trusted by top Australian creative agencies',
-  'No agency markup, no junior handoffs',
-  'Bespoke work. No templates, no cookie cutter',
-  'Reliable delivery. I do what I say I’ll do',
-];
-
-const services = [
-  '2D animation and motion graphics',
-  'Explainer videos and SaaS demos',
-  'Product launch films',
-  'Brand and campaign work',
-  'Motion for pitch decks and internal comms',
-];
-
-const steps = [
-  {
-    label: 'Brief',
-    body: '15-min chat. You tell me the problem, timeline and budget.',
-  },
-  {
-    label: 'Concept',
-    body: 'I come back with a treatment, quote and delivery plan.',
-  },
-  {
-    label: 'Delivery',
-    body: 'Production runs, you get updates, we ship on time.',
-  },
-];
-
-const work = [
-  { title: 'Meltwater / Brand Story', link: '/casestudy/meltwater/', vimeoId: '394326130' },
-  { title: 'United Nations / Plastic Waste Data', link: '/casestudy/united-nations/', vimeoId: '540393117' },
-  { title: 'Method / Beautiful Bin System', link: '/casestudy/method-explainer-video/', vimeoId: '557884851' },
-  { title: 'RSPCA / Saving Cats', link: '/casestudy/rspca-cat-care-explainer/', vimeoId: '762085540' },
-  { title: 'Atomic / In-App Messaging', link: '/casestudy/atomic-in-app-messaging/', vimeoId: '861022443' },
-  { title: 'Wipster / Video Feedback Tool', link: '/casestudy/wipster-product-overview/', vimeoId: '648360270' },
-];
-
-const [featured, ...rest] = work;
-
-const clients = ['United Nations', 'RSPCA', 'Meltwater', 'Amex', 'Method', 'Atomic', 'Wipster', 'NSW Government'];
+const config = motionGraphicsVerticalLanding;
 
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Freelance Motion Designer',
-  description:
-    'Senior freelance motion designer for Australian agencies and in-house teams. 2D animation, motion graphics and explainer work. Direct access to Dan Neale.',
+  description: config.seo.metaDescription,
   provider: {
     '@type': 'Person',
     name: 'Daniel Neale',
@@ -71,47 +26,27 @@ const breadcrumbSchema = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://motionstory.com.au/' },
-    { '@type': 'ListItem', position: 2, name: 'Freelance Motion Designer', item: 'https://motionstory.com.au/motion-graphics/' },
+    { '@type': 'ListItem', position: 2, name: 'Motion Graphics', item: 'https://motionstory.com.au/motion-graphics/' },
   ],
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Who will I work with?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Me. Dan Neale. No agency layer, no juniors. Direct access to the person doing the work.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How do we start?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Book a 15-minute brief call. You tell me the problem, timeline and budget. I come back with a treatment, quote and delivery plan.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Do you work with agencies?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes. Trusted by Australian creative agencies and in-house teams. White label or direct.',
-      },
-    },
-  ],
+  mainEntity: config.faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: f.answer },
+  })),
 };
 ---
 
 <PageLayout
-  floatSubject="Freelance motion brief"
-  title="Freelance Motion Designer for Australian Agencies | Motion Story"
-  description="Senior freelance motion designer. Premium 2D animation, motion graphics and explainers. Direct access. No agency layer. Book a 15-min brief call."
-  showCTA={false}
+  title={config.seo.titleTag}
+  description={config.seo.metaDescription}
+  canonicalUrl={`https://motionstory.com.au${config.seo.canonicalPath}`}
+  floatSubject="Motion graphics brief"
+  ctaHeading="Book a 15-minute brief call."
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
@@ -119,153 +54,5 @@ const faqSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </Fragment>
 
-  <div class="landing">
-    <header class="landing-hero">
-      <span class="landing-eyebrow landing-reveal" style="--d: 0">Freelance motion designer</span>
-      <h1 class="landing-title landing-reveal" style="--d: 1">
-        Senior Freelance Motion Designer.<br class="hidden md:block" /> Direct Access.
-      </h1>
-      <p class="landing-lede landing-reveal" style="--d: 2">
-        Trusted by Australian creative agencies and in-house teams for premium 2D animation, motion graphics and explainer work. Work directly with the person doing the work. No agency layer, no juniors, no fluff.
-      </p>
-      <div class="mt-8 landing-reveal" style="--d: 3">
-        <a
-          href={BOOKING}
-          class="inline-flex min-h-[48px] items-center justify-center rounded-[10px] bg-black px-7 py-3.5 text-[15px] font-medium tracking-[-0.01em] text-white transition-opacity hover:opacity-90"
-        >
-          Book a 15-min brief call
-        </a>
-      </div>
-    </header>
-
-    <section class="landing-section">
-      <span class="landing-eyebrow landing-section-label">Why work with me</span>
-      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-8 max-w-[16ch]">
-        Skip the big studios. Get expert craft.
-      </h2>
-      <ul class="space-y-4 max-w-xl">
-        {why.map((item) => (
-          <li class="flex gap-3 text-[17px] leading-[1.45] tracking-[-0.011em] text-[#333]">
-            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </section>
-
-    <section class="landing-section">
-      <span class="landing-eyebrow landing-section-label">What I do</span>
-      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-8 max-w-[18ch]">
-        Motion design without the agency fluff
-      </h2>
-      <ul class="divide-y divide-black/10 border-y border-black/10 max-w-xl">
-        {services.map((item) => (
-          <li class="py-4 text-[17px] leading-[1.45] tracking-[-0.011em] text-[#333]">
-            {item}
-          </li>
-        ))}
-      </ul>
-    </section>
-
-    <section class="landing-section">
-      <span class="landing-eyebrow landing-section-label">Trusted by</span>
-      <p class="font-display text-xl md:text-2xl font-medium tracking-tight leading-snug max-w-2xl text-[#222]">
-        Featured on Behance. Clutch awarded. Trusted by agencies across Sydney, Melbourne and Brisbane.
-      </p>
-      <p class="landing-clients mt-6 !mb-0">
-        {clients.join(' · ')}
-      </p>
-    </section>
-
-    <section id="selected-work" class="landing-section">
-      <div class="landing-section-head">
-        <span class="landing-eyebrow">Selected work</span>
-        <span class="landing-eyebrow landing-count">{String(work.length).padStart(2, '0')}</span>
-      </div>
-
-      {featured && (
-        <article class="landing-featured group">
-          <span class="landing-work-index">01</span>
-          <VimeoEmbed
-            client:visible
-            vimeoId={featured.vimeoId}
-            title={featured.title}
-            loading="eager"
-            autoColor={true}
-            className="landing-featured-media"
-          />
-          <a href={featured.link} class="landing-work-meta">
-            <h2 class="landing-featured-title">{featured.title}</h2>
-            <span class="landing-work-link">View case study →</span>
-          </a>
-        </article>
-      )}
-
-      <div class="landing-work-grid">
-        {rest.map((study, i) => (
-          <article class="landing-work-card group">
-            <span class="landing-work-index">{String(i + 2).padStart(2, '0')}</span>
-            <VimeoEmbed
-              client:visible
-              vimeoId={study.vimeoId}
-              title={study.title}
-              loading="lazy"
-              autoColor={true}
-              className="landing-work-media"
-            />
-            <a href={study.link} class="landing-work-meta">
-              <h2 class="landing-work-title">{study.title}</h2>
-              <span class="landing-work-link">View case study →</span>
-            </a>
-          </article>
-        ))}
-      </div>
-
-      <p class="landing-all-work landing-all-work--end">
-        <a href="/work/">See the full portfolio →</a>
-      </p>
-    </section>
-
-    <section class="landing-section">
-      <span class="landing-eyebrow landing-section-label">How it works</span>
-      <h2 class="font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold tracking-tight leading-[1.1] mb-10 max-w-[14ch]">
-        Three steps.
-      </h2>
-      <ol class="grid gap-0 border-t border-black/10 md:grid-cols-3">
-        {steps.map((step, i) => (
-          <li class="border-b border-black/10 py-7 md:border-b-0 md:border-r md:px-8 md:py-9 md:first:pl-0 md:last:border-r-0 md:last:pr-0">
-            <p class="landing-eyebrow !text-accent mb-3">0{i + 1}</p>
-            <h3 class="font-display text-xl md:text-2xl font-bold tracking-tight mb-2">{step.label}</h3>
-            <p class="text-[16px] leading-[1.5] tracking-[-0.011em] text-[#555]">{step.body}</p>
-          </li>
-        ))}
-      </ol>
-    </section>
-  </div>
-
-  <section class="site-cta">
-    <div class="max-w-3xl mx-auto px-8 py-24 md:py-28 text-center">
-      <h2 class="font-display text-3xl md:text-5xl font-bold tracking-tight mb-5 text-balance">
-        Ready to skip the agency layer?
-      </h2>
-      <p class="mx-auto max-w-md text-[17px] leading-[1.5] tracking-[-0.011em] text-white/60 mb-10">
-        Have a project or want to add a reliable freelance motion designer to your bench? Let’s chat.
-      </p>
-      <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6">
-        <a
-          href={BOOKING}
-          class="inline-flex min-h-[48px] items-center justify-center rounded-[10px] bg-accent px-8 py-3.5 text-[15px] font-medium tracking-[-0.01em] text-white transition-opacity hover:opacity-90"
-        >
-          Book a 15-min call
-        </a>
-        <a
-          href={EMAIL}
-          data-astro-reload
-          class="inline-flex min-h-[44px] items-center text-[15px] font-medium tracking-[-0.01em] text-white/55 transition-colors hover:text-white"
-        >
-          Or email me directly
-        </a>
-      </div>
-    </div>
-  </section>
+  <VerticalLanding config={config} />
 </PageLayout>
