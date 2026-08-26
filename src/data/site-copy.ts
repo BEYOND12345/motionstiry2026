@@ -13,7 +13,7 @@ export const SITE_DESCRIPTION_LONG =
   "Motion graphics and visual storytelling for startups and tech brands. Dan Neale: independent motion designer and director. Complex ideas made clear. Small studio, Byron Bay; clients worldwide.";
 
 export const HERO_LEDE =
-  "Motion graphics for forward-thinking brands. When something is hard to explain, I make it clear: motion, illustration, storyboarding, creative and art direction for startups, tech companies, agencies, and teams of any size. Small studio consultant. Embedded with your team or working independently.";
+  "Complex made simple: motion graphics for forward-thinking companies. When something is hard to explain, I make it clear from concept to execution with motion, illustration, storyboarding, and design.";
 
 export const PROFILE_LEDE =
   "Independent motion designer and director. Making brands move since 2010. Small studio, big impact: work directly with me.";
