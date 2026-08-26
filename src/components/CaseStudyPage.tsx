@@ -27,7 +27,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
 
       {/* Hero Video */}
       <PageTransition className="pt-20">
-        <div className="max-w-6xl mx-auto px-8 pt-16 pb-8">
+        <div className="max-w-7xl mx-auto px-8 pt-16 pb-8">
           <FadeUp>
             <div className="flex items-center gap-4 mb-6">
               <span className="text-metadata">{project.category}</span>
@@ -46,7 +46,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
           </FadeUp>
         </div>
 
-        <FadeUp className="max-w-6xl mx-auto px-8 mb-16">
+        <FadeUp className="max-w-7xl mx-auto px-8 mb-16">
           <div style={{ viewTransitionName: `project-${project.slug}` }}>
             <VimeoEmbed
               vimeoId={project.vimeoId}
@@ -54,23 +54,25 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
               title={project.title}
               loadImmediately
               loading="eager"
+              className="rounded-xl"
             />
           </div>
         </FadeUp>
 
         {project.secondaryVimeoId && (
-          <FadeUp className="max-w-6xl mx-auto px-8 mb-16">
+          <FadeUp className="max-w-7xl mx-auto px-8 mb-16">
             <span className="text-metadata mb-6 block">Additional Video</span>
             <VimeoEmbed
               vimeoId={project.secondaryVimeoId}
               title={`${project.title}: Secondary`}
+              className="rounded-xl"
             />
           </FadeUp>
         )}
       </PageTransition>
 
       {/* Project Details */}
-      <AnimatedSection className="max-w-6xl mx-auto px-8 py-24">
+      <AnimatedSection className="max-w-7xl mx-auto px-8 py-24">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           <FadeUp className="md:col-span-2">
             <span className="text-metadata mb-8 block">About the Project</span>
@@ -98,7 +100,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
 
       {/* Client review — quiet, one line of proof */}
       <AnimatedSection className="border-t border-black/10">
-        <div className="max-w-6xl mx-auto px-8 py-20">
+        <div className="max-w-7xl mx-auto px-8 py-20">
           <FadeUp>
             <blockquote className="font-display text-xl md:text-2xl font-medium tracking-tight leading-snug max-w-3xl mb-6">
               "{review.quote}"
@@ -117,7 +119,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
 
       {/* Navigation */}
       <AnimatedSection className="border-t border-black/10">
-        <div className="max-w-6xl mx-auto px-8 py-16 grid grid-cols-2 gap-8">
+        <div className="max-w-7xl mx-auto px-8 py-16 grid grid-cols-2 gap-8">
           <FadeUp>
             <a href={`/casestudy/${prevProject.slug}/`} className="group block">
               <span className="text-metadata mb-4 block opacity-50 group-hover:opacity-100 transition-opacity">← Previous</span>
@@ -140,7 +142,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
       {/* Related Projects */}
       {relatedProjects.length > 0 && (
         <AnimatedSection className="border-t border-black/10">
-          <div className="max-w-6xl mx-auto px-8 py-24">
+          <div className="max-w-7xl mx-auto px-8 py-24">
             <FadeUp>
               <span className="text-metadata mb-10 block">Related Projects</span>
             </FadeUp>
@@ -148,7 +150,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
               {relatedProjects.map(rp => (
                 <FadeUp key={rp.id}>
                   <a href={`/casestudy/${rp.slug}/`} className="group block">
-                    <div className="aspect-video overflow-hidden bg-gray-100 mb-4">
+                    <div className="aspect-video overflow-hidden rounded-xl bg-gray-100 mb-4">
                       <img
                         src={`https://vumbnail.com/${rp.vimeoId}.jpg`}
                         alt={rp.title}
@@ -168,7 +170,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
 
       {/* CTA — red rule on site footer below separates statement from utility */}
       <AnimatedSection className="site-cta">
-        <div className="max-w-6xl mx-auto px-8 py-28 md:py-32 text-center">
+        <div className="max-w-7xl mx-auto px-8 py-28 md:py-32 text-center">
           <FadeUp>
             <span className="text-metadata !text-white/40 mb-8 block">Start a Project</span>
           </FadeUp>

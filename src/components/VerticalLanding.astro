@@ -37,8 +37,8 @@ const { config } = Astro.props;
       </h1>
       <p class="vl-lede">{config.lede}</p>
       <div class="vl-hero-cta">
-        <a href="/book/" class="vl-btn">Book a call</a>
-        <a href="#work" class="vl-link">See the work</a>
+        <a href="/book/" class="ms-btn">Book a call</a>
+        <a href="#work" class="ms-link">See the work</a>
       </div>
     </div>
     <div class="vl-hero-film">
@@ -225,36 +225,6 @@ const { config } = Astro.props;
     flex-wrap: wrap;
     align-items: center;
     gap: 1.25rem 1.75rem;
-  }
-
-  .vl-btn {
-    display: inline-flex;
-    min-height: 48px;
-    align-items: center;
-    justify-content: center;
-    padding: 0.85rem 1.75rem;
-    background: #0a0a0a;
-    color: #fff;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    transition: opacity 0.2s ease;
-  }
-
-  .vl-btn:hover {
-    opacity: 0.85;
-  }
-
-  .vl-link {
-    font-size: 0.9375rem;
-    font-weight: 500;
-    color: #555;
-    transition: color 0.2s ease;
-  }
-
-  .vl-link:hover {
-    color: #0a0a0a;
   }
 
   .vl-ticker {

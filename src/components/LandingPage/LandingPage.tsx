@@ -389,11 +389,11 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
         </section>
 
         <section id="hero-cta" className="mx-auto max-w-7xl px-5 pt-12 sm:px-6 sm:pt-14 lg:px-12 lg:pt-16">
-          <div className="flex flex-col items-center gap-4 border-t border-black/8 pt-10 sm:gap-5 sm:pt-12 md:flex-row md:justify-center md:gap-10 md:pt-14">
+          <div className="flex flex-col items-center gap-4 border-t border-black/10 pt-10 sm:gap-5 sm:pt-12 md:flex-row md:justify-center md:gap-10 md:pt-14">
             <a
               href={BOOKING_PATH}
               onClick={onBook}
-              className="inline-flex min-h-[52px] w-full max-w-md items-center justify-center bg-black px-6 py-4 text-center text-[11px] font-medium uppercase tracking-[0.14em] text-white transition-opacity hover:opacity-80 sm:w-auto sm:min-w-[260px] sm:px-10 sm:text-[12px] sm:tracking-[0.16em]"
+              className="ms-btn w-full max-w-md sm:w-auto sm:min-w-[260px]"
             >
               Book a 20-minute project call
             </a>
@@ -408,7 +408,7 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
 
         {/* 2. Trust strip */}
         <section className="mx-auto mt-16 max-w-7xl px-5 sm:mt-20 sm:px-6 md:mt-28 lg:px-12">
-          <div className="border-y border-black/8 py-12 sm:py-14 md:py-16">
+          <div className="border-y border-black/10 py-12 sm:py-14 md:py-16">
             <p className="mb-8 text-center text-[10px] font-medium uppercase tracking-[0.16em] text-black/35 sm:mb-10 sm:text-[11px] sm:tracking-[0.18em]">
               {config.trustStrip.line}
             </p>
@@ -486,7 +486,7 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
                 onClick={() => setLightbox(project)}
                 className="group text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
               >
-                <div className="relative aspect-video overflow-hidden bg-black/[0.04]">
+                <div className="relative aspect-video overflow-hidden rounded-xl bg-black/[0.04]">
                   <img
                     src={project.thumbnail}
                     alt={`${project.client} project`}
@@ -514,7 +514,7 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
         </section>
 
         {/* 6. Testimonial — quiet editorial, not a black wall */}
-        <section className="border-y border-black/8">
+        <section className="border-y border-black/10">
           <div className="mx-auto max-w-5xl px-5 py-16 sm:px-6 sm:py-20 lg:px-12 lg:py-24">
             <blockquote className="font-display text-[1.25rem] font-medium leading-[1.3] tracking-tight sm:text-[1.5rem] lg:text-[2rem] lg:leading-[1.2] max-w-3xl">
               “{config.testimonial.quote}”
@@ -569,7 +569,7 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
             <a
               href={BOOKING_PATH}
               onClick={onBook}
-              className="mt-8 inline-flex min-h-[52px] w-full max-w-md items-center justify-center bg-white px-6 py-4 text-center text-[11px] font-medium uppercase tracking-[0.14em] text-black transition-opacity hover:opacity-80 sm:mt-10 sm:w-auto sm:min-w-[260px] sm:px-10 sm:text-[12px]"
+              className="ms-btn-on-dark mt-8 w-full max-w-md sm:mt-10 sm:w-auto sm:min-w-[260px]"
             >
               Book a 20-minute project call
             </a>

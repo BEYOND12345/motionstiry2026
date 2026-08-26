@@ -185,7 +185,7 @@ function WorkLightbox({
       onClick={onClose}
     >
       <div
-        className="relative aspect-video w-full max-w-5xl bg-black"
+        className="relative aspect-video w-full max-w-5xl overflow-hidden rounded-xl bg-black"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -394,7 +394,7 @@ export default function Homepage() {
                     name="name"
                     placeholder="Your name"
                     required
-                    className="text-body w-full border-b border-black/10 bg-transparent py-3 transition-colors focus:border-black focus:outline-none"
+                    className="text-body w-full border-b border-black/10 bg-transparent py-3 transition-colors focus:border-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                   />
                 </div>
                 <div className="group">
@@ -405,7 +405,7 @@ export default function Homepage() {
                     name="email"
                     placeholder="you@example.com"
                     required
-                    className="text-body w-full border-b border-black/10 bg-transparent py-3 transition-colors focus:border-black focus:outline-none"
+                    className="text-body w-full border-b border-black/10 bg-transparent py-3 transition-colors focus:border-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                   />
                 </div>
                 <div className="group">
@@ -416,7 +416,7 @@ export default function Homepage() {
                     placeholder="What are you working on? What's the challenge?"
                     rows={3}
                     required
-                    className="text-body w-full resize-none border-b border-black/10 bg-transparent py-3 transition-colors focus:border-black focus:outline-none"
+                    className="text-body w-full resize-none border-b border-black/10 bg-transparent py-3 transition-colors focus:border-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                   />
                 </div>
                 <button className="group/btn relative w-full overflow-hidden border border-black/15 py-4 transition-all duration-500 hover:border-black">

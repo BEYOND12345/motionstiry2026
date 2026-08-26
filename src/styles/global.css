@@ -129,6 +129,56 @@ body.homepage-layout {
   text-transform: uppercase;
 }
 
+/* Primary filled CTA — shared across About, verticals, sales, thank-you */
+.ms-btn {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.75rem;
+  background: #0a0a0a;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.ms-btn:hover {
+  opacity: 0.85;
+}
+
+.ms-btn-on-dark {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.75rem;
+  background: #fff;
+  color: #0a0a0a;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.ms-btn-on-dark:hover {
+  opacity: 0.85;
+}
+
+.ms-link {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #555;
+  transition: color 0.2s ease;
+}
+
+.ms-link:hover {
+  color: #0a0a0a;
+}
+
 /* Wordmark only — softer story voice, rest of site unchanged */
 /* Wordmark only — Poppins logo lockup */
 .brand-mark {
@@ -526,6 +576,7 @@ body.homepage-layout {
 
 .landing-featured-media {
   margin-bottom: 1.75rem;
+  border-radius: 0.75rem;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -645,6 +696,7 @@ body.homepage-layout {
 
 .landing-work-media {
   margin-bottom: 1.6rem;
+  border-radius: 0.75rem;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -704,6 +756,7 @@ body.homepage-layout {
 .landing-more-thumb {
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  border-radius: 0.75rem;
   background: rgba(0, 0, 0, 0.04);
   margin-bottom: 0.9rem;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);

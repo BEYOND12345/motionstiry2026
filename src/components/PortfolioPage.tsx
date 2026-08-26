@@ -104,7 +104,7 @@ export default function PortfolioPage() {
             <span className="text-metadata !text-white/40 mb-8 block">Start a Project</span>
           </FadeUp>
           <SlideUp>
-            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight mb-10">
+            <h2 className="font-display text-3xl md:text-6xl font-bold tracking-tight mb-12">
               Got something complex<br />to explain?
             </h2>
           </SlideUp>

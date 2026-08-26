@@ -250,7 +250,7 @@ function PrimaryBookCta({
     <a
       href={href}
       onClick={trackBookCall}
-      className={`inline-flex min-h-[52px] w-full max-w-md items-center justify-center bg-black px-6 py-4 text-center text-[11px] font-medium uppercase tracking-[0.14em] text-white transition-opacity hover:opacity-80 sm:w-auto sm:min-w-[260px] sm:px-10 sm:text-[12px] sm:tracking-[0.16em] ${className}`}
+      className={`ms-btn w-full max-w-md sm:w-auto sm:min-w-[260px] ${className}`}
     >
       {label}
     </a>
@@ -270,7 +270,7 @@ function WorkCard({
       onClick={() => onSelect(project)}
       className="group w-[72vw] max-w-[320px] shrink-0 text-left sm:w-[300px] sm:max-w-none md:w-[340px]"
     >
-      <div className="relative aspect-video overflow-hidden bg-black/[0.04]">
+      <div className="relative aspect-video overflow-hidden rounded-xl bg-black/[0.04]">
         <img
           src={`https://vumbnail.com/${project.vimeoId}.jpg`}
           alt={project.thumbnailAlt ?? `${project.client} project`}
@@ -429,7 +429,7 @@ export default function AdsLandingPage({ config }: { config: AdsLandingConfig })
 
         {/* CTA band — separated from hero so the first viewport stays calm */}
         <section id="hero-cta" className="mx-auto max-w-7xl px-5 pt-12 sm:px-6 sm:pt-14 lg:px-12 lg:pt-16">
-          <div className="flex flex-col items-center gap-4 border-t border-black/8 pt-10 sm:gap-5 sm:pt-12 md:flex-row md:justify-center md:gap-10 md:pt-14">
+          <div className="flex flex-col items-center gap-4 border-t border-black/10 pt-10 sm:gap-5 sm:pt-12 md:flex-row md:justify-center md:gap-10 md:pt-14">
             <PrimaryBookCta href={config.bookingUrl} label={config.bookingLabel} />
             <a
               href="#brief"
@@ -442,7 +442,7 @@ export default function AdsLandingPage({ config }: { config: AdsLandingConfig })
 
         {/* 2. Trust strip */}
         <section className="mx-auto mt-16 max-w-7xl px-5 sm:mt-20 sm:px-6 md:mt-28 lg:px-12">
-          <div className="border-y border-black/8 py-12 sm:py-14 md:py-16">
+          <div className="border-y border-black/10 py-12 sm:py-14 md:py-16">
             <p className="mb-8 text-center text-[10px] font-medium uppercase tracking-[0.16em] text-black/35 sm:mb-10 sm:text-[11px] sm:tracking-[0.18em]">
               {config.trustLine}
             </p>
@@ -513,7 +513,7 @@ export default function AdsLandingPage({ config }: { config: AdsLandingConfig })
         </section>
 
         {/* 6. Testimonial */}
-        <section className="border-y border-black/8 bg-black/[0.015]">
+        <section className="border-y border-black/10 bg-black/[0.015]">
           <div className="mx-auto max-w-5xl px-5 py-20 sm:px-6 sm:py-24 lg:px-12 lg:py-32">
             <blockquote className="font-display text-[1.4rem] font-medium leading-[1.28] tracking-tight sm:text-[1.75rem] sm:leading-[1.25] lg:text-[2.75rem] lg:leading-[1.15]">
               “{config.testimonial.quote}”
