@@ -9,8 +9,8 @@ const BASE_TAGS = [
 
 const CATEGORY_TAGS: Record<string, string[]> = {
   'SaaS & Tech': [
-    'SaaS explainer video',
-    'software explainer video',
+    'SaaS motion graphics',
+    'software motion graphics',
     'technology video',
     'product demo video',
   ],
@@ -73,5 +73,5 @@ export function getVideoSeoCategory(project: Project) {
   if (project.category === 'Causes & NFP') return 'Nonprofit explainer video';
   if (project.category === 'Data & Govtech') return 'Data visualisation and government explainer video';
   if (project.category === 'Agencies') return 'Brand animation and agency motion design';
-  return 'SaaS explainer and product demo video';
+  return 'SaaS motion graphics and product demo video';
 }

@@ -49,6 +49,7 @@ const { config } = Astro.props;
         title={config.heroVideo.title}
         loading="eager"
         autoColor={true}
+        className="rounded-xl"
       />
     </div>
   </header>
@@ -87,6 +88,7 @@ const { config } = Astro.props;
               title={study.title}
               loading={i === 0 ? 'eager' : 'lazy'}
               autoColor={true}
+              className="rounded-xl"
             />
           </div>
         </article>
@@ -291,9 +293,10 @@ const { config } = Astro.props;
 
   @media (min-width: 900px) {
     .vl-case {
-      grid-template-columns: minmax(16rem, 0.9fr) minmax(0, 1.4fr);
-      gap: 3rem;
-      align-items: start;
+      /* Equal columns so flipped rows don’t shrink the film */
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 2.75rem;
+      align-items: center;
     }
 
     .vl-case:nth-child(even) .vl-case-copy {
@@ -303,6 +306,25 @@ const { config } = Astro.props;
     .vl-case:nth-child(even) .vl-case-film {
       order: 1;
     }
+
+    .vl-case-film {
+      width: 100%;
+      max-width: 32rem;
+      justify-self: end;
+    }
+
+    .vl-case:nth-child(even) .vl-case-film {
+      justify-self: start;
+    }
+  }
+
+  .vl-case-film {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .vl-case-film :global(.relative.aspect-video) {
+    border-radius: 0.75rem;
   }
 
   .vl-case-index {

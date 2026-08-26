@@ -67,9 +67,9 @@ export const productDemoVideosLanding: SpineLandingConfig = {
           'A short animated walkthrough, usually 60 to 120 seconds, that shows how your product works. Built for sales decks, landing pages, and follow up emails.',
       },
       {
-        question: 'How is this different from a SaaS explainer video?',
+        question: 'How is this different from SaaS motion graphics?',
         answer:
-          'A product demo shows the product in action. A SaaS explainer sells the story and the why. Start with the explainer if buyers still don’t get what you do. Commission a demo when they need proof of how it works.',
+          'A product demo shows a physical product in action. SaaS motion graphics tell the software story — UI, workflows, and why it matters.',
       },
       ...SPINE_CORE_FAQS,
       {

@@ -1,0 +1,647 @@
+---
+/**
+ * Private SaaS demo sales page.
+ * Rhythm: offer → ticker → (copy | film+stat)×3 → pricing → book
+ * Stat sits under each film. Single flush left edge on copy.
+ */
+import VimeoEmbed from './VimeoEmbed';
+import ClientTicker from './ClientTicker';
+import { saasDemoSalesPage as c } from '../data/sales-pages/saas-demo';
+---
+
+<div class="sd">
+  <header class="sd-hero">
+    <h1 class="sd-offer">{c.offer}</h1>
+    <p class="sd-promise">{c.promise}</p>
+    <a href="/book/" class="sd-btn">Book a strategy call</a>
+  </header>
+
+  <section class="sd-ticker" aria-label="Clients">
+    <ClientTicker
+      client:load
+      label="Clients"
+      rowA={[...c.tickerRowA]}
+      rowB={[...c.tickerRowB]}
+      compact
+    />
+  </section>
+
+  <div class="sd-beats">
+    {
+      c.beats.map((beat, i) => (
+        <article
+          class:list={['sd-beat', i % 2 === 1 && 'sd-beat-flip']}
+          aria-label={`${beat.film.client} and result`}
+        >
+          <div class="sd-copy">
+            <p class="sd-index">{String(i + 1).padStart(2, '0')}</p>
+            <h2 class="sd-client">{beat.film.client}</h2>
+            <p class="sd-context">{beat.film.context}</p>
+            <a href={beat.film.link} class="sd-text-link">Case study</a>
+          </div>
+
+          <div class="sd-media">
+            <div class="sd-film">
+              <VimeoEmbed
+                client:visible
+                vimeoId={beat.film.vimeoId}
+                title={beat.film.client}
+                loading={i === 0 ? 'eager' : 'lazy'}
+                autoColor={true}
+              />
+            </div>
+            <div class="sd-stat">
+              <p class="sd-stat-value">{beat.stat.value}</p>
+              <p class="sd-stat-label">{beat.stat.label}</p>
+            </div>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+
+  <section class="sd-social" aria-label="Client proof">
+    <div class="sd-social-head">
+      <p class="sd-kicker">{c.proofEyebrow}</p>
+      <p class="sd-rating">
+        <span class="sd-rating-score">★ {c.rating.score}</span>
+        <span class="sd-rating-label">{c.rating.label}</span>
+      </p>
+    </div>
+    <div class="sd-quotes">
+      {
+        c.testimonials.map((t) => (
+          <blockquote class="sd-quote">
+            <p class="sd-quote-text">“{t.quote}”</p>
+            <footer class="sd-quote-meta">
+              <span class="sd-quote-name">{t.name}</span>
+              <span class="sd-quote-role">{t.role}</span>
+            </footer>
+          </blockquote>
+        ))
+      }
+    </div>
+  </section>
+
+  <section id="pricing" class="sd-pricing">
+    <p class="sd-kicker">{c.tiersHeadline}</p>
+    <p class="sd-tiers-lede">{c.tiersLede}</p>
+    <div class="sd-tiers">
+      {
+        c.tiers.map((tier) => (
+          <div class="sd-tier">
+            <p class="sd-tier-name">{tier.name}</p>
+            <p class="sd-tier-price">{tier.price}</p>
+            <p class="sd-tier-job">{tier.job}</p>
+            <p class="sd-tier-detail">{tier.detail}</p>
+          </div>
+        ))
+      }
+    </div>
+    <p class="sd-ship">{c.ship}</p>
+  </section>
+
+  <section class="sd-close">
+    <h2 class="sd-close-title">{c.close}</h2>
+    <p class="sd-close-lede">{c.closeLede}</p>
+    <div class="sd-close-actions">
+      <a href="/book/" class="sd-btn">Book a strategy call</a>
+      <a
+        href="mailto:daniel@motionstory.com.au?subject=Product%20demo"
+        class="sd-text-link"
+      >
+        Or email Dan
+      </a>
+    </div>
+  </section>
+
+  <section class="sd-more" aria-label="More work">
+    <p class="sd-kicker">{c.moreWorkEyebrow}</p>
+    <div class="sd-more-grid">
+      {
+        c.moreWork.map((piece) => (
+          <article class="sd-more-card">
+            <div class="sd-more-film">
+              <VimeoEmbed
+                client:visible
+                vimeoId={piece.vimeoId}
+                title={piece.client}
+                loading="lazy"
+                autoColor={true}
+              />
+            </div>
+            <h3 class="sd-more-client">{piece.client}</h3>
+            <p class="sd-more-context">{piece.context}</p>
+            <a href={piece.link} class="sd-text-link">Case study</a>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</div>
+
+<style>
+  .sd {
+    --sd-ink: #0a0a0a;
+    --sd-mute: #5c5c5c;
+    --sd-line: rgba(10, 10, 10, 0.12);
+    --sd-red: #ff0000;
+    --sd-gap: 2.75rem;
+    --sd-pad: 1.5rem;
+    box-sizing: border-box;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 7rem var(--sd-pad) 5rem;
+  }
+
+  .sd *,
+  .sd *::before,
+  .sd *::after {
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 768px) {
+    .sd {
+      --sd-pad: 2.25rem;
+      padding: 8rem var(--sd-pad) 6.5rem;
+    }
+  }
+
+  .sd-kicker {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sd-red);
+    margin: 0 0 1rem;
+    padding: 0;
+  }
+
+  .sd-hero {
+    max-width: 36rem;
+    padding-bottom: 2.25rem;
+  }
+
+  .sd-offer {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 5.2vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1;
+    margin: 0 0 1rem;
+    padding: 0;
+    color: var(--sd-ink);
+    text-wrap: balance;
+  }
+
+  .sd-promise {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: var(--sd-mute);
+    margin: 0 0 1.5rem;
+    padding: 0;
+  }
+
+  .sd-btn {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.6rem;
+    background: var(--sd-ink);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: opacity 0.2s ease;
+  }
+
+  .sd-btn:hover {
+    opacity: 0.82;
+  }
+
+  .sd-text-link {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--sd-mute);
+    border-bottom: 1px solid rgba(10, 10, 10, 0.2);
+    padding: 0 0 0.1rem;
+    margin: 0;
+  }
+
+  .sd-text-link:hover {
+    color: var(--sd-ink);
+    border-color: var(--sd-ink);
+  }
+
+  .sd-ticker {
+    margin: 0 0 3rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--sd-line);
+    border-bottom: 1px solid var(--sd-line);
+  }
+
+  /* —— Beats: copy | film + stat under film —— */
+  .sd-beats {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  .sd-beat {
+    display: grid;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    align-items: start;
+  }
+
+  @media (min-width: 900px) {
+    .sd-beat {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: var(--sd-gap);
+      align-items: start;
+    }
+
+    .sd-beat-flip .sd-copy {
+      order: 2;
+    }
+
+    .sd-beat-flip .sd-media {
+      order: 1;
+    }
+  }
+
+  /* Flush left edge for every copy line */
+  .sd-copy {
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+  }
+
+  .sd-copy > * {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .sd-index {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--sd-red);
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+  }
+
+  .sd-client {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 0 0 0.65rem;
+    color: var(--sd-ink);
+  }
+
+  .sd-context {
+    font-size: 0.975rem;
+    line-height: 1.5;
+    color: var(--sd-mute);
+    margin: 0 0 1rem;
+    max-width: 22rem;
+  }
+
+  /* Media column: film, then stat directly under it */
+  .sd-media {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+    width: 100%;
+    max-width: 28rem;
+  }
+
+  @media (min-width: 900px) {
+    .sd-media {
+      max-width: none;
+      width: 100%;
+    }
+
+    .sd-beat:not(.sd-beat-flip) .sd-media {
+      justify-self: end;
+      width: 100%;
+      max-width: 28rem;
+    }
+
+    .sd-beat-flip .sd-media {
+      justify-self: start;
+      width: 100%;
+      max-width: 28rem;
+    }
+  }
+
+  .sd-film {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sd-stat {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: last baseline;
+    column-gap: 1rem;
+    width: 100%;
+    margin: 0;
+    padding: 1.15rem 0 0;
+    border-top: 1px solid var(--sd-line);
+  }
+
+  .sd-stat-value {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    color: var(--sd-ink);
+    font-variant-numeric: tabular-nums;
+    flex: 0 0 auto;
+  }
+
+  .sd-stat-label {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 0.875rem;
+    line-height: 1.35;
+    color: var(--sd-mute);
+    margin: 0;
+    padding: 0;
+  }
+
+  /* —— Social proof —— */
+  .sd-social {
+    margin: 4rem 0 0;
+    padding: 2.25rem 0;
+    border-top: 1px solid var(--sd-line);
+    border-bottom: 1px solid var(--sd-line);
+  }
+
+  .sd-social-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem 1.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .sd-social-head .sd-kicker {
+    margin: 0;
+  }
+
+  .sd-rating {
+    margin: 0;
+    padding: 0;
+    font-size: 0.875rem;
+    color: var(--sd-mute);
+  }
+
+  .sd-rating-score {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--sd-ink);
+    margin-right: 0.35rem;
+  }
+
+  .sd-quotes {
+    display: grid;
+    gap: 2rem;
+  }
+
+  @media (min-width: 800px) {
+    .sd-quotes {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2.5rem var(--sd-gap);
+    }
+  }
+
+  .sd-quote {
+    margin: 0;
+    padding: 0;
+  }
+
+  .sd-quote-text {
+    font-family: var(--font-display);
+    font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.35;
+    color: var(--sd-ink);
+    margin: 0 0 0.85rem;
+    padding: 0;
+    text-wrap: pretty;
+  }
+
+  .sd-quote-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sd-quote-name {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--sd-ink);
+  }
+
+  .sd-quote-role {
+    font-size: 0.8125rem;
+    color: var(--sd-mute);
+  }
+
+  /* —— Pricing —— */
+  .sd-pricing {
+    margin-top: 4rem;
+    margin-bottom: 3.25rem;
+    padding-top: 0;
+  }
+
+  .sd-tiers-lede {
+    font-size: 1rem;
+    color: var(--sd-mute);
+    margin: 0 0 1.5rem;
+    padding: 0;
+    max-width: 28rem;
+  }
+
+  .sd-tiers {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--sd-line);
+    margin: 0 0 1.15rem;
+    padding: 0;
+  }
+
+  @media (min-width: 720px) {
+    .sd-tiers {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .sd-tier {
+    margin: 0;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--sd-line);
+  }
+
+  @media (min-width: 720px) {
+    .sd-tier {
+      padding: 1.35rem 1.35rem 1.35rem 0;
+      border-bottom: none;
+      border-right: 1px solid var(--sd-line);
+    }
+
+    .sd-tier:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    .sd-tier:not(:first-child) {
+      padding-left: 1.35rem;
+    }
+  }
+
+  .sd-tier-name {
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8a8a8a;
+    margin: 0 0 0.4rem;
+    padding: 0;
+  }
+
+  .sd-tier-price {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin: 0 0 0.4rem;
+    padding: 0;
+  }
+
+  .sd-tier-job {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--sd-ink);
+    margin: 0 0 0.3rem;
+    padding: 0;
+  }
+
+  .sd-tier-detail {
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    color: var(--sd-mute);
+    margin: 0;
+    padding: 0;
+  }
+
+  .sd-ship {
+    font-size: 0.875rem;
+    color: var(--sd-mute);
+    margin: 0;
+    padding: 0;
+  }
+
+  .sd-close {
+    padding-top: 2.25rem;
+    border-top: 1px solid var(--sd-line);
+  }
+
+  .sd-close-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin: 0 0 0.5rem;
+    padding: 0;
+  }
+
+  .sd-close-lede {
+    font-size: 1rem;
+    color: var(--sd-mute);
+    margin: 0 0 1.35rem;
+    padding: 0;
+    max-width: 26rem;
+  }
+
+  .sd-close-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem 1.75rem;
+  }
+
+  /* —— More work under strategy call —— */
+  .sd-more {
+    margin-top: 3.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--sd-line);
+  }
+
+  .sd-more-grid {
+    display: grid;
+    gap: 2rem 1.5rem;
+    margin-top: 0.25rem;
+  }
+
+  @media (min-width: 800px) {
+    .sd-more-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2rem 1.75rem;
+    }
+  }
+
+  .sd-more-card {
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+  }
+
+  .sd-more-film {
+    width: 100%;
+    margin: 0 0 0.85rem;
+  }
+
+  .sd-more-client {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin: 0 0 0.35rem;
+    padding: 0;
+  }
+
+  .sd-more-context {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: var(--sd-mute);
+    margin: 0 0 0.65rem;
+    padding: 0;
+  }
+</style>

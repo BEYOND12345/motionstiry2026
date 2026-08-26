@@ -83,7 +83,7 @@ export const startupsVerticalLanding: VerticalLandingConfig = {
     ...VERTICAL_CORE_FAQS,
   ],
   links: [
-    { href: '/saas-explainer-videos/', eyebrow: 'SaaS', label: 'SaaS explainer videos →' },
+    { href: '/saas-explainer-videos/', eyebrow: 'SaaS', label: 'SaaS motion graphics →' },
     { href: '/product-demo-videos/', eyebrow: 'Demos', label: 'Product demo videos →' },
     { href: '/creative-business-designer/', eyebrow: 'Sessions', label: 'Creative business designer →' },
     { href: '/work/', eyebrow: 'Portfolio', label: 'See all work →' },

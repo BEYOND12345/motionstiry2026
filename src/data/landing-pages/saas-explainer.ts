@@ -15,14 +15,14 @@ import {
 export const saasExplainerLanding: SpineLandingConfig = {
   slug: 'saas-explainer',
   seo: {
-    titleTag: 'SaaS Explainer Video | Motion Story',
+    titleTag: 'SaaS Motion Graphics | Motion Story',
     metaDescription:
-      'SaaS explainer video production for complex software. Clear product stories for landing pages, sales, and onboarding. Work directly with the creative director.',
+      'SaaS motion graphics for complex software. Clear product stories for landing pages, sales, and onboarding. Work directly with the creative director.',
     canonicalPath: '/saas-explainer-videos/',
   },
   hero: {
-    eyebrow: 'SaaS explainer videos',
-    h1: 'SaaS explainers that make complex software obvious.',
+    eyebrow: 'SaaS motion graphics',
+    h1: 'SaaS motion graphics that make complex software obvious.',
     subhead: 'Complex software, made obvious.',
     videoSrc: '879242129',
     fullShowreelUrl: '879242129',
@@ -55,14 +55,14 @@ export const saasExplainerLanding: SpineLandingConfig = {
   faq: {
     items: [
       {
-        question: 'What is a SaaS explainer video?',
+        question: 'What is SaaS motion graphics?',
         answer:
           'A short animated film, usually 60 to 90 seconds, that shows what your software does and why it matters, without a login or a live walkthrough. Built for homepages, sales decks, and ads.',
       },
       {
         question: 'How is this different from a product demo video?',
         answer:
-          'A SaaS explainer sells the story and the value. A product demo walks through how it works. Most teams need the explainer first. See product demo videos if you already have demand and need a sales asset.',
+          'SaaS motion graphics tell the software story — UI, workflows, and value. Physical product demos show tangible goods in action. See product demo videos for that lane.',
       },
       ...SPINE_CORE_FAQS,
     ],
@@ -72,7 +72,7 @@ export const saasExplainerLanding: SpineLandingConfig = {
     formIntro: SPINE_CLOSE.formIntro,
   },
   form: {
-    textareaLabel: 'What should your SaaS explainer video explain?',
+    textareaLabel: 'What should your SaaS motion graphics piece show?',
     submitButtonLabel: 'Send brief',
     redirectTo: '/thank-you',
   },

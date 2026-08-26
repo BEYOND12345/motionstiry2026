@@ -85,7 +85,7 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
   links: [
     { href: '/agencies/', eyebrow: 'Agencies', label: 'Agency partnerships →' },
     { href: '/explainer-videos/', eyebrow: 'Explainers', label: 'Explainer videos →' },
-    { href: '/saas-explainer-videos/', eyebrow: 'SaaS', label: 'SaaS explainer videos →' },
+    { href: '/saas-explainer-videos/', eyebrow: 'SaaS', label: 'SaaS motion graphics →' },
     { href: '/work/', eyebrow: 'Portfolio', label: 'See all work →' },
   ],
 };

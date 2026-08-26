@@ -1,15 +1,16 @@
 import type { VerticalLandingConfig } from './types';
+import { verticalCase } from './helpers';
 
 export const saasVerticalLanding: VerticalLandingConfig = {
   seo: {
-    titleTag: 'SaaS Explainer Videos | Motion Story',
+    titleTag: 'SaaS Motion Graphics | Motion Story',
     metaDescription:
-      'SaaS explainer videos that demonstrate what your software does, how it works, and the value it provides. Work directly with Dan Neale.',
+      'SaaS motion graphics that show what your software does, how it works, and why it matters — UI in motion, story first. Work directly with Dan Neale.',
     canonicalPath: '/saas-explainer-videos/',
   },
-  eyebrow: 'SaaS explainer videos',
-  headline: ['SaaS explainer', 'videos.'],
-  lede: 'Demonstrate what your software does, how it works, and the value it provides — in a fraction of the time. With your SaaS in action on-screen, viewers start learning immediately.',
+  eyebrow: 'SaaS motion graphics',
+  headline: ['SaaS motion', 'graphics.'],
+  lede: 'Show what your software does, how it works, and the value it provides — in a fraction of the time. With your product in action on-screen, viewers start learning immediately.',
   heroVideo: {
     vimeoId: '866174146',
     title: 'Trudi / AI Property Management',
@@ -18,12 +19,12 @@ export const saasVerticalLanding: VerticalLandingConfig = {
   tickerRowA: [
     'Wipster',
     'Atomic',
-    'Acodis',
-    'Mosaic',
-    'Giraffe',
-    'Trudi',
-    'Oovvuu',
-    'Food By Us',
+    'Good2Pay',
+    'Hey You',
+    'Uclusion',
+    'Class Trust',
+    'ARK',
+    'TruLet',
   ],
   tickerRowB: [
     'Insignia Financial',
@@ -45,12 +46,47 @@ export const saasVerticalLanding: VerticalLandingConfig = {
       tags: 'Software, SaaS, explainer, in-app messaging',
       body: 'Atomic needed an explainer that showcased the distinctiveness of their in-app messaging — how companies convey valuable, specific information instead of bombarding users with spam.',
     },
+    verticalCase('good2pay', {
+      tags: 'Fintech, SaaS, explainer',
+      body: 'Paperless invoicing made obvious — a SaaS story built for busy teams who need to see the workflow, not read a feature list.',
+    }),
+    verticalCase('heyyou', {
+      tags: 'App, SaaS, food ordering',
+      body: 'A product story for the Hey You ordering app — clear enough for a cold visitor, sharp enough for growth teams.',
+    }),
+    {
+      title: 'Uclusion / Product Decision Platform',
+      client: 'Uclusion',
+      link: '/casestudy/uclusion-product-explainer/',
+      vimeoId: '338131381',
+      tags: 'Software, SaaS, explainer',
+      body: 'Uclusion invented a software modification platform with benefits for users and developers — if both use it. We synchronised their stories side-by-side to show how the solution fast-tracks improvement of any software.',
+    },
+    verticalCase('ark', {
+      tags: 'SaaS, product, explainer',
+      body: "ARK couldn't succinctly explain their modular design technology in layman's terms. We brought the platform to life with visuals that replicate the design process — what ARK does, in under 60 seconds.",
+    }),
+    {
+      ...verticalCase('infoview', {
+        tags: 'SaaS, expense management, explainer',
+        body: 'Digitising expense management for modern teams — receipt capture to approval and reporting, without the paper trail.',
+      }),
+      vimeoId: '404864437',
+    },
+    verticalCase('class-trust', {
+      tags: 'Fintech, SaaS, SMSF, explainer',
+      body: "Class Trust's SMSF accounting is complex by nature. We broke compliance workflows into clear, approachable sequences so trustees and accountants get the value fast.",
+    }),
+    verticalCase('trulet', {
+      tags: 'Software, SaaS, AI, property',
+      body: 'TruLet aimed to revolutionise rental management with AI, but needed to simply explain how it works in practice. A fluid story of seamless efficiency, with their colours and typography throughout.',
+    }),
     {
       title: 'Giraffe / Designing Cities',
       client: 'Giraffe',
       link: '/casestudy/giraffe/',
       vimeoId: '762112642',
-      tags: 'Software, city planning, SaaS explainer, 3D',
+      tags: 'Software, city planning, SaaS motion graphics, 3D',
       body: "Giraffe's software revolutionises city planning. We created an inclusive story for architects, developers, and government — using clean geometric shapes to walk through the capabilities and present a clear vision for smarter cities.",
     },
     {
@@ -90,7 +126,7 @@ export const saasVerticalLanding: VerticalLandingConfig = {
       client: 'DRIV0',
       link: '/casestudy/driv0/',
       vimeoId: '394074132',
-      tags: 'SaaS explainer, software, booking',
+      tags: 'SaaS motion graphics, software, booking',
       body: 'Drivo spent too much time explaining their car park management system in pitch meetings. The animation uses bird’s-eye and cross-section views, weaving software features and user benefits into an instantly understandable demonstration.',
     },
     {
@@ -98,16 +134,8 @@ export const saasVerticalLanding: VerticalLandingConfig = {
       client: 'Food By Us',
       link: '/casestudy/food-by-us/',
       vimeoId: '672120018',
-      tags: 'SaaS explainer, software, food ordering',
+      tags: 'SaaS motion graphics, software, food ordering',
       body: 'Cutting through a crowded industry is hard, especially for busy chefs. We told the story clean and fast, kept transitions sharp and playful, and made the result tailored, personal, and compelling.',
-    },
-    {
-      title: 'Uclusion / Product Decision Platform',
-      client: 'Uclusion',
-      link: '/casestudy/uclusion-product-explainer/',
-      vimeoId: '338131381',
-      tags: 'Software, SaaS, explainer',
-      body: 'Uclusion invented a software modification platform with benefits for users and developers — if both use it. We synchronised their stories side-by-side to show how the solution fast-tracks improvement of any software.',
     },
   ],
   value: {
@@ -141,7 +169,7 @@ export const saasVerticalLanding: VerticalLandingConfig = {
     {
       question: 'How long does it take?',
       answer:
-        'On average six weeks for a SaaS explainer. Simpler pieces can ship in about two weeks when scope is tight.',
+        'On average six weeks for a SaaS motion graphics piece. Simpler pieces can ship in about two weeks when scope is tight.',
     },
     {
       question: 'What assets should I provide?',

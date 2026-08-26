@@ -804,10 +804,11 @@ export const SHOWCASE_PROJECT_IDS = [
   'atomic',
   'mosaic',
   'acodis',
-  'method-recycling',
   'wipster',
+  'giraffe',
+  'method-recycling',
   'meltwater',
-  'rspca-cats',
+  'heyyou',
   'united-nations',
 ] as const;
 

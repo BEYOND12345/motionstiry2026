@@ -43,7 +43,8 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
-      filter: (page) => !page.includes('/thank-you/'),
+      filter: (page) =>
+        !page.includes('/thank-you/') && !page.includes('/p/'),
       serialize: (item) => {
         const path = new URL(item.url).pathname;
 

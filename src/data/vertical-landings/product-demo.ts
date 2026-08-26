@@ -76,14 +76,14 @@ export const productDemoVerticalLanding: VerticalLandingConfig = {
   },
   faqs: [
     {
-      question: 'How is a product demo different from a SaaS explainer?',
+      question: 'How is a product demo different from SaaS motion graphics?',
       answer:
-        'A product demo walks through how it works. A SaaS explainer sells the story and the value. Many teams need both.',
+        'Product demos show physical products and tangible goods in action. SaaS motion graphics tell the software story — UI, workflows, and value — without a login. Many teams need both.',
     },
     ...VERTICAL_CORE_FAQS,
   ],
   links: [
-    { href: '/saas-explainer-videos/', eyebrow: 'SaaS', label: 'SaaS explainer videos →' },
+    { href: '/saas-explainer-videos/', eyebrow: 'SaaS', label: 'SaaS motion graphics →' },
     { href: '/startups/', eyebrow: 'Startups', label: 'Stories for startups →' },
     { href: '/explainer-videos/', eyebrow: 'Explainers', label: 'Explainer videos →' },
     { href: '/work/', eyebrow: 'Portfolio', label: 'See all work →' },

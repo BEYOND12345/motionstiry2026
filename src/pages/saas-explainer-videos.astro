@@ -8,10 +8,10 @@ const config = saasVerticalLanding;
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'SaaS Explainer Videos',
+  name: 'SaaS Motion Graphics',
   description: config.seo.metaDescription,
   provider: { '@type': 'Organization', name: 'Motion Story', url: 'https://motionstory.com.au' },
-  serviceType: 'SaaS Explainer Video',
+  serviceType: 'SaaS Motion Graphics',
   areaServed: 'Worldwide',
 };
 
@@ -21,7 +21,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://motionstory.com.au/' },
     { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://motionstory.com.au/services/' },
-    { '@type': 'ListItem', position: 3, name: 'SaaS Explainer Videos', item: 'https://motionstory.com.au/saas-explainer-videos/' },
+    { '@type': 'ListItem', position: 3, name: 'SaaS Motion Graphics', item: 'https://motionstory.com.au/saas-explainer-videos/' },
   ],
 };
 
@@ -40,7 +40,7 @@ const faqSchema = {
   title={config.seo.titleTag}
   description={config.seo.metaDescription}
   canonicalUrl={`https://motionstory.com.au${config.seo.canonicalPath}`}
-  floatSubject="SaaS explainer video"
+  floatSubject="SaaS motion graphics"
   ctaHeading="Clarify your SaaS story in minutes."
 >
   <Fragment slot="head">

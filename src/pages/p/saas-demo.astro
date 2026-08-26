@@ -1,0 +1,23 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import SalesDemoLanding from '../../components/SalesDemoLanding.astro';
+import { saasDemoSalesPage } from '../../data/sales-pages/saas-demo';
+
+const c = saasDemoSalesPage;
+---
+
+<PageLayout
+  title={c.seo.titleTag}
+  description={c.seo.metaDescription}
+  canonicalUrl="https://motionstory.com.au/p/saas-demo/"
+  floatSubject="SaaS product demo"
+  ctaHeading="Clarify your product. Book the meeting."
+  ctaLabel="Book a Strategy Call"
+  showCTA={true}
+>
+  <Fragment slot="head">
+    <meta name="robots" content="noindex, nofollow" />
+  </Fragment>
+
+  <SalesDemoLanding />
+</PageLayout>

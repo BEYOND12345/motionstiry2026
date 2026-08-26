@@ -33,9 +33,9 @@ export default function PortfolioPage() {
 
       {/* Project Count */}
       <div className="px-8 max-w-7xl mx-auto mt-16 mb-16">
-        <div className="border-b border-black/10 pb-6">
+        <div className="border-b border-black/10 pb-6 flex flex-wrap items-baseline justify-between gap-3">
           <span className="text-metadata opacity-30">
-            Strongest pieces first
+            {ORDERED_PROJECTS.length} films · strongest first
           </span>
         </div>
       </div>
@@ -61,7 +61,7 @@ export default function PortfolioPage() {
                 onMouseLeave={() => setHoveredId(null)}
               >
                 <div
-                  className="aspect-video bg-gray-100 overflow-hidden mb-6 relative"
+                  className="aspect-video bg-gray-100 overflow-hidden mb-6 relative rounded-xl"
                   style={{ viewTransitionName: `project-${project.slug}` }}
                 >
                   <img

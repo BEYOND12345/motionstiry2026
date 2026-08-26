@@ -29,7 +29,7 @@ const CLIENT_ROW_B = [
 ];
 
 const AUDIENCES = [
-  { title: "SaaS & Tech", desc: "SaaS explainer videos and product demo videos for complex software.", href: "/saas-explainer-videos/" },
+  { title: "SaaS & Tech", desc: "SaaS motion graphics and product demo videos for complex software.", href: "/saas-explainer-videos/" },
   { title: "Agencies & Studios", desc: "White label or collaborative creative direction — senior craft without another production layer.", href: "/agencies/" },
   { title: "Startups", desc: "Launch explainers and the first product story that has to land before a login.", href: "/startups/" },
   { title: "Causes & Nonprofits", desc: "Mission work with clarity, not noise.", href: "/causes/" },
@@ -69,7 +69,7 @@ function WorkCard({
       className="group w-full shrink-0 text-left"
       aria-label={`Play ${project.client}: ${project.title}`}
     >
-      <div className="relative aspect-video overflow-hidden bg-black/[0.04]">
+      <div className="relative aspect-video overflow-hidden rounded-xl bg-black/[0.04]">
         <img
           src={`https://vumbnail.com/${project.vimeoId}.jpg`}
           alt=""
@@ -433,7 +433,7 @@ export default function Homepage() {
                 <span className="mb-3 block text-metadata">Work</span>
                 <div className="flex flex-col gap-1.5">
                   <a href="/work/" className="text-body !text-sm transition-colors hover:text-black">All work</a>
-                  <a href="/saas-explainer-videos/" className="text-body !text-sm transition-colors hover:text-black">SaaS explainer videos</a>
+                  <a href="/saas-explainer-videos/" className="text-body !text-sm transition-colors hover:text-black">SaaS motion graphics</a>
                   <a href="/product-demo-videos/" className="text-body !text-sm transition-colors hover:text-black">Product demo videos</a>
                   <a href="/explainer-videos/" className="text-body !text-sm transition-colors hover:text-black">Explainer videos</a>
                   <a href="/motion-graphics/" className="text-body !text-sm transition-colors hover:text-black">Motion graphics</a>
