@@ -15,7 +15,7 @@ export const agenciesVerticalLanding: VerticalLandingConfig = {
   },
   eyebrow: 'Agencies & studios',
   headline: ['Senior craft.', 'No production maze.'],
-  lede: 'White label or collaborative creative direction — senior motion design without another production layer. You get direct access to the director responsible for the work.',
+  lede: 'Senior motion design, white label or collaborative — direct access to the director, no extra production layer.',
   heroVideo: {
     vimeoId: '649763018',
     title: 'Aon / Conversations',

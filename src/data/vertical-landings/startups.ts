@@ -15,7 +15,7 @@ export const startupsVerticalLanding: VerticalLandingConfig = {
   },
   eyebrow: 'Startups',
   headline: ['Stories for', 'startups.'],
-  lede: "Whether you're disrupting a marketplace or creating a whole new one, you need people to understand what you do and trust you to do it well. With a dynamic visual story, you can connect with investors, show the value your product brings, and clarify doubts about the next big idea.",
+  lede: 'Make the idea clear fast — for investors, customers, and anyone who needs to get it before they buy in.',
   heroVideo: {
     vimeoId: '863428533',
     title: 'Trusyft / Product Promo',

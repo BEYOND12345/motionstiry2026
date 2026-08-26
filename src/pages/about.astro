@@ -59,111 +59,115 @@ const structuredData = {
     })} />
   </Fragment>
 
-  <!-- Hero -->
-  <section class="pt-32 pb-20 px-8 max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-end">
+  <!-- Hero — same rhythm as Work / vertical landings -->
+  <section class="pt-32 pb-16 md:pb-20 px-8 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-start">
       <div class="md:col-span-8">
-        <span class="text-metadata mb-8 block">About</span>
-        <h1 class="font-display text-5xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-10">
+        <p class="text-metadata mb-6 md:mb-8">About</p>
+        <h1 class="font-display text-5xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-8 md:mb-10">
           I'm Dan.<br /><span class="brand-mark">Motion Story</span><br />is me.
         </h1>
-        <p class="text-body text-lg max-w-md mb-12">
+        <p class="text-body text-lg max-w-md mb-10 md:mb-12">
           {PROFILE_LEDE}
         </p>
-        <div class="flex flex-wrap gap-10">
-          <a href="/contact/" class="group flex items-center gap-3">
-            <span class="text-accent text-2xl">→</span>
-            <span class="text-nav-item">Start a project</span>
-          </a>
-          <a href="#work" class="group flex items-center gap-3">
-            <span class="text-accent text-2xl">↓</span>
-            <span class="text-nav-item">See the work</span>
-          </a>
+        <div class="flex flex-wrap items-center gap-5 md:gap-7">
+          <a href="/book/" class="about-btn">Book a call</a>
+          <a href="#work" class="about-link">See the work ↓</a>
         </div>
       </div>
-      <div class="md:col-span-4">
-        <div class="aspect-[4/5] overflow-hidden mb-4">
-          <img src="/daniel-neale.jpg" alt="Dan Neale, creative director of Motion Story" class="w-full h-full object-cover" loading="eager" />
+      <div class="md:col-span-4 md:pt-2">
+        <div class="w-36 md:w-44">
+          <div class="aspect-[4/5] overflow-hidden rounded-xl bg-black/[0.04] mb-3">
+            <img
+              src="/daniel-neale.jpg"
+              alt="Dan Neale, creative director of Motion Story"
+              class="w-full h-full object-cover"
+              loading="eager"
+              width="352"
+              height="440"
+            />
+          </div>
+          <p class="font-display text-sm font-medium tracking-tight">Dan Neale</p>
+          <p class="text-metadata mt-1 text-black/55">Motion designer &amp; director</p>
         </div>
-        <p class="text-metadata">Dan Neale — Byron Bay, Australia</p>
       </div>
     </div>
   </section>
 
   <!-- Stat strip -->
-  <section class="border-y border-black/10">
+  <section class="border-y border-black/10" aria-label="Highlights">
     <div class="max-w-7xl mx-auto px-8 grid grid-cols-2 md:grid-cols-4">
-      <div class="py-10 md:border-r border-black/10">
+      <div class="py-8 md:py-10 border-b md:border-b-0 border-black/10 md:border-r">
         <p class="font-display text-2xl md:text-3xl font-bold tracking-tight">2012</p>
-        <p class="text-metadata mt-2">Motion Story founded</p>
+        <p class="text-metadata mt-2 text-black/55">Motion Story founded</p>
       </div>
-      <div class="py-10 md:border-r border-black/10 md:pl-8">
+      <div class="py-8 md:py-10 border-b md:border-b-0 border-black/10 md:border-r md:pl-8">
         <p class="font-display text-2xl md:text-3xl font-bold tracking-tight">500+</p>
-        <p class="text-metadata mt-2">Projects delivered</p>
+        <p class="text-metadata mt-2 text-black/55">Projects delivered</p>
       </div>
-      <div class="py-10 md:border-r border-black/10 md:pl-8">
+      <div class="py-8 md:py-10 border-b md:border-b-0 border-r border-black/10 md:border-r md:pl-8">
         <p class="font-display text-2xl md:text-3xl font-bold tracking-tight">5.0 <span class="text-accent text-lg align-middle">★</span></p>
-        <p class="text-metadata mt-2">{GOOGLE_RATING.count} Google reviews</p>
+        <p class="text-metadata mt-2 text-black/55">{GOOGLE_RATING.count} Google reviews</p>
       </div>
-      <div class="py-10 md:pl-8">
+      <div class="py-8 md:py-10 md:pl-8">
         <p class="font-display text-2xl md:text-3xl font-bold tracking-tight">Remote</p>
-        <p class="text-metadata mt-2">NYC to NZ, always have</p>
+        <p class="text-metadata mt-2 text-black/55">NYC to NZ, always have</p>
       </div>
     </div>
   </section>
 
-  <!-- The story — short -->
-  <section class="px-8 max-w-7xl mx-auto py-24 md:py-28">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+  <!-- The story -->
+  <section class="px-8 max-w-7xl mx-auto py-20 md:py-28">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
       <div class="md:col-span-4">
-        <span class="text-metadata block"><span class="text-accent">01</span> — The story</span>
+        <p class="text-metadata"><span class="text-accent">01</span> — The story</p>
       </div>
-      <div class="md:col-span-7 space-y-6">
+      <div class="md:col-span-7 space-y-5 md:space-y-6">
         <p class="font-display text-2xl md:text-3xl font-medium tracking-tight leading-snug">
           {WHY_ME.lead}
         </p>
-        <p class="text-body text-lg leading-relaxed max-w-xl">
+        <p class="text-body text-lg leading-relaxed max-w-xl text-black/70">
           {WHY_ME.body}
         </p>
-        <p class="text-body text-lg leading-relaxed max-w-xl">
+        <p class="text-body text-lg leading-relaxed max-w-xl text-black/70">
           {WHY_ME.close}
         </p>
-        <p class="text-body text-lg leading-relaxed max-w-xl">
+        <p class="text-body text-lg leading-relaxed max-w-xl text-black/70">
           Making motion since 2010, Motion Story since 2012. No account managers. When a job is big I bring in specialists I direct, but nothing gets handed off. People find me through the work.
         </p>
-        <p class="text-body text-lg leading-relaxed max-w-xl">
+        <p class="text-body text-lg leading-relaxed max-w-xl text-black/70">
           Also built <a href="https://smashinvoices.com/" class="border-b border-black/20 hover:border-black transition-colors">SMASH Invoices</a> — a side product for quoting and invoicing by voice on the tools.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- One quiet proof line -->
-  <section class="px-8 max-w-7xl mx-auto pb-20">
-    <div class="border-t border-black/10 pt-12 max-w-3xl">
-      <blockquote class="font-display text-xl md:text-2xl font-medium tracking-tight leading-snug mb-6">
+  <!-- Proof -->
+  <section class="px-8 max-w-7xl mx-auto pb-16 md:pb-20">
+    <div class="border-t border-black/10 pt-10 md:pt-12 max-w-3xl">
+      <blockquote class="font-display text-xl md:text-2xl font-medium tracking-tight leading-snug mb-5 md:mb-6">
         “{strapline.quote}”
       </blockquote>
-      <p class="text-metadata">
+      <p class="text-metadata text-black/55">
         {strapline.name} — {strapline.role}, {strapline.company}
         <span class="mx-3 opacity-30">·</span>
         <span class="text-accent">★★★★★</span> {GOOGLE_RATING.score}
         <span class="mx-2 opacity-30">·</span>
-        <a href="/reviews/" class="border-b border-black/20 hover:border-black transition-colors">All reviews →</a>
+        <a href="/reviews/" class="border-b border-black/20 hover:border-black transition-colors text-black/55 hover:text-black">All reviews →</a>
       </p>
     </div>
   </section>
 
   <!-- Work -->
-  <section id="work" class="px-8 max-w-7xl mx-auto py-20 md:py-28">
-    <div class="flex flex-wrap items-baseline justify-between gap-4 mb-14">
-      <span class="text-metadata"><span class="text-accent">02</span> — The work</span>
+  <section id="work" class="px-8 max-w-7xl mx-auto py-16 md:py-28">
+    <div class="flex flex-wrap items-baseline justify-between gap-4 mb-10 md:mb-14">
+      <p class="text-metadata"><span class="text-accent">02</span> — The work</p>
       <a href="/work/" class="text-metadata hover:text-black transition-colors">Full portfolio →</a>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8">
       {aboutWork.map((project) => (
         <a href={`/casestudy/${project.slug}/`} class="group block">
-          <div class="aspect-video overflow-hidden bg-black/[0.04] mb-4">
+          <div class="aspect-video overflow-hidden rounded-xl bg-black/[0.04] mb-4">
             <img
               src={`https://vumbnail.com/${project.vimeoId}.jpg`}
               alt={project.title}
@@ -172,17 +176,17 @@ const structuredData = {
             />
           </div>
           <p class="font-display text-base font-medium group-hover:opacity-60 transition-opacity">{project.title}</p>
-          <p class="text-metadata opacity-50">{project.client}</p>
+          <p class="text-metadata opacity-50 mt-1">{project.client}</p>
         </a>
       ))}
     </div>
   </section>
 
-  <!-- Secondary detail — folded -->
-  <section class="px-8 max-w-7xl mx-auto pb-28">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+  <!-- More detail -->
+  <section class="px-8 max-w-7xl mx-auto pb-24 md:pb-28">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
       <div class="md:col-span-4">
-        <span class="text-metadata block"><span class="text-accent">03</span> — More detail</span>
+        <p class="text-metadata"><span class="text-accent">03</span> — More detail</p>
       </div>
       <div class="md:col-span-7">
         <div class="fold">
@@ -213,7 +217,7 @@ const structuredData = {
             <div class="fold-body">
               <ul>
                 <li>From $5,000. Most projects land $10,000–$15,000. Fixed quote upfront.</li>
-                <li>Most projects take 3–6 weeks from kickoff to delivery.</li>
+                <li>Most projects take 3–6 weeks from kickoff to delivery. Simpler pieces can ship in 2–4.</li>
                 <li>Limited concurrent projects, on purpose. Get in early.</li>
               </ul>
             </div>
@@ -223,3 +227,40 @@ const structuredData = {
     </div>
   </section>
 </PageLayout>
+
+<style>
+  .about-btn {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.75rem;
+    background: #0a0a0a;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: opacity 0.2s ease;
+  }
+
+  .about-btn:hover {
+    opacity: 0.85;
+  }
+
+  .about-btn:focus-visible {
+    outline: 2px solid #ff0000;
+    outline-offset: 3px;
+  }
+
+  .about-link {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: #555;
+    transition: color 0.2s ease;
+  }
+
+  .about-link:hover {
+    color: #0a0a0a;
+  }
+</style>

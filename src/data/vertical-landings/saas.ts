@@ -10,7 +10,7 @@ export const saasVerticalLanding: VerticalLandingConfig = {
   },
   eyebrow: 'SaaS motion graphics',
   headline: ['SaaS motion', 'graphics.'],
-  lede: 'Show what your software does, how it works, and the value it provides — in a fraction of the time. With your product in action on-screen, viewers start learning immediately.',
+  lede: 'Show what your software does and why it matters — product on screen, value clear in seconds.',
   heroVideo: {
     vimeoId: '866174146',
     title: 'Trudi / AI Property Management',

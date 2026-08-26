@@ -15,7 +15,7 @@ export const causesVerticalLanding: VerticalLandingConfig = {
   },
   eyebrow: 'Causes & nonprofits',
   headline: ['Stories for charities', '& nonprofits.'],
-  lede: "Start sharing what you care about, who you help, and the success stories you've created. Together we craft inspirational films that get to the heart of the complex problems you're up against.",
+  lede: 'Films that get to the heart of the problem — who you help, why it matters, and why people should get behind you.',
   heroVideo: {
     vimeoId: '540393117',
     title: 'United Nations / Plastic Waste Data',

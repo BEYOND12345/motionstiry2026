@@ -15,7 +15,7 @@ export const technologyVerticalLanding: VerticalLandingConfig = {
   },
   eyebrow: 'Technology videos',
   headline: ['Stories for', 'technology.'],
-  lede: 'From artificial intelligence and cyber security to crypto tokens and smart cities, the latest advances can be widely understood when you give them a worthy story.',
+  lede: 'AI, cyber, crypto, smart cities — complex tech made clear with a story people can follow.',
   heroVideo: {
     vimeoId: '879242129',
     title: 'Mosaic / Strategic Data Planning',

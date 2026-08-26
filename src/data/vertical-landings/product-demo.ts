@@ -15,7 +15,7 @@ export const productDemoVerticalLanding: VerticalLandingConfig = {
   },
   eyebrow: 'Product demo videos',
   headline: ['Stories for', 'products.'],
-  lede: 'Shine the best possible light on your creation. Informative explainers that give customers everything they need to know — all they have to do is click play.',
+  lede: 'Product on screen. Everything they need to know — play, understand, decide.',
   heroVideo: {
     vimeoId: '866174146',
     title: 'Trudi / AI Property Management',
