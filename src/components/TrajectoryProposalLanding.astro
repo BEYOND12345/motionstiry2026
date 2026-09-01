@@ -1,119 +1,128 @@
 ---
 /**
  * Private Trajectory proposal.
- * Editorial layout: numbered sections, clear type hierarchy, timeline as centerpiece.
+ * One clear spine: Plan → Why → Work → Investment → Close.
+ * Stages are the visual centerpiece. Other sections support, not compete.
  */
 import VimeoEmbed from './VimeoEmbed';
 import { trajectoryProposal as c } from '../data/sales-pages/trajectory';
 ---
 
 <div class="tp">
-  <header class="tp-hero">
-    <div class="tp-hero-copy">
-      <p class="tp-kicker">Private · for Arjun @ Trajectory</p>
-      <h1 class="tp-greeting">{c.greeting}</h1>
-      <p class="tp-lede">{c.lede}</p>
-    </div>
-    <aside class="tp-portrait">
-      <div class="tp-portrait-frame">
-        <img
-          src="/daniel-neale.jpg"
-          alt="Dan Neale"
-          width="352"
-          height="440"
-          loading="eager"
-        />
+  <!-- COVER -->
+  <header class="tp-cover">
+    <p class="tp-eyebrow">For Arjun · Trajectory</p>
+    <div class="tp-cover-grid">
+      <div class="tp-cover-copy">
+        <h1 class="tp-title">{c.greeting}</h1>
+        <p class="tp-intro">{c.lede}</p>
+        <nav class="tp-toc" aria-label="On this page">
+          <a href="#plan">The plan</a>
+          <a href="#why">Why me</a>
+          <a href="#work">Work</a>
+          <a href="#investment">Investment</a>
+        </nav>
       </div>
-      <p class="tp-portrait-name">{c.portraitCaption}</p>
-      <p class="tp-portrait-role">{c.portraitRole}</p>
-    </aside>
+      <aside class="tp-cover-aside">
+        <div class="tp-photo">
+          <img
+            src="/daniel-neale.jpg"
+            alt="Dan Neale"
+            width="480"
+            height="600"
+            loading="eager"
+          />
+        </div>
+        <p class="tp-photo-name">{c.portraitCaption}</p>
+        <p class="tp-photo-role">{c.portraitRole}</p>
+      </aside>
+    </div>
   </header>
 
-  <section class="tp-section tp-stages" aria-labelledby="tp-stages-title">
-    <header class="tp-section-head">
-      <p class="tp-index"><span class="tp-index-num">01</span> {c.stagesEyebrow}</p>
-      <h2 id="tp-stages-title" class="tp-h2">{c.stagesHeadline}</h2>
-      <p class="tp-lede-sm">{c.stagesLede}</p>
-    </header>
+  <!-- PLAN: stages + complexity as one chapter -->
+  <section id="plan" class="tp-chapter tp-plan">
+    <div class="tp-chapter-intro">
+      <p class="tp-eyebrow">{c.stagesEyebrow}</p>
+      <h2 class="tp-chapter-title">{c.stagesHeadline}</h2>
+      <p class="tp-chapter-lede">{c.stagesLede}</p>
+    </div>
 
-    <ol class="tp-timeline">
+    <ol class="tp-stages">
       {
         c.stages.map((stage, i) => (
-          <li class="tp-stop" style={`--i: ${i}`}>
-            <p class="tp-stop-num">{stage.num}</p>
-            <h3 class="tp-h3">{stage.title}</h3>
-            <p class="tp-body">{stage.body}</p>
-          </li>
-        ))
-      }
-    </ol>
-  </section>
-
-  <section class="tp-section tp-scale" aria-labelledby="tp-scale-title">
-    <header class="tp-section-head">
-      <p class="tp-index"><span class="tp-index-num">02</span> {c.scaleEyebrow}</p>
-      <h2 id="tp-scale-title" class="tp-h2">{c.scaleHeadline}</h2>
-      <p class="tp-lede-sm">{c.scaleLede}</p>
-    </header>
-
-    <ol class="tp-levels">
-      {
-        c.scaleLevels.map((item, i) => (
-          <li class="tp-level" style={`--i: ${i}`}>
-            <span class="tp-level-num">{item.level}</span>
-            <span class="tp-level-label">{item.label}</span>
-          </li>
-        ))
-      }
-    </ol>
-  </section>
-
-  <section class="tp-section tp-why" aria-labelledby="tp-why-title">
-    <header class="tp-section-head">
-      <p class="tp-index"><span class="tp-index-num">03</span> {c.whyEyebrow}</p>
-      <h2 id="tp-why-title" class="tp-h2">{c.whyHeadline}</h2>
-    </header>
-
-    <div class="tp-why-grid">
-      {
-        c.whyPoints.map((point, i) => (
-          <article class="tp-why-item">
-            <p class="tp-why-num">{String(i + 1).padStart(2, '0')}</p>
-            <div>
-              <h3 class="tp-h3">{point.title}</h3>
-              <p class="tp-body">{point.body}</p>
+          <li class="tp-stage" style={`--i: ${i}`}>
+            <span class="tp-stage-num" aria-hidden="true">{stage.num}</span>
+            <div class="tp-stage-copy">
+              <h3 class="tp-stage-title">{stage.title}</h3>
+              <p class="tp-stage-body">{stage.body}</p>
             </div>
-          </article>
+          </li>
         ))
       }
+    </ol>
+
+    <div class="tp-ladder">
+      <div class="tp-ladder-head">
+        <p class="tp-eyebrow">{c.scaleEyebrow}</p>
+        <h3 class="tp-ladder-title">{c.scaleHeadline}</h3>
+        <p class="tp-ladder-lede">{c.scaleLede}</p>
+      </div>
+      <ol class="tp-ladder-track">
+        {
+          c.scaleLevels.map((item, i) => (
+            <li class="tp-ladder-step" style={`--i: ${i}`}>
+              <span class="tp-ladder-mark">{item.level}</span>
+              <span class="tp-ladder-label">{item.label}</span>
+            </li>
+          ))
+        }
+      </ol>
     </div>
   </section>
 
-  <section class="tp-section tp-work" aria-labelledby="tp-work-title">
-    <header class="tp-section-head">
-      <p class="tp-index"><span class="tp-index-num">04</span> {c.workEyebrow}</p>
-      <h2 id="tp-work-title" class="tp-h2">{c.workHeadline}</h2>
-      <p class="tp-lede-sm">{c.workLede}</p>
-    </header>
+  <!-- WHY -->
+  <section id="why" class="tp-chapter tp-why">
+    <div class="tp-chapter-intro">
+      <p class="tp-eyebrow">{c.whyEyebrow}</p>
+      <h2 class="tp-chapter-title">{c.whyHeadline}</h2>
+    </div>
+    <ul class="tp-why-list">
+      {
+        c.whyPoints.map((point) => (
+          <li class="tp-why-item">
+            <h3 class="tp-why-title">{point.title}</h3>
+            <p class="tp-why-body">{point.body}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 
-    <div class="tp-work-grid">
+  <!-- WORK -->
+  <section id="work" class="tp-chapter tp-work">
+    <div class="tp-chapter-intro">
+      <p class="tp-eyebrow">{c.workEyebrow}</p>
+      <h2 class="tp-chapter-title">{c.workHeadline}</h2>
+      <p class="tp-chapter-lede">{c.workLede}</p>
+    </div>
+    <div class="tp-films">
       {
         c.work.map((piece) =>
           piece.kind === 'film' ? (
-            <article class="tp-work-item">
-              <p class="tp-meta">{piece.category}</p>
-              <div class="tp-work-film">
-                <VimeoEmbed
-                  client:visible
-                  vimeoId={piece.vimeoId}
-                  title={piece.client}
-                  loading="lazy"
-                  autoColor={true}
-                  className="rounded-xl"
-                />
+            <article class="tp-film">
+              <VimeoEmbed
+                client:visible
+                vimeoId={piece.vimeoId}
+                title={piece.client}
+                loading="lazy"
+                autoColor={true}
+                className="rounded-xl"
+              />
+              <div class="tp-film-meta">
+                <p class="tp-film-cat">{piece.category}</p>
+                <h3 class="tp-film-client">{piece.client}</h3>
+                <a href={piece.link} class="tp-text-link">Case study</a>
               </div>
-              <h3 class="tp-work-title">{piece.client}</h3>
-              <a href={piece.link} class="tp-link">Case study</a>
             </article>
           ) : null
         )
@@ -121,72 +130,67 @@ import { trajectoryProposal as c } from '../data/sales-pages/trajectory';
     </div>
   </section>
 
-  <section class="tp-section tp-pricing" aria-labelledby="tp-pricing-title">
-    <header class="tp-section-head">
-      <p class="tp-index"><span class="tp-index-num">05</span> {c.pricingEyebrow}</p>
-      <h2 id="tp-pricing-title" class="tp-h2">{c.pricingHeadline}</h2>
-      <p class="tp-lede-sm">{c.pricingLede}</p>
-    </header>
-
-    <div class="tp-rate">
-      <p class="tp-meta">Hourly starting rate</p>
-      <p class="tp-rate-value">{c.hourly.rate}</p>
-      <p class="tp-body">{c.hourly.note}</p>
+  <!-- INVESTMENT -->
+  <section id="investment" class="tp-chapter tp-invest">
+    <div class="tp-chapter-intro">
+      <p class="tp-eyebrow">{c.pricingEyebrow}</p>
+      <h2 class="tp-chapter-title">{c.pricingHeadline}</h2>
+      <p class="tp-chapter-lede">{c.pricingLede}</p>
     </div>
 
-    <div class="tp-ranges">
+    <div class="tp-rate-block">
+      <p class="tp-rate">{c.hourly.rate}</p>
+      <p class="tp-rate-note">{c.hourly.note}</p>
+    </div>
+
+    <ul class="tp-ranges">
       {
-        c.ranges.map((range, i) => (
-          <article class="tp-range">
-            <p class="tp-range-num">{String(i + 1).padStart(2, '0')}</p>
-            <h3 class="tp-h3">{range.title}</h3>
-            <p class="tp-body">{range.body}</p>
-          </article>
+        c.ranges.map((range) => (
+          <li class="tp-range">
+            <h3 class="tp-range-title">{range.title}</h3>
+            <p class="tp-range-body">{range.body}</p>
+          </li>
         ))
       }
-    </div>
+    </ul>
 
-    <div class="tp-notes">
-      <article class="tp-note">
-        <h3 class="tp-h3">Brand motion kit</h3>
-        <p class="tp-body">{c.kitNote}</p>
-      </article>
-      <article class="tp-note">
-        <h3 class="tp-h3">Ongoing retainer</h3>
-        <p class="tp-body">{c.retainerNote}</p>
-      </article>
+    <div class="tp-extras">
+      <div class="tp-extra">
+        <h3 class="tp-extra-title">Brand motion kit</h3>
+        <p class="tp-extra-body">{c.kitNote}</p>
+      </div>
+      <div class="tp-extra">
+        <h3 class="tp-extra-title">Ongoing retainer</h3>
+        <p class="tp-extra-body">{c.retainerNote}</p>
+      </div>
     </div>
   </section>
 
-  <section class="tp-section tp-close" aria-labelledby="tp-close-title">
-    <header class="tp-section-head">
-      <p class="tp-index"><span class="tp-index-num">06</span> Next step</p>
-      <h2 id="tp-close-title" class="tp-h2">{c.closeHeadline}</h2>
-      <p class="tp-lede-sm">{c.closeLede}</p>
-    </header>
+  <!-- CLOSE -->
+  <section class="tp-close" aria-labelledby="tp-close-title">
+    <h2 id="tp-close-title" class="tp-close-title">{c.closeHeadline}</h2>
+    <p class="tp-close-lede">{c.closeLede}</p>
     <div class="tp-close-actions">
       <a href={c.closeMailto} class="ms-btn">{c.closeCta}</a>
-      <a href="/book/" class="tp-link">Or book a short call</a>
+      <a href="/book/" class="tp-text-link">Or book a short call</a>
     </div>
   </section>
 </div>
 
 <style>
   .tp {
-    --tp-ink: #0a0a0a;
-    --tp-mute: #4a4a4a;
-    --tp-meta: #636363;
-    --tp-line: rgba(10, 10, 10, 0.1);
-    --tp-line-strong: rgba(10, 10, 10, 0.16);
-    --tp-soft: rgba(10, 10, 10, 0.035);
-    --tp-red: #ff0000;
-    --tp-pad: 1.5rem;
-    --tp-section-gap: 4.5rem;
+    --ink: #0a0a0a;
+    --mute: #505050;
+    --faint: #6e6e6e;
+    --line: rgba(10, 10, 10, 0.1);
+    --red: #ff0000;
+    --pad: 1.5rem;
+    --max: 70rem;
     box-sizing: border-box;
-    max-width: 72rem;
+    max-width: var(--max);
     margin: 0 auto;
-    padding: 7rem var(--tp-pad) 5.5rem;
-    color: var(--tp-ink);
+    padding: 6.5rem var(--pad) 5rem;
+    color: var(--ink);
   }
 
   .tp *,
@@ -197,537 +201,582 @@ import { trajectoryProposal as c } from '../data/sales-pages/trajectory';
 
   @media (min-width: 768px) {
     .tp {
-      --tp-pad: 2.5rem;
-      --tp-section-gap: 5.75rem;
-      padding: 8.5rem var(--tp-pad) 7rem;
+      --pad: 2.5rem;
+      padding: 8rem var(--pad) 6.5rem;
     }
   }
 
-  /* Type system */
-  .tp-kicker,
-  .tp-index,
-  .tp-meta,
-  .tp-stop-num,
-  .tp-level-num,
-  .tp-why-num,
-  .tp-range-num,
-  .tp-portrait-role {
+  .tp-eyebrow {
     font-family: var(--font-sans);
     font-size: 0.6875rem;
     font-weight: 500;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    line-height: 1.4;
+    color: var(--red);
+    margin: 0 0 1rem;
   }
 
-  .tp-kicker {
-    color: var(--tp-red);
-    margin: 0 0 1.25rem;
+  /* ——— COVER ——— */
+  .tp-cover {
+    padding-bottom: 4rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--line);
   }
 
-  .tp-index {
-    color: var(--tp-meta);
-    margin: 0 0 1.15rem;
+  @media (min-width: 768px) {
+    .tp-cover {
+      padding-bottom: 5rem;
+    }
   }
 
-  .tp-index-num {
-    color: var(--tp-red);
-    margin-right: 0.55rem;
+  .tp-cover-grid {
+    display: grid;
+    gap: 2.5rem;
+    margin-top: 0.25rem;
   }
 
-  .tp-meta {
-    color: var(--tp-meta);
-    margin: 0 0 0.7rem;
+  @media (min-width: 800px) {
+    .tp-cover-grid {
+      grid-template-columns: minmax(0, 1fr) 11rem;
+      gap: 4rem;
+      align-items: end;
+    }
   }
 
-  .tp-greeting,
-  .tp-h2,
-  .tp-h3,
-  .tp-work-title,
-  .tp-rate-value,
-  .tp-portrait-name,
-  .tp-level-label {
+  .tp-title {
     font-family: var(--font-display);
-    color: var(--tp-ink);
-  }
-
-  .tp-greeting {
-    font-size: clamp(2.4rem, 5.4vw, 3.75rem);
+    font-size: clamp(2.5rem, 6vw, 4.25rem);
     font-weight: 700;
-    letter-spacing: -0.04em;
-    line-height: 0.98;
+    letter-spacing: -0.045em;
+    line-height: 0.95;
     margin: 0 0 1.35rem;
     text-wrap: balance;
   }
 
-  .tp-h2 {
-    font-size: clamp(1.85rem, 3.4vw, 2.65rem);
-    font-weight: 700;
-    letter-spacing: -0.035em;
-    line-height: 1.08;
-    margin: 0 0 0.9rem;
-    text-wrap: balance;
-    max-width: 18ch;
-  }
-
-  .tp-h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: -0.025em;
-    line-height: 1.2;
-    margin: 0 0 0.65rem;
-  }
-
-  .tp-lede,
-  .tp-lede-sm,
-  .tp-body {
+  .tp-intro {
     font-family: var(--font-sans);
-    font-weight: 400;
-    color: var(--tp-mute);
+    font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+    line-height: 1.55;
+    color: var(--mute);
+    max-width: 32rem;
+    margin: 0 0 2rem;
   }
 
-  .tp-lede {
-    max-width: 34rem;
-    font-size: 1.125rem;
-    line-height: 1.6;
-    margin: 0;
+  .tp-toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem 1.5rem;
   }
 
-  .tp-lede-sm {
-    max-width: 36rem;
-    font-size: 1.0625rem;
-    line-height: 1.6;
-    margin: 0;
+  .tp-toc a {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--faint);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.1rem;
+    transition: color 0.2s ease, border-color 0.2s ease;
   }
 
-  .tp-body {
-    font-size: 1rem;
-    line-height: 1.65;
-    margin: 0;
-    max-width: 34rem;
+  .tp-toc a:hover {
+    color: var(--ink);
+    border-color: var(--ink);
   }
 
-  /* Hero */
-  .tp-hero {
-    display: grid;
-    gap: 2.75rem;
-    padding-bottom: 3.75rem;
-    margin-bottom: var(--tp-section-gap);
-    border-bottom: 1px solid var(--tp-line-strong);
+  .tp-cover-aside {
+    width: 8rem;
   }
 
-  @media (min-width: 768px) {
-    .tp-hero {
-      grid-template-columns: minmax(0, 1fr) 9.5rem;
-      align-items: end;
-      gap: 4rem;
-      padding-bottom: 4.5rem;
-    }
-  }
-
-  .tp-portrait {
-    width: 7.5rem;
-  }
-
-  @media (min-width: 768px) {
-    .tp-portrait {
-      width: 9.5rem;
+  @media (min-width: 800px) {
+    .tp-cover-aside {
+      width: 11rem;
       justify-self: end;
     }
   }
 
-  .tp-portrait-frame {
+  .tp-photo {
     aspect-ratio: 4 / 5;
     overflow: hidden;
     border-radius: 0.75rem;
-    background: var(--tp-soft);
+    background: rgba(10, 10, 10, 0.04);
     margin-bottom: 0.85rem;
   }
 
-  .tp-portrait-frame img {
+  .tp-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
 
-  .tp-portrait-name {
+  .tp-photo-name {
+    font-family: var(--font-display);
     font-size: 0.95rem;
     font-weight: 500;
     letter-spacing: -0.015em;
-    margin: 0 0 0.3rem;
+    margin: 0 0 0.25rem;
   }
 
-  .tp-portrait-role {
-    color: var(--tp-meta);
+  .tp-photo-role {
+    font-family: var(--font-sans);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--faint);
     margin: 0;
-    letter-spacing: 0.1em;
   }
 
-  /* Sections */
-  .tp-section {
-    padding-top: var(--tp-section-gap);
-    border-top: 1px solid var(--tp-line);
+  /* ——— CHAPTER SHELL ——— */
+  .tp-chapter {
+    padding: 4.5rem 0 0;
+    scroll-margin-top: 6rem;
   }
 
-  .tp-stages {
-    border-top: none;
-    padding-top: 0;
+  @media (min-width: 768px) {
+    .tp-chapter {
+      padding: 5.75rem 0 0;
+    }
   }
 
-  .tp-section-head {
+  .tp-chapter-intro {
+    max-width: 36rem;
     margin-bottom: 2.75rem;
   }
 
   @media (min-width: 768px) {
-    .tp-section-head {
-      margin-bottom: 3.25rem;
+    .tp-chapter-intro {
+      margin-bottom: 3.5rem;
     }
   }
 
-  /* Timeline */
-  .tp-timeline {
+  .tp-chapter-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    margin: 0 0 0.9rem;
+    text-wrap: balance;
+  }
+
+  .tp-chapter-lede {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--mute);
+    margin: 0;
+    max-width: 34rem;
+  }
+
+  /* ——— STAGES (centerpiece) ——— */
+  .tp-stages {
     list-style: none;
     margin: 0;
     padding: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .tp-stage {
     display: grid;
-    gap: 0;
-    counter-reset: none;
-  }
-
-  @media (max-width: 899px) {
-    .tp-stop {
-      position: relative;
-      padding: 0 0 2.25rem 1.35rem;
-      border-left: 1px solid var(--tp-line-strong);
-    }
-
-    .tp-stop:last-child {
-      padding-bottom: 0;
-    }
-
-    .tp-stop::before {
-      content: '';
-      position: absolute;
-      left: -0.28rem;
-      top: 0.35rem;
-      width: 0.55rem;
-      height: 0.55rem;
-      border-radius: 999px;
-      background: var(--tp-ink);
-      box-shadow: 0 0 0 4px #fff;
-    }
-
-    .tp-stop:first-child::before {
-      background: var(--tp-red);
-    }
-  }
-
-  @media (min-width: 900px) {
-    .tp-timeline {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0 2.5rem;
-      position: relative;
-      padding-top: 1.75rem;
-    }
-
-    .tp-timeline::before {
-      content: '';
-      position: absolute;
-      top: 0.35rem;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: var(--tp-line-strong);
-    }
-
-    .tp-stop {
-      position: relative;
-      padding-top: 0.25rem;
-    }
-
-    .tp-stop::before {
-      content: '';
-      position: absolute;
-      top: -1.55rem;
-      left: 0;
-      width: 0.65rem;
-      height: 0.65rem;
-      border-radius: 999px;
-      background: var(--tp-ink);
-      box-shadow: 0 0 0 5px #fff;
-    }
-
-    .tp-stop:first-child::before {
-      background: var(--tp-red);
-    }
-  }
-
-  .tp-stop {
+    gap: 0.75rem 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--line);
     opacity: 0;
-    transform: translateY(10px);
-    animation: tp-rise 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: calc(0.08s + var(--i) * 0.1s);
-  }
-
-  .tp-stop-num {
-    color: var(--tp-red);
-    margin: 0 0 0.85rem;
-  }
-
-  .tp-stop .tp-body {
-    max-width: 22rem;
-  }
-
-  /* Complexity ladder */
-  .tp-levels {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 0;
-    border-top: 1px solid var(--tp-line);
-  }
-
-  .tp-level {
-    display: grid;
-    grid-template-columns: 2.5rem 1fr;
-    gap: 1rem;
-    align-items: baseline;
-    padding: 1.15rem 0;
-    border-bottom: 1px solid var(--tp-line);
-    opacity: 0;
-    animation: tp-rise 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: calc(0.2s + var(--i) * 0.06s);
-  }
-
-  @media (min-width: 900px) {
-    .tp-levels {
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      border-top: none;
-      gap: 0;
-      position: relative;
-    }
-
-    .tp-levels::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 1px;
-      background: var(--tp-line-strong);
-    }
-
-    .tp-level {
-      grid-template-columns: 1fr;
-      gap: 0.85rem;
-      padding: 0 1.25rem 1.35rem 0;
-      border-bottom: none;
-      border-right: 1px solid var(--tp-line);
-      min-height: 8.5rem;
-      align-content: end;
-    }
-
-    .tp-level:last-child {
-      border-right: none;
-      padding-right: 0;
-    }
-  }
-
-  .tp-level-num {
-    color: var(--tp-red);
-  }
-
-  .tp-level-label {
-    font-size: 1.05rem;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    line-height: 1.3;
-  }
-
-  /* Why me */
-  .tp-why-grid {
-    display: grid;
-    gap: 0;
-    border-top: 1px solid var(--tp-line);
+    transform: translateY(14px);
+    animation: tp-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(0.1s + var(--i) * 0.12s);
   }
 
   @media (min-width: 768px) {
-    .tp-why-grid {
+    .tp-stage {
+      grid-template-columns: 6.5rem minmax(0, 1fr);
+      gap: 2rem 3rem;
+      padding: 2.75rem 0;
+      align-items: start;
+    }
+  }
+
+  .tp-stage-num {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 8vw, 5.5rem);
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    line-height: 0.85;
+    color: var(--red);
+  }
+
+  .tp-stage-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0 0 0.75rem;
+  }
+
+  .tp-stage-body {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--mute);
+    margin: 0;
+    max-width: 36rem;
+  }
+
+  /* Complexity ladder — nested under plan, quieter */
+  .tp-ladder {
+    margin-top: 3.5rem;
+    padding: 2.5rem 0 0;
+    border-top: 1px solid var(--line);
+  }
+
+  @media (min-width: 768px) {
+    .tp-ladder {
+      margin-top: 4.25rem;
+      padding-top: 3rem;
+    }
+  }
+
+  .tp-ladder-head {
+    max-width: 34rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .tp-ladder-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    margin: 0 0 0.55rem;
+  }
+
+  .tp-ladder-lede {
+    font-family: var(--font-sans);
+    font-size: 0.9875rem;
+    line-height: 1.55;
+    color: var(--mute);
+    margin: 0;
+  }
+
+  .tp-ladder-track {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0;
+    position: relative;
+  }
+
+  @media (min-width: 900px) {
+    .tp-ladder-track {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0 1rem;
+      padding-top: 1.5rem;
+    }
+
+    .tp-ladder-track::before {
+      content: '';
+      position: absolute;
+      top: 0.35rem;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(255, 0, 0, 0.25), var(--red));
+      border-radius: 999px;
+    }
+  }
+
+  .tp-ladder-step {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0.75rem;
+    align-items: baseline;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  @media (min-width: 900px) {
+    .tp-ladder-step {
+      grid-template-columns: 1fr;
+      gap: 0.65rem;
+      padding: 0;
+      border-bottom: none;
+      position: relative;
+    }
+
+    .tp-ladder-step::before {
+      content: '';
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 999px;
+      background: var(--red);
+      position: absolute;
+      top: -1.3rem;
+      left: 0;
+      box-shadow: 0 0 0 4px #fff;
+    }
+  }
+
+  .tp-ladder-mark {
+    font-family: var(--font-sans);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+
+  .tp-ladder-label {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+  }
+
+  /* ——— WHY ——— */
+  .tp-why {
+    border-top: 1px solid var(--line);
+    margin-top: 4.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .tp-why {
+      margin-top: 5.75rem;
+    }
+  }
+
+  .tp-why-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 2rem 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .tp-why-list {
       grid-template-columns: 1fr 1fr;
     }
   }
 
-  .tp-why-item {
-    display: grid;
-    grid-template-columns: 2.25rem 1fr;
-    gap: 0.85rem;
-    padding: 1.75rem 0;
-    border-bottom: 1px solid var(--tp-line);
+  .tp-why-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin: 0 0 0.5rem;
+  }
+
+  .tp-why-body {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--mute);
+    margin: 0;
+    max-width: 28rem;
+  }
+
+  /* ——— WORK ——— */
+  .tp-work {
+    border-top: 1px solid var(--line);
+    margin-top: 4.5rem;
   }
 
   @media (min-width: 768px) {
-    .tp-why-item {
-      padding: 1.85rem 2rem 1.85rem 0;
-      border-right: 1px solid var(--tp-line);
-    }
-
-    .tp-why-item:nth-child(even) {
-      padding-left: 2rem;
-      padding-right: 0;
-      border-right: none;
-    }
-
-    .tp-why-item:nth-child(1),
-    .tp-why-item:nth-child(2) {
-      border-top: none;
+    .tp-work {
+      margin-top: 5.75rem;
     }
   }
 
-  .tp-why-num {
-    color: var(--tp-red);
-    margin: 0.2rem 0 0;
-  }
-
-  /* Work */
-  .tp-work-grid {
+  .tp-films {
     display: grid;
-    gap: 2.75rem 1.75rem;
+    gap: 2.5rem 1.5rem;
   }
 
   @media (min-width: 700px) {
-    .tp-work-grid {
+    .tp-films {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
   @media (min-width: 1024px) {
-    .tp-work-grid {
+    .tp-films {
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 3rem 1.75rem;
+      gap: 2.75rem 1.5rem;
     }
   }
 
-  .tp-work-film {
-    margin-bottom: 1rem;
+  .tp-film-meta {
+    margin-top: 0.9rem;
   }
 
-  .tp-work-title {
-    font-size: 1.15rem;
+  .tp-film-cat {
+    font-family: var(--font-sans);
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin: 0 0 0.35rem;
+  }
+
+  .tp-film-client {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: -0.02em;
-    line-height: 1.2;
-    margin: 0 0 0.55rem;
+    margin: 0 0 0.45rem;
   }
 
-  .tp-link {
+  .tp-text-link {
     display: inline-block;
     font-family: var(--font-sans);
     font-size: 0.875rem;
     font-weight: 500;
-    line-height: 1.3;
-    color: var(--tp-mute);
-    border-bottom: 1px solid rgba(10, 10, 10, 0.22);
-    padding-bottom: 0.12rem;
+    color: var(--mute);
+    border-bottom: 1px solid rgba(10, 10, 10, 0.2);
+    padding-bottom: 0.1rem;
     transition: color 0.2s ease, border-color 0.2s ease;
   }
 
-  .tp-link:hover {
-    color: var(--tp-ink);
-    border-color: var(--tp-ink);
+  .tp-text-link:hover {
+    color: var(--ink);
+    border-color: var(--ink);
   }
 
-  /* Pricing */
-  .tp-rate {
-    padding: 1.75rem 0 2rem;
+  /* ——— INVESTMENT ——— */
+  .tp-invest {
+    border-top: 1px solid var(--line);
+    margin-top: 4.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .tp-invest {
+      margin-top: 5.75rem;
+    }
+  }
+
+  .tp-rate-block {
+    padding: 2rem 0;
     margin-bottom: 2.5rem;
-    border-top: 1px solid var(--tp-line-strong);
-    border-bottom: 1px solid var(--tp-line-strong);
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
   }
 
-  .tp-rate-value {
-    font-size: clamp(2rem, 3.5vw, 2.75rem);
+  .tp-rate {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
     font-weight: 700;
-    letter-spacing: -0.035em;
+    letter-spacing: -0.04em;
     line-height: 1;
     margin: 0 0 0.85rem;
   }
 
+  .tp-rate-note {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.55;
+    color: var(--mute);
+    margin: 0;
+    max-width: 34rem;
+  }
+
   .tp-ranges {
+    list-style: none;
+    margin: 0 0 2.75rem;
+    padding: 0;
     display: grid;
-    gap: 0;
-    margin-bottom: 2.75rem;
-    border-top: 1px solid var(--tp-line);
+    gap: 1.5rem;
   }
 
   @media (min-width: 768px) {
     .tp-ranges {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2rem;
     }
   }
 
-  .tp-range {
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--tp-line);
+  .tp-range-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.45rem;
   }
 
-  @media (min-width: 768px) {
-    .tp-range {
-      padding: 1.5rem 1.75rem 1.5rem 0;
-      border-bottom: none;
-      border-right: 1px solid var(--tp-line);
-    }
-
-    .tp-range:last-child {
-      border-right: none;
-      padding-right: 0;
-    }
+  .tp-range-body {
+    font-family: var(--font-sans);
+    font-size: 0.9875rem;
+    line-height: 1.55;
+    color: var(--mute);
+    margin: 0;
   }
 
-  .tp-range-num {
-    color: var(--tp-red);
-    margin: 0 0 0.85rem;
-  }
-
-  .tp-notes {
+  .tp-extras {
     display: grid;
-    gap: 0;
-    border-top: 1px solid var(--tp-line);
+    gap: 1.75rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
   }
 
   @media (min-width: 768px) {
-    .tp-notes {
+    .tp-extras {
       grid-template-columns: 1fr 1fr;
+      gap: 3rem;
     }
   }
 
-  .tp-note {
-    padding: 1.75rem 0;
-    border-bottom: 1px solid var(--tp-line);
+  .tp-extra-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.45rem;
+  }
+
+  .tp-extra-body {
+    font-family: var(--font-sans);
+    font-size: 0.9875rem;
+    line-height: 1.55;
+    color: var(--mute);
+    margin: 0;
+  }
+
+  /* ——— CLOSE ——— */
+  .tp-close {
+    margin-top: 4.5rem;
+    padding: 3rem 0 0;
+    border-top: 2px solid var(--ink);
+    max-width: 34rem;
+    scroll-margin-top: 6rem;
   }
 
   @media (min-width: 768px) {
-    .tp-note {
-      padding: 1.75rem 2rem 0 0;
-      border-bottom: none;
-      border-right: 1px solid var(--tp-line);
-    }
-
-    .tp-note:last-child {
-      border-right: none;
-      padding-right: 0;
-      padding-left: 2rem;
+    .tp-close {
+      margin-top: 5.75rem;
+      padding-top: 3.5rem;
     }
   }
 
-  /* Close */
-  .tp-close {
-    border-top: 1px solid var(--tp-line-strong);
+  .tp-close-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    margin: 0 0 0.9rem;
   }
 
-  .tp-close .tp-section-head {
-    margin-bottom: 1.75rem;
+  .tp-close-lede {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    color: var(--mute);
+    margin: 0 0 1.75rem;
   }
 
   .tp-close-actions {
@@ -737,16 +786,15 @@ import { trajectoryProposal as c } from '../data/sales-pages/trajectory';
     gap: 1.25rem 1.75rem;
   }
 
-  @keyframes tp-rise {
+  @keyframes tp-in {
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: none;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .tp-stop,
-    .tp-level {
+    .tp-stage {
       opacity: 1;
       transform: none;
       animation: none;
