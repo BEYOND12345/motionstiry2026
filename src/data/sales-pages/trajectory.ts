@@ -10,8 +10,9 @@ export const trajectoryProposal = {
       'A simple visual on how Dan Neale and Motion Story would work with Trajectory: quick start, brand motion kit, ongoing content.',
   },
 
-  greeting: 'Arjun, great chatting today.',
-  lede: "Here's a simple visual on how I'd suggest we work together. Built for you, not a template I send around.",
+  greeting: 'Trajectory Motion',
+  tagline: 'Your on-call storytelling partner.',
+  lede: "You need someone you can call when an idea has to go out this week, not in a few days. That's me. I'm Dan, creative director and hands-on motion designer in one, so there's no producers to chase, no handoffs, just a direct line to the person actually doing the work. You bring the idea, I bring the story and the execution, start to finish.",
   portraitCaption: 'Dan Neale',
   portraitRole: 'Motion designer & creative director',
 

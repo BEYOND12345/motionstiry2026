@@ -15,6 +15,7 @@ import { trajectoryProposal as c } from '../data/sales-pages/trajectory';
     <div class="tp-cover-grid">
       <div class="tp-cover-copy">
         <h1 class="tp-title">{c.greeting}</h1>
+        <p class="tp-tagline">{c.tagline}</p>
         <p class="tp-intro">{c.lede}</p>
         <nav class="tp-toc" aria-label="On this page">
           <a href="#plan">The plan</a>
@@ -28,8 +29,8 @@ import { trajectoryProposal as c } from '../data/sales-pages/trajectory';
           <img
             src="/daniel-neale.jpg"
             alt="Dan Neale"
-            width="480"
-            height="600"
+            width="280"
+            height="350"
             loading="eager"
           />
         </div>
@@ -231,15 +232,15 @@ import { trajectoryProposal as c } from '../data/sales-pages/trajectory';
 
   .tp-cover-grid {
     display: grid;
-    gap: 2.5rem;
+    gap: 2rem;
     margin-top: 0.25rem;
   }
 
   @media (min-width: 800px) {
     .tp-cover-grid {
-      grid-template-columns: minmax(0, 1fr) 11rem;
-      gap: 4rem;
-      align-items: end;
+      grid-template-columns: minmax(0, 1fr) 7.5rem;
+      gap: 3.5rem;
+      align-items: start;
     }
   }
 
@@ -249,16 +250,27 @@ import { trajectoryProposal as c } from '../data/sales-pages/trajectory';
     font-weight: 700;
     letter-spacing: -0.045em;
     line-height: 0.95;
-    margin: 0 0 1.35rem;
+    margin: 0 0 0.85rem;
     text-wrap: balance;
+  }
+
+  .tp-tagline {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+    color: var(--ink);
+    margin: 0 0 1.35rem;
+    max-width: 28rem;
   }
 
   .tp-intro {
     font-family: var(--font-sans);
-    font-size: clamp(1.05rem, 1.5vw, 1.2rem);
-    line-height: 1.55;
+    font-size: clamp(1rem, 1.3vw, 1.1rem);
+    line-height: 1.65;
     color: var(--mute);
-    max-width: 32rem;
+    max-width: 36rem;
     margin: 0 0 2rem;
   }
 
@@ -285,13 +297,15 @@ import { trajectoryProposal as c } from '../data/sales-pages/trajectory';
   }
 
   .tp-cover-aside {
-    width: 8rem;
+    width: 6.5rem;
+    margin-top: 0.15rem;
   }
 
   @media (min-width: 800px) {
     .tp-cover-aside {
-      width: 11rem;
+      width: 7.5rem;
       justify-self: end;
+      margin-top: 0.35rem;
     }
   }
 
@@ -300,7 +314,7 @@ import { trajectoryProposal as c } from '../data/sales-pages/trajectory';
     overflow: hidden;
     border-radius: 0.75rem;
     background: rgba(10, 10, 10, 0.04);
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.7rem;
   }
 
   .tp-photo img {
@@ -312,20 +326,21 @@ import { trajectoryProposal as c } from '../data/sales-pages/trajectory';
 
   .tp-photo-name {
     font-family: var(--font-display);
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 500;
     letter-spacing: -0.015em;
-    margin: 0 0 0.25rem;
+    margin: 0 0 0.2rem;
   }
 
   .tp-photo-role {
     font-family: var(--font-sans);
-    font-size: 0.625rem;
+    font-size: 0.5625rem;
     font-weight: 500;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--faint);
     margin: 0;
+    line-height: 1.35;
   }
 
   /* ——— CHAPTER SHELL ——— */
