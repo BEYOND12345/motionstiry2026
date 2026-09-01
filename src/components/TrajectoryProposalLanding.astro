@@ -1,0 +1,755 @@
+---
+/**
+ * Private Trajectory proposal.
+ * Editorial layout: numbered sections, clear type hierarchy, timeline as centerpiece.
+ */
+import VimeoEmbed from './VimeoEmbed';
+import { trajectoryProposal as c } from '../data/sales-pages/trajectory';
+---
+
+<div class="tp">
+  <header class="tp-hero">
+    <div class="tp-hero-copy">
+      <p class="tp-kicker">Private · for Arjun @ Trajectory</p>
+      <h1 class="tp-greeting">{c.greeting}</h1>
+      <p class="tp-lede">{c.lede}</p>
+    </div>
+    <aside class="tp-portrait">
+      <div class="tp-portrait-frame">
+        <img
+          src="/daniel-neale.jpg"
+          alt="Dan Neale"
+          width="352"
+          height="440"
+          loading="eager"
+        />
+      </div>
+      <p class="tp-portrait-name">{c.portraitCaption}</p>
+      <p class="tp-portrait-role">{c.portraitRole}</p>
+    </aside>
+  </header>
+
+  <section class="tp-section tp-stages" aria-labelledby="tp-stages-title">
+    <header class="tp-section-head">
+      <p class="tp-index"><span class="tp-index-num">01</span> {c.stagesEyebrow}</p>
+      <h2 id="tp-stages-title" class="tp-h2">{c.stagesHeadline}</h2>
+      <p class="tp-lede-sm">{c.stagesLede}</p>
+    </header>
+
+    <ol class="tp-timeline">
+      {
+        c.stages.map((stage, i) => (
+          <li class="tp-stop" style={`--i: ${i}`}>
+            <p class="tp-stop-num">{stage.num}</p>
+            <h3 class="tp-h3">{stage.title}</h3>
+            <p class="tp-body">{stage.body}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="tp-section tp-scale" aria-labelledby="tp-scale-title">
+    <header class="tp-section-head">
+      <p class="tp-index"><span class="tp-index-num">02</span> {c.scaleEyebrow}</p>
+      <h2 id="tp-scale-title" class="tp-h2">{c.scaleHeadline}</h2>
+      <p class="tp-lede-sm">{c.scaleLede}</p>
+    </header>
+
+    <ol class="tp-levels">
+      {
+        c.scaleLevels.map((item, i) => (
+          <li class="tp-level" style={`--i: ${i}`}>
+            <span class="tp-level-num">{item.level}</span>
+            <span class="tp-level-label">{item.label}</span>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="tp-section tp-why" aria-labelledby="tp-why-title">
+    <header class="tp-section-head">
+      <p class="tp-index"><span class="tp-index-num">03</span> {c.whyEyebrow}</p>
+      <h2 id="tp-why-title" class="tp-h2">{c.whyHeadline}</h2>
+    </header>
+
+    <div class="tp-why-grid">
+      {
+        c.whyPoints.map((point, i) => (
+          <article class="tp-why-item">
+            <p class="tp-why-num">{String(i + 1).padStart(2, '0')}</p>
+            <div>
+              <h3 class="tp-h3">{point.title}</h3>
+              <p class="tp-body">{point.body}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="tp-section tp-work" aria-labelledby="tp-work-title">
+    <header class="tp-section-head">
+      <p class="tp-index"><span class="tp-index-num">04</span> {c.workEyebrow}</p>
+      <h2 id="tp-work-title" class="tp-h2">{c.workHeadline}</h2>
+      <p class="tp-lede-sm">{c.workLede}</p>
+    </header>
+
+    <div class="tp-work-grid">
+      {
+        c.work.map((piece) =>
+          piece.kind === 'film' ? (
+            <article class="tp-work-item">
+              <p class="tp-meta">{piece.category}</p>
+              <div class="tp-work-film">
+                <VimeoEmbed
+                  client:visible
+                  vimeoId={piece.vimeoId}
+                  title={piece.client}
+                  loading="lazy"
+                  autoColor={true}
+                  className="rounded-xl"
+                />
+              </div>
+              <h3 class="tp-work-title">{piece.client}</h3>
+              <a href={piece.link} class="tp-link">Case study</a>
+            </article>
+          ) : null
+        )
+      }
+    </div>
+  </section>
+
+  <section class="tp-section tp-pricing" aria-labelledby="tp-pricing-title">
+    <header class="tp-section-head">
+      <p class="tp-index"><span class="tp-index-num">05</span> {c.pricingEyebrow}</p>
+      <h2 id="tp-pricing-title" class="tp-h2">{c.pricingHeadline}</h2>
+      <p class="tp-lede-sm">{c.pricingLede}</p>
+    </header>
+
+    <div class="tp-rate">
+      <p class="tp-meta">Hourly starting rate</p>
+      <p class="tp-rate-value">{c.hourly.rate}</p>
+      <p class="tp-body">{c.hourly.note}</p>
+    </div>
+
+    <div class="tp-ranges">
+      {
+        c.ranges.map((range, i) => (
+          <article class="tp-range">
+            <p class="tp-range-num">{String(i + 1).padStart(2, '0')}</p>
+            <h3 class="tp-h3">{range.title}</h3>
+            <p class="tp-body">{range.body}</p>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="tp-notes">
+      <article class="tp-note">
+        <h3 class="tp-h3">Brand motion kit</h3>
+        <p class="tp-body">{c.kitNote}</p>
+      </article>
+      <article class="tp-note">
+        <h3 class="tp-h3">Ongoing retainer</h3>
+        <p class="tp-body">{c.retainerNote}</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="tp-section tp-close" aria-labelledby="tp-close-title">
+    <header class="tp-section-head">
+      <p class="tp-index"><span class="tp-index-num">06</span> Next step</p>
+      <h2 id="tp-close-title" class="tp-h2">{c.closeHeadline}</h2>
+      <p class="tp-lede-sm">{c.closeLede}</p>
+    </header>
+    <div class="tp-close-actions">
+      <a href={c.closeMailto} class="ms-btn">{c.closeCta}</a>
+      <a href="/book/" class="tp-link">Or book a short call</a>
+    </div>
+  </section>
+</div>
+
+<style>
+  .tp {
+    --tp-ink: #0a0a0a;
+    --tp-mute: #4a4a4a;
+    --tp-meta: #636363;
+    --tp-line: rgba(10, 10, 10, 0.1);
+    --tp-line-strong: rgba(10, 10, 10, 0.16);
+    --tp-soft: rgba(10, 10, 10, 0.035);
+    --tp-red: #ff0000;
+    --tp-pad: 1.5rem;
+    --tp-section-gap: 4.5rem;
+    box-sizing: border-box;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 7rem var(--tp-pad) 5.5rem;
+    color: var(--tp-ink);
+  }
+
+  .tp *,
+  .tp *::before,
+  .tp *::after {
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 768px) {
+    .tp {
+      --tp-pad: 2.5rem;
+      --tp-section-gap: 5.75rem;
+      padding: 8.5rem var(--tp-pad) 7rem;
+    }
+  }
+
+  /* Type system */
+  .tp-kicker,
+  .tp-index,
+  .tp-meta,
+  .tp-stop-num,
+  .tp-level-num,
+  .tp-why-num,
+  .tp-range-num,
+  .tp-portrait-role {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  .tp-kicker {
+    color: var(--tp-red);
+    margin: 0 0 1.25rem;
+  }
+
+  .tp-index {
+    color: var(--tp-meta);
+    margin: 0 0 1.15rem;
+  }
+
+  .tp-index-num {
+    color: var(--tp-red);
+    margin-right: 0.55rem;
+  }
+
+  .tp-meta {
+    color: var(--tp-meta);
+    margin: 0 0 0.7rem;
+  }
+
+  .tp-greeting,
+  .tp-h2,
+  .tp-h3,
+  .tp-work-title,
+  .tp-rate-value,
+  .tp-portrait-name,
+  .tp-level-label {
+    font-family: var(--font-display);
+    color: var(--tp-ink);
+  }
+
+  .tp-greeting {
+    font-size: clamp(2.4rem, 5.4vw, 3.75rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 0.98;
+    margin: 0 0 1.35rem;
+    text-wrap: balance;
+  }
+
+  .tp-h2 {
+    font-size: clamp(1.85rem, 3.4vw, 2.65rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+    margin: 0 0 0.9rem;
+    text-wrap: balance;
+    max-width: 18ch;
+  }
+
+  .tp-h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    margin: 0 0 0.65rem;
+  }
+
+  .tp-lede,
+  .tp-lede-sm,
+  .tp-body {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    color: var(--tp-mute);
+  }
+
+  .tp-lede {
+    max-width: 34rem;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .tp-lede-sm {
+    max-width: 36rem;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .tp-body {
+    font-size: 1rem;
+    line-height: 1.65;
+    margin: 0;
+    max-width: 34rem;
+  }
+
+  /* Hero */
+  .tp-hero {
+    display: grid;
+    gap: 2.75rem;
+    padding-bottom: 3.75rem;
+    margin-bottom: var(--tp-section-gap);
+    border-bottom: 1px solid var(--tp-line-strong);
+  }
+
+  @media (min-width: 768px) {
+    .tp-hero {
+      grid-template-columns: minmax(0, 1fr) 9.5rem;
+      align-items: end;
+      gap: 4rem;
+      padding-bottom: 4.5rem;
+    }
+  }
+
+  .tp-portrait {
+    width: 7.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .tp-portrait {
+      width: 9.5rem;
+      justify-self: end;
+    }
+  }
+
+  .tp-portrait-frame {
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    background: var(--tp-soft);
+    margin-bottom: 0.85rem;
+  }
+
+  .tp-portrait-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .tp-portrait-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    margin: 0 0 0.3rem;
+  }
+
+  .tp-portrait-role {
+    color: var(--tp-meta);
+    margin: 0;
+    letter-spacing: 0.1em;
+  }
+
+  /* Sections */
+  .tp-section {
+    padding-top: var(--tp-section-gap);
+    border-top: 1px solid var(--tp-line);
+  }
+
+  .tp-stages {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .tp-section-head {
+    margin-bottom: 2.75rem;
+  }
+
+  @media (min-width: 768px) {
+    .tp-section-head {
+      margin-bottom: 3.25rem;
+    }
+  }
+
+  /* Timeline */
+  .tp-timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0;
+    counter-reset: none;
+  }
+
+  @media (max-width: 899px) {
+    .tp-stop {
+      position: relative;
+      padding: 0 0 2.25rem 1.35rem;
+      border-left: 1px solid var(--tp-line-strong);
+    }
+
+    .tp-stop:last-child {
+      padding-bottom: 0;
+    }
+
+    .tp-stop::before {
+      content: '';
+      position: absolute;
+      left: -0.28rem;
+      top: 0.35rem;
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 999px;
+      background: var(--tp-ink);
+      box-shadow: 0 0 0 4px #fff;
+    }
+
+    .tp-stop:first-child::before {
+      background: var(--tp-red);
+    }
+  }
+
+  @media (min-width: 900px) {
+    .tp-timeline {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0 2.5rem;
+      position: relative;
+      padding-top: 1.75rem;
+    }
+
+    .tp-timeline::before {
+      content: '';
+      position: absolute;
+      top: 0.35rem;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--tp-line-strong);
+    }
+
+    .tp-stop {
+      position: relative;
+      padding-top: 0.25rem;
+    }
+
+    .tp-stop::before {
+      content: '';
+      position: absolute;
+      top: -1.55rem;
+      left: 0;
+      width: 0.65rem;
+      height: 0.65rem;
+      border-radius: 999px;
+      background: var(--tp-ink);
+      box-shadow: 0 0 0 5px #fff;
+    }
+
+    .tp-stop:first-child::before {
+      background: var(--tp-red);
+    }
+  }
+
+  .tp-stop {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: tp-rise 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(0.08s + var(--i) * 0.1s);
+  }
+
+  .tp-stop-num {
+    color: var(--tp-red);
+    margin: 0 0 0.85rem;
+  }
+
+  .tp-stop .tp-body {
+    max-width: 22rem;
+  }
+
+  /* Complexity ladder */
+  .tp-levels {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--tp-line);
+  }
+
+  .tp-level {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: 1rem;
+    align-items: baseline;
+    padding: 1.15rem 0;
+    border-bottom: 1px solid var(--tp-line);
+    opacity: 0;
+    animation: tp-rise 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(0.2s + var(--i) * 0.06s);
+  }
+
+  @media (min-width: 900px) {
+    .tp-levels {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      border-top: none;
+      gap: 0;
+      position: relative;
+    }
+
+    .tp-levels::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: var(--tp-line-strong);
+    }
+
+    .tp-level {
+      grid-template-columns: 1fr;
+      gap: 0.85rem;
+      padding: 0 1.25rem 1.35rem 0;
+      border-bottom: none;
+      border-right: 1px solid var(--tp-line);
+      min-height: 8.5rem;
+      align-content: end;
+    }
+
+    .tp-level:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+  }
+
+  .tp-level-num {
+    color: var(--tp-red);
+  }
+
+  .tp-level-label {
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+
+  /* Why me */
+  .tp-why-grid {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--tp-line);
+  }
+
+  @media (min-width: 768px) {
+    .tp-why-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .tp-why-item {
+    display: grid;
+    grid-template-columns: 2.25rem 1fr;
+    gap: 0.85rem;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--tp-line);
+  }
+
+  @media (min-width: 768px) {
+    .tp-why-item {
+      padding: 1.85rem 2rem 1.85rem 0;
+      border-right: 1px solid var(--tp-line);
+    }
+
+    .tp-why-item:nth-child(even) {
+      padding-left: 2rem;
+      padding-right: 0;
+      border-right: none;
+    }
+
+    .tp-why-item:nth-child(1),
+    .tp-why-item:nth-child(2) {
+      border-top: none;
+    }
+  }
+
+  .tp-why-num {
+    color: var(--tp-red);
+    margin: 0.2rem 0 0;
+  }
+
+  /* Work */
+  .tp-work-grid {
+    display: grid;
+    gap: 2.75rem 1.75rem;
+  }
+
+  @media (min-width: 700px) {
+    .tp-work-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .tp-work-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 3rem 1.75rem;
+    }
+  }
+
+  .tp-work-film {
+    margin-bottom: 1rem;
+  }
+
+  .tp-work-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 0 0 0.55rem;
+  }
+
+  .tp-link {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--tp-mute);
+    border-bottom: 1px solid rgba(10, 10, 10, 0.22);
+    padding-bottom: 0.12rem;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .tp-link:hover {
+    color: var(--tp-ink);
+    border-color: var(--tp-ink);
+  }
+
+  /* Pricing */
+  .tp-rate {
+    padding: 1.75rem 0 2rem;
+    margin-bottom: 2.5rem;
+    border-top: 1px solid var(--tp-line-strong);
+    border-bottom: 1px solid var(--tp-line-strong);
+  }
+
+  .tp-rate-value {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1;
+    margin: 0 0 0.85rem;
+  }
+
+  .tp-ranges {
+    display: grid;
+    gap: 0;
+    margin-bottom: 2.75rem;
+    border-top: 1px solid var(--tp-line);
+  }
+
+  @media (min-width: 768px) {
+    .tp-ranges {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .tp-range {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--tp-line);
+  }
+
+  @media (min-width: 768px) {
+    .tp-range {
+      padding: 1.5rem 1.75rem 1.5rem 0;
+      border-bottom: none;
+      border-right: 1px solid var(--tp-line);
+    }
+
+    .tp-range:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+  }
+
+  .tp-range-num {
+    color: var(--tp-red);
+    margin: 0 0 0.85rem;
+  }
+
+  .tp-notes {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--tp-line);
+  }
+
+  @media (min-width: 768px) {
+    .tp-notes {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .tp-note {
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--tp-line);
+  }
+
+  @media (min-width: 768px) {
+    .tp-note {
+      padding: 1.75rem 2rem 0 0;
+      border-bottom: none;
+      border-right: 1px solid var(--tp-line);
+    }
+
+    .tp-note:last-child {
+      border-right: none;
+      padding-right: 0;
+      padding-left: 2rem;
+    }
+  }
+
+  /* Close */
+  .tp-close {
+    border-top: 1px solid var(--tp-line-strong);
+  }
+
+  .tp-close .tp-section-head {
+    margin-bottom: 1.75rem;
+  }
+
+  .tp-close-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem 1.75rem;
+  }
+
+  @keyframes tp-rise {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tp-stop,
+    .tp-level {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+  }
+</style>
