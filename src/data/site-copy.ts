@@ -2,18 +2,15 @@
  * Sitewide positioning copy. Homepage + default meta should stay in sync here.
  */
 
-export const SITE_TITLE = "Motion Story | Motion Graphics for Complex Ideas | Byron Bay";
+export const SITE_TITLE = "Motion Story | SaaS Motion Graphic Explainer Videos | Byron Bay";
 
 /** Primary SERP / Open Graph description (~155 chars). */
 export const SITE_DESCRIPTION =
-  "Motion graphics for startups and forward-thinking tech. Dan Neale turns complex ideas into clear visual storytelling. Small studio, Byron Bay.";
+  "SaaS motion graphic explainer videos for new products. Product on screen, story first. Dan Neale, Byron Bay. Work directly with the director.";
 
 /** Organization schema / longer about line. */
 export const SITE_DESCRIPTION_LONG =
-  "Motion graphics and visual storytelling for startups and tech brands. Dan Neale: independent motion designer and director. Complex ideas made clear. Small studio, Byron Bay; clients worldwide.";
-
-export const HERO_LEDE =
-  "Complex made simple: motion graphics for forward-thinking companies. When something is hard to explain, I make it clear from concept to execution with motion, illustration, storyboarding, and design.";
+  "SaaS motion graphic explainer videos for new software products. Dan Neale: independent motion designer and director. Product on screen, story first. Small studio, Byron Bay; clients worldwide.";
 
 export const PROFILE_LEDE =
   "Independent motion designer and director. Making brands move since 2010. Small studio, big impact: work directly with me.";

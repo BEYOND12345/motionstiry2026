@@ -16,6 +16,8 @@ export const saasDemoSalesPage = {
     'Complex software, clear on screen. Built for homepages, sales pages, and the call before the call.',
 
   tickerRowA: [
+    'TransferWise',
+    'Schoolbox',
     'HSBC',
     'SEB Bank',
     'NSW Government',
@@ -26,6 +28,7 @@ export const saasDemoSalesPage = {
     'Insignia Financial',
   ],
   tickerRowB: [
+    'Smokeball',
     'Atomic',
     'Acodis',
     'Trudi',

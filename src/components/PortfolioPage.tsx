@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../lib/utils";
+import { vimeoPosterUrl } from "../lib/vimeo";
 import { ALL_PROJECTS, sortProjectsShowcaseFirst } from "../data/projects";
 import { GOOGLE_RATING } from "../data/reviews";
 import PageTransition, { FadeUp, SlideUp, AnimatedSection } from "./PageTransition";
@@ -65,7 +66,7 @@ export default function PortfolioPage() {
                   style={{ viewTransitionName: `project-${project.slug}` }}
                 >
                   <img
-                    src={`https://vumbnail.com/${project.vimeoId}.jpg`}
+                    src={vimeoPosterUrl(project.vimeoId)}
                     alt={project.title}
                     className={cn(
                       "w-full h-full object-cover transition-all duration-700",

@@ -10,12 +10,12 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
   seo: {
     titleTag: 'Motion Graphics & Freelance Motion Designer | Motion Story',
     metaDescription:
-      'Senior freelance motion designer. Premium 2D animation, motion graphics and explainers. Direct access. No agency layer. Dan Neale, Byron Bay.',
+      'Senior freelance motion designer. Motion graphic explainer videos, 2D animation, and campaign motion. Direct access. No agency layer. Dan Neale, Byron Bay.',
     canonicalPath: '/motion-graphics/',
   },
   eyebrow: 'Motion graphics',
   headline: ['Motion graphics', 'with a director attached.'],
-  lede: 'Premium 2D animation and motion graphics for agencies and in-house teams. Twenty years of studio craft, direct access — no markup, no junior handoffs.',
+  lede: 'Premium 2D animation and motion graphic explainer videos for agencies and in-house teams. Twenty years of studio craft, direct access — no markup, no junior handoffs.',
   heroVideo: {
     vimeoId: '394326130',
     title: 'Meltwater / Brand Story',
@@ -84,8 +84,8 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
   ],
   links: [
     { href: '/agencies/', eyebrow: 'Agencies', label: 'Agency partnerships →' },
-    { href: '/explainer-videos/', eyebrow: 'Explainers', label: 'Explainer videos →' },
-    { href: '/saas-explainer-videos/', eyebrow: 'SaaS', label: 'SaaS motion graphics →' },
+    { href: '/explainer-videos/', eyebrow: 'Explainers', label: 'Motion graphic explainer videos →' },
+    { href: '/saas-explainer-videos/', eyebrow: 'SaaS', label: 'SaaS motion graphic explainer videos →' },
     { href: '/work/', eyebrow: 'Portfolio', label: 'See all work →' },
   ],
 };

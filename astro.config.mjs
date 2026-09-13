@@ -6,7 +6,7 @@ import { BLOG_POSTS } from './src/data/blog-posts.ts';
 
 // Build a slug → date lookup for blog-post lastmod hints in the sitemap.
 const BLOG_LASTMOD = new Map(
-  BLOG_POSTS.map((post) => [post.slug, new Date(post.date)]),
+  BLOG_POSTS.map((post) => [post.slug, new Date(post.updated ?? post.date)]),
 );
 
 // Main landing pages that deserve a priority boost over blog posts.
@@ -16,11 +16,14 @@ const HIGH_PRIORITY_PAGES = new Set([
   '/blog/',
   '/causes/',
   '/contact/',
+  '/cybersecurity-explainer-videos/',
   '/explainer-videos/',
   '/creative-business-designer/',
+  '/finance-explainer-videos/',
   '/motion-graphics/',
   '/process/',
   '/product-demo-videos/',
+  '/product-launch-video/',
   '/saas-explainer-videos/',
   '/services/',
   '/startups/',
@@ -44,7 +47,11 @@ export default defineConfig({
     react(),
     sitemap({
       filter: (page) =>
-        !page.includes('/thank-you/') && !page.includes('/p/'),
+        !page.includes('/thank-you/') &&
+        !page.includes('/p/') &&
+        !page.includes('/book/') &&
+        !page.includes('/landing-page-explainer-video-01/') &&
+        !page.includes('/landing-animated-product-demos-01/'),
       serialize: (item) => {
         const path = new URL(item.url).pathname;
 
@@ -111,15 +118,16 @@ export default defineConfig({
     '/pricing/': '/contact/',
 
     // '/services/' is now a real hub page (src/pages/services.astro)
-    '/explainer-video-company/': '/explainer-videos/',
-    '/explainer-video-company-20024/': '/explainer-videos/',
-    '/animation-production-company/': '/explainer-videos/',
+    '/explainer-video-company/': '/saas-explainer-videos/',
+    '/explainer-video-company-20024/': '/saas-explainer-videos/',
+    '/animation-production-company/': '/saas-explainer-videos/',
     '/motion-graphic-production-company/': '/motion-graphics/',
     '/fractional-creative-director/': '/creative-business-designer/',
-    '/animated-video-service/': '/explainer-videos/',
+    '/animated-video-service/': '/saas-explainer-videos/',
     '/30s-explainer-videos/': '/startups/',
     '/start-up-explainer-videos/': '/startups/',
-    '/finance-explainer-videos/': '/saas-explainer-videos/',
+    '/fintech-explainer-videos/': '/finance-explainer-videos/',
+    '/cyber-security-explainer-videos/': '/cybersecurity-explainer-videos/',
     '/animated-product-demos/': '/product-demo-videos/',
     '/product-demos/': '/product-demo-videos/',
     '/tech-videos/': '/technology-videos/',

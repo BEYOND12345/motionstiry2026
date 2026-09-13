@@ -14,7 +14,11 @@ interface Props {
 const { title, description, canonicalUrl, ogImage, bodyClass, ogType = 'website', publishedDate } = Astro.props;
 const siteUrl = 'https://motionstory.com.au';
 const canonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
-const image = ogImage || `${siteUrl}/og-default.jpg`;
+const image = ogImage
+  ? ogImage.startsWith("http")
+    ? ogImage
+    : new URL(ogImage, siteUrl).href
+  : `${siteUrl}/og-default.jpg`;
 ---
 
 <!doctype html>

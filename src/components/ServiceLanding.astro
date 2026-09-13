@@ -1,6 +1,7 @@
 ---
 import VimeoEmbed from './VimeoEmbed';
 import { ALL_PROJECTS, getShowcaseProjects } from '../data/projects';
+import { vimeoPosterUrl } from '../lib/vimeo';
 import { GOOGLE_RATING, pickVerifiedReviews } from '../data/reviews';
 
 export interface WorkItem {
@@ -82,6 +83,9 @@ for (const project of [...getShowcaseProjects(), ...ALL_PROJECTS]) {
 }
 
 const clients = [
+  'TransferWise',
+  'Schoolbox',
+  'Smokeball',
   'Atomic',
   'Wipster',
   'Mosaic',
@@ -201,7 +205,7 @@ const credentials = credentialsProp ?? defaultCredentials;
           <a href={study.link} class="landing-more-card group">
             <div class="landing-more-thumb">
               <img
-                src={`https://vumbnail.com/${study.vimeoId}.jpg`}
+                src={vimeoPosterUrl(study.vimeoId)}
                 alt={study.title}
                 loading="lazy"
               />

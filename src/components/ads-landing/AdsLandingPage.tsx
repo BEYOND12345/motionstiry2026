@@ -1,6 +1,7 @@
 import { useEffect, useId, useMemo, useRef, useState, type FormEvent } from 'react';
 import { getAdsPortfolio } from '../../data/ads-landing/portfolio';
 import type { AdsLandingConfig, AdsProject } from '../../data/ads-landing/types';
+import { vimeoPosterUrl } from '../../lib/vimeo';
 
 declare global {
   interface Window {
@@ -38,7 +39,7 @@ function HeroVideo({
   const [playing, setPlaying] = useState(false);
   /** Desktop muted loop only — mobile stays poster-first for data, battery, and calm first paint */
   const [allowPreview, setAllowPreview] = useState(false);
-  const poster = posterUrl ?? `https://vumbnail.com/${vimeoId}.jpg`;
+  const poster = posterUrl ?? vimeoPosterUrl(vimeoId);
 
   useEffect(() => {
     const mq = window.matchMedia('(min-width: 768px) and (prefers-reduced-motion: no-preference)');
@@ -272,7 +273,7 @@ function WorkCard({
     >
       <div className="relative aspect-video overflow-hidden rounded-xl bg-black/[0.04]">
         <img
-          src={`https://vumbnail.com/${project.vimeoId}.jpg`}
+          src={vimeoPosterUrl(project.vimeoId)}
           alt={project.thumbnailAlt ?? `${project.client} project`}
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
           loading="lazy"

@@ -3,6 +3,8 @@ import { ALL_PROJECTS, type Project } from '../projects';
 
 /** Shared ticker rows for Ads / money landings */
 export const SPINE_TICKER_ROW_A = [
+  'TransferWise',
+  'Schoolbox',
   'Insignia Financial',
   'UTS',
   'Method',
@@ -14,6 +16,7 @@ export const SPINE_TICKER_ROW_A = [
 ];
 
 export const SPINE_TICKER_ROW_B = [
+  'Smokeball',
   'Wipster',
   'Atomic',
   'Trudi',

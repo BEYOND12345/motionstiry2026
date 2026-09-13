@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef, useState, type FormEvent } from 'react';
 import { vimeoIdFrom, type LandingPageConfig } from './types';
+import { vimeoPosterUrl } from '../../lib/vimeo';
 
 declare global {
   interface Window {
@@ -45,7 +46,7 @@ function HeroVideo({
   const [allowPreview, setAllowPreview] = useState(false);
   const loopId = vimeoIdFrom(loopSrc);
   const fullId = vimeoIdFrom(fullSrc);
-  const poster = posterUrl ?? `https://vumbnail.com/${loopId}.jpg`;
+  const poster = posterUrl ?? vimeoPosterUrl(loopId);
 
   useEffect(() => {
     const mq = window.matchMedia('(min-width: 768px) and (prefers-reduced-motion: no-preference)');

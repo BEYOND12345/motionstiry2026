@@ -2,6 +2,8 @@ export interface BlogPost {
   slug: string;
   title: string;
   date: string;
+  /** ISO date when the post was last substantially edited. Used for dateModified / sitemap lastmod. */
+  updated?: string;
   category: string;
   tags: string[];
   excerpt: string;
@@ -345,11 +347,12 @@ Dan Neale is the founder of Motion Story, a boutique motion design studio based 
   },
   {
     slug: "how-explainer-videos-supercharge-startup-growth",
-    title: "How SaaS Explainer Videos Drive Real Growth",
+    title: "How SaaS Motion Graphics Drive Real Growth",
     date: "2026-04-06",
+    updated: "2026-09-11",
     category: "Explainer Video Strategy",
-    tags: ["SaaS explainer videos", "Startup growth", "Product demo videos", "SaaS marketing", "Explainer video production"],
-    excerpt: "Your SaaS product is brilliant, but nobody understands what it does from a screenshot. Here's how explainer videos shorten sales cycles, improve onboarding, and drive real conversion.",
+    tags: ["SaaS motion graphics", "SaaS explainer videos", "Startup growth", "Product demo videos", "SaaS marketing"],
+    excerpt: "Your SaaS product is brilliant, but nobody understands it from a screenshot. Here's how motion graphics for new products shorten sales cycles and drive conversion.",
     content: `Your SaaS product solves a real problem. But when someone lands on your homepage, they have about eight seconds to decide if they care. A paragraph of text and a hero image won't cut it. A SaaS explainer video will.
 
 This isn't about making something pretty. It's about taking the complexity out of your product story so the right people understand it fast enough to act.
@@ -391,7 +394,7 @@ That might sound like a lot until you compare it to the cost of a sales team spe
 
 If you're thinking about a SaaS explainer video, the first step is getting clear on what you need it to do. Is it a homepage hero? A sales tool? An onboarding asset? The answer shapes everything: length, tone, level of product detail, and where the video lives.
 
-I work with SaaS companies from seed stage to Series B, and the brief is always the same: take something complex and make it clear. See [SaaS explainer videos](/saas-explainer-videos/), [product demo videos](/product-demo-videos/), and [startup explainers](/startups/) — or [email me](mailto:daniel@motionstory.com.au?subject=SaaS%20explainer%20video) to talk through the brief.
+I work with SaaS companies from seed stage to Series B, and the brief is always the same: take something complex and make it clear. See [SaaS motion graphics](/saas-explainer-videos/), [product demo videos](/product-demo-videos/), and [product launch videos](/product-launch-video/) — or [email me](mailto:daniel@motionstory.com.au?subject=SaaS%20motion%20graphics) to talk through the brief.
 
 ---
 
@@ -759,6 +762,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     slug: "homepage-video-vs-product-demo-saas",
     title: "Homepage Video vs Product Demo: What Converts Better for SaaS?",
     date: "2026-03-04",
+    updated: "2026-09-11",
     category: "Conversion Strategy",
     tags: ["homepage video", "product demo video", "SaaS conversion", "video strategy"],
     excerpt: "Should your SaaS homepage feature an explainer or a product demo? The answer depends on your audience's awareness level and your conversion goal.",
@@ -847,7 +851,7 @@ If it's cold (SEO, paid ads, social) → Explainer. If it's warm (direct, brande
 **What do you want homepage visitors to do?**
 If the goal is trial signups → Explainer (lower commitment, wider appeal). If the goal is demo bookings → Product demo (higher qualification, specific interest).
 
-For more on matching the right video type to your goals, read my guide on [what type of video your SaaS company needs](/what-type-of-video-does-my-saas-company-need). And if you want to see examples of both types, visit my [work page](/work/).
+For more on matching the right video type to your goals, read my guide on [what type of video your SaaS company needs](/what-type-of-video-does-my-saas-company-need). For the story-first film, see [SaaS motion graphics](/saas-explainer-videos/). For the product on screen, see [product demo videos](/product-demo-videos/).
 
 ## FAQ
 
@@ -1241,6 +1245,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     slug: "why-saas-demo-video-not-converting",
     title: "Why Your SaaS Demo Video Isn't Converting (5 Real Reasons)",
     date: "2026-01-07",
+    updated: "2026-09-11",
     category: "Conversion Strategy",
     tags: ["SaaS demo video", "video conversion rate", "product demo optimization", "SaaS marketing"],
     excerpt: "Your demo video has views but no conversions. Here are the five most common reasons SaaS demo videos fail, and how to fix each one without starting over.",
@@ -1324,7 +1329,7 @@ The brief had too many authors. One founder with a clear vision of the problem t
 
 The client knew what they wanted to say but not what the viewer needed to hear. There's a difference. You know your product inside out. Your prospect doesn't. The video brief that starts from the viewer's confusion, not the product's features, is the one that produces a video that actually converts.
 
-If you want an objective assessment of your current video, [get in touch](/contact/) and I'll give you an honest take.
+If you want an objective assessment of your current video, [get in touch](/contact/) and I'll give you an honest take. For the format that shows the product working, see [product demo videos](/product-demo-videos/). If the product is still new and the story is not clear yet, start with [SaaS motion graphics](/saas-explainer-videos/).
 
 ## FAQ
 
@@ -1461,6 +1466,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     slug: "how-to-brief-a-motion-designer-saas-video",
     title: "How to Brief a Motion Designer for a SaaS Video (Free Template)",
     date: "2025-12-03",
+    updated: "2026-09-11",
     category: "Craft & Process",
     tags: ["motion design brief", "SaaS video brief", "creative brief template", "video production planning"],
     excerpt: "A strong brief is the difference between a video that nails it in one round and a project that drags through endless revisions. Here's exactly what to include.",
@@ -1593,6 +1599,8 @@ From there, the typical process runs: script, storyboard, style frames, animatio
 
 Spending two hours on a strong brief saves you 20 hours of revisions. It's the highest-leverage thing you can do to ensure your video project succeeds. Don't skip it, don't rush it, and don't delegate it to someone who doesn't understand the product or the audience.
 
+When the brief is ready, [book a call](/book/) or start on [SaaS motion graphics](/saas-explainer-videos/).
+
 ## FAQ
 
 **What if I don't have brand guidelines?**
@@ -1615,6 +1623,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     slug: "what-type-of-video-does-my-saas-company-need",
     title: "What Type of Video Does My SaaS Company Actually Need?",
     date: "2025-11-19",
+    updated: "2026-09-11",
     category: "Buyer's Guide",
     tags: ["SaaS video types", "explainer video", "product demo video", "SaaS marketing video"],
     excerpt: "Explainer? Product demo? Brand video? Most SaaS companies pick the wrong type of video because they don't understand the differences. Here's a clear breakdown.",
@@ -1718,7 +1727,9 @@ Here are four projects where the client came in asking for one thing and ended u
 
 In every case, the right format became obvious once the actual problem was clear. The format follows the strategy. Always start with what the video needs to change in the viewer's mind. The format follows from that.
 
-If you're not sure where to start, take a look at my [motion graphics work](/motion-graphics/) for inspiration, or [get in touch](/contact/) and I'll help you figure out the right approach for your stage and budget.
+If the product is new and people need the why first, that is [SaaS motion graphics](/saas-explainer-videos/). If they already care and need to see the UI, that is a [product demo](/product-demo-videos/). If you are about to ship, that is a [product launch video](/product-launch-video/).
+
+If you're not sure where to start, [get in touch](/contact/) and I'll help you figure out the right approach for your stage and budget.
 
 ## FAQ
 
@@ -1926,6 +1937,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     slug: "how-much-does-saas-motion-design-video-cost",
     title: "How Much Does a SaaS Motion Design Video Cost? (Real Numbers, No Fluff)",
     date: "2025-10-08",
+    updated: "2026-09-11",
     category: "Buyer's Guide",
     tags: ["SaaS video cost", "explainer video pricing", "motion design budget", "video production cost"],
     excerpt: "Real pricing for SaaS motion design videos in 2026, based on 1,000+ projects. No vague ranges or 'it depends.' Actual numbers broken down by video type.",
@@ -1969,7 +1981,7 @@ Tight deadlines. If you need a finished video in two weeks instead of five, that
 3. **Choose the right tier for your stage.** A seed-stage startup doesn't need a $20,000 production. A Series B company shouldn't be paying $3,000 for their main sales tool.
 4. **Think about lifespan.** A $12,000 video that stays relevant for three years costs $4,000 per year. A $4,000 video that needs replacing in six months costs $8,000 per year.
 
-To see how I approach pricing and scoping, visit my [process page](/process/) or [reach out directly](/contact/).
+To see how I approach pricing and scoping, visit [SaaS motion graphics](/saas-explainer-videos/), the [process page](/process/), or [reach out directly](/contact/).
 
 ## FAQ
 
@@ -2076,6 +2088,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     slug: "what-makes-a-great-motion-design-script",
     title: "What Makes a Great Motion Design Script?",
     date: "2025-09-10",
+    updated: "2026-09-11",
     category: "Craft & Process",
     tags: ["motion design script", "scriptwriting", "explainer video script", "creative process", "video production"],
     excerpt: "A great motion design script isn't a voiceover track. It's the architecture of the entire video. Here's what separates scripts that work from scripts that waste everyone's time.",
@@ -2150,7 +2163,7 @@ This format forces clarity. If the visual column is vague ("show the platform"),
 
 Good scripts make every subsequent stage of production faster and cheaper. Bad scripts create expensive revisions in animation, the most time-consuming phase to change.
 
-If you're working on a video project and the script isn't right yet, [get in touch](/contact/). I write every script before designing a single frame. See how the [process](/process/) works.
+If you're working on a video project and the script isn't right yet, [get in touch](/contact/). I write every script before designing a single frame. See [SaaS motion graphics](/saas-explainer-videos/) or how the [process](/process/) works.
 
 ## Frequently Asked Questions
 
@@ -2171,6 +2184,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     slug: "how-storytelling-works-in-motion-design",
     title: "How Storytelling Actually Works in Motion Design (And Why Most Videos Get It Wrong)",
     date: "2025-08-27",
+    updated: "2026-09-11",
     category: "Craft & Process",
     tags: ["storytelling", "motion design", "video production", "creative process", "explainer videos"],
     excerpt: "Most explainer videos aren't stories. They're feature lists with a voiceover. Here's what actual storytelling looks like in motion design, and the process that produces it.",
@@ -2240,7 +2254,7 @@ The result is a video that looks professional but feels empty. All craft, no sub
 
 The videos that work, the ones that drive conversions, get shared internally, and change how people think about a product. are the ones where the story came first.
 
-If you want a video that tells a real story about your product or mission, [take a look at my process](/process/) or [get in touch](/contact/).
+If you want a video that tells a real story about your product or mission, start with [SaaS motion graphics](/saas-explainer-videos/), or [take a look at my process](/process/).
 
 ## Frequently Asked Questions
 
@@ -2261,6 +2275,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     slug: "art-of-explaining-complex-ideas-motion-designers-framework",
     title: "The Art of Explaining Complex Ideas: A Motion Designer's Framework",
     date: "2025-08-13",
+    updated: "2026-09-11",
     category: "Craft & Process",
     tags: ["motion design framework", "explainer videos", "visual communication", "storytelling", "complex ideas"],
     excerpt: "After hundreds of projects, I've developed a framework for explaining complex ideas through motion design. It starts with finding the one thing that matters most.",
@@ -2351,7 +2366,7 @@ The result was a video that worked for all three audiences simultaneously becaus
 
 That's the framework. Start with what's universally true, build outward from there.
 
-If you have a complex idea that needs to be explained clearly, [take a look at how I work](/process/) or [get in touch](/contact/).
+If you have a complex idea that needs to be explained clearly, start with [SaaS motion graphics](/saas-explainer-videos/), or [take a look at how I work](/process/).
 
 ## Frequently Asked Questions
 

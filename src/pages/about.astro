@@ -3,6 +3,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 import { GOOGLE_RATING, VERIFIED_CLIENT_REVIEWS } from '../data/reviews';
 import { getShowcaseProjects } from '../data/projects';
 import { PROFILE_LEDE, SITE_DESCRIPTION, WHY_ME } from '../data/site-copy';
+import { vimeoPosterUrl } from '../lib/vimeo';
 
 const strapline = VERIFIED_CLIENT_REVIEWS[0];
 const aboutWork = getShowcaseProjects().slice(0, 3);
@@ -22,19 +23,21 @@ const structuredData = {
     "jobTitle": "Motion Designer and Director",
     "worksFor": { "@type": "Organization", "name": "Motion Story" },
     "knowsAbout": [
+      "SaaS Motion Graphic Explainer Videos",
+      "Motion Graphic Explainer Videos",
+      "Motion Graphic Product Explainer Videos",
       "Motion Graphics",
       "Motion Design",
       "Creative Direction",
       "Storytelling",
-      "Explainer Videos",
-      "Product Videos",
-      "Storyboarding",
-      "SaaS Marketing",
-      "Startup Marketing",
+      "Fintech Motion Graphic Explainer Videos",
+      "Cybersecurity Motion Graphic Explainer Videos",
       "Agency Creative Direction"
     ],
     "sameAs": [
       "https://www.linkedin.com/in/danielneale",
+      "https://www.behance.net/motion_story",
+      "https://dribbble.com/motionstory",
       "https://vimeo.com/wearemotionstory"
     ]
   }
@@ -169,7 +172,7 @@ const structuredData = {
         <a href={`/casestudy/${project.slug}/`} class="group block">
           <div class="aspect-video overflow-hidden rounded-xl bg-black/[0.04] mb-4">
             <img
-              src={`https://vumbnail.com/${project.vimeoId}.jpg`}
+              src={vimeoPosterUrl(project.vimeoId)}
               alt={project.title}
               class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-700"
               loading="lazy"

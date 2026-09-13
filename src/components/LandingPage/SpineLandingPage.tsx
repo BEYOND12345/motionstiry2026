@@ -2,6 +2,7 @@ import { useEffect, useState, type CSSProperties, type ReactNode } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import ClientTicker from '../ClientTicker';
 import { vimeoIdFrom } from './types';
+import { vimeoPosterUrl } from '../../lib/vimeo';
 import type { SpineCase, SpineLandingConfig } from './spine-types';
 
 declare global {
@@ -43,7 +44,7 @@ function StoryFilm({
   const [allowPreview, setAllowPreview] = useState(false);
   const id = vimeoIdFrom(videoUrl);
   const hashQuery = vimeoHash ? `h=${vimeoHash}&` : '';
-  const poster = posterUrl ?? `https://vumbnail.com/${id}.jpg`;
+  const poster = posterUrl ?? vimeoPosterUrl(id);
 
   useEffect(() => {
     if (!priority) return;

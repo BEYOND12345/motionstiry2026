@@ -33,6 +33,7 @@ const faqSchema = {
   canonicalUrl={`https://motionstory.com.au${config.seo.canonicalPath}`}
 >
   <Fragment slot="head">
+    <meta name="robots" content="noindex, nofollow" />
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
     <!-- TODO(dan): Replace with live GA4 + Google Ads IDs -->

@@ -2,6 +2,9 @@
  * Trust-strip marks for Ads landings (typographic).
  */
 export const SAAS_TRUST_LOGOS = [
+  { src: '', alt: 'TransferWise' },
+  { src: '', alt: 'Schoolbox' },
+  { src: '', alt: 'Smokeball' },
   { src: '', alt: 'Insignia Financial' },
   { src: '', alt: 'UTS' },
   { src: '', alt: 'Method' },

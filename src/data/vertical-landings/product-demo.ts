@@ -8,14 +8,14 @@ import {
 
 export const productDemoVerticalLanding: VerticalLandingConfig = {
   seo: {
-    titleTag: 'Animated Product Demo Videos | Motion Story',
+    titleTag: 'Motion Graphic Product Explainer Videos | Motion Story',
     metaDescription:
-      'Animated product demos that show what you make and why it matters. Built for landing pages, sales, and launches. Dan Neale, Motion Story.',
+      'Motion graphic product explainer videos that show the software working. UI on screen — more than a screen recording. Dan Neale, Motion Story.',
     canonicalPath: '/product-demo-videos/',
   },
-  eyebrow: 'Product demo videos',
-  headline: ['Stories for', 'products.'],
-  lede: 'Product on screen. Everything they need to know — play, understand, decide.',
+  eyebrow: 'Motion graphic product explainer videos',
+  headline: ['Motion graphic product', 'explainer videos.'],
+  lede: 'Motion graphic product explainer videos for teams with a product to show. UI on screen, workflow clear — play, understand, decide. More than a screen recording.',
   heroVideo: {
     vimeoId: '866174146',
     title: 'Trudi / AI Property Management',
@@ -58,8 +58,8 @@ export const productDemoVerticalLanding: VerticalLandingConfig = {
     }),
   ],
   value: {
-    headline: 'Show it in action.',
-    body: 'We design informative explainers that give customers everything they need to know about your product — captivating, easy to digest, and ready for sales and social.',
+    headline: 'Show the product working.',
+    body: 'A demo assumes people already care. I put the product on screen so they can see the workflow — not a feature list, not a raw screen grab.',
   },
   benefits: {
     headline: 'Show everyone',
@@ -76,16 +76,16 @@ export const productDemoVerticalLanding: VerticalLandingConfig = {
   },
   faqs: [
     {
-      question: 'How is a product demo different from SaaS motion graphics?',
+      question: 'What is a motion graphic product explainer video?',
       answer:
-        'Product demos show physical products and tangible goods in action. SaaS motion graphics tell the software story — UI, workflows, and value — without a login. Many teams need both.',
+        'A film that shows the product working — real or stylised UI — so people already evaluating you can see the workflow. Different from a SaaS motion graphic explainer, which tells the why when the product is new or the UI is unfinished. Many teams need both.',
     },
     ...VERTICAL_CORE_FAQS,
   ],
   links: [
-    { href: '/saas-explainer-videos/', eyebrow: 'SaaS', label: 'SaaS motion graphics →' },
+    { href: '/saas-explainer-videos/', eyebrow: 'SaaS', label: 'SaaS motion graphic explainer videos →' },
+    { href: '/product-launch-video/', eyebrow: 'Launch', label: 'Product launch videos →' },
     { href: '/startups/', eyebrow: 'Startups', label: 'Stories for startups →' },
-    { href: '/explainer-videos/', eyebrow: 'Explainers', label: 'Explainer videos →' },
     { href: '/work/', eyebrow: 'Portfolio', label: 'See all work →' },
   ],
 };

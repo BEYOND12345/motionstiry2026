@@ -8,14 +8,14 @@ import {
 
 export const explainerVerticalLanding: VerticalLandingConfig = {
   seo: {
-    titleTag: 'Explainer Video Production | Motion Story',
+    titleTag: 'Motion Graphic Explainer Videos | Motion Story',
     metaDescription:
-      'Explainer video production for SaaS, tech, and nonprofits. Motion design that makes people understand and care. Dan Neale, Byron Bay.',
+      'Motion graphic explainer videos for products, platforms, and missions that do not explain themselves. Senior craft. Dan Neale, Byron Bay.',
     canonicalPath: '/explainer-videos/',
   },
-  eyebrow: 'Explainer videos',
-  headline: ['Explainers for ideas', "that don't explain themselves."],
-  lede: 'Complex products, platforms, and missions — made clear in 60 to 180 seconds. A story people can watch, understand, and act on.',
+  eyebrow: 'Motion graphic explainer videos',
+  headline: ['Motion graphic', 'explainer videos.'],
+  lede: 'Motion graphic explainer videos for products, platforms, and missions that do not explain themselves. Sixty to 180 seconds. A story people can watch, understand, and act on.',
   heroVideo: {
     vimeoId: '879242129',
     title: 'Mosaic / Strategic Data Planning',
@@ -76,9 +76,9 @@ export const explainerVerticalLanding: VerticalLandingConfig = {
   },
   faqs: VERTICAL_CORE_FAQS,
   links: [
-    { href: '/saas-explainer-videos/', eyebrow: 'SaaS', label: 'SaaS motion graphics →' },
-    { href: '/technology-videos/', eyebrow: 'Tech', label: 'Technology videos →' },
-    { href: '/product-demo-videos/', eyebrow: 'Demos', label: 'Product demo videos →' },
+    { href: '/saas-explainer-videos/', eyebrow: 'SaaS', label: 'SaaS motion graphic explainer videos →' },
+    { href: '/product-demo-videos/', eyebrow: 'Demos', label: 'Motion graphic product explainer videos →' },
+    { href: '/finance-explainer-videos/', eyebrow: 'Fintech', label: 'Fintech motion graphic explainer videos →' },
     { href: '/work/', eyebrow: 'Portfolio', label: 'See all work →' },
   ],
 };

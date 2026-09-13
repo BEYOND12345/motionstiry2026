@@ -1,4 +1,5 @@
 import type { LandingPageConfig } from '../../components/LandingPage/types';
+import { vimeoPosterUrl } from '../../lib/vimeo';
 import { getShowcaseProjects } from '../projects';
 
 type FeaturedProject = LandingPageConfig['featuredWork']['projects'][number];
@@ -19,7 +20,7 @@ const SHOWCASE_TITLES: Record<string, string> = {
 /** Shared 9-piece featured set for Ads landings. */
 export function getLandingShowcaseWork(): FeaturedProject[] {
   return getShowcaseProjects().map((p) => ({
-    thumbnail: `https://vumbnail.com/${p.vimeoId}.jpg`,
+    thumbnail: vimeoPosterUrl(p.vimeoId),
     client: p.client,
     oneLineResult: SHOWCASE_TITLES[p.id] ?? p.title,
     videoUrl: p.vimeoId,

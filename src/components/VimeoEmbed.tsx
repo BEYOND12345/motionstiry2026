@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { vimeoPosterUrl } from "../lib/vimeo";
 
 interface VimeoEmbedProps {
   vimeoId: string;
@@ -31,7 +32,7 @@ export default function VimeoEmbed({
           aria-label={`Play video: ${title}`}
         >
           <img
-            src={`https://vumbnail.com/${vimeoId}.jpg`}
+            src={vimeoPosterUrl(vimeoId)}
             alt={title}
             className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/play:scale-[1.02] ${autoColor ? 'grayscale-0' : 'grayscale group-hover/play:grayscale-0 scale-[1.04]'}`}
             loading={loading}

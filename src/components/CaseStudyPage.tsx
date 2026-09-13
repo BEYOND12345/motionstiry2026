@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import type { Project } from "../data/projects";
+import { vimeoPosterUrl } from "../lib/vimeo";
 import { getReviewForClient, pickVerifiedReviews } from "../data/reviews";
 import VimeoEmbed from "./VimeoEmbed";
 import PageTransition, { FadeUp, SlideUp, AnimatedSection } from "./PageTransition";
@@ -152,7 +153,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
                   <a href={`/casestudy/${rp.slug}/`} className="group block">
                     <div className="aspect-video overflow-hidden rounded-xl bg-gray-100 mb-4">
                       <img
-                        src={`https://vumbnail.com/${rp.vimeoId}.jpg`}
+                        src={vimeoPosterUrl(rp.vimeoId)}
                         alt={rp.title}
                         className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                         loading="lazy"

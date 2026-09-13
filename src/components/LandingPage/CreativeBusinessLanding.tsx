@@ -121,6 +121,8 @@ const PRODUCTS = [
 const CLIENT_STRIP = [
   'United Nations',
   'TransferWise',
+  'Schoolbox',
+  'Smokeball',
   'Atomic',
   'Wipster',
   'Method',

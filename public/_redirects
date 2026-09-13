@@ -44,14 +44,15 @@ http://motionstory.com.au/*        https://motionstory.com.au/:splat   301!
 # Old service pages → audience pages
 # ───────────────────────────────────────────────────
 # /services/ is a real page — no redirect
-/explainer-video-company/           /explainer-videos/         301!
-/explainer-video-company-20024/     /explainer-videos/         301!
-/animation-production-company/      /explainer-videos/         301!
+/explainer-video-company/           /saas-explainer-videos/    301!
+/explainer-video-company-20024/     /saas-explainer-videos/    301!
+/animation-production-company/      /saas-explainer-videos/    301!
 /motion-graphic-production-company/ /motion-graphics/          301!
-/animated-video-service/            /explainer-videos/         301!
+/animated-video-service/            /saas-explainer-videos/    301!
 /30s-explainer-videos/              /startups/                 301!
 /start-up-explainer-videos/         /startups/                 301!
-/finance-explainer-videos/          /saas-explainer-videos/    301!
+/fintech-explainer-videos/          /finance-explainer-videos/       301!
+/cyber-security-explainer-videos/   /cybersecurity-explainer-videos/ 301!
 /animated-product-demos/            /product-demo-videos/      301!
 /product-demos/                     /product-demo-videos/      301!
 /tech-videos/                       /technology-videos/        301!

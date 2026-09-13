@@ -20,6 +20,8 @@ export function verticalCase(
 
 export const VERTICAL_TICKER_A = [
   'United Nations',
+  'TransferWise',
+  'Schoolbox',
   'RSPCA',
   'Red Cross',
   'NSW Government',
@@ -30,6 +32,7 @@ export const VERTICAL_TICKER_A = [
 ];
 
 export const VERTICAL_TICKER_B = [
+  'Smokeball',
   'Aon',
   'Amex',
   'UTS',

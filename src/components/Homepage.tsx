@@ -1,7 +1,8 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { sortProjectsShowcaseFirst, type Project } from "../data/projects";
-import { HERO_LEDE, PROFILE_LEDE, WHY_ME } from "../data/site-copy";
+import { PROFILE_LEDE, WHY_ME } from "../data/site-copy";
+import { vimeoPosterUrl } from "../lib/vimeo";
 import ClientTicker from "./ClientTicker";
 import { GOOGLE_RATING } from "../data/reviews";
 
@@ -13,6 +14,8 @@ const REEL_SECONDS_PER_PROJECT = 11;
 
 const CLIENT_ROW_A = [
   "United Nations",
+  "TransferWise",
+  "Schoolbox",
   "RSPCA",
   "Red Cross",
   "NSW Government",
@@ -20,6 +23,7 @@ const CLIENT_ROW_A = [
 ];
 
 const CLIENT_ROW_B = [
+  "Smokeball",
   "Aon",
   "UTS",
   "Cotton Australia",
@@ -29,7 +33,7 @@ const CLIENT_ROW_B = [
 ];
 
 const AUDIENCES = [
-  { title: "SaaS & Tech", desc: "SaaS motion graphics and product demo videos for complex software.", href: "/saas-explainer-videos/" },
+  { title: "SaaS & Tech", desc: "SaaS motion graphic explainer videos — product on screen, story first.", href: "/saas-explainer-videos/" },
   { title: "Agencies & Studios", desc: "White label or collaborative creative direction — senior craft without another production layer.", href: "/agencies/" },
   { title: "Startups", desc: "Launch explainers and the first product story that has to land before a login.", href: "/startups/" },
   { title: "Causes & Nonprofits", desc: "Mission work with clarity, not noise.", href: "/causes/" },
@@ -71,10 +75,11 @@ function WorkCard({
     >
       <div className="relative aspect-video overflow-hidden rounded-xl bg-black/[0.04]">
         <img
-          src={`https://vumbnail.com/${project.vimeoId}.jpg`}
+          src={vimeoPosterUrl(project.vimeoId)}
           alt=""
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-          loading="lazy"
+          loading="eager"
+          decoding="async"
           draggable={false}
         />
         <div className="absolute inset-0 bg-black/10 transition-colors group-hover:bg-black/28" />
@@ -273,9 +278,6 @@ export default function Homepage() {
                 Made<br />
                 Simple.
               </h1>
-              <p className="text-body mb-8 max-w-md">
-                {HERO_LEDE}
-              </p>
               <div className="max-w-md">
                 <ClientTicker
                   label="Clients"
@@ -321,11 +323,6 @@ export default function Homepage() {
                 </p>
                 <p className="text-body">
                   {WHY_ME.close}
-                </p>
-                <p className="text-body">
-                  <a href="/creative-business-designer/" className="border-b border-black/20 transition-colors hover:border-black">
-                    Creative business designer →
-                  </a>
                 </p>
                 <p className="text-body !text-sm text-black/50">
                   {WHY_ME.aside}
@@ -435,13 +432,15 @@ export default function Homepage() {
                   <a href="/work/" className="text-body !text-sm transition-colors hover:text-black">All work</a>
                   <a href="/saas-explainer-videos/" className="text-body !text-sm transition-colors hover:text-black">SaaS motion graphics</a>
                   <a href="/product-demo-videos/" className="text-body !text-sm transition-colors hover:text-black">Product demo videos</a>
-                  <a href="/explainer-videos/" className="text-body !text-sm transition-colors hover:text-black">Explainer videos</a>
+                  <a href="/product-launch-video/" className="text-body !text-sm transition-colors hover:text-black">Product launch videos</a>
                   <a href="/motion-graphics/" className="text-body !text-sm transition-colors hover:text-black">Motion graphics</a>
                 </div>
               </div>
               <div>
                 <span className="mb-3 block text-metadata">Industries</span>
                 <div className="flex flex-col gap-1.5">
+                  <a href="/finance-explainer-videos/" className="text-body !text-sm transition-colors hover:text-black">Fintech</a>
+                  <a href="/cybersecurity-explainer-videos/" className="text-body !text-sm transition-colors hover:text-black">Cybersecurity</a>
                   <a href="/startups/" className="text-body !text-sm transition-colors hover:text-black">Startups</a>
                   <a href="/technology-videos/" className="text-body !text-sm transition-colors hover:text-black">Technology</a>
                   <a href="/agencies/" className="text-body !text-sm transition-colors hover:text-black">Agencies</a>
@@ -463,8 +462,9 @@ export default function Homepage() {
                 <span className="mb-3 block text-metadata">Connect</span>
                 <div className="flex flex-col gap-1.5">
                   <a href="https://vimeo.com/wearemotionstory" className="text-body !text-sm transition-colors hover:text-black" target="_blank" rel="noopener">Vimeo</a>
-                  <a href="https://www.linkedin.com/company/motionstory" className="text-body !text-sm transition-colors hover:text-black" target="_blank" rel="noopener">LinkedIn</a>
-                  <a href="https://www.behance.net/motionstory" className="text-body !text-sm transition-colors hover:text-black" target="_blank" rel="noopener">Behance</a>
+                  <a href="https://www.linkedin.com/in/danielneale" className="text-body !text-sm transition-colors hover:text-black" target="_blank" rel="noopener">LinkedIn</a>
+                  <a href="https://www.behance.net/motion_story" className="text-body !text-sm transition-colors hover:text-black" target="_blank" rel="noopener">Behance</a>
+                  <a href="https://dribbble.com/motionstory" className="text-body !text-sm transition-colors hover:text-black" target="_blank" rel="noopener">Dribbble</a>
                 </div>
                 <p className="text-body !text-sm mt-3">Byron Bay, NSW</p>
                 <p className="text-body !text-sm">Australia</p>

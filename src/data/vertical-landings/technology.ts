@@ -76,9 +76,9 @@ export const technologyVerticalLanding: VerticalLandingConfig = {
   },
   faqs: VERTICAL_CORE_FAQS,
   links: [
-    { href: '/saas-explainer-videos/', eyebrow: 'SaaS', label: 'SaaS motion graphics →' },
-    { href: '/product-demo-videos/', eyebrow: 'Demos', label: 'Product demo videos →' },
-    { href: '/explainer-videos/', eyebrow: 'Explainers', label: 'Explainer videos →' },
+    { href: '/cybersecurity-explainer-videos/', eyebrow: 'Cyber', label: 'Cybersecurity motion graphic explainer videos →' },
+    { href: '/finance-explainer-videos/', eyebrow: 'Fintech', label: 'Fintech motion graphic explainer videos →' },
+    { href: '/saas-explainer-videos/', eyebrow: 'SaaS', label: 'SaaS motion graphic explainer videos →' },
     { href: '/work/', eyebrow: 'Portfolio', label: 'See all work →' },
   ],
 };

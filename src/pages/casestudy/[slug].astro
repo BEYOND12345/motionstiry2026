@@ -6,6 +6,7 @@ import Footer from '../../components/Footer.astro';
 import EmailFloat from '../../components/EmailFloat.astro';
 import { ALL_PROJECTS } from '../../data/projects';
 import { getVideoSeoCategory, getVideoSeoTags } from '../../lib/videoSeo';
+import { vimeoPosterAbsoluteUrl } from '../../lib/vimeo';
 import '../../styles/global.css';
 
 export function getStaticPaths() {
@@ -31,7 +32,7 @@ const primaryVideoData = {
   "@id": `${canonicalUrl}#primary-video`,
   "name": project.title,
   "description": project.details,
-  "thumbnailUrl": `https://vumbnail.com/${project.vimeoId}.jpg`,
+  "thumbnailUrl": vimeoPosterAbsoluteUrl(project.vimeoId),
   "contentUrl": `https://vimeo.com/${project.vimeoId}`,
   "embedUrl": `https://player.vimeo.com/video/${project.vimeoId}`,
   "url": canonicalUrl,
@@ -66,7 +67,7 @@ const secondaryVideoData = project.secondaryVimeoId ? {
   "@id": `${canonicalUrl}#secondary-video`,
   "name": `${project.title}: Additional video`,
   "description": project.details,
-  "thumbnailUrl": `https://vumbnail.com/${project.secondaryVimeoId}.jpg`,
+  "thumbnailUrl": vimeoPosterAbsoluteUrl(project.secondaryVimeoId),
   "contentUrl": `https://vimeo.com/${project.secondaryVimeoId}`,
   "embedUrl": `https://player.vimeo.com/video/${project.secondaryVimeoId}`,
   "url": canonicalUrl,
@@ -109,7 +110,7 @@ const webPageData = {
   },
   "primaryImageOfPage": {
     "@type": "ImageObject",
-    "url": `https://vumbnail.com/${project.vimeoId}.jpg`
+    "url": vimeoPosterAbsoluteUrl(project.vimeoId)
   },
   "mainEntity": { "@id": `${canonicalUrl}#primary-video` }
 };
@@ -147,7 +148,7 @@ const creativeWorkData = {
 <BaseLayout
   title={`${project.title} | Motion Story`}
   description={project.description}
-  ogImage={`https://vumbnail.com/${project.vimeoId}.jpg`}
+  ogImage={vimeoPosterAbsoluteUrl(project.vimeoId)}
   canonicalUrl={canonicalUrl}
 >
   <Fragment slot="head">

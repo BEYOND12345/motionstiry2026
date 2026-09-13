@@ -1,0 +1,53 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import VerticalLanding from '../components/VerticalLanding.astro';
+import { cybersecurityVerticalLanding } from '../data/vertical-landings/cybersecurity';
+
+const config = cybersecurityVerticalLanding;
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Cybersecurity Motion Graphic Explainer Videos',
+  description: config.seo.metaDescription,
+  provider: { '@type': 'Organization', name: 'Motion Story', url: 'https://motionstory.com.au' },
+  serviceType: 'Cybersecurity Motion Graphic Explainer Videos',
+  areaServed: 'Worldwide',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://motionstory.com.au/' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://motionstory.com.au/services/' },
+    { '@type': 'ListItem', position: 3, name: 'Cybersecurity Motion Graphic Explainer Videos', item: 'https://motionstory.com.au/cybersecurity-explainer-videos/' },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: config.faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: f.answer },
+  })),
+};
+---
+
+<PageLayout
+  title={config.seo.titleTag}
+  description={config.seo.metaDescription}
+  canonicalUrl={`https://motionstory.com.au${config.seo.canonicalPath}`}
+  floatSubject="Cybersecurity motion graphic explainer"
+  ctaHeading="Clarify the security story in minutes."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <VerticalLanding config={config} />
+</PageLayout>
