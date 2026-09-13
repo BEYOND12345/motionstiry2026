@@ -12,6 +12,9 @@ export const SITE_DESCRIPTION =
 export const SITE_DESCRIPTION_LONG =
   "SaaS motion graphic explainer videos for new software products. Dan Neale: independent motion designer and director. Product on screen, story first. Small studio, Byron Bay; clients worldwide.";
 
+export const HERO_LEDE =
+  "Motion graphics for forward-thinking companies. When something is hard to explain, I make it clear from concept to execution with motion, illustration, storyboarding, and design.";
+
 export const PROFILE_LEDE =
   "Independent motion designer and director. Making brands move since 2010. Small studio, big impact: work directly with me.";
 

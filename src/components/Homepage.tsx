@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { sortProjectsShowcaseFirst, type Project } from "../data/projects";
-import { PROFILE_LEDE, WHY_ME } from "../data/site-copy";
+import { HERO_LEDE, PROFILE_LEDE, WHY_ME } from "../data/site-copy";
 import { vimeoPosterUrl } from "../lib/vimeo";
 import ClientTicker from "./ClientTicker";
 import { GOOGLE_RATING } from "../data/reviews";
@@ -278,6 +278,9 @@ export default function Homepage() {
                 Made<br />
                 Simple.
               </h1>
+              <p className="text-body mb-8 max-w-md">
+                {HERO_LEDE}
+              </p>
               <div className="max-w-md">
                 <ClientTicker
                   label="Clients"
