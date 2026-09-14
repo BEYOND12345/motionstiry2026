@@ -1138,6 +1138,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     slug: "how-to-get-past-3-second-watch-rule",
     title: "How to Get Past the 3-Second Watch Rule: What Makes Viewers Stay",
     date: "2026-01-21",
+    updated: "2026-09-15",
     category: "Conversion Strategy",
     tags: ["video engagement", "3-second rule", "viewer retention", "SaaS video optimization"],
     excerpt: "Most viewers decide in three seconds whether to keep watching. Here's what separates videos that hold attention from those that get scrolled past.",
@@ -1207,7 +1208,7 @@ A video that works on your homepage won't necessarily work on LinkedIn. The paci
 
 **Create multiple openings.** For social ads, produce two or three variations of the first three seconds and test which one holds attention best. The rest of the video can be identical. Just swap the hook. I talk more about testing and measuring in my guide on [the 10-second test](/10-second-test-is-your-video-working).
 
-If your SaaS videos are getting views but losing viewers early, the fix is almost always in the first five seconds. Get those right and the rest of the video has a chance to do its job. Take a look at [my explainer video work](/explainer-videos/) to see how I approach openings, or [get in touch](/contact/) to discuss your project.
+If your SaaS videos are getting views but losing viewers early, the fix is almost always in the first five seconds. Get those right and the rest of the video has a chance to do its job. Take a look at [SaaS motion graphic explainer videos](/saas-explainer-videos/) to see how I approach openings, or [get in touch](/contact/) to discuss your project.
 
 ## What I Actually Do in the First Three Seconds
 

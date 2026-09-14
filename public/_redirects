@@ -44,11 +44,11 @@ http://motionstory.com.au/*        https://motionstory.com.au/:splat   301!
 # Old service pages → audience pages
 # ───────────────────────────────────────────────────
 # /services/ is a real page — no redirect
-/explainer-video-company/           /saas-explainer-videos/    301!
-/explainer-video-company-20024/     /saas-explainer-videos/    301!
-/animation-production-company/      /saas-explainer-videos/    301!
+/explainer-video-company/           /explainer-videos/         301!
+/explainer-video-company-20024/     /explainer-videos/         301!
+/animation-production-company/      /explainer-videos/         301!
+/animated-video-service/            /explainer-videos/         301!
 /motion-graphic-production-company/ /motion-graphics/          301!
-/animated-video-service/            /saas-explainer-videos/    301!
 /30s-explainer-videos/              /startups/                 301!
 /start-up-explainer-videos/         /startups/                 301!
 /fintech-explainer-videos/          /finance-explainer-videos/       301!
@@ -82,7 +82,7 @@ http://motionstory.com.au/*        https://motionstory.com.au/:splat   301!
 # ───────────────────────────────────────────────────
 /landing-page-design-animation/              /saas-explainer-videos/  301!
 # /landing-page-explainer-video-01/ is a live Ads landing (do not redirect)
-/animation-production-company-2/             /saas-explainer-videos/  301!
+/animation-production-company-2/             /explainer-videos/  301!
 /landing-page-animated-video-services-01/    /saas-explainer-videos/  301!
 # /landing-animated-product-demos-01/ is a live Ads landing (do not redirect)
 /freelance-motion-graphic-designer/          /motion-graphics/        301!

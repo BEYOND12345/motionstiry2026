@@ -8,7 +8,7 @@ import {
 
 export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
   seo: {
-    titleTag: 'Motion Graphics & Freelance Motion Designer | Motion Story',
+    titleTag: 'Motion Graphics Studio | Freelance Motion Designer | Motion Story',
     metaDescription:
       'Senior freelance motion designer. Motion graphic explainer videos, 2D animation, and campaign motion. Direct access. No agency layer. Dan Neale, Byron Bay.',
     canonicalPath: '/motion-graphics/',

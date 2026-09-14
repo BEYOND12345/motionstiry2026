@@ -118,12 +118,12 @@ export default defineConfig({
     '/pricing/': '/contact/',
 
     // '/services/' is now a real hub page (src/pages/services.astro)
-    '/explainer-video-company/': '/saas-explainer-videos/',
-    '/explainer-video-company-20024/': '/saas-explainer-videos/',
-    '/animation-production-company/': '/saas-explainer-videos/',
+    '/explainer-video-company/': '/explainer-videos/',
+    '/explainer-video-company-20024/': '/explainer-videos/',
+    '/animation-production-company/': '/explainer-videos/',
     '/motion-graphic-production-company/': '/motion-graphics/',
     '/fractional-creative-director/': '/creative-business-designer/',
-    '/animated-video-service/': '/saas-explainer-videos/',
+    '/animated-video-service/': '/explainer-videos/',
     '/30s-explainer-videos/': '/startups/',
     '/start-up-explainer-videos/': '/startups/',
     '/fintech-explainer-videos/': '/finance-explainer-videos/',
@@ -154,7 +154,7 @@ export default defineConfig({
     // Landing pages → relevant audience pages
     '/landing-page-design-animation/': '/saas-explainer-videos/',
     // /landing-page-explainer-video-01/ is a live Ads landing (do not redirect)
-    '/animation-production-company-2/': '/saas-explainer-videos/',
+    '/animation-production-company-2/': '/explainer-videos/',
     '/landing-page-animated-video-services-01/': '/saas-explainer-videos/',
     // /landing-animated-product-demos-01/ is a live Ads landing (do not redirect)
     '/freelance-motion-graphic-designer/': '/motion-graphics/',
