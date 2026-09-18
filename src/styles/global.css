@@ -142,6 +142,7 @@ body.homepage-layout {
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  border-radius: 0.75rem;
   transition: opacity 0.2s ease;
 }
 
@@ -161,6 +162,7 @@ body.homepage-layout {
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  border-radius: 0.75rem;
   transition: opacity 0.2s ease;
 }
 

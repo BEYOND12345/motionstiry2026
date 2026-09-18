@@ -124,6 +124,7 @@ const faqs = config.faqs.slice(0, 4);
   </section>
 
   <section class="vl-faq">
+    <h2 class="vl-section-title">Questions</h2>
     <div class="fold">
       {faqs.map((faq) => (
         <details class="fold-item">
@@ -137,14 +138,17 @@ const faqs = config.faqs.slice(0, 4);
   </section>
 
   {config.links.length > 0 && (
-    <nav class="vl-links" aria-label="Related pages">
-      {config.links.map((link) => (
-        <a href={link.href} class="vl-link-card">
-          <span class="vl-eyebrow">{link.eyebrow}</span>
-          <p>{link.label}</p>
-        </a>
-      ))}
-    </nav>
+    <section class="vl-more">
+      <h2 class="vl-section-title">More work</h2>
+      <nav class="vl-links" aria-label="More work">
+        {config.links.map((link) => (
+          <a href={link.href} class="vl-link-card">
+            <span class="vl-eyebrow">{link.eyebrow}</span>
+            <p>{link.label}</p>
+          </a>
+        ))}
+      </nav>
+    </section>
   )}
 </div>
 
@@ -235,7 +239,8 @@ const faqs = config.faqs.slice(0, 4);
     }
   }
 
-  .vl-work-intro {
+  .vl-work-intro,
+  .vl-section-title {
     font-family: var(--font-display);
     font-size: clamp(1.5rem, 3vw, 2.15rem);
     font-weight: 700;
@@ -307,11 +312,15 @@ const faqs = config.faqs.slice(0, 4);
     border-top: 1px solid rgba(10, 10, 10, 0.1);
   }
 
+  .vl-more {
+    margin-top: 4.5rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(10, 10, 10, 0.1);
+  }
+
   .vl-links {
     display: grid;
     gap: 1px;
-    margin-top: 4.5rem;
-    border-top: 1px solid rgba(10, 10, 10, 0.1);
     background: rgba(10, 10, 10, 0.08);
   }
 

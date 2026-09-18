@@ -70,6 +70,7 @@ export const causesVerticalLanding: VerticalLandingConfig = {
   links: [
     { href: '/explainer-videos/', eyebrow: 'Explainers', label: 'Explainer videos →' },
     { href: '/agencies/', eyebrow: 'Agencies', label: 'Agency partnerships →' },
+    { href: '/motion-graphics/', eyebrow: 'Motion', label: 'Motion graphics →' },
     { href: '/work/', eyebrow: 'Portfolio', label: 'See all work →' },
   ],
 };
