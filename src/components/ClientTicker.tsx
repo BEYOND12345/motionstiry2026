@@ -64,7 +64,7 @@ export default function ClientTicker({
   return (
     <section
       className={`ms-ticker ${compact ? "ms-ticker-compact" : ""}`}
-      aria-label={label}
+      aria-label={label || "Clients"}
     >
       <style>{`
         .ms-ticker-name { color: rgba(10, 10, 10, 0.72); }

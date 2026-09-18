@@ -4,7 +4,6 @@ import { sortProjectsShowcaseFirst, type Project } from "../data/projects";
 import { HERO_LEDE } from "../data/site-copy";
 import ClientTicker from "./ClientTicker";
 import WorkCard, { projectToWorkCard } from "./WorkCard";
-import { GOOGLE_RATING } from "../data/reviews";
 
 /** Full archive — strongest pieces first, then everything else. */
 const PORTFOLIO = sortProjectsShowcaseFirst();
@@ -40,6 +39,78 @@ const CLIENT_ROW_B = [
   "IPA",
   "Method Recycling",
 ];
+
+const HOME_QUOTES = [
+  {
+    quote: "62% completion. 21% view rate. For a video about bins.",
+    name: "Lee Bright",
+    company: "Method Recycling",
+  },
+  {
+    quote:
+      "It felt like Motion Story was part of our team, even though we were both sitting at the other end of the globe.",
+    name: "Simon Lehmann",
+    company: "Acodis",
+  },
+  {
+    quote:
+      "The video has surpassed 40k views, and two years later it remains our best performing piece of content.",
+    name: "Jefferson Nova",
+    company: "Google review",
+  },
+  {
+    quote: "There are a lot of motion designers out there but not many who think like Dan does.",
+    name: "Troy Cornelius",
+    company: "Google review",
+  },
+] as const;
+
+const HOME_MENU = [
+  { label: "Work", href: "/work/" },
+  { label: "Process", href: "/process/" },
+  { label: "About", href: "/about/" },
+  { label: "Blog", href: "/blog/" },
+  { label: "Start a project", href: "/contact/" },
+] as const;
+
+function QuoteCycle() {
+  const [index, setIndex] = useState(0);
+  const [reduceMotion, setReduceMotion] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const sync = () => setReduceMotion(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
+  useEffect(() => {
+    if (reduceMotion) return;
+    const timer = window.setInterval(() => {
+      setIndex((current) => (current + 1) % HOME_QUOTES.length);
+    }, 6500);
+    return () => window.clearInterval(timer);
+  }, [reduceMotion]);
+
+  const item = HOME_QUOTES[index];
+
+  return (
+    <blockquote className="relative min-h-[5.75rem] max-w-md">
+      <p
+        key={item.quote}
+        className="font-display text-base font-medium leading-snug tracking-tight md:text-[1.05rem]"
+      >
+        “{item.quote}”
+      </p>
+      <p className="mt-3 text-metadata">
+        {item.name}
+        <span className="mx-2 opacity-30">·</span>
+        {item.company}
+      </p>
+    </blockquote>
+  );
+}
 
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -172,61 +243,41 @@ export default function Homepage() {
 
       <div id="main-content" className="split-container">
         <aside className="split-left relative">
-          <header id="top" className="mb-10">
-            <h1 className="text-display mb-6">
+          <header id="top" className="max-w-md">
+            <h1 className="text-display">
               Complex<br />
               Made<br />
               Simple.
             </h1>
-            <p className="text-body mb-8 max-w-md">
+            <p className="mt-6 font-display text-[1.35rem] font-medium leading-[1.25] tracking-tight text-black md:text-[1.5rem]">
               {HERO_LEDE}
             </p>
-            <div className="max-w-md pr-24 lg:pr-0">
+            <div className="mt-6 pr-24 lg:pr-0">
               <ClientTicker
-                label="Clients"
                 compact
+                label=""
                 rowA={CLIENT_ROW_A}
                 rowB={CLIENT_ROW_B}
               />
             </div>
-            <blockquote className="mt-10 max-w-md">
-              <p className="font-display text-base font-medium leading-snug tracking-tight md:text-lg">
-                “62% completion. 21% view rate. For a video about bins.”
-              </p>
-              <p className="mt-3 text-metadata">
-                Lee Bright, Method Recycling
-                <span className="mx-2 opacity-30">·</span>
-                <span className="text-accent">★★★★★</span> {GOOGLE_RATING.score}
-              </p>
-            </blockquote>
-            <a
-              href="/work/"
-              className="text-nav-item group relative mt-10 flex items-center gap-4"
-            >
-              <span className="text-2xl text-accent">→</span>
-              See all work
-            </a>
-            <p className="mt-8 text-body max-w-md">
-              <a href="/about/" className="border-b border-black/20 transition-colors hover:border-black">
-                Dan Neale
-              </a>
-              <span className="mx-2 opacity-30">·</span>
-              Byron Bay
-            </p>
+            <div className="mt-6">
+              <QuoteCycle />
+            </div>
           </header>
 
-          <nav className="mt-auto border-t border-black/10 pt-8 pb-6" aria-label="Studio pages">
-            <div className="flex flex-wrap gap-x-5 gap-y-2 text-body !text-sm max-w-md">
-              <a href="/saas-explainer-videos/" className="transition-colors hover:text-black">SaaS</a>
-              <a href="/explainer-videos/" className="transition-colors hover:text-black">Explainers</a>
-              <a href="/product-demo-videos/" className="transition-colors hover:text-black">Demos</a>
-              <a href="/motion-graphics/" className="transition-colors hover:text-black">Motion</a>
-              <a href="/startups/" className="transition-colors hover:text-black">Startups</a>
-              <a href="/agencies/" className="transition-colors hover:text-black">Agencies</a>
-              <a href="/about/" className="transition-colors hover:text-black">About</a>
-              <a href="/process/" className="transition-colors hover:text-black">Process</a>
-              <a href="/contact/" className="transition-colors hover:text-black">Start a project</a>
-            </div>
+          <nav className="mt-auto max-w-md pt-8 pb-1" aria-label="Studio">
+            <ul className="flex flex-wrap gap-x-5 gap-y-2">
+              {HOME_MENU.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    className="text-[15px] tracking-tight text-black transition-opacity hover:opacity-50"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </nav>
         </aside>
 
