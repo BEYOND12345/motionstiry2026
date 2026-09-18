@@ -41,6 +41,7 @@ const faqSchema = {
   canonicalUrl={`https://motionstory.com.au${config.seo.canonicalPath}`}
   floatSubject="Technology video"
   ctaHeading="Clarify your technology story in minutes."
+  showCTA={false}
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />

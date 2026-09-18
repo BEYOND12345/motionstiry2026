@@ -1,12 +1,6 @@
 ---
 /**
- * Landing template — five bands on every vertical:
- * 1. Claim + hero film
- * 2. Client ticker
- * 3. Work grid (WorkCard, 2-col)
- * 4. Why-band (value + quote + 3 lines)
- * 5. FAQ (capped at 4) + related links
- *
+ * Landing template — claim, ticker, work with proof woven through, a few questions.
  * Shared nav/footer via PageLayout. Ads/sales pages stay on their own skins.
  */
 import VimeoEmbed from './VimeoEmbed';
@@ -66,13 +60,10 @@ const faqs = config.faqs.slice(0, 4);
   </section>
 
   <section id="work" class="vl-work">
-    <div class="vl-section-head">
-      <p class="vl-eyebrow">{config.workEyebrow ?? 'Selected work'}</p>
-      <p class="vl-count">{String(cases.length).padStart(2, '0')}</p>
-    </div>
+    <p class="vl-work-intro">{config.value.headline}</p>
 
     <div class="work-grid">
-      {cases.map((study, i) => (
+      {cases.slice(0, 2).map((study, i) => (
         <WorkCard
           client:visible
           vimeoId={study.vimeoId}
@@ -81,7 +72,48 @@ const faqs = config.faqs.slice(0, 4);
           client={study.client}
           description={study.body}
           href={study.link}
-          loading={i < 2 ? 'eager' : 'lazy'}
+          loading={i === 0 ? 'eager' : 'lazy'}
+        />
+      ))}
+
+      <blockquote class="work-grid-break vl-break">
+        <p>“{config.quote.text}”</p>
+        <footer>
+          {config.quote.name}
+          <span> — {config.quote.role}</span>
+        </footer>
+      </blockquote>
+
+      {cases.slice(2, 4).map((study) => (
+        <WorkCard
+          client:visible
+          vimeoId={study.vimeoId}
+          vimeoHash={study.vimeoHash}
+          title={study.title}
+          client={study.client}
+          description={study.body}
+          href={study.link}
+        />
+      ))}
+
+      <ul class="work-grid-break vl-break-lines">
+        {whyLines.map((item) => (
+          <li>
+            <span class="text-accent" aria-hidden="true">→</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+
+      {cases.slice(4).map((study) => (
+        <WorkCard
+          client:visible
+          vimeoId={study.vimeoId}
+          vimeoHash={study.vimeoHash}
+          title={study.title}
+          client={study.client}
+          description={study.body}
+          href={study.link}
         />
       ))}
     </div>
@@ -91,29 +123,7 @@ const faqs = config.faqs.slice(0, 4);
     </p>
   </section>
 
-  <section class="vl-why">
-    <div class="vl-why-copy">
-      <h2 class="vl-why-title">{config.value.headline}</h2>
-      <blockquote class="vl-why-quote">
-        <p>“{config.quote.text}”</p>
-        <footer>
-          {config.quote.name}
-          <span> — {config.quote.role}</span>
-        </footer>
-      </blockquote>
-    </div>
-    <ul class="vl-why-lines">
-      {whyLines.map((item) => (
-        <li>
-          <span class="text-accent" aria-hidden="true">→</span>
-          <span>{item}</span>
-        </li>
-      ))}
-    </ul>
-  </section>
-
   <section class="vl-faq">
-    <p class="vl-eyebrow">Questions</p>
     <div class="fold">
       {faqs.map((faq) => (
         <details class="fold-item">
@@ -225,20 +235,56 @@ const faqs = config.faqs.slice(0, 4);
     }
   }
 
-  .vl-section-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-bottom: 2.5rem;
+  .vl-work-intro {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.15rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    margin: 0 0 2.5rem;
+    max-width: 28rem;
   }
 
-  .vl-count {
-    font-family: var(--font-sans);
-    font-size: 0.6875rem;
-    letter-spacing: 0.14em;
-    color: #b0b0b0;
+  .vl-break {
+    padding: 0.25rem 0 0.5rem;
     margin: 0;
+  }
+
+  .vl-break p {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.35;
+    margin: 0 0 0.85rem;
+    max-width: 40rem;
+  }
+
+  .vl-break footer {
+    font-size: 0.8125rem;
+    color: #7a7a7a;
+  }
+
+  .vl-break-lines {
+    list-style: none;
+    padding: 0.5rem 0 0.75rem;
+    margin: 0;
+    display: grid;
+    gap: 1.15rem 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .vl-break-lines {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .vl-break-lines li {
+    display: flex;
+    gap: 0.65rem;
+    font-size: 0.9875rem;
+    line-height: 1.45;
+    color: #333;
   }
 
   .vl-all-work {
@@ -255,77 +301,10 @@ const faqs = config.faqs.slice(0, 4);
     border-color: #0a0a0a;
   }
 
-  .vl-why {
-    display: grid;
-    gap: 2.5rem;
-    margin-top: 5.5rem;
-    padding-top: 3.5rem;
-    border-top: 1px solid rgba(10, 10, 10, 0.1);
-  }
-
-  @media (min-width: 900px) {
-    .vl-why {
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-      gap: 4rem;
-      align-items: start;
-    }
-  }
-
-  .vl-why-title {
-    font-family: var(--font-display);
-    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-    font-weight: 700;
-    letter-spacing: -0.025em;
-    line-height: 1.15;
-    margin: 0 0 1.75rem;
-  }
-
-  .vl-why-quote p {
-    font-family: var(--font-display);
-    font-size: clamp(1.15rem, 2.2vw, 1.5rem);
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    line-height: 1.35;
-    margin: 0 0 1rem;
-  }
-
-  .vl-why-quote footer {
-    font-size: 0.8125rem;
-    color: #7a7a7a;
-  }
-
-  .vl-why-lines {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.15rem;
-  }
-
-  .vl-why-lines li {
-    display: flex;
-    gap: 0.75rem;
-    font-size: 0.9875rem;
-    line-height: 1.5;
-    color: #333;
-    padding-bottom: 1.15rem;
-    border-bottom: 1px solid rgba(10, 10, 10, 0.08);
-  }
-
-  .vl-why-lines li:last-child {
-    padding-bottom: 0;
-    border-bottom: none;
-  }
-
   .vl-faq {
     margin-top: 4.5rem;
     padding-top: 3rem;
     border-top: 1px solid rgba(10, 10, 10, 0.1);
-  }
-
-  .vl-faq .vl-eyebrow {
-    margin-bottom: 1.5rem;
   }
 
   .vl-links {

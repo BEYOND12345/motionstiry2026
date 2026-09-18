@@ -322,6 +322,14 @@ body.homepage-layout .split-right {
   padding-top: 69px;
 }
 
+body.homepage-layout .nav-inner {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 4rem;
+  padding-right: 2rem;
+}
+
 @media (max-width: 1024px) {
   body.homepage-layout .split-left {
     padding-top: calc(69px + 1.75rem);
@@ -329,11 +337,26 @@ body.homepage-layout .split-right {
   body.homepage-layout .split-right {
     padding-top: 0;
   }
+  body.homepage-layout .nav-inner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body.homepage-layout .nav-inner {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
   body.homepage-layout .split-left {
     padding-top: calc(69px + 1.25rem);
+  }
+  body.homepage-layout .nav-inner {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
@@ -398,6 +421,11 @@ body.homepage-layout .split-right {
   display: grid;
   grid-template-columns: 1fr;
   gap: 3.5rem 2rem;
+}
+
+.work-grid-break {
+  grid-column: 1 / -1;
+  min-width: 0;
 }
 
 @media (min-width: 768px) {
@@ -495,7 +523,7 @@ body.homepage-layout .split-right {
   border-top: 1px solid rgba(10, 10, 10, 0.1);
 }
 
-/* Floating mailto — black chip, red edge, reads over light and dark */
+/* Floating mailto — black chip, rounded, one red arrow */
 .landing-float {
   position: fixed;
   right: 1.5rem;
@@ -507,31 +535,29 @@ body.homepage-layout .split-right {
   padding: 0.95rem 1.3rem;
   background: #000;
   color: #fff;
-  border: 1px solid var(--color-accent);
+  border: none;
+  border-radius: 0.75rem;
   font-family: var(--font-display);
   font-size: 0.9375rem;
   font-weight: 500;
   letter-spacing: -0.015em;
   line-height: 1;
   pointer-events: auto;
-  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.22);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, color 0.3s ease, box-shadow 0.35s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
 }
 
 .landing-float:hover {
-  background: var(--color-accent);
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 14px 44px rgba(255, 0, 0, 0.28);
+  background: #111;
+  transform: translateY(-1px);
 }
 
 .landing-float-arrow {
   color: var(--color-accent);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .landing-float:hover .landing-float-arrow {
-  color: #fff;
   transform: translateX(2px);
 }
 
