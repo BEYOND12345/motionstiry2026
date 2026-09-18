@@ -1,10 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
+import PageLayout from '../layouts/PageLayout.astro';
 import PortfolioPage from '../components/PortfolioPage';
-import EmailFloat from '../components/EmailFloat.astro';
-import '../styles/global.css';
 
 const workDescription =
   "Motion graphics portfolio for startups, SaaS, agencies, and tech brands. Complex ideas made clear.";
@@ -28,9 +24,12 @@ const structuredData = {
 };
 ---
 
-<BaseLayout
+<PageLayout
   title="Motion Graphics Portfolio | Motion Story"
   description={workDescription}
+  activeNav="Work"
+  ctaHeading="Got something complex to explain?"
+  floatSubject="Portfolio enquiry"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
@@ -43,10 +42,5 @@ const structuredData = {
     })} />
   </Fragment>
 
-  <Nav activeItem="Work" />
-  <main id="main-content">
-    <PortfolioPage client:load />
-  </main>
-  <Footer />
-  <EmailFloat subject="Portfolio enquiry" />
-</BaseLayout>
+  <PortfolioPage client:load />
+</PageLayout>

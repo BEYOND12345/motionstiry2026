@@ -1,8 +1,7 @@
-import { motion } from "framer-motion";
 import type { Project } from "../data/projects";
-import { vimeoPosterUrl } from "../lib/vimeo";
 import { getReviewForClient, pickVerifiedReviews } from "../data/reviews";
 import VimeoEmbed from "./VimeoEmbed";
+import WorkCard, { projectToWorkCard } from "./WorkCard";
 import PageTransition, { FadeUp, SlideUp, AnimatedSection } from "./PageTransition";
 
 interface Props {
@@ -147,21 +146,10 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
             <FadeUp>
               <span className="text-metadata mb-10 block">Related Projects</span>
             </FadeUp>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {relatedProjects.map(rp => (
+            <div className="work-grid work-grid-3">
+              {relatedProjects.map((rp) => (
                 <FadeUp key={rp.id}>
-                  <a href={`/casestudy/${rp.slug}/`} className="group block">
-                    <div className="aspect-video overflow-hidden rounded-xl bg-gray-100 mb-4">
-                      <img
-                        src={vimeoPosterUrl(rp.vimeoId)}
-                        alt={rp.title}
-                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                        loading="lazy"
-                      />
-                    </div>
-                    <p className="font-display text-base font-medium group-hover:opacity-60 transition-opacity">{rp.title}</p>
-                    <p className="text-metadata opacity-50">{rp.client}</p>
-                  </a>
+                  <WorkCard {...projectToWorkCard(rp)} />
                 </FadeUp>
               ))}
             </div>

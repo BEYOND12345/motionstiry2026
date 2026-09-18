@@ -9,7 +9,7 @@ export const financeVerticalLanding: VerticalLandingConfig = {
     canonicalPath: '/finance-explainer-videos/',
   },
   eyebrow: 'Fintech motion graphic explainer videos',
-  headline: ['Fintech motion graphic', 'explainer videos.'],
+  headline: ['Make money software', 'feel trustworthy.'],
   lede: 'Fintech motion graphic explainer videos for payments, banking, and financial software that cannot afford to look cute or vague. Clear enough for a board, sharp enough for a landing page.',
   heroVideo: {
     vimeoId: '1157366298',
@@ -62,9 +62,13 @@ export const financeVerticalLanding: VerticalLandingConfig = {
       tags: 'AI accounting, fintech, motion graphic explainer',
       body: 'Machine learning for bookkeeping and reconciliation, told so accountants see the advisory work they get back — not a black box.',
     }),
+    verticalCase('altius-map', {
+      tags: 'Financial wellbeing, explainer',
+      body: "Altius's Manager Assist Program walked through in two minutes — a services brochure turned into a story managers actually watch.",
+    }),
   ],
   value: {
-    headline: 'Make money software feel trustworthy.',
+    headline: 'Show the mechanism.',
     body: 'Payments, ledgers, and closed-loop networks do not explain themselves. I put the mechanism on screen so a CFO, a marketer, and a customer all see the same story.',
   },
   benefits: {

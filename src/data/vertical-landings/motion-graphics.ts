@@ -28,21 +28,9 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
       tags: 'Motion graphic, data, cause',
       body: 'Data-led storytelling for a global plastic waste brief — attention-grabbing, then actionable.',
     }),
-    verticalCase('method-recycling', {
-      tags: 'Character, brand, product',
-      body: 'Character-led workplace storytelling with completion rates that still surprise.',
-    }),
     verticalCase('rspca-cats', {
       tags: 'Character animation, charity',
       body: 'Behaviour change for cat owners — warm illustration with a serious message.',
-    }),
-    verticalCase('atomic', {
-      tags: 'SaaS, UI storytelling',
-      body: 'Product motion that feels native to the software — clear, branded, sales-ready.',
-    }),
-    verticalCase('wipster', {
-      tags: 'Platform, explainer',
-      body: 'Smooth feature storytelling for a complex collaboration tool.',
     }),
     verticalCase('amsed', {
       tags: 'Motion graphic',
@@ -52,9 +40,13 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
       tags: 'Character, training',
       body: 'Charming character animation that makes behavioural training feel accessible.',
     }),
-    verticalCase('eluse-krue', {
-      tags: 'Science, beauty, hand-drawn',
-      body: 'A scientific product story with a unique hand-drawn visual language.',
+    verticalCase('atomic', {
+      tags: 'SaaS, UI storytelling',
+      body: 'Product motion that feels native to the software — clear, branded, sales-ready.',
+    }),
+    verticalCase('cotton-australia', {
+      tags: 'Farming, explainer, motion graphic',
+      body: 'Thirty years of eco-friendly farming told from planting to harvest — craft in service of a clear story.',
     }),
   ],
   value: {

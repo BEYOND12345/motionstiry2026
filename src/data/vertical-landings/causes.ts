@@ -48,14 +48,6 @@ export const causesVerticalLanding: VerticalLandingConfig = {
       tags: 'Government, reform, explainer',
       body: 'A complex reform made clear for a huge public audience — social-ready and praised for how clear the message is.',
     }),
-    verticalCase('solar-my-school', {
-      tags: 'Education, energy, cause',
-      body: 'Empowering schools through solar — a mission story that makes the benefit obvious to parents, staff, and partners.',
-    }),
-    verticalCase('ipa', {
-      tags: 'Policy, advocacy, explainer',
-      body: 'Electric car road tax explained so the campaign could reach a huge audience and support approval in SA and VIC.',
-    }),
   ],
   value: {
     headline: 'Create an emotion.',

@@ -3,7 +3,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 import { GOOGLE_RATING, VERIFIED_CLIENT_REVIEWS } from '../data/reviews';
 import { getShowcaseProjects } from '../data/projects';
 import { PROFILE_LEDE, SITE_DESCRIPTION, WHY_ME } from '../data/site-copy';
-import { vimeoPosterUrl } from '../lib/vimeo';
+import WorkCard from '../components/WorkCard';
 
 const strapline = VERIFIED_CLIENT_REVIEWS[0];
 const aboutWork = getShowcaseProjects().slice(0, 3);
@@ -167,20 +167,18 @@ const structuredData = {
       <p class="text-metadata"><span class="text-accent">02</span> — The work</p>
       <a href="/work/" class="text-metadata hover:text-black transition-colors">Full portfolio →</a>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8">
-      {aboutWork.map((project) => (
-        <a href={`/casestudy/${project.slug}/`} class="group block">
-          <div class="aspect-video overflow-hidden rounded-xl bg-black/[0.04] mb-4">
-            <img
-              src={vimeoPosterUrl(project.vimeoId)}
-              alt={project.title}
-              class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-700"
-              loading="lazy"
-            />
-          </div>
-          <p class="font-display text-base font-medium group-hover:opacity-60 transition-opacity">{project.title}</p>
-          <p class="text-metadata opacity-50 mt-1">{project.client}</p>
-        </a>
+    <div class="work-grid work-grid-3">
+      {aboutWork.map((project, i) => (
+        <WorkCard
+          client:visible
+          vimeoId={project.vimeoId}
+          vimeoHash={project.vimeoHash}
+          title={project.title}
+          client={project.client}
+          description={project.description}
+          href={`/casestudy/${project.slug}/`}
+          loading={i === 0 ? 'eager' : 'lazy'}
+        />
       ))}
     </div>
   </section>

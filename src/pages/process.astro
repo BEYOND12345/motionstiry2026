@@ -90,10 +90,12 @@ const faqs = [
   },
 ];
 
+const visibleFaqs = faqs.slice(0, 4);
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": faqs.map((f) => ({
+  "mainEntity": visibleFaqs.map((f) => ({
     "@type": "Question",
     "name": f.q,
     "acceptedAnswer": { "@type": "Answer", "text": f.a },
@@ -162,7 +164,7 @@ const faqSchema = {
     <section class="mb-16">
       <span class="text-metadata mb-8 block">Questions</span>
       <div class="fold">
-        {faqs.map((faq) => (
+        {visibleFaqs.map((faq) => (
           <details class="fold-item">
             <summary>{faq.q}</summary>
             <div class="fold-body">

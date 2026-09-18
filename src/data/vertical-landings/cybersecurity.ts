@@ -9,7 +9,7 @@ export const cybersecurityVerticalLanding: VerticalLandingConfig = {
     canonicalPath: '/cybersecurity-explainer-videos/',
   },
   eyebrow: 'Cybersecurity motion graphic explainer videos',
-  headline: ['Cybersecurity motion graphic', 'explainer videos.'],
+  headline: ['Make the threat,', 'and the fix, visible.'],
   lede: 'Cybersecurity motion graphic explainer videos for platforms that security people understand and buyers do not. Threats, privacy, post-quantum readiness — told so a non-specialist can follow and act.',
   heroVideo: {
     vimeoId: '1213121904',
@@ -49,9 +49,25 @@ export const cybersecurityVerticalLanding: VerticalLandingConfig = {
       tags: 'Privacy, data security, motion graphic explainer',
       body: 'Privacy-preserving data explained as a journey, not a white paper. A 3D environment that shows how the security model actually works.',
     }),
+    verticalCase('cloud-trace', {
+      tags: 'Cloud, security, SaaS explainer',
+      body: 'An abstract cloud product grounded in visuals that show what the platform actually does — clarity first, decoration second.',
+    }),
+    verticalCase('liquid-ai', {
+      tags: 'AI, targeting, trust',
+      body: 'How the targeting actually works — an origin story that makes a technical system followable for a non-specialist buyer.',
+    }),
+    verticalCase('aon-conversations', {
+      tags: 'Risk, brand, conversations',
+      body: 'A clear conversation film for a global risk brand — the tone security buyers expect when the subject is serious.',
+    }),
+    verticalCase('acodis', {
+      tags: 'AI, documents, data handling',
+      body: 'AI document extraction made layperson-clear — the data-handling story a security-conscious buyer still has to follow.',
+    }),
   ],
   value: {
-    headline: 'Make the threat, and the fix, visible.',
+    headline: 'Name the risk. Then show the control.',
     body: 'Security products fail in the first ten seconds when they open on a feature list. I start with the specific risk the buyer already feels, then show the mechanism — without talking down to the technical team in the room.',
   },
   benefits: {

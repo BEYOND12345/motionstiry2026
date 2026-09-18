@@ -14,11 +14,11 @@ export const productDemoVerticalLanding: VerticalLandingConfig = {
     canonicalPath: '/product-demo-videos/',
   },
   eyebrow: 'Motion graphic product explainer videos',
-  headline: ['Motion graphic product', 'explainer videos.'],
+  headline: ['Show the product', 'working.'],
   lede: 'Motion graphic product explainer videos for teams with a product to show. UI on screen, workflow clear — play, understand, decide. More than a screen recording.',
   heroVideo: {
-    vimeoId: '866174146',
-    title: 'Trudi / AI Property Management',
+    vimeoId: '557884851',
+    title: 'Method / Beautiful Bin System',
   },
   tickerLabel: 'Trusted by teams who need clarity',
   tickerRowA: VERTICAL_TICKER_A,
@@ -32,10 +32,6 @@ export const productDemoVerticalLanding: VerticalLandingConfig = {
       tags: 'Animated product demo, health & fitness',
       body: "Oartech couldn't demo its advanced rowing machine online, so we designed an animation that shows the product in use — and where it beats the competition for a safer workout.",
     }),
-    verticalCase('method-recycling', {
-      tags: 'Product demo explainer, recycling system',
-      body: 'Method struggled to get people excited about a revamp of the office bin. Vibrant character illustration and bold brand colour made a lively workplace story that also explains the green credentials.',
-    }),
     verticalCase('propspeed', {
       tags: 'Animated product demo, marine',
       body: "Propspeed's propeller coating works wonders but isn't easily understood. Labelled diagrams and split-screen comparisons made the technical story easy to absorb, with the product in action.",
@@ -47,10 +43,6 @@ export const productDemoVerticalLanding: VerticalLandingConfig = {
     verticalCase('method-product', {
       tags: 'Product explainer, workplace',
       body: "A product-level walkthrough of Method's bin system in real workplaces — practical clarity that complements the brand film.",
-    }),
-    verticalCase('good2pay', {
-      tags: 'Product demo, fintech',
-      body: 'Paperless invoicing made obvious — a product story built for busy teams who need to see the workflow, not read a feature list.',
     }),
     verticalCase('heyyou', {
       tags: 'App demo, food ordering',

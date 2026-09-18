@@ -24,33 +24,25 @@ export const agenciesVerticalLanding: VerticalLandingConfig = {
   tickerRowA: VERTICAL_TICKER_A,
   tickerRowB: VERTICAL_TICKER_B,
   cases: [
-    verticalCase('wipster', {
-      tags: 'Agency-ready, SaaS, explainer',
-      body: 'Connect-the-dots product storytelling for a video feedback platform — the kind of film agencies need when the brief is complex and the timeline is real.',
-    }),
     verticalCase('meltwater', {
       tags: 'Brand story, campaign motion',
       body: 'A brand story with the polish agencies expect — clear narrative, strong craft, delivery you can put in front of a client without flinching.',
     }),
-    verticalCase('atomic', {
-      tags: 'Product, in-app messaging',
-      body: 'In-app messaging made native and clear — collaborative or white-label ready.',
+    verticalCase('wipster', {
+      tags: 'Agency-ready, SaaS, explainer',
+      body: 'Connect-the-dots product storytelling for a video feedback platform — the kind of film agencies need when the brief is complex and the timeline is real.',
     }),
-    verticalCase('united-nations', {
-      tags: 'Cause, data, explainer',
-      body: 'High-stakes storytelling for a global mission — proof that senior craft scales to the hardest briefs.',
-    }),
-    verticalCase('mosaic', {
-      tags: 'SaaS, data planning',
-      body: 'Strategic data planning explained with precision — the standard agencies want when the client is technical.',
-    }),
-    verticalCase('acodis', {
-      tags: 'AI, SaaS, explainer',
-      body: 'Deep tech made layperson-clear — the brief agencies bring when the product team cannot explain it themselves.',
+    verticalCase('bresic-witney', {
+      tags: 'Brand, property, campaign',
+      body: 'A different kind of estate agent, told through motion — the brief agencies bring when the client needs to feel distinct.',
     }),
     verticalCase('giraffe', {
       tags: '3D, urban tech',
       body: 'City planning software for three stakeholder groups — architecture, development, and government.',
+    }),
+    verticalCase('mosaic', {
+      tags: 'SaaS, data planning',
+      body: 'Strategic data planning explained with precision — the standard agencies want when the client is technical.',
     }),
     verticalCase('method-recycling', {
       tags: 'Product, brand',

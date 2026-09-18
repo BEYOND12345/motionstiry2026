@@ -14,11 +14,11 @@ export const technologyVerticalLanding: VerticalLandingConfig = {
     canonicalPath: '/technology-videos/',
   },
   eyebrow: 'Technology videos',
-  headline: ['Stories for', 'technology.'],
+  headline: ['Make the tech', 'followable.'],
   lede: 'AI, cyber, crypto, smart cities — complex tech made clear with a story people can follow.',
   heroVideo: {
-    vimeoId: '879242129',
-    title: 'Mosaic / Strategic Data Planning',
+    vimeoId: '762112642',
+    title: 'Giraffe / Designing Cities',
   },
   tickerLabel: 'Trusted by teams who need clarity',
   tickerRowA: VERTICAL_TICKER_A,
@@ -40,10 +40,6 @@ export const technologyVerticalLanding: VerticalLandingConfig = {
       tags: 'Software explainer, data, motion graphic',
       body: "Data Republic wasn't converting enough visitors. We designed a conceptual 3D environment that methodically explained the inner workings of their privacy-preserving data solution.",
     }),
-    verticalCase('giraffe', {
-      tags: 'Software, city planning, SaaS, 3D',
-      body: 'An inclusive story for architects, developers, and government — clean geometry walking through powerful capabilities and a clear vision for smarter cities.',
-    }),
     verticalCase('bat-nav', {
       tags: 'Energy tech, platform explainer',
       body: 'Batteries as the future of energy — pointing out the pitfalls of choosing wrong, and how Cell Engineer matches the best battery to any requirement.',
@@ -51,10 +47,6 @@ export const technologyVerticalLanding: VerticalLandingConfig = {
     verticalCase('nisient', {
       tags: 'Quantum security, deep tech',
       body: 'Post-quantum security made clear for decision makers — one of the most technical subjects in software, told so non-specialists can follow and act.',
-    }),
-    verticalCase('shape-connect', {
-      tags: 'Cyber security, SaaS',
-      body: 'Website security visualised in real time — threats detected and neutralised, made accessible to non-technical buyers.',
     }),
   ],
   value: {

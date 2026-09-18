@@ -10,16 +10,18 @@ interface VimeoEmbedProps {
   loading?: "eager" | "lazy";
   /** Privacy hash for unlisted Vimeo videos */
   vimeoHash?: string;
+  onPlay?: () => void;
 }
 
 export default function VimeoEmbed({
   vimeoId,
   title,
   className = "",
-  autoColor = false,
+  autoColor = true,
   loadImmediately = false,
   loading = "lazy",
   vimeoHash,
+  onPlay,
 }: VimeoEmbedProps) {
   const [isLoaded, setIsLoaded] = useState(loadImmediately);
 
@@ -27,7 +29,10 @@ export default function VimeoEmbed({
     <div className={`relative aspect-video bg-black/[0.04] overflow-hidden ${className}`}>
       {!isLoaded && (
         <button
-          onClick={() => setIsLoaded(true)}
+          onClick={() => {
+            setIsLoaded(true);
+            onPlay?.();
+          }}
           className="absolute inset-0 flex items-center justify-center group/play cursor-pointer z-10"
           aria-label={`Play video: ${title}`}
         >

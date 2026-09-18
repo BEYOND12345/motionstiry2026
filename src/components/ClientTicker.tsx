@@ -70,13 +70,12 @@ export default function ClientTicker({
         .ms-ticker-name { color: rgba(10, 10, 10, 0.72); }
         .ms-ticker-dot { color: #FF0000; opacity: 0.9; }
         .ms-ticker-mask {
-          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-          -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 10%, #000 86%, transparent);
+          -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 86%, transparent);
         }
         .ms-ticker.ms-ticker-compact .ms-ticker-mask {
-          /* Harder right fade so the reel never crowds the portfolio gutter */
-          mask-image: linear-gradient(90deg, #000 0%, #000 82%, transparent 100%);
-          -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 82%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 78%, transparent 100%);
+          -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 78%, transparent 100%);
         }
         .ms-ticker-track {
           animation: ms-ticker-scroll 48s linear infinite;

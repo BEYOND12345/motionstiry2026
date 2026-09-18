@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
 import Homepage from '../components/Homepage';
 import EmailFloat from '../components/EmailFloat.astro';
 import { SITE_DESCRIPTION, SITE_DESCRIPTION_LONG, SITE_TITLE } from '../data/site-copy';
@@ -128,6 +129,7 @@ const structuredData = {
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </Fragment>
 
+  <Nav />
   <Homepage client:load />
   <EmailFloat subject="Project enquiry" />
 </BaseLayout>

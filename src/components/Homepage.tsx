@@ -2,8 +2,8 @@ import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { sortProjectsShowcaseFirst, type Project } from "../data/projects";
 import { HERO_LEDE, PROFILE_LEDE, WHY_ME } from "../data/site-copy";
-import { vimeoPosterUrl } from "../lib/vimeo";
 import ClientTicker from "./ClientTicker";
+import WorkCard, { projectToWorkCard } from "./WorkCard";
 import { GOOGLE_RATING } from "../data/reviews";
 
 /** Full archive — strongest pieces first, then everything else. */
@@ -59,57 +59,14 @@ const CustomCursor = () => {
   );
 };
 
-function WorkCard({
-  project,
-  onSelect,
-}: {
-  project: Project;
-  onSelect: (project: Project) => void;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={() => onSelect(project)}
-      className="group w-full shrink-0 text-left"
-      aria-label={`Play ${project.client}: ${project.title}`}
-    >
-      <div className="relative aspect-video overflow-hidden rounded-xl bg-black/[0.04]">
-        <img
-          src={vimeoPosterUrl(project.vimeoId)}
-          alt=""
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-          loading="eager"
-          decoding="async"
-          draggable={false}
-        />
-        <div className="absolute inset-0 bg-black/10 transition-colors group-hover:bg-black/28" />
-        <span className="absolute bottom-4 left-4 flex h-11 w-11 items-center justify-center rounded-full border border-white/90 bg-black/15 backdrop-blur-[2px]">
-          <span className="ml-0.5 h-0 w-0 border-y-[6px] border-l-[10px] border-y-transparent border-l-white" />
-        </span>
-      </div>
-      <div className="mt-4 flex items-baseline justify-between gap-4 px-0.5">
-        <div className="min-w-0">
-          <p className="font-display text-lg font-bold tracking-tight md:text-xl">{project.client}</p>
-          <p className="mt-1 line-clamp-1 text-[14px] leading-relaxed text-black/45">{project.description}</p>
-        </div>
-        <span className="text-metadata shrink-0 opacity-30">{project.index}</span>
-      </div>
-    </button>
-  );
-}
-
-/** Slow vertical reel of showcase work — always visible, pause on hover. */
-function WorkVerticalCarousel({
-  projects,
-  onSelect,
-}: {
-  projects: Project[];
-  onSelect: (project: Project) => void;
-}) {
+/** Slow vertical reel of showcase work — pause on hover or when a film plays. */
+function WorkVerticalCarousel({ projects }: { projects: Project[] }) {
   const [paused, setPaused] = useState(false);
+  const [playing, setPlaying] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
   const loop = useMemo(() => [...projects, ...projects], [projects]);
   const durationSec = Math.max(60, projects.length * REEL_SECONDS_PER_PROJECT);
+  const frozen = paused || playing;
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -119,12 +76,25 @@ function WorkVerticalCarousel({
     return () => mq.removeEventListener("change", sync);
   }, []);
 
+  const card = (project: Project, key: string, loading: "eager" | "lazy") => (
+    <WorkCard
+      key={key}
+      {...projectToWorkCard(project)}
+      loading={loading}
+      meta={project.index}
+      className="w-full shrink-0"
+      heading="p"
+      onPlay={() => {
+        setPlaying(true);
+        setPaused(true);
+      }}
+    />
+  );
+
   if (reduceMotion) {
     return (
       <div className="space-y-10 px-4 pb-16 md:px-12 lg:px-14">
-        {projects.map((project) => (
-          <WorkCard key={project.id} project={project} onSelect={onSelect} />
-        ))}
+        {projects.map((project) => card(project, project.id, "lazy"))}
       </div>
     );
   }
@@ -133,10 +103,14 @@ function WorkVerticalCarousel({
     <div
       className="hp-work-reel relative h-full min-h-[70vh] lg:min-h-0"
       onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      onMouseLeave={() => {
+        if (!playing) setPaused(false);
+      }}
       onFocusCapture={() => setPaused(true)}
       onBlurCapture={(e) => {
-        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setPaused(false);
+        if (!playing && !e.currentTarget.contains(e.relatedTarget as Node | null)) {
+          setPaused(false);
+        }
       }}
     >
       <div className="hp-work-reel-viewport h-full overflow-hidden">
@@ -144,87 +118,17 @@ function WorkVerticalCarousel({
           className="hp-work-reel-track flex flex-col gap-10 px-4 py-8 md:gap-12 md:px-12 lg:px-14"
           style={{
             animation: `hp-work-reel-up ${durationSec}s linear infinite`,
-            animationPlayState: paused ? "paused" : "running",
+            animationPlayState: frozen ? "paused" : "running",
           }}
         >
-          {loop.map((project, i) => (
-            <WorkCard
-              key={`${project.id}-${i}`}
-              project={project}
-              onSelect={onSelect}
-            />
-          ))}
+          {loop.map((project, i) => card(project, `${project.id}-${i}`, i < 4 ? "eager" : "lazy"))}
         </div>
       </div>
     </div>
   );
 }
 
-function WorkLightbox({
-  project,
-  onClose,
-}: {
-  project: Project;
-  onClose: () => void;
-}) {
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-    };
-  }, [onClose]);
-
-  const hash = project.vimeoHash ? `h=${project.vimeoHash}&` : "";
-
-  return (
-    <div
-      className="fixed inset-0 z-[80] flex items-center justify-center bg-black/85 p-3 pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:p-4 md:p-10"
-      role="dialog"
-      aria-modal="true"
-      aria-label={`${project.client} video`}
-      onClick={onClose}
-    >
-      <div
-        className="relative aspect-video w-full max-w-5xl overflow-hidden rounded-xl bg-black"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          type="button"
-          onClick={onClose}
-          className="absolute right-3 top-3 z-10 bg-black/55 px-3 py-2 text-[11px] uppercase tracking-[0.12em] text-white/90 backdrop-blur-sm hover:text-white md:-top-12 md:right-0 md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-none"
-        >
-          Close
-        </button>
-        <iframe
-          src={`https://player.vimeo.com/video/${project.vimeoId}?${hash}autoplay=1&title=0&byline=0&portrait=0`}
-          className="absolute inset-0 h-full w-full"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen
-          title={`${project.client} — ${project.title}`}
-        />
-      </div>
-      <div className="pointer-events-none absolute bottom-6 left-0 right-0 hidden text-center md:block">
-        <p className="font-display text-lg font-bold text-white">{project.client}</p>
-        <a
-          href={`/casestudy/${project.slug}/`}
-          className="pointer-events-auto mt-2 inline-block text-[13px] text-white/60 underline-offset-4 hover:text-white hover:underline"
-          onClick={(e) => e.stopPropagation()}
-        >
-          View case study →
-        </a>
-      </div>
-    </div>
-  );
-}
-
 export default function Homepage() {
-  const [lightbox, setLightbox] = useState<Project | null>(null);
-
   return (
     <div className="min-h-screen bg-white text-black selection:bg-accent selection:text-white">
       <style>{`
@@ -233,9 +137,7 @@ export default function Homepage() {
           to { transform: translate3d(0, -50%, 0); }
         }
         @media (min-width: 1025px) {
-          .hp-work-reel {
-            height: 100%;
-          }
+          .hp-work-reel,
           .hp-work-reel-viewport {
             height: 100%;
           }
@@ -250,28 +152,8 @@ export default function Homepage() {
       <CustomCursor />
 
       <div id="main-content" className="split-container">
-        {/* Left: agency story */}
         <aside className="split-left relative">
           <header id="top">
-            <div className="mb-16 flex items-center justify-start">
-              <nav className="flex items-center gap-10">
-                {[
-                  { label: "Work", href: "#work" },
-                  { label: "About", href: "#profile" },
-                  { label: "Blog", href: "/blog/" },
-                  { label: "Start a Project", href: "#contact" },
-                ].map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    className="text-top-nav hover:text-black transition-colors"
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </nav>
-            </div>
-
             <div className="mb-10" id="work">
               <h1 className="text-display mb-6">
                 Complex<br />
@@ -281,7 +163,7 @@ export default function Homepage() {
               <p className="text-body mb-8 max-w-md">
                 {HERO_LEDE}
               </p>
-              <div className="max-w-md">
+              <div className="max-w-md pr-24 lg:pr-0">
                 <ClientTicker
                   label="Clients"
                   compact
@@ -433,6 +315,7 @@ export default function Homepage() {
                 <span className="mb-3 block text-metadata">Work</span>
                 <div className="flex flex-col gap-1.5">
                   <a href="/work/" className="text-body !text-sm transition-colors hover:text-black">All work</a>
+                  <a href="/explainer-videos/" className="text-body !text-sm transition-colors hover:text-black">Explainer videos</a>
                   <a href="/saas-explainer-videos/" className="text-body !text-sm transition-colors hover:text-black">SaaS motion graphics</a>
                   <a href="/product-demo-videos/" className="text-body !text-sm transition-colors hover:text-black">Product demo videos</a>
                   <a href="/product-launch-video/" className="text-body !text-sm transition-colors hover:text-black">Product launch videos</a>
@@ -480,7 +363,6 @@ export default function Homepage() {
           </footer>
         </aside>
 
-        {/* Right: living portfolio reel */}
         <main className="split-right flex flex-col" id="portfolio">
           <div className="flex shrink-0 flex-col gap-1 border-b border-black/10 px-4 py-6 md:px-12 lg:px-14">
             <span className="block text-metadata">Portfolio</span>
@@ -490,7 +372,7 @@ export default function Homepage() {
           </div>
 
           <div className="min-h-0 flex-1">
-            <WorkVerticalCarousel projects={PORTFOLIO} onSelect={setLightbox} />
+            <WorkVerticalCarousel projects={PORTFOLIO} />
           </div>
 
           <div className="shrink-0 border-t border-black/10 px-4 py-6 md:px-12 lg:px-14">
@@ -503,8 +385,6 @@ export default function Homepage() {
           </div>
         </main>
       </div>
-
-      {lightbox ? <WorkLightbox project={lightbox} onClose={() => setLightbox(null)} /> : null}
     </div>
   );
 }

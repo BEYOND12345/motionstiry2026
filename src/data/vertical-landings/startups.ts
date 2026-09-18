@@ -14,20 +14,16 @@ export const startupsVerticalLanding: VerticalLandingConfig = {
     canonicalPath: '/startups/',
   },
   eyebrow: 'Startups',
-  headline: ['Stories for', 'startups.'],
+  headline: ['Get the idea across', 'before the deck.'],
   lede: 'Make the idea clear fast — for investors, customers, and anyone who needs to get it before they buy in.',
   heroVideo: {
-    vimeoId: '863428533',
-    title: 'Trusyft / Product Promo',
+    vimeoId: '818912051',
+    title: 'ARK / Product Concept',
   },
   tickerLabel: 'Trusted by teams who need clarity',
   tickerRowA: VERTICAL_TICKER_A,
   tickerRowB: VERTICAL_TICKER_B,
   cases: [
-    verticalCase('ark', {
-      tags: 'Start-up, product, explainer',
-      body: "ARK couldn't succinctly explain their modular design technology in layman's terms. We brought the platform to life with visuals that replicate the design process — what ARK does, in under 60 seconds.",
-    }),
     verticalCase('cart-share', {
       tags: 'Software, start-up, explainer, pitch',
       body: "Cart Share's discount platform had huge potential, but needed excitement and awareness. A fantastically simple 30-second concept, lively character animation, and an upbeat voiceover that leaves a lasting impression.",
@@ -44,17 +40,13 @@ export const startupsVerticalLanding: VerticalLandingConfig = {
       tags: 'Start-up, recruitment, explainer',
       body: 'Joineree matches the right people to the right workplace — we created focused messages for employers and employees, with a distinct animation style for a forward-thinking service.',
     }),
-    verticalCase('bat-nav', {
-      tags: 'Software, start-up, explainer, 3D',
-      body: 'Buying the right big battery is hard. A simple story presenting batteries as the future of energy, the pitfalls of choosing wrong, and how Cell Engineer matches the best battery to any requirement.',
+    verticalCase('trusyft', {
+      tags: 'Start-up, product promo',
+      body: 'A product promotion brought to life with cinematic animation — the first film a new product could send.',
     }),
-    verticalCase('heyyou', {
-      tags: 'App, start-up, product',
-      body: 'A launch-ready product story for the Hey You ordering app — clear for cold traffic, sharp for growth.',
-    }),
-    verticalCase('good2pay', {
-      tags: 'Fintech, start-up, explainer',
-      body: 'Paperless invoicing explained fast — built for teams who will not sit through a feature tour.',
+    verticalCase('uclusion', {
+      tags: 'Start-up, product decisions',
+      body: 'A software modification platform with benefits for users and developers — told as two stories, side by side.',
     }),
   ],
   value: {
@@ -70,9 +62,9 @@ export const startupsVerticalLanding: VerticalLandingConfig = {
     ],
   },
   quote: {
-    text: '62% completion rate. 21% view rate. Long-term asset for our business.',
-    name: 'Lee Bright',
-    role: 'Marketing Lead, Method Recycling',
+    text: 'Daniel and the team were incredible to work with. We had a larger explainer video project and Motion Story made it easy to brainstorm, pivot ideas and collaborate at each stage.',
+    name: 'Matty Sirros',
+    role: 'Marketing Manager, Atomic',
   },
   faqs: [
     {

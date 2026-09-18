@@ -14,7 +14,7 @@ export const explainerVerticalLanding: VerticalLandingConfig = {
     canonicalPath: '/explainer-videos/',
   },
   eyebrow: 'Motion graphic explainer videos',
-  headline: ['Motion graphic', 'explainer videos.'],
+  headline: ['Make the idea land', 'in one sitting.'],
   lede: 'Motion graphic explainer videos for products, platforms, and missions that do not explain themselves. Sixty to 180 seconds. A story people can watch, understand, and act on.',
   heroVideo: {
     vimeoId: '879242129',
@@ -24,37 +24,29 @@ export const explainerVerticalLanding: VerticalLandingConfig = {
   tickerRowA: VERTICAL_TICKER_A,
   tickerRowB: VERTICAL_TICKER_B,
   cases: [
-    verticalCase('atomic', {
-      tags: 'SaaS, product, explainer',
-      body: 'In-app messaging explained without the spam story — distinctive, specific, and easy to watch.',
-    }),
-    verticalCase('acodis', {
-      tags: 'AI, SaaS, explainer',
-      body: 'AI document processing demystified for lay audiences with visuals that replicate the extraction process.',
-    }),
-    verticalCase('giraffe', {
-      tags: 'Platform, 3D, explainer',
-      body: 'Urban planning software told for architects, developers, and government in one coherent film.',
-    }),
-    verticalCase('wipster', {
-      tags: 'SaaS, feedback tool',
-      body: 'Connect-the-dots storytelling that shows how a complex collaboration product actually works.',
+    verticalCase('united-nations', {
+      tags: 'Cause, data',
+      body: 'Plastic waste in oceans — stark opener, then a clear path to action.',
     }),
     verticalCase('bat-nav', {
       tags: 'Energy, platform',
       body: 'Big battery technology explained so businesses understand why choosing right matters.',
     }),
-    verticalCase('united-nations', {
-      tags: 'Cause, data',
-      body: 'Plastic waste in oceans — stark opener, then a clear path to action.',
-    }),
-    verticalCase('shape-connect', {
-      tags: 'Security, SaaS',
-      body: 'Website security made visible for non-technical decision makers.',
-    }),
     verticalCase('ranalytic', {
       tags: 'Hardware, RF, explainer',
       body: 'RF scanning technology walked through for buyers and partners who need the system, not the jargon.',
+    }),
+    verticalCase('nsw-gov', {
+      tags: 'Government, reform, explainer',
+      body: 'A complex reform made clear for a huge public audience — social-ready and praised for how clear the message is.',
+    }),
+    verticalCase('ipa', {
+      tags: 'Policy, advocacy, explainer',
+      body: 'Electric car road tax explained so the campaign could reach a huge audience and support approval in SA and VIC.',
+    }),
+    verticalCase('redcross', {
+      tags: 'Nonprofit, Covid, explainer',
+      body: 'Vaccine equity told like a wildlife documentary — humans in the spotlight, so the message could not be ignored.',
     }),
   ],
   value: {
