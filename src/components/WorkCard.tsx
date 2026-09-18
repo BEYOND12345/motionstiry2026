@@ -15,6 +15,7 @@ type WorkCardProps = WorkCardData & {
   meta?: string;
   className?: string;
   heading?: "h2" | "p";
+  compact?: boolean;
   onPlay?: () => void;
 };
 
@@ -40,25 +41,35 @@ export default function WorkCard({
   meta,
   className = "",
   heading: Heading = "h2",
+  compact = false,
   onPlay,
 }: WorkCardProps) {
   return (
-    <article className={`work-card ${className}`.trim()}>
-      <VimeoEmbed
-        vimeoId={vimeoId}
-        vimeoHash={vimeoHash}
-        title={title}
-        loading={loading}
-        className="rounded-xl"
-        onPlay={onPlay}
-      />
-      <a href={href} className="work-card-meta">
-        <div className="min-w-0">
-          <Heading className="work-card-client">{client}</Heading>
-          <p className="work-card-desc">{description}</p>
-        </div>
-        {meta ? <span className="work-card-aside">{meta}</span> : null}
-      </a>
+    <article className={`work-card ${compact ? "work-card-compact" : ""} ${className}`.trim()}>
+      <div className="relative">
+        <VimeoEmbed
+          vimeoId={vimeoId}
+          vimeoHash={vimeoHash}
+          title={title}
+          loading={loading}
+          className="rounded-xl"
+          compact={compact}
+          onPlay={onPlay}
+        />
+        {compact ? (
+          <a href={href} className="work-card-compact-name">
+            {client}
+          </a>
+        ) : (
+          <a href={href} className="work-card-meta">
+            <div className="min-w-0">
+              <Heading className="work-card-client">{client}</Heading>
+              <p className="work-card-desc">{description}</p>
+            </div>
+            {meta ? <span className="work-card-aside">{meta}</span> : null}
+          </a>
+        )}
+      </div>
     </article>
   );
 }

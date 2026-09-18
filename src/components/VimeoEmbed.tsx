@@ -11,6 +11,7 @@ interface VimeoEmbedProps {
   /** Privacy hash for unlisted Vimeo videos */
   vimeoHash?: string;
   onPlay?: () => void;
+  compact?: boolean;
 }
 
 export default function VimeoEmbed({
@@ -22,6 +23,7 @@ export default function VimeoEmbed({
   loading = "lazy",
   vimeoHash,
   onPlay,
+  compact = false,
 }: VimeoEmbedProps) {
   const [isLoaded, setIsLoaded] = useState(loadImmediately);
 
@@ -43,8 +45,8 @@ export default function VimeoEmbed({
             loading={loading}
           />
           <div className="absolute inset-0 bg-black/15 group-hover/play:bg-black/25 transition-colors duration-500" />
-          <div className="relative w-14 h-14 md:w-16 md:h-16 rounded-full border border-white/90 flex items-center justify-center opacity-90 group-hover/play:opacity-100 group-hover/play:scale-105 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] bg-black/10 backdrop-blur-[2px]">
-            <div className="w-0 h-0 border-t-[7px] border-t-transparent border-l-[11px] border-l-white border-b-[7px] border-b-transparent ml-0.5" />
+          <div className={`relative rounded-full border border-white/90 flex items-center justify-center opacity-90 group-hover/play:opacity-100 group-hover/play:scale-105 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] bg-black/10 backdrop-blur-[2px] ${compact ? "h-9 w-9" : "h-14 w-14 md:h-16 md:w-16"}`}>
+            <div className={`h-0 w-0 border-y-transparent border-l-white ml-0.5 ${compact ? "border-y-[5px] border-l-[8px]" : "border-y-[7px] border-l-[11px]"}`} />
           </div>
         </button>
       )}

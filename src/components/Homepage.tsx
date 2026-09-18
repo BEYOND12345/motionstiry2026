@@ -10,7 +10,16 @@ import { GOOGLE_RATING } from "../data/reviews";
 const PORTFOLIO = sortProjectsShowcaseFirst();
 
 /** Seconds per project so a long archive still rolls slowly. */
-const REEL_SECONDS_PER_PROJECT = 11;
+const REEL_SECONDS_PER_PROJECT = 9;
+
+function splitReelColumns(projects: Project[]) {
+  const left: Project[] = [];
+  const right: Project[] = [];
+  projects.forEach((project, i) => {
+    (i % 2 === 0 ? left : right).push(project);
+  });
+  return [left, right] as const;
+}
 
 const CLIENT_ROW_A = [
   "United Nations",
@@ -59,14 +68,15 @@ const CustomCursor = () => {
   );
 };
 
-/** Slow vertical reel of showcase work — pause on hover or when a film plays. */
+/** Two staggered vertical reels — pause on hover or when a film plays. */
 function WorkVerticalCarousel({ projects }: { projects: Project[] }) {
   const [paused, setPaused] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
-  const loop = useMemo(() => [...projects, ...projects], [projects]);
-  const durationSec = Math.max(60, projects.length * REEL_SECONDS_PER_PROJECT);
+  const [left, right] = useMemo(() => splitReelColumns(projects), [projects]);
   const frozen = paused || playing;
+  const durationLeft = Math.max(48, left.length * REEL_SECONDS_PER_PROJECT);
+  const durationRight = Math.max(56, right.length * (REEL_SECONDS_PER_PROJECT + 2));
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -76,28 +86,47 @@ function WorkVerticalCarousel({ projects }: { projects: Project[] }) {
     return () => mq.removeEventListener("change", sync);
   }, []);
 
+  const onPlay = () => {
+    setPlaying(true);
+    setPaused(true);
+  };
+
   const card = (project: Project, key: string, loading: "eager" | "lazy") => (
     <WorkCard
       key={key}
       {...projectToWorkCard(project)}
       loading={loading}
-      meta={project.index}
+      compact
       className="w-full shrink-0"
       heading="p"
-      onPlay={() => {
-        setPlaying(true);
-        setPaused(true);
-      }}
+      onPlay={onPlay}
     />
   );
 
   if (reduceMotion) {
     return (
-      <div className="space-y-10 px-4 pb-16 md:px-12 lg:px-14">
-        {projects.map((project) => card(project, project.id, "lazy"))}
+      <div className="grid grid-cols-2 gap-4 px-3 pb-16 md:gap-5 md:px-5">
+        {projects.slice(0, 10).map((project) => card(project, project.id, "eager"))}
       </div>
     );
   }
+
+  const column = (items: Project[], direction: "up" | "down", durationSec: number) => {
+    const loop = [...items, ...items];
+    return (
+      <div className="hp-work-reel-viewport min-h-0 flex-1 overflow-hidden">
+        <div
+          className="hp-work-reel-track flex flex-col gap-5 py-4"
+          style={{
+            animation: `hp-work-reel-${direction} ${durationSec}s linear infinite`,
+            animationPlayState: frozen ? "paused" : "running",
+          }}
+        >
+          {loop.map((project, i) => card(project, `${direction}-${project.id}-${i}`, "eager"))}
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div
@@ -113,16 +142,9 @@ function WorkVerticalCarousel({ projects }: { projects: Project[] }) {
         }
       }}
     >
-      <div className="hp-work-reel-viewport h-full overflow-hidden">
-        <div
-          className="hp-work-reel-track flex flex-col gap-10 px-4 py-8 md:gap-12 md:px-12 lg:px-14"
-          style={{
-            animation: `hp-work-reel-up ${durationSec}s linear infinite`,
-            animationPlayState: frozen ? "paused" : "running",
-          }}
-        >
-          {loop.map((project, i) => card(project, `${project.id}-${i}`, i < 4 ? "eager" : "lazy"))}
-        </div>
+      <div className="flex h-full gap-4 px-3 md:gap-5 md:px-5">
+        {column(left, "up", durationLeft)}
+        {column(right, "down", durationRight)}
       </div>
     </div>
   );
@@ -135,6 +157,14 @@ export default function Homepage() {
         @keyframes hp-work-reel-up {
           from { transform: translate3d(0, 0, 0); }
           to { transform: translate3d(0, -50%, 0); }
+        }
+        @keyframes hp-work-reel-down {
+          from { transform: translate3d(0, -50%, 0); }
+          to { transform: translate3d(0, 0, 0); }
+        }
+        .hp-work-reel {
+          mask-image: linear-gradient(180deg, transparent, #000 18px, #000 calc(100% - 18px), transparent);
+          -webkit-mask-image: linear-gradient(180deg, transparent, #000 18px, #000 calc(100% - 18px), transparent);
         }
         @media (min-width: 1025px) {
           .hp-work-reel,
@@ -364,10 +394,10 @@ export default function Homepage() {
         </aside>
 
         <main className="split-right flex flex-col" id="portfolio">
-          <div className="flex shrink-0 flex-col gap-1 border-b border-black/10 px-4 py-6 md:px-12 lg:px-14">
+          <div className="flex shrink-0 flex-col gap-1 border-b border-black/10 px-3 py-4 md:px-5">
             <span className="block text-metadata">Portfolio</span>
             <span className="text-metadata opacity-35">
-              Rolling through · hover to pause · click to play
+              Two reels · hover to pause · click to play
             </span>
           </div>
 
@@ -375,7 +405,7 @@ export default function Homepage() {
             <WorkVerticalCarousel projects={PORTFOLIO} />
           </div>
 
-          <div className="shrink-0 border-t border-black/10 px-4 py-6 md:px-12 lg:px-14">
+          <div className="shrink-0 border-t border-black/10 px-3 py-4 md:px-5">
             <a
               href="/work/"
               className="text-metadata border-b border-black/20 pb-1 transition-colors hover:border-black"
