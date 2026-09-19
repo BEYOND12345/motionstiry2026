@@ -67,63 +67,29 @@ const image = ogImage
 </html>
 
 <style is:global>
-  /* Page transition animations */
-  @keyframes fadeSlideIn {
-    from {
-      opacity: 0;
-      transform: translateY(12px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeSlideOut {
-    from {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    to {
-      opacity: 0;
-      transform: translateY(-8px);
-    }
-  }
-
-  @keyframes fadeIn {
+  /* Short crossfade — no slide, no delay. Keep chrome in the same fade. */
+  @keyframes ms-page-in {
     from { opacity: 0; }
     to { opacity: 1; }
   }
 
-  @keyframes fadeOut {
+  @keyframes ms-page-out {
     from { opacity: 1; }
     to { opacity: 0; }
   }
 
-  /* Default page transition: cinematic slide */
   ::view-transition-old(root) {
-    animation: fadeSlideOut 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: ms-page-out 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   ::view-transition-new(root) {
-    animation: fadeSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: 0.1s;
+    animation: ms-page-in 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
-  /* Nav bar persists across pages: no animation */
-  ::view-transition-old(site-nav),
-  ::view-transition-new(site-nav) {
-    animation: none;
-    mix-blend-mode: normal;
-  }
-
-  /* Shared hero images morph between pages */
-  ::view-transition-old(project-hero) {
-    animation: fadeOut 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-
-  ::view-transition-new(project-hero) {
-    animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: 0.15s;
+  @media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation: none !important;
+    }
   }
 </style>
