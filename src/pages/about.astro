@@ -2,7 +2,7 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import { VERIFIED_CLIENT_REVIEWS } from '../data/reviews';
 import { getShowcaseProjects } from '../data/projects';
-import { ABOUT_HELP, ABOUT_HIRE, ABOUT_LEDE, SITE_DESCRIPTION } from '../data/site-copy';
+import { ABOUT_HELP, ABOUT_HIRE, ABOUT_LEDE, SITE_DESCRIPTION, WHY_ME } from '../data/site-copy';
 import { VERTICAL_TICKER_A, VERTICAL_TICKER_B } from '../data/vertical-landings/helpers';
 import WorkCard from '../components/WorkCard';
 import ClientTicker from '../components/ClientTicker';
@@ -15,13 +15,11 @@ const testimonials = [
   {
     quote: 'There are a lot of motion designers out there but not many who think like Dan does.',
     name: 'Troy Cornelius',
-    role: 'Google review',
     company: '',
   },
   {
     quote: '62% completion. 21% view rate. For a video about bins.',
     name: 'Lee Bright',
-    role: 'Marketing Team Lead',
     company: 'Method Recycling',
   },
 ];
@@ -80,9 +78,9 @@ const structuredData = {
     })} />
   </Fragment>
 
-  <section class="pt-32 pb-14 md:pb-16 px-8 max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-end">
-      <div class="md:col-span-7">
+  <section class="pt-32 pb-20 md:pb-24 px-8 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
+      <div class="md:col-span-8">
         <p class="text-metadata mb-6 md:mb-8">About</p>
         <h1 class="font-display text-5xl md:text-7xl font-bold tracking-tight leading-[0.88] mb-8 md:mb-10">
           I'm Dan.<br /><span class="brand-mark">MotionStory</span><br />is me.
@@ -95,24 +93,26 @@ const structuredData = {
           <a href="#work" class="ms-link">See the work ↓</a>
         </div>
       </div>
-      <div class="md:col-span-5">
-        <div class="overflow-hidden rounded-xl bg-black/[0.04] aspect-[4/5] md:aspect-[5/6] max-w-md md:max-w-none">
-          <img
-            src="/daniel-neale.jpg"
-            alt="Dan Neale, director and consultant at Motion Story"
-            class="w-full h-full object-cover object-[center_18%]"
-            loading="eager"
-            width="640"
-            height="800"
-          />
+      <div class="md:col-span-4 md:justify-self-end md:pt-10">
+        <div class="w-20 md:w-[6.5rem]">
+          <div class="overflow-hidden rounded-xl bg-black/[0.04] aspect-[4/5]">
+            <img
+              src="/daniel-neale.jpg"
+              alt="Dan Neale, director and consultant at Motion Story"
+              class="w-full h-full object-cover object-[center_18%]"
+              loading="eager"
+              width="416"
+              height="520"
+            />
+          </div>
+          <p class="font-display text-sm font-medium tracking-tight mt-4">Dan Neale</p>
+          <p class="text-metadata mt-1 text-black/55 whitespace-nowrap">Byron Bay</p>
         </div>
-        <p class="font-display text-sm font-medium tracking-tight mt-4">Dan Neale</p>
-        <p class="text-metadata mt-1 text-black/55">One-person studio · Byron Bay</p>
       </div>
     </div>
   </section>
 
-  <section class="px-8 max-w-7xl mx-auto pb-14 md:pb-16">
+  <section class="px-8 max-w-7xl mx-auto pb-20 md:pb-28">
     <ClientTicker
       client:load
       label=""
@@ -122,21 +122,37 @@ const structuredData = {
     />
   </section>
 
-  <section class="px-8 max-w-7xl mx-auto pb-16 md:pb-24">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start">
-      <div class="md:col-span-6">
-        <p class="text-metadata mb-6">How I can help</p>
-        <ul>
-          {ABOUT_HELP.map((line) => (
-            <li class="font-display text-2xl md:text-3xl font-medium tracking-tight leading-tight py-3 border-b border-black/10 last:border-b-0">
-              {line}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div class="md:col-span-6 md:pt-0">
-        <p class="text-metadata mb-6">Why hire me</p>
-        <ul class="space-y-5 mb-10">
+  <section class="px-8 max-w-7xl mx-auto pb-20 md:pb-28 border-t border-black/5 pt-16 md:pt-20">
+    <p class="text-metadata mb-6">The pitch</p>
+    <h2 class="font-display text-2xl md:text-4xl font-medium tracking-tight leading-snug max-w-3xl mb-8">
+      {WHY_ME.lead}
+    </h2>
+    <p class="text-body text-lg leading-relaxed text-black/70 max-w-2xl">
+      I've built my own products, including <a href="https://smashinvoices.com/" class="border-b border-black/20 hover:border-black transition-colors">SMASH Invoices</a>. I know what it feels like when the thing is good and nobody can explain it yet. I work with tech. I use AI when it enables the idea — never as a substitute for one.
+    </p>
+  </section>
+
+  <section class="px-8 max-w-7xl mx-auto pb-20 md:pb-28 border-t border-black/5 pt-16 md:pt-20">
+    <h2 class="text-metadata mb-10 md:mb-14">How I can help</h2>
+    <ul class="max-w-3xl">
+      {ABOUT_HELP.map((item) => (
+        <li class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-8 py-5 md:py-6 border-b border-black/10 first:pt-0 last:border-b-0">
+          <span class="md:col-span-5 font-display text-xl md:text-2xl font-medium tracking-tight">
+            {item.label}
+          </span>
+          <span class="md:col-span-7 text-body text-lg text-black/65 leading-relaxed">
+            {item.line}
+          </span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="px-8 max-w-7xl mx-auto pb-20 md:pb-28 border-t border-black/5 pt-16 md:pt-20">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
+      <div class="md:col-span-5">
+        <h2 class="text-metadata mb-8">Why hire me</h2>
+        <ul class="space-y-6 mb-10">
           {ABOUT_HIRE.map((line) => (
             <li class="flex gap-4 items-start">
               <span class="text-accent leading-none mt-1.5 shrink-0" aria-hidden="true">·</span>
@@ -146,15 +162,26 @@ const structuredData = {
         </ul>
         <a href="/book/" class="ms-btn">Book a call</a>
       </div>
+      <div class="md:col-span-6 md:col-start-7">
+        <h2 class="text-metadata mb-8">How I work with you</h2>
+        <p class="font-display text-xl font-medium tracking-tight leading-snug mb-4">Startups</p>
+        <p class="text-body text-lg leading-relaxed text-black/70 mb-10">
+          Bring me in like a consultant. I sit with founders and product, find the story, and turn the project around.
+        </p>
+        <p class="font-display text-xl font-medium tracking-tight leading-snug mb-4">Agencies</p>
+        <p class="text-body text-lg leading-relaxed text-black/70">
+          White label or collaborative. I slot into your team and own the craft — your client still has one point of contact.
+        </p>
+      </div>
     </div>
   </section>
 
-  <section class="px-8 max-w-7xl mx-auto pb-16 md:pb-20">
-    <div class="flex flex-wrap items-baseline justify-between gap-4 mb-8 md:mb-12">
-      <p class="text-metadata">What they say</p>
+  <section class="px-8 max-w-7xl mx-auto pb-20 md:pb-28 border-t border-black/5 pt-16 md:pt-20">
+    <div class="flex flex-wrap items-baseline justify-between gap-4 mb-10 md:mb-14">
+      <h2 class="text-metadata">What they say</h2>
       <a href="/reviews/" class="text-metadata hover:text-black transition-colors">All reviews →</a>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
       {testimonials.map((t) => (
         <blockquote>
           <p class="font-display text-xl font-medium tracking-tight leading-snug mb-5">
@@ -168,7 +195,7 @@ const structuredData = {
     </div>
   </section>
 
-  <section id="work" class="px-8 max-w-7xl mx-auto py-8 md:py-14">
+  <section id="work" class="px-8 max-w-7xl mx-auto pb-20 md:pb-28 border-t border-black/5 pt-16 md:pt-20">
     <div class="flex flex-wrap items-baseline justify-between gap-4 mb-10 md:mb-14">
       <h2 class="font-display text-2xl md:text-3xl font-medium tracking-tight">A few films</h2>
       <a href="/work/" class="text-metadata hover:text-black transition-colors">Full portfolio →</a>
@@ -189,7 +216,7 @@ const structuredData = {
     </div>
   </section>
 
-  <section class="px-8 max-w-7xl mx-auto pb-24 md:pb-28 pt-10 md:pt-16">
+  <section class="px-8 max-w-7xl mx-auto pb-24 md:pb-32 pt-8 md:pt-12">
     <div class="max-w-xl">
       <p class="font-display text-3xl md:text-4xl font-medium tracking-tight leading-snug mb-8">
         I'm the right person for the job.

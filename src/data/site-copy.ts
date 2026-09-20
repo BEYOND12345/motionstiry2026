@@ -23,11 +23,11 @@ export const ABOUT_LEDE =
   "A full studio — strategy, design, illustration, animation — in one person. I come in like a consultant and turn the project around.";
 
 export const ABOUT_HELP = [
-  "Product demos",
-  "Video strategy",
-  "Design",
-  "Illustration",
-  "Animation direction",
+  { label: "Product demos", line: "The product on screen. Story first." },
+  { label: "Video strategy", line: "What to make, for whom, and why." },
+  { label: "Design", line: "Look and feel that belongs to the brand." },
+  { label: "Illustration", line: "Custom work. Not a template." },
+  { label: "Animation direction", line: "I own the film from idea to delivery." },
 ] as const;
 
 export const ABOUT_HIRE = [
