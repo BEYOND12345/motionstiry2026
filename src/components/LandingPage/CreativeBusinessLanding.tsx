@@ -266,8 +266,8 @@ export default function CreativeBusinessLanding() {
       {/* Header on dark hero */}
       <header className="absolute inset-x-0 top-0 z-40">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 md:px-8 md:py-6">
-          <a href="/" className="brand-mark text-lg tracking-tight text-white">
-            Motion Story<span className="text-accent">.</span>
+          <a href="/" className="brand-mark text-lg text-white">
+            MotionStory<span className="text-accent">.</span>
           </a>
           <a
             href={BOOKING}
@@ -591,8 +591,8 @@ export default function CreativeBusinessLanding() {
 
       <footer className="border-t border-black/10 bg-[#F6F6F4] py-10">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 md:flex-row md:items-center md:justify-between md:px-8">
-          <p className="brand-mark text-base tracking-tight">
-            Motion Story<span className="text-accent">.</span>
+          <p className="brand-mark text-base">
+            MotionStory<span className="text-accent">.</span>
           </p>
           <p className="text-[13px] tracking-[-0.01em] text-black/40">Creative business design · Byron Bay</p>
         </div>

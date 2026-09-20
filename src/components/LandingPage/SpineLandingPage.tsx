@@ -389,8 +389,8 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
 
       <header className="spine-glass fixed inset-x-0 top-0 z-50 pt-[env(safe-area-inset-top)]">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 sm:px-6 sm:py-4 lg:px-12">
-          <a href="/" className="brand-mark text-[1.1rem] tracking-tight text-[color:var(--spine-ink)] sm:text-xl">
-            Motion Story.
+          <a href="/" className="brand-mark text-[1.1rem] text-[color:var(--spine-ink)] sm:text-xl">
+            MotionStory.
           </a>
             <a
               href={BOOKING_PATH}
@@ -709,8 +709,8 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
 
       <footer className="site-footer px-5 py-10 pb-[calc(6.5rem+env(safe-area-inset-bottom))] sm:px-6 sm:py-12 md:pb-12 lg:px-12">
         <div className="mx-auto max-w-7xl">
-          <p className="brand-mark text-lg tracking-tight text-[color:var(--spine-ink)]">
-            Motion Story<span className="text-accent">.</span>
+          <p className="brand-mark text-lg text-[color:var(--spine-ink)]">
+            MotionStory<span className="text-accent">.</span>
           </p>
           <p className="mt-3 text-[14px] tracking-[-0.01em] text-[color:var(--spine-eyebrow)]">
             {config.footerLine ?? 'Product demo videos for SaaS · Byron Bay'}

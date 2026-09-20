@@ -91,7 +91,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
             </div>
             <div>
               <span className="text-metadata mb-4 block">Studio</span>
-              <p className="brand-mark text-lg tracking-tight">Motion Story</p>
+              <p className="brand-mark text-lg">MotionStory</p>
               <p className="text-body text-sm">Byron Bay, NSW</p>
             </div>
           </FadeUp>

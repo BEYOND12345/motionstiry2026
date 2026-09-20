@@ -181,16 +181,13 @@ body.homepage-layout {
   color: #0a0a0a;
 }
 
-/* Wordmark only — softer story voice, rest of site unchanged */
-/* Wordmark only — Poppins logo lockup */
+/* Wordmark only — Poppins ExtraBold, title case */
 .brand-mark {
   font-family: var(--font-brand);
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   font-style: normal;
-  font-size: inherit;
-  line-height: inherit;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 /* Split Layout */
