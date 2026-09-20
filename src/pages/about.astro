@@ -1,28 +1,30 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import { VERIFIED_CLIENT_REVIEWS } from '../data/reviews';
-import { getShowcaseProjects } from '../data/projects';
-import { ABOUT_HELP, ABOUT_HIRE, ABOUT_LEDE, SITE_DESCRIPTION, WHY_ME } from '../data/site-copy';
+import { ALL_PROJECTS } from '../data/projects';
+import {
+  ABOUT_ARC,
+  ABOUT_BUILT_FOR,
+  ABOUT_CASES,
+  ABOUT_HEADLINE,
+  ABOUT_LEDE,
+  ABOUT_MESSY,
+  ABOUT_MODES,
+  ABOUT_PLUG,
+  ABOUT_STEPS,
+  ABOUT_SUPPORT,
+  SITE_DESCRIPTION,
+} from '../data/site-copy';
 import { VERTICAL_TICKER_A, VERTICAL_TICKER_B } from '../data/vertical-landings/helpers';
-import WorkCard from '../components/WorkCard';
 import ClientTicker from '../components/ClientTicker';
+import VimeoEmbed from '../components/VimeoEmbed';
+import { vimeoPosterUrl } from '../lib/vimeo';
 
-const aboutWork = getShowcaseProjects().slice(0, 3);
-const acodis = VERIFIED_CLIENT_REVIEWS.find((r) => r.company === 'Acodis')!;
-
-const testimonials = [
-  acodis,
-  {
-    quote: 'There are a lot of motion designers out there but not many who think like Dan does.',
-    name: 'Troy Cornelius',
-    company: '',
-  },
-  {
-    quote: '62% completion. 21% view rate. For a video about bins.',
-    name: 'Lee Bright',
-    company: 'Method Recycling',
-  },
-];
+const hero = ALL_PROJECTS.find((p) => p.id === 'trudi')!;
+const cases = ABOUT_CASES.map((entry) => {
+  const project = ALL_PROJECTS.find((p) => p.id === entry.id);
+  if (!project) throw new Error(`Unknown about case: ${entry.id}`);
+  return { ...entry, project };
+});
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -78,150 +80,318 @@ const structuredData = {
     })} />
   </Fragment>
 
-  <section class="pt-32 pb-20 md:pb-24 px-8 max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
-      <div class="md:col-span-8">
-        <p class="text-metadata mb-6 md:mb-8">About</p>
-        <h1 class="font-display text-5xl md:text-7xl font-bold tracking-tight leading-[0.88] mb-8 md:mb-10">
-          I'm Dan.<br /><span class="brand-mark">MotionStory</span><br />is me.
-        </h1>
-        <p class="text-body text-lg max-w-md mb-8 md:mb-10">
-          {ABOUT_LEDE}
-        </p>
-        <div class="flex flex-wrap items-center gap-5 md:gap-7">
-          <a href="/book/" class="ms-btn">Book a call</a>
-          <a href="#work" class="ms-link">See the work ↓</a>
+  <div class="about-page">
+    <section class="about-wrap pt-32 pb-20 md:pt-36 md:pb-28">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-end">
+        <div class="md:col-span-6">
+          <h1 class="font-display text-4xl md:text-6xl font-bold tracking-tight leading-[0.92] mb-8 md:mb-10">
+            {ABOUT_HEADLINE}
+          </h1>
+          <p class="text-body text-lg max-w-md mb-6">
+            {ABOUT_LEDE}
+          </p>
+          <p class="text-metadata text-black/50 mb-10">{ABOUT_SUPPORT}</p>
+          <div class="flex flex-wrap items-center gap-5 md:gap-7">
+            <a href="#work" class="ms-link">See the work →</a>
+            <a href="/book/" class="ms-btn">Talk to Dan</a>
+          </div>
         </div>
-      </div>
-      <div class="md:col-span-4 md:justify-self-end md:pt-10">
-        <div class="w-20 md:w-[6.5rem]">
-          <div class="overflow-hidden rounded-xl bg-black/[0.04] aspect-[4/5]">
+        <div class="md:col-span-6">
+          <div class="about-hero-film rounded-xl overflow-hidden bg-black/[0.04]">
             <img
-              src="/daniel-neale.jpg"
-              alt="Dan Neale, director and consultant at Motion Story"
-              class="w-full h-full object-cover object-[center_18%]"
-              loading="eager"
-              width="416"
-              height="520"
+              class="about-hero-still"
+              src={vimeoPosterUrl(hero.vimeoId)}
+              alt=""
+              width="1280"
+              height="720"
+            />
+            <iframe
+              class="about-hero-loop"
+              src={`https://player.vimeo.com/video/${hero.vimeoId}?background=1&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0`}
+              title={hero.title}
+              allow="autoplay; fullscreen"
             />
           </div>
-          <p class="font-display text-sm font-medium tracking-tight mt-4">Dan Neale</p>
-          <p class="text-metadata mt-1 text-black/55 whitespace-nowrap">Byron Bay</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="px-8 max-w-7xl mx-auto pb-20 md:pb-28">
-    <ClientTicker
-      client:load
-      label=""
-      rowA={VERTICAL_TICKER_A}
-      rowB={VERTICAL_TICKER_B}
-      compact
-    />
-  </section>
-
-  <section class="px-8 max-w-7xl mx-auto pb-20 md:pb-28 border-t border-black/5 pt-16 md:pt-20">
-    <p class="text-metadata mb-6">The pitch</p>
-    <h2 class="font-display text-2xl md:text-4xl font-medium tracking-tight leading-snug max-w-3xl mb-8">
-      {WHY_ME.lead}
-    </h2>
-    <p class="text-body text-lg leading-relaxed text-black/70 max-w-2xl">
-      I've built my own products, including <a href="https://smashinvoices.com/" class="border-b border-black/20 hover:border-black transition-colors">SMASH Invoices</a>. I know what it feels like when the thing is good and nobody can explain it yet. I work with tech. I use AI when it enables the idea — never as a substitute for one.
-    </p>
-  </section>
-
-  <section class="px-8 max-w-7xl mx-auto pb-20 md:pb-28 border-t border-black/5 pt-16 md:pt-20">
-    <h2 class="text-metadata mb-10 md:mb-14">How I can help</h2>
-    <ul class="max-w-3xl">
-      {ABOUT_HELP.map((item) => (
-        <li class="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-8 py-5 md:py-6 border-b border-black/10 first:pt-0 last:border-b-0">
-          <span class="md:col-span-5 font-display text-xl md:text-2xl font-medium tracking-tight">
-            {item.label}
-          </span>
-          <span class="md:col-span-7 text-body text-lg text-black/65 leading-relaxed">
-            {item.line}
-          </span>
-        </li>
-      ))}
-    </ul>
-  </section>
-
-  <section class="px-8 max-w-7xl mx-auto pb-20 md:pb-28 border-t border-black/5 pt-16 md:pt-20">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
-      <div class="md:col-span-5">
-        <h2 class="text-metadata mb-8">Why hire me</h2>
-        <ul class="space-y-6 mb-10">
-          {ABOUT_HIRE.map((line) => (
-            <li class="flex gap-4 items-start">
-              <span class="text-accent leading-none mt-1.5 shrink-0" aria-hidden="true">·</span>
-              <span class="font-display text-xl font-medium tracking-tight leading-snug">{line}</span>
-            </li>
-          ))}
-        </ul>
-        <a href="/book/" class="ms-btn">Book a call</a>
-      </div>
-      <div class="md:col-span-6 md:col-start-7">
-        <h2 class="text-metadata mb-8">How I work with you</h2>
-        <p class="font-display text-xl font-medium tracking-tight leading-snug mb-4">Startups</p>
-        <p class="text-body text-lg leading-relaxed text-black/70 mb-10">
-          Bring me in like a consultant. I sit with founders and product, find the story, and turn the project around.
-        </p>
-        <p class="font-display text-xl font-medium tracking-tight leading-snug mb-4">Agencies</p>
-        <p class="text-body text-lg leading-relaxed text-black/70">
-          White label or collaborative. I slot into your team and own the craft — your client still has one point of contact.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="px-8 max-w-7xl mx-auto pb-20 md:pb-28 border-t border-black/5 pt-16 md:pt-20">
-    <div class="flex flex-wrap items-baseline justify-between gap-4 mb-10 md:mb-14">
-      <h2 class="text-metadata">What they say</h2>
-      <a href="/reviews/" class="text-metadata hover:text-black transition-colors">All reviews →</a>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
-      {testimonials.map((t) => (
-        <blockquote>
-          <p class="font-display text-xl font-medium tracking-tight leading-snug mb-5">
-            “{t.quote}”
-          </p>
-          <footer class="text-metadata text-black/55">
-            {t.name}{t.company ? <><span class="mx-2 opacity-30">·</span>{t.company}</> : null}
-          </footer>
-        </blockquote>
-      ))}
-    </div>
-  </section>
-
-  <section id="work" class="px-8 max-w-7xl mx-auto pb-20 md:pb-28 border-t border-black/5 pt-16 md:pt-20">
-    <div class="flex flex-wrap items-baseline justify-between gap-4 mb-10 md:mb-14">
-      <h2 class="font-display text-2xl md:text-3xl font-medium tracking-tight">A few films</h2>
-      <a href="/work/" class="text-metadata hover:text-black transition-colors">Full portfolio →</a>
-    </div>
-    <div class="work-grid work-grid-3">
-      {aboutWork.map((project, i) => (
-        <WorkCard
-          client:visible
-          vimeoId={project.vimeoId}
-          vimeoHash={project.vimeoHash}
-          title={project.title}
-          client={project.client}
-          description={project.description}
-          href={`/casestudy/${project.slug}/`}
-          loading={i === 0 ? 'eager' : 'lazy'}
-        />
-      ))}
-    </div>
-  </section>
-
-  <section class="px-8 max-w-7xl mx-auto pb-24 md:pb-32 pt-8 md:pt-12">
-    <div class="max-w-xl">
-      <p class="font-display text-3xl md:text-4xl font-medium tracking-tight leading-snug mb-8">
-        I'm the right person for the job.
+    <section class="about-wrap pb-20 md:pb-28">
+      <h2 class="font-display text-3xl md:text-5xl font-medium tracking-tight leading-[1.05] max-w-4xl mb-8">
+        Think of Motion Story as an extension of your team.
+      </h2>
+      <p class="text-body text-lg leading-relaxed text-black/70 max-w-2xl mb-6">
+        Sometimes you need a complete production studio. Sometimes you just need someone who can crack the idea, storyboard it and help your team figure out how to communicate it.
       </p>
-      <a href="/book/" class="ms-btn">Book a call</a>
-    </div>
-  </section>
+      <p class="text-body text-lg leading-relaxed text-black/70 max-w-2xl mb-16">
+        I can plug in wherever the project needs me — working alongside your marketing, product or creative team, or taking the whole thing from first conversation to finished film.
+      </p>
+      <p class="font-display text-xl md:text-2xl font-medium tracking-tight leading-snug max-w-2xl mb-4">
+        You don't need another freelancer. You need someone who can understand the product, challenge the idea, work with your team and take responsibility for getting the thing made.
+      </p>
+      <p class="font-display text-xl md:text-2xl font-medium tracking-tight leading-snug max-w-2xl mb-14">
+        {ABOUT_BUILT_FOR}
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14">
+        {ABOUT_MODES.map((mode) => (
+          <div class="border-t border-black/15 pt-5">
+            <p class="font-display text-2xl font-medium tracking-tight mb-3">{mode.label}</p>
+            <p class="text-body text-black/60">{mode.line}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="about-ink py-20 md:py-28 mb-20 md:mb-28">
+      <div class="about-wrap">
+        <h2 class="font-display text-3xl md:text-5xl font-medium tracking-tight leading-[1.05] max-w-3xl mb-14 md:mb-16">
+          Big-studio capability. Without the big-studio layers.
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 mb-16">
+          <div>
+            <p class="text-metadata text-white/40 mb-4">The studio experience</p>
+            <p class="text-lg leading-relaxed text-white/75">
+              I've spent years working at the level of large creative and production studios, delivering complex motion and visual communication for major brands and technology companies.
+            </p>
+          </div>
+          <div>
+            <p class="text-metadata text-white/40 mb-4">The relationship</p>
+            <p class="text-lg leading-relaxed text-white/75">
+              Today, you work directly with me. No account manager between us. No handing the project off to someone you've never met. I lead the thinking, creative direction and production — and bring in trusted specialists when a project needs them.
+            </p>
+          </div>
+        </div>
+        <p class="font-display text-2xl md:text-3xl font-medium tracking-tight">
+          Small by design. Capable by experience.
+        </p>
+      </div>
+    </section>
+
+    <section class="about-wrap pb-20 md:pb-28">
+      <h2 class="font-display text-3xl md:text-5xl font-medium tracking-tight leading-[1.05] max-w-3xl mb-8">
+        The animation comes last. The thinking comes first.
+      </h2>
+      <p class="text-body text-lg leading-relaxed text-black/70 max-w-2xl mb-5">
+        I'm obsessive about ideas, story and storyboarding. Before we start animating, I want to know exactly what we're trying to communicate, who needs to understand it and why they'll care.
+      </p>
+      <p class="text-body text-lg leading-relaxed text-black/70 max-w-2xl mb-14">
+        I'll challenge the brief if I think there's a better way to tell the story. Because beautiful animation can't rescue a confusing idea.
+      </p>
+      <ol class="max-w-xl space-y-0 mb-16">
+        {ABOUT_STEPS.map((step, i) => (
+          <li>
+            <p class="flex gap-5 items-baseline py-4 border-t border-black/10">
+              <span class="text-metadata text-accent shrink-0">0{i + 1}</span>
+              <span class="font-display text-xl md:text-2xl font-medium tracking-tight">{step}</span>
+            </p>
+          </li>
+        ))}
+      </ol>
+      <p class="text-metadata text-black/40">{ABOUT_ARC.join(' → ')}</p>
+    </section>
+
+    <section class="about-wrap pb-20 md:pb-28">
+      <h2 class="font-display text-3xl md:text-5xl font-medium tracking-tight leading-[1.05] max-w-3xl mb-14">
+        Bring me in wherever the project needs me.
+      </h2>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 md:gap-y-14">
+        {ABOUT_PLUG.map((item) => (
+          <li class="border-t border-black/10 pt-5">
+            <p class="font-display text-xl md:text-2xl font-medium tracking-tight mb-3">{item.label}</p>
+            <p class="text-body text-lg leading-relaxed text-black/65">{item.line}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="about-wrap pb-20 md:pb-28">
+      <h2 class="font-display text-4xl md:text-6xl font-bold tracking-tight leading-[0.92] max-w-3xl mb-10">
+        You don't need to have it figured out.
+      </h2>
+      <p class="font-display text-2xl md:text-3xl font-medium tracking-tight mb-10">
+        Send me the messy version.
+      </p>
+      <ul class="flex flex-wrap gap-x-6 gap-y-3 max-w-2xl mb-10">
+        {ABOUT_MESSY.map((item) => (
+          <li class="text-body text-lg text-black/70">{item}</li>
+        ))}
+      </ul>
+      <p class="text-body text-lg leading-relaxed text-black/70 max-w-xl mb-10">
+        I'll help work out what matters, find the story and turn it into something people can actually understand.
+      </p>
+      <p class="font-display text-xl md:text-2xl font-medium tracking-tight">
+        You bring the complicated thing. I'll help make sense of it.
+      </p>
+    </section>
+
+    <section id="work" class="about-wrap pb-20 md:pb-28">
+      <h2 class="font-display text-3xl md:text-5xl font-medium tracking-tight leading-[1.05] max-w-3xl mb-4">
+        Some complicated things I've made clear.
+      </h2>
+      <p class="text-body text-lg text-black/60 max-w-xl mb-14">
+        This isn't theoretical. This is the kind of work I already do.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-14">
+        {cases.map((item, i) => (
+          <article>
+            <VimeoEmbed
+              client:visible
+              vimeoId={item.project.vimeoId}
+              vimeoHash={item.project.vimeoHash}
+              title={item.project.title}
+              loading={i < 2 ? 'eager' : 'lazy'}
+              className="rounded-xl mb-5"
+            />
+            <p class="text-metadata mb-4">{item.project.client}</p>
+            <dl class="space-y-2.5">
+              <div>
+                <dt class="text-metadata text-black/40 mb-0.5">The problem</dt>
+                <dd class="text-body text-[0.95rem] leading-relaxed text-black/70">{item.problem}</dd>
+              </div>
+              <div>
+                <dt class="text-metadata text-black/40 mb-0.5">What I did</dt>
+                <dd class="text-body text-[0.95rem] leading-relaxed text-black/70">{item.did}</dd>
+              </div>
+              <div>
+                <dt class="text-metadata text-black/40 mb-0.5">The result</dt>
+                <dd class="text-body text-[0.95rem] leading-relaxed text-black">{item.result}</dd>
+              </div>
+            </dl>
+            <a href={`/casestudy/${item.project.slug}/`} class="ms-link inline-block mt-4">The film →</a>
+          </article>
+        ))}
+      </div>
+      <p class="mt-12">
+        <a href="/work/" class="ms-link">Full portfolio →</a>
+      </p>
+    </section>
+
+    <section class="about-wrap pb-20 md:pb-28">
+      <ClientTicker
+        client:load
+        label=""
+        rowA={VERTICAL_TICKER_A}
+        rowB={VERTICAL_TICKER_B}
+        compact
+      />
+    </section>
+
+    <section class="about-wrap pb-20 md:pb-28">
+      <h2 class="font-display text-3xl md:text-5xl font-medium tracking-tight leading-[1.05] max-w-3xl mb-8">
+        The relationship can grow with the product.
+      </h2>
+      <p class="text-body text-lg leading-relaxed text-black/70 max-w-2xl mb-6">
+        One project becomes a product launch. Then a feature demo. Then a sales video. Then a campaign. Then something the CEO needs next week.
+      </p>
+      <p class="text-body text-lg leading-relaxed text-black/70 max-w-2xl mb-10">
+        That's why I like working with technology companies over time. I get to understand the product properly, and your team gets a creative partner who already understands how you work.
+      </p>
+      <p class="font-display text-2xl md:text-3xl font-medium tracking-tight max-w-xl">
+        You don't need to brief a new studio every time. You can just call me.
+      </p>
+    </section>
+
+    <section class="about-wrap pb-20 md:pb-28">
+      <h2 class="font-display text-3xl md:text-5xl font-medium tracking-tight leading-[1.05] max-w-3xl mb-8">
+        And agencies can plug me in too.
+      </h2>
+      <p class="text-body text-lg leading-relaxed text-black/70 max-w-2xl mb-6">
+        If you're an agency without a dedicated motion team, I can work behind the scenes as your specialist studio.
+      </p>
+      <p class="text-body text-lg leading-relaxed text-black/70 max-w-2xl mb-10">
+        You can bring me into the project when a client needs motion, animation, product storytelling or visualisation — and I can work within your creative direction, or help develop the idea with you. You get the capability of a specialist motion studio without building one yourself.
+      </p>
+      <p class="font-display text-xl md:text-2xl font-medium tracking-tight">
+        Your client. Your relationship. My production capability.
+      </p>
+    </section>
+
+    <section class="about-wrap pb-20 md:pb-28">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
+        <div class="md:col-span-4">
+          <div class="overflow-hidden rounded-xl bg-black/[0.04] aspect-[4/5] max-w-[16rem] md:max-w-none">
+            <img
+              src="/daniel-neale.jpg"
+              alt="Dan Neale, director of Motion Story"
+              class="w-full h-full object-cover object-[center_18%]"
+              loading="lazy"
+              width="480"
+              height="600"
+            />
+          </div>
+        </div>
+        <div class="md:col-span-7 md:col-start-6">
+          <h2 class="font-display text-3xl md:text-4xl font-medium tracking-tight leading-snug mb-8">
+            I'm Dan. Motion Story is deliberately small.
+          </h2>
+          <div class="space-y-5 text-body text-lg leading-relaxed text-black/70 max-w-xl">
+            <p>I've been working in motion graphics and visual storytelling for most of my career. I built and ran a larger studio, working on the kind of projects you'd expect from a big production company.</p>
+            <p>Over time I realised I preferred being closer to the work — closer to the ideas, the clients and the actual problem we were trying to solve.</p>
+            <p>So Motion Story is built differently. It's small, senior and hands-on. You work directly with me. I bring the experience of the bigger studios, but without the layers that come with them.</p>
+            <p class="font-display text-xl font-medium tracking-tight text-black pt-2">I like complicated things.</p>
+            <p>Technology, systems, products, ideas that don't fit neatly into a sentence. The harder something is to explain, the more interesting the problem becomes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-wrap pb-24 md:pb-32">
+      <h2 class="font-display text-4xl md:text-6xl font-bold tracking-tight leading-[0.92] max-w-3xl mb-6">
+        Got something complicated to explain?
+      </h2>
+      <p class="font-display text-2xl md:text-3xl font-medium tracking-tight mb-10">
+        Send me the messy version.
+      </p>
+      <div class="flex flex-wrap items-center gap-5 md:gap-7 mb-10">
+        <a href="/book/" class="ms-btn">Talk to Dan</a>
+        <a href="#work" class="ms-link">See the work →</a>
+      </div>
+      <p class="text-metadata text-black/45">
+        Motion Story — Creative direction, design and animation for complex technology.
+      </p>
+    </section>
+  </div>
 </PageLayout>
+
+<style>
+  .about-wrap {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 2rem;
+  }
+
+  .about-hero-film {
+    position: relative;
+    aspect-ratio: 16 / 9;
+  }
+
+  .about-hero-loop,
+  .about-hero-still {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover;
+  }
+
+  .about-hero-still {
+    display: block;
+  }
+
+  .about-hero-loop {
+    z-index: 1;
+  }
+
+  .about-ink {
+    background: #0a0a0a;
+    color: #fff;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .about-hero-loop {
+      display: none;
+    }
+  }
+</style>

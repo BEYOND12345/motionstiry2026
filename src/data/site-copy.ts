@@ -18,22 +18,117 @@ export const HERO_LEDE =
 export const PROFILE_LEDE =
   "Independent motion designer and director. Making brands move since 2010. Small studio, big impact: work directly with me.";
 
-/** About hero — studio range, one person. */
-export const ABOUT_LEDE =
-  "A full studio — strategy, design, illustration, animation — in one person. I come in like a consultant and turn the project around.";
+/** About — plug-in studio, not a freelance animator. */
+export const ABOUT_HEADLINE = "The creative studio you can plug into your team.";
 
-export const ABOUT_HELP = [
-  { label: "Product demos", line: "The product on screen. Story first." },
-  { label: "Video strategy", line: "What to make, for whom, and why." },
-  { label: "Design", line: "Look and feel that belongs to the brand." },
-  { label: "Illustration", line: "Custom work. Not a template." },
-  { label: "Animation direction", line: "I own the film from idea to delivery." },
+export const ABOUT_LEDE =
+  "Complex technology needs a clear story. I help technology companies and agencies turn complicated products, ideas and technology into clear visual stories — from strategy and concept through to design and animation.";
+
+export const ABOUT_SUPPORT = "Big-studio experience. One-to-one collaboration.";
+
+export const ABOUT_MODES = [
+  { label: "Think", line: "Strategy · Ideas · Story · Creative Direction" },
+  { label: "Shape", line: "Messaging · Scripts · Storyboards · Design" },
+  { label: "Make", line: "Motion · Animation · Product Demos · Films" },
 ] as const;
 
-export const ABOUT_HIRE = [
-  "I think about the business, then I make the film.",
-  "I've shipped my own products. I know the brief.",
-  "One person. No production maze.",
+export const ABOUT_STEPS = [
+  "What are we actually trying to say?",
+  "What's the story?",
+  "How should we show it?",
+  "Now let's animate it.",
+] as const;
+
+export const ABOUT_ARC = ["Idea", "Storyboard", "Design", "Motion"] as const;
+
+export const ABOUT_BUILT_FOR =
+  "That's what Motion Story is built for.";
+
+export const ABOUT_PLUG = [
+  {
+    label: "Product storytelling",
+    line: "Turn complicated products and technology into stories people can understand.",
+  },
+  {
+    label: "Explainers",
+    line: "Make difficult ideas, systems and processes simple and visual.",
+  },
+  {
+    label: "Product demos",
+    line: "Show what a product actually does — without forcing someone through a 40-slide deck.",
+  },
+  {
+    label: "Launch films",
+    line: "Give new products, features and companies a compelling visual introduction.",
+  },
+  {
+    label: "Creative direction",
+    line: "Help shape the idea, story, visual language and execution before production begins.",
+  },
+  {
+    label: "Video strategy",
+    line: "Work out where video can actually be useful across your marketing, sales and product journey — not just make one video and disappear.",
+  },
+] as const;
+
+export const ABOUT_MESSY = [
+  "A product deck.",
+  "A Figma file.",
+  "A technical document.",
+  "A founder's voice note.",
+  "A half-written script.",
+  "Or just a problem you need to solve.",
+] as const;
+
+export const ABOUT_CASES = [
+  {
+    id: "trudi",
+    problem: "AI property management is hard to show.",
+    did: "Walked tenant comms, maintenance and reporting as real workflows.",
+    result: "A demo people can follow.",
+  },
+  {
+    id: "atomic",
+    problem: "In-app messages look like spam.",
+    did: "Showed native, useful cards inside existing apps.",
+    result: "The product, not a pitch.",
+  },
+  {
+    id: "mosaic",
+    problem: "Strategic data planning is abstract.",
+    did: "Distilled the workflow into one narrative.",
+    result: "Strategy and execution, aligned.",
+  },
+  {
+    id: "acodis",
+    problem: "AI extraction is invisible.",
+    did: "Visualised the machine for lay people.",
+    result: "Technical value you can see.",
+  },
+  {
+    id: "wipster",
+    problem: "Review sits across too many tools.",
+    did: "Connected review, approval and delivery in one story.",
+    result: "Collaboration that feels simple.",
+  },
+  {
+    id: "giraffe",
+    problem: "City-planning software, three audiences.",
+    did: "One film for architecture, development and government.",
+    result: "One story they can share.",
+  },
+  {
+    id: "method-recycling",
+    problem: "A workplace bin that had to perform.",
+    did: "Told the product as a story.",
+    result: "62% completion. 21% view rate.",
+  },
+  {
+    id: "heyyou",
+    problem: "Food ordering needed to feel obvious.",
+    did: "Put browse, order-ahead and skip-the-queue on screen.",
+    result: "The journey in one tap.",
+  },
 ] as const;
 
 export const WHY_ME = {
