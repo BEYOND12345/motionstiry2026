@@ -96,7 +96,7 @@ function QuoteCycle() {
   const item = HOME_QUOTES[index];
 
   return (
-    <blockquote className="relative min-h-[5.75rem] max-w-md">
+    <blockquote className="relative min-h-[5.5rem] min-w-0 flex-1">
       <p
         key={item.quote}
         className="font-display text-base font-medium leading-snug tracking-tight md:text-[1.05rem]"
@@ -260,7 +260,19 @@ export default function Homepage() {
                 rowB={CLIENT_ROW_B}
               />
             </div>
-            <div className="mt-6">
+            <div className="mt-8 flex items-start gap-8">
+              <a href="/about/" className="w-[4.5rem] shrink-0 text-center transition-opacity hover:opacity-60">
+                <img
+                  src="/daniel-neale.jpg"
+                  alt="Dan Neale"
+                  width={72}
+                  height={72}
+                  className="mx-auto h-[4.5rem] w-[4.5rem] rounded-full object-cover object-[center_18%]"
+                />
+                <span className="mt-2.5 block font-display text-[13px] font-medium tracking-tight">
+                  Dan Neale
+                </span>
+              </a>
               <QuoteCycle />
             </div>
           </header>
