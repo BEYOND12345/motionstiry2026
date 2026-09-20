@@ -1,7 +1,21 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { sortProjectsShowcaseFirst, type Project } from "../data/projects";
-import { HERO_LEDE } from "../data/site-copy";
+import {
+  HERO_LEDE,
+  HOME_APPROACH,
+  HOME_APPROACH_ARC,
+  HOME_ARC,
+  HOME_AUDIENCE,
+  HOME_CLOSE,
+  HOME_DIRECT,
+  HOME_MAKE,
+  HOME_MAKE_LEAD,
+  HOME_MESSY,
+  HOME_PORTFOLIO_INTRO,
+  HOME_PROBLEM,
+  HOME_RELATIONSHIP,
+} from "../data/site-copy";
 import ClientTicker from "./ClientTicker";
 import WorkCard, { projectToWorkCard } from "./WorkCard";
 
@@ -252,7 +266,17 @@ export default function Homepage() {
             <p className="mt-6 font-display text-[1.35rem] font-medium leading-[1.25] tracking-tight text-black md:text-[1.5rem]">
               {HERO_LEDE}
             </p>
-            <div className="mt-6 pr-24 lg:pr-0">
+            <p className="mt-5 text-metadata text-black/45">{HOME_ARC.join(" · ")}</p>
+            <p className="mt-5 font-display text-xl font-medium tracking-tight">{HOME_DIRECT}</p>
+            <div className="mt-8 flex flex-wrap items-center gap-5">
+              <a href="#portfolio" className="ms-link">
+                See the work →
+              </a>
+              <a href="/book/" className="ms-btn">
+                Talk to Dan
+              </a>
+            </div>
+            <div className="mt-10 pr-24 lg:pr-0">
               <ClientTicker
                 compact
                 label=""
@@ -277,7 +301,106 @@ export default function Homepage() {
             </div>
           </header>
 
-          <nav className="mt-auto max-w-md pt-8 pb-1" aria-label="Studio">
+          <div className="mt-20 max-w-md space-y-16 pb-4">
+            <div>
+              <p className="font-display text-2xl font-medium tracking-tight leading-snug md:text-3xl">
+                {HOME_PROBLEM.lead}
+              </p>
+              <p className="mt-5 font-display text-xl font-medium tracking-tight leading-snug text-black/80">
+                {HOME_PROBLEM.mid}
+              </p>
+              <p className="mt-5 text-body text-lg leading-relaxed text-black/70">
+                {HOME_PROBLEM.body}
+              </p>
+              <p className="mt-5 font-display text-xl font-medium tracking-tight">
+                {HOME_PROBLEM.close}
+              </p>
+            </div>
+
+            <div>
+              <p className="font-display text-2xl font-medium tracking-tight leading-snug md:text-3xl">
+                {HOME_APPROACH.lead}
+              </p>
+              <p className="mt-5 text-body text-lg leading-relaxed text-black/70">
+                {HOME_APPROACH.body}
+              </p>
+              <p className="mt-5 text-body text-lg leading-relaxed text-black/70">
+                {HOME_APPROACH.close}
+              </p>
+              <p className="mt-6 text-metadata text-black/40">{HOME_APPROACH_ARC.join(" → ")}</p>
+            </div>
+
+            <div>
+              <p className="font-display text-xl font-medium tracking-tight leading-snug mb-8">
+                {HOME_MAKE_LEAD}
+              </p>
+              <ul>
+                {HOME_MAKE.map((item) => (
+                  <li key={item.label} className="border-t border-black/10 py-4">
+                    <p className="font-display text-lg font-medium tracking-tight">{item.label}</p>
+                    <p className="mt-1 text-body text-black/60">{item.line}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <p className="font-display text-2xl font-medium tracking-tight leading-snug md:text-3xl">
+                {HOME_MESSY.lead}
+              </p>
+              <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+                {HOME_MESSY.items.map((item) => (
+                  <li key={item} className="text-body text-lg text-black/70">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 font-display text-xl font-medium tracking-tight leading-snug">
+                {HOME_MESSY.close}
+              </p>
+            </div>
+
+            <div>
+              <p className="font-display text-2xl font-medium tracking-tight leading-snug md:text-3xl">
+                {HOME_AUDIENCE.lead}
+              </p>
+              <p className="mt-5 text-body text-lg leading-relaxed text-black/70">
+                {HOME_AUDIENCE.body}
+              </p>
+              <p className="mt-5 text-metadata text-black/40">{HOME_AUDIENCE.tags.join(" · ")}</p>
+            </div>
+
+            <div>
+              <p className="font-display text-2xl font-medium tracking-tight leading-snug md:text-3xl">
+                {HOME_RELATIONSHIP.lead}
+              </p>
+              <p className="mt-5 text-body text-lg leading-relaxed text-black/70">
+                {HOME_RELATIONSHIP.body}
+              </p>
+              <p className="mt-5 text-body text-lg leading-relaxed text-black/70">
+                {HOME_RELATIONSHIP.direct}
+              </p>
+              <p className="mt-5 font-display text-xl font-medium tracking-tight">
+                {HOME_RELATIONSHIP.close}
+              </p>
+            </div>
+
+            <div>
+              <p className="font-display text-3xl font-bold tracking-tight leading-[0.95] md:text-4xl">
+                {HOME_CLOSE.lead}
+              </p>
+              <p className="mt-5 font-display text-xl font-medium tracking-tight leading-snug">
+                {HOME_CLOSE.body}
+              </p>
+              <div className="mt-8">
+                <a href="/book/" className="ms-btn">
+                  Talk to Dan
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <nav className="mt-auto max-w-md pt-10 pb-1" aria-label="Studio">
             <ul className="flex flex-wrap gap-x-5 gap-y-2">
               {HOME_MENU.map((item) => (
                 <li key={item.href}>
@@ -294,6 +417,9 @@ export default function Homepage() {
         </aside>
 
         <main className="split-right flex flex-col" id="portfolio">
+          <h2 className="px-5 pb-3 font-display text-xl font-medium tracking-tight lg:sr-only">
+            {HOME_PORTFOLIO_INTRO}
+          </h2>
           <div className="min-h-0 flex-1">
             <WorkVerticalCarousel projects={PORTFOLIO} />
           </div>
