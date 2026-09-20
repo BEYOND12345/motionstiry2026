@@ -1,12 +1,30 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import { GOOGLE_RATING, VERIFIED_CLIENT_REVIEWS } from '../data/reviews';
+import { VERIFIED_CLIENT_REVIEWS } from '../data/reviews';
 import { getShowcaseProjects } from '../data/projects';
-import { PROFILE_LEDE, SITE_DESCRIPTION, WHY_ME } from '../data/site-copy';
+import { ABOUT_HELP, ABOUT_HIRE, ABOUT_LEDE, SITE_DESCRIPTION } from '../data/site-copy';
+import { VERTICAL_TICKER_A, VERTICAL_TICKER_B } from '../data/vertical-landings/helpers';
 import WorkCard from '../components/WorkCard';
+import ClientTicker from '../components/ClientTicker';
 
-const strapline = VERIFIED_CLIENT_REVIEWS[0];
 const aboutWork = getShowcaseProjects().slice(0, 3);
+const acodis = VERIFIED_CLIENT_REVIEWS.find((r) => r.company === 'Acodis')!;
+
+const testimonials = [
+  acodis,
+  {
+    quote: 'There are a lot of motion designers out there but not many who think like Dan does.',
+    name: 'Troy Cornelius',
+    role: 'Google review',
+    company: '',
+  },
+  {
+    quote: '62% completion. 21% view rate. For a video about bins.',
+    name: 'Lee Bright',
+    role: 'Marketing Team Lead',
+    company: 'Method Recycling',
+  },
+];
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -62,72 +80,97 @@ const structuredData = {
     })} />
   </Fragment>
 
-  <section class="pt-32 pb-16 md:pb-20 px-8 max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-start">
-      <div class="md:col-span-8">
+  <section class="pt-32 pb-14 md:pb-16 px-8 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-end">
+      <div class="md:col-span-7">
         <p class="text-metadata mb-6 md:mb-8">About</p>
-        <h1 class="font-display text-5xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-8 md:mb-10">
+        <h1 class="font-display text-5xl md:text-7xl font-bold tracking-tight leading-[0.88] mb-8 md:mb-10">
           I'm Dan.<br /><span class="brand-mark">MotionStory</span><br />is me.
         </h1>
-        <p class="text-body text-lg max-w-md mb-10 md:mb-12">
-          {PROFILE_LEDE}
+        <p class="text-body text-lg max-w-md mb-8 md:mb-10">
+          {ABOUT_LEDE}
         </p>
         <div class="flex flex-wrap items-center gap-5 md:gap-7">
           <a href="/book/" class="ms-btn">Book a call</a>
           <a href="#work" class="ms-link">See the work ↓</a>
         </div>
       </div>
-      <div class="md:col-span-4 md:pt-2">
-        <div class="w-36 md:w-44">
-          <div class="aspect-[4/5] overflow-hidden rounded-xl bg-black/[0.04] mb-3">
-            <img
-              src="/daniel-neale.jpg"
-              alt="Dan Neale, creative director of Motion Story"
-              class="w-full h-full object-cover"
-              loading="eager"
-              width="352"
-              height="440"
-            />
-          </div>
-          <p class="font-display text-sm font-medium tracking-tight">Dan Neale</p>
-          <p class="text-metadata mt-1 text-black/55">Motion designer &amp; director</p>
+      <div class="md:col-span-5">
+        <div class="overflow-hidden rounded-xl bg-black/[0.04] aspect-[4/5] md:aspect-[5/6] max-w-md md:max-w-none">
+          <img
+            src="/daniel-neale.jpg"
+            alt="Dan Neale, director and consultant at Motion Story"
+            class="w-full h-full object-cover object-[center_18%]"
+            loading="eager"
+            width="640"
+            height="800"
+          />
         </div>
+        <p class="font-display text-sm font-medium tracking-tight mt-4">Dan Neale</p>
+        <p class="text-metadata mt-1 text-black/55">One-person studio · Byron Bay</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-8 max-w-7xl mx-auto pb-14 md:pb-16">
+    <ClientTicker
+      client:load
+      label=""
+      rowA={VERTICAL_TICKER_A}
+      rowB={VERTICAL_TICKER_B}
+      compact
+    />
+  </section>
+
+  <section class="px-8 max-w-7xl mx-auto pb-16 md:pb-24">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start">
+      <div class="md:col-span-6">
+        <p class="text-metadata mb-6">How I can help</p>
+        <ul>
+          {ABOUT_HELP.map((line) => (
+            <li class="font-display text-2xl md:text-3xl font-medium tracking-tight leading-tight py-3 border-b border-black/10 last:border-b-0">
+              {line}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="md:col-span-6 md:pt-0">
+        <p class="text-metadata mb-6">Why hire me</p>
+        <ul class="space-y-5 mb-10">
+          {ABOUT_HIRE.map((line) => (
+            <li class="flex gap-4 items-start">
+              <span class="text-accent leading-none mt-1.5 shrink-0" aria-hidden="true">·</span>
+              <span class="font-display text-xl font-medium tracking-tight leading-snug">{line}</span>
+            </li>
+          ))}
+        </ul>
+        <a href="/book/" class="ms-btn">Book a call</a>
       </div>
     </div>
   </section>
 
   <section class="px-8 max-w-7xl mx-auto pb-16 md:pb-20">
-    <div class="max-w-2xl space-y-5 md:space-y-6">
-      <p class="font-display text-2xl md:text-3xl font-medium tracking-tight leading-snug">
-        {WHY_ME.lead}
-      </p>
-      <p class="text-body text-lg leading-relaxed text-black/70">
-        {WHY_ME.body}
-      </p>
-      <p class="text-body text-lg leading-relaxed text-black/70">
-        {WHY_ME.close}
-      </p>
-      <p class="text-body text-lg leading-relaxed text-black/70">
-        Making motion since 2010, Motion Story since 2012. 500+ projects, {GOOGLE_RATING.score} from {GOOGLE_RATING.count} Google reviews, remote from Byron Bay — NYC to NZ, always have. No account managers. When a job is big I bring in specialists I direct, but nothing gets handed off. People find me through the work.
-      </p>
-      <p class="text-body text-lg leading-relaxed text-black/70">
-        Also built <a href="https://smashinvoices.com/" class="border-b border-black/20 hover:border-black transition-colors">SMASH Invoices</a> — a side product for quoting and invoicing by voice on the tools.
-      </p>
-      <blockquote class="pt-4 md:pt-6">
-        <p class="font-display text-xl md:text-2xl font-medium tracking-tight leading-snug mb-4">
-          “{strapline.quote}”
-        </p>
-        <p class="text-metadata text-black/55">
-          {strapline.name} — {strapline.role}, {strapline.company}
-          <span class="mx-3 opacity-30">·</span>
-          <a href="/reviews/" class="border-b border-black/20 hover:border-black transition-colors text-black/55 hover:text-black">All reviews →</a>
-        </p>
-      </blockquote>
+    <div class="flex flex-wrap items-baseline justify-between gap-4 mb-8 md:mb-12">
+      <p class="text-metadata">What they say</p>
+      <a href="/reviews/" class="text-metadata hover:text-black transition-colors">All reviews →</a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+      {testimonials.map((t) => (
+        <blockquote>
+          <p class="font-display text-xl font-medium tracking-tight leading-snug mb-5">
+            “{t.quote}”
+          </p>
+          <footer class="text-metadata text-black/55">
+            {t.name}{t.company ? <><span class="mx-2 opacity-30">·</span>{t.company}</> : null}
+          </footer>
+        </blockquote>
+      ))}
     </div>
   </section>
 
-  <section id="work" class="px-8 max-w-7xl mx-auto py-8 md:py-16">
-    <div class="flex flex-wrap items-baseline justify-end gap-4 mb-10 md:mb-14">
+  <section id="work" class="px-8 max-w-7xl mx-auto py-8 md:py-14">
+    <div class="flex flex-wrap items-baseline justify-between gap-4 mb-10 md:mb-14">
+      <h2 class="font-display text-2xl md:text-3xl font-medium tracking-tight">A few films</h2>
       <a href="/work/" class="text-metadata hover:text-black transition-colors">Full portfolio →</a>
     </div>
     <div class="work-grid work-grid-3">
@@ -146,42 +189,12 @@ const structuredData = {
     </div>
   </section>
 
-  <section class="px-8 max-w-7xl mx-auto pb-24 md:pb-28 pt-8 md:pt-12">
-    <div class="max-w-2xl">
-      <div class="fold">
-        <details class="fold-item">
-          <summary>What I actually do</summary>
-          <div class="fold-body">
-            <ul>
-              <li>Product narratives for sales funnels, onboarding, launches, and social.</li>
-              <li>Talk me through a project and I can see the whole thing finished — then get it on paper so you see it too.</li>
-              <li>Concept → storyboard → style → animation. Always that order.</li>
-              <li>Not just a doer — a creator. The difference between me and a freelancer you hand a script to.</li>
-            </ul>
-          </div>
-        </details>
-        <details class="fold-item">
-          <summary>How I like to work</summary>
-          <div class="fold-body">
-            <ul>
-              <li>Send six bullet points, not a twelve-page document.</li>
-              <li>Bring me in early for the story and storyboard.</li>
-              <li>Agencies: I slot in for creative direction — white label or direct.</li>
-              <li>If the brief’s wrong, I’ll tell you. You’re not paying me to nod.</li>
-            </ul>
-          </div>
-        </details>
-        <details class="fold-item">
-          <summary>Cost, timeline, capacity</summary>
-          <div class="fold-body">
-            <ul>
-              <li>From $5,000. Most projects land $10,000–$15,000. Fixed quote upfront.</li>
-              <li>Most projects take 3–6 weeks from kickoff to delivery. Simpler pieces can ship in 2–4.</li>
-              <li>Limited concurrent projects, on purpose. Get in early.</li>
-            </ul>
-          </div>
-        </details>
-      </div>
+  <section class="px-8 max-w-7xl mx-auto pb-24 md:pb-28 pt-10 md:pt-16">
+    <div class="max-w-xl">
+      <p class="font-display text-3xl md:text-4xl font-medium tracking-tight leading-snug mb-8">
+        I'm the right person for the job.
+      </p>
+      <a href="/book/" class="ms-btn">Book a call</a>
     </div>
   </section>
 </PageLayout>

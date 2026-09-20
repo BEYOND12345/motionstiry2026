@@ -18,11 +18,29 @@ export const HERO_LEDE =
 export const PROFILE_LEDE =
   "Independent motion designer and director. Making brands move since 2010. Small studio, big impact: work directly with me.";
 
+/** About hero — studio range, one person. */
+export const ABOUT_LEDE =
+  "A full studio — strategy, design, illustration, animation — in one person. I come in like a consultant and turn the project around.";
+
+export const ABOUT_HELP = [
+  "Product demos",
+  "Video strategy",
+  "Design",
+  "Illustration",
+  "Animation direction",
+] as const;
+
+export const ABOUT_HIRE = [
+  "I think about the business, then I make the film.",
+  "I've shipped my own products. I know the brief.",
+  "One person. No production maze.",
+] as const;
+
 export const WHY_ME = {
-  lead: "A bit of an idea rebel. I love new ideas, technology, and pushing boundaries. Startups and forward-thinking tech are where I thrive. I also love business and complexity, and finding the simple way to say something hard.",
-  body: "I don't just make things move. Motion graphics, animated film, social content, presentations. I get into the why and how a product and a business work, then solve that through visual storytelling.",
+  lead: "I'm not a pair of hands. I'm an idea person — designer, director, entrepreneur. I think about the business first, then I make the film that sells it.",
+  body: "I've built my own products, including SMASH Invoices. I know what it feels like when the thing is good and nobody can explain it yet. I work with tech. I use AI when it enables the idea — never as a substitute for one.",
   close:
-    "Give me a back-of-the-napkin brief and I'll still find a way to make it work. I don't wait to be told what to draw. I visualise the vision and make it believable. That's the craft: storytelling that sells the idea.",
+    "Startups bring me in like a teammate. We find the story, I get it on paper, we turn the project around. Big ideas. No production maze.",
   aside:
     "Father, surfer, big-time animal lover. Obsessive about making dry subjects clear and watchable.",
 } as const;
