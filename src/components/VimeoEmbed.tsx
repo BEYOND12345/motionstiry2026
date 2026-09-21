@@ -45,8 +45,8 @@ export default function VimeoEmbed({
             loading={loading}
           />
           <div className="absolute inset-0 bg-black/15 group-hover/play:bg-black/25 transition-colors duration-500" />
-          <div className={`relative rounded-full border border-white/90 flex items-center justify-center opacity-90 group-hover/play:opacity-100 group-hover/play:scale-105 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] bg-black/10 backdrop-blur-[2px] ${compact ? "h-9 w-9" : "h-14 w-14 md:h-16 md:w-16"}`}>
-            <div className={`h-0 w-0 border-y-transparent border-l-white ml-0.5 ${compact ? "border-y-[5px] border-l-[8px]" : "border-y-[7px] border-l-[11px]"}`} />
+          <div className={`relative rounded-full border border-white/90 flex items-center justify-center opacity-90 group-hover/play:opacity-100 group-hover/play:scale-105 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] bg-black/10 backdrop-blur-[2px] ${compact ? "h-11 w-11 lg:h-9 lg:w-9" : "h-14 w-14 md:h-16 md:w-16"}`}>
+            <div className={`h-0 w-0 border-y-transparent border-l-white ml-0.5 ${compact ? "border-y-[6px] border-l-[9px] lg:border-y-[5px] lg:border-l-[8px]" : "border-y-[7px] border-l-[11px]"}`} />
           </div>
         </button>
       )}

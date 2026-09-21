@@ -93,7 +93,7 @@ function PullQuote({
 }) {
   return (
     <blockquote className="hp-pull">
-      <p className="font-display text-[1.2rem] font-medium leading-snug tracking-tight md:text-[1.3rem]">
+      <p className="font-display text-[1.1rem] font-medium leading-[1.4] tracking-tight sm:text-[1.2rem] sm:leading-snug md:text-[1.3rem]">
         “{quote}”
       </p>
       <footer className="mt-3 text-metadata text-black/40">
@@ -173,7 +173,7 @@ function WorkVerticalCarousel({ projects }: { projects: Project[] }) {
     return (
       <div className="hp-work-reel-viewport min-h-0 flex-1 overflow-hidden">
         <div
-          className="hp-work-reel-track flex flex-col gap-5"
+          className="hp-work-reel-track flex flex-col gap-3 md:gap-5"
           style={{
             animation: `hp-work-reel-${direction} ${durationSec}s linear infinite`,
             animationPlayState: frozen ? "paused" : "running",
@@ -192,6 +192,7 @@ function WorkVerticalCarousel({ projects }: { projects: Project[] }) {
       onMouseLeave={() => {
         if (!playing) setPaused(false);
       }}
+      onPointerDown={() => setPaused(true)}
       onFocusCapture={() => setPaused(true)}
       onBlurCapture={(e) => {
         if (!playing && !e.currentTarget.contains(e.relatedTarget as Node | null)) {
@@ -199,7 +200,7 @@ function WorkVerticalCarousel({ projects }: { projects: Project[] }) {
         }
       }}
     >
-      <div className="flex h-full gap-3 px-3 sm:gap-4 md:gap-5 md:px-5">
+      <div className="flex h-full gap-2.5 px-3 sm:gap-4 md:gap-5 md:px-5">
         {column(left, "up", durationLeft)}
         {column(right, "down", durationRight)}
       </div>
@@ -219,6 +220,10 @@ export default function Homepage() {
           from { transform: translate3d(0, -50%, 0); }
           to { transform: translate3d(0, 0, 0); }
         }
+        .hp-journal {
+          width: 100%;
+          max-width: 28rem;
+        }
         @media (min-width: 1025px) {
           .hp-work-reel,
           .hp-work-reel-viewport {
@@ -226,18 +231,22 @@ export default function Homepage() {
           }
         }
         @media (max-width: 1024px) {
+          .hp-journal {
+            max-width: 36rem;
+          }
           .hp-work-reel {
-            height: min(62vh, 640px);
+            height: min(60dvh, 640px);
           }
         }
         @media (max-width: 768px) {
           .hp-work-reel {
-            height: min(56vh, 520px);
+            height: min(58dvh, 500px);
           }
         }
-        .hp-journal {
-          width: 100%;
-          max-width: 28rem;
+        @media (max-width: 480px) and (max-height: 700px) {
+          .hp-work-reel {
+            height: min(50dvh, 360px);
+          }
         }
         .hp-journal p {
           text-wrap: pretty;
@@ -258,13 +267,13 @@ export default function Homepage() {
               Made<br />
               Simple.
             </h1>
-            <p className="mt-6 font-display text-[1.2rem] font-medium leading-[1.35] tracking-tight sm:mt-7 sm:text-[1.35rem] md:text-[1.45rem] md:leading-[1.3]">
+            <p className="hp-lede mt-5 font-display text-[1.2rem] font-medium leading-[1.4] tracking-tight sm:mt-7 sm:text-[1.35rem] md:text-[1.45rem] md:leading-[1.3]">
               {HERO_LEDE}
             </p>
-            <p className="mt-4 text-body text-[1.02rem] leading-[1.65] text-black/70 sm:mt-5 sm:text-[1.05rem]">
+            <p className="hp-body mt-4 text-body text-[1.0625rem] leading-[1.65] text-black/70 sm:mt-5 sm:text-[1.05rem]">
               {HOME_HERO_BODY}
             </p>
-            <div className="mt-8 sm:mt-10">
+            <div className="hp-logos mt-8 sm:mt-10">
               <ClientTicker
                 compact
                 label=""
@@ -275,7 +284,7 @@ export default function Homepage() {
           </header>
 
           <div className="hp-journal hp-story pb-4">
-            <div className="mt-10 flex items-start gap-4 sm:mt-12 sm:gap-6 lg:mt-10">
+            <div className="hp-me mt-10 flex items-start gap-4 sm:mt-12 sm:gap-6 lg:mt-10">
               <a href="/about/" aria-label="Dan Neale" className="shrink-0 transition-opacity hover:opacity-60">
                 <img
                   src="/daniel-neale.jpg"
@@ -285,17 +294,17 @@ export default function Homepage() {
                   className="h-14 w-14 rounded-full object-cover object-[center_18%] sm:h-[4.5rem] sm:w-[4.5rem]"
                 />
               </a>
-              <p className="pt-0.5 font-display text-[1.08rem] font-medium leading-snug tracking-tight sm:pt-1 sm:text-[1.2rem]">
+              <p className="pt-0.5 font-display text-[1.125rem] font-medium leading-[1.4] tracking-tight sm:pt-1 sm:text-[1.2rem] sm:leading-snug">
                 {HOME_ME}
               </p>
             </div>
-            <p className="mt-12 font-display text-[1.45rem] font-medium tracking-tight leading-[1.2] sm:mt-16 sm:text-[1.65rem] md:text-[1.85rem]">
+            <p className="mt-12 font-display text-[1.4rem] font-medium tracking-tight leading-[1.25] sm:mt-16 sm:text-[1.65rem] md:text-[1.85rem] md:leading-[1.2]">
               {HOME_APPROACH.lead}
             </p>
-            <p className="mt-6 text-body text-[1.05rem] leading-[1.65] text-black/70">
+            <p className="mt-5 text-body text-[1.0625rem] leading-[1.65] text-black/70 sm:mt-6 sm:text-[1.05rem]">
               {HOME_APPROACH.body}
             </p>
-            <p className="mt-5 text-body text-[1.05rem] leading-[1.65] text-black/70">
+            <p className="mt-4 text-body text-[1.0625rem] leading-[1.65] text-black/70 sm:mt-5 sm:text-[1.05rem]">
               {HOME_APPROACH.shape}
             </p>
             <p className="mt-12 font-display text-xl font-medium tracking-tight">
@@ -320,13 +329,13 @@ export default function Homepage() {
               <PullQuote {...HOME_QUOTES[1]} />
             </div>
 
-            <p className="mt-16 font-display text-[1.55rem] font-medium tracking-tight leading-[1.15] sm:mt-20 sm:text-[1.85rem] md:text-[2.1rem]">
+            <p className="mt-16 font-display text-[1.45rem] font-medium tracking-tight leading-[1.2] sm:mt-20 sm:text-[1.85rem] md:text-[2.1rem] md:leading-[1.15]">
               {HOME_CLOSE.lead}
             </p>
-            <p className="mt-5 text-body text-[1.05rem] leading-[1.65] text-black/70">
+            <p className="mt-5 text-body text-[1.0625rem] leading-[1.65] text-black/70 sm:text-[1.05rem]">
               {HOME_CLOSE.body}
             </p>
-            <p className="mt-5 text-body text-[1.05rem] leading-[1.65] text-black/70">
+            <p className="mt-4 text-body text-[1.0625rem] leading-[1.65] text-black/70 sm:mt-5 sm:text-[1.05rem]">
               {HOME_CLOSE.close}
             </p>
             <div className="mt-8">
@@ -353,7 +362,7 @@ export default function Homepage() {
         </aside>
 
         <main className="split-right flex flex-col" id="portfolio">
-          <h2 className="px-5 pb-3 font-display text-xl font-medium tracking-tight lg:sr-only">
+          <h2 className="hp-work-kicker px-4 pb-2.5 font-display text-[1.05rem] font-medium tracking-tight text-black/80">
             {HOME_PORTFOLIO_INTRO}
           </h2>
           <div className="min-h-0 flex-1">
