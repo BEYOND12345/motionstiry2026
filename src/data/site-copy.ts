@@ -19,6 +19,9 @@ export const HOME_ARC = ["Ideas", "Story", "Design", "Animation"] as const;
 
 export const HOME_DIRECT = "You work with me.";
 
+export const HOME_ME =
+  "This is me. I'm the one you work with. This is the work I do — and I love working with complex companies.";
+
 export const HOME_PROBLEM = {
   lead: "You've built something worth understanding.",
   mid: "But sometimes the hardest part isn't building it. It's explaining it.",
@@ -28,8 +31,7 @@ export const HOME_PROBLEM = {
 
 export const HOME_APPROACH = {
   lead: "We start with the idea, not the animation.",
-  body: "I'll get inside what you're trying to communicate, work with you to find the story, develop the creative direction and storyboard the idea before we start making anything.",
-  close: "Then I'll design and animate it — or bring in the right specialists when the project needs them.",
+  body: "I'll get inside what you're trying to communicate, find the story, and storyboard it before we make anything. Then I'll design and animate it — or bring in the right people when the project needs them.",
 } as const;
 
 export const HOME_APPROACH_ARC = [
@@ -73,9 +75,7 @@ export const HOME_AUDIENCE = {
 export const HOME_PORTFOLIO_INTRO = "Some things I've made clear.";
 
 export const HOME_RELATIONSHIP = {
-  lead: "Need a creative partner, not just a production supplier?",
-  body: "You can bring me in for one project, or keep me close as your go-to creative studio whenever something needs explaining, demonstrating or promoting.",
-  direct: "You work directly with me from the first idea through to the final piece.",
+  body: "Bring me in for one project, or keep me close. Whenever something needs explaining, you can just call.",
   close: "Big-studio experience. Small-studio relationship.",
 } as const;
 
@@ -90,10 +90,44 @@ export const PROFILE_LEDE =
 /** About — plug-in studio, not a freelance animator. */
 export const ABOUT_HEADLINE = "The creative studio you can plug into your team.";
 
-export const ABOUT_LEDE =
-  "Complex technology needs a clear story. I help technology companies and agencies turn complicated products, ideas and technology into clear visual stories — from strategy and concept through to design and animation.";
+export const ABOUT_INTRO =
+  "I'm Dan, a creative director and motion designer with years of big-studio experience.";
 
-export const ABOUT_SUPPORT = "Big-studio experience. One-to-one collaboration.";
+export const ABOUT_LEDE = [
+  "I help companies and agencies turn complex products, ideas and technology into clear visual stories — from the first idea and creative direction through to design and animation.",
+  "I work directly with your team, whether you need help shaping the story, developing a concept, creating a storyboard, producing a product demo or simply getting the work made.",
+  "Motion Story is deliberately small. You get the experience and capability of a much bigger studio, without the layers.",
+] as const;
+
+export const ABOUT_SUPPORT = "Big-studio experience. Small-studio relationship.";
+
+export const ABOUT_HELP_HEADING = "What I can help with";
+
+export const ABOUT_HELP = [
+  {
+    label: "Ideas & creative direction",
+    line: "Find the story and work out what needs to be said.",
+  },
+  {
+    label: "Story & design",
+    line: "Shape the message, storyboard the idea and create the visual direction.",
+  },
+  {
+    label: "Motion & production",
+    line: "Turn it into finished films, product demos, explainers, launch content and social.",
+  },
+  {
+    label: "Ongoing creative support",
+    line: "Plug me into your team whenever you need specialist creative and motion capability.",
+  },
+] as const;
+
+export const ABOUT_CLOSE_HEADING = "You don't need to have it all figured out.";
+
+export const ABOUT_CLOSE = [
+  "Bring me the product, the pitch deck, the rough idea or the problem.",
+  "We'll work out what it needs to become.",
+] as const;
 
 export const ABOUT_MODES = [
   { label: "Think", line: "Strategy · Ideas · Story · Creative Direction" },

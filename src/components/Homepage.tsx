@@ -6,11 +6,10 @@ import {
   HOME_APPROACH,
   HOME_APPROACH_ARC,
   HOME_ARC,
-  HOME_AUDIENCE,
   HOME_CLOSE,
-  HOME_DIRECT,
   HOME_MAKE,
   HOME_MAKE_LEAD,
+  HOME_ME,
   HOME_MESSY,
   HOME_PORTFOLIO_INTRO,
   HOME_PROBLEM,
@@ -87,41 +86,25 @@ const HOME_MENU = [
   { label: "Start a project", href: "/contact/" },
 ] as const;
 
-function QuoteCycle() {
-  const [index, setIndex] = useState(0);
-  const [reduceMotion, setReduceMotion] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const sync = () => setReduceMotion(mq.matches);
-    sync();
-    mq.addEventListener("change", sync);
-    return () => mq.removeEventListener("change", sync);
-  }, []);
-
-  useEffect(() => {
-    if (reduceMotion) return;
-    const timer = window.setInterval(() => {
-      setIndex((current) => (current + 1) % HOME_QUOTES.length);
-    }, 6500);
-    return () => window.clearInterval(timer);
-  }, [reduceMotion]);
-
-  const item = HOME_QUOTES[index];
-
+function PullQuote({
+  quote,
+  name,
+  company,
+}: {
+  quote: string;
+  name: string;
+  company: string;
+}) {
   return (
-    <blockquote className="relative min-h-[5.5rem] min-w-0 flex-1">
-      <p
-        key={item.quote}
-        className="font-display text-base font-medium leading-snug tracking-tight md:text-[1.05rem]"
-      >
-        “{item.quote}”
+    <blockquote className="hp-pull">
+      <p className="font-display text-[1.2rem] font-medium leading-snug tracking-tight md:text-[1.3rem]">
+        “{quote}”
       </p>
-      <p className="mt-3 text-metadata">
-        {item.name}
+      <footer className="mt-3 text-metadata text-black/40">
+        {name}
         <span className="mx-2 opacity-30">·</span>
-        {item.company}
-      </p>
+        {company}
+      </footer>
     </blockquote>
   );
 }
@@ -251,24 +234,33 @@ export default function Homepage() {
             height: min(78vh, 720px);
           }
         }
+        .hp-journal {
+          max-width: 28rem;
+        }
+        .hp-journal p {
+          text-wrap: pretty;
+        }
+        .hp-pull {
+          border-left: 1.5px solid var(--color-accent, #e10600);
+          padding-left: 1.15rem;
+        }
       `}</style>
       <div className="grain-overlay" />
       <CustomCursor />
 
       <div id="main-content" className="split-container">
         <aside className="split-left relative">
-          <header id="top" className="max-w-md">
+          <header id="top" className="hp-journal">
             <h1 className="text-display">
               Complex<br />
               Made<br />
               Simple.
             </h1>
-            <p className="mt-6 font-display text-[1.35rem] font-medium leading-[1.25] tracking-tight text-black md:text-[1.5rem]">
+            <p className="mt-7 font-display text-[1.35rem] font-medium leading-[1.3] tracking-tight md:text-[1.45rem]">
               {HERO_LEDE}
             </p>
-            <p className="mt-5 text-metadata text-black/45">{HOME_ARC.join(" · ")}</p>
-            <p className="mt-5 font-display text-xl font-medium tracking-tight">{HOME_DIRECT}</p>
-            <div className="mt-8 flex flex-wrap items-center gap-5">
+            <p className="mt-5 text-metadata text-black/40">{HOME_ARC.join(" · ")}</p>
+            <div className="mt-9 flex flex-wrap items-center gap-5">
               <a href="#portfolio" className="ms-link">
                 See the work →
               </a>
@@ -276,7 +268,77 @@ export default function Homepage() {
                 Talk to Dan
               </a>
             </div>
-            <div className="mt-10 pr-24 lg:pr-0">
+          </header>
+
+          <div className="hp-journal pb-4">
+            <p className="mt-20 font-display text-[1.65rem] font-medium tracking-tight leading-[1.2] md:text-[1.85rem]">
+              {HOME_PROBLEM.lead}
+            </p>
+            <p className="mt-6 text-body text-[1.05rem] leading-[1.65] text-black/70">
+              {HOME_PROBLEM.mid} {HOME_PROBLEM.body}
+            </p>
+            <p className="mt-6 font-display text-xl font-medium tracking-tight">
+              {HOME_PROBLEM.close}
+            </p>
+
+            <div className="mt-16 flex items-start gap-6">
+              <a href="/about/" aria-label="Dan Neale" className="shrink-0 transition-opacity hover:opacity-60">
+                <img
+                  src="/daniel-neale.jpg"
+                  alt="Dan Neale"
+                  width={72}
+                  height={72}
+                  className="h-[4.5rem] w-[4.5rem] rounded-full object-cover object-[center_18%]"
+                />
+              </a>
+              <p className="font-display text-[1.2rem] font-medium leading-snug tracking-tight pt-1">
+                {HOME_ME}
+              </p>
+            </div>
+
+            <p className="mt-20 font-display text-[1.65rem] font-medium tracking-tight leading-[1.2] md:text-[1.85rem]">
+              {HOME_APPROACH.lead}
+            </p>
+            <p className="mt-6 text-body text-[1.05rem] leading-[1.65] text-black/70">
+              {HOME_APPROACH.body}
+            </p>
+            <p className="mt-5 text-metadata text-black/35">{HOME_APPROACH_ARC.join(" → ")}</p>
+
+            <div className="mt-14">
+              <PullQuote {...HOME_QUOTES[3]} />
+            </div>
+
+            <p className="mt-20 text-body text-[1.05rem] leading-[1.65] text-black/70">
+              {HOME_MAKE_LEAD}
+            </p>
+            <ul className="mt-8">
+              {HOME_MAKE.map((item) => (
+                <li key={item.label} className="border-t border-black/10 py-3.5">
+                  <p className="font-display text-[1.05rem] font-medium tracking-tight">{item.label}</p>
+                  <p className="mt-1 text-body text-[0.95rem] leading-relaxed text-black/55">{item.line}</p>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-14">
+              <PullQuote {...HOME_QUOTES[0]} />
+            </div>
+
+            <p className="mt-20 font-display text-[1.65rem] font-medium tracking-tight leading-[1.2] md:text-[1.85rem]">
+              {HOME_MESSY.lead}
+            </p>
+            <p className="mt-6 text-body text-[1.05rem] leading-[1.7] text-black/70">
+              {HOME_MESSY.items.join(" ")}
+            </p>
+            <p className="mt-6 font-display text-xl font-medium tracking-tight leading-snug">
+              {HOME_MESSY.close}
+            </p>
+
+            <div className="mt-14">
+              <PullQuote {...HOME_QUOTES[1]} />
+            </div>
+
+            <div className="mt-16 pr-16 lg:pr-0">
               <ClientTicker
                 compact
                 label=""
@@ -284,119 +346,22 @@ export default function Homepage() {
                 rowB={CLIENT_ROW_B}
               />
             </div>
-            <div className="mt-8 flex items-start gap-8">
-              <a href="/about/" className="w-[4.5rem] shrink-0 text-center transition-opacity hover:opacity-60">
-                <img
-                  src="/daniel-neale.jpg"
-                  alt="Dan Neale"
-                  width={72}
-                  height={72}
-                  className="mx-auto h-[4.5rem] w-[4.5rem] rounded-full object-cover object-[center_18%]"
-                />
-                <span className="mt-2.5 block font-display text-[13px] font-medium tracking-tight">
-                  Dan Neale
-                </span>
+
+            <p className="mt-16 text-body text-[1.05rem] leading-[1.65] text-black/70">
+              {HOME_RELATIONSHIP.body}
+            </p>
+            <p className="mt-4 text-metadata text-black/40">{HOME_RELATIONSHIP.close}</p>
+
+            <p className="mt-20 font-display text-[1.85rem] font-medium tracking-tight leading-[1.15] md:text-[2.1rem]">
+              {HOME_CLOSE.lead}
+            </p>
+            <p className="mt-5 text-body text-[1.05rem] leading-[1.65] text-black/70">
+              {HOME_CLOSE.body}
+            </p>
+            <div className="mt-8">
+              <a href="/book/" className="ms-btn">
+                Talk to Dan
               </a>
-              <QuoteCycle />
-            </div>
-          </header>
-
-          <div className="mt-20 max-w-md space-y-16 pb-4">
-            <div>
-              <p className="font-display text-2xl font-medium tracking-tight leading-snug md:text-3xl">
-                {HOME_PROBLEM.lead}
-              </p>
-              <p className="mt-5 font-display text-xl font-medium tracking-tight leading-snug text-black/80">
-                {HOME_PROBLEM.mid}
-              </p>
-              <p className="mt-5 text-body text-lg leading-relaxed text-black/70">
-                {HOME_PROBLEM.body}
-              </p>
-              <p className="mt-5 font-display text-xl font-medium tracking-tight">
-                {HOME_PROBLEM.close}
-              </p>
-            </div>
-
-            <div>
-              <p className="font-display text-2xl font-medium tracking-tight leading-snug md:text-3xl">
-                {HOME_APPROACH.lead}
-              </p>
-              <p className="mt-5 text-body text-lg leading-relaxed text-black/70">
-                {HOME_APPROACH.body}
-              </p>
-              <p className="mt-5 text-body text-lg leading-relaxed text-black/70">
-                {HOME_APPROACH.close}
-              </p>
-              <p className="mt-6 text-metadata text-black/40">{HOME_APPROACH_ARC.join(" → ")}</p>
-            </div>
-
-            <div>
-              <p className="font-display text-xl font-medium tracking-tight leading-snug mb-8">
-                {HOME_MAKE_LEAD}
-              </p>
-              <ul>
-                {HOME_MAKE.map((item) => (
-                  <li key={item.label} className="border-t border-black/10 py-4">
-                    <p className="font-display text-lg font-medium tracking-tight">{item.label}</p>
-                    <p className="mt-1 text-body text-black/60">{item.line}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <p className="font-display text-2xl font-medium tracking-tight leading-snug md:text-3xl">
-                {HOME_MESSY.lead}
-              </p>
-              <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
-                {HOME_MESSY.items.map((item) => (
-                  <li key={item} className="text-body text-lg text-black/70">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-6 font-display text-xl font-medium tracking-tight leading-snug">
-                {HOME_MESSY.close}
-              </p>
-            </div>
-
-            <div>
-              <p className="font-display text-2xl font-medium tracking-tight leading-snug md:text-3xl">
-                {HOME_AUDIENCE.lead}
-              </p>
-              <p className="mt-5 text-body text-lg leading-relaxed text-black/70">
-                {HOME_AUDIENCE.body}
-              </p>
-              <p className="mt-5 text-metadata text-black/40">{HOME_AUDIENCE.tags.join(" · ")}</p>
-            </div>
-
-            <div>
-              <p className="font-display text-2xl font-medium tracking-tight leading-snug md:text-3xl">
-                {HOME_RELATIONSHIP.lead}
-              </p>
-              <p className="mt-5 text-body text-lg leading-relaxed text-black/70">
-                {HOME_RELATIONSHIP.body}
-              </p>
-              <p className="mt-5 text-body text-lg leading-relaxed text-black/70">
-                {HOME_RELATIONSHIP.direct}
-              </p>
-              <p className="mt-5 font-display text-xl font-medium tracking-tight">
-                {HOME_RELATIONSHIP.close}
-              </p>
-            </div>
-
-            <div>
-              <p className="font-display text-3xl font-bold tracking-tight leading-[0.95] md:text-4xl">
-                {HOME_CLOSE.lead}
-              </p>
-              <p className="mt-5 font-display text-xl font-medium tracking-tight leading-snug">
-                {HOME_CLOSE.body}
-              </p>
-              <div className="mt-8">
-                <a href="/book/" className="ms-btn">
-                  Talk to Dan
-                </a>
-              </div>
             </div>
           </div>
 
