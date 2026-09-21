@@ -4,13 +4,11 @@ import { sortProjectsShowcaseFirst, type Project } from "../data/projects";
 import {
   HERO_LEDE,
   HOME_APPROACH,
-  HOME_APPROACH_ARC,
   HOME_ARC,
   HOME_CLOSE,
-  HOME_MAKE,
-  HOME_MAKE_LEAD,
+  HOME_DIRECT,
+  HOME_HERO_BODY,
   HOME_ME,
-  HOME_MESSY,
   HOME_PORTFOLIO_INTRO,
   HOME_PROBLEM,
   HOME_RELATIONSHIP,
@@ -259,7 +257,11 @@ export default function Homepage() {
             <p className="mt-7 font-display text-[1.35rem] font-medium leading-[1.3] tracking-tight md:text-[1.45rem]">
               {HERO_LEDE}
             </p>
-            <p className="mt-5 text-metadata text-black/40">{HOME_ARC.join(" · ")}</p>
+            <p className="mt-5 text-body text-[1.05rem] leading-[1.65] text-black/70">
+              {HOME_HERO_BODY}
+            </p>
+            <p className="mt-5 text-metadata text-black/40">{HOME_ARC}</p>
+            <p className="mt-5 font-display text-xl font-medium tracking-tight">{HOME_DIRECT}</p>
             <div className="mt-9 flex flex-wrap items-center gap-5">
               <a href="#portfolio" className="ms-link">
                 See the work →
@@ -302,36 +304,28 @@ export default function Homepage() {
             <p className="mt-6 text-body text-[1.05rem] leading-[1.65] text-black/70">
               {HOME_APPROACH.body}
             </p>
-            <p className="mt-5 text-metadata text-black/35">{HOME_APPROACH_ARC.join(" → ")}</p>
+            <p className="mt-5 text-body text-[1.05rem] leading-[1.65] text-black/70">
+              {HOME_APPROACH.shape}
+            </p>
+            <p className="mt-5 text-body text-[1.05rem] leading-[1.65] text-black/70">
+              {HOME_APPROACH.result}
+            </p>
+            <p className="mt-6 font-display text-xl font-medium tracking-tight">
+              {HOME_APPROACH.close}
+            </p>
 
             <div className="mt-14">
               <PullQuote {...HOME_QUOTES[3]} />
             </div>
 
-            <p className="mt-20 text-body text-[1.05rem] leading-[1.65] text-black/70">
-              {HOME_MAKE_LEAD}
-            </p>
-            <ul className="mt-8">
-              {HOME_MAKE.map((item) => (
-                <li key={item.label} className="border-t border-black/10 py-3.5">
-                  <p className="font-display text-[1.05rem] font-medium tracking-tight">{item.label}</p>
-                  <p className="mt-1 text-body text-[0.95rem] leading-relaxed text-black/55">{item.line}</p>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-14">
-              <PullQuote {...HOME_QUOTES[0]} />
-            </div>
-
             <p className="mt-20 font-display text-[1.65rem] font-medium tracking-tight leading-[1.2] md:text-[1.85rem]">
-              {HOME_MESSY.lead}
+              {HOME_RELATIONSHIP.lead}
             </p>
-            <p className="mt-6 text-body text-[1.05rem] leading-[1.7] text-black/70">
-              {HOME_MESSY.items.join(" ")}
+            <p className="mt-6 text-body text-[1.05rem] leading-[1.65] text-black/70">
+              {HOME_RELATIONSHIP.body} {HOME_RELATIONSHIP.more}
             </p>
-            <p className="mt-6 font-display text-xl font-medium tracking-tight leading-snug">
-              {HOME_MESSY.close}
+            <p className="mt-6 font-display text-xl font-medium tracking-tight">
+              {HOME_RELATIONSHIP.close}
             </p>
 
             <div className="mt-14">
@@ -347,16 +341,14 @@ export default function Homepage() {
               />
             </div>
 
-            <p className="mt-16 text-body text-[1.05rem] leading-[1.65] text-black/70">
-              {HOME_RELATIONSHIP.body}
-            </p>
-            <p className="mt-4 text-metadata text-black/40">{HOME_RELATIONSHIP.close}</p>
-
             <p className="mt-20 font-display text-[1.85rem] font-medium tracking-tight leading-[1.15] md:text-[2.1rem]">
               {HOME_CLOSE.lead}
             </p>
             <p className="mt-5 text-body text-[1.05rem] leading-[1.65] text-black/70">
               {HOME_CLOSE.body}
+            </p>
+            <p className="mt-5 font-display text-xl font-medium tracking-tight">
+              {HOME_CLOSE.close}
             </p>
             <div className="mt-8">
               <a href="/book/" className="ms-btn">

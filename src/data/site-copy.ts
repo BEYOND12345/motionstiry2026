@@ -13,75 +13,48 @@ export const SITE_DESCRIPTION_LONG =
   "SaaS motion graphic explainer videos for new software products. Dan Neale: independent motion designer and director. Product on screen, story first. Small studio, Byron Bay; clients worldwide.";
 
 export const HERO_LEDE =
-  "I turn complex ideas, products and technology into clear, compelling visual stories.";
+  "I help organisations turn complex ideas into clear, compelling visual stories.";
 
-export const HOME_ARC = ["Ideas", "Story", "Design", "Animation"] as const;
+export const HOME_HERO_BODY =
+  "Whether you are explaining a product, a service, a process, a new direction or something people need to understand, I help find the story and bring it to life.";
 
-export const HOME_DIRECT = "You work with me.";
+export const HOME_ARC = "Ideas. Story. Design. Motion.";
+
+export const HOME_DIRECT = "You work directly with me.";
 
 export const HOME_ME =
   "This is me. I'm the one you work with. This is the work I do — and I love working with complex companies.";
 
 export const HOME_PROBLEM = {
-  lead: "You've built something worth understanding.",
-  mid: "But sometimes the hardest part isn't building it. It's explaining it.",
-  body: "Whether it's a new product, a complicated process, a piece of technology or an idea that doesn't fit neatly into a sentence — people need to understand it before they can care about it.",
-  close: "That's where I come in.",
+  lead: "You have something worth explaining.",
+  mid: "Sometimes the hard part is not what you have built or what you are trying to do. It is helping other people understand why it matters.",
+  body: "That might mean explaining a complex service, introducing a new product, helping people navigate change, bringing a campaign to life, or making a technical idea clear enough for anyone to grasp.",
+  close: "That is where I come in.",
 } as const;
 
 export const HOME_APPROACH = {
-  lead: "We start with the idea, not the animation.",
-  body: "I'll get inside what you're trying to communicate, find the story, and storyboard it before we make anything. Then I'll design and animate it — or bring in the right people when the project needs them.",
-} as const;
-
-export const HOME_APPROACH_ARC = [
-  "Understand",
-  "Ideate",
-  "Story",
-  "Storyboard",
-  "Design",
-  "Motion",
-] as const;
-
-export const HOME_MAKE_LEAD = "What we make depends on what you're trying to achieve.";
-
-export const HOME_MAKE = [
-  { label: "Product demos", line: "Show how it works." },
-  { label: "Explainers", line: "Make complicated ideas clear." },
-  { label: "Onboarding", line: "Help people understand what to do next." },
-  { label: "Launch films", line: "Give something new a strong introduction." },
-  { label: "Social content", line: "Turn ideas into content people actually want to watch." },
-  { label: "Visual stories", line: "When there isn't an obvious format yet, we'll work out the right way to tell it." },
-] as const;
-
-export const HOME_MESSY = {
-  lead: "You don't need to have the answer before you call me.",
-  items: [
-    "The product.",
-    "The pitch deck.",
-    "The rough idea.",
-    "The technical documentation.",
-    "The problem.",
-  ],
-  close: "We'll figure out the best way to tell the story together.",
-} as const;
-
-export const HOME_AUDIENCE = {
-  lead: "For teams, founders and agencies.",
-  body: "I work directly with marketing and product teams, founders and creative agencies — either taking a project from concept through to delivery or plugging into an existing team when specialist creative and motion capability is needed.",
-  tags: ["Marketing teams", "Founders & product teams", "Creative agencies"],
+  lead: "We start with the story.",
+  body: "Before we make anything, we work out what needs to be said and the clearest way to say it.",
+  shape:
+    "I can help shape the idea, find the story, develop the creative direction and storyboard the work before moving into design and animation.",
+  result:
+    "The result might be a product story, an explainer, launch content, onboarding, a campaign, internal communications or something entirely different.",
+  close: "The format follows the communication problem.",
 } as const;
 
 export const HOME_PORTFOLIO_INTRO = "Some things I've made clear.";
 
 export const HOME_RELATIONSHIP = {
-  body: "Bring me in for one project, or keep me close. Whenever something needs explaining, you can just call.",
-  close: "Big-studio experience. Small-studio relationship.",
+  lead: "A creative partner when you need one.",
+  body: "I work directly with teams, founders and agencies.",
+  more: "You can bring me in for a single project, involve me early when an idea needs shaping, or keep me close when you need experienced creative support.",
+  close: "From the first conversation through to the finished work, you work with me.",
 } as const;
 
 export const HOME_CLOSE = {
   lead: "What are you trying to explain?",
-  body: "Tell me what you've got. We'll figure out what it needs to become.",
+  body: "Bring me the product, the service, the rough idea, the pitch deck, the technical detail or the problem.",
+  close: "We will work out what it needs to become.",
 } as const;
 
 export const PROFILE_LEDE =
