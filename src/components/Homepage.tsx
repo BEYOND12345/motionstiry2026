@@ -4,14 +4,13 @@ import { sortProjectsShowcaseFirst, type Project } from "../data/projects";
 import {
   HERO_LEDE,
   HOME_APPROACH,
-  HOME_ARC,
   HOME_CLOSE,
-  HOME_DIRECT,
   HOME_HERO_BODY,
+  HOME_MAKE,
+  HOME_MAKE_CLOSE,
+  HOME_MAKE_LEAD,
   HOME_ME,
   HOME_PORTFOLIO_INTRO,
-  HOME_PROBLEM,
-  HOME_RELATIONSHIP,
 } from "../data/site-copy";
 import ClientTicker from "./ClientTicker";
 import WorkCard, { projectToWorkCard } from "./WorkCard";
@@ -81,7 +80,6 @@ const HOME_MENU = [
   { label: "Process", href: "/process/" },
   { label: "About", href: "/about/" },
   { label: "Blog", href: "/blog/" },
-  { label: "Start a project", href: "/contact/" },
 ] as const;
 
 function PullQuote({
@@ -260,30 +258,15 @@ export default function Homepage() {
             <p className="mt-5 text-body text-[1.05rem] leading-[1.65] text-black/70">
               {HOME_HERO_BODY}
             </p>
-            <p className="mt-5 text-metadata text-black/40">{HOME_ARC}</p>
-            <p className="mt-5 font-display text-xl font-medium tracking-tight">{HOME_DIRECT}</p>
-            <div className="mt-9 flex flex-wrap items-center gap-5">
-              <a href="#portfolio" className="ms-link">
-                See the work →
-              </a>
-              <a href="/book/" className="ms-btn">
-                Talk to Dan
-              </a>
+            <div className="mt-10 pr-16 lg:pr-0">
+              <ClientTicker
+                compact
+                label=""
+                rowA={CLIENT_ROW_A}
+                rowB={CLIENT_ROW_B}
+              />
             </div>
-          </header>
-
-          <div className="hp-journal pb-4">
-            <p className="mt-20 font-display text-[1.65rem] font-medium tracking-tight leading-[1.2] md:text-[1.85rem]">
-              {HOME_PROBLEM.lead}
-            </p>
-            <p className="mt-6 text-body text-[1.05rem] leading-[1.65] text-black/70">
-              {HOME_PROBLEM.mid} {HOME_PROBLEM.body}
-            </p>
-            <p className="mt-6 font-display text-xl font-medium tracking-tight">
-              {HOME_PROBLEM.close}
-            </p>
-
-            <div className="mt-16 flex items-start gap-6">
+            <div className="mt-10 flex items-start gap-6">
               <a href="/about/" aria-label="Dan Neale" className="shrink-0 transition-opacity hover:opacity-60">
                 <img
                   src="/daniel-neale.jpg"
@@ -297,8 +280,10 @@ export default function Homepage() {
                 {HOME_ME}
               </p>
             </div>
+          </header>
 
-            <p className="mt-20 font-display text-[1.65rem] font-medium tracking-tight leading-[1.2] md:text-[1.85rem]">
+          <div className="hp-journal pb-4">
+            <p className="mt-16 font-display text-[1.65rem] font-medium tracking-tight leading-[1.2] md:text-[1.85rem]">
               {HOME_APPROACH.lead}
             </p>
             <p className="mt-6 text-body text-[1.05rem] leading-[1.65] text-black/70">
@@ -307,38 +292,26 @@ export default function Homepage() {
             <p className="mt-5 text-body text-[1.05rem] leading-[1.65] text-black/70">
               {HOME_APPROACH.shape}
             </p>
-            <p className="mt-5 text-body text-[1.05rem] leading-[1.65] text-black/70">
-              {HOME_APPROACH.result}
+            <p className="mt-12 font-display text-xl font-medium tracking-tight">
+              {HOME_MAKE_LEAD}
             </p>
-            <p className="mt-6 font-display text-xl font-medium tracking-tight">
-              {HOME_APPROACH.close}
+            <ul className="mt-8">
+              {HOME_MAKE.map((item) => (
+                <li key={item.label} className="border-t border-black/10 py-3.5">
+                  <p className="font-display text-[1.05rem] font-medium tracking-tight">{item.label}</p>
+                  <p className="mt-1 text-body text-[0.95rem] leading-relaxed text-black/55">{item.line}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-8 text-body text-[1.05rem] leading-[1.65] text-black/70">
+              {HOME_MAKE_CLOSE}
             </p>
-
             <div className="mt-14">
-              <PullQuote {...HOME_QUOTES[3]} />
+              <PullQuote {...HOME_QUOTES[2]} />
             </div>
-
-            <p className="mt-20 font-display text-[1.65rem] font-medium tracking-tight leading-[1.2] md:text-[1.85rem]">
-              {HOME_RELATIONSHIP.lead}
-            </p>
-            <p className="mt-6 text-body text-[1.05rem] leading-[1.65] text-black/70">
-              {HOME_RELATIONSHIP.body} {HOME_RELATIONSHIP.more}
-            </p>
-            <p className="mt-6 font-display text-xl font-medium tracking-tight">
-              {HOME_RELATIONSHIP.close}
-            </p>
 
             <div className="mt-14">
               <PullQuote {...HOME_QUOTES[1]} />
-            </div>
-
-            <div className="mt-16 pr-16 lg:pr-0">
-              <ClientTicker
-                compact
-                label=""
-                rowA={CLIENT_ROW_A}
-                rowB={CLIENT_ROW_B}
-              />
             </div>
 
             <p className="mt-20 font-display text-[1.85rem] font-medium tracking-tight leading-[1.15] md:text-[2.1rem]">
@@ -347,12 +320,12 @@ export default function Homepage() {
             <p className="mt-5 text-body text-[1.05rem] leading-[1.65] text-black/70">
               {HOME_CLOSE.body}
             </p>
-            <p className="mt-5 font-display text-xl font-medium tracking-tight">
+            <p className="mt-5 text-body text-[1.05rem] leading-[1.65] text-black/70">
               {HOME_CLOSE.close}
             </p>
             <div className="mt-8">
               <a href="/book/" className="ms-btn">
-                Talk to Dan
+                Work with Dan
               </a>
             </div>
           </div>

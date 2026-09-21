@@ -20,10 +20,8 @@ export const HOME_HERO_BODY =
 
 export const HOME_ARC = "Ideas. Story. Design. Motion.";
 
-export const HOME_DIRECT = "You work directly with me.";
-
 export const HOME_ME =
-  "This is me. I'm the one you work with. This is the work I do — and I love working with complex companies.";
+  "Hello. I'm Dan. I'm your creative director, storyteller, designer, animator, all round creative. I'm obsessed with technology. I love to execute ideas.";
 
 export const HOME_PROBLEM = {
   lead: "You have something worth explaining.",
@@ -33,28 +31,37 @@ export const HOME_PROBLEM = {
 } as const;
 
 export const HOME_APPROACH = {
-  lead: "We start with the story.",
-  body: "Before we make anything, we work out what needs to be said and the clearest way to say it.",
+  lead: "Tell your product story.",
+  body: "A good product story helps people understand what you have made, how it works, why it matters and what it can do for them.",
   shape:
-    "I can help shape the idea, find the story, develop the creative direction and storyboard the work before moving into design and animation.",
-  result:
-    "The result might be a product story, an explainer, launch content, onboarding, a campaign, internal communications or something entirely different.",
-  close: "The format follows the communication problem.",
+    "Whether it is a physical product, a digital platform, a new feature or a complex service, we work out the clearest way to bring it to life.",
 } as const;
+
+export const HOME_MAKE_LEAD = "Your product story can take many forms.";
+
+export const HOME_MAKE_CLOSE = "The right format depends on what you are trying to communicate.";
+
+export const HOME_MAKE = [
+  { label: "Product demos", line: "Show what it does, how it works and why it matters." },
+  { label: "Explainers", line: "Make a complicated idea clear." },
+  { label: "UI and in app animation", line: "Bring the product experience to life." },
+  { label: "Onboarding", line: "Help people know what to do next and get value sooner." },
+  { label: "Launch films", line: "Give something new a strong introduction." },
+  { label: "Sales, pitch and presentation content", line: "Help customers, partners and investors understand the value quickly." },
+  { label: "Social content", line: "Turn an idea into something people want to watch." },
+] as const;
 
 export const HOME_PORTFOLIO_INTRO = "Some things I've made clear.";
 
 export const HOME_RELATIONSHIP = {
   lead: "A creative partner when you need one.",
-  body: "I work directly with teams, founders and agencies.",
-  more: "You can bring me in for a single project, involve me early when an idea needs shaping, or keep me close when you need experienced creative support.",
-  close: "From the first conversation through to the finished work, you work with me.",
+  body: "I work with teams, founders and agencies. Bring me in for a single project, involve me early when an idea needs shaping, or keep me close when you need experienced creative support.",
 } as const;
 
 export const HOME_CLOSE = {
-  lead: "What are you trying to explain?",
-  body: "Bring me the product, the service, the rough idea, the pitch deck, the technical detail or the problem.",
-  close: "We will work out what it needs to become.",
+  lead: "Need a creative partner for your product story?",
+  body: "Bring me in when you need help shaping the idea, making the product easier to understand, developing the creative direction or getting the work made.",
+  close: "I work directly with your team from the first conversation through to the finished work.",
 } as const;
 
 export const PROFILE_LEDE =
