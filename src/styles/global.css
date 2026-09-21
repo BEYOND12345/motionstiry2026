@@ -43,6 +43,7 @@ body {
 
 body.homepage-layout {
   overflow: hidden;
+  overflow-x: clip;
 }
 
 /* Grain Overlay: filmic texture */
@@ -194,7 +195,7 @@ body.homepage-layout {
 .split-container {
   display: flex;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 }
 
 .split-left {
@@ -262,6 +263,7 @@ body.homepage-layout {
   }
   body.homepage-layout {
     overflow: auto;
+    overflow-x: clip;
   }
   .split-left, .split-right {
     width: 100%;
@@ -334,28 +336,73 @@ body.homepage-layout .nav-links {
 }
 
 @media (max-width: 1024px) {
+  body.homepage-layout {
+    overflow: auto;
+    overflow-x: clip;
+  }
   body.homepage-layout .split-left {
-    padding-top: calc(69px + 1.75rem);
+    display: contents;
+    padding: 0;
+  }
+  body.homepage-layout .hp-hero {
+    order: 1;
+    padding: calc(69px + 1.5rem) 2rem 1.75rem;
   }
   body.homepage-layout .split-right {
-    padding-top: 0;
+    order: 2;
+    padding: 0.35rem 0 1.5rem;
+  }
+  body.homepage-layout .hp-story {
+    order: 3;
+    padding: 0.75rem 2rem 0;
+  }
+  body.homepage-layout .hp-nav {
+    order: 4;
+    padding: 2rem 2rem calc(5.75rem + env(safe-area-inset-bottom, 0px));
   }
   body.homepage-layout .nav-inner {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+  /* Homepage hides desktop links, so keep the hamburger through tablet. */
+  body.homepage-layout #mobile-menu-btn {
+    display: flex;
+  }
+  body.homepage-layout #mobile-menu {
+    display: flex;
+  }
 }
 
 @media (max-width: 768px) {
+  body.homepage-layout .hp-hero {
+    padding: calc(69px + 1.15rem) 1.5rem 1.35rem;
+  }
+  body.homepage-layout .hp-story {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  body.homepage-layout .hp-nav {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
   body.homepage-layout .nav-inner {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+  body.homepage-layout .text-display {
+    font-size: clamp(2.4rem, 11.5vw, 3.35rem);
+    line-height: 0.92;
+  }
 }
 
 @media (max-width: 480px) {
-  body.homepage-layout .split-left {
-    padding-top: calc(69px + 1.25rem);
+  body.homepage-layout .hp-hero {
+    padding: calc(69px + 1rem) 1.15rem 1.15rem;
+  }
+  body.homepage-layout .hp-story,
+  body.homepage-layout .hp-nav {
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
   }
   body.homepage-layout .nav-inner {
     padding-left: 1rem;
@@ -529,8 +576,8 @@ body.homepage-layout .nav-links {
 /* Floating mailto — black chip, rounded, one red arrow */
 .landing-float {
   position: fixed;
-  right: 1.5rem;
-  bottom: 1.5rem;
+  right: max(1.5rem, env(safe-area-inset-right));
+  bottom: max(1.5rem, env(safe-area-inset-bottom));
   z-index: 10001;
   display: inline-flex;
   align-items: center;
@@ -1111,10 +1158,16 @@ body.homepage-layout .nav-links {
     padding-top: 2rem;
   }
   .landing-float {
-    right: 1rem;
-    bottom: 1rem;
+    right: max(1rem, env(safe-area-inset-right));
+    bottom: max(1rem, env(safe-area-inset-bottom));
     padding: 0.9rem 1.15rem;
     font-size: 0.875rem;
+  }
+  .work-card-compact .work-card-compact-name {
+    left: 0.45rem;
+    right: 0.45rem;
+    bottom: 0.4rem;
+    font-size: 0.7rem;
   }
 }
 

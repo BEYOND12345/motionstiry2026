@@ -187,7 +187,7 @@ function WorkVerticalCarousel({ projects }: { projects: Project[] }) {
 
   return (
     <div
-      className="hp-work-reel relative h-full min-h-[70vh] lg:min-h-0"
+      className="hp-work-reel relative h-full min-h-0"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => {
         if (!playing) setPaused(false);
@@ -199,7 +199,7 @@ function WorkVerticalCarousel({ projects }: { projects: Project[] }) {
         }
       }}
     >
-      <div className="flex h-full gap-4 px-3 md:gap-5 md:px-5">
+      <div className="flex h-full gap-3 px-3 sm:gap-4 md:gap-5 md:px-5">
         {column(left, "up", durationLeft)}
         {column(right, "down", durationRight)}
       </div>
@@ -227,10 +227,16 @@ export default function Homepage() {
         }
         @media (max-width: 1024px) {
           .hp-work-reel {
-            height: min(78vh, 720px);
+            height: min(62vh, 640px);
+          }
+        }
+        @media (max-width: 768px) {
+          .hp-work-reel {
+            height: min(56vh, 520px);
           }
         }
         .hp-journal {
+          width: 100%;
           max-width: 28rem;
         }
         .hp-journal p {
@@ -246,19 +252,19 @@ export default function Homepage() {
 
       <div id="main-content" className="split-container">
         <aside className="split-left relative">
-          <header id="top" className="hp-journal">
+          <header id="top" className="hp-journal hp-hero">
             <h1 className="text-display">
               Complex<br />
               Made<br />
               Simple.
             </h1>
-            <p className="mt-7 font-display text-[1.35rem] font-medium leading-[1.3] tracking-tight md:text-[1.45rem]">
+            <p className="mt-6 font-display text-[1.2rem] font-medium leading-[1.35] tracking-tight sm:mt-7 sm:text-[1.35rem] md:text-[1.45rem] md:leading-[1.3]">
               {HERO_LEDE}
             </p>
-            <p className="mt-5 text-body text-[1.05rem] leading-[1.65] text-black/70">
+            <p className="mt-4 text-body text-[1.02rem] leading-[1.65] text-black/70 sm:mt-5 sm:text-[1.05rem]">
               {HOME_HERO_BODY}
             </p>
-            <div className="mt-10 pr-16 lg:pr-0">
+            <div className="mt-8 sm:mt-10">
               <ClientTicker
                 compact
                 label=""
@@ -266,24 +272,24 @@ export default function Homepage() {
                 rowB={CLIENT_ROW_B}
               />
             </div>
-            <div className="mt-10 flex items-start gap-6">
+          </header>
+
+          <div className="hp-journal hp-story pb-4">
+            <div className="mt-10 flex items-start gap-4 sm:mt-12 sm:gap-6 lg:mt-10">
               <a href="/about/" aria-label="Dan Neale" className="shrink-0 transition-opacity hover:opacity-60">
                 <img
                   src="/daniel-neale.jpg"
                   alt="Dan Neale"
                   width={72}
                   height={72}
-                  className="h-[4.5rem] w-[4.5rem] rounded-full object-cover object-[center_18%]"
+                  className="h-14 w-14 rounded-full object-cover object-[center_18%] sm:h-[4.5rem] sm:w-[4.5rem]"
                 />
               </a>
-              <p className="font-display text-[1.2rem] font-medium leading-snug tracking-tight pt-1">
+              <p className="pt-0.5 font-display text-[1.08rem] font-medium leading-snug tracking-tight sm:pt-1 sm:text-[1.2rem]">
                 {HOME_ME}
               </p>
             </div>
-          </header>
-
-          <div className="hp-journal pb-4">
-            <p className="mt-16 font-display text-[1.65rem] font-medium tracking-tight leading-[1.2] md:text-[1.85rem]">
+            <p className="mt-12 font-display text-[1.45rem] font-medium tracking-tight leading-[1.2] sm:mt-16 sm:text-[1.65rem] md:text-[1.85rem]">
               {HOME_APPROACH.lead}
             </p>
             <p className="mt-6 text-body text-[1.05rem] leading-[1.65] text-black/70">
@@ -314,7 +320,7 @@ export default function Homepage() {
               <PullQuote {...HOME_QUOTES[1]} />
             </div>
 
-            <p className="mt-20 font-display text-[1.85rem] font-medium tracking-tight leading-[1.15] md:text-[2.1rem]">
+            <p className="mt-16 font-display text-[1.55rem] font-medium tracking-tight leading-[1.15] sm:mt-20 sm:text-[1.85rem] md:text-[2.1rem]">
               {HOME_CLOSE.lead}
             </p>
             <p className="mt-5 text-body text-[1.05rem] leading-[1.65] text-black/70">
@@ -330,7 +336,7 @@ export default function Homepage() {
             </div>
           </div>
 
-          <nav className="mt-auto max-w-md pt-10 pb-1" aria-label="Studio">
+          <nav className="hp-nav mt-auto max-w-md pt-10 pb-1" aria-label="Studio">
             <ul className="flex flex-wrap gap-x-5 gap-y-2">
               {HOME_MENU.map((item) => (
                 <li key={item.href}>
