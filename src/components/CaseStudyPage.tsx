@@ -111,7 +111,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
               {clientReview ? "" : " · Client review"}
             </p>
             <a href="/reviews/" className="text-metadata hover:text-black transition-colors">
-              <span className="text-accent">★★★★★</span> 5.0 on Google · All reviews →
+              All reviews →
             </a>
           </FadeUp>
         </div>

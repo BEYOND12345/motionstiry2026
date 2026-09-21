@@ -14,6 +14,18 @@ export const GOOGLE_RATING = {
   source: 'Google',
 };
 
+/**
+ * Proof for the site footer only — do not repeat 5.0 / review counts on other pages.
+ * Clutch: listed among Top 2D Animation Companies in Australia (profile reviews live there).
+ * Behance: featured work on the studio profile.
+ * Dan also recalls Clutch/Behance awards (best explainer / a top-100 list) — confirm the exact badge names before promoting them.
+ */
+export const STUDIO_PROOF = [
+  { label: 'Google', href: '/reviews/' },
+  { label: 'Clutch', href: 'https://clutch.co/profile/motion-story', external: true },
+  { label: 'Behance', href: 'https://www.behance.net/motion_story', external: true },
+] as const;
+
 export const GOOGLE_REVIEWS: GoogleReview[] = [
   {
     name: 'Jefferson Nova',

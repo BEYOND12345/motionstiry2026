@@ -525,13 +525,6 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
               <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-black/40">
                 {config.testimonial.role}, {config.testimonial.company}
               </p>
-              <p className="mt-6 text-[11px] uppercase tracking-[0.14em] text-black/35">
-                <span className="text-accent">★★★★★</span>
-                {' '}5.0 on Google ·{' '}
-                <a href="/reviews/" className="border-b border-black/15 hover:border-black transition-colors">
-                  All reviews →
-                </a>
-              </p>
             </footer>
           </div>
         </section>

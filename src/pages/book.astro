@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { GOOGLE_RATING, VERIFIED_CLIENT_REVIEWS } from '../data/reviews';
+import { VERIFIED_CLIENT_REVIEWS } from '../data/reviews';
 import '../styles/global.css';
 
 const bookReview = VERIFIED_CLIENT_REVIEWS[0];
@@ -150,9 +150,6 @@ const quotes = [
             </blockquote>
           ))}
         </div>
-        <p class="mt-10 text-[11px] uppercase tracking-[0.14em] text-black/40">
-          <span class="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · {GOOGLE_RATING.count} reviews
-        </p>
       </section>
     </main>
 

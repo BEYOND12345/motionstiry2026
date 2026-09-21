@@ -2,7 +2,7 @@
 import VimeoEmbed from './VimeoEmbed';
 import { ALL_PROJECTS, getShowcaseProjects } from '../data/projects';
 import { vimeoPosterUrl } from '../lib/vimeo';
-import { GOOGLE_RATING, pickVerifiedReviews } from '../data/reviews';
+import { pickVerifiedReviews } from '../data/reviews';
 
 export interface WorkItem {
   title: string;
@@ -227,7 +227,7 @@ const credentials = credentialsProp ?? defaultCredentials;
     </blockquote>
     <p class="text-metadata mb-4">{pageReview.name} — {pageReview.role}, {pageReview.company}</p>
     <p class="text-metadata">
-      <span class="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · <a href="/reviews/" class="border-b border-black/20 hover:border-black transition-colors">All reviews →</a>
+      <a href="/reviews/" class="border-b border-black/20 hover:border-black transition-colors">All reviews →</a>
     </p>
   </section>
 

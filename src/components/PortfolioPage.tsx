@@ -1,5 +1,4 @@
 import { ALL_PROJECTS, sortProjectsShowcaseFirst } from "../data/projects";
-import { GOOGLE_RATING } from "../data/reviews";
 import WorkCard, { projectToWorkCard } from "./WorkCard";
 
 const ORDERED_PROJECTS = sortProjectsShowcaseFirst(ALL_PROJECTS);
@@ -14,9 +13,6 @@ export default function PortfolioPage() {
         <p className="text-body max-w-lg mb-8">
           Selected films for SaaS, platforms, agencies, and causes.
         </p>
-        <a href="/reviews/" className="text-metadata hover:text-black transition-colors">
-          <span className="text-accent">★★★★★</span> {GOOGLE_RATING.score} on Google · {GOOGLE_RATING.count} reviews →
-        </a>
       </div>
 
       <div className="px-8 max-w-7xl mx-auto mb-12">
