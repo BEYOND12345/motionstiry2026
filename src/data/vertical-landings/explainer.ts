@@ -14,8 +14,8 @@ export const explainerVerticalLanding: VerticalLandingConfig = {
     canonicalPath: '/explainer-videos/',
   },
   eyebrow: 'Motion graphic explainer videos',
-  headline: ['Make the idea land', 'in one sitting.'],
-  lede: 'Motion graphic explainer videos for products, platforms, and missions that do not explain themselves. Sixty to 180 seconds. A story people can watch, understand, and act on.',
+  headline: ['Motion graphic', 'explainer videos.'],
+  lede: 'Make the idea land in one sitting. For products, platforms, and missions that do not explain themselves. Sixty to 180 seconds.',
   heroVideo: {
     vimeoId: '879242129',
     title: 'Mosaic / Strategic Data Planning',

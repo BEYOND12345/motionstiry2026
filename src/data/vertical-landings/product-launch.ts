@@ -13,9 +13,9 @@ export const productLaunchVerticalLanding: VerticalLandingConfig = {
       'Product launch videos for new SaaS products. Motion graphics for the moment you ship — even before the UI is ready. Work directly with Dan Neale.',
     canonicalPath: '/product-launch-video/',
   },
-  eyebrow: 'Product launch videos',
-  headline: ['The first film', 'buyers see.'],
-  lede: 'Product launch videos for the moment you ship. One story, timed to launch day — even before the UI is ready. Sales can keep using it after week one.',
+  eyebrow: 'Product launch videos for SaaS',
+  headline: ['Product launch videos', 'for SaaS.'],
+  lede: 'The first film buyers see. One story, timed to launch day — even before the UI is ready. Sales can keep using it after week one.',
   heroVideo: {
     vimeoId: '863428533',
     title: 'Trusyft / Product Promo',

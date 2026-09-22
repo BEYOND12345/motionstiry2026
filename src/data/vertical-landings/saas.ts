@@ -9,8 +9,8 @@ export const saasVerticalLanding: VerticalLandingConfig = {
     canonicalPath: '/saas-explainer-videos/',
   },
   eyebrow: 'SaaS motion graphic explainer videos',
-  headline: ['Make the software', 'obvious before login.'],
-  lede: 'SaaS motion graphic explainer videos for products that do not explain themselves yet. Product on screen — even from a Figma or a napkin brief — so people get it before they log in.',
+  headline: ['SaaS motion graphic', 'explainer videos.'],
+  lede: 'Make the software obvious before login. Product on screen — even from a Figma or a napkin brief — so people get it before they log in.',
   heroVideo: {
     vimeoId: '866174146',
     title: 'Trudi / AI Property Management',

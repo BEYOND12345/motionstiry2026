@@ -9,8 +9,8 @@ export const financeVerticalLanding: VerticalLandingConfig = {
     canonicalPath: '/finance-explainer-videos/',
   },
   eyebrow: 'Fintech motion graphic explainer videos',
-  headline: ['Make money software', 'feel trustworthy.'],
-  lede: 'Fintech motion graphic explainer videos for payments, banking, and financial software that cannot afford to look cute or vague. Clear enough for a board, sharp enough for a landing page.',
+  headline: ['Fintech motion graphic', 'explainer videos.'],
+  lede: 'Make money software feel trustworthy. Payments, banking, and financial software that cannot afford to look cute or vague. Clear enough for a board, sharp enough for a landing page.',
   heroVideo: {
     vimeoId: '1157366298',
     vimeoHash: '1ddd2b07e1',

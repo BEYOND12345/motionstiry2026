@@ -14,8 +14,8 @@ export const productDemoVerticalLanding: VerticalLandingConfig = {
     canonicalPath: '/product-demo-videos/',
   },
   eyebrow: 'Motion graphic product explainer videos',
-  headline: ['Show the product', 'working.'],
-  lede: 'Motion graphic product explainer videos for teams with a product to show. UI on screen, workflow clear — play, understand, decide. More than a screen recording.',
+  headline: ['Motion graphic product', 'explainer videos.'],
+  lede: 'Show the product working. UI on screen, workflow clear — play, understand, decide. More than a screen recording.',
   heroVideo: {
     vimeoId: '557884851',
     title: 'Method / Beautiful Bin System',

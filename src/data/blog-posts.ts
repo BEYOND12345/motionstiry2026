@@ -1751,6 +1751,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     slug: "should-saas-hire-motion-designer-in-house",
     title: "Should Your SaaS Company Hire a Motion Designer In-House? (Honest Answer)",
     date: "2025-11-05",
+    updated: "2026-09-23",
     category: "Buyer's Guide",
     tags: ["in-house motion designer", "SaaS video team", "hiring motion designer", "video production strategy"],
     excerpt: "Hiring a full-time motion designer sounds efficient until you do the maths. Here's an honest look at when in-house makes sense and when outsourcing wins.",
@@ -1808,7 +1809,7 @@ Here's what the smartest SaaS companies do:
 4. **Are we prepared to invest in equipment, software, and training?** Motion design requires specific tools. If you're not budgeting for the setup, you'll get subpar results.
 5. **What happens when they leave?** In-house hires leave. When they do, your video production stops. With an external partner, the relationship and the process continue.
 
-If you're currently evaluating your options and want to understand what a studio engagement looks like, take a look at my [process](/process/) or read about the different [ways to work with a motion designer](/three-ways-to-work-with-motion-designer).
+If you're currently evaluating your options, start with [SaaS motion graphic explainer videos](/saas-explainer-videos/) for the film, or [freelance motion designer / motion graphics](/motion-graphics/) if you need a senior maker in the team. Process is [here](/process/).
 
 ## FAQ
 
@@ -1829,6 +1830,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     slug: "motion-design-studio-vs-freelance-animator",
     title: "Motion Design Studio vs Freelance Animator: Which Is Right for Your SaaS?",
     date: "2025-10-22",
+    updated: "2026-09-23",
     category: "Buyer's Guide",
     tags: ["motion design studio", "freelance animator", "SaaS video production", "animation hiring"],
     excerpt: "Studio or freelancer? The answer isn't about which is 'better.' It's about what your project actually needs. Here's how to decide without wasting money.",
@@ -1917,7 +1919,7 @@ Whether you choose a freelancer or a studio, the portfolio is what matters. Watc
 
 The best freelancer will outperform a mediocre studio, and vice versa. The model matters less than the talent and the fit.
 
-If you want to see how I work (somewhere between freelancer and studio) take a look at my [work](/work/) or [get in touch](/contact/).
+If you want to see how I work — somewhere between freelancer and studio — start with [SaaS motion graphic explainer videos](/saas-explainer-videos/) or [freelance motion designer](/motion-graphics/).
 
 ## FAQ
 

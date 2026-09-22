@@ -8,14 +8,14 @@ import {
 
 export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
   seo: {
-    titleTag: 'Motion Graphics Studio | Freelance Motion Designer | Motion Story',
+    titleTag: 'Freelance Motion Designer Australia | Motion Graphics Studio | Motion Story',
     metaDescription:
       'Senior freelance motion designer. Motion graphic explainer videos, 2D animation, and campaign motion. Direct access. No agency layer. Dan Neale, Byron Bay.',
     canonicalPath: '/motion-graphics/',
   },
-  eyebrow: 'Motion graphics',
-  headline: ['Motion graphics', 'with a director attached.'],
-  lede: 'Premium 2D animation and motion graphic explainer videos for agencies and in-house teams. Twenty years of studio craft, direct access — no markup, no junior handoffs.',
+  eyebrow: 'Motion graphics studio',
+  headline: ['Motion graphics studio.', 'Freelance motion designer.'],
+  lede: 'Motion graphics with a director attached. Premium 2D animation and motion graphic explainer videos for agencies and in-house teams. Byron Bay, Australia — no markup, no junior handoffs.',
   heroVideo: {
     vimeoId: '394326130',
     title: 'Meltwater / Brand Story',

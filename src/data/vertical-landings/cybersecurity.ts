@@ -9,8 +9,8 @@ export const cybersecurityVerticalLanding: VerticalLandingConfig = {
     canonicalPath: '/cybersecurity-explainer-videos/',
   },
   eyebrow: 'Cybersecurity motion graphic explainer videos',
-  headline: ['Make the threat,', 'and the fix, visible.'],
-  lede: 'Cybersecurity motion graphic explainer videos for platforms that security people understand and buyers do not. Threats, privacy, post-quantum readiness — told so a non-specialist can follow and act.',
+  headline: ['Cybersecurity motion graphic', 'explainer videos.'],
+  lede: 'Make the threat, and the fix, visible. For platforms that security people understand and buyers do not. Threats, privacy, post-quantum readiness — told so a non-specialist can follow and act.',
   heroVideo: {
     vimeoId: '1213121904',
     title: 'Nisient / Quantum Security',
