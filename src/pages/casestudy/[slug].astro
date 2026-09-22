@@ -5,7 +5,12 @@ import CaseStudyPage from '../../components/CaseStudyPage';
 import Footer from '../../components/Footer.astro';
 import EmailFloat from '../../components/EmailFloat.astro';
 import { ALL_PROJECTS } from '../../data/projects';
-import { getVideoSeoCategory, getVideoSeoTags } from '../../lib/videoSeo';
+import { getVideoSeoTags } from '../../lib/videoSeo';
+import {
+  getCaseStudyLane,
+  getCaseStudyMetaDescription,
+  getCaseStudyMetaTitle,
+} from '../../lib/caseStudySeo';
 import { vimeoPosterAbsoluteUrl } from '../../lib/vimeo';
 import '../../styles/global.css';
 
@@ -18,8 +23,11 @@ export function getStaticPaths() {
 
 const { project } = Astro.props;
 const canonicalUrl = `https://motionstory.com.au/casestudy/${project.slug}/`;
-const videoSeoTags = getVideoSeoTags(project);
-const videoSeoCategory = getVideoSeoCategory(project);
+const lane = getCaseStudyLane(project);
+const videoSeoTags = [...new Set([lane.jobLabel, ...getVideoSeoTags(project)])].slice(0, 16);
+const videoSeoCategory = lane.jobLabel;
+const metaTitle = getCaseStudyMetaTitle(project);
+const metaDescription = getCaseStudyMetaDescription(project);
 
 // ISO 8601 duration. Defaults to 1:30 (a typical explainer length).
 // Google's VideoObject rich results perform meaningfully better with a
@@ -30,8 +38,8 @@ const primaryVideoData = {
   "@context": "https://schema.org",
   "@type": "VideoObject",
   "@id": `${canonicalUrl}#primary-video`,
-  "name": project.title,
-  "description": project.details,
+  "name": `${project.title} — ${lane.jobLabel}`,
+  "description": `${project.details} ${lane.jobLabel} by Dan Neale, Motion Story.`,
   "thumbnailUrl": vimeoPosterAbsoluteUrl(project.vimeoId),
   "contentUrl": `https://vimeo.com/${project.vimeoId}`,
   "embedUrl": `https://player.vimeo.com/video/${project.vimeoId}`,
@@ -101,8 +109,8 @@ const webPageData = {
   "@type": "WebPage",
   "@id": canonicalUrl,
   "url": canonicalUrl,
-  "name": `${project.title} | Motion Story`,
-  "description": project.description,
+  "name": metaTitle,
+  "description": metaDescription,
   "isPartOf": {
     "@type": "WebSite",
     "name": "Motion Story",
@@ -128,26 +136,27 @@ const breadcrumbData = {
 const creativeWorkData = {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  "name": project.title,
-  "description": project.details,
+  "name": `${project.title} — ${lane.jobLabel}`,
+  "description": `${project.details} Made by Dan Neale.`,
   "creator": {
-    "@type": "Organization",
-    "name": "Motion Story",
-    "url": "https://motionstory.com.au"
+    "@type": "Person",
+    "name": "Dan Neale",
+    "jobTitle": "Motion Designer and Director",
+    "url": "https://motionstory.com.au/about/"
   },
   "about": {
     "@type": "Organization",
     "name": project.client
   },
-  "genre": project.category,
+  "genre": lane.jobLabel,
   "dateCreated": project.year,
   "video": { "@id": `${canonicalUrl}#primary-video` }
 };
 ---
 
 <BaseLayout
-  title={`${project.title} | Motion Story`}
-  description={project.description}
+  title={metaTitle}
+  description={metaDescription}
   ogImage={vimeoPosterAbsoluteUrl(project.vimeoId)}
   canonicalUrl={canonicalUrl}
 >

@@ -1,5 +1,6 @@
 import type { Project } from "../data/projects";
-import { getReviewForClient, pickVerifiedReviews } from "../data/reviews";
+import { getReviewForClient } from "../data/reviews";
+import { getCaseStudyContext, getCaseStudyLane } from "../lib/caseStudySeo";
 import VimeoEmbed from "./VimeoEmbed";
 import WorkCard, { projectToWorkCard } from "./WorkCard";
 import PageTransition, { FadeUp, SlideUp, AnimatedSection } from "./PageTransition";
@@ -19,7 +20,8 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
     .slice(0, 3);
 
   const clientReview = getReviewForClient(project.client);
-  const review = clientReview ?? pickVerifiedReviews(project.slug, 1)[0];
+  const lane = getCaseStudyLane(project);
+  const context = getCaseStudyContext(project);
 
   return (
     <div className="min-h-screen bg-white text-black">
@@ -30,7 +32,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
         <div className="max-w-7xl mx-auto px-8 pt-16 pb-8">
           <FadeUp>
             <div className="flex items-center gap-4 mb-6">
-              <span className="text-metadata">{project.category}</span>
+              <span className="text-metadata">{lane.jobLabel}</span>
             </div>
           </FadeUp>
           <SlideUp>
@@ -39,10 +41,13 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
             </h1>
           </SlideUp>
           <FadeUp>
-            <p className="text-body max-w-2xl mt-6 mb-12">
+            <p className="text-body max-w-2xl mt-6 mb-4">
               {project.description}
             </p>
-            <p className="text-metadata mb-6">Watch the video case study</p>
+            <p className="text-body max-w-2xl mb-12">
+              {context}
+            </p>
+            <p className="text-metadata mb-6">Watch the film</p>
           </FadeUp>
         </div>
 
@@ -79,6 +84,11 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
             <p className="text-body text-lg leading-relaxed">
               {project.details}
             </p>
+            <p className="mt-8">
+              <a href={lane.moneyHref} className="ms-link">
+                {lane.moneyLabel} →
+              </a>
+            </p>
           </FadeUp>
           <FadeUp>
             <div className="mb-12">
@@ -98,17 +108,16 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
         </div>
       </AnimatedSection>
 
-      {/* Client review — quiet, one line of proof */}
+      {clientReview && (
       <AnimatedSection className="border-t border-black/10">
         <div className="max-w-7xl mx-auto px-8 py-20">
           <FadeUp>
             <blockquote className="font-display text-xl md:text-2xl font-medium tracking-tight leading-snug max-w-3xl mb-6">
-              "{review.quote}"
+              "{clientReview.quote}"
             </blockquote>
-            <p className="font-display font-medium text-sm mb-1">{review.name}</p>
+            <p className="font-display font-medium text-sm mb-1">{clientReview.name}</p>
             <p className="text-metadata mb-8">
-              {review.role}, {review.company}
-              {clientReview ? "" : " · Client review"}
+              {clientReview.role}, {clientReview.company}
             </p>
             <a href="/reviews/" className="text-metadata hover:text-black transition-colors">
               All reviews →
@@ -116,6 +125,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
           </FadeUp>
         </div>
       </AnimatedSection>
+      )}
 
       {/* Navigation */}
       <AnimatedSection className="border-t border-black/10">
@@ -164,9 +174,14 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
             <span className="text-metadata !text-white/40 mb-8 block">Start a Project</span>
           </FadeUp>
           <SlideUp>
-            <h2 className="font-display text-3xl md:text-6xl font-bold tracking-tight mb-12">
+            <h2 className="font-display text-3xl md:text-6xl font-bold tracking-tight mb-8">
               Got something complex<br />to explain?
             </h2>
+            <p className="text-metadata !text-white/50 mb-12">
+              <a href={lane.moneyHref} className="hover:!text-white transition-colors">
+                {lane.moneyLabel}
+              </a>
+            </p>
           </SlideUp>
           <FadeUp>
             <div className="flex flex-col items-center gap-6">
