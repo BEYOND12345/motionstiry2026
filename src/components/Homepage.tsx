@@ -1,11 +1,10 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef, type ReactNode, type RefObject } from "react";
 import { motion } from "framer-motion";
 import { sortProjectsShowcaseFirst, type Project } from "../data/projects";
 import {
   HERO_LEDE,
   HOME_APPROACH,
   HOME_CLOSE,
-  HOME_HERO_BODY,
   HOME_MAKE,
   HOME_MAKE_CLOSE,
   HOME_MAKE_LEAD,
@@ -82,26 +81,209 @@ const HOME_MENU = [
   { label: "Blog", href: "/blog/" },
 ] as const;
 
-function PullQuote({
-  quote,
-  name,
-  company,
-}: {
-  quote: string;
-  name: string;
-  company: string;
-}) {
+const FORMAT_DWELL_MS = 3400;
+const QUOTE_DWELL_MS = 4800;
+const BEAT_FILL_MS = 5200;
+
+function useReduceMotion() {
+  const [reduceMotion, setReduceMotion] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const sync = () => setReduceMotion(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+  return reduceMotion;
+}
+
+function useCycle(count: number, dwellMs: number) {
+  const rootRef = useRef<HTMLElement | null>(null);
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [inView, setInView] = useState(false);
+  const reduceMotion = useReduceMotion();
+
+  useEffect(() => {
+    const el = rootRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => setInView(Boolean(entry?.isIntersecting && entry.intersectionRatio >= 0.3)),
+      { threshold: [0.2, 0.3, 0.55] },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (reduceMotion || paused || !inView || count < 2) return;
+    const id = window.setInterval(() => {
+      setActive((i) => (i + 1) % count);
+    }, dwellMs);
+    return () => window.clearInterval(id);
+  }, [count, dwellMs, paused, inView, reduceMotion]);
+
+  return { rootRef, active, setActive, paused, setPaused, reduceMotion };
+}
+
+function useReadingBeat() {
+  const [active, setActive] = useState<string | null>(null);
+  const reduceMotion = useReduceMotion();
+
+  useEffect(() => {
+    if (reduceMotion) return;
+    const pick = () => {
+      const beats = [...document.querySelectorAll<HTMLElement>("[data-hp-beat]")];
+      const left = document.querySelector<HTMLElement>(".split-left");
+      const stacked = !left || getComputedStyle(left).display === "contents";
+      const viewTop = stacked ? 0 : left.getBoundingClientRect().top;
+      const viewH = stacked ? window.innerHeight : left.clientHeight;
+      const line = viewTop + viewH * 0.38;
+      let best: string | null = null;
+      let bestDist = Infinity;
+      let entered = false;
+      for (const el of beats) {
+        const top = el.getBoundingClientRect().top;
+        const isIn = top <= line + 56;
+        const dist = Math.abs(top - line);
+        if (isIn) {
+          if (!entered || dist < bestDist) {
+            entered = true;
+            bestDist = dist;
+            best = el.dataset.hpBeat ?? null;
+          }
+        } else if (!entered && dist < bestDist) {
+          bestDist = dist;
+          best = el.dataset.hpBeat ?? null;
+        }
+      }
+      setActive((prev) => (prev === best ? prev : best));
+    };
+
+    const left = document.querySelector<HTMLElement>(".split-left");
+    pick();
+    left?.addEventListener("scroll", pick, { passive: true });
+    window.addEventListener("scroll", pick, { passive: true });
+    window.addEventListener("resize", pick);
+    return () => {
+      left?.removeEventListener("scroll", pick);
+      window.removeEventListener("scroll", pick);
+      window.removeEventListener("resize", pick);
+    };
+  }, [reduceMotion]);
+
+  return { active, reduceMotion };
+}
+
+function FocusBar({ play }: { play: boolean }) {
+  if (!play) return null;
+  return <span className="hp-focus-bar" aria-hidden="true" />;
+}
+
+function FormatList() {
+  const { rootRef, active, setActive, paused, setPaused, reduceMotion } = useCycle(
+    HOME_MAKE.length,
+    FORMAT_DWELL_MS,
+  );
+
   return (
-    <blockquote className="hp-pull">
-      <p className="font-display text-[1.1rem] font-medium leading-[1.4] tracking-tight sm:text-[1.2rem] sm:leading-snug md:text-[1.3rem]">
-        “{quote}”
-      </p>
-      <footer className="mt-3 text-metadata text-black/40">
-        {name}
-        <span className="mx-2 opacity-30">·</span>
-        {company}
-      </footer>
-    </blockquote>
+    <ul
+      ref={rootRef as RefObject<HTMLUListElement>}
+      className={`hp-formats mt-8 ${paused ? "is-paused" : ""}`}
+      onMouseLeave={() => setPaused(false)}
+    >
+      {HOME_MAKE.map((item, i) => {
+        const on = reduceMotion || i === active;
+        return (
+          <li key={item.label}>
+            <button
+              type="button"
+              className={`hp-focus-item ${on ? "is-on" : ""}`}
+              aria-current={on ? "true" : undefined}
+              onMouseEnter={() => {
+                setPaused(true);
+                setActive(i);
+              }}
+              onFocus={() => {
+                setPaused(true);
+                setActive(i);
+              }}
+            >
+              <span className="hp-format-label">{item.label}</span>
+              <span className="hp-format-line">{item.line}</span>
+              <FocusBar play={on && !reduceMotion} />
+            </button>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
+const HOME_PROOF = [HOME_QUOTES[2], HOME_QUOTES[1]] as const;
+
+function QuoteList() {
+  const { rootRef, active, setActive, paused, setPaused, reduceMotion } = useCycle(
+    HOME_PROOF.length,
+    QUOTE_DWELL_MS,
+  );
+
+  return (
+    <div
+      ref={rootRef as RefObject<HTMLDivElement>}
+      className={`hp-quotes ${paused ? "is-paused" : ""}`}
+      onMouseLeave={() => setPaused(false)}
+    >
+      {HOME_PROOF.map((item, i) => {
+        const on = reduceMotion || i === active;
+        return (
+          <button
+            key={item.name}
+            type="button"
+            className={`hp-focus-item hp-quote ${on ? "is-on" : ""}`}
+            aria-current={on ? "true" : undefined}
+            onMouseEnter={() => {
+              setPaused(true);
+              setActive(i);
+            }}
+            onFocus={() => {
+              setPaused(true);
+              setActive(i);
+            }}
+          >
+            <span className="hp-quote-text">“{item.quote}”</span>
+            <span className="hp-quote-meta">
+              {item.name}
+              <span className="mx-2 opacity-30">·</span>
+              {item.company}
+            </span>
+            <FocusBar play={on && !reduceMotion} />
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+function Beat({
+  id,
+  active,
+  reduceMotion,
+  className,
+  children,
+}: {
+  id: string;
+  active: string | null;
+  reduceMotion: boolean;
+  className?: string;
+  children: ReactNode;
+}) {
+  const on = reduceMotion || active === id;
+  return (
+    <div data-hp-beat={id} className={`hp-beat ${on ? "is-on" : ""} ${className ?? ""}`.trim()}>
+      <FocusBar play={on && !reduceMotion} />
+      {children}
+    </div>
   );
 }
 
@@ -209,6 +391,8 @@ function WorkVerticalCarousel({ projects }: { projects: Project[] }) {
 }
 
 export default function Homepage() {
+  const { active: beat, reduceMotion } = useReadingBeat();
+
   return (
     <div className="min-h-screen bg-white text-black selection:bg-accent selection:text-white">
       <style>{`
@@ -251,9 +435,129 @@ export default function Homepage() {
         .hp-journal p {
           text-wrap: pretty;
         }
-        .hp-pull {
-          border-left: 1.5px solid var(--color-accent, #e10600);
-          padding-left: 1.15rem;
+        .hp-formats,
+        .hp-quotes {
+          list-style: none;
+        }
+        .hp-focus-item,
+        .hp-beat {
+          position: relative;
+        }
+        .hp-focus-item {
+          display: block;
+          width: 100%;
+          padding: 0.9rem 0 0.95rem;
+          border: 0;
+          border-top: 1px solid rgba(10, 10, 10, 0.1);
+          background: none;
+          text-align: left;
+          cursor: pointer;
+        }
+        .hp-format-label {
+          display: block;
+          font-family: var(--font-display);
+          font-size: 1.05rem;
+          font-weight: 500;
+          letter-spacing: -0.02em;
+          color: rgba(10, 10, 10, 0.32);
+          transition: color 0.5s ease;
+        }
+        .hp-format-line {
+          display: block;
+          margin-top: 0.25rem;
+          font-family: var(--font-sans);
+          font-size: 0.95rem;
+          line-height: 1.5;
+          color: rgba(10, 10, 10, 0.22);
+          transition: color 0.5s ease;
+        }
+        .hp-focus-item.is-on .hp-format-label {
+          color: #0a0a0a;
+        }
+        .hp-focus-item.is-on .hp-format-line {
+          color: rgba(10, 10, 10, 0.55);
+        }
+        .hp-quote {
+          padding: 1.15rem 0 1.2rem;
+        }
+        .hp-quote + .hp-quote {
+          margin-top: 0.35rem;
+        }
+        .hp-quote-text {
+          display: block;
+          font-family: var(--font-display);
+          font-size: 1.1rem;
+          font-weight: 500;
+          line-height: 1.4;
+          letter-spacing: -0.02em;
+          color: rgba(10, 10, 10, 0.28);
+          transition: color 0.5s ease;
+        }
+        .hp-quote-meta {
+          display: block;
+          margin-top: 0.75rem;
+          font-family: var(--font-sans);
+          font-size: 0.75rem;
+          font-weight: 500;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: rgba(10, 10, 10, 0.2);
+          transition: color 0.5s ease;
+        }
+        .hp-quote.is-on .hp-quote-text {
+          color: #0a0a0a;
+        }
+        .hp-quote.is-on .hp-quote-meta {
+          color: rgba(10, 10, 10, 0.4);
+        }
+        .hp-beat {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .hp-beat > p:first-of-type {
+          grid-row: 1;
+          grid-column: 1;
+          padding-bottom: 0.5rem;
+        }
+        .hp-focus-bar {
+          position: absolute;
+          left: 0;
+          top: auto;
+          bottom: 0;
+          height: 1.5px;
+          width: 0;
+          background: var(--color-accent, #e10600);
+          pointer-events: none;
+        }
+        .hp-beat > .hp-focus-bar {
+          grid-row: 1;
+          grid-column: 1;
+          align-self: end;
+          position: relative;
+        }
+        .hp-focus-item .hp-focus-bar {
+          animation: hp-focus-fill ${FORMAT_DWELL_MS}ms linear forwards;
+        }
+        .hp-quote .hp-focus-bar {
+          animation-duration: ${QUOTE_DWELL_MS}ms;
+        }
+        .hp-beat .hp-focus-bar {
+          animation: hp-focus-fill ${BEAT_FILL_MS}ms linear forwards;
+        }
+        .hp-formats.is-paused .hp-focus-bar,
+        .hp-quotes.is-paused .hp-focus-bar {
+          animation-play-state: paused;
+        }
+        @keyframes hp-focus-fill {
+          from { width: 0; }
+          to { width: 100%; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .hp-format-label,
+          .hp-quote-text { color: #0a0a0a; }
+          .hp-format-line { color: rgba(10, 10, 10, 0.55); }
+          .hp-quote-meta { color: rgba(10, 10, 10, 0.4); }
+          .hp-focus-bar { display: none; }
         }
       `}</style>
       <div className="grain-overlay" />
@@ -269,9 +573,6 @@ export default function Homepage() {
             </h1>
             <p className="hp-lede mt-5 font-display text-[1.2rem] font-medium leading-[1.4] tracking-tight sm:mt-7 sm:text-[1.35rem] md:text-[1.45rem] md:leading-[1.3]">
               {HERO_LEDE}
-            </p>
-            <p className="hp-body mt-4 text-body text-[1.0625rem] leading-[1.65] text-black/70 sm:mt-5 sm:text-[1.05rem]">
-              {HOME_HERO_BODY}
             </p>
             <div className="hp-logos mt-8 sm:mt-10">
               <ClientTicker
@@ -298,51 +599,45 @@ export default function Homepage() {
                 {HOME_ME}
               </p>
             </div>
-            <p className="mt-12 font-display text-[1.4rem] font-medium tracking-tight leading-[1.25] sm:mt-16 sm:text-[1.65rem] md:text-[1.85rem] md:leading-[1.2]">
-              {HOME_APPROACH.lead}
-            </p>
-            <p className="mt-5 text-body text-[1.0625rem] leading-[1.65] text-black/70 sm:mt-6 sm:text-[1.05rem]">
-              {HOME_APPROACH.body}
-            </p>
-            <p className="mt-4 text-body text-[1.0625rem] leading-[1.65] text-black/70 sm:mt-5 sm:text-[1.05rem]">
-              {HOME_APPROACH.shape}
-            </p>
-            <p className="mt-12 font-display text-xl font-medium tracking-tight">
-              {HOME_MAKE_LEAD}
-            </p>
-            <ul className="mt-8">
-              {HOME_MAKE.map((item) => (
-                <li key={item.label} className="border-t border-black/10 py-3.5">
-                  <p className="font-display text-[1.05rem] font-medium tracking-tight">{item.label}</p>
-                  <p className="mt-1 text-body text-[0.95rem] leading-relaxed text-black/55">{item.line}</p>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-8 text-body text-[1.05rem] leading-[1.65] text-black/70">
-              {HOME_MAKE_CLOSE}
-            </p>
+            <Beat id="story" active={beat} reduceMotion={reduceMotion} className="mt-12 sm:mt-16">
+              <p className="font-display text-[1.4rem] font-medium tracking-tight leading-[1.25] sm:text-[1.65rem] md:text-[1.85rem] md:leading-[1.2]">
+                {HOME_APPROACH.lead}
+              </p>
+              <p className="mt-5 text-body text-[1.0625rem] leading-[1.65] text-black/70 sm:mt-6 sm:text-[1.05rem]">
+                {HOME_APPROACH.body}
+              </p>
+              <p className="mt-4 text-body text-[1.0625rem] leading-[1.65] text-black/70 sm:mt-5 sm:text-[1.05rem]">
+                {HOME_APPROACH.shape}
+              </p>
+            </Beat>
+            <div className="mt-12">
+              <p className="font-display text-xl font-medium tracking-tight">
+                {HOME_MAKE_LEAD}
+              </p>
+              <FormatList />
+              <p className="mt-8 text-body text-[1.05rem] leading-[1.65] text-black/70">
+                {HOME_MAKE_CLOSE}
+              </p>
+            </div>
             <div className="mt-14">
-              <PullQuote {...HOME_QUOTES[2]} />
+              <QuoteList />
             </div>
-
-            <div className="mt-14">
-              <PullQuote {...HOME_QUOTES[1]} />
-            </div>
-
-            <p className="mt-16 font-display text-[1.45rem] font-medium tracking-tight leading-[1.2] sm:mt-20 sm:text-[1.85rem] md:text-[2.1rem] md:leading-[1.15]">
-              {HOME_CLOSE.lead}
-            </p>
-            <p className="mt-5 text-body text-[1.0625rem] leading-[1.65] text-black/70 sm:text-[1.05rem]">
-              {HOME_CLOSE.body}
-            </p>
-            <p className="mt-4 text-body text-[1.0625rem] leading-[1.65] text-black/70 sm:mt-5 sm:text-[1.05rem]">
-              {HOME_CLOSE.close}
-            </p>
-            <div className="mt-8">
-              <a href="/book/" className="ms-btn">
-                Work with Dan
-              </a>
-            </div>
+            <Beat id="close" active={beat} reduceMotion={reduceMotion} className="mt-16 sm:mt-20">
+              <p className="font-display text-[1.45rem] font-medium tracking-tight leading-[1.2] sm:text-[1.85rem] md:text-[2.1rem] md:leading-[1.15]">
+                {HOME_CLOSE.lead}
+              </p>
+              <p className="mt-5 text-body text-[1.0625rem] leading-[1.65] text-black/70 sm:text-[1.05rem]">
+                {HOME_CLOSE.body}
+              </p>
+              <p className="mt-4 text-body text-[1.0625rem] leading-[1.65] text-black/70 sm:mt-5 sm:text-[1.05rem]">
+                {HOME_CLOSE.close}
+              </p>
+              <div className="mt-8">
+                <a href="/book/" className="ms-btn">
+                  Work with Dan
+                </a>
+              </div>
+            </Beat>
           </div>
 
           <nav className="hp-nav mt-auto max-w-md pt-10 pb-1" aria-label="Studio">
