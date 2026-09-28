@@ -76,19 +76,15 @@ const structuredData = {
         {ABOUT_HEADLINE}
       </h1>
 
-      <div class="about-me mt-10 md:mt-12 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start">
-        <div class="md:col-span-3">
-          <div class="overflow-hidden rounded-xl bg-black/[0.04] aspect-[4/5] w-28 md:w-full max-w-[12rem]">
-            <img
-              src="/daniel-neale.jpg"
-              alt="Dan Neale, director of Motion Story"
-              class="w-full h-full object-cover object-[center_18%]"
-              width="240"
-              height="300"
-            />
-          </div>
-        </div>
-        <div class="md:col-span-7 md:col-start-5 space-y-5 text-body text-lg leading-relaxed max-w-2xl">
+      <div class="about-me mt-10 md:mt-12 flex items-start gap-4 sm:gap-6">
+        <img
+          src="/daniel-neale.jpg"
+          alt="Dan Neale, director of Motion Story"
+          width="72"
+          height="72"
+          class="dan-photo dan-photo-md"
+        />
+        <div class="min-w-0 space-y-5 text-body text-lg leading-relaxed max-w-2xl">
           <p>{ABOUT_INTRO}</p>
           {ABOUT_LEDE.map((paragraph) => (
             <p>{paragraph}</p>

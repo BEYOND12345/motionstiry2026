@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SpineLandingPage from '../components/LandingPage/SpineLandingPage';
+import EmailFloat from '../components/EmailFloat.astro';
 import { productDemoLanding } from '../data/landing-pages/product-demo';
 import '../styles/global.css';
 
@@ -48,4 +49,5 @@ const faqSchema = {
   </Fragment>
 
   <SpineLandingPage client:load config={config} />
+  <EmailFloat />
 </BaseLayout>

@@ -70,6 +70,7 @@ function projectToCase(p: Project): SpineCase {
     outcome: p.description,
     videoUrl: p.vimeoId,
     vimeoHash: p.vimeoHash,
+    slug: p.slug,
   };
 }
 

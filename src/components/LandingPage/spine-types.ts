@@ -7,6 +7,7 @@ export type SpineCase = {
   /** Privacy hash for unlisted Vimeo videos */
   vimeoHash?: string;
   posterUrl?: string;
+  slug?: string;
 };
 
 /** StoryBrand-shaped landing config */

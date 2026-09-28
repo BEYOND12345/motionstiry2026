@@ -592,7 +592,7 @@ export default function Homepage() {
                   alt="Dan Neale"
                   width={72}
                   height={72}
-                  className="h-14 w-14 rounded-full object-cover object-[center_18%] sm:h-[4.5rem] sm:w-[4.5rem]"
+                    className="dan-photo dan-photo-md"
                 />
               </a>
               <p className="pt-0.5 font-display text-[1.125rem] font-medium leading-[1.4] tracking-tight sm:pt-1 sm:text-[1.2rem] sm:leading-snug">

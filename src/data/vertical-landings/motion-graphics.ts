@@ -10,12 +10,12 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
   seo: {
     titleTag: 'Freelance Motion Designer Australia | Motion Graphics Studio | Motion Story',
     metaDescription:
-      'Senior freelance motion designer. Motion graphic explainer videos, 2D animation, and campaign motion. Direct access. No agency layer. Dan Neale, Byron Bay.',
+      'Freelance motion designer for teams in Sydney, Melbourne, Brisbane, and Los Angeles. Dan Neale, Motion Story, Byron Bay.',
     canonicalPath: '/motion-graphics/',
   },
   eyebrow: 'Motion graphics studio',
-  headline: ['Motion graphics studio.', 'Freelance motion designer.'],
-  lede: 'Motion graphics with a director attached. Premium 2D animation and motion graphic explainer videos for agencies and in-house teams. Byron Bay, Australia — no markup, no junior handoffs.',
+  headline: ['Motion graphics.'],
+  lede: 'Motion graphics with a director attached. I work with agencies and in-house teams in Sydney, Melbourne, Brisbane, Los Angeles, and across Australia. Based in Byron Bay.',
   heroVideo: {
     vimeoId: '394326130',
     title: 'Meltwater / Brand Story',
@@ -28,25 +28,41 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
       tags: 'Motion graphic, data, cause',
       body: 'Data-led storytelling for a global plastic waste brief — attention-grabbing, then actionable.',
     }),
-    verticalCase('rspca-cats', {
-      tags: 'Character animation, charity',
-      body: 'Behaviour change for cat owners — warm illustration with a serious message.',
+    verticalCase('eluse-krue', {
+      tags: 'Brand, motion graphic',
+      body: 'Bringing a premium skincare brand to life through motion.',
     }),
     verticalCase('amsed', {
       tags: 'Motion graphic',
       body: 'Hours of explanation compressed into a watchable motion piece.',
     }),
+    verticalCase('method-recycling', {
+      tags: 'Product, motion graphic',
+      body: 'Reimagining waste management with design-forward thinking.',
+    }),
+    verticalCase('rspca-cats', {
+      tags: 'Character animation, charity',
+      body: 'Behaviour change for cat owners — warm illustration with a serious message.',
+    }),
+    verticalCase('ipa', {
+      tags: 'Policy, explainer',
+      body: 'Explaining road tax policy for the electric vehicle era.',
+    }),
     verticalCase('bark-busters', {
       tags: 'Character, training',
       body: 'Charming character animation that makes behavioural training feel accessible.',
     }),
-    verticalCase('atomic', {
-      tags: 'SaaS, UI storytelling',
-      body: 'Product motion that feels native to the software — clear, branded, sales-ready.',
-    }),
     verticalCase('cotton-australia', {
       tags: 'Farming, explainer, motion graphic',
       body: 'Thirty years of eco-friendly farming told from planting to harvest — craft in service of a clear story.',
+    }),
+    verticalCase('acir', {
+      tags: 'Data, cause',
+      body: 'Tackling food waste through animated data storytelling.',
+    }),
+    verticalCase('atomic', {
+      tags: 'SaaS, UI storytelling',
+      body: 'Product motion that feels native to the software — clear, branded, sales-ready.',
     }),
   ],
   value: {
@@ -58,7 +74,7 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
     items: [
       'Twenty years of premium studio experience, direct access',
       'Trusted by top Australian creative agencies',
-      'No agency markup, no junior handoffs',
+      'I plug into your team in Sydney, Melbourne, Brisbane, Los Angeles, or remotely',
     ],
   },
   quote: {
@@ -68,6 +84,16 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
   },
   faqs: [
     {
+      question: 'Do you work with teams in Sydney, Melbourne, Brisbane, and Los Angeles?',
+      answer:
+        'Yes. I am based in Byron Bay and work remotely with agencies and in-house teams in Sydney, Melbourne, Brisbane, Los Angeles, and across Australia. You still work with me.',
+    },
+    {
+      question: 'Can I hire you as a freelancer, producer, or specialist?',
+      answer:
+        'Yes. Teams hire me as a freelance motion designer, a motion graphics producer, a creative producer, a consultant, or a specialist who plugs into the team. The work is the same. I shape the story and make the film.',
+    },
+    {
       question: 'What do you cover?',
       answer:
         '2D animation and motion graphics, explainers and SaaS demos, product launch films, brand and campaign work, and motion for pitch decks and internal comms.',
@@ -75,6 +101,7 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
     ...VERTICAL_CORE_FAQS,
   ],
   links: [
+    { href: '/animation-production-company/', eyebrow: 'Company', label: 'Animation production company →' },
     { href: '/agencies/', eyebrow: 'Agencies', label: 'Agency partnerships →' },
     { href: '/explainer-videos/', eyebrow: 'Explainers', label: 'Motion graphic explainer videos →' },
     { href: '/saas-explainer-videos/', eyebrow: 'SaaS', label: 'SaaS motion graphic explainer videos →' },
