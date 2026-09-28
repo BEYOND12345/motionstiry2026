@@ -20,7 +20,9 @@ export type VerticalLandingConfig = {
   };
   eyebrow: string;
   headline: string[];
-  lede: string;
+  lede: string | string[];
+  /** Close after the work grid */
+  ctaNote?: string | string[];
   /** Unique hero film — must not also appear in `cases` */
   heroVideo: {
     vimeoId: string;
@@ -34,7 +36,7 @@ export type VerticalLandingConfig = {
   cases: VerticalCase[];
   value: {
     headline: string;
-    body: string;
+    body: string | string[];
   };
   benefits: {
     headline: string;

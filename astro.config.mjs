@@ -21,6 +21,7 @@ const HIGH_PRIORITY_PAGES = new Set([
   '/creative-business-designer/',
   '/finance-explainer-videos/',
   '/motion-graphics/',
+  '/freelance-motion-graphic-designer/',
   '/process/',
   '/product-demo-videos/',
   '/product-launch-video/',
@@ -157,8 +158,7 @@ export default defineConfig({
     '/animation-production-company-2/': '/explainer-videos/',
     '/landing-page-animated-video-services-01/': '/saas-explainer-videos/',
     // /landing-animated-product-demos-01/ is a live Ads landing (do not redirect)
-    '/freelance-motion-graphic-designer/': '/motion-graphics/',
-    '/freelance-motion-design-and-animation/': '/motion-graphics/',
+    '/freelance-motion-design-and-animation/': '/freelance-motion-graphic-designer/',
     '/motion-graphic-production/': '/motion-graphics/',
 
     // Old standalone pages → new equivalents

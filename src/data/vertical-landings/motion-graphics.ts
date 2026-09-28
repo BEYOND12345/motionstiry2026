@@ -8,14 +8,16 @@ import {
 
 export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
   seo: {
-    titleTag: 'Freelance Motion Designer Australia | Motion Graphics Studio | Motion Story',
+    titleTag: 'Freelance Motion Designer & Creative Director | Motion Story',
     metaDescription:
-      'Freelance motion designer for teams in Sydney, Melbourne, Brisbane, and Los Angeles. Dan Neale, Motion Story, Byron Bay.',
-    canonicalPath: '/motion-graphics/',
+      'Senior freelance motion designer with studio-level thinking. Ideas, storyboards, design and animation, all handled directly from concept to delivery.',
+    canonicalPath: '/freelance-motion-graphic-designer/',
   },
   eyebrow: 'Freelance motion designer',
-  headline: ['Freelance motion designer.'],
-  lede: "Hi. I'm Dan. All round creative. Design, illustration, 2D animation, motion graphics, production. I work as part of your team, anywhere in the world. A creative partner, not a freelancer you brief and forget, and not a studio with layers.",
+  headline: ['Freelance motion designer.', 'Studio thinking.'],
+  lede: "Hi, I'm Dan. I'm an independent creative director and motion designer behind Motion Story.",
+  ctaNote:
+    'I work somewhere between a senior freelancer and a small motion studio. You work directly with me, and I handle most projects from the initial idea through to storyboarding, design and animation. When a project needs extra expertise, I bring in trusted specialists.',
   heroVideo: {
     vimeoId: '394326130',
     title: 'Meltwater / Brand Story',
@@ -66,15 +68,15 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
     }),
   ],
   value: {
-    headline: 'Storytelling from idea to execution.',
-    body: "I work with you directly from the first conversation to the last file. Working out the story, making storyboards, defining a complex message, or seeing it through production. I'm with you from beginning to end.",
+    headline: 'Studio thinking. Freelance flexibility.',
+    body: "If you already know exactly what you need, I can jump in and execute it. If you don't, I can help work it out. I can take direction, or I can provide it.",
   },
   benefits: {
-    headline: 'Why agencies book me',
+    headline: 'How I like to work',
     items: [
-      'Twenty years of premium studio experience, direct access',
-      'Trusted by top Australian creative agencies',
-      'I plug into your team in Sydney, Melbourne, Brisbane, Los Angeles, or remotely',
+      'Need an extra pair of hands? I can do that.',
+      'Need someone to take ownership of the motion? I can do that too.',
+      'I can take direction, or I can provide it.',
     ],
   },
   quote: {
@@ -84,19 +86,19 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
   },
   faqs: [
     {
-      question: 'Do you work with teams in Sydney, Melbourne, Brisbane, and Los Angeles?',
+      question: 'Are you a freelancer or a studio?',
       answer:
-        'Yes. I am based in Byron Bay and work remotely with agencies and in house teams in Sydney, Melbourne, Brisbane, Los Angeles, and across Australia. You still work with me.',
+        'Somewhere between. I am an independent creative director and motion designer. You work directly with me throughout. I handle most of the work myself, and I bring in trusted specialists only when a project needs extra expertise.',
     },
     {
-      question: 'Can I hire you as a freelancer, producer, or specialist?',
+      question: 'Can you just execute a brief?',
       answer:
-        'Yes. Teams hire me as a freelance motion designer, a motion graphics producer, a creative producer, a consultant, or a specialist who plugs into the team. The work is the same. I shape the story and make the film.',
+        "Yes. If you already know exactly what you need, I can jump in and make it. If you don't, I can help work out the idea, the message and the visual approach. I can take direction, or I can provide it.",
     },
     {
-      question: 'What do you cover?',
+      question: 'What do you actually do on a project?',
       answer:
-        '2D animation and motion graphics, explainers and SaaS demos, product launch films, brand and campaign work, and motion for pitch decks and internal comms.',
+        "I've spent years doing more than making things move. That might mean simplifying a complicated product, developing the visual idea, shaping the story, planning the animation or creating detailed storyboards before production begins. I help work out what needs to be communicated, how to communicate it clearly, and then make it happen.",
     },
     ...VERTICAL_CORE_FAQS,
   ],

@@ -16,6 +16,15 @@ const { config } = Astro.props;
 const cases = config.cases;
 const whyLines = config.benefits.items.slice(0, 3);
 const faqs = config.faqs.slice(0, 4);
+const ledeParas = Array.isArray(config.lede) ? config.lede : [config.lede];
+const meParas = Array.isArray(config.value.body)
+  ? config.value.body
+  : [config.value.body || (Array.isArray(config.lede) ? config.lede[0] : config.lede)];
+const closeParas = config.ctaNote
+  ? Array.isArray(config.ctaNote)
+    ? config.ctaNote
+    : [config.ctaNote]
+  : [];
 ---
 
 <div class="vl">
@@ -29,7 +38,11 @@ const faqs = config.faqs.slice(0, 4);
           </>
         ))}
       </h1>
-      <p class="vl-lede">{config.lede}</p>
+      <div class="vl-lede">
+        {ledeParas.map((para) => (
+          <p>{para}</p>
+        ))}
+      </div>
       <div class="vl-hero-cta">
         <a href="/book/" class="ms-btn">Book a call</a>
       </div>
@@ -65,7 +78,11 @@ const faqs = config.faqs.slice(0, 4);
       height="72"
       class="dan-photo dan-photo-md"
     />
-    <p class="vl-me-copy">{config.value.body || config.lede}</p>
+    <div class="vl-me-copy">
+      {meParas.map((para) => (
+        <p>{para}</p>
+      ))}
+    </div>
   </section>
 
   <section id="work" class="vl-work">
@@ -130,6 +147,15 @@ const faqs = config.faqs.slice(0, 4);
     <p class="vl-all-work">
       <a href="/work/">See the full portfolio →</a>
     </p>
+
+    {closeParas.length > 0 && (
+      <div class="vl-close">
+        {closeParas.map((para) => (
+          <p>{para}</p>
+        ))}
+        <a href="/book/" class="ms-btn">Book a call</a>
+      </div>
+    )}
   </section>
 
   <section class="vl-faq">
@@ -195,16 +221,47 @@ const faqs = config.faqs.slice(0, 4);
 
   .vl-lede {
     max-width: 34rem;
+    margin: 0 0 1.75rem;
+  }
+
+  .vl-lede p {
     font-size: 1.0625rem;
     line-height: 1.6;
     color: #555;
-    margin: 0 0 1.75rem;
+    margin: 0 0 1rem;
+  }
+
+  .vl-lede p:last-child {
+    margin-bottom: 0;
   }
 
   .vl-hero-cta {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .vl-close {
+    margin-top: 3.5rem;
+    max-width: 32rem;
+  }
+
+  .vl-close p {
+    margin: 0 0 1rem;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  .vl-close p:last-of-type {
+    margin: 0 0 1.25rem;
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.4;
+    color: var(--color-fg);
   }
 
   .vl-ticker {
@@ -216,7 +273,7 @@ const faqs = config.faqs.slice(0, 4);
     display: flex;
     align-items: flex-start;
     gap: 1.15rem;
-    max-width: 36rem;
+    max-width: 40rem;
     margin: 0 0 3.5rem;
   }
 
@@ -227,13 +284,21 @@ const faqs = config.faqs.slice(0, 4);
   }
 
   .vl-me-copy {
-    margin: 0;
+    min-width: 0;
     padding-top: 0.2rem;
+  }
+
+  .vl-me-copy p {
+    margin: 0 0 0.85rem;
     font-family: var(--font-display);
     font-size: 1.125rem;
     font-weight: 500;
     letter-spacing: -0.02em;
     line-height: 1.4;
+  }
+
+  .vl-me-copy p:last-child {
+    margin-bottom: 0;
   }
 
   .vl-work-intro {
