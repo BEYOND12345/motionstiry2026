@@ -1,66 +1,158 @@
 import type { SpineLandingConfig } from '../../components/LandingPage/spine-types';
-import { TESTIMONIAL_ACODIS } from './testimonials';
+import { TESTIMONIAL_METHOD } from './testimonials';
 import {
   SPINE_CLOSE,
-  SPINE_GUIDE,
-  SPINE_PLAN,
-  SPINE_PROOF_EXPLAINER,
   SPINE_TICKER_ROW_A,
   SPINE_TICKER_ROW_B,
-  SPINE_VALUE,
-  SPINE_CORE_FAQS,
+  spineCases,
 } from './spine-shared';
 
-/** Config for /landing-page-explainer-video-01/ */
+const PRODUCT_DEMO_BODIES: Record<string, string> = {
+  good2pay: 'Invoice to payment, on screen.',
+  wipster: 'Feedback on the timeline, inside the product.',
+  heyyou: 'From the menu to skipping the queue.',
+  'food-by-us': 'Compare suppliers. Place the order.',
+  'class-trust': 'SMSF accounting as a sequence you can follow.',
+  trulet: 'Tenant screening, rent, and maintenance on screen.',
+  uclusion: 'Collect feedback. Decide what to build next.',
+  trudi: 'Tenant communication, maintenance, reporting.',
+  infoview: 'Capture, approve, close the loop.',
+  swell: 'AI accounting as a working product.',
+  joineree: 'From a role to a match.',
+  oovvuu: 'The plugin does the explaining.',
+  driv0: 'The interface stays in frame.',
+  bambora: 'A payment workflow a business can follow.',
+};
+
+const productDemoIds = [
+  'wipster',
+  'heyyou',
+  'food-by-us',
+  'class-trust',
+  'trulet',
+  'uclusion',
+  'trudi',
+  'infoview',
+  'swell',
+  'joineree',
+  'oovvuu',
+  'driv0',
+  'bambora',
+] as const;
+
+const heroFilm = spineCases('good2pay').map((item) => ({
+  ...item,
+  outcome: PRODUCT_DEMO_BODIES.good2pay,
+  body: PRODUCT_DEMO_BODIES.good2pay,
+}))[0]!;
+
+const productCases = spineCases(...productDemoIds).map((item, i) => {
+  const id = productDemoIds[i]!;
+  const body = PRODUCT_DEMO_BODIES[id] || item.outcome;
+  return { ...item, body, outcome: body };
+});
+
+/** Config for /landing-page-product-video-01/ (old Ads URL still serves this page) */
 export const explainerVideoLanding: SpineLandingConfig = {
-  slug: 'explainer-video',
+  slug: 'product-video',
   seo: {
-    titleTag: 'Explainer Videos For Complex Products | Motion Story',
+    titleTag: 'Make Your SaaS Product Easy to Understand | Motion Story',
     metaDescription:
-      'Explainer videos for SaaS and tech teams. Work directly with the creative director. Script, storyboard, animation.',
-    canonicalPath: '/landing-page-explainer-video-01/',
+      'Product videos for SaaS and technology companies that turn complicated products into simple stories. Not a screen recording. Work directly with the creative director.',
+    canonicalPath: '/landing-page-product-video-01/',
   },
+  siteFooter: true,
   hero: {
-    eyebrow: 'Explainer videos',
-    h1: 'Explainer videos for complex products.',
-    subhead: 'Complex made clear.',
-    videoSrc: '861022443',
-    fullShowreelUrl: '861022443',
+    eyebrow: 'Product videos',
+    h1: 'Make your SaaS product easy to understand.',
+    subhead:
+      'I create product videos for SaaS and technology companies that turn complicated products into simple stories.',
+    videoSrc: heroFilm.videoUrl,
+    videoHash: heroFilm.vimeoHash,
+    fullShowreelUrl: heroFilm.videoUrl,
     primaryCta: 'Book a call',
-    secondaryCta: 'See the work',
+    secondaryCta: '',
   },
   trustStrip: {
     line: 'Trusted by teams who need clarity',
     rowA: SPINE_TICKER_ROW_A,
     rowB: SPINE_TICKER_ROW_B,
   },
-  value: SPINE_VALUE,
-  guide: SPINE_GUIDE,
-  plan: SPINE_PLAN,
+  value: {
+    headline: '',
+    body: '',
+  },
+  guide: {
+    eyebrow: 'Your director',
+    headline: "Hi, I'm Dan.",
+    body: "If you like what you see here, I'm the person you'll work with, helping you distil your product down to what matters and turn that value into a clear story people understand.",
+    name: 'Daniel Neale',
+    role: 'Creative director, Motion Story',
+    photoSrc: '/daniel-neale.jpg',
+  },
+  plan: {
+    eyebrow: '',
+    headline: '',
+    steps: [],
+  },
   proof: {
     eyebrow: 'Selected work',
-    headline: 'Selected work.',
-    cases: SPINE_PROOF_EXPLAINER,
+    headline: '',
+    workLed: true,
+    weaves: [
+      {
+        after: 2,
+        headline: 'Product storytelling, not feature dumping.',
+        mark: 'feature dumping',
+        text: [
+          'I find the simple idea underneath it.',
+          'What it helps someone do, and why that matters.',
+        ],
+      },
+      {
+        after: 5,
+        quote: {
+          text: TESTIMONIAL_METHOD.quote,
+          name: TESTIMONIAL_METHOD.name,
+          company: TESTIMONIAL_METHOD.company,
+        },
+      },
+      {
+        after: 8,
+        headline: 'Hundreds of product videos. One goal: make people get it.',
+        mark: 'get it',
+        text: "I've created hundreds of product demos, SaaS explainers and technology videos. I understand UI, product messaging and how to simplify complicated software without making it feel simplistic.",
+      },
+      {
+        after: 11,
+        headline: 'Make the value obvious.',
+        mark: 'value obvious',
+        text: [
+          'Not a tour of everything it can do.',
+          'The story someone will actually want to follow.',
+        ],
+      },
+      {
+        after: 12,
+        headline: 'Got a product that needs a better story?',
+        mark: 'better story',
+        text: "Tell me what you're trying to explain. I'll help you work out the clearest way to turn it into a film people understand.",
+      },
+    ],
+    cases: productCases,
   },
   stakes: {
-    eyebrow: 'What’s at stake',
-    headline: 'The first film buyers see sets the ceiling for trust.',
+    eyebrow: '',
+    headline: '',
     body: '',
   },
   success: {
-    headline: SPINE_CLOSE.headline,
-    body: 'One story. The buyer already gets it.',
+    headline: '',
+    body: '',
   },
-  testimonial: TESTIMONIAL_ACODIS,
+  testimonial: TESTIMONIAL_METHOD,
   faq: {
-    items: [
-      {
-        question: 'What is an explainer video?',
-        answer:
-          'A short animated film that makes a complex product or idea obvious. Built for pages, decks, and sales.',
-      },
-      ...SPINE_CORE_FAQS,
-    ],
+    items: [],
   },
   finalCta: {
     headline: SPINE_CLOSE.headline,

@@ -82,6 +82,7 @@ http://motionstory.com.au/*        https://motionstory.com.au/:splat   301!
 # ───────────────────────────────────────────────────
 /landing-page-design-animation/              /saas-explainer-videos/  301!
 # /landing-page-explainer-video-01/ is a live Ads landing (do not redirect)
+# /landing-page-product-video-01/ is the current product-video URL for that page
 /animation-production-company-2/             /explainer-videos/  301!
 /landing-page-animated-video-services-01/    /saas-explainer-videos/  301!
 # /landing-animated-product-demos-01/ is a live Ads landing (do not redirect)

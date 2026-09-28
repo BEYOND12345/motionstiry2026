@@ -64,7 +64,7 @@ export default function WorkCard({
           <a href={href} className="work-card-meta">
             <div className="min-w-0">
               <Heading className="work-card-client">{client}</Heading>
-              <p className="work-card-desc">{description}</p>
+              {description ? <p className="work-card-desc">{description}</p> : null}
             </div>
             {meta ? <span className="work-card-aside">{meta}</span> : null}
           </a>

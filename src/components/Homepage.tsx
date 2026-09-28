@@ -603,10 +603,10 @@ export default function Homepage() {
               <p className="font-display text-[1.4rem] font-medium tracking-tight leading-[1.25] sm:text-[1.65rem] md:text-[1.85rem] md:leading-[1.2]">
                 {HOME_APPROACH.lead}
               </p>
-              <p className="mt-5 text-body text-[1.0625rem] leading-[1.65] text-black/70 sm:mt-6 sm:text-[1.05rem]">
+              <p className="mt-5 text-body text-[1.0625rem] leading-[1.5] text-[#444] sm:text-[1.05rem]">
                 {HOME_APPROACH.body}
               </p>
-              <p className="mt-4 text-body text-[1.0625rem] leading-[1.65] text-black/70 sm:mt-5 sm:text-[1.05rem]">
+              <p className="mt-[0.3rem] text-body text-[1.0625rem] leading-[1.5] text-[#444] sm:text-[1.05rem]">
                 {HOME_APPROACH.shape}
               </p>
             </Beat>
@@ -615,7 +615,7 @@ export default function Homepage() {
                 {HOME_MAKE_LEAD}
               </p>
               <FormatList />
-              <p className="mt-8 text-body text-[1.05rem] leading-[1.65] text-black/70">
+              <p className="mt-8 text-body text-[1.0625rem] leading-[1.5] text-[#444]">
                 {HOME_MAKE_CLOSE}
               </p>
             </div>
@@ -626,10 +626,10 @@ export default function Homepage() {
               <p className="font-display text-[1.45rem] font-medium tracking-tight leading-[1.2] sm:text-[1.85rem] md:text-[2.1rem] md:leading-[1.15]">
                 {HOME_CLOSE.lead}
               </p>
-              <p className="mt-5 text-body text-[1.0625rem] leading-[1.65] text-black/70 sm:text-[1.05rem]">
+              <p className="mt-5 text-body text-[1.0625rem] leading-[1.5] text-[#444] sm:text-[1.05rem]">
                 {HOME_CLOSE.body}
               </p>
-              <p className="mt-4 text-body text-[1.0625rem] leading-[1.65] text-black/70 sm:mt-5 sm:text-[1.05rem]">
+              <p className="mt-[0.3rem] text-body text-[1.0625rem] leading-[1.5] text-[#444] sm:text-[1.05rem]">
                 {HOME_CLOSE.close}
               </p>
               <div className="mt-8">
