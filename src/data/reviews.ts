@@ -65,17 +65,17 @@ export const GOOGLE_REVIEWS: GoogleReview[] = [
   {
     name: 'Emiliano Harrison',
     quote:
-      "Motion Story's work was truly exceptional — both highly creative and effective.",
+      "Motion Story's work was truly exceptional. Both highly creative and effective.",
   },
   {
     name: 'Mason Allport',
     quote:
-      "In short, Motion Story's work was outstanding — very creative and effective.",
+      "In short, Motion Story's work was outstanding. Very creative and effective.",
   },
   {
     name: 'Pulseee',
     quote:
-      "Motion Story's delivery was absolutely impeccable — highly creative and efficient.",
+      "Motion Story's delivery was absolutely impeccable. Highly creative and efficient.",
   },
 ];
 

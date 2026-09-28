@@ -69,7 +69,7 @@ export const productDemoVideosLanding: SpineLandingConfig = {
       {
         question: 'How is this different from SaaS motion graphics?',
         answer:
-          'A product demo shows a physical product in action. SaaS motion graphics tell the software story — UI, workflows, and why it matters.',
+          'A product demo shows a physical product in action. SaaS motion graphics tell the software story. UI, workflows, and why it matters.',
       },
       ...SPINE_CORE_FAQS,
       {

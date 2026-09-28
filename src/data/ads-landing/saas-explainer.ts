@@ -11,7 +11,7 @@ export const saasExplainerLanding: AdsLandingConfig = {
   serviceKeyword: 'SaaS Motion Graphics',
   h1: 'Motion Graphics For Complex Products',
   subhead:
-    'Work directly with the creative director. 20 years of senior craft — no account managers, no handoffs, no juniors.',
+    'Work directly with the creative director. 20 years of senior craft. No account managers, no handoffs, no juniors.',
   heroVimeoId: '879242129',
   heroVideoTitle: 'SaaS motion graphics showreel',
   projects: [

@@ -5,12 +5,12 @@ export const saasVerticalLanding: VerticalLandingConfig = {
   seo: {
     titleTag: 'SaaS Motion Graphic Explainer Videos | Motion Story',
     metaDescription:
-      'SaaS motion graphic explainer videos for new products. Product on screen, story first — even from a Figma. Work directly with Dan Neale.',
+      'SaaS motion graphic explainer videos for new products. Product on screen, story first, even from a Figma. Work directly with Dan Neale.',
     canonicalPath: '/saas-explainer-videos/',
   },
   eyebrow: 'SaaS motion graphic explainer videos',
   headline: ['SaaS motion graphic', 'explainer videos.'],
-  lede: 'Make the software obvious before login. Product on screen — even from a Figma or a napkin brief — so people get it before they log in.',
+  lede: 'Make the software obvious before login. Product on screen, even from a Figma or a napkin brief, so people get it before they log in.',
   heroVideo: {
     vimeoId: '866174146',
     title: 'Trudi / AI Property Management',
@@ -43,7 +43,7 @@ export const saasVerticalLanding: VerticalLandingConfig = {
   cases: [
     verticalCase('atomic', {
       tags: 'Software, SaaS, explainer, in-app messaging',
-      body: 'Atomic needed an explainer that showcased the distinctiveness of their in-app messaging — how companies convey valuable, specific information instead of bombarding users with spam.',
+      body: 'Atomic needed an explainer that showcased the distinctiveness of their in-app messaging. How companies convey valuable, specific information instead of bombarding users with spam.',
     }),
     verticalCase('wipster', {
       tags: 'Software, SaaS, explainer, feedback tool',
@@ -55,7 +55,7 @@ export const saasVerticalLanding: VerticalLandingConfig = {
     }),
     verticalCase('infoview', {
       tags: 'SaaS, expense management, explainer',
-      body: 'Digitising expense management for modern teams — receipt capture to approval and reporting, without the paper trail.',
+      body: 'Digitising expense management for modern teams. Receipt capture to approval and reporting, without the paper trail.',
     }),
     verticalCase('oovvuu', {
       tags: 'Software, SaaS, explainer, demo',
@@ -68,7 +68,7 @@ export const saasVerticalLanding: VerticalLandingConfig = {
   ],
   value: {
     headline: 'Make a new product make sense.',
-    body: 'I unscramble software that does not explain itself yet — product on screen, story first — so founders and product teams can launch without a login or a live demo.',
+    body: 'I unscramble software that does not explain itself yet. Product on screen, story first, so founders and product teams can launch without a login or a live demo.',
   },
   benefits: {
     headline: 'Operate effectively',
@@ -87,7 +87,7 @@ export const saasVerticalLanding: VerticalLandingConfig = {
     {
       question: 'What is a SaaS motion graphic explainer video?',
       answer:
-        'A 60–90 second film that makes software obvious. Product on screen, UI in motion, story first. Creative directors brief it as a motion graphic explainer. It is not a generic 2D character explainer and not a raw screen recording.',
+        'A 60 to 90 second film that makes software obvious. Product on screen, UI in motion, story first. Creative directors brief it as a motion graphic explainer. It is not a generic 2D character explainer and not a raw screen recording.',
     },
     {
       question: 'What makes a good software demo?',
@@ -97,7 +97,7 @@ export const saasVerticalLanding: VerticalLandingConfig = {
     {
       question: 'What type of animation works best for software?',
       answer:
-        'Motion graphic-styled films in 2D or 3D work best — they represent product features clearly without drowning in UI chrome.',
+        'Motion graphic styled films in 2D or 3D work best. They represent product features clearly without drowning in UI chrome.',
     },
     {
       question: 'How long does it take?',
@@ -117,12 +117,12 @@ export const saasVerticalLanding: VerticalLandingConfig = {
     {
       question: 'Who will I be working with?',
       answer:
-        'A small studio. You work hands-on with me — the director — throughout the creative process. No account-manager layer.',
+        'A small studio. You work hands on with me, the director, throughout the creative process. No account-manager layer.',
     },
     {
       question: 'How much does it cost?',
       answer:
-        'From $5,000. Most projects land around $10,000–$15,000. Fixed quote after we understand the brief.',
+        'From $5,000. Most projects land around $10,000 to $15,000. Fixed quote after we understand the brief.',
     },
   ],
   links: [

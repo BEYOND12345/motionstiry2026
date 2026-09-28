@@ -8,7 +8,7 @@ export function getAdsPortfolio(featured: AdsProject[] = []): AdsProject[] {
     client: p.client,
     result: p.description,
     vimeoId: p.vimeoId,
-    thumbnailAlt: `${p.client} — ${p.title}`,
+    thumbnailAlt: `${p.client}. ${p.title}`,
   }));
 
   return [...featured, ...rest];

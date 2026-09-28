@@ -6,11 +6,11 @@ export const productDemoLanding: AdsLandingConfig = {
   path: '/product-demo-videos/',
   title: 'Product Demo Videos | Motion Story',
   description:
-    'Animated product demo videos that show your software in action — no login required. Built for landing pages, sales decks, and onboarding.',
+    'Animated product demo videos that show your software in action. No login required. Built for landing pages, sales decks, and onboarding.',
   serviceKeyword: 'Product Demo Videos',
   h1: 'Product Demo Videos That Actually Explain It',
   subhead:
-    'Work directly with the creative director. 20 years of senior craft — no account managers, no handoffs, no juniors.',
+    'Work directly with the creative director. 20 years of senior craft. No account managers, no handoffs, no juniors.',
   heroVimeoId: '866174146',
   heroVideoTitle: 'Product demo showreel',
   projects: [

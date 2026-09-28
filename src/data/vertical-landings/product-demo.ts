@@ -10,12 +10,12 @@ export const productDemoVerticalLanding: VerticalLandingConfig = {
   seo: {
     titleTag: 'Motion Graphic Product Explainer Videos | Motion Story',
     metaDescription:
-      'Motion graphic product explainer videos that show the software working. UI on screen — more than a screen recording. Dan Neale, Motion Story.',
+      'Motion graphic product explainer videos that show the software working. UI on screen. More than a screen recording. Dan Neale, Motion Story.',
     canonicalPath: '/product-demo-videos/',
   },
   eyebrow: 'Motion graphic product explainer videos',
   headline: ['Motion graphic product', 'explainer videos.'],
-  lede: 'Show the product working. UI on screen, workflow clear — play, understand, decide. More than a screen recording.',
+  lede: 'Show the product working. UI on screen, workflow clear. Play, understand, decide. More than a screen recording.',
   heroVideo: {
     vimeoId: '557884851',
     title: 'Method / Beautiful Bin System',
@@ -30,7 +30,7 @@ export const productDemoVerticalLanding: VerticalLandingConfig = {
     }),
     verticalCase('oartech', {
       tags: 'Animated product demo, health & fitness',
-      body: "Oartech couldn't demo its advanced rowing machine online, so we designed an animation that shows the product in use — and where it beats the competition for a safer workout.",
+      body: "Oartech couldn't demo its advanced rowing machine online, so we designed an animation that shows the product in use, and where it beats the competition for a safer workout.",
     }),
     verticalCase('propspeed', {
       tags: 'Animated product demo, marine',
@@ -42,16 +42,16 @@ export const productDemoVerticalLanding: VerticalLandingConfig = {
     }),
     verticalCase('method-product', {
       tags: 'Product explainer, workplace',
-      body: "A product-level walkthrough of Method's bin system in real workplaces — practical clarity that complements the brand film.",
+      body: "A product-level walkthrough of Method's bin system in real workplaces. Practical clarity that complements the brand film.",
     }),
     verticalCase('heyyou', {
       tags: 'App demo, food ordering',
-      body: 'A product story for the Hey You ordering app — clear enough for a cold visitor, sharp enough for growth teams.',
+      body: 'A product story for the Hey You ordering app. Clear enough for a cold visitor, sharp enough for growth teams.',
     }),
   ],
   value: {
     headline: 'Show the product working.',
-    body: 'A demo assumes people already care. I put the product on screen so they can see the workflow — not a feature list, not a raw screen grab.',
+    body: 'A demo assumes people already care. I put the product on screen so they can see the workflow, not a feature list, not a raw screen grab.',
   },
   benefits: {
     headline: 'Show everyone',
@@ -70,7 +70,7 @@ export const productDemoVerticalLanding: VerticalLandingConfig = {
     {
       question: 'What is a motion graphic product explainer video?',
       answer:
-        'A film that shows the product working — real or stylised UI — so people already evaluating you can see the workflow. Different from a SaaS motion graphic explainer, which tells the why when the product is new or the UI is unfinished. Many teams need both.',
+        'A film that shows the product working, real or stylised UI, so people already evaluating you can see the workflow. Different from a SaaS motion graphic explainer, which tells the why when the product is new or the UI is unfinished. Many teams need both.',
     },
     ...VERTICAL_CORE_FAQS,
   ],

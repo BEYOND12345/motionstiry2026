@@ -15,7 +15,7 @@ export const causesVerticalLanding: VerticalLandingConfig = {
   },
   eyebrow: 'Causes & nonprofits',
   headline: ['Stories for charities', '& nonprofits.'],
-  lede: 'Films that get to the heart of the problem — who you help, why it matters, and why people should get behind you.',
+  lede: 'Films that get to the heart of the problem. Who you help, why it matters, and why people should get behind you.',
   heroVideo: {
     vimeoId: '540393117',
     title: 'United Nations / Plastic Waste Data',
@@ -26,7 +26,7 @@ export const causesVerticalLanding: VerticalLandingConfig = {
   cases: [
     verticalCase('redcross', {
       tags: 'Nonprofit, Covid, explainer',
-      body: 'IFRC workers could see COVID-19 vaccines were not reaching remote communities. We framed the story like a wildlife documentary — humans in the spotlight — so the equity message could not be ignored.',
+      body: 'IFRC workers could see COVID-19 vaccines were not reaching remote communities. We framed the story like a wildlife documentary, humans in the spotlight, so the equity message could not be ignored.',
     }),
     verticalCase('rspca-giving', {
       tags: 'Charity, animals, explainer, character animation',
@@ -38,7 +38,7 @@ export const causesVerticalLanding: VerticalLandingConfig = {
     }),
     verticalCase('rspca-cats', {
       tags: 'Charity, cats, explainer, character animation',
-      body: 'Changing how pet owners care for cats is hard. We told it from a cat lover’s point of view — dangers of roaming, and how cats thrive indoors and in enclosures.',
+      body: 'Changing how pet owners care for cats is hard. We told it from a cat lover’s point of view. Dangers of roaming, and how cats thrive indoors and in enclosures.',
     }),
     verticalCase('acir', {
       tags: 'Food waste, data storytelling',
@@ -46,12 +46,12 @@ export const causesVerticalLanding: VerticalLandingConfig = {
     }),
     verticalCase('nsw-gov', {
       tags: 'Government, reform, explainer',
-      body: 'A complex reform made clear for a huge public audience — social-ready and praised for how clear the message is.',
+      body: 'A complex reform made clear for a huge public audience. Social ready and praised for how clear the message is.',
     }),
   ],
   value: {
     headline: 'Create an emotion.',
-    body: 'With an emotive visual story, you can truly connect with individuals and bring about collective action — and show donors how their support is put to good use.',
+    body: 'With an emotive visual story, you can truly connect with individuals and bring about collective action, and show donors how their support is put to good use.',
   },
   benefits: {
     headline: 'Create positive change',

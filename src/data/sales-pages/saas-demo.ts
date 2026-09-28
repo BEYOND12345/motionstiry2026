@@ -44,7 +44,7 @@ export const saasDemoSalesPage = {
     {
       film: {
         client: 'Trudi',
-        context: 'AI property management — the product story without a login.',
+        context: 'AI property management. The product story without a login.',
         vimeoId: '866174146',
         link: '/casestudy/property-management-explainer-video/',
       },
@@ -68,13 +68,13 @@ export const saasDemoSalesPage = {
     {
       film: {
         client: 'Acodis',
-        context: 'AI document processing — still their strongest brand asset.',
+        context: 'AI document processing. Still their strongest brand asset.',
         vimeoId: '580088673',
         link: '/casestudy/acodis/',
       },
       stat: {
         value: '62%',
-        label: 'completion on recent work — about double typical branded video',
+        label: 'completion on recent work, about double typical branded video',
       },
     },
   ],
@@ -107,13 +107,13 @@ export const saasDemoSalesPage = {
       name: 'Micro',
       price: 'From $2,000',
       job: 'Feature drops & paid social',
-      detail: '30–60s screen capture, AI voiceover, fast turnaround.',
+      detail: '30 to 60s screen capture, AI voiceover, fast turnaround.',
     },
     {
       name: 'Walkthrough',
-      price: '$10,000 – $15,000',
+      price: '$10,000 to $15,000',
       job: 'Sales & product pages',
-      detail: '60–120s rebuilt UI, motion graphics, human voiceover.',
+      detail: '60 to 120s rebuilt UI, motion graphics, human voiceover.',
     },
     {
       name: 'Flagship',
@@ -123,7 +123,7 @@ export const saasDemoSalesPage = {
     },
   ],
 
-  ship: '2–4 weeks from align to ship.',
+  ship: '2 to 4 weeks from align to ship.',
   close: 'Book a strategy call.',
   closeLede: 'We’ll map which tier fits before you spend a dollar.',
 
@@ -132,7 +132,7 @@ export const saasDemoSalesPage = {
   moreWork: [
     {
       client: 'Wipster',
-      context: 'Video feedback — connect the dots across the product.',
+      context: 'Video feedback. Connect the dots across the product.',
       vimeoId: '648360270',
       link: '/casestudy/wipster-product-overview/',
     },
@@ -144,7 +144,7 @@ export const saasDemoSalesPage = {
     },
     {
       client: 'Mosaic',
-      context: 'Strategic data planning — aha moment, fast.',
+      context: 'Strategic data planning. Aha moment, fast.',
       vimeoId: '879242129',
       link: '/casestudy/mosaic-platform-explained/',
     },

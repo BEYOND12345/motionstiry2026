@@ -61,7 +61,7 @@ export function getCaseStudyLane(project: Project): CaseStudyLane {
 
 export function getCaseStudyMetaTitle(project: Project) {
   const { jobLabel } = getCaseStudyLane(project);
-  return `${project.title} — ${jobLabel} | Motion Story`;
+  return `${project.title}. ${jobLabel} | Motion Story`;
 }
 
 export function getCaseStudyMetaDescription(project: Project) {

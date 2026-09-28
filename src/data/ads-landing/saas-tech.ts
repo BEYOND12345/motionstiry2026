@@ -4,12 +4,12 @@ export const saasTechLanding: AdsLandingConfig = {
   path: '/saas-tech/',
   title: 'Motion Design for SaaS & Tech | Motion Story',
   description:
-    'Explainer and product demo videos for SaaS and tech. Work directly with the creative director — senior craft, no handoffs.',
+    'Explainer and product demo videos for SaaS and tech. Work directly with the creative director. Senior craft, no handoffs.',
   serviceKeyword: 'Motion Design for SaaS',
 
   h1: 'Motion Design For SaaS & Tech',
   subhead:
-    'Work directly with the creative director. 20 years of senior craft — no account managers, no handoffs, no juniors.',
+    'Work directly with the creative director. 20 years of senior craft. No account managers, no handoffs, no juniors.',
 
   bookingUrl: '/book/',
   bookingLabel: 'Book a 20-minute project call',
@@ -38,11 +38,11 @@ export const saasTechLanding: AdsLandingConfig = {
   ],
 
   coreSell:
-    "I won't just take your script. I'll rewrite it, storyboard it, get the timings right, and make sure the hooks land — built around how people actually watch. One person owns the whole thing, concept to delivery.",
+    "I won't just take your script. I'll rewrite it, storyboard it, get the timings right, and make sure the hooks land, built around how people actually watch. One person owns the whole thing, concept to delivery.",
   proofPoints: [
     {
       title: 'Original ideation',
-      body: 'From the ground up — not a brief translated into motion, a story built to land.',
+      body: 'From the ground up. Not a brief translated into motion, a story built to land.',
     },
     {
       title: 'Narrative structure',
@@ -61,7 +61,7 @@ export const saasTechLanding: AdsLandingConfig = {
   middleGround: {
     leftLabel: 'Not an agency.',
     rightLabel: 'Not a freelancer.',
-    body: 'Big-studio thinking without the overheads and layers. The person you brief is the person who makes it. Your budget goes further when one expert owns the project — ideation through delivery.',
+    body: 'Big-studio thinking without the overheads and layers. The person you brief is the person who makes it. Your budget goes further when one expert owns the project, ideation through delivery.',
   },
 
   projects: [
@@ -77,7 +77,7 @@ export const saasTechLanding: AdsLandingConfig = {
     },
     {
       client: 'Acodis',
-      result: '40,000 YouTube views — brand perception lift.',
+      result: '40,000 YouTube views. Brand perception lift.',
       vimeoId: '580088673',
     },
   ],
@@ -101,21 +101,21 @@ export const saasTechLanding: AdsLandingConfig = {
     {
       question: 'What do projects involve?',
       answer:
-        'A focused project call, then I take ownership of the story — rewrite and structure the script, storyboard, design, and animate. Scope is set around craft and clarity, not a race to the cheapest frame.',
+        'A focused project call, then I take ownership of the story. Rewrite and structure the script, storyboard, design, and animate. Scope is set around craft and clarity, not a race to the cheapest frame.',
     },
     {
       question: 'Who will I work with?',
       answer:
-        'Me. Dan Neale — creative director and maker. No account managers, no handoffs, no juniors on your project.',
+        'Me. Dan Neale, creative director and maker. No account managers, no handoffs, no juniors on your project.',
     },
     {
       question: 'Do you work with creative studios?',
       answer:
-        'Yes. Senior motion specialist support — white label or collaborative. You keep the client relationship; I own the craft.',
+        'Yes. Senior motion specialist support, white label or collaborative. You keep the client relationship; I own the craft.',
     },
     {
       question: 'Are you hiring?',
-      answer: 'No — this page is for teams commissioning work.',
+      answer: 'No. This page is for teams commissioning work.',
     },
   ],
 

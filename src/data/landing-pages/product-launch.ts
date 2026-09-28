@@ -17,7 +17,7 @@ export const productLaunchLanding: SpineLandingConfig = {
   seo: {
     titleTag: 'Product Launch Videos for SaaS | Motion Story',
     metaDescription:
-      'Product launch videos for new SaaS products. Motion graphics for the moment you ship — even before the UI is ready. Work directly with Dan Neale.',
+      'Product launch videos for new SaaS products. Motion graphics for the moment you ship, even before the UI is ready. Work directly with Dan Neale.',
     canonicalPath: '/product-launch-video/',
   },
   hero: {
@@ -59,7 +59,7 @@ export const productLaunchLanding: SpineLandingConfig = {
   },
   success: {
     headline: SPINE_CLOSE.headline,
-    body: 'One story. Ready for launch day. For the wider product film — not just launch week — see SaaS motion graphics.',
+    body: 'One story. Ready for launch day. For the wider product film, not just launch week, see SaaS motion graphics.',
   },
   testimonial: TESTIMONIAL_NSW_GOV,
   faq: {
@@ -67,7 +67,7 @@ export const productLaunchLanding: SpineLandingConfig = {
       {
         question: 'What is a product launch video?',
         answer:
-          'A film built for the moment you ship: the hook, the story, and proof sales can keep using after launch week. It is a SaaS motion graphics piece timed to launch — not a separate craft. The main offer lives at /saas-explainer-videos/.',
+          'A film built for the moment you ship: the hook, the story, and proof sales can keep using after launch week. It is a SaaS motion graphics piece timed to launch, not a separate craft. The main offer lives at /saas-explainer-videos/.',
       },
       ...SPINE_CORE_FAQS,
     ],

@@ -10,12 +10,12 @@ export const productLaunchVerticalLanding: VerticalLandingConfig = {
   seo: {
     titleTag: 'Product Launch Videos for SaaS | Motion Story',
     metaDescription:
-      'Product launch videos for new SaaS products. Motion graphics for the moment you ship — even before the UI is ready. Work directly with Dan Neale.',
+      'Product launch videos for new SaaS products. Motion graphics for the moment you ship, even before the UI is ready. Work directly with Dan Neale.',
     canonicalPath: '/product-launch-video/',
   },
   eyebrow: 'Product launch videos for SaaS',
   headline: ['Product launch videos', 'for SaaS.'],
-  lede: 'The first film buyers see. One story, timed to launch day — even before the UI is ready. Sales can keep using it after week one.',
+  lede: 'The first film buyers see. One story, timed to launch day, even before the UI is ready. Sales can keep using it after week one.',
   heroVideo: {
     vimeoId: '863428533',
     title: 'Trusyft / Product Promo',
@@ -26,7 +26,7 @@ export const productLaunchVerticalLanding: VerticalLandingConfig = {
   cases: [
     verticalCase('eluse-krue', {
       tags: 'Launch, beauty, science',
-      body: 'A scientific product story told through the professor’s eyes — every ingredient gets its moment, ready for the campaign that ships with the product.',
+      body: 'A scientific product story told through the professor’s eyes. Every ingredient gets its moment, ready for the campaign that ships with the product.',
     }),
     verticalCase('bark-busters', {
       tags: 'Launch, character, training',
@@ -51,7 +51,7 @@ export const productLaunchVerticalLanding: VerticalLandingConfig = {
   ],
   value: {
     headline: 'Ready for launch day.',
-    body: 'The first film buyers see sets the ceiling for trust. I time the story to the window you actually have — not a production maze.',
+    body: 'The first film buyers see sets the ceiling for trust. I time the story to the window you actually have, not a production maze.',
   },
   benefits: {
     headline: 'What a launch film has to do',
@@ -70,7 +70,7 @@ export const productLaunchVerticalLanding: VerticalLandingConfig = {
     {
       question: 'What is a product launch video?',
       answer:
-        'A film built for the moment you ship: the hook, the story, and proof sales can keep using after launch week. It is a motion graphics piece timed to launch — not a separate craft.',
+        'A film built for the moment you ship: the hook, the story, and proof sales can keep using after launch week. It is a motion graphics piece timed to launch, not a separate craft.',
     },
     ...VERTICAL_CORE_FAQS,
   ],

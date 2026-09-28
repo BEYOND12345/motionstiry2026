@@ -176,7 +176,7 @@ function Lightbox({
           className="absolute inset-0 h-full w-full"
           allow="autoplay; fullscreen; picture-in-picture"
           allowFullScreen
-          title={`${project.client} — ${project.oneLineResult}`}
+          title={`${project.client}. ${project.oneLineResult}`}
         />
       </div>
     </div>
@@ -222,7 +222,7 @@ function ContactForm({
       className="mt-14 scroll-mt-28 space-y-10 border-t border-white/15 pt-12 sm:mt-16 sm:pt-14 md:scroll-mt-32"
     >
       <input type="hidden" name="_next" value={THANK_YOU_URL} />
-      <input type="hidden" name="_subject" value={`Ads brief — ${config.slug}`} />
+      <input type="hidden" name="_subject" value={`Ads brief. ${config.slug}`} />
 
       {error && (
         <p role="alert" className="text-sm text-red-300">
@@ -613,7 +613,7 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
           <p className="mt-4 text-[11px] uppercase tracking-[0.14em] text-black/40">
             Featured on Behance · Clutch-awarded
           </p>
-          <p className="mt-2 text-[13px] text-black/40">Not currently hiring — briefs only.</p>
+          <p className="mt-2 text-[13px] text-black/40">Not currently hiring. Briefs only.</p>
         </div>
       </footer>
 

@@ -15,7 +15,7 @@ export const startupsVerticalLanding: VerticalLandingConfig = {
   },
   eyebrow: 'Startups',
   headline: ['Get the idea across', 'before the deck.'],
-  lede: 'Make the idea clear fast — for investors, customers, and anyone who needs to get it before they buy in.',
+  lede: 'Make the idea clear fast, for investors, customers, and anyone who needs to get it before they buy in.',
   heroVideo: {
     vimeoId: '818912051',
     title: 'ARK / Product Concept',
@@ -38,15 +38,15 @@ export const startupsVerticalLanding: VerticalLandingConfig = {
     }),
     verticalCase('joineree', {
       tags: 'Start-up, recruitment, explainer',
-      body: 'Joineree matches the right people to the right workplace — we created focused messages for employers and employees, with a distinct animation style for a forward-thinking service.',
+      body: 'Joineree matches the right people to the right workplace. We created focused messages for employers and employees, with a distinct animation style for a forward thinking service.',
     }),
     verticalCase('trusyft', {
       tags: 'Start-up, product promo',
-      body: 'A product promotion brought to life with cinematic animation — the first film a new product could send.',
+      body: 'A product promotion brought to life with cinematic animation. The first film a new product could send.',
     }),
     verticalCase('uclusion', {
       tags: 'Start-up, product decisions',
-      body: 'A software modification platform with benefits for users and developers — told as two stories, side by side.',
+      body: 'A software modification platform with benefits for users and developers, told as two stories, side by side.',
     }),
   ],
   value: {
@@ -70,7 +70,7 @@ export const startupsVerticalLanding: VerticalLandingConfig = {
     {
       question: 'What is the best fit for startups?',
       answer:
-        'Homepage heroes, waitlist videos, investor updates, and the first product story that has to work cold — before a login.',
+        'Homepage heroes, waitlist videos, investor updates, and the first product story that has to work cold, before a login.',
     },
     ...VERTICAL_CORE_FAQS,
   ],

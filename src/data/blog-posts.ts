@@ -13,15 +13,15 @@ export interface BlogPost {
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "built-side-product-running-motion-studio",
-    title: "I Built a Side Product While Running a Motion Studio — Here’s Why",
+    title: "I Built a Side Product While Running a Motion Studio. Here’s Why",
     date: "2026-08-02",
     category: "Thought Leadership",
     tags: ["side product", "SMASH Invoices", "product design", "voice invoicing", "Motion Story"],
     excerpt:
-      "I’m Dan from Motion Story. By day I animate SaaS products. On the side I still run Good Hands Handyman — and I built SMASH so I could send a quote or invoice by voice before I left the job.",
+      "I’m Dan from Motion Story. By day I animate SaaS products. On the side I still run Good Hands Handyman, and I built SMASH so I could send a quote or invoice by voice before I left the job.",
     content: `Most days I’m in the studio explaining other people’s software.
 
-That’s Motion Story. [Product demos](/product-demo-videos/), [platform explainers](/saas-explainer-videos/), onboarding animation — the work of making a complex SaaS idea feel simple in 60–90 seconds. Byron Bay. Clients from startups through to bigger tech brands. Hands on the timeline, not the tools.
+That’s Motion Story. [Product demos](/product-demo-videos/), [platform explainers](/saas-explainer-videos/), onboarding animation. The work of making a complex SaaS idea feel simple in 60 to 90 seconds. Byron Bay. Clients from startups through to bigger tech brands. Hands on the timeline, not the tools.
 
 Except I still have days on the tools too.
 
@@ -33,7 +33,7 @@ And it’s why SMASH exists.
 
 On handyman jobs, the work wasn’t the hard bit. The admin was.
 
-Customer standing there, wanting a number. I’d do the “I’ll email you a quote tonight” thing. Drive to the next job. Get home tired. Open the laptop. Stare at the invoice app. Typing has never been my friend — I’m dyslexic, and sitting down to write line items always felt heavier than the job itself.
+Customer standing there, wanting a number. I’d do the “I’ll email you a quote tonight” thing. Drive to the next job. Get home tired. Open the laptop. Stare at the invoice app. Typing has never been my friend. I’m dyslexic, and sitting down to write line items always felt heavier than the job itself.
 
 By the time I sent the quote, someone else had already sent theirs.
 
@@ -45,9 +45,9 @@ Like a lot of people, I asked ChatGPT to help me estimate faster.
 
 The wording was fine. The money wasn’t.
 
-It guessed rates. It didn’t know my call-out, my travel, my material markup, or what I actually charge in this area. For a handyman business, wrong prices aren’t a cute AI demo — they’re how you lose money or look unserious.
+It guessed rates. It didn’t know my call-out, my travel, my material markup, or what I actually charge in this area. For a handyman business, wrong prices aren’t a cute AI demo. They’re how you lose money or look unserious.
 
-I didn’t need prettier paragraphs. I needed my catalog — my labour, my fees, my materials — spoken on site, checked, and sent before I left the driveway.
+I didn’t need prettier paragraphs. I needed my catalog. My labour, my fees, my materials, spoken on site, checked, and sent before I left the driveway.
 
 ## So I built the thing I actually needed
 
@@ -65,7 +65,7 @@ If you want the longer founder version, it’s here: [Meet the founder](https://
 
 Because the through-line isn’t “tradie tips.” It’s product.
 
-I spend my studio hours making other companies’ software make sense on screen. SMASH is the product I made when the admin in my own trade business wouldn’t. Same obsession: strip the friction until the story is obvious — talk, check, send.
+I spend my studio hours making other companies’ software make sense on screen. SMASH is the product I made when the admin in my own trade business wouldn’t. Same obsession: strip the friction until the story is obvious. Talk, check, send.
 
 I’m not quitting Motion Story. Client work is still the day job. Good Hands keeps me honest about what field software feels like when your hands are dirty. SMASH is the side build that stuck because it solved a real hole in that week.
 
@@ -73,13 +73,13 @@ I’m not quitting Motion Story. Client work is still the day job. Good Hands ke
 
 If you quote and invoice for service work, and “I’ll do the paperwork tonight” keeps eating jobs or Sundays, that’s the problem I built for.
 
-Start here: [voice to invoice](https://smashinvoices.com/voice-invoicing) — send it before you leave the job.
+Start here: [voice to invoice](https://smashinvoices.com/voice-invoicing). Send it before you leave the job.
 
 I built it for me. Other people on the tools can use it too.
 
 ---
 
-Dan Neale — Motion Story · Good Hands Handyman · SMASH Invoices`,
+Dan Neale, Motion Story · Good Hands Handyman · SMASH Invoices`,
   },
   {
     slug: "why-motion-design-project-fails-before-animation",
@@ -394,7 +394,7 @@ That might sound like a lot until you compare it to the cost of a sales team spe
 
 If you're thinking about a SaaS explainer video, the first step is getting clear on what you need it to do. Is it a homepage hero? A sales tool? An onboarding asset? The answer shapes everything: length, tone, level of product detail, and where the video lives.
 
-I work with SaaS companies from seed stage to Series B, and the brief is always the same: take something complex and make it clear. See [SaaS motion graphics](/saas-explainer-videos/), [product demo videos](/product-demo-videos/), and [product launch videos](/product-launch-video/) — or [email me](mailto:daniel@motionstory.com.au?subject=SaaS%20motion%20graphics) to talk through the brief.
+I work with SaaS companies from seed stage to Series B, and the brief is always the same: take something complex and make it clear. See [SaaS motion graphics](/saas-explainer-videos/), [product demo videos](/product-demo-videos/), and [product launch videos](/product-launch-video/), or [email me](mailto:daniel@motionstory.com.au?subject=SaaS%20motion%20graphics) to talk through the brief.
 
 ---
 
@@ -534,7 +534,7 @@ Ask yourself three questions:
 - **Where will this video live?** Homepage explainers and product demos work best as animation. Social content and brand films can go either way. Testimonials should almost always be live action.
 - **What's my budget and timeline?** Animation is typically faster and more affordable. If you're working with a tight timeline or a modest budget, animation gives you more production value per dollar.
 
-For most businesses explaining a digital product or complex service, animation is the right starting point. It's what I specialise in at Motion Story — taking complex products and missions and making them clear through motion design. See [explainer videos](/explainer-videos/), [product demo videos](/product-demo-videos/), and [motion graphics](/motion-graphics/), or [email me](mailto:daniel@motionstory.com.au?subject=Animated%20vs%20live%20action) if you want help choosing.
+For most businesses explaining a digital product or complex service, animation is the right starting point. It's what I specialise in at Motion Story. Taking complex products and missions and making them clear through motion design. See [explainer videos](/explainer-videos/), [product demo videos](/product-demo-videos/), and [motion graphics](/motion-graphics/), or [email me](mailto:daniel@motionstory.com.au?subject=Animated%20vs%20live%20action) if you want help choosing.
 
 ---
 
@@ -1919,7 +1919,7 @@ Whether you choose a freelancer or a studio, the portfolio is what matters. Watc
 
 The best freelancer will outperform a mediocre studio, and vice versa. The model matters less than the talent and the fit.
 
-If you want to see how I work — somewhere between freelancer and studio — start with [SaaS motion graphic explainer videos](/saas-explainer-videos/) or [freelance motion designer](/motion-graphics/).
+If you want to see how I work, somewhere between freelancer and studio, start with [SaaS motion graphic explainer videos](/saas-explainer-videos/) or [freelance motion designer](/motion-graphics/).
 
 ## FAQ
 

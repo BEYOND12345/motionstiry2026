@@ -26,7 +26,7 @@ export const explainerVerticalLanding: VerticalLandingConfig = {
   cases: [
     verticalCase('united-nations', {
       tags: 'Cause, data',
-      body: 'Plastic waste in oceans — stark opener, then a clear path to action.',
+      body: 'Plastic waste in oceans. Stark opener, then a clear path to action.',
     }),
     verticalCase('bat-nav', {
       tags: 'Energy, platform',
@@ -38,7 +38,7 @@ export const explainerVerticalLanding: VerticalLandingConfig = {
     }),
     verticalCase('nsw-gov', {
       tags: 'Government, reform, explainer',
-      body: 'A complex reform made clear for a huge public audience — social-ready and praised for how clear the message is.',
+      body: 'A complex reform made clear for a huge public audience. Social ready and praised for how clear the message is.',
     }),
     verticalCase('ipa', {
       tags: 'Policy, advocacy, explainer',
@@ -46,12 +46,12 @@ export const explainerVerticalLanding: VerticalLandingConfig = {
     }),
     verticalCase('redcross', {
       tags: 'Nonprofit, Covid, explainer',
-      body: 'Vaccine equity told like a wildlife documentary — humans in the spotlight, so the message could not be ignored.',
+      body: 'Vaccine equity told like a wildlife documentary. Humans in the spotlight, so the message could not be ignored.',
     }),
   ],
   value: {
     headline: 'Make the complex watchable.',
-    body: 'What would normally take hours to explain can take 90 seconds — when the story is right and the craft is senior.',
+    body: 'What would normally take hours to explain can take 90 seconds, when the story is right and the craft is senior.',
   },
   benefits: {
     headline: 'What a strong explainer does',

@@ -10,7 +10,7 @@ export const cybersecurityVerticalLanding: VerticalLandingConfig = {
   },
   eyebrow: 'Cybersecurity motion graphic explainer videos',
   headline: ['Cybersecurity motion graphic', 'explainer videos.'],
-  lede: 'Make the threat, and the fix, visible. For platforms that security people understand and buyers do not. Threats, privacy, post-quantum readiness — told so a non-specialist can follow and act.',
+  lede: 'Make the threat, and the fix, visible. For platforms that security people understand and buyers do not. Threats, privacy, post quantum readiness, told so a non-specialist can follow and act.',
   heroVideo: {
     vimeoId: '1213121904',
     title: 'Nisient / Quantum Security',
@@ -43,7 +43,7 @@ export const cybersecurityVerticalLanding: VerticalLandingConfig = {
   cases: [
     verticalCase('shape-connect', {
       tags: 'Cyber security, SaaS, motion graphic explainer',
-      body: 'Website security visualised in real time — threats detected and neutralised, made accessible to non-technical decision makers.',
+      body: 'Website security visualised in real time. Threats detected and neutralised, made accessible to non-technical decision makers.',
     }),
     verticalCase('data-republic', {
       tags: 'Privacy, data security, motion graphic explainer',
@@ -51,24 +51,24 @@ export const cybersecurityVerticalLanding: VerticalLandingConfig = {
     }),
     verticalCase('cloud-trace', {
       tags: 'Cloud, security, SaaS explainer',
-      body: 'An abstract cloud product grounded in visuals that show what the platform actually does — clarity first, decoration second.',
+      body: 'An abstract cloud product grounded in visuals that show what the platform actually does. Clarity first, decoration second.',
     }),
     verticalCase('liquid-ai', {
       tags: 'AI, targeting, trust',
-      body: 'How the targeting actually works — an origin story that makes a technical system followable for a non-specialist buyer.',
+      body: 'How the targeting actually works. An origin story that makes a technical system followable for a non-specialist buyer.',
     }),
     verticalCase('aon-conversations', {
       tags: 'Risk, brand, conversations',
-      body: 'A clear conversation film for a global risk brand — the tone security buyers expect when the subject is serious.',
+      body: 'A clear conversation film for a global risk brand. The tone security buyers expect when the subject is serious.',
     }),
     verticalCase('acodis', {
       tags: 'AI, documents, data handling',
-      body: 'AI document extraction made layperson-clear — the data-handling story a security-conscious buyer still has to follow.',
+      body: 'AI document extraction made clear for a layperson. The data handling story a security conscious buyer still has to follow.',
     }),
   ],
   value: {
     headline: 'Name the risk. Then show the control.',
-    body: 'Security products fail in the first ten seconds when they open on a feature list. I start with the specific risk the buyer already feels, then show the mechanism — without talking down to the technical team in the room.',
+    body: 'Security products fail in the first ten seconds when they open on a feature list. I start with the specific risk the buyer already feels, then show the mechanism, without talking down to the technical team in the room.',
   },
   benefits: {
     headline: 'What a security explainer has to do',
@@ -92,12 +92,12 @@ export const cybersecurityVerticalLanding: VerticalLandingConfig = {
     {
       question: 'Can you explain a product the security team already understands?',
       answer:
-        'Yes. The film is usually for the buyer who is not the practitioner — a CISO briefing a board, a founder briefing a customer, a marketer briefing a category. The technical team still has to recognise their product in it.',
+        'Yes. The film is usually for the buyer who is not the practitioner. A CISO briefing a board, a founder briefing a customer, a marketer briefing a category. The technical team still has to recognise their product in it.',
     },
     {
       question: 'Is this a product demo or an explainer?',
       answer:
-        'If the audience does not yet believe they need the category, start with a motion graphic explainer. If they already care and need to see the console, that is a product explainer. Many cybersecurity briefs arrive as the first and should have been the second — or the other way around.',
+        'If the audience does not yet believe they need the category, start with a motion graphic explainer. If they already care and need to see the console, that is a product explainer. Many cybersecurity briefs arrive as the first and should have been the second, or the other way around.',
     },
     ...VERTICAL_CORE_FAQS,
   ],

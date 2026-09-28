@@ -64,8 +64,8 @@ function renderContent(content: string): string {
       .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
       .replace(/\*(.+?)\*/g, '<em>$1</em>')
       .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" class="border-b border-black/20 hover:border-black transition-colors">$1</a>')
-      .replace(/\u2013/g, '–')
-      .replace(/\u2014/g, '—');
+      .replace(/\u2013/g, ' to ')
+      .replace(/\u2014/g, '. ');
   }
 
   return content

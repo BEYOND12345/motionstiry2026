@@ -38,7 +38,7 @@ const primaryVideoData = {
   "@context": "https://schema.org",
   "@type": "VideoObject",
   "@id": `${canonicalUrl}#primary-video`,
-  "name": `${project.title} — ${lane.jobLabel}`,
+  "name": `${project.title}. ${lane.jobLabel}`,
   "description": `${project.details} ${lane.jobLabel} by Dan Neale, Motion Story.`,
   "thumbnailUrl": vimeoPosterAbsoluteUrl(project.vimeoId),
   "contentUrl": `https://vimeo.com/${project.vimeoId}`,
@@ -136,7 +136,7 @@ const breadcrumbData = {
 const creativeWorkData = {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  "name": `${project.title} — ${lane.jobLabel}`,
+  "name": `${project.title}. ${lane.jobLabel}`,
   "description": `${project.details} Made by Dan Neale.`,
   "creator": {
     "@type": "Person",
@@ -169,5 +169,5 @@ const creativeWorkData = {
   <Nav />
   <CaseStudyPage project={project} allProjects={ALL_PROJECTS} client:load />
   <Footer />
-  <EmailFloat subject={`${project.title} — project enquiry`} />
+  <EmailFloat subject={`${project.title} project enquiry`} />
 </BaseLayout>

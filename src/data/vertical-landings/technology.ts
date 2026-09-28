@@ -10,12 +10,12 @@ export const technologyVerticalLanding: VerticalLandingConfig = {
   seo: {
     titleTag: 'Technology Explainer Videos | Motion Story',
     metaDescription:
-      'From AI and cyber security to crypto and smart cities — technology made widely understood through a worthy story. Dan Neale, Motion Story.',
+      'From AI and cyber security to crypto and smart cities. Technology made widely understood through a worthy story. Dan Neale, Motion Story.',
     canonicalPath: '/technology-videos/',
   },
   eyebrow: 'Technology videos',
   headline: ['Make the tech', 'followable.'],
-  lede: 'AI, cyber, crypto, smart cities — complex tech made clear with a story people can follow.',
+  lede: 'AI, cyber, crypto, smart cities. Complex tech made clear with a story people can follow.',
   heroVideo: {
     vimeoId: '762112642',
     title: 'Giraffe / Designing Cities',
@@ -42,11 +42,11 @@ export const technologyVerticalLanding: VerticalLandingConfig = {
     }),
     verticalCase('bat-nav', {
       tags: 'Energy tech, platform explainer',
-      body: 'Batteries as the future of energy — pointing out the pitfalls of choosing wrong, and how Cell Engineer matches the best battery to any requirement.',
+      body: 'Batteries as the future of energy. Pointing out the pitfalls of choosing wrong, and how Cell Engineer matches the best battery to any requirement.',
     }),
     verticalCase('nisient', {
       tags: 'Quantum security, deep tech',
-      body: 'Post-quantum security made clear for decision makers — one of the most technical subjects in software, told so non-specialists can follow and act.',
+      body: 'Post quantum security made clear for decision makers. One of the most technical subjects in software, told so non-specialists can follow and act.',
     }),
   ],
   value: {

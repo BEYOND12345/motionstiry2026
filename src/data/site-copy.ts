@@ -74,7 +74,7 @@ export const ABOUT_INTRO =
   "I'm Dan, a creative director and motion designer with years of big-studio experience.";
 
 export const ABOUT_LEDE = [
-  "I help companies and agencies turn complex products, ideas and technology into clear visual stories — from the first idea and creative direction through to design and animation.",
+  "I help companies and agencies turn complex products, ideas and technology into clear visual stories, from the first idea and creative direction through to design and animation.",
   "I work directly with your team, whether you need help shaping the story, developing a concept, creating a storyboard, producing a product demo or simply getting the work made.",
   "Motion Story is deliberately small. You get the experience and capability of a much bigger studio, without the layers.",
 ] as const;
@@ -138,7 +138,7 @@ export const ABOUT_PLUG = [
   },
   {
     label: "Product demos",
-    line: "Show what a product actually does — without forcing someone through a 40-slide deck.",
+    line: "Show what a product actually does, without forcing someone through a 40 slide deck.",
   },
   {
     label: "Launch films",
@@ -150,7 +150,7 @@ export const ABOUT_PLUG = [
   },
   {
     label: "Video strategy",
-    line: "Work out where video can actually be useful across your marketing, sales and product journey — not just make one video and disappear.",
+    line: "Work out where video can actually be useful across your marketing, sales and product journey, not just make one video and disappear.",
   },
 ] as const;
 
@@ -215,8 +215,8 @@ export const ABOUT_CASES = [
 ] as const;
 
 export const WHY_ME = {
-  lead: "I'm not a pair of hands. I'm an idea person — designer, director, entrepreneur. I think about the business first, then I make the film that sells it.",
-  body: "I've built my own products, including SMASH Invoices. I know what it feels like when the thing is good and nobody can explain it yet. I work with tech. I use AI when it enables the idea — never as a substitute for one.",
+  lead: "I'm not a pair of hands. I'm an idea person. Designer, director, entrepreneur. I think about the business first, then I make the film that sells it.",
+  body: "I've built my own products, including SMASH Invoices. I know what it feels like when the thing is good and nobody can explain it yet. I work with tech. I use AI when it enables the idea, never as a substitute for one.",
   close:
     "Startups bring me in like a teammate. We find the story, I get it on paper, we turn the project around. Big ideas. No production maze.",
   aside:

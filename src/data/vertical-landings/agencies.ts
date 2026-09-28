@@ -10,12 +10,12 @@ export const agenciesVerticalLanding: VerticalLandingConfig = {
   seo: {
     titleTag: 'Agency Partnerships | Motion Story',
     metaDescription:
-      'Senior creative direction and motion for agencies. White label or collaborative. Skip the production chain — work directly with Dan.',
+      'Senior creative direction and motion for agencies. White label or collaborative. Skip the production chain. Work directly with Dan.',
     canonicalPath: '/agencies/',
   },
   eyebrow: 'Agencies & studios',
   headline: ['Senior craft.', 'No production maze.'],
-  lede: 'Senior motion design, white label or collaborative — direct access to the director, no extra production layer.',
+  lede: 'Senior motion design, white label or collaborative. Direct access to the director, no extra production layer.',
   heroVideo: {
     vimeoId: '649763018',
     title: 'Aon / Conversations',
@@ -26,23 +26,23 @@ export const agenciesVerticalLanding: VerticalLandingConfig = {
   cases: [
     verticalCase('meltwater', {
       tags: 'Brand story, campaign motion',
-      body: 'A brand story with the polish agencies expect — clear narrative, strong craft, delivery you can put in front of a client without flinching.',
+      body: 'A brand story with the polish agencies expect. Clear narrative, strong craft, delivery you can put in front of a client without flinching.',
     }),
     verticalCase('wipster', {
       tags: 'Agency-ready, SaaS, explainer',
-      body: 'Connect-the-dots product storytelling for a video feedback platform — the kind of film agencies need when the brief is complex and the timeline is real.',
+      body: 'Connect the dots product storytelling for a video feedback platform. The kind of film agencies need when the brief is complex and the timeline is real.',
     }),
     verticalCase('bresic-witney', {
       tags: 'Brand, property, campaign',
-      body: 'A different kind of estate agent, told through motion — the brief agencies bring when the client needs to feel distinct.',
+      body: 'A different kind of estate agent, told through motion. The brief agencies bring when the client needs to feel distinct.',
     }),
     verticalCase('giraffe', {
       tags: '3D, urban tech',
-      body: 'City planning software for three stakeholder groups — architecture, development, and government.',
+      body: 'City planning software for three stakeholder groups. Architecture, development, and government.',
     }),
     verticalCase('mosaic', {
       tags: 'SaaS, data planning',
-      body: 'Strategic data planning explained with precision — the standard agencies want when the client is technical.',
+      body: 'Strategic data planning explained with precision. The standard agencies want when the client is technical.',
     }),
     verticalCase('method-recycling', {
       tags: 'Product, brand',
@@ -51,7 +51,7 @@ export const agenciesVerticalLanding: VerticalLandingConfig = {
   ],
   value: {
     headline: 'One director. Clear accountability.',
-    body: 'Skip the account manager stack. I own concept through delivery — and when specialists come in, I direct them. Your client still gets a single point of craft.',
+    body: 'Skip the account manager stack. I own concept through delivery, and when specialists come in, I direct them. Your client still gets a single point of craft.',
   },
   benefits: {
     headline: 'How agencies use Motion Story',

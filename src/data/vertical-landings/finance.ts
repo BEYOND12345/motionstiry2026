@@ -52,7 +52,7 @@ export const financeVerticalLanding: VerticalLandingConfig = {
     }),
     verticalCase('good2pay', {
       tags: 'Fintech, invoicing, motion graphic explainer',
-      body: 'Paperless invoicing made obvious — a payments story for busy teams who need to see the workflow, not read a feature list.',
+      body: 'Paperless invoicing made obvious. A payments story for busy teams who need to see the workflow, not read a feature list.',
     }),
     verticalCase('bambora', {
       tags: 'Payments, gateway, motion graphic explainer',
@@ -60,11 +60,11 @@ export const financeVerticalLanding: VerticalLandingConfig = {
     }),
     verticalCase('swell', {
       tags: 'AI accounting, fintech, motion graphic explainer',
-      body: 'Machine learning for bookkeeping and reconciliation, told so accountants see the advisory work they get back — not a black box.',
+      body: 'Machine learning for bookkeeping and reconciliation, told so accountants see the advisory work they get back, not a black box.',
     }),
     verticalCase('altius-map', {
       tags: 'Financial wellbeing, explainer',
-      body: "Altius's Manager Assist Program walked through in two minutes — a services brochure turned into a story managers actually watch.",
+      body: "Altius's Manager Assist Program walked through in two minutes. A services brochure turned into a story managers actually watch.",
     }),
   ],
   value: {
@@ -93,7 +93,7 @@ export const financeVerticalLanding: VerticalLandingConfig = {
     {
       question: 'How is this different from a generic explainer?',
       answer:
-        'Generic explainers often use stock characters and a problem-solution template. Finance buyers read that as cheap. These films show the actual product logic — the loop, the ledger, the workflow — in a visual language that matches the brand.',
+        'Generic explainers often use stock characters and a problem-solution template. Finance buyers read that as cheap. These films show the actual product logic. The loop, the ledger, the workflow, in a visual language that matches the brand.',
     },
     ...VERTICAL_CORE_FAQS,
   ],
