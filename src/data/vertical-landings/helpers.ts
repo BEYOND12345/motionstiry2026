@@ -47,7 +47,7 @@ export const VERTICAL_CORE_FAQS = [
   {
     question: 'How much does it cost?',
     answer:
-      'From $5,000. Most projects land around $10,000–$15,000. Fixed quote upfront after we understand the brief.',
+      'From $5,000. Most projects land around $10,000 to $15,000. Fixed quote upfront after we understand the brief.',
   },
   {
     question: 'How long does it take?',

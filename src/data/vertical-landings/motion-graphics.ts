@@ -15,7 +15,7 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
   },
   eyebrow: 'Freelance motion designer',
   headline: ['Freelance motion designer.'],
-  lede: "Hi. I'm Dan. All-round creative — design, illustration, 2D animation, motion graphics, production. I work as part of your team, anywhere in the world. A creative partner, not a freelancer you brief and forget, and not a studio with layers.",
+  lede: "Hi. I'm Dan. All round creative. Design, illustration, 2D animation, motion graphics, production. I work as part of your team, anywhere in the world. A creative partner, not a freelancer you brief and forget, and not a studio with layers.",
   heroVideo: {
     vimeoId: '394326130',
     title: 'Meltwater / Brand Story',
@@ -26,7 +26,7 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
   cases: [
     verticalCase('united-nations', {
       tags: 'Motion graphic, data, cause',
-      body: 'Data-led storytelling for a global plastic waste brief — attention-grabbing, then actionable.',
+      body: 'Data led storytelling for a global plastic waste brief. It grabs attention, then gives a path to action.',
     }),
     verticalCase('eluse-krue', {
       tags: 'Brand, motion graphic',
@@ -38,11 +38,11 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
     }),
     verticalCase('method-recycling', {
       tags: 'Product, motion graphic',
-      body: 'Reimagining waste management with design-forward thinking.',
+      body: 'Reimagining waste management with thoughtful design.',
     }),
     verticalCase('rspca-cats', {
       tags: 'Character animation, charity',
-      body: 'Behaviour change for cat owners — warm illustration with a serious message.',
+      body: 'Behaviour change for cat owners. Warm illustration with a serious message.',
     }),
     verticalCase('ipa', {
       tags: 'Policy, explainer',
@@ -54,7 +54,7 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
     }),
     verticalCase('cotton-australia', {
       tags: 'Farming, explainer, motion graphic',
-      body: 'Thirty years of eco-friendly farming told from planting to harvest — craft in service of a clear story.',
+      body: 'Thirty years of eco friendly farming told from planting to harvest. Craft in service of a clear story.',
     }),
     verticalCase('acir', {
       tags: 'Data, cause',
@@ -62,7 +62,7 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
     }),
     verticalCase('atomic', {
       tags: 'SaaS, UI storytelling',
-      body: 'Product motion that feels native to the software — clear, branded, sales-ready.',
+      body: 'Product motion that feels native to the software. Clear, branded, and ready for sales.',
     }),
   ],
   value: {
@@ -86,7 +86,7 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
     {
       question: 'Do you work with teams in Sydney, Melbourne, Brisbane, and Los Angeles?',
       answer:
-        'Yes. I am based in Byron Bay and work remotely with agencies and in-house teams in Sydney, Melbourne, Brisbane, Los Angeles, and across Australia. You still work with me.',
+        'Yes. I am based in Byron Bay and work remotely with agencies and in house teams in Sydney, Melbourne, Brisbane, Los Angeles, and across Australia. You still work with me.',
     },
     {
       question: 'Can I hire you as a freelancer, producer, or specialist?',
