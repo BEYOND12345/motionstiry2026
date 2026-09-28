@@ -13,9 +13,9 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
       'Freelance motion designer for teams in Sydney, Melbourne, Brisbane, and Los Angeles. Dan Neale, Motion Story, Byron Bay.',
     canonicalPath: '/motion-graphics/',
   },
-  eyebrow: 'Motion graphics studio',
-  headline: ['Motion graphics.'],
-  lede: 'Motion graphics with a director attached. I work with agencies and in-house teams in Sydney, Melbourne, Brisbane, Los Angeles, and across Australia. Based in Byron Bay.',
+  eyebrow: 'Freelance motion designer',
+  headline: ['Freelance motion designer.'],
+  lede: "Hi. I'm Dan. All-round creative — design, illustration, 2D animation, motion graphics, production. I work as part of your team, anywhere in the world. A creative partner, not a freelancer you brief and forget, and not a studio with layers.",
   heroVideo: {
     vimeoId: '394326130',
     title: 'Meltwater / Brand Story',
@@ -66,8 +66,8 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
     }),
   ],
   value: {
-    headline: 'Bespoke work. No templates.',
-    body: 'I do what I say I will do. Reliable delivery, senior craft, and a single point of contact from brief to final file.',
+    headline: 'Storytelling from idea to execution.',
+    body: "I work with you directly from the first conversation to the last file. Working out the story, making storyboards, defining a complex message, or seeing it through production. I'm with you from beginning to end.",
   },
   benefits: {
     headline: 'Why agencies book me',
