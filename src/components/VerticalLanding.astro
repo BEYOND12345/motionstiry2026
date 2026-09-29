@@ -4,6 +4,7 @@
  * Shared nav/footer via PageLayout. Ads/sales pages stay on their own skins.
  */
 import VimeoEmbed from './VimeoEmbed';
+import HeroFilmCarousel from './HeroFilmCarousel';
 import WorkCard from './WorkCard';
 import ClientTicker from './ClientTicker';
 import type { VerticalLandingConfig } from '../data/vertical-landings/types';
@@ -14,17 +15,51 @@ interface Props {
 
 const { config } = Astro.props;
 const cases = config.cases;
+const workLed = Boolean(config.workLed);
+const storyLed = Boolean(config.storyLed && config.story);
+const story = config.story;
+const weaves = config.weaves ?? [];
 const whyLines = config.benefits.items.slice(0, 3);
 const faqs = config.faqs.slice(0, 4);
+
+function weaveLines(text?: string | string[]) {
+  if (!text) return [];
+  return (Array.isArray(text) ? text : [text]).filter(Boolean).slice(0, 3);
+}
+
+function markedTitle(text: string, phrase?: string) {
+  if (!phrase || !text.includes(phrase)) return text;
+  const at = text.indexOf(phrase);
+  return { before: text.slice(0, at), mark: phrase, after: text.slice(at + phrase.length) };
+}
+
+function titleLines(value: string | string[]) {
+  return Array.isArray(value) ? value : [value];
+}
+
 const ledeParas = Array.isArray(config.lede) ? config.lede : [config.lede];
 const meParas = Array.isArray(config.value.body)
   ? config.value.body
   : [config.value.body || (Array.isArray(config.lede) ? config.lede[0] : config.lede)];
+const meTitle = workLed && meParas[0]?.startsWith('Hi,') ? meParas[0] : '';
+const meBody = meTitle ? meParas.slice(1) : meParas;
 const closeParas = config.ctaNote
   ? Array.isArray(config.ctaNote)
     ? config.ctaNote
     : [config.ctaNote]
   : [];
+const gridWeaves = weaves.filter((item) => item.after < cases.length);
+const endWeaves = weaves.filter((item) => item.after >= cases.length);
+const lastGridAfter = gridWeaves.reduce((max, weave) => Math.max(max, weave.after), 0);
+const workIntroTitle = config.workIntro?.headline
+  ? markedTitle(config.workIntro.headline, config.workIntro.mark)
+  : '';
+const closeTitle = story?.close
+  ? markedTitle(story.close.headline, story.close.mark)
+  : '';
+const showMe = !storyLed && !config.hideMe && meBody.length > 0;
+const heroFilms = (config.heroCarousel ?? []).filter((film) => film.vimeoId);
+const useHeroCarousel = heroFilms.length > 1;
 ---
 
 <div class="vl">
@@ -47,16 +82,20 @@ const closeParas = config.ctaNote
         <a href="/book/" class="ms-btn">Book a call</a>
       </div>
     </div>
-    <div class="vl-hero-film">
-      <VimeoEmbed
-        client:load
-        vimeoId={config.heroVideo.vimeoId}
-        vimeoHash={config.heroVideo.vimeoHash}
-        title={config.heroVideo.title}
-        loading="eager"
-        autoColor={true}
-        className="rounded-xl"
-      />
+    <div class={`vl-hero-film${useHeroCarousel ? " has-reel" : ""}`}>
+      {useHeroCarousel ? (
+        <HeroFilmCarousel client:load films={heroFilms} />
+      ) : (
+        <VimeoEmbed
+          client:load
+          vimeoId={config.heroVideo.vimeoId}
+          vimeoHash={config.heroVideo.vimeoHash}
+          title={config.heroVideo.title}
+          loading="eager"
+          autoColor={true}
+          className="rounded-xl"
+        />
+      )}
     </div>
   </header>
 
@@ -70,24 +109,258 @@ const closeParas = config.ctaNote
     />
   </section>
 
-  <section class="vl-me">
-    <img
-      src="/daniel-neale.jpg"
-      alt="Dan Neale"
-      width="72"
-      height="72"
-      class="dan-photo dan-photo-md"
-    />
-    <div class="vl-me-copy">
-      {meParas.map((para) => (
-        <p>{para}</p>
-      ))}
-    </div>
-  </section>
+  {storyLed && story ? (
+    <>
+      {story.idea ? (
+      <section class="vl-band">
+        <div class="vl-band-copy">
+          <h2 class="vl-band-title">
+            {titleLines(story.idea.headline).map((line, i) => {
+              const marked = markedTitle(line, story.idea.mark);
+              return (
+                <>
+                  {i > 0 && <br />}
+                  {typeof marked === 'string' ? (
+                    marked
+                  ) : (
+                    <>{marked.before}<span class="spine-mark">{marked.mark}</span>{marked.after}</>
+                  )}
+                </>
+              );
+            })}
+          </h2>
+          {weaveLines(story.idea.text).map((line) => (
+            <p class="spine-break-copy">{line}</p>
+          ))}
+        </div>
+        <div class="vl-band-film">
+          <VimeoEmbed
+            client:visible
+            vimeoId={story.idea.film.vimeoId}
+            vimeoHash={story.idea.film.vimeoHash}
+            title={story.idea.film.title}
+            className="rounded-xl"
+          />
+        </div>
+      </section>
+      ) : null}
 
+      <section class="vl-band vl-band-quote">
+        <blockquote>
+          <p class="vl-quote-stage">“{story.quote.text}”</p>
+          <footer>
+            {story.quote.role
+              ? `${story.quote.name}, ${story.quote.role}`
+              : story.quote.name}
+          </footer>
+        </blockquote>
+      </section>
+
+      <section class="vl-band vl-band-range">
+        <div class="vl-band-copy">
+          <h2 class="vl-band-title">
+            {titleLines(story.range.headline).map((line, i) => {
+              const marked = markedTitle(line, story.range.mark);
+              return (
+                <>
+                  {i > 0 && <br />}
+                  {typeof marked === 'string' ? (
+                    marked
+                  ) : (
+                    <>{marked.before}<span class="spine-mark">{marked.mark}</span>{marked.after}</>
+                  )}
+                </>
+              );
+            })}
+          </h2>
+          {weaveLines(story.range.text).map((line) => (
+            <p class="spine-break-copy">{line}</p>
+          ))}
+        </div>
+        <div class="vl-range-films">
+          {story.range.films.map((study) => (
+            <WorkCard
+              client:visible
+              vimeoId={study.vimeoId}
+              vimeoHash={study.vimeoHash}
+              title={study.title}
+              client={study.client}
+              description={study.body}
+              href={study.link}
+            />
+          ))}
+        </div>
+      </section>
+
+      {cases.length > 0 ? (
+        <section id="work" class="vl-work vl-work-more">
+          <div class="work-grid spine-work-led">
+            {cases.map((study) => (
+              <WorkCard
+                client:visible
+                vimeoId={study.vimeoId}
+                vimeoHash={study.vimeoHash}
+                title={study.title}
+                client={study.client}
+                description={study.body}
+                href={study.link}
+              />
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      <div class="vl-end vl-band-close vl-close-with-me">
+        <img
+          src="/daniel-neale.jpg"
+          alt="Dan Neale"
+          width="72"
+          height="72"
+          class="dan-photo dan-photo-md"
+        />
+        <div class="vl-close-copy">
+          <p class="spine-break-title">
+            {typeof closeTitle === 'string' ? (
+              closeTitle
+            ) : (
+              <>{closeTitle.before}<span class="spine-mark">{closeTitle.mark}</span>{closeTitle.after}</>
+            )}
+          </p>
+          {weaveLines(story.close.text).map((line) => (
+            <p class="spine-break-copy">{line}</p>
+          ))}
+          <div class="vl-weave-cta">
+            <a href="/book/" class="ms-btn">
+              {story.close.ctaLabel}
+            </a>
+          </div>
+        </div>
+      </div>
+    </>
+  ) : null}
+
+  {showMe ? (
+    <section class="vl-me">
+      <img
+        src="/daniel-neale.jpg"
+        alt="Dan Neale"
+        width="72"
+        height="72"
+        class="dan-photo dan-photo-md"
+      />
+      <div class:list={['vl-me-copy', workLed && 'vl-me-copy-led']}>
+        {meTitle ? <p class="vl-me-title">{meTitle}</p> : null}
+        {meBody.map((para) => (
+          <p>{para}</p>
+        ))}
+      </div>
+    </section>
+  ) : null}
+
+  {!storyLed ? (
   <section id="work" class="vl-work">
-    <p class="vl-work-intro">{config.value.headline}</p>
+    {workLed && config.workIntro ? (
+      <div class="vl-work-lead">
+        <p class="spine-break-title">
+          {typeof workIntroTitle === 'string' ? (
+            workIntroTitle
+          ) : (
+            <>{workIntroTitle.before}<span class="spine-mark">{workIntroTitle.mark}</span>{workIntroTitle.after}</>
+          )}
+        </p>
+        {weaveLines(config.workIntro.text).map((line) => (
+          <p class="spine-break-copy">{line}</p>
+        ))}
+      </div>
+    ) : workLed ? null : (
+      <p class="vl-work-intro">{config.value.headline}</p>
+    )}
 
+    {workLed ? (
+      <div class="work-grid spine-work-led">
+        {cases.map((study, i) => {
+          const weavesHere = gridWeaves.filter((item) => item.after === i + 1);
+          return (
+            <>
+              <WorkCard
+                client:visible
+                vimeoId={study.vimeoId}
+                vimeoHash={study.vimeoHash}
+                title={study.title}
+                client={study.client}
+                description={study.body}
+                href={study.link}
+                loading={i === 0 ? 'eager' : 'lazy'}
+              />
+              {weavesHere.map((weave) => {
+                const lines = weaveLines(weave.text);
+                const ctaHere =
+                  Boolean(weave.cta) ||
+                  (endWeaves.length === 0 && weave.after === lastGridAfter);
+                const mark = weave.mark;
+                const headline = weave.headline ?? '';
+                const markAt = mark && headline.includes(mark) ? headline.indexOf(mark) : -1;
+                const titleNode =
+                  markAt >= 0 ? (
+                    <>{headline.slice(0, markAt)}<span class="spine-mark">{mark}</span>{headline.slice(markAt + mark!.length)}</>
+                  ) : (
+                    headline
+                  );
+
+                if (weave.quote) {
+                  return (
+                    <blockquote class:list={[weave.wide ? 'work-grid-break vl-quote-wide' : 'spine-aside']}>
+                      <p class="spine-break-title">“{weave.quote.text}”</p>
+                      <footer>
+                        {weave.quote.role
+                          ? `${weave.quote.name}, ${weave.quote.role}`
+                          : weave.quote.name}
+                      </footer>
+                    </blockquote>
+                  );
+                }
+
+                if (weave.portrait) {
+                  return (
+                    <div class="work-grid-break vl-me vl-me-weave">
+                      <img
+                        src="/daniel-neale.jpg"
+                        alt="Dan Neale"
+                        width="72"
+                        height="72"
+                        class="dan-photo dan-photo-md"
+                      />
+                      <div class="vl-me-copy vl-me-copy-led">
+                        {headline ? <p class="vl-me-title">{headline}</p> : null}
+                        {lines.map((line) => (
+                          <p>{line}</p>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                }
+
+                return (
+                  <div class="spine-aside">
+                    {headline ? <p class="spine-break-title">{titleNode}</p> : null}
+                    {lines.map((line) => (
+                      <p class="spine-break-copy">{line}</p>
+                    ))}
+                    {ctaHere ? (
+                      <div class="vl-weave-cta">
+                        <a href="/book/" class="ms-btn">
+                          {weave.ctaLabel ?? 'Book a call'}
+                        </a>
+                      </div>
+                    ) : null}
+                  </div>
+                );
+              })}
+            </>
+          );
+        })}
+      </div>
+    ) : (
     <div class="work-grid">
       {cases.slice(0, 2).map((study, i) => (
         <WorkCard
@@ -143,33 +416,71 @@ const closeParas = config.ctaNote
         />
       ))}
     </div>
+    )}
 
-    <p class="vl-all-work">
-      <a href="/work/">See the full portfolio →</a>
-    </p>
+    {workLed ? null : (
+      <p class="vl-all-work">
+        <a href="/work/">See the full portfolio →</a>
+      </p>
+    )}
 
-    {closeParas.length > 0 && (
+    {endWeaves.length > 0 ? (
+      <div class="vl-end">
+        {endWeaves.map((endWeave, idx) => {
+          const endTitle = endWeave.headline
+            ? markedTitle(endWeave.headline, endWeave.mark)
+            : '';
+          const showCta = Boolean(endWeave.cta) || idx === endWeaves.length - 1;
+          return (
+            <div class="vl-end-block">
+              {endWeave.headline ? (
+                <p class="spine-break-title">
+                  {typeof endTitle === 'string' ? (
+                    endTitle
+                  ) : (
+                    <>{endTitle.before}<span class="spine-mark">{endTitle.mark}</span>{endTitle.after}</>
+                  )}
+                </p>
+              ) : null}
+              {weaveLines(endWeave.text).map((line) => (
+                <p class="spine-break-copy">{line}</p>
+              ))}
+              {showCta ? (
+                <div class="vl-weave-cta">
+                  <a href="/book/" class="ms-btn">
+                    {endWeave.ctaLabel ?? 'Book a call'}
+                  </a>
+                </div>
+              ) : null}
+            </div>
+          );
+        })}
+      </div>
+    ) : closeParas.length > 0 && !workLed ? (
       <div class="vl-close">
         {closeParas.map((para) => (
           <p>{para}</p>
         ))}
         <a href="/book/" class="ms-btn">Book a call</a>
       </div>
-    )}
+    ) : null}
   </section>
+  ) : null}
 
-  <section class="vl-faq">
-    <div class="fold">
-      {faqs.map((faq) => (
-        <details class="fold-item">
-          <summary>{faq.question}</summary>
-          <div class="fold-body">
-            <p>{faq.answer}</p>
-          </div>
-        </details>
-      ))}
-    </div>
-  </section>
+  {faqs.length > 0 ? (
+    <section class="vl-faq">
+      <div class="fold">
+        {faqs.map((faq) => (
+          <details class="fold-item">
+            <summary>{faq.question}</summary>
+            <div class="fold-body">
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+  ) : null}
 </div>
 
 <style>
@@ -206,6 +517,10 @@ const closeParas = config.ctaNote
 
   .vl-hero-film {
     min-width: 0;
+  }
+
+  .vl-hero-film.has-reel {
+    overflow-x: clip;
   }
 
   .vl-title {
@@ -301,6 +616,58 @@ const closeParas = config.ctaNote
     margin-bottom: 0;
   }
 
+  .vl-me-copy-led p {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  .vl-me-copy-led .vl-me-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1.22;
+    color: var(--color-fg);
+    margin: 0 0 0.75rem;
+  }
+
+  .vl-weave-cta {
+    margin-top: 1.75rem;
+  }
+
+  .vl-end {
+    margin-top: 4rem;
+    max-width: 32rem;
+  }
+
+  .vl-end-block + .vl-end-block {
+    margin-top: 3.25rem;
+  }
+
+  .vl-work-lead {
+    margin: 0 0 3.25rem;
+    max-width: 36rem;
+  }
+
+  .vl-quote-wide {
+    max-width: 40rem;
+    padding: 1.25rem 0 0.5rem;
+  }
+
+  .vl-quote-wide .spine-break-title {
+    font-size: clamp(1.45rem, 2.6vw, 1.95rem);
+    line-height: 1.28;
+  }
+
+  .vl-me-weave {
+    margin: 0.5rem 0 0.25rem;
+    max-width: 40rem;
+  }
+
   .vl-work-intro {
     font-family: var(--font-display);
     font-size: clamp(1.4rem, 2.6vw, 1.85rem);
@@ -371,5 +738,131 @@ const closeParas = config.ctaNote
     margin-top: 4.5rem;
     padding-top: 3rem;
     border-top: 1px solid rgba(10, 10, 10, 0.1);
+  }
+
+  .vl-band {
+    display: grid;
+    gap: 2rem;
+    padding: 3.75rem 0;
+    border-top: 1px solid rgba(10, 10, 10, 0.1);
+    align-items: center;
+  }
+
+  .vl-band-copy {
+    min-width: 0;
+    max-width: 28rem;
+  }
+
+  .vl-band-film {
+    min-width: 0;
+  }
+
+  .vl-band-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.85rem, 4vw, 2.85rem);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+    margin: 0;
+    color: var(--color-fg);
+  }
+
+  .vl-band-copy .spine-break-copy:first-of-type {
+    margin-top: 0.75rem;
+  }
+
+  .vl-band-copy-stack .spine-break-copy + .spine-break-copy {
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 900px) {
+    .vl-band {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.15fr);
+      gap: 3rem;
+    }
+  }
+
+  .vl-band-quote {
+    display: block;
+    text-align: center;
+    padding: 4.75rem 0;
+  }
+
+  .vl-band-quote blockquote {
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+
+  .vl-quote-stage {
+    font-family: var(--font-display);
+    font-size: clamp(1.55rem, 3.2vw, 2.2rem);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.22;
+    margin: 0 0 0.9rem;
+    color: var(--color-fg);
+  }
+
+  .vl-band-quote footer {
+    font-size: 0.8125rem;
+    color: #7a7a7a;
+  }
+
+  .vl-band-range {
+    align-items: start;
+  }
+
+  .vl-range-films {
+    display: grid;
+    gap: 1.5rem 1.15rem;
+    min-width: 0;
+  }
+
+  @media (min-width: 700px) {
+    .vl-range-films {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .vl-range-films :global(.work-card-desc) {
+    -webkit-line-clamp: 2;
+  }
+
+  @media (min-width: 900px) {
+    .vl-band-range {
+      grid-template-columns: minmax(12rem, 0.72fr) minmax(0, 1.4fr);
+    }
+  }
+
+  .vl-work-more {
+    padding-top: 3.75rem;
+    border-top: 1px solid rgba(10, 10, 10, 0.1);
+  }
+
+  .vl-work-more :global(.work-card-desc) {
+    -webkit-line-clamp: 2;
+  }
+
+  .vl-band-close {
+    padding-top: 3.75rem;
+    border-top: 1px solid rgba(10, 10, 10, 0.1);
+    margin-top: 0;
+  }
+
+  .vl-close-with-me {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.15rem;
+    max-width: 40rem;
+  }
+
+  @media (min-width: 640px) {
+    .vl-close-with-me {
+      gap: 1.5rem;
+    }
+  }
+
+  .vl-close-copy {
+    min-width: 0;
   }
 </style>

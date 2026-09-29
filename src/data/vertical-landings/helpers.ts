@@ -18,6 +18,17 @@ export function verticalCase(
   };
 }
 
+export function verticalFilm(id: string) {
+  const p = ALL_PROJECTS.find((x) => x.id === id);
+  if (!p) throw new Error(`Unknown project id for vertical film: ${id}`);
+  return {
+    vimeoId: p.vimeoId,
+    vimeoHash: p.vimeoHash,
+    title: p.title,
+    client: p.client,
+  };
+}
+
 export const VERTICAL_TICKER_A = [
   'United Nations',
   'TransferWise',
