@@ -1,5 +1,5 @@
 import type { VerticalLandingConfig } from './types';
-import { VERTICAL_CORE_FAQS, verticalCase } from './helpers';
+import { VERTICAL_CORE_FAQS, verticalCase, verticalFilm } from './helpers';
 
 export const financeVerticalLanding: VerticalLandingConfig = {
   seo: {
@@ -16,6 +16,16 @@ export const financeVerticalLanding: VerticalLandingConfig = {
     vimeoHash: '1ddd2b07e1',
     title: 'Amex / Closed Loop',
   },
+  heroCarousel: [
+    verticalFilm('amex-closed-loop'),
+    verticalFilm('raa-insurance'),
+    verticalFilm('altius-eap'),
+    verticalFilm('carter-coin'),
+    verticalFilm('acodis'),
+    verticalFilm('mosaic'),
+    verticalFilm('atomic'),
+    verticalFilm('wipster'),
+  ],
   tickerLabel: 'Trusted by teams who need clarity',
   tickerRowA: [
     'TransferWise',
@@ -100,7 +110,7 @@ export const financeVerticalLanding: VerticalLandingConfig = {
   links: [
     { href: '/saas-explainer-videos/', eyebrow: 'SaaS', label: 'SaaS motion graphic explainer videos →' },
     { href: '/cybersecurity-explainer-videos/', eyebrow: 'Cyber', label: 'Cybersecurity motion graphic explainer videos →' },
-    { href: '/product-demo-videos/', eyebrow: 'Demos', label: 'Motion graphic product explainer videos →' },
+    { href: '/product-demo-videos/', eyebrow: 'Demos', label: 'Software demo videos →' },
     { href: '/work/', eyebrow: 'Portfolio', label: 'See all work →' },
   ],
 };

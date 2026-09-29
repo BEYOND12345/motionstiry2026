@@ -1,5 +1,5 @@
 import type { VerticalLandingConfig } from './types';
-import { VERTICAL_CORE_FAQS, verticalCase } from './helpers';
+import { VERTICAL_CORE_FAQS, verticalCase, verticalFilm } from './helpers';
 
 export const cybersecurityVerticalLanding: VerticalLandingConfig = {
   seo: {
@@ -15,6 +15,16 @@ export const cybersecurityVerticalLanding: VerticalLandingConfig = {
     vimeoId: '1213121904',
     title: 'Nisient / Quantum Security',
   },
+  heroCarousel: [
+    verticalFilm('nisient'),
+    verticalFilm('mosaic'),
+    verticalFilm('atomic'),
+    verticalFilm('giraffe'),
+    verticalFilm('bat-nav'),
+    verticalFilm('carter-coin'),
+    verticalFilm('wipster'),
+    verticalFilm('trudi'),
+  ],
   tickerLabel: 'Trusted by teams who need clarity',
   tickerRowA: [
     'TransferWise',

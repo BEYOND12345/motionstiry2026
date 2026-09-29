@@ -4,6 +4,7 @@ import {
   VERTICAL_TICKER_A,
   VERTICAL_TICKER_B,
   verticalCase,
+  verticalFilm,
 } from './helpers';
 
 export const productLaunchVerticalLanding: VerticalLandingConfig = {
@@ -20,6 +21,16 @@ export const productLaunchVerticalLanding: VerticalLandingConfig = {
     vimeoId: '863428533',
     title: 'Trusyft / Product Promo',
   },
+  heroCarousel: [
+    verticalFilm('trusyft'),
+    verticalFilm('ark'),
+    verticalFilm('meltwater'),
+    verticalFilm('method-recycling'),
+    verticalFilm('propspeed'),
+    verticalFilm('oartech'),
+    verticalFilm('cart-share'),
+    verticalFilm('ranalytic'),
+  ],
   tickerLabel: 'Trusted by teams who need clarity',
   tickerRowA: VERTICAL_TICKER_A,
   tickerRowB: VERTICAL_TICKER_B,
@@ -76,7 +87,7 @@ export const productLaunchVerticalLanding: VerticalLandingConfig = {
   ],
   links: [
     { href: '/saas-explainer-videos/', eyebrow: 'SaaS', label: 'SaaS motion graphic explainer videos →' },
-    { href: '/product-demo-videos/', eyebrow: 'Demos', label: 'Motion graphic product explainer videos →' },
+    { href: '/product-demo-videos/', eyebrow: 'Demos', label: 'Software demo videos →' },
     { href: '/startups/', eyebrow: 'Startups', label: 'Stories for startups →' },
     { href: '/work/', eyebrow: 'Portfolio', label: 'See all work →' },
   ],

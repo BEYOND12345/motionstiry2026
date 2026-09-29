@@ -4,6 +4,7 @@ import {
   VERTICAL_TICKER_A,
   VERTICAL_TICKER_B,
   verticalCase,
+  verticalFilm,
 } from './helpers';
 
 export const agenciesVerticalLanding: VerticalLandingConfig = {
@@ -20,6 +21,16 @@ export const agenciesVerticalLanding: VerticalLandingConfig = {
     vimeoId: '649763018',
     title: 'Aon / Conversations',
   },
+  heroCarousel: [
+    verticalFilm('aon-conversations'),
+    verticalFilm('united-nations'),
+    verticalFilm('amsed'),
+    verticalFilm('acodis'),
+    verticalFilm('atomic'),
+    verticalFilm('cotton-australia'),
+    verticalFilm('eluse-krue'),
+    verticalFilm('nsw-gov'),
+  ],
   tickerLabel: 'Trusted by teams who need clarity',
   tickerRowA: VERTICAL_TICKER_A,
   tickerRowB: VERTICAL_TICKER_B,
@@ -76,7 +87,7 @@ export const agenciesVerticalLanding: VerticalLandingConfig = {
   ],
   links: [
     { href: '/saas-explainer-videos/', eyebrow: 'SaaS', label: 'SaaS motion graphic explainer videos →' },
-    { href: '/product-demo-videos/', eyebrow: 'Demos', label: 'Product demo videos →' },
+    { href: '/product-demo-videos/', eyebrow: 'Demos', label: 'Software demo videos →' },
     { href: '/motion-graphics/', eyebrow: 'Motion', label: 'Motion graphics →' },
     { href: '/work/', eyebrow: 'Portfolio', label: 'See all work →' },
   ],

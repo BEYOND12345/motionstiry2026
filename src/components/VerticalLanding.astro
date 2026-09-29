@@ -229,11 +229,11 @@ const useHeroCarousel = heroFilms.length > 1;
           {weaveLines(story.close.text).map((line) => (
             <p class="spine-break-copy">{line}</p>
           ))}
-          <div class="vl-weave-cta">
-            <a href="/book/" class="ms-btn">
-              {story.close.ctaLabel}
-            </a>
-          </div>
+        </div>
+        <div class="vl-close-action">
+          <a href="/book/" class="ms-btn">
+            {story.close.ctaLabel}
+          </a>
         </div>
       </div>
     </>
@@ -850,19 +850,43 @@ const useHeroCarousel = heroFilms.length > 1;
   }
 
   .vl-close-with-me {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.15rem;
-    max-width: 40rem;
-  }
-
-  @media (min-width: 640px) {
-    .vl-close-with-me {
-      gap: 1.5rem;
-    }
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 1.15rem 1.5rem;
+    align-items: start;
+    max-width: none;
   }
 
   .vl-close-copy {
     min-width: 0;
+    max-width: 36rem;
+  }
+
+  .vl-close-action {
+    grid-column: 2;
+    margin-top: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .vl-close-with-me {
+      gap: 1.5rem 1.75rem;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .vl-close-with-me {
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 2rem 3rem;
+    }
+
+    .vl-close-copy {
+      max-width: 38rem;
+    }
+
+    .vl-close-action {
+      grid-column: auto;
+      margin-top: 0;
+    }
   }
 </style>

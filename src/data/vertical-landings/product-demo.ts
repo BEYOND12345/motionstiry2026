@@ -4,73 +4,89 @@ import {
   VERTICAL_TICKER_A,
   VERTICAL_TICKER_B,
   verticalCase,
+  verticalFilm,
 } from './helpers';
 
 export const productDemoVerticalLanding: VerticalLandingConfig = {
   seo: {
-    titleTag: 'Motion Graphic Product Explainer Videos | Motion Story',
+    titleTag: 'Product Demo Videos | Product Animation Videos | Motion Story',
     metaDescription:
-      'Motion graphic product explainer videos that show the software working. UI on screen. More than a screen recording. Dan Neale, Motion Story.',
+      'Product demo videos and product animation videos that show the software working. Software demos, onboarding videos, and tutorials. Dan Neale, Motion Story.',
     canonicalPath: '/product-demo-videos/',
   },
-  eyebrow: 'Motion graphic product explainer videos',
-  headline: ['Motion graphic product', 'explainer videos.'],
-  lede: 'Show the product working. UI on screen, workflow clear. Play, understand, decide. More than a screen recording.',
+  eyebrow: 'For the product',
+  headline: ['Product demo videos.'],
+  lede: 'Show the software working. UI on screen, workflow clear. Play, understand, decide. More than a screen recording.',
   heroVideo: {
-    vimeoId: '557884851',
-    title: 'Method / Beautiful Bin System',
+    vimeoId: '448704979',
+    title: 'Good2Pay / Paperless Invoicing',
   },
+  heroCarousel: [
+    verticalFilm('atomic'),
+    verticalFilm('driv0'),
+    verticalFilm('oovvuu'),
+    verticalFilm('infoview'),
+    verticalFilm('trudi'),
+    verticalFilm('wipster'),
+    verticalFilm('acodis'),
+    verticalFilm('mosaic'),
+  ],
   tickerLabel: 'Trusted by teams who need clarity',
   tickerRowA: VERTICAL_TICKER_A,
   tickerRowB: VERTICAL_TICKER_B,
   cases: [
-    verticalCase('eluse-krue', {
-      tags: 'Product demo, beauty, science, motion graphic',
-      body: 'With decades of scientific research going into the Ellus & Krue EPI-gN Serum, they needed to tell its creation story. Framed through the professor’s eyes, every ingredient gets its moment with fluid animation and a hand-drawn style.',
-    }),
-    verticalCase('oartech', {
-      tags: 'Animated product demo, health & fitness',
-      body: "Oartech couldn't demo its advanced rowing machine online, so we designed an animation that shows the product in use, and where it beats the competition for a safer workout.",
-    }),
-    verticalCase('propspeed', {
-      tags: 'Animated product demo, marine',
-      body: "Propspeed's propeller coating works wonders but isn't easily understood. Labelled diagrams and split-screen comparisons made the technical story easy to absorb, with the product in action.",
-    }),
-    verticalCase('braums', {
-      tags: 'Animated product demo, traffic',
-      body: 'Braums challenged the status quo with a touch-less pedestrian push button. We made a solid case for why the technology improves road safety and protects the public.',
-    }),
-    verticalCase('method-product', {
-      tags: 'Product explainer, workplace',
-      body: "A product-level walkthrough of Method's bin system in real workplaces. Practical clarity that complements the brand film.",
+    verticalCase('good2pay', {
+      tags: 'SaaS, product demo, invoicing',
+      body: 'Paperless invoicing, from the moment an invoice is created through to payment. The workflow stays on screen so a buyer can follow it without a call.',
     }),
     verticalCase('heyyou', {
-      tags: 'App demo, food ordering',
-      body: 'A product story for the Hey You ordering app. Clear enough for a cold visitor, sharp enough for growth teams.',
+      tags: 'SaaS, product demo, app',
+      body: 'The Hey You ordering app, from the menu to skipping the queue.',
+    }),
+    verticalCase('food-by-us', {
+      tags: 'SaaS, product demo, ordering',
+      body: 'Commercial kitchen ordering in one place. Compare suppliers, then place the order.',
+    }),
+    verticalCase('class-trust', {
+      tags: 'SaaS, product demo, accounting',
+      body: 'SMSF accounting is dense by nature. The film turns the compliance workflow into a sequence a trustee or an accountant can follow.',
+    }),
+    verticalCase('trulet', {
+      tags: 'SaaS, product demo, property',
+      body: 'AI property management. Tenant screening, rent, and maintenance, shown as the product works.',
+    }),
+    verticalCase('uclusion', {
+      tags: 'SaaS, product demo, product teams',
+      body: 'How product teams collect feedback and decide what to build next.',
     }),
   ],
   value: {
-    headline: 'Show the product working.',
-    body: 'A demo assumes people already care. I put the product on screen so they can see the workflow, not a feature list, not a raw screen grab.',
+    headline: 'Show the software working.',
+    body: 'A software demo assumes people already care. I put the product on screen so they can see the workflow, not a feature list, not a raw screen grab.',
   },
   benefits: {
-    headline: 'Show everyone',
+    headline: 'For the sales conversation',
     items: [
-      'Captivating advertising that is easy to digest',
-      'Social-media friendly with huge reach',
-      'Solidify sales messaging and brand image',
+      'Software demo and software product demo, with the UI on screen',
+      'Software onboarding videos and tutorials for the first week in the product',
+      'Ready for a product page, a help centre, or a sales follow-up',
     ],
   },
   quote: {
-    text: '62% completion rate. 21% view rate. For a video about bins, we are pretty astounded. Long-term asset for our business.',
-    name: 'Lee Bright',
-    role: 'Marketing Lead, Method Recycling',
+    text: '40,000 views on YouTube, which increased brand perception and reputation.',
+    name: 'Simon Lehman',
+    role: 'Marketing Manager, Acodis',
   },
   faqs: [
     {
-      question: 'What is a motion graphic product explainer video?',
+      question: 'What is a product demo video?',
       answer:
-        'A film that shows the product working, real or stylised UI, so people already evaluating you can see the workflow. Different from a SaaS motion graphic explainer, which tells the why when the product is new or the UI is unfinished. Many teams need both.',
+        'Sixty to 120 seconds of the product actually working. The interface stays on screen so a buyer can follow the workflow before they book a call. If they need the why before the how, that is an explainer, and many teams need both.',
+    },
+    {
+      question: 'Do you make software onboarding videos and software tutorials?',
+      answer:
+        'Yes. A software onboarding video gets a new user to the first useful action. A software tutorial walks one task, for a help centre or an email sequence. Same craft as the demo: the product on screen, one workflow, no raw screen recording.',
     },
     ...VERTICAL_CORE_FAQS,
   ],

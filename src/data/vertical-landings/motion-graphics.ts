@@ -4,6 +4,7 @@ import {
   VERTICAL_TICKER_A,
   VERTICAL_TICKER_B,
   verticalCase,
+  verticalFilm,
 } from './helpers';
 
 export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
@@ -22,9 +23,51 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
     vimeoId: '394326130',
     title: 'Meltwater / Brand Story',
   },
+  heroCarousel: [
+    verticalFilm('meltwater'),
+    verticalFilm('mosaic'),
+    verticalFilm('redcross'),
+    verticalFilm('acodis'),
+    verticalFilm('wipster'),
+    verticalFilm('giraffe'),
+    verticalFilm('trudi'),
+    verticalFilm('nsw-gov'),
+  ],
   tickerLabel: 'Trusted by teams who need clarity',
   tickerRowA: VERTICAL_TICKER_A,
   tickerRowB: VERTICAL_TICKER_B,
+  workLed: true,
+  weaves: [
+    {
+      after: 2,
+      quote: {
+        text: 'Motion Story’s delivery was creative, efficient, and seamless. Once we provided our vision, they crafted a clear message that resonated with our audience.',
+        name: 'Kris Deep',
+        role: 'Founder, Pulseee',
+      },
+    },
+    {
+      after: 5,
+      headline: 'Studio thinking. Freelance flexibility.',
+      mark: 'flexibility.',
+      text: [
+        'Need an extra pair of hands? I can do that.',
+        'Need someone to take ownership of the motion? I can do that too.',
+      ],
+    },
+    {
+      after: 8,
+      headline: 'More than making things move.',
+      mark: 'making things move.',
+      text: 'I help work out what needs to be communicated, how to communicate it clearly, then make it happen.',
+    },
+    {
+      after: 9,
+      headline: 'You work directly with me.',
+      mark: 'directly with me',
+      text: 'I handle most projects from the initial idea through to storyboarding, design and animation.',
+    },
+  ],
   cases: [
     verticalCase('united-nations', {
       tags: 'Motion graphic, data, cause',

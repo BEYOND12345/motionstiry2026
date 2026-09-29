@@ -62,13 +62,13 @@ export const explainerVerticalLanding: VerticalLandingConfig = {
       ],
     },
     close: {
-      headline: "Hi, I'm Dan. I'll direct the story.",
-      mark: 'direct the story.',
+      headline: "Hi, I'm Dan. Let's start with a call.",
+      mark: 'start with a call.',
       text: [
         'You bring the product, idea or message. Tell me what you are trying to communicate.',
-        "I'll help find the way into it, then take it through storyboard, design and animation with you.",
+        "I'll find the way into it, then take it through storyboard, design and animation with you.",
       ],
-      ctaLabel: 'Talk to me about your project',
+      ctaLabel: 'Book a call',
     },
   },
   weaves: [],

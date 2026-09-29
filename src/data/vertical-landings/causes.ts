@@ -4,6 +4,7 @@ import {
   VERTICAL_TICKER_A,
   VERTICAL_TICKER_B,
   verticalCase,
+  verticalFilm,
 } from './helpers';
 
 export const causesVerticalLanding: VerticalLandingConfig = {
@@ -20,6 +21,16 @@ export const causesVerticalLanding: VerticalLandingConfig = {
     vimeoId: '540393117',
     title: 'United Nations / Plastic Waste Data',
   },
+  heroCarousel: [
+    verticalFilm('united-nations'),
+    verticalFilm('amsed'),
+    verticalFilm('solar-my-school'),
+    verticalFilm('neat-streets'),
+    verticalFilm('ipa'),
+    verticalFilm('lxrp'),
+    verticalFilm('method-recycling'),
+    verticalFilm('meltwater'),
+  ],
   tickerLabel: 'Trusted by teams who need clarity',
   tickerRowA: VERTICAL_TICKER_A,
   tickerRowB: VERTICAL_TICKER_B,

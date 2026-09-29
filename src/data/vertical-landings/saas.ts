@@ -1,20 +1,30 @@
 import type { VerticalLandingConfig } from './types';
-import { verticalCase } from './helpers';
+import { verticalCase, verticalFilm } from './helpers';
 
 export const saasVerticalLanding: VerticalLandingConfig = {
   seo: {
-    titleTag: 'SaaS Motion Graphic Explainer Videos | Motion Story',
+    titleTag: 'SaaS Videos | SaaS Motion Graphic Explainer Videos | Motion Story',
     metaDescription:
-      'SaaS motion graphic explainer videos for new products. Product on screen, story first, even from a Figma. Work directly with Dan Neale.',
+      'SaaS videos for new products. SaaS motion graphic explainer videos with the product on screen, story first. Work directly with Dan Neale.',
     canonicalPath: '/saas-explainer-videos/',
   },
-  eyebrow: 'SaaS motion graphic explainer videos',
-  headline: ['SaaS motion graphic', 'explainer videos.'],
+  eyebrow: 'Motion graphics',
+  headline: ['SaaS videos.'],
   lede: 'Make the software obvious before login. Product on screen, even from a Figma or a napkin brief, so people get it before they log in.',
   heroVideo: {
     vimeoId: '866174146',
     title: 'Trudi / AI Property Management',
   },
+  heroCarousel: [
+    verticalFilm('trudi'),
+    verticalFilm('mosaic'),
+    verticalFilm('good2pay'),
+    verticalFilm('heyyou'),
+    verticalFilm('food-by-us'),
+    verticalFilm('trulet'),
+    verticalFilm('swell'),
+    verticalFilm('class-trust'),
+  ],
   tickerLabel: 'Trusted by teams who need clarity',
   tickerRowA: [
     'TransferWise',
@@ -87,7 +97,7 @@ export const saasVerticalLanding: VerticalLandingConfig = {
     {
       question: 'What is a SaaS motion graphic explainer video?',
       answer:
-        'A 60 to 90 second film that makes software obvious. Product on screen, UI in motion, story first. Creative directors brief it as a motion graphic explainer. It is not a generic 2D character explainer and not a raw screen recording.',
+        'A 60 to 90 second film that makes software obvious. Product on screen, story first. I can make it from the live product, or from a Figma if the product is not built yet.',
     },
     {
       question: 'What makes a good software demo?',
@@ -126,7 +136,7 @@ export const saasVerticalLanding: VerticalLandingConfig = {
     },
   ],
   links: [
-    { href: '/product-demo-videos/', eyebrow: 'Demos', label: 'Motion graphic product explainer videos →' },
+    { href: '/product-demo-videos/', eyebrow: 'Demos', label: 'Software demo videos →' },
     { href: '/finance-explainer-videos/', eyebrow: 'Fintech', label: 'Fintech motion graphic explainer videos →' },
     { href: '/cybersecurity-explainer-videos/', eyebrow: 'Cyber', label: 'Cybersecurity motion graphic explainer videos →' },
     { href: '/work/', eyebrow: 'Portfolio', label: 'See all work →' },

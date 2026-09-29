@@ -4,6 +4,7 @@ import {
   VERTICAL_TICKER_A,
   VERTICAL_TICKER_B,
   verticalCase,
+  verticalFilm,
 } from './helpers';
 
 export const technologyVerticalLanding: VerticalLandingConfig = {
@@ -20,6 +21,16 @@ export const technologyVerticalLanding: VerticalLandingConfig = {
     vimeoId: '762112642',
     title: 'Giraffe / Designing Cities',
   },
+  heroCarousel: [
+    verticalFilm('giraffe'),
+    verticalFilm('mosaic'),
+    verticalFilm('atomic'),
+    verticalFilm('cloud-trace'),
+    verticalFilm('shape-connect'),
+    verticalFilm('ranalytic'),
+    verticalFilm('trudi'),
+    verticalFilm('driv0'),
+  ],
   tickerLabel: 'Trusted by teams who need clarity',
   tickerRowA: VERTICAL_TICKER_A,
   tickerRowB: VERTICAL_TICKER_B,
