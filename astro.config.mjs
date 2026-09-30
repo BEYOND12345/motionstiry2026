@@ -22,6 +22,7 @@ const HIGH_PRIORITY_PAGES = new Set([
   '/finance-explainer-videos/',
   '/motion-graphics/',
   '/freelance-motion-graphic-designer/',
+  '/animation-production-company/',
   '/process/',
   '/product-demo-videos/',
   '/product-launch-video/',
@@ -122,8 +123,8 @@ export default defineConfig({
     // '/services/' is now a real hub page (src/pages/services.astro)
     '/explainer-video-company/': '/explainer-videos/',
     '/explainer-video-company-20024/': '/explainer-videos/',
-    '/animation-production-company/': '/explainer-videos/',
-    '/motion-graphic-production-company/': '/motion-graphics/',
+    // '/animation-production-company/' is a live page again
+    '/motion-graphic-production-company/': '/animation-production-company/',
     '/fractional-creative-director/': '/creative-business-designer/',
     '/animated-video-service/': '/explainer-videos/',
     '/30s-explainer-videos/': '/startups/',
@@ -156,7 +157,7 @@ export default defineConfig({
     // Landing pages → relevant audience pages
     '/landing-page-design-animation/': '/saas-explainer-videos/',
     // /landing-page-explainer-video-01/ is a live Ads landing (do not redirect)
-    '/animation-production-company-2/': '/explainer-videos/',
+    '/animation-production-company-2/': '/animation-production-company/',
     '/landing-page-animated-video-services-01/': '/saas-explainer-videos/',
     // /landing-animated-product-demos-01/ is a live Ads landing (do not redirect)
     '/freelance-motion-design-and-animation/': '/freelance-motion-graphic-designer/',

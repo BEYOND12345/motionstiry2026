@@ -332,11 +332,11 @@ body.homepage-layout {
 
 /* Home uses the site Nav overlay — clear it without a second header */
 body.homepage-layout .split-left {
-  padding-top: calc(69px + 2.5rem);
+  padding-top: calc(38px + 2.5rem);
 }
 
 body.homepage-layout .split-right {
-  padding-top: 69px;
+  padding-top: 38px;
 }
 
 @media (min-width: 1025px) {
@@ -537,6 +537,7 @@ body.homepage-layout .nav-links {
 .spine-aside {
   max-width: 26rem;
   padding: 0.15rem 0 0;
+  align-self: start;
 }
 
 .spine-work-led .work-card-desc {

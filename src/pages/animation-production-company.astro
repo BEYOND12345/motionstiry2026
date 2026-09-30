@@ -1,0 +1,59 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import VerticalLanding from '../components/VerticalLanding.astro';
+import { animationProductionLanding } from '../data/vertical-landings/animation-production';
+
+const config = animationProductionLanding;
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Animation Production Company',
+  description: config.seo.metaDescription,
+  provider: { '@type': 'Organization', name: 'Motion Story', url: 'https://motionstory.com.au' },
+  serviceType: 'Animation Production Company',
+  areaServed: ['Australia', 'Worldwide'],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://motionstory.com.au/' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://motionstory.com.au/services/' },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'Animation Production Company',
+      item: 'https://motionstory.com.au/animation-production-company/',
+    },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: config.faqs.slice(0, 4).map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: f.answer },
+  })),
+};
+---
+
+<PageLayout
+  title={config.seo.titleTag}
+  description={config.seo.metaDescription}
+  canonicalUrl={`https://motionstory.com.au${config.seo.canonicalPath}`}
+  floatSubject="Animation production"
+  ctaHeading="Book a 15-minute brief call."
+  showCTA={false}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <VerticalLanding config={config} />
+</PageLayout>

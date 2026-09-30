@@ -87,7 +87,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
       <div className="grain-overlay" />
 
       <header className="px-5 pt-[max(1.25rem,env(safe-area-inset-top))] sm:px-8 lg:px-12">
-        <a href="/" className="brand-mark text-[1.1rem] sm:text-xl">
+        <a href="/" className="brand-mark text-[0.775rem] leading-none">
           MotionStory.
         </a>
       </header>
@@ -352,7 +352,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
 
       {!config.siteFooter ? (
         <footer className="px-5 pb-10 sm:px-8 lg:px-12">
-          <p className="brand-mark text-lg">MotionStory.</p>
+          <p className="brand-mark text-[0.775rem] leading-none">MotionStory.</p>
           {config.footerLine ? (
             <p className="mt-3 text-[0.875rem] text-black/40">{config.footerLine}</p>
           ) : null}
