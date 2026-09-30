@@ -11,7 +11,6 @@ import { STUDIO_PROOF } from '../data/reviews';
           <a href="/work/" class="text-body !text-sm hover:text-black transition-colors">All work</a>
           <a href="/saas-explainer-videos/" class="text-body !text-sm hover:text-black transition-colors">SaaS videos</a>
           <a href="/explainer-videos/" class="text-body !text-sm hover:text-black transition-colors">Explainer videos</a>
-          <a href="/freelance-motion-graphic-designer/" class="text-body !text-sm hover:text-black transition-colors">Freelance motion designer</a>
         </div>
       </div>
       <div>
@@ -36,25 +35,27 @@ import { STUDIO_PROOF } from '../data/reviews';
           <a href="/contact/" class="text-body !text-sm hover:text-black transition-colors">Start a project</a>
         </div>
       </div>
-      <div class="col-span-2 md:col-span-1">
+      <div>
         <span class="text-metadata mb-4 block">Connect</span>
-        <a href="/about/" class="mb-4 flex items-center gap-3 transition-opacity hover:opacity-60">
-          <img
-            src="/daniel-neale.jpg"
-            alt="Dan Neale"
-            width="56"
-            height="56"
-            class="dan-photo"
-          />
-          <span class="font-display text-sm font-medium tracking-tight">Dan Neale</span>
-        </a>
-        <a href="mailto:daniel@motionstory.com.au" class="text-body !text-sm hover:text-black transition-colors block mb-2">daniel@motionstory.com.au</a>
-        <p class="text-body !text-sm mb-4">Byron Bay, Australia</p>
-        <div class="flex flex-wrap gap-x-5 gap-y-2">
-          <a href="https://vimeo.com/wearemotionstory" class="text-body !text-sm hover:text-black transition-colors" target="_blank" rel="noopener">Vimeo</a>
-          <a href="https://www.linkedin.com/in/danielneale" class="text-body !text-sm hover:text-black transition-colors" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://www.behance.net/motion_story" class="text-body !text-sm hover:text-black transition-colors" target="_blank" rel="noopener">Behance</a>
-          <a href="https://dribbble.com/motionstory" class="text-body !text-sm hover:text-black transition-colors" target="_blank" rel="noopener">Dribbble</a>
+        <div class="flex flex-col gap-2">
+          <a href="/about/" class="footer-connect-id text-body !text-sm hover:text-black transition-colors">
+            <img
+              src="/daniel-neale.jpg"
+              alt="Dan Neale"
+              width="24"
+              height="24"
+              class="footer-connect-photo"
+            />
+            <span>Dan Neale</span>
+          </a>
+          <a href="mailto:daniel@motionstory.com.au" class="text-body !text-sm hover:text-black transition-colors">daniel@motionstory.com.au</a>
+          <p class="text-body !text-sm">Byron Bay, Australia</p>
+          <div class="footer-connect-socials">
+            <a href="https://vimeo.com/wearemotionstory" class="text-body !text-sm hover:text-black transition-colors" target="_blank" rel="noopener">Vimeo</a>
+            <a href="https://www.linkedin.com/in/danielneale" class="text-body !text-sm hover:text-black transition-colors" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.behance.net/motion_story" class="text-body !text-sm hover:text-black transition-colors" target="_blank" rel="noopener">Behance</a>
+            <a href="https://dribbble.com/motionstory" class="text-body !text-sm hover:text-black transition-colors" target="_blank" rel="noopener">Dribbble</a>
+          </div>
         </div>
       </div>
     </div>
@@ -80,3 +81,29 @@ import { STUDIO_PROOF } from '../data/reviews';
     </div>
   </div>
 </footer>
+
+<style>
+  .footer-connect-id {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 1.4rem;
+  }
+
+  .footer-connect-photo {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 999px;
+    object-fit: cover;
+    object-position: center 18%;
+    flex-shrink: 0;
+  }
+
+  .footer-connect-socials {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.85rem;
+    row-gap: 0.15rem;
+    padding-top: 0.15rem;
+  }
+</style>

@@ -6,8 +6,18 @@ export type CaseStudyLane = {
   moneyLabel: string;
 };
 
-const CYBER = /nisient|shape connect|shape-connect|data republic|quantum|cyber|security|privacy-preserving/;
+const CYBER = /nisient|shape connect|shape-connect|data republic|quantum|cybersecurity|\bcyber\b|privacy-preserving|website security|data security/;
 const FINTECH = /amex|american express|insignia|bambora|good2pay|class trust|swell|payment|fintech|insurance|raa/;
+
+/** Films on /product-demo-videos/. Checked before fintech so these case studies support the demo page. */
+const PRODUCT_DEMO_IDS = new Set([
+  'good2pay',
+  'heyyou',
+  'food-by-us',
+  'class-trust',
+  'trulet',
+  'uclusion',
+]);
 
 export function getCaseStudyLane(project: Project): CaseStudyLane {
   const hay = `${project.id} ${project.slug} ${project.title} ${project.client} ${project.description} ${project.details}`.toLowerCase();
@@ -17,6 +27,14 @@ export function getCaseStudyLane(project: Project): CaseStudyLane {
       jobLabel: 'Cybersecurity motion graphic explainer video',
       moneyHref: '/cybersecurity-explainer-videos/',
       moneyLabel: 'Cybersecurity motion graphic explainer videos',
+    };
+  }
+
+  if (PRODUCT_DEMO_IDS.has(project.id)) {
+    return {
+      jobLabel: 'Product demo video',
+      moneyHref: '/product-demo-videos/',
+      moneyLabel: 'Product demo videos',
     };
   }
 

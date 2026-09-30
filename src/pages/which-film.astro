@@ -1,0 +1,154 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const pageUrl = 'https://motionstory.com.au/which-film/';
+
+const sections = [
+  {
+    question: 'Which film do I need?',
+    answer:
+      'If people cannot grasp the idea, make an explainer. If they already care and need to see the thing work, make a product demo. That is true for a SaaS product, a physical product, or an invention. I shape the story and make the film. Most projects are $10,000 to $15,000 and take three to six weeks.',
+  },
+  {
+    question: 'What if people do not understand it yet?',
+    answer:
+      'Make an explainer. 60 to 180 seconds, one idea, so someone can watch it and know what to do next. It is the homepage film, the campaign, and the film a founder sends when they cannot be in the room. AMSED said what would normally take hours to explain now takes 90 seconds.',
+    links: [
+      { href: '/explainer-videos/', label: 'Explainer videos' },
+      { href: '/casestudy/amsed/', label: 'AMSED' },
+    ],
+  },
+  {
+    question: 'What if they need to see it working?',
+    answer:
+      'Make a product demo. The product stays on screen, whether it is software or a physical invention. Good2Pay walks from the invoice through to payment. Braums shows a touchless road crossing: sensors instead of a button.',
+    links: [
+      { href: '/product-demo-videos/', label: 'Product demo videos' },
+      { href: '/casestudy/good2pay/', label: 'Good2Pay' },
+      { href: '/casestudy/braums/', label: 'Braums' },
+    ],
+  },
+  {
+    question: 'What should sales send before a call?',
+    answer:
+      'Send the explainer. The meeting starts further in, and someone inside the buyer’s company can forward the same film. A head of sales does not need a separate production for this. They need the one clear version of the story.',
+    links: [{ href: '/explainer-videos/', label: 'Explainer videos' }],
+  },
+  {
+    question: 'What about onboarding?',
+    answer:
+      'Once someone has signed up, a short film of the workflow gets them to the first win. The product stays on screen. This sits with the product demo work: software onboarding and a tutorial someone can follow.',
+    links: [{ href: '/product-demo-videos/', label: 'Product demo videos' }],
+  },
+  {
+    question: 'What about a launch or a campaign?',
+    answer:
+      'A launch film is the public piece: the homepage, the campaign, the announcement. When the product is new and hard to grasp, the explainer comes first. The campaign cuts come from it. Eluse & Krue is a product story made to ship with the product.',
+    links: [
+      { href: '/product-launch-video/', label: 'Product launch videos' },
+      { href: '/casestudy/eluse-and-krue/', label: 'Eluse & Krue' },
+    ],
+  },
+  {
+    question: 'What about investors or a board?',
+    answer:
+      'They need the invention, or the company, to be obvious in one sitting. That is an explainer. The deck still does its job in the meeting. The film is what they can watch before it. Cotton Australia used one film to take thirty years of farming and make the change clear.',
+    links: [
+      { href: '/explainer-videos/', label: 'Explainer videos' },
+      { href: '/casestudy/cotton-australia/', label: 'Cotton Australia' },
+    ],
+  },
+  {
+    question: 'Is an AI video good enough?',
+    answer:
+      'An AI video is enough for a cheap internal cut. A launch, a film the sales team will send, or a film for an investor needs the product to be right and the picture to hold up. I make that film, from a Figma, a rough script, or a conversation.',
+  },
+  {
+    question: 'What should I send you?',
+    answer:
+      'Who it is for, what they should know after watching, and the product itself. A Figma, screenshots, or the physical thing. A finished script is optional. Finding the simple version is part of the work. From $5,000. Most films land at $10,000 to $15,000, over three to six weeks. You work with me, Dan Neale, in Byron Bay.',
+    links: [{ href: '/contact/', label: 'Start a project' }],
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: sections.map((section) => ({
+    '@type': 'Question',
+    name: section.question,
+    acceptedAnswer: { '@type': 'Answer', text: section.answer },
+  })),
+};
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Which film do you need?',
+  url: pageUrl,
+  description: sections[0].answer,
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['h1', '.which-answer'],
+  },
+  author: {
+    '@type': 'Person',
+    name: 'Daniel Neale',
+    jobTitle: 'Creative Director',
+    url: 'https://motionstory.com.au/about/',
+  },
+};
+---
+
+<PageLayout
+  title="Which film do you need? | Motion Story"
+  description="If the idea is hard to grasp, make an explainer. If they need to see it work, make a product demo. Dan Neale, Motion Story. Most films $10,000 to $15,000."
+  ctaHeading="Got something complex to explain?"
+  floatSubject="Which film"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://motionstory.com.au/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://motionstory.com.au/services/' },
+        { '@type': 'ListItem', position: 3, name: 'Which film', item: pageUrl },
+      ],
+    })} />
+  </Fragment>
+
+  <div class="pt-32 pb-24 px-8 max-w-5xl mx-auto">
+    <span class="text-metadata mb-8 block">Which film</span>
+    <h1 class="font-display text-4xl md:text-7xl font-bold tracking-tight leading-[0.9] mb-10 max-w-4xl">
+      Which film do you need.
+    </h1>
+    <p class="which-answer text-body text-lg leading-relaxed max-w-2xl mb-24">
+      {sections[0].answer}
+    </p>
+
+    <div class="space-y-20">
+      {sections.slice(1).map((section) => (
+        <section>
+          <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight mb-5 max-w-3xl">
+            {section.question}
+          </h2>
+          <p class="text-body text-lg leading-relaxed max-w-2xl">
+            {section.answer}
+          </p>
+          {section.links && (
+            <p class="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+              {section.links.map((link) => (
+                <a href={link.href} class="text-metadata hover:text-black transition-colors">
+                  {link.label} →
+                </a>
+              ))}
+            </p>
+          )}
+        </section>
+      ))}
+    </div>
+  </div>
+</PageLayout>
