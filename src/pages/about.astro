@@ -70,9 +70,10 @@ const structuredData = {
     })} />
   </Fragment>
 
-  <article class="about-page about-wrap pt-28 pb-28 md:pt-32 md:pb-36">
+  <article class="about-page about-wrap pt-32 pb-24">
     <section class="about-hero">
-      <h1 class="font-display text-4xl md:text-6xl font-bold tracking-tight leading-[0.92] max-w-3xl">
+      <span class="text-metadata mb-8 block">About</span>
+      <h1 class="font-display text-4xl md:text-7xl font-bold tracking-tight leading-[0.9] mb-10 max-w-4xl">
         {ABOUT_HEADLINE}
       </h1>
 
@@ -84,7 +85,7 @@ const structuredData = {
           height="72"
           class="dan-photo dan-photo-md"
         />
-        <div class="min-w-0 space-y-2.5 text-body text-lg leading-relaxed max-w-2xl">
+        <div class="min-w-0 space-y-2.5 text-body max-w-2xl">
           <p>{ABOUT_INTRO}</p>
           {ABOUT_LEDE.map((paragraph) => (
             <p>{paragraph}</p>
@@ -108,7 +109,7 @@ const structuredData = {
         {ABOUT_HELP.map((item) => (
           <div class="border-t border-black/10 pt-4">
             <dt class="font-display text-lg font-medium tracking-tight mb-2">{item.label}</dt>
-            <dd class="text-body leading-relaxed">{item.line}</dd>
+            <dd class="text-body">{item.line}</dd>
           </div>
         ))}
       </dl>
@@ -118,7 +119,7 @@ const structuredData = {
       <h2 class="font-display text-xl md:text-2xl font-medium tracking-tight mb-5">
         {ABOUT_CLOSE_HEADING}
       </h2>
-      <div class="space-y-2.5 text-body text-lg leading-relaxed">
+      <div class="space-y-2.5 text-body">
         {ABOUT_CLOSE.map((paragraph) => (
           <p>{paragraph}</p>
         ))}
@@ -151,7 +152,7 @@ const structuredData = {
 <style>
   .about-wrap {
     width: 100%;
-    max-width: 80rem;
+    max-width: 64rem;
     margin-inline: auto;
     padding-inline: 2rem;
   }

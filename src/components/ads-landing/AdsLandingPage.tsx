@@ -285,7 +285,7 @@ function WorkCard({
         </span>
       </div>
       <p className="mt-4 font-display text-base font-bold tracking-tight md:text-lg">{project.client}</p>
-      <p className="mt-1.5 line-clamp-2 text-[14px] leading-relaxed text-black/50">{project.result}</p>
+      <p className="mt-1.5 line-clamp-2 text-caption">{project.result}</p>
     </button>
   );
 }
@@ -406,14 +406,14 @@ export default function AdsLandingPage({ config }: { config: AdsLandingConfig })
       >
         {/* 1. Hero — copy centered, video becomes a full-bleed desktop plane */}
         <section className="pt-[calc(5.5rem+env(safe-area-inset-top))] md:pt-28 lg:pt-32">
-          <div className="mx-auto max-w-5xl px-5 text-center sm:px-6 lg:px-12">
-            <p className="mb-5 text-[10px] font-medium uppercase tracking-[0.18em] text-black/40 sm:mb-6 sm:text-[11px] sm:tracking-[0.2em]">
+          <div className="mx-auto max-w-5xl px-8 text-center">
+            <p className="text-metadata mb-8">
               {config.serviceKeyword}
             </p>
-            <h1 className="font-display text-[clamp(2.15rem,6.8vw,6rem)] font-bold leading-[0.95] tracking-tight sm:leading-[0.9]">
+            <h1 className="font-display text-4xl font-bold leading-[0.9] tracking-tight md:text-7xl">
               {config.h1}
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-[1.65] text-black/50 sm:mt-6 sm:text-[17px] md:text-[18px]">
+            <p className="mx-auto mt-5 max-w-2xl text-body sm:mt-6">
               {config.subhead}
             </p>
           </div>
@@ -477,7 +477,7 @@ export default function AdsLandingPage({ config }: { config: AdsLandingConfig })
             {config.proofPoints.map((point) => (
               <div key={point.title} className="bg-white p-7 sm:p-8 md:p-10">
                 <h2 className="font-display text-lg font-bold tracking-tight">{point.title}</h2>
-                <p className="mt-3 text-[15px] leading-relaxed text-black/50 sm:mt-4">{point.body}</p>
+                <p className="mt-3 text-body sm:mt-4">{point.body}</p>
               </div>
             ))}
           </div>
@@ -494,7 +494,7 @@ export default function AdsLandingPage({ config }: { config: AdsLandingConfig })
                 {config.middleGround.rightLabel}
               </p>
             </div>
-            <p className="max-w-lg self-center text-[15px] leading-[1.7] text-white/60 sm:text-[17px] lg:text-[18px]">
+            <p className="max-w-lg self-center text-body !text-white/70">
               {config.middleGround.body}
             </p>
           </div>
@@ -567,7 +567,7 @@ export default function AdsLandingPage({ config }: { config: AdsLandingConfig })
                     </span>
                   </button>
                   {open && (
-                    <p className="max-w-xl pb-6 text-[15px] leading-relaxed text-black/50 sm:pb-7">
+                    <p className="max-w-xl pb-6 text-body sm:pb-7">
                       {faq.answer}
                     </p>
                   )}
@@ -585,7 +585,7 @@ export default function AdsLandingPage({ config }: { config: AdsLandingConfig })
           <h2 className="font-display text-[1.85rem] font-bold tracking-tight sm:text-3xl lg:text-5xl">
             {config.finalCtaHeading}
           </h2>
-          <p className="mt-4 text-[15px] leading-relaxed text-black/50 sm:mt-5 sm:text-[16px]">
+          <p className="mt-4 text-body sm:mt-5">
             {config.finalCtaSubhead}
           </p>
           <PrimaryBookCta href={config.bookingUrl} label={config.bookingLabel} className="mt-8 sm:mt-10" />

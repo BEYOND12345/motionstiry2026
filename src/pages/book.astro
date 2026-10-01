@@ -74,12 +74,12 @@ const quotes = [
       </div>
     </header>
 
-    <main class="mx-auto max-w-4xl px-5 py-12 sm:px-6 md:py-16 lg:px-12">
-      <p class="text-metadata mb-5">Strategy call</p>
-      <h1 class="font-display text-4xl font-bold tracking-tight md:text-6xl max-w-3xl">
+    <main class="mx-auto max-w-5xl px-8 pt-32 pb-24">
+      <p class="text-metadata mb-8 block">Strategy call</p>
+      <h1 class="font-display text-4xl md:text-7xl font-bold tracking-tight leading-[0.9] mb-10 max-w-4xl">
         Clarify your project in minutes.
       </h1>
-      <p class="mt-6 max-w-xl text-[15px] leading-relaxed text-black/55 md:text-[16px]">
+      <p class="mt-6 max-w-xl text-body">
         Schedule a call and I'll untangle the brief. You'll leave knowing what you need, what format fits, and what to do next to produce a successful film.
       </p>
 
@@ -92,7 +92,7 @@ const quotes = [
         />
         <div>
           <p class="font-display text-base font-bold tracking-tight mb-1">Dan Neale</p>
-          <p class="text-[15px] leading-relaxed text-black/55">
+          <p class="text-body">
             Independent motion designer and director. You'll talk to me directly. No sales handoff.
           </p>
         </div>
@@ -102,8 +102,8 @@ const quotes = [
         <h2 class="font-display text-xl font-bold tracking-tight mb-5">What I can help you with</h2>
         <ul class="space-y-3">
           {helpWith.map((item) => (
-            <li class="flex gap-3 text-[15px] leading-relaxed text-black/65">
-              <span class="text-accent shrink-0">→</span>
+            <li class="flex gap-3 text-body">
+              <span class="shrink-0" aria-hidden="true">→</span>
               <span>{item}</span>
             </li>
           ))}
@@ -123,7 +123,7 @@ const quotes = [
         <h2 class="font-display text-2xl md:text-3xl font-bold tracking-tight mb-5 max-w-2xl">
           Create the aha moment with animation.
         </h2>
-        <p class="text-[15px] leading-relaxed text-black/55 max-w-2xl md:text-[16px]">
+        <p class="text-body max-w-2xl">
           In a focused session we'll dive into animation strategy, pricing, competitor context, or where to start. You walk away with actionable ideas and a clear sense of how motion graphics can solve the business challenge.
         </p>
 
@@ -132,7 +132,7 @@ const quotes = [
           {expect.map((item) => (
             <div>
               <p class="font-display text-base font-bold tracking-tight mb-2">{item.title}</p>
-              <p class="text-[14px] leading-relaxed text-black/50">{item.body}</p>
+              <p class="text-body">{item.body}</p>
             </div>
           ))}
         </div>
@@ -146,7 +146,7 @@ const quotes = [
               <p class="font-display text-lg font-medium tracking-tight leading-snug mb-3">
                 “{q.quote}”
               </p>
-              <p class="text-[13px] text-black/45">{q.name}, {q.role}</p>
+              <p class="text-caption">{q.name}, {q.role}</p>
             </blockquote>
           ))}
         </div>
@@ -155,7 +155,7 @@ const quotes = [
 
     <footer class="site-footer px-5 py-12 sm:px-6 lg:px-12">
       <div class="mx-auto max-w-7xl">
-        <p class="brand-mark text-[0.775rem] leading-none">MotionStory<span class="text-accent">.</span></p>
+        <p class="brand-mark text-[0.775rem] leading-none">MotionStory.</p>
         <p class="mt-4 text-[11px] uppercase tracking-[0.14em] text-black/40">
           Featured on Behance · Clutch-awarded
         </p>

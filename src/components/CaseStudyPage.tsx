@@ -28,20 +28,20 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
       <div className="grain-overlay" />
 
       {/* Hero Video */}
-      <PageTransition className="pt-20">
-        <div className="max-w-7xl mx-auto px-8 pt-16 pb-8">
+      <PageTransition className="pt-32">
+        <div className="max-w-5xl mx-auto px-8 pb-8">
           <FadeUp>
             <div className="flex items-center gap-4 mb-6">
               <span className="text-metadata">{lane.jobLabel}</span>
             </div>
           </FadeUp>
           <SlideUp>
-            <h1 className="font-display text-4xl md:text-7xl font-bold tracking-tight leading-[0.9] mb-4">
+            <h1 className="font-display text-4xl md:text-7xl font-bold tracking-tight leading-[0.9] mb-10 max-w-4xl">
               {project.title}
             </h1>
           </SlideUp>
           <FadeUp>
-            <p className="text-body max-w-2xl mt-6 mb-4">
+            <p className="text-body max-w-2xl mb-4">
               {project.description}
             </p>
             <p className="text-body max-w-2xl mb-12">
@@ -51,7 +51,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
           </FadeUp>
         </div>
 
-        <FadeUp className="max-w-7xl mx-auto px-8 mb-16">
+        <FadeUp className="max-w-5xl mx-auto px-8 mb-16">
           <div style={{ viewTransitionName: `project-${project.slug}` }}>
             <VimeoEmbed
               vimeoId={project.vimeoId}
@@ -65,7 +65,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
         </FadeUp>
 
         {project.secondaryVimeoId && (
-          <FadeUp className="max-w-7xl mx-auto px-8 mb-16">
+          <FadeUp className="max-w-5xl mx-auto px-8 mb-16">
             <span className="text-metadata mb-6 block">Additional Video</span>
             <VimeoEmbed
               vimeoId={project.secondaryVimeoId}
@@ -81,7 +81,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           <FadeUp className="md:col-span-2">
             <span className="text-metadata mb-8 block">About the Project</span>
-            <p className="text-body text-lg leading-relaxed">
+            <p className="text-body">
               {project.details}
             </p>
             <p className="mt-8">
@@ -102,7 +102,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
             <div>
               <span className="text-metadata mb-4 block">Studio</span>
               <p className="brand-mark text-[0.775rem] leading-none">MotionStory</p>
-              <p className="text-body text-sm">Byron Bay, NSW</p>
+              <p className="text-caption">Byron Bay, NSW</p>
             </div>
           </FadeUp>
         </div>
@@ -187,11 +187,11 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
             <div className="flex flex-col items-center gap-6">
               <a
                 href="/contact/"
-                className="inline-block px-12 py-5 border border-white text-metadata !text-white hover:bg-white hover:!text-black transition-all duration-300"
+                className="ms-btn-on-dark"
               >
-                Start a Project <span className="text-accent">→</span>
+                Start a Project
               </a>
-              <a href="mailto:daniel@motionstory.com.au" className="text-metadata !text-white/40 hover:!text-accent transition-colors">
+              <a href="mailto:daniel@motionstory.com.au" className="text-metadata !text-white/40 hover:!text-white transition-colors">
                 daniel@motionstory.com.au
               </a>
             </div>

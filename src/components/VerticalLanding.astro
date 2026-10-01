@@ -60,12 +60,54 @@ const closeTitle = story?.close
 const showMe = !storyLed && !config.hideMe && meBody.length > 0;
 const heroFilms = (config.heroCarousel ?? []).filter((film) => film.vimeoId);
 const useHeroCarousel = heroFilms.length > 1;
+
+/** Short hero labels. The config eyebrow stays the longer SEO string and is not printed. */
+const heroLabels: Record<string, string> = {
+  '/explainer-videos/': 'Explainer',
+  '/saas-explainer-videos/': 'SaaS',
+  '/product-demo-videos/': 'Product demo',
+  '/freelance-motion-graphic-designer/': 'Freelance',
+  '/finance-explainer-videos/': 'Finance',
+  '/startups/': 'Startups',
+  '/product-launch-video/': 'Launch',
+  '/agencies/': 'Agencies',
+  '/technology-videos/': 'Technology',
+  '/causes/': 'Causes',
+  '/cybersecurity-explainer-videos/': 'Cybersecurity',
+  '/animation-production-company/': 'Animation',
+};
+const heroLabel = heroLabels[config.seo.canonicalPath] ?? '';
+
+/** Space Grotesk 700 advance widths, thousandths of an em. */
+const grotesk700: Record<string, number> = {
+  A: 634, B: 664, C: 644, D: 666, E: 554, F: 534, G: 662, H: 656, I: 264, J: 610,
+  K: 626, L: 542, M: 882, N: 670, O: 676, P: 604, Q: 676, R: 632, S: 606, T: 588,
+  U: 672, V: 618, W: 898, X: 644, Y: 624, Z: 576, a: 578, b: 638, c: 586, d: 638,
+  e: 577, f: 436, g: 638, h: 616, i: 266, j: 268, k: 564, l: 266, m: 854, n: 616,
+  o: 612, p: 638, q: 638, r: 396, s: 524, t: 456, u: 616, v: 548, w: 784, x: 592,
+  y: 616, z: 518, '0': 648, '1': 452, '2': 594, '3': 608, '4': 636, '5': 600,
+  '6': 618, '7': 554, '8': 600, '9': 618, '.': 298, '&': 591, "'": 294,
+};
+
+function wordEms(word: string) {
+  let sum = 0;
+  for (const ch of word) sum += grotesk700[ch] ?? 700;
+  return sum / 1000 - 0.025 * Math.max(0, word.length - 1);
+}
+
+const heroWordEms = config.headline
+  .join(' ')
+  .split(/\s+/)
+  .filter(Boolean)
+  .reduce((max, word) => Math.max(max, wordEms(word)), 1)
+  .toFixed(3);
 ---
 
 <div class="vl">
   <header class="vl-hero">
     <div class="vl-hero-copy">
-      <h1 class="vl-title">
+      {heroLabel ? <span class="text-metadata vl-kicker">{heroLabel}</span> : null}
+      <h1 class="vl-title" style={`--vl-ems: ${heroWordEms}`}>
         {config.headline.map((line, i) => (
           <>
             {i > 0 && <br />}
@@ -398,7 +440,7 @@ const useHeroCarousel = heroFilms.length > 1;
       <ul class="work-grid-break vl-break-lines">
         {whyLines.map((item) => (
           <li>
-            <span class="text-accent" aria-hidden="true">→</span>
+            <span aria-hidden="true">→</span>
             <span>{item}</span>
           </li>
         ))}
@@ -487,13 +529,7 @@ const useHeroCarousel = heroFilms.length > 1;
   .vl {
     max-width: 80rem;
     margin: 0 auto;
-    padding: 8.5rem 2rem 6rem;
-  }
-
-  @media (min-width: 768px) {
-    .vl {
-      padding: 9.5rem 2rem 8rem;
-    }
+    padding: 8rem 2rem 6rem;
   }
 
   .vl-hero {
@@ -512,7 +548,14 @@ const useHeroCarousel = heroFilms.length > 1;
   }
 
   .vl-hero-copy {
-    max-width: 34rem;
+    max-width: 36rem;
+    min-width: 0;
+    container-type: inline-size;
+  }
+
+  .vl-kicker {
+    display: block;
+    margin: 0 0 2rem;
   }
 
   .vl-hero-film {
@@ -525,13 +568,26 @@ const useHeroCarousel = heroFilms.length > 1;
 
   .vl-title {
     font-family: var(--font-display);
-    font-size: clamp(2.15rem, 5vw, 3.6rem);
-    font-weight: 500;
-    letter-spacing: -0.03em;
-    line-height: 1.05;
-    margin: 0 0 1.25rem;
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 0.9;
+    margin: 0 0 2.5rem;
     color: var(--color-fg);
     text-wrap: balance;
+  }
+
+  @media (min-width: 768px) {
+    .vl-title {
+      font-size: 4.5rem;
+    }
+  }
+
+  /* 72px beside the film, unless the longest word would leave the copy column. */
+  @media (min-width: 900px) {
+    .vl-title {
+      font-size: min(4.5rem, calc((100cqi - 4px) / var(--vl-ems, 4.5)));
+    }
   }
 
   .vl-lede {
@@ -836,6 +892,7 @@ const useHeroCarousel = heroFilms.length > 1;
 
   .vl-work-more {
     padding-top: 3.75rem;
+    padding-bottom: 5rem;
     border-top: 1px solid rgba(10, 10, 10, 0.1);
   }
 
@@ -844,7 +901,8 @@ const useHeroCarousel = heroFilms.length > 1;
   }
 
   .vl-band-close {
-    padding-block: 3.75rem;
+    padding-top: 5rem;
+    padding-bottom: 3.75rem;
     border-top: 1px solid rgba(10, 10, 10, 0.1);
     margin-top: 0;
   }

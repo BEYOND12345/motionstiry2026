@@ -127,7 +127,7 @@ const faqSchema = {
     <h1 class="font-display text-4xl md:text-7xl font-bold tracking-tight leading-[0.9] mb-10 max-w-4xl">
       Discover your untold story.
     </h1>
-    <p class="text-body text-lg leading-relaxed max-w-2xl mb-8">
+    <p class="text-body max-w-2xl mb-8">
       A story-driven process designed to craft compelling narratives by distilling the core information into a powerful message your audience wants to hear and watch.
     </p>
     <p class="text-metadata mb-24 max-w-xl">
@@ -137,18 +137,18 @@ const faqSchema = {
     <div class="space-y-20 mb-28">
       {phases.map((phase) => (
         <section>
-          <span class="text-metadata mb-4 block text-accent">Phase {phase.num}</span>
+          <span class="text-metadata mb-4 block">Phase {phase.num}</span>
           <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight mb-5">
             {phase.title}
           </h2>
-          <p class="text-body text-lg leading-relaxed max-w-2xl mb-8">
+          <p class="text-body max-w-2xl mb-8">
             {phase.body}
           </p>
           <p class="text-metadata mb-4">{phase.label}</p>
           <ul class="space-y-3 max-w-xl">
             {phase.items.map((item) => (
-              <li class="flex gap-3 text-body text-[15px] leading-relaxed">
-                <span class="text-accent shrink-0 mt-0.5">→</span>
+              <li class="flex gap-3 text-body">
+                <span class="shrink-0 mt-0.5" aria-hidden="true">→</span>
                 <span>{item}</span>
               </li>
             ))}

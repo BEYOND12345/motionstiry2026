@@ -92,10 +92,10 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
         </a>
       </header>
 
-      <main id="main-content" className="spine-studio mx-auto max-w-6xl px-5 pb-20 pt-10 sm:px-8 sm:pt-14 lg:px-12">
+      <main id="main-content" className="spine-studio mx-auto max-w-6xl px-8 pb-24 pt-16 sm:pt-20">
         <header className="spine-hero grid items-start gap-8 lg:grid-cols-12 lg:gap-12">
           <div className="min-w-0 lg:col-span-5">
-            <h1 className="font-display text-[clamp(2.15rem,4.6vw,3.6rem)] font-medium leading-[1.05] tracking-tight text-balance">
+            <h1 className="font-display text-4xl font-bold leading-[0.9] tracking-tight text-balance md:text-6xl lg:text-7xl">
               {h1Lines.map((line, i) => (
                 <span key={line}>
                   {i > 0 && <br />}
@@ -105,7 +105,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
             </h1>
             <div className="mt-5 max-w-[34rem] space-y-[0.3rem]">
               {heroLede.map((para) => (
-                <p key={para} className="text-[1.0625rem] leading-[1.5] text-[#444]">
+                <p key={para} className="text-body">
                   {para}
                 </p>
               ))}
@@ -161,7 +161,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
               </div>
             ) : null}
             {!workLed ? (
-              <p className="mt-3 text-[0.875rem] tracking-tight text-black/55">
+              <p className="mt-3 text-caption">
                 {config.guide.name}
                 <span className="mx-2 opacity-30">·</span>
                 {config.guide.role}
@@ -202,7 +202,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
                 {config.plan.steps.map((step) => (
                   <li key={step.label} className="border-t border-black/10 py-3.5">
                     <p className="font-display text-[1.05rem] font-medium tracking-tight">{step.label}</p>
-                    <p className="mt-1 text-[0.95rem] leading-relaxed text-black/55">{step.body}</p>
+                    <p className="mt-1 text-body">{step.body}</p>
                   </li>
                 ))}
               </ul>
@@ -247,7 +247,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
                       <p className="font-display text-[1.2rem] font-medium leading-[1.35] tracking-tight sm:text-[1.4rem]">
                         “{quote.quote}”
                       </p>
-                      <footer className="mt-3 text-[0.875rem] text-black/55">
+                      <footer className="mt-3 text-caption">
                         {quote.name}
                         <span className="mx-2 opacity-30">·</span>
                         {quote.company}
@@ -262,7 +262,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
                       <p className="font-display text-[1.2rem] font-medium leading-[1.35] tracking-tight sm:text-[1.35rem]">
                         “{weave.quote.text}”
                       </p>
-                      <footer className="mt-3 text-[0.875rem] text-black/55">
+                      <footer className="mt-3 text-caption">
                         {weave.quote.name === weave.quote.company
                           ? weave.quote.name
                           : `${weave.quote.name} · ${weave.quote.company}`}
@@ -354,7 +354,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
         <footer className="px-5 pb-10 sm:px-8 lg:px-12">
           <p className="brand-mark text-[0.775rem] leading-none">MotionStory.</p>
           {config.footerLine ? (
-            <p className="mt-3 text-[0.875rem] text-black/40">{config.footerLine}</p>
+            <p className="mt-3 text-caption">{config.footerLine}</p>
           ) : null}
         </footer>
       ) : null}

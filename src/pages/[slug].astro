@@ -79,11 +79,11 @@ function renderContent(content: string): string {
       }
       if (block.startsWith('- ')) {
         const items = block.split('\n').map(line =>
-          `<li class="text-body text-lg leading-relaxed">${inlineFormat(line.replace(/^- /, ''))}</li>`
+          `<li class="text-body">${inlineFormat(line.replace(/^- /, ''))}</li>`
         ).join('');
         return `<ul class="space-y-3 my-6 ml-4 list-disc">${items}</ul>`;
       }
-      return `<p class="text-body text-lg leading-relaxed mb-6">${inlineFormat(block)}</p>`;
+      return `<p class="text-body mb-6">${inlineFormat(block)}</p>`;
     })
     .join('');
 }
@@ -123,10 +123,10 @@ function renderContent(content: string): string {
         <span class="text-metadata opacity-30">·</span>
         <span class="text-metadata opacity-50">{readingTime} min read</span>
       </div>
-      <h1 class="font-display text-4xl md:text-6xl font-bold tracking-tight leading-[0.9] mb-6">
+      <h1 class="font-display text-4xl md:text-7xl font-bold tracking-tight leading-[0.9] mb-10">
         {post.title}
       </h1>
-      <p class="text-body text-lg">{post.excerpt}</p>
+      <p class="text-body">{post.excerpt}</p>
     </div>
 
     <div class="border-t border-black/10 pt-12" set:html={renderContent(post.content)} />
@@ -147,7 +147,7 @@ function renderContent(content: string): string {
       <span class="text-metadata mb-4 block">Written by</span>
       <a href="/about/" class="group inline-block">
         <p class="font-display text-lg font-medium group-hover:opacity-60 transition-opacity">Dan Neale</p>
-        <p class="text-body text-sm">Motion Designer & Creative Director, Motion Story</p>
+        <p class="text-caption">Motion Designer & Creative Director, Motion Story</p>
       </a>
     </div>
 
@@ -174,7 +174,7 @@ function renderContent(content: string): string {
                 <span class="text-metadata opacity-50">{new Date(related.date).toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
               </div>
               <h3 class="font-display text-lg font-medium tracking-tight group-hover:opacity-60 transition-opacity">{related.title}</h3>
-              <p class="text-body text-sm line-clamp-2 mt-1">{related.excerpt}</p>
+              <p class="text-caption line-clamp-2 mt-1">{related.excerpt}</p>
             </a>
           ))}
         </div>

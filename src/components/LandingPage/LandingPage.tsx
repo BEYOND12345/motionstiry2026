@@ -370,11 +370,11 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
       <main id="main-content" className="pb-[calc(5.5rem+env(safe-area-inset-bottom))] md:pb-0">
         {/* 1. Hero */}
         <section className="pt-[calc(5.5rem+env(safe-area-inset-top))] md:pt-28 lg:pt-32">
-          <div className="mx-auto max-w-5xl px-5 text-center sm:px-6 lg:px-12">
-            <h1 className="font-display text-[clamp(2.15rem,6.8vw,6rem)] font-bold leading-[0.95] tracking-tight sm:leading-[0.9]">
+          <div className="mx-auto max-w-5xl px-8 text-center">
+            <h1 className="font-display text-4xl font-bold leading-[0.9] tracking-tight md:text-7xl">
               {config.hero.h1}
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-[1.65] text-black/50 sm:mt-6 sm:text-[17px] md:text-[18px]">
+            <p className="mx-auto mt-5 max-w-2xl text-body sm:mt-6">
               {config.hero.subhead}
             </p>
           </div>
@@ -466,7 +466,7 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
                 </p>
               ))}
             </div>
-            <p className="max-w-lg self-center text-[15px] leading-[1.7] text-white/60 sm:text-[17px] lg:text-[18px]">
+            <p className="max-w-lg self-center text-body !text-white/70">
               {config.middleGround.body}
             </p>
           </div>
@@ -557,7 +557,7 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
             <h2 className="font-display text-[1.85rem] font-bold tracking-tight sm:text-3xl lg:text-5xl">
               {config.finalCta.headline}
             </h2>
-            <p className="mt-4 text-[15px] leading-relaxed text-white/55 sm:mt-5 sm:text-[16px]">
+            <p className="mt-4 text-body !text-white/70 sm:mt-5">
               {config.finalCta.formIntro}
             </p>
             <a
@@ -588,12 +588,12 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
                     <span className="font-display text-[15px] font-bold tracking-tight sm:text-base md:text-lg">
                       {faq.question}
                     </span>
-                    <span className="mt-0.5 shrink-0 text-xl text-accent" aria-hidden="true">
+                    <span className="mt-0.5 shrink-0 text-xl" aria-hidden="true">
                       {open ? '−' : '+'}
                     </span>
                   </button>
                   {open && (
-                    <p className="max-w-xl pb-6 text-[15px] leading-relaxed text-black/50 sm:pb-7">
+                    <p className="max-w-xl pb-6 text-body sm:pb-7">
                       {faq.answer}
                     </p>
                   )}
@@ -608,7 +608,7 @@ export default function LandingPage({ config }: { config: LandingPageConfig }) {
       <footer className="site-footer px-5 py-12 pb-[calc(6.5rem+env(safe-area-inset-bottom))] sm:px-6 sm:py-14 md:pb-14 lg:px-12">
         <div className="mx-auto max-w-7xl">
           <p className="brand-mark text-[0.775rem] leading-none">
-            MotionStory<span className="text-accent">.</span>
+            MotionStory.
           </p>
           <p className="mt-4 text-[11px] uppercase tracking-[0.14em] text-black/40">
             Featured on Behance · Clutch-awarded

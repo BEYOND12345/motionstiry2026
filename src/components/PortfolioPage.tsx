@@ -6,8 +6,9 @@ const ORDERED_PROJECTS = sortProjectsShowcaseFirst(ALL_PROJECTS);
 export default function PortfolioPage() {
   return (
     <>
-      <div className="pt-32 pb-10 px-8 max-w-7xl mx-auto">
-        <h1 className="font-display text-4xl md:text-8xl font-bold tracking-tight leading-[0.85] mb-8">
+      <div className="pt-32 pb-10 px-8 max-w-5xl mx-auto">
+        <span className="text-metadata mb-8 block">Work</span>
+        <h1 className="font-display text-4xl md:text-7xl font-bold tracking-tight leading-[0.9] mb-10 max-w-4xl">
           The work.<br />Start here.
         </h1>
         <p className="text-body max-w-lg mb-8">
@@ -15,7 +16,7 @@ export default function PortfolioPage() {
         </p>
       </div>
 
-      <div className="px-8 max-w-7xl mx-auto mb-12">
+      <div className="px-8 max-w-5xl mx-auto mb-12">
         <div className="border-b border-black/10 pb-6">
           <span className="text-metadata opacity-30">
             {ORDERED_PROJECTS.length} films · strongest first
@@ -23,7 +24,7 @@ export default function PortfolioPage() {
         </div>
       </div>
 
-      <div className="px-8 max-w-7xl mx-auto pb-32">
+      <div className="px-8 max-w-5xl mx-auto pb-24">
         <div className="work-grid">
           {ORDERED_PROJECTS.map((project, i) => (
             <WorkCard

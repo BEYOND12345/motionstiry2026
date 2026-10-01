@@ -59,7 +59,7 @@ export const HOME_RELATIONSHIP = {
 } as const;
 
 export const HOME_CLOSE = {
-  lead: "Need a creative partner for your product story?",
+  lead: "Need a creative partner for your story.",
   body: "Bring me in when you need help shaping the idea, making the product easier to understand, developing the creative direction or getting the work made.",
   close: "I work directly with your team from the first conversation through to the finished work.",
 } as const;

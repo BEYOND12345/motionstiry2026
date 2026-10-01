@@ -571,7 +571,7 @@ export default function Homepage() {
               Made<br />
               Simple.
             </h1>
-            <p className="hp-lede mt-5 font-display text-[1.2rem] font-medium leading-[1.4] tracking-tight sm:mt-7 sm:text-[1.35rem] md:text-[1.45rem] md:leading-[1.3]">
+            <p className="hp-lede mt-10 max-w-md text-body">
               {HERO_LEDE}
             </p>
             <div className="hp-logos mt-8 sm:mt-10">
@@ -603,10 +603,10 @@ export default function Homepage() {
               <p className="font-display text-[1.4rem] font-medium tracking-tight leading-[1.25] sm:text-[1.65rem] md:text-[1.85rem] md:leading-[1.2]">
                 {HOME_APPROACH.lead}
               </p>
-              <p className="mt-5 text-body text-[1.0625rem] leading-[1.5] text-[#444] sm:text-[1.05rem]">
+              <p className="mt-5 text-body">
                 {HOME_APPROACH.body}
               </p>
-              <p className="mt-[0.3rem] text-body text-[1.0625rem] leading-[1.5] text-[#444] sm:text-[1.05rem]">
+              <p className="mt-[0.3rem] text-body">
                 {HOME_APPROACH.shape}
               </p>
             </Beat>
@@ -615,7 +615,7 @@ export default function Homepage() {
                 {HOME_MAKE_LEAD}
               </p>
               <FormatList />
-              <p className="mt-8 text-body text-[1.0625rem] leading-[1.5] text-[#444]">
+              <p className="mt-8 text-body">
                 {HOME_MAKE_CLOSE}
               </p>
             </div>
@@ -626,10 +626,10 @@ export default function Homepage() {
               <p className="font-display text-[1.45rem] font-medium tracking-tight leading-[1.2] sm:text-[1.85rem] md:text-[2.1rem] md:leading-[1.15]">
                 {HOME_CLOSE.lead}
               </p>
-              <p className="mt-5 text-body text-[1.0625rem] leading-[1.5] text-[#444] sm:text-[1.05rem]">
+              <p className="mt-5 text-body">
                 {HOME_CLOSE.body}
               </p>
-              <p className="mt-[0.3rem] text-body text-[1.0625rem] leading-[1.5] text-[#444] sm:text-[1.05rem]">
+              <p className="mt-[0.3rem] text-body">
                 {HOME_CLOSE.close}
               </p>
               <div className="mt-8">

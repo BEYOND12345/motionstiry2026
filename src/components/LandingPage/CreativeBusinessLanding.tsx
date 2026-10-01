@@ -157,7 +157,7 @@ function FadeUp({
 
 function PrimaryButton({
   href = BOOKING,
-  tone = 'accent',
+  tone = 'light',
   className = '',
 }: {
   href?: string;
@@ -267,7 +267,7 @@ export default function CreativeBusinessLanding() {
       <header className="absolute inset-x-0 top-0 z-40">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 md:px-8 md:py-6">
           <a href="/" className="brand-mark text-[0.775rem] leading-none text-white">
-            MotionStory<span className="text-accent">.</span>
+            MotionStory.
           </a>
           <a
             href={BOOKING}
@@ -287,7 +287,7 @@ export default function CreativeBusinessLanding() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             >
-              <p className="mb-6 text-[11px] font-medium uppercase tracking-[0.2em] text-accent">
+              <p className="mb-6 text-[11px] font-medium uppercase tracking-[0.2em] text-[#636363]">
                 Creative business designer
               </p>
               <h1 className="max-w-[11ch] font-display text-[clamp(2.75rem,8vw,5.5rem)] font-bold leading-[0.95] tracking-[-0.04em] text-balance">
@@ -305,9 +305,9 @@ export default function CreativeBusinessLanding() {
               transition={{ duration: 0.5, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
             >
               {SPEED_ITEMS.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-[15px] leading-snug tracking-[-0.01em] text-white/78 md:text-[16px]">
-                  <span className="mt-1.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-accent/20">
-                    <Check className="h-3 w-3 text-accent" strokeWidth={2} aria-hidden="true" />
+                <li key={item} className="flex items-start gap-3 text-body !text-white/78">
+                  <span className="mt-1.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-black/10">
+                    <Check className="h-3 w-3 text-[#636363]" strokeWidth={2} aria-hidden="true" />
                   </span>
                   <span>{item}</span>
                 </li>
@@ -320,7 +320,7 @@ export default function CreativeBusinessLanding() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             >
-              <p className="mb-4 text-[14px] tracking-[-0.01em] text-white/45">
+              <p className="mb-4 text-caption !text-white/55">
                 Work directly with a creative business designer. 20 years of it.
               </p>
               <PrimaryButton tone="accent" />
@@ -356,7 +356,7 @@ export default function CreativeBusinessLanding() {
                 </p>
               </div>
               <div
-                className="absolute left-0 top-0 h-1 w-16 bg-accent md:h-1.5 md:w-20"
+                className="absolute left-0 top-0 h-1 w-16 bg-black md:h-1.5 md:w-20"
                 aria-hidden="true"
               />
             </div>
@@ -370,12 +370,12 @@ export default function CreativeBusinessLanding() {
           <FadeUp>
             <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
               <div>
-                <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-accent">How it works</p>
+                <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-[#636363]">How it works</p>
                 <h2 className="max-w-[14ch] font-display text-[clamp(2rem,4.5vw,3.25rem)] font-bold leading-[1.05] tracking-[-0.03em]">
                   One person. One session. Then it gets built.
                 </h2>
               </div>
-              <p className="max-w-sm text-[16px] leading-relaxed text-[color:var(--cbd-muted)] md:text-right md:text-[17px]">
+              <p className="max-w-sm text-body md:text-right">
                 Most people sell you advice or sell you production. I do both, which is why this is simple.
               </p>
             </div>
@@ -385,11 +385,11 @@ export default function CreativeBusinessLanding() {
             {STEPS.map((step, i) => (
               <FadeUp key={step.title} delay={i * 0.06}>
                 <div className="border-b border-[color:var(--cbd-line)] py-10 md:border-b-0 md:border-r md:px-8 md:py-12 md:first:pl-0 md:last:border-r-0 md:last:pr-0">
-                  <p className="font-display text-[4.5rem] font-bold leading-none tracking-[-0.05em] text-accent/20" aria-hidden="true">
+                  <p className="font-display text-[4.5rem] font-bold leading-none tracking-[-0.05em] text-[#636363]/20" aria-hidden="true">
                     {String(i + 1).padStart(2, '0')}
                   </p>
                   <h3 className="mt-5 font-display text-2xl font-bold tracking-tight">{step.title}</h3>
-                  <p className="mt-3 max-w-[28ch] text-[15px] leading-relaxed text-[color:var(--cbd-muted)]">
+                  <p className="mt-3 max-w-[28ch] text-body">
                     {step.body}
                   </p>
                 </div>
@@ -403,7 +403,7 @@ export default function CreativeBusinessLanding() {
       <section className="relative bg-[#E9E9E6] py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-5 md:px-8">
           <FadeUp>
-            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-accent">What I can build</p>
+            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-[#636363]">What I can build</p>
             <h2 className="max-w-[12ch] font-display text-[clamp(2rem,4.5vw,3.25rem)] font-bold leading-[1.05] tracking-[-0.03em]">
               From idea to the actual thing.
             </h2>
@@ -413,11 +413,11 @@ export default function CreativeBusinessLanding() {
             {CAPABILITIES.map((card, i) => (
               <FadeUp key={card.title} delay={i * 0.04}>
                 <article className="cbd-cap flex h-full flex-col rounded-[18px] p-8 md:p-9">
-                  <div className="mb-7 flex h-12 w-12 items-center justify-center rounded-[12px] bg-accent/10">
-                    <card.Icon className="h-6 w-6 text-accent" strokeWidth={1.5} aria-hidden="true" />
+                  <div className="mb-7 flex h-12 w-12 items-center justify-center rounded-[12px] bg-black/5">
+                    <card.Icon className="h-6 w-6 text-[#636363]" strokeWidth={1.5} aria-hidden="true" />
                   </div>
                   <h3 className="font-display text-[1.35rem] font-bold tracking-tight">{card.title}</h3>
-                  <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--cbd-muted)]">{card.description}</p>
+                  <p className="mt-3 text-body">{card.description}</p>
                   <p className="mt-auto pt-8 text-[12px] font-medium uppercase tracking-[0.12em] text-black/35">
                     {card.outcome}
                   </p>
@@ -431,12 +431,12 @@ export default function CreativeBusinessLanding() {
                   <MessageCircleQuestion className="h-6 w-6 text-black/40" strokeWidth={1.5} aria-hidden="true" />
                 </div>
                 <h3 className="font-display text-[1.35rem] font-bold tracking-tight text-black/70">Something else? Ask.</h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-[color:var(--cbd-muted)]">
+                <p className="mt-3 text-body">
                   If the problem doesn't fit a box, bring it anyway.
                 </p>
                 <a
                   href={BOOKING}
-                  className="mt-auto inline-flex min-h-[48px] items-center gap-2 pt-8 text-[15px] font-medium tracking-[-0.01em] text-accent transition-opacity hover:opacity-80"
+                  className="mt-auto inline-flex min-h-[48px] items-center gap-2 pt-8 text-[15px] font-medium tracking-[-0.01em] text-[#636363] transition-opacity hover:opacity-80"
                 >
                   {CTA_LABEL}
                   <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
@@ -451,7 +451,7 @@ export default function CreativeBusinessLanding() {
       <section className="border-y border-[color:var(--cbd-line)] bg-white py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-5 md:px-8">
           <FadeUp>
-            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-accent">Is this you?</p>
+            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-[#636363]">Is this you?</p>
             <h2 className="max-w-[12ch] font-display text-[clamp(2rem,4.5vw,3.25rem)] font-bold leading-[1.05] tracking-[-0.03em]">
               If this sounds familiar.
             </h2>
@@ -465,10 +465,10 @@ export default function CreativeBusinessLanding() {
                     “{row.quote}”
                   </p>
                   <div className="md:col-span-6 md:pl-4">
-                    <p className="text-[16px] leading-relaxed text-[color:var(--cbd-muted)] md:text-[17px]">{row.answer}</p>
+                    <p className="text-body">{row.answer}</p>
                     <a
                       href="#book"
-                      className="mt-5 inline-flex min-h-[44px] items-center gap-2 text-[14px] font-medium tracking-[-0.01em] text-accent transition-opacity hover:opacity-80"
+                      className="mt-5 inline-flex min-h-[44px] items-center gap-2 text-[14px] font-medium tracking-[-0.01em] text-[#636363] transition-opacity hover:opacity-80"
                     >
                       Book a session
                       <ArrowDown className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />
@@ -485,7 +485,7 @@ export default function CreativeBusinessLanding() {
       <section className="bg-[#0A0A0A] py-20 text-white md:py-28">
         <div className="mx-auto max-w-6xl px-5 md:px-8">
           <FadeUp>
-            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-accent">Proof</p>
+            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-[#636363]">Proof</p>
             <h2 className="max-w-[14ch] font-display text-[clamp(2rem,4.5vw,3.25rem)] font-bold leading-[1.05] tracking-[-0.03em]">
               Concept to shipped product. Same hands.
             </h2>
@@ -500,12 +500,12 @@ export default function CreativeBusinessLanding() {
                   rel="noopener noreferrer"
                   className="cbd-product group flex h-full flex-col rounded-[18px] border border-white/10 p-8 md:p-10"
                 >
-                  <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-[14px] bg-accent/15 ring-1 ring-accent/30">
-                    <product.Icon className="h-7 w-7 text-accent" strokeWidth={1.5} aria-hidden="true" />
+                  <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-[14px] bg-white/10 ring-1 ring-white/20">
+                    <product.Icon className="h-7 w-7 text-[#636363]" strokeWidth={1.5} aria-hidden="true" />
                   </div>
                   <h3 className="font-display text-3xl font-bold tracking-tight">{product.name}</h3>
-                  <p className="mt-3 text-[16px] leading-relaxed text-white/55">{product.body}</p>
-                  <span className="mt-auto inline-flex min-h-[48px] items-center gap-2 pt-10 text-[15px] font-medium tracking-[-0.01em] text-white/80 transition-colors group-hover:text-accent">
+                  <p className="mt-3 text-body !text-white/70">{product.body}</p>
+                  <span className="mt-auto inline-flex min-h-[48px] items-center gap-2 pt-10 text-[15px] font-medium tracking-[-0.01em] text-white/80 transition-colors group-hover:text-[#636363]">
                     Visit
                     <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
                   </span>
@@ -540,15 +540,15 @@ export default function CreativeBusinessLanding() {
                     height={800}
                     loading="lazy"
                   />
-                  <div className="absolute inset-y-0 left-0 w-1 bg-accent" aria-hidden="true" />
+                  <div className="absolute inset-y-0 left-0 w-1 bg-black" aria-hidden="true" />
                 </div>
               </div>
               <div className="md:col-span-6 md:col-start-7">
-                <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-accent">Why I do this</p>
+                <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-[#636363]">Why I do this</p>
                 <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.05] tracking-[-0.03em]">
                   I think like a builder, not a supplier.
                 </h2>
-                <div className="mt-7 max-w-prose space-y-5 text-[17px] leading-[1.65] text-[color:var(--cbd-muted)] md:text-lg">
+                <div className="mt-7 max-w-prose space-y-5 text-body">
                   <p>
                     I'm building my own products alongside this work. So I don't think like a supplier waiting for a
                     brief. I think like someone who's had to solve the same problems you're solving.
@@ -565,7 +565,7 @@ export default function CreativeBusinessLanding() {
       </section>
 
       {/* FINAL CTA */}
-      <section id="book" className="scroll-mt-24 relative overflow-hidden bg-accent py-24 md:py-28">
+      <section id="book" className="scroll-mt-24 relative overflow-hidden bg-[#0a0a0a] py-24 md:py-28">
         <div
           className="pointer-events-none absolute inset-0 opacity-30"
           style={{
@@ -579,7 +579,7 @@ export default function CreativeBusinessLanding() {
             <h2 className="mx-auto max-w-[14ch] font-display text-[clamp(2.25rem,5vw,4rem)] font-bold leading-[1.02] tracking-[-0.035em] text-white text-balance">
               Tell me what's holding you back.
             </h2>
-            <p className="mx-auto mt-5 max-w-md text-[17px] leading-relaxed text-white/80">
+            <p className="mx-auto mt-5 max-w-md text-body !text-white/80">
               Book a problem-solving session and let's work out what to do about it.
             </p>
             <div className="mt-10 flex justify-center">
@@ -592,7 +592,7 @@ export default function CreativeBusinessLanding() {
       <footer className="border-t border-black/10 bg-[#F6F6F4] py-10">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 md:flex-row md:items-center md:justify-between md:px-8">
           <p className="brand-mark text-[0.775rem] leading-none">
-            MotionStory<span className="text-accent">.</span>
+            MotionStory.
           </p>
           <p className="text-[13px] tracking-[-0.01em] text-black/40">Creative business design · Byron Bay</p>
         </div>
