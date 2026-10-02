@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import PageLayout from '../layouts/PageLayout.astro';
 import CreativeBusinessLanding from '../components/LandingPage/CreativeBusinessLanding';
 import '../styles/global.css';
 
@@ -40,10 +40,12 @@ const breadcrumbSchema = {
 };
 ---
 
-<BaseLayout
+<PageLayout
   title={title}
   description={description}
   canonicalUrl="https://motionstory.com.au/creative-business-designer/"
+  showCTA={false}
+  floatSubject="Creative business design"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
@@ -51,4 +53,4 @@ const breadcrumbSchema = {
   </Fragment>
 
   <CreativeBusinessLanding client:load />
-</BaseLayout>
+</PageLayout>

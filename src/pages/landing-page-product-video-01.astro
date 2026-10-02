@@ -1,8 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import PageLayout from '../layouts/PageLayout.astro';
 import SpineLandingPage from '../components/LandingPage/SpineLandingPage';
-import EmailFloat from '../components/EmailFloat.astro';
-import Footer from '../components/Footer.astro';
 import { explainerVideoLanding } from '../data/landing-pages/explainer-video';
 import '../styles/global.css';
 
@@ -29,10 +27,12 @@ const faqSchema = {
 };
 ---
 
-<BaseLayout
+<PageLayout
   title={config.seo.titleTag}
   description={config.seo.metaDescription}
   canonicalUrl={`https://motionstory.com.au${config.seo.canonicalPath}`}
+  showCTA={false}
+  floatSubject="Product video"
 >
   <Fragment slot="head">
     <meta name="robots" content="noindex, nofollow" />
@@ -49,6 +49,4 @@ const faqSchema = {
   </Fragment>
 
   <SpineLandingPage client:load config={config} />
-  <Footer />
-  <EmailFloat />
-</BaseLayout>
+</PageLayout>

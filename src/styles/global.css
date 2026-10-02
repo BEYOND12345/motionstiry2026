@@ -749,7 +749,7 @@ body.homepage-layout .nav-links {
 }
 
 .landing-float-arrow {
-  color: var(--color-accent);
+  color: currentColor;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -808,7 +808,7 @@ body.homepage-layout .nav-links {
   font-family: var(--font-sans);
   font-size: 1.15rem;
   font-weight: 400;
-  color: var(--color-accent);
+  color: #0a0a0a;
   line-height: 1;
 }
 

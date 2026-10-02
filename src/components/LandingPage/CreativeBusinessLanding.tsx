@@ -161,19 +161,15 @@ function PrimaryButton({
   className = '',
 }: {
   href?: string;
-  tone?: 'accent' | 'ink' | 'light';
+  tone?: 'ink' | 'light';
   className?: string;
 }) {
   const tones = {
-    accent: 'bg-accent text-white hover:brightness-110',
-    ink: 'bg-white text-black hover:bg-white/90',
-    light: 'bg-black text-white hover:bg-black/85',
+    ink: 'ms-btn-on-dark',
+    light: 'ms-btn',
   };
   return (
-    <a
-      href={href}
-      className={`inline-flex min-h-[52px] items-center justify-center rounded-[10px] px-8 py-4 text-[15px] font-medium tracking-[-0.01em] transition duration-150 ease-out hover:-translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent active:translate-y-0 ${tones[tone]} ${className}`}
-    >
+    <a href={href} className={`${tones[tone]} ${className}`}>
       {CTA_LABEL}
     </a>
   );
@@ -183,76 +179,41 @@ export default function CreativeBusinessLanding() {
   const reduce = useReducedMotion();
 
   return (
-    <div className="cbd-page min-h-screen bg-[#F6F6F4] text-[#0A0A0A] selection:bg-accent selection:text-white">
+    <div className="cbd-page min-h-screen bg-white text-[#0A0A0A] selection:bg-black selection:text-white">
       <style>{`
         .cbd-page {
-          --cbd-paper: #F6F6F4;
           --cbd-ink: #0A0A0A;
           --cbd-muted: rgba(10, 10, 10, 0.62);
           --cbd-line: rgba(10, 10, 10, 0.14);
         }
-        .cbd-page::before {
-          content: '';
-          pointer-events: none;
-          position: fixed;
-          inset: 0;
-          z-index: 80;
-          opacity: 0.045;
-          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-          mix-blend-mode: multiply;
-        }
         .cbd-hero {
-          background:
-            radial-gradient(90% 70% at 85% 20%, rgba(255, 0, 0, 0.18), transparent 55%),
-            radial-gradient(60% 50% at 10% 90%, rgba(255, 255, 255, 0.06), transparent 50%),
-            linear-gradient(165deg, #141414 0%, #0A0A0A 48%, #050505 100%);
+          background: #0a0a0a;
         }
         .cbd-cap {
           position: relative;
           overflow: hidden;
-          isolation: isolate;
-                  background: #FFFFFF;
+          background: #FFFFFF;
           border: 1px solid rgba(10, 10, 10, 0.1);
-          transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .cbd-cap::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 0;
-          bottom: 0;
-          width: 3px;
-          background: #FF0000;
-          transform: scaleY(0);
-          transform-origin: top;
-          transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+          transition: border-color 0.2s ease;
         }
         .cbd-cap:hover {
           border-color: rgba(10, 10, 10, 0.28);
-          transform: translateY(-2px);
-          box-shadow: 0 18px 40px -28px rgba(10, 10, 10, 0.45);
-        }
-        .cbd-cap:hover::before {
-          transform: scaleY(1);
         }
         .cbd-mirror-row {
           transition: background-color 0.2s ease;
         }
         .cbd-mirror-row:hover {
-          background: rgba(255, 0, 0, 0.035);
+          background: rgba(10, 10, 10, 0.03);
         }
         .cbd-product {
-          background:
-            linear-gradient(145deg, #161616 0%, #0A0A0A 100%);
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
+          background: #0a0a0a;
+          transition: border-color 0.2s ease;
         }
         .cbd-product:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 24px 50px -24px rgba(255, 0, 0, 0.35);
+          border-color: rgba(255, 255, 255, 0.28);
         }
         @media (prefers-reduced-motion: reduce) {
           .cbd-cap,
-          .cbd-cap::before,
           .cbd-product {
             transition: none !important;
           }
@@ -263,37 +224,21 @@ export default function CreativeBusinessLanding() {
         }
       `}</style>
 
-      {/* Header on dark hero */}
-      <header className="absolute inset-x-0 top-0 z-40">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 md:px-8 md:py-6">
-          <a href="/" className="brand-mark text-[0.775rem] leading-none text-white">
-            MotionStory.
-          </a>
-          <a
-            href={BOOKING}
-            className="inline-flex min-h-[44px] items-center text-[14px] font-medium tracking-[-0.01em] text-white/55 transition-colors hover:text-white"
-          >
-            Book a session
-          </a>
-        </div>
-      </header>
-
-      {/* HERO — full-bleed ink plane */}
-      <section className="cbd-hero relative min-h-[92vh] overflow-hidden text-white">
-        <div className="relative z-10 mx-auto grid min-h-[92vh] max-w-6xl items-end gap-10 px-5 pb-16 pt-28 md:grid-cols-12 md:gap-8 md:px-8 md:pb-20 md:pt-32">
+      <section className="cbd-hero relative overflow-hidden text-white">
+        <div className="relative z-10 mx-auto grid max-w-5xl items-start gap-10 px-8 pb-16 pt-32 md:grid-cols-12 md:gap-8 md:pb-20">
           <div className="md:col-span-7 lg:col-span-7">
             <motion.div
               initial={reduce ? false : { opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             >
-              <p className="mb-6 text-[11px] font-medium uppercase tracking-[0.2em] text-[#636363]">
+              <p className="text-metadata mb-8 block !text-[#636363]">
                 Creative business designer
               </p>
-              <h1 className="max-w-[11ch] font-display text-[clamp(2.75rem,8vw,5.5rem)] font-bold leading-[0.95] tracking-[-0.04em] text-balance">
+              <h1 className="max-w-4xl font-display text-4xl font-bold leading-[0.9] tracking-tight text-balance md:text-7xl">
                 What's holding your business back?
               </h1>
-              <p className="mt-6 max-w-[22ch] font-display text-[clamp(1.35rem,2.8vw,2rem)] font-medium leading-[1.2] tracking-[-0.02em] text-white/72">
+              <p className="mt-6 max-w-xl font-display text-xl font-medium leading-snug tracking-tight text-white/72 md:text-2xl">
                 I can bring your vision to life.
               </p>
             </motion.div>
@@ -306,8 +251,8 @@ export default function CreativeBusinessLanding() {
             >
               {SPEED_ITEMS.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-body !text-white/78">
-                  <span className="mt-1.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-black/10">
-                    <Check className="h-3 w-3 text-[#636363]" strokeWidth={2} aria-hidden="true" />
+                  <span className="mt-1.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-white/10">
+                    <Check className="h-3 w-3 text-white/70" strokeWidth={2} aria-hidden="true" />
                   </span>
                   <span>{item}</span>
                 </li>
@@ -323,7 +268,7 @@ export default function CreativeBusinessLanding() {
               <p className="mb-4 text-caption !text-white/55">
                 Work directly with a creative business designer. 20 years of it.
               </p>
-              <PrimaryButton tone="accent" />
+              <PrimaryButton tone="ink" />
             </motion.div>
           </div>
 
@@ -366,12 +311,12 @@ export default function CreativeBusinessLanding() {
 
       {/* HOW IT WORKS */}
       <section className="relative border-b border-[color:var(--cbd-line)] py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-5 md:px-8">
+        <div className="mx-auto max-w-5xl px-8">
           <FadeUp>
             <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
               <div>
-                <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-[#636363]">How it works</p>
-                <h2 className="max-w-[14ch] font-display text-[clamp(2rem,4.5vw,3.25rem)] font-bold leading-[1.05] tracking-[-0.03em]">
+                <p className="text-metadata mb-4 block">How it works</p>
+                <h2 className="max-w-[14ch] font-display text-3xl font-bold leading-[1.05] tracking-tight md:text-4xl">
                   One person. One session. Then it gets built.
                 </h2>
               </div>
@@ -400,11 +345,11 @@ export default function CreativeBusinessLanding() {
       </section>
 
       {/* WHAT I CAN BUILD */}
-      <section className="relative bg-[#E9E9E6] py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-5 md:px-8">
+      <section className="relative border-b border-[color:var(--cbd-line)] bg-white py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-8">
           <FadeUp>
-            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-[#636363]">What I can build</p>
-            <h2 className="max-w-[12ch] font-display text-[clamp(2rem,4.5vw,3.25rem)] font-bold leading-[1.05] tracking-[-0.03em]">
+            <p className="text-metadata mb-4 block">What I can build</p>
+            <h2 className="max-w-[12ch] font-display text-3xl font-bold leading-[1.05] tracking-tight md:text-4xl">
               From idea to the actual thing.
             </h2>
           </FadeUp>
@@ -436,7 +381,7 @@ export default function CreativeBusinessLanding() {
                 </p>
                 <a
                   href={BOOKING}
-                  className="mt-auto inline-flex min-h-[48px] items-center gap-2 pt-8 text-[15px] font-medium tracking-[-0.01em] text-[#636363] transition-opacity hover:opacity-80"
+                  className="text-caption mt-auto inline-flex min-h-[48px] items-center gap-2 pt-8 transition-opacity hover:opacity-80"
                 >
                   {CTA_LABEL}
                   <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
@@ -449,10 +394,10 @@ export default function CreativeBusinessLanding() {
 
       {/* IS THIS YOU */}
       <section className="border-y border-[color:var(--cbd-line)] bg-white py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-5 md:px-8">
+        <div className="mx-auto max-w-5xl px-8">
           <FadeUp>
-            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-[#636363]">Is this you?</p>
-            <h2 className="max-w-[12ch] font-display text-[clamp(2rem,4.5vw,3.25rem)] font-bold leading-[1.05] tracking-[-0.03em]">
+            <p className="text-metadata mb-4 block">Is this you?</p>
+            <h2 className="max-w-[12ch] font-display text-3xl font-bold leading-[1.05] tracking-tight md:text-4xl">
               If this sounds familiar.
             </h2>
           </FadeUp>
@@ -468,7 +413,7 @@ export default function CreativeBusinessLanding() {
                     <p className="text-body">{row.answer}</p>
                     <a
                       href="#book"
-                      className="mt-5 inline-flex min-h-[44px] items-center gap-2 text-[14px] font-medium tracking-[-0.01em] text-[#636363] transition-opacity hover:opacity-80"
+                      className="text-caption mt-5 inline-flex min-h-[44px] items-center gap-2 transition-opacity hover:opacity-80"
                     >
                       Book a session
                       <ArrowDown className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />
@@ -483,10 +428,10 @@ export default function CreativeBusinessLanding() {
 
       {/* PROOF */}
       <section className="bg-[#0A0A0A] py-20 text-white md:py-28">
-        <div className="mx-auto max-w-6xl px-5 md:px-8">
+        <div className="mx-auto max-w-5xl px-8">
           <FadeUp>
-            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-[#636363]">Proof</p>
-            <h2 className="max-w-[14ch] font-display text-[clamp(2rem,4.5vw,3.25rem)] font-bold leading-[1.05] tracking-[-0.03em]">
+            <p className="text-metadata mb-4 block">Proof</p>
+            <h2 className="max-w-[14ch] font-display text-3xl font-bold leading-[1.05] tracking-tight md:text-4xl">
               Concept to shipped product. Same hands.
             </h2>
           </FadeUp>
@@ -505,7 +450,7 @@ export default function CreativeBusinessLanding() {
                   </div>
                   <h3 className="font-display text-3xl font-bold tracking-tight">{product.name}</h3>
                   <p className="mt-3 text-body !text-white/70">{product.body}</p>
-                  <span className="mt-auto inline-flex min-h-[48px] items-center gap-2 pt-10 text-[15px] font-medium tracking-[-0.01em] text-white/80 transition-colors group-hover:text-[#636363]">
+                  <span className="text-caption mt-auto inline-flex min-h-[48px] items-center gap-2 pt-10 !text-white/80 transition-colors group-hover:!text-white">
                     Visit
                     <ArrowRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
                   </span>
@@ -515,10 +460,10 @@ export default function CreativeBusinessLanding() {
           </div>
 
           <FadeUp className="mt-16 border-t border-white/10 pt-10">
-            <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/35">
+            <p className="text-metadata !text-white/50">
               20 years of client work through Motion Story
             </p>
-            <p className="mt-5 max-w-4xl font-display text-[clamp(1.1rem,2vw,1.45rem)] font-medium leading-snug tracking-tight text-white/50">
+            <p className="mt-5 max-w-4xl font-display text-lg font-medium leading-snug tracking-tight text-white/50 md:text-xl">
               {CLIENT_STRIP.join('  ·  ')}
             </p>
           </FadeUp>
@@ -527,7 +472,7 @@ export default function CreativeBusinessLanding() {
 
       {/* WHY */}
       <section className="relative py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-5 md:px-8">
+        <div className="mx-auto max-w-5xl px-8">
           <FadeUp>
             <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-12 md:gap-16">
               <div className="md:col-span-5">
@@ -544,8 +489,8 @@ export default function CreativeBusinessLanding() {
                 </div>
               </div>
               <div className="md:col-span-6 md:col-start-7">
-                <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.18em] text-[#636363]">Why I do this</p>
-                <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.05] tracking-[-0.03em]">
+                <p className="text-metadata mb-4 block">Why I do this</p>
+                <h2 className="font-display text-3xl font-bold leading-[1.05] tracking-tight md:text-4xl">
                   I think like a builder, not a supplier.
                 </h2>
                 <div className="mt-7 max-w-prose space-y-5 text-body">
@@ -574,9 +519,9 @@ export default function CreativeBusinessLanding() {
           }}
           aria-hidden="true"
         />
-        <div className="relative mx-auto max-w-6xl px-5 text-center md:px-8">
+        <div className="relative mx-auto max-w-5xl px-8 text-center">
           <FadeUp>
-            <h2 className="mx-auto max-w-[14ch] font-display text-[clamp(2.25rem,5vw,4rem)] font-bold leading-[1.02] tracking-[-0.035em] text-white text-balance">
+            <h2 className="mx-auto max-w-3xl font-display text-3xl font-bold leading-[0.95] tracking-tight text-balance text-white md:text-5xl">
               Tell me what's holding you back.
             </h2>
             <p className="mx-auto mt-5 max-w-md text-body !text-white/80">
@@ -588,15 +533,6 @@ export default function CreativeBusinessLanding() {
           </FadeUp>
         </div>
       </section>
-
-      <footer className="border-t border-black/10 bg-[#F6F6F4] py-10">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 md:flex-row md:items-center md:justify-between md:px-8">
-          <p className="brand-mark text-[0.775rem] leading-none">
-            MotionStory.
-          </p>
-          <p className="text-[13px] tracking-[-0.01em] text-black/40">Creative business design · Byron Bay</p>
-        </div>
-      </footer>
     </div>
   );
 }

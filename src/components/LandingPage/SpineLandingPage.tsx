@@ -83,19 +83,10 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-black selection:bg-accent selection:text-white">
-      <div className="grain-overlay" />
-
-      <header className="px-5 pt-[max(1.25rem,env(safe-area-inset-top))] sm:px-8 lg:px-12">
-        <a href="/" className="brand-mark text-[0.775rem] leading-none">
-          MotionStory.
-        </a>
-      </header>
-
-      <main id="main-content" className="spine-studio mx-auto max-w-6xl px-8 pb-24 pt-16 sm:pt-20">
+    <div className="mx-auto max-w-5xl px-8 pb-24 pt-32">
         <header className="spine-hero grid items-start gap-8 lg:grid-cols-12 lg:gap-12">
           <div className="min-w-0 lg:col-span-5">
-            <h1 className="font-display text-4xl font-bold leading-[0.9] tracking-tight text-balance md:text-6xl lg:text-7xl">
+            <h1 className="font-display text-4xl font-bold leading-[0.9] tracking-tight text-balance md:text-7xl">
               {h1Lines.map((line, i) => (
                 <span key={line}>
                   {i > 0 && <br />}
@@ -115,7 +106,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
                 {config.hero.primaryCta}
               </a>
               {config.hero.secondaryCtaHref ? (
-                <a href={config.hero.secondaryCtaHref} className="border-b border-black/20 pb-0.5 text-[0.875rem]">
+                <a href={config.hero.secondaryCtaHref} className="text-caption">
                   {config.hero.secondaryCta}
                 </a>
               ) : null}
@@ -348,16 +339,6 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
             </div>
           </section>
         ) : null}
-      </main>
-
-      {!config.siteFooter ? (
-        <footer className="px-5 pb-10 sm:px-8 lg:px-12">
-          <p className="brand-mark text-[0.775rem] leading-none">MotionStory.</p>
-          {config.footerLine ? (
-            <p className="mt-3 text-caption">{config.footerLine}</p>
-          ) : null}
-        </footer>
-      ) : null}
     </div>
   );
 }
