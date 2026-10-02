@@ -17,6 +17,8 @@ export const causesVerticalLanding: VerticalLandingConfig = {
   eyebrow: 'Causes & nonprofits',
   headline: ['Stories for charities', '& nonprofits.'],
   lede: 'Films that get to the heart of the problem. Who you help, why it matters, and why people should get behind you.',
+  ctaNote:
+    'Who do you help, and why should someone care? I can turn that into a film people will watch.',
   heroVideo: {
     vimeoId: '540393117',
     title: 'United Nations / Plastic Waste Data',
@@ -37,7 +39,7 @@ export const causesVerticalLanding: VerticalLandingConfig = {
   cases: [
     verticalCase('redcross', {
       tags: 'Nonprofit, Covid, explainer',
-      body: 'IFRC workers could see COVID-19 vaccines were not reaching remote communities. We framed the story like a wildlife documentary, humans in the spotlight, so the equity message could not be ignored.',
+      body: 'IFRC workers could see COVID-19 vaccines were not reaching remote communities. I framed it like a wildlife documentary, with people in the spotlight, so the equity point was clear.',
     }),
     verticalCase('rspca-giving', {
       tags: 'Charity, animals, explainer, character animation',
@@ -49,7 +51,7 @@ export const causesVerticalLanding: VerticalLandingConfig = {
     }),
     verticalCase('rspca-cats', {
       tags: 'Charity, cats, explainer, character animation',
-      body: 'Changing how pet owners care for cats is hard. We told it from a cat lover’s point of view. Dangers of roaming, and how cats thrive indoors and in enclosures.',
+      body: 'Changing how pet owners care for cats is hard. I told it from a cat lover’s point of view: the dangers of roaming, and how cats thrive indoors and in enclosures.',
     }),
     verticalCase('acir', {
       tags: 'Food waste, data storytelling',
@@ -61,8 +63,8 @@ export const causesVerticalLanding: VerticalLandingConfig = {
     }),
   ],
   value: {
-    headline: 'Create an emotion.',
-    body: 'With an emotive visual story, you can truly connect with individuals and bring about collective action, and show donors how their support is put to good use.',
+    headline: 'Who you help, and why it matters.',
+    body: 'I look for the person in the story, then make the problem and the next step clear enough to watch.',
   },
   benefits: {
     headline: 'Create positive change',

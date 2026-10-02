@@ -9,16 +9,16 @@ import {
 
 export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
   seo: {
-    titleTag: 'Freelance Motion Designer & Creative Director | Motion Story',
+    titleTag: 'Freelance Motion Graphic Designer | Motion Story',
     metaDescription:
-      'Senior freelance motion designer with studio-level thinking. Ideas, storyboards, design and animation, all handled directly from concept to delivery.',
+      'Freelance motion graphic designer. Dan Neale helps teams explain products and complex ideas, from the story through to the finished film.',
     canonicalPath: '/freelance-motion-graphic-designer/',
   },
   eyebrow: 'Freelance motion designer',
-  headline: ['Freelance motion designer.', 'Studio thinking.'],
-  lede: "Hi, I'm Dan. I'm an independent creative director and motion designer behind Motion Story.",
+  headline: ['Freelance motion designer.', 'Your team, directly.'],
+  lede: "Hi, I'm Dan. I help teams explain products and complex ideas, from the story through to the finished film.",
   ctaNote:
-    'I work somewhere between a senior freelancer and a small motion studio. You work directly with me, and I handle most projects from the initial idea through to storyboarding, design and animation. When a project needs extra expertise, I bring in trusted specialists.',
+    'You work with me. Story, storyboard, design and animation. Or an existing brief, executed. When the work needs another specialist, I bring them in and direct them.',
   heroVideo: {
     vimeoId: '394326130',
     title: 'Meltwater / Brand Story',
@@ -48,8 +48,8 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
     },
     {
       after: 5,
-      headline: 'Studio thinking. Freelance flexibility.',
-      mark: 'flexibility.',
+      headline: 'Shape the story, or execute the brief.',
+      mark: 'brief.',
       text: [
         'Need an extra pair of hands? I can do that.',
         'Need someone to take ownership of the motion? I can do that too.',
@@ -65,7 +65,7 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
       after: 9,
       headline: 'You work directly with me.',
       mark: 'directly with me',
-      text: 'I handle most projects from the initial idea through to storyboarding, design and animation.',
+      text: 'Story, storyboard, design and animation. Or an existing brief, executed. When the work needs another specialist, I bring them in and direct them.',
     },
   ],
   cases: [
@@ -107,11 +107,11 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
     }),
     verticalCase('atomic', {
       tags: 'SaaS, UI storytelling',
-      body: 'Product motion that feels native to the software. Clear, branded, and ready for sales.',
+      body: 'Product motion that feels native to the software.',
     }),
   ],
   value: {
-    headline: 'Studio thinking. Freelance flexibility.',
+    headline: 'Shape the story, or execute the brief.',
     body: "If you already know exactly what you need, I can jump in and execute it. If you don't, I can help work it out. I can take direction, or I can provide it.",
   },
   benefits: {
@@ -131,7 +131,7 @@ export const motionGraphicsVerticalLanding: VerticalLandingConfig = {
     {
       question: 'Are you a freelancer or a studio?',
       answer:
-        'Somewhere between. I am an independent creative director and motion designer. You work directly with me throughout. I handle most of the work myself, and I bring in trusted specialists only when a project needs extra expertise.',
+        'You work with me. I handle the story, the storyboard, the design and the animation. When a project needs another specialist, I bring in someone I trust and I direct that work.',
     },
     {
       question: 'Can you just execute a brief?',

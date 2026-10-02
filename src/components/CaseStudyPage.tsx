@@ -175,7 +175,7 @@ export default function CaseStudyPage({ project, allProjects }: Props) {
           </FadeUp>
           <SlideUp>
             <h2 className="font-display text-3xl md:text-6xl font-bold tracking-tight mb-8">
-              Got something complex<br />to explain?
+              What should this film<br />make clear?
             </h2>
             <p className="text-metadata !text-white/50 mb-12">
               <a href={lane.moneyHref} className="hover:!text-white transition-colors">

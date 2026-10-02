@@ -15,15 +15,15 @@ import {
 export const productDemoLanding: SpineLandingConfig = {
   slug: 'product-demo',
   seo: {
-    titleTag: 'Product Demo Videos That Sell Your Software | Motion Story',
+    titleTag: 'Product Demo Videos | Motion Story',
     metaDescription:
-      'Animated product demos for SaaS teams. Sales ready videos, no login required. Script, storyboard, animation by a creative director.',
+      'Product demos with the software on screen. Dan Neale, freelance motion graphic designer. Story, storyboard, and animation.',
     canonicalPath: '/landing-animated-product-demos-01/',
   },
   hero: {
     eyebrow: 'Product demo videos',
-    h1: 'Product demos that sell your software.',
-    subhead: 'Clear. On brand. Ready for sales.',
+    h1: 'Show how the product works.',
+    subhead: 'The software stays on screen, so a buyer can follow the workflow.',
     videoSrc: '861022443',
     fullShowreelUrl: '861022443',
     primaryCta: 'Book a call',
@@ -56,7 +56,7 @@ export const productDemoLanding: SpineLandingConfig = {
   },
   success: {
     headline: SPINE_CLOSE.headline,
-    body: 'One video. The buyer already gets it.',
+    body: 'What do people need to understand about the product? I can help decide what to show, then make the film.',
   },
   testimonial: TESTIMONIAL_METHOD,
   faq: {

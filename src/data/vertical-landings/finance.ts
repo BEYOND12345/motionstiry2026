@@ -11,6 +11,8 @@ export const financeVerticalLanding: VerticalLandingConfig = {
   eyebrow: 'Fintech motion graphic explainer videos',
   headline: ['Fintech motion graphic', 'explainer videos.'],
   lede: 'Make money software feel trustworthy. Payments, banking, and financial software that cannot afford to look cute or vague. Clear enough for a board, sharp enough for a landing page.',
+  ctaNote:
+    'What does a buyer need to trust before they act? I can show the mechanism without making the film vague.',
   heroVideo: {
     vimeoId: '1157366298',
     vimeoHash: '1ddd2b07e1',

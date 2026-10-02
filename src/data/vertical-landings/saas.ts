@@ -11,6 +11,8 @@ export const saasVerticalLanding: VerticalLandingConfig = {
   eyebrow: 'Motion graphics',
   headline: ['SaaS videos.'],
   lede: 'Make the software obvious before login. Product on screen, even from a Figma or a napkin brief, so people get it before they log in.',
+  ctaNote:
+    'What should someone understand before they log in? I can shape that story and put the product on screen.',
   heroVideo: {
     vimeoId: '866174146',
     title: 'Trudi / AI Property Management',
@@ -57,11 +59,11 @@ export const saasVerticalLanding: VerticalLandingConfig = {
     }),
     verticalCase('wipster', {
       tags: 'Software, SaaS, explainer, feedback tool',
-      body: "Wipster needed every user to know how their software had grown. Our 'Connect the Dots' concept links core functionality with newest developments, whisking the viewer through the features in smooth animation.",
+      body: "Wipster needed people to see how the software had grown. I used a Connect the Dots concept to link the core workflow with the newer features.",
     }),
     verticalCase('acodis', {
       tags: 'Software, AI, SaaS, explainer',
-      body: "Acodis couldn't succinctly explain their AI data extraction in layman's terms. We brought the platform to life with visuals that replicate the extraction process, matched to their brand.",
+      body: "Acodis needed the extraction process explained without an engineering briefing. I showed the process in their visual language.",
     }),
     verticalCase('infoview', {
       tags: 'SaaS, expense management, explainer',
@@ -69,7 +71,7 @@ export const saasVerticalLanding: VerticalLandingConfig = {
     }),
     verticalCase('oovvuu', {
       tags: 'Software, SaaS, explainer, demo',
-      body: 'With a WordPress plugin capable of bringing curated video to every news article, Oovvuu needed reporters using it. We crafted a visual language resembling printing reels and focused on elevating news reporting.',
+      body: 'Oovvuu needed reporters to see what the WordPress plugin does. I used a printing-reel visual language and kept the story on the workflow.',
     }),
     verticalCase('driv0', {
       tags: 'SaaS motion graphics, software, booking',
@@ -85,7 +87,7 @@ export const saasVerticalLanding: VerticalLandingConfig = {
     items: [
       'Present a clear product overview',
       'Quickly teach the user how it works',
-      'Increase conversions faster',
+      'Give sales one film they can send',
     ],
   },
   quote: {

@@ -1,7 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import { GOOGLE_REVIEWS } from '../data/reviews';
-import { SITE_DESCRIPTION } from '../data/site-copy';
 
 const contactReview = GOOGLE_REVIEWS[1]; // Tate Shepherd
 
@@ -26,7 +25,7 @@ const structuredData = {
 
 <PageLayout
   title="Start a Project | Motion Story"
-  description={`Start a project with Dan. ${SITE_DESCRIPTION}`}
+  description="Start a project with Dan. You don't need a finished brief. Email, or book a call."
   activeNav="Start a Project"
   showCTA={false}
   showFloat={false}
@@ -47,11 +46,11 @@ const structuredData = {
       <div>
         <span class="text-metadata mb-8 block">Start a Project</span>
         <h1 class="font-display text-4xl md:text-7xl font-bold tracking-tight leading-[0.9] mb-10">
-          Got something<br />complex to<br />explain?
+          You don't need<br />a finished<br />brief.
         </h1>
         <p class="text-body max-w-md mb-16">
-          Tell me what you're working on.
-          If it's the right fit, we'll know quickly.
+          Tell me what you are trying to explain.
+          If it is the right fit, we will know quickly.
         </p>
 
         <div class="space-y-10 mb-16">
@@ -67,8 +66,8 @@ const structuredData = {
           </div>
           <div>
             <span class="text-metadata mb-3 block">Prefer to talk first?</span>
-            <a href="mailto:daniel@motionstory.com.au?subject=Discovery%20call%20request" class="text-metadata border-b border-black/20 pb-1 hover:border-black transition-colors">
-              Request a 20-minute discovery call →
+            <a href="/book/" class="text-metadata border-b border-black/20 pb-1 hover:border-black transition-colors">
+              Book a call →
             </a>
           </div>
         </div>

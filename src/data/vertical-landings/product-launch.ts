@@ -17,6 +17,8 @@ export const productLaunchVerticalLanding: VerticalLandingConfig = {
   eyebrow: 'Product launch videos for SaaS',
   headline: ['Product launch videos', 'for SaaS.'],
   lede: 'The first film buyers see. One story, timed to launch day, even before the UI is ready. Sales can keep using it after week one.',
+  ctaNote:
+    'What does this release need people to understand? I can shape that film around the date you actually have.',
   heroVideo: {
     vimeoId: '863428533',
     title: 'Trusyft / Product Promo',

@@ -17,6 +17,8 @@ export const productDemoVerticalLanding: VerticalLandingConfig = {
   eyebrow: 'For the product',
   headline: ['Product demo videos.'],
   lede: 'Show the software working. UI on screen, workflow clear. Play, understand, decide. More than a screen recording.',
+  ctaNote:
+    'What do people need to understand about your product? I can help decide what to show, then make the film.',
   heroVideo: {
     vimeoId: '448704979',
     title: 'Good2Pay / Paperless Invoicing',

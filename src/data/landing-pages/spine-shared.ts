@@ -35,8 +35,8 @@ export const SPINE_VALUE: SpineLandingConfig['value'] = {
 
 export const SPINE_GUIDE: SpineLandingConfig['guide'] = {
   eyebrow: 'Your director',
-  headline: 'You brief me. I run the project.',
-  body: 'Serious business needs serious storytelling.',
+  headline: "Hi, I'm Dan.",
+  body: 'I help teams explain products and complex ideas. You work with me, from the story through to the film.',
   name: 'Daniel Neale',
   role: 'Creative director, Motion Story',
   photoSrc: '/daniel-neale.jpg',
@@ -44,7 +44,7 @@ export const SPINE_GUIDE: SpineLandingConfig['guide'] = {
 
 export const SPINE_PLAN: SpineLandingConfig['plan'] = {
   eyebrow: 'The plan',
-  headline: 'Three steps. No production maze.',
+  headline: 'Three steps.',
   steps: [
     {
       label: 'We talk',
@@ -186,7 +186,7 @@ export const SPINE_CORE_FAQS: SpineLandingConfig['faq']['items'] = [
   {
     question: 'Can we see more work?',
     answer:
-      'What’s on the site is a sample. I’ve made thousands of films: commercials, ads, music videos, product stories. Contact me if you need something specific that isn’t in the portfolio.',
+      'What’s on the site is a sample. Contact me if you need something specific that isn’t in the portfolio.',
   },
   {
     question: 'Do you white label, consult, or join our team?',
@@ -196,6 +196,6 @@ export const SPINE_CORE_FAQS: SpineLandingConfig['faq']['items'] = [
 ];
 
 export const SPINE_CLOSE = {
-  headline: 'Book a call with me, your creative director.',
+  headline: 'Book a call.',
   formIntro: 'Send a brief',
 } as const;

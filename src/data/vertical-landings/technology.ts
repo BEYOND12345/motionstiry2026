@@ -17,6 +17,8 @@ export const technologyVerticalLanding: VerticalLandingConfig = {
   eyebrow: 'Technology videos',
   headline: ['Make the tech', 'followable.'],
   lede: 'AI, cyber, crypto, smart cities. Complex tech made clear with a story people can follow.',
+  ctaNote:
+    'What is the hard idea your buyers have to grasp? I can make that followable, using the work rather than a list of industries.',
   heroVideo: {
     vimeoId: '762112642',
     title: 'Giraffe / Designing Cities',
@@ -37,19 +39,19 @@ export const technologyVerticalLanding: VerticalLandingConfig = {
   cases: [
     verticalCase('acodis', {
       tags: 'Software, AI, SaaS, explainer',
-      body: "Acodis couldn't succinctly explain their AI data extraction in layman's terms. We brought the platform to life with visuals that replicate the process, matched to their brand.",
+      body: 'Acodis needed the extraction process explained for people outside engineering. I showed the process in their visual language.',
     }),
     verticalCase('carter-coin', {
       tags: 'Crypto, coin, explainer, 3D',
-      body: "Carter Token's white paper didn't articulate the vision clearly enough. With 3D visuals and a plain-speaking script, we demonstrated the wealth-generating power of the security deposit solution.",
+      body: 'Carter Token needed the security-deposit idea out of the white paper. I used 3D visuals and a plain script so the mechanism was followable.',
     }),
     verticalCase('liquid-ai', {
       tags: 'Software explainer, AI, motion graphic',
-      body: "Liquid AI can target ads more precisely than ever, but couldn't easily show how the technology works. We crafted an origin story fusing traditional marketing, online advertising, and AI.",
+      body: 'Liquid AI needed people to see how the targeting works. I told it as an origin story: traditional marketing, online advertising, and the AI.',
     }),
     verticalCase('data-republic', {
       tags: 'Software explainer, data, motion graphic',
-      body: "Data Republic wasn't converting enough visitors. We designed a conceptual 3D environment that methodically explained the inner workings of their privacy-preserving data solution.",
+      body: 'Data Republic needed the privacy model explained without a white paper. I built a 3D environment that walks through how the data stays protected.',
     }),
     verticalCase('bat-nav', {
       tags: 'Energy tech, platform explainer',
@@ -61,15 +63,15 @@ export const technologyVerticalLanding: VerticalLandingConfig = {
     }),
   ],
   value: {
-    headline: 'Convince and convert.',
-    body: 'New technology needs clearly articulated statements to prove it is needed and show how powerful it can be. We construct convincing stories that dispel doubt and stick.',
+    headline: 'Make the hard idea followable.',
+    body: 'I start with what a buyer has to understand, then show how the technology works. The film has to stay credible with the people who already know the subject.',
   },
   benefits: {
     headline: 'Make it real',
     items: [
-      'Inspire users with the possibilities',
-      'Simplify comprehension and speed up adoption',
-      'Highlight transformative potential',
+      'One idea a non-specialist can follow',
+      'The mechanism, not a feature list',
+      'A film the technical team can still stand behind',
     ],
   },
   quote: {

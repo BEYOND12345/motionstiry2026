@@ -11,6 +11,8 @@ export const cybersecurityVerticalLanding: VerticalLandingConfig = {
   eyebrow: 'Cybersecurity motion graphic explainer videos',
   headline: ['Cybersecurity motion graphic', 'explainer videos.'],
   lede: 'Make the threat, and the fix, visible. For platforms that security people understand and buyers do not. Threats, privacy, post quantum readiness, told so a non-specialist can follow and act.',
+  ctaNote:
+    'What risk does your buyer need to see, and what does the product do about it?',
   heroVideo: {
     vimeoId: '1213121904',
     title: 'Nisient / Quantum Security',

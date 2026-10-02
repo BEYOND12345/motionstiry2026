@@ -16,7 +16,8 @@ export const animationProductionLanding: VerticalLandingConfig = {
   },
   eyebrow: '2D animation studio',
   headline: ['Animation production company.'],
-  lede: 'Motion graphics and brand animation, plus explainers and product films, produced by the person who directs them. Based in Byron Bay. Teams in Sydney, Melbourne, Brisbane, Los Angeles, and across Australia.',
+  lede: 'Motion graphics, explainers and product films. I direct the work and I make it. Byron Bay, with teams elsewhere.',
+  ctaNote: 'What do you need made? I can shape the story, or execute a brief you already have.',
   heroVideo: {
     vimeoId: '557884851',
     title: 'Method / Beautiful Bin System',

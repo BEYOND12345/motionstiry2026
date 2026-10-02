@@ -104,7 +104,7 @@ The client loves them. Signs off. Everyone moves forward.
 
 Then the animation comes back and something's wrong. The story doesn't flow. Scenes cut strangely. The voiceover says one thing and the visuals are doing something else entirely. Revisions start. Budgets blow out. Timelines slip.
 
-I've seen it hundreds of times. And I've had other motion designers tell me the same thing: starting with style frames is one of the biggest mistakes in this industry.
+I've seen this often. And I've had other motion designers tell me the same thing: starting with style frames is one of the biggest mistakes in this industry.
 
 Because you've answered the question "what will it look like" before you've answered "what is it trying to say."
 
@@ -656,7 +656,7 @@ Almost never. Gating a video dramatically reduces views and sends the signal tha
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "how-to-use-video-in-saas-sales-process",
@@ -664,10 +664,10 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     date: "2026-03-18",
     category: "Motion Design Strategy",
     tags: ["SaaS sales video", "video sales enablement", "product demo strategy", "sales process optimization"],
-    excerpt: "Most SaaS companies put a video on their homepage and stop. Here's how to use motion design across your entire sales process to close deals faster.",
+    excerpt: "Most SaaS companies put a video on their homepage and stop. Here is how a film can sit at more than one point in the sales process.",
     content: `Most SaaS companies think of video as a website thing. You put an explainer on the homepage, maybe a product tour on the features page, and call it done. But the homepage is just one touchpoint in a sales process that might have 10 or 15. And video can work at almost every one of them.
 
-After producing videos for hundreds of SaaS companies, I've seen the ones that deploy video across the full sales cycle consistently close faster, lose fewer deals to "no decision," and get better internal champions. Here's how they do it.
+Teams that use a film at more than one point in the sales cycle give the buyer something they can forward. Here is where that film can sit.
 
 ## Video at Every Stage of the SaaS Sales Cycle
 
@@ -756,7 +756,7 @@ For a pre-demo explainer, a shareable overview, and 3-5 onboarding clips: $15,00
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "homepage-video-vs-product-demo-saas",
@@ -866,7 +866,7 @@ Explainer videos last 2-3 years if your positioning stays stable. Product demos 
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "how-to-measure-roi-motion-design-video-saas",
@@ -1017,7 +1017,7 @@ Use the revenue attribution formula above. CFOs want a single number: how much r
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "10-second-test-is-your-video-working",
@@ -1132,7 +1132,7 @@ Use benchmarks as a starting point, but your own historical data is more valuabl
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "how-to-get-past-3-second-watch-rule",
@@ -1144,7 +1144,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     excerpt: "Most viewers decide in three seconds whether to keep watching. Here's what separates videos that hold attention from those that get scrolled past.",
     content: `Three seconds. That's how long a viewer gives your video before deciding to keep watching or scroll past. On social media, it's closer to 1.5 seconds. On a landing page, you get maybe five. But the principle is the same: the opening of your video is doing more work than any other part.
 
-I've spent 15 years making videos that need to grab attention fast. Here's what I've learned about what makes people stay and what makes them leave.
+I've spent a long time making videos that need to grab attention fast. Here's what I've learned about what makes people stay and what makes them leave.
 
 ## Why Three Seconds Matters
 
@@ -1170,7 +1170,7 @@ For SaaS explainer videos, this might mean the animation is already showing a pr
 
 **What to do instead:** Open with a statement that describes the viewer's reality. "You're spending 10 hours a week on manual reporting" or "Your sales team sends the same follow-up email 40 times a day." The viewer hears their own problem and leans in.
 
-This is the most consistent predictor of retention I've seen across hundreds of projects. Videos that open with the viewer's problem hold attention. Videos that open with the company's story lose it.
+In my experience, videos that open with the viewer's problem hold attention. Videos that open with the company's story lose it.
 
 ### 3. Use Audio as a Hook (Even When Muted)
 
@@ -1212,7 +1212,7 @@ If your SaaS videos are getting views but losing viewers early, the fix is almos
 
 ## What I Actually Do in the First Three Seconds
 
-After 1,000+ projects, I've tested a lot of openings. Here's what I've found.
+I've tested a lot of openings. Here's what I've found.
 
 The single most effective technique is what I call the "recognition moment." The first visual or line that makes the right viewer think "that's me." Not a general statement about the industry. A specific situation.
 
@@ -1240,7 +1240,7 @@ Watch the first 10 seconds. Everything that isn't either showing the problem or 
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "why-saas-demo-video-not-converting",
@@ -1252,7 +1252,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     excerpt: "Your demo video has views but no conversions. Here are the five most common reasons SaaS demo videos fail, and how to fix each one without starting over.",
     content: `Your SaaS demo video has decent views. People are clicking play. But trial signups haven't moved. Demo requests are flat. The video isn't converting, and you're not sure why.
 
-I've audited hundreds of SaaS product videos over 15 years, and the same five problems come up over and over. The good news: most of them can be fixed without rebuilding the video from scratch.
+I've watched a lot of SaaS product videos, and the same five problems come up over and over. The good news: most of them can be fixed without rebuilding the video from scratch.
 
 ## Reason 1: You're Leading With Features, Not Problems
 
@@ -1322,7 +1322,7 @@ If you fail on two or more, the video needs work. Sometimes it's a re-edit. Some
 
 ## The Pattern I See Most Often
 
-Looking back across 1,000+ projects, the videos that failed almost always share one of three things.
+The videos that failed almost always share one of three things.
 
 The client made the video and then waited. They posted it once on LinkedIn and expected it to work. It won't. A video needs to be embedded in your actual sales and marketing process. In outreach emails, in your sales deck, in onboarding sequences. If you're not actively sending it to people, it's not working.
 
@@ -1345,7 +1345,7 @@ Yes, if you have enough traffic. Test the video vs no video first. Then test dif
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "three-ways-to-work-with-motion-designer",
@@ -1461,7 +1461,7 @@ If you're briefing the same designer more than once per quarter, and each projec
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "how-to-brief-a-motion-designer-saas-video",
@@ -1475,7 +1475,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
 
 The most common reason a motion design project goes wrong isn't the animation. It isn't the budget or the timeline. It's the brief.
 
-In 15 years I've received briefs that were three paragraphs of company background with no mention of the audience, the platform it would live on, or what the viewer was supposed to do after watching. I've received 40-page brand documents that answered everything except the one question that mattered: what does this video need to accomplish?
+I've received briefs that were three paragraphs of company background with no mention of the audience, the platform it would live on, or what the viewer was supposed to do after watching. I've received 40-page brand documents that answered everything except the one question that mattered: what does this video need to accomplish?
 
 I've also received one-paragraph briefs from founders who knew exactly what they were trying to change in their prospect's understanding, and those projects almost always produced the best work.
 
@@ -1618,7 +1618,7 @@ Tell me that upfront. It's actually useful information. If you can't define what
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "what-type-of-video-does-my-saas-company-need",
@@ -1632,7 +1632,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
 
 Explainer video? Product demo? Brand film? Onboarding walkthrough? They all sound similar but serve completely different purposes. Picking the wrong one wastes your budget and leaves you with something that doesn't do the job.
 
-After 15 years of making videos for SaaS companies, here's how I'd break down the decision.
+Here is how I would break down the decision.
 
 ## The Five Video Types That Matter for SaaS
 
@@ -1745,7 +1745,7 @@ A good animated explainer lasts 2-3 years. Product demos might need refreshing e
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "should-saas-hire-motion-designer-in-house",
@@ -1824,7 +1824,7 @@ AI is changing parts of the motion design workflow, particularly in ideation, as
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "motion-design-studio-vs-freelance-animator",
@@ -1934,30 +1934,30 @@ It happens. The key is having clear milestones where you review progress. If the
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "how-much-does-saas-motion-design-video-cost",
-    title: "How Much Does a SaaS Motion Design Video Cost? (Real Numbers, No Fluff)",
+    title: "How Much Does a SaaS Motion Design Video Cost?",
     date: "2025-10-08",
     updated: "2026-09-11",
     category: "Buyer's Guide",
     tags: ["SaaS video cost", "explainer video pricing", "motion design budget", "video production cost"],
-    excerpt: "Real pricing for SaaS motion design videos in 2026, based on 1,000+ projects. No vague ranges or 'it depends.' Actual numbers broken down by video type.",
-    content: `Everyone wants to know what a SaaS video costs, and every website gives you the same useless answer: "it depends." So here are real numbers from 15 years and over 500 projects. No fluff, no bait-and-switch ranges designed to get you on a sales call.
+    excerpt: "Example ranges for SaaS motion design videos, from past projects. These are not a current rate card. A quote still depends on the brief.",
+    content: `People ask what a SaaS video costs. The honest answer still depends on the brief. The ranges below are examples from projects I have quoted and delivered. They are not my current fees, and they are not a rate card.
 
 ## What Does a SaaS Motion Design Video Actually Cost in 2026?
 
-I'll give you real numbers. These are based on 15 years of quoting and delivering motion design projects, not market research.
+These figures are past project ranges, in AUD. For a current quote, the published starting point on the site is from $5,000, and most films land around $10,000 to $15,000. The exact number comes from the brief.
 
 **$3,000-$6,000 AUD**
 Component work. You have a concept, a script, a storyboard. You need someone to animate it. No strategy, no creative direction. Pure production execution. This is the entry point, and it's appropriate for social assets, internal content, or top-up work for a project already in motion.
 
 **$8,000-$12,000 AUD**
-A full 60-90 second SaaS video with creative direction included. This is my sweet spot. You get concept development, script direction, storyboard, style frames, animation, sound design, and two structured revision rounds. This is the budget where the work is genuinely good and the strategy is right. Most of my direct client projects sit here.
+A full 60-90 second SaaS video with creative direction included. Concept development, script direction, storyboard, style frames, animation, sound design, and two structured revision rounds. This is a common range for that scope. It is an example, not a current fee.
 
 **$12,000-$20,000 AUD**
-More complex briefs. Multiple audiences. Character animation. A platform with genuine visual complexity that needs custom illustration rather than simple geometric shapes. Longer duration. Or a project with a short turnaround that needs additional resourcing. The Acodis video, which generated 40,000 YouTube views, sat in this range.
+More complex briefs. Multiple audiences. Character animation. A platform with genuine visual complexity that needs custom illustration rather than simple geometric shapes. Longer duration. Or a project with a short turnaround that needs additional resourcing. The Acodis video sat in this range.
 
 **$20,000+ AUD**
 Full campaign production. Multiple video formats, social cuts, different versions for different audiences, broadcast-quality finish. This is the budget for a major product launch or a funded campaign that needs a suite of assets, not a single video.
@@ -1967,7 +1967,7 @@ If someone has quoted you $800-$2,000 for a SaaS explainer video, you will recei
 
 ## What Actually Drives Cost Up
 
-After 1,000+ projects, these are the real cost drivers, not animation style or length, though those matter too.
+These are the things that move the cost, not only animation style or length.
 
 The number of decision makers in the approval process. A project with one founder making decisions moves fast and stays on budget. A project with a committee costs 30-40% more in revision rounds alone.
 
@@ -1989,7 +1989,7 @@ To see how I approach pricing and scoping, visit [SaaS motion graphics](/saas-ex
 ## FAQ
 
 **Can I get a good SaaS video for under $5,000?**
-Yes, but manage your expectations. At this budget, you'll get a clean, effective explainer with simple motion graphics. It won't be a showreel piece, but it can absolutely communicate your product clearly and convert visitors.
+Yes, with a narrower scope. At this budget, the work is a clean explainer with simple motion graphics. It can communicate the product clearly. It will not cover a complex platform or a full campaign.
 
 **Why is there such a huge range in pricing?**
 Because "a video" can mean a hundred different things. A 30-second social ad with stock elements is a fundamentally different product from a 120-second hero explainer with custom character animation and a full messaging strategy.
@@ -2008,7 +2008,7 @@ Yes. For projects over $10,000 AUD I typically split into a 50% deposit at proje
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "best-motion-design-studios-saas-2026",
@@ -2019,7 +2019,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     excerpt: "An honest breakdown of what to look for in a motion design studio for your SaaS company, with real criteria instead of paid placements.",
     content: `Searching for the best motion design studio for your SaaS company? Most "top 10" lists you'll find are either paid placements or written by the studios themselves. This is something different. I'm going to walk you through the categories of studios that actually serve SaaS companies well, what to look for, and where the market sits in 2026.
 
-I've been in the motion design industry for 15 years and have worked on over 500 projects. I know what separates a studio that understands SaaS from one that just puts it on their website.
+I work on motion design for software companies. Here is what I look for when a studio says it understands SaaS.
 
 ## What Makes a Studio "Good" for SaaS
 
@@ -2085,7 +2085,7 @@ A good studio builds two to three rounds of revisions into their process. If the
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "what-makes-a-great-motion-design-script",
@@ -2097,7 +2097,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     excerpt: "A great motion design script isn't a voiceover track. It's the architecture of the entire video. Here's what separates scripts that work from scripts that waste everyone's time.",
     content: `A great motion design script isn't just words for a voiceover artist to read. It's the architecture of the entire video. Every visual cue, every emotional beat, every moment of understanding. It all starts in the script. Get it right and the animation practically builds itself. Get it wrong and no amount of beautiful motion design can save it.
 
-After writing scripts for hundreds of projects, I've learned that the difference between a script that works and one that wastes everyone's time comes down to a few principles.
+The difference between a script that works and one that wastes everyone's time comes down to a few principles.
 
 ## Every Word Earns Its Place
 
@@ -2181,7 +2181,7 @@ Feature listing. The script reads like a product page: "We offer X, Y, and Z. Ou
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "how-storytelling-works-in-motion-design",
@@ -2272,7 +2272,7 @@ A product tour shows features in sequence. A story creates tension, follows a ch
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "art-of-explaining-complex-ideas-motion-designers-framework",
@@ -2281,10 +2281,10 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     updated: "2026-09-11",
     category: "Craft & Process",
     tags: ["motion design framework", "explainer videos", "visual communication", "storytelling", "complex ideas"],
-    excerpt: "After hundreds of projects, I've developed a framework for explaining complex ideas through motion design. It starts with finding the one thing that matters most.",
+    excerpt: "A framework for explaining complex ideas through motion design. It starts with finding the one thing that matters most.",
     content: `Every project starts the same way. Someone has an idea, a product, a mission, and it's complex. They've been living inside it for months or years. They know every detail. And that's exactly the problem.
 
-The skill of explaining complex ideas isn't about knowing more. It's about knowing what to leave out. After hundreds of projects, I've distilled the process into a framework that works whether I'm explaining a SaaS platform, a medical device, or a city planning initiative.
+The skill of explaining complex ideas isn't about knowing more. It's about knowing what to leave out. The process works whether I'm explaining a SaaS platform, a medical device, or a city planning initiative.
 
 ## Step 1: Find the One Thing
 
@@ -2384,7 +2384,7 @@ The conceptual framework. one thing, metaphor, arc, editing. applies to any form
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "how-to-use-video-to-get-more-sales-meetings",
@@ -2459,7 +2459,7 @@ Want to build an outreach video that your sales team will actually use? [Take a 
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "how-big-brands-use-motion-design-strategically",
@@ -2537,7 +2537,7 @@ If you want to build a motion design system for your brand, not just a video, [l
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "motion-design-in-pitch-deck-what-investors-want",
@@ -2603,7 +2603,7 @@ If you're preparing a pitch deck and want to explore where animation could sharp
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "should-your-saas-company-have-youtube-channel",
@@ -2669,7 +2669,7 @@ If you're weighing up where to invest your video budget, I'm happy to give you a
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "motion-design-linkedin-ads-b2b-saas",
@@ -2754,7 +2754,7 @@ If you need help creating LinkedIn video ads that actually perform, [take a look
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "tiktok-reels-vs-product-demos-b2b-saas",
@@ -2812,7 +2812,7 @@ If you need both and you're not sure how to prioritise, [get in touch](/contact/
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "best-video-type-for-every-stage-saas-customer-journey",
@@ -2823,7 +2823,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     excerpt: "Most SaaS companies only use video at one stage of the funnel. The best companies use it across all six. Here's the right video type for every stage of the customer journey.",
     content: `Most SaaS companies have a single video somewhere on their homepage and call it done. That's like having one salesperson cover awareness, consideration, closing, onboarding, retention, and advocacy. It doesn't work.
 
-After producing over 500 projects across the SaaS lifecycle, I've seen what happens when companies invest in video at every stage versus just one. The difference in conversion, activation, and retention is not subtle.
+Companies that use a film at more than one stage of the product have something a new user can follow. The difference shows up in whether people understand the product, not in a guaranteed lift in conversion.
 
 Here's the map.
 
@@ -2875,7 +2875,7 @@ If you're mapping out a video strategy for your SaaS product, I can help you pri
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "psychology-of-motion-why-animation-works-better-than-live-video",
@@ -2952,7 +2952,7 @@ See how this works in practice. [explore my work](/work/) or [get in touch](/con
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "colour-pacing-sound-control-emotion-motion-design",
@@ -3057,7 +3057,7 @@ If you want to discuss how these elements might work for your next project, [get
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "concept-first-animation-last-process-that-works",
@@ -3152,7 +3152,7 @@ If you want to see what this process produces, [take a look at my work](/work/).
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "onboard-saas-customers-using-animation-reduce-churn",
@@ -3227,7 +3227,7 @@ If you're ready to reduce week-one churn with animation-based onboarding, [take 
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "in-app-animation-vs-onboarding-video-saas-activation",
@@ -3300,7 +3300,7 @@ If you need help figuring out which format will move your activation metrics, [g
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "what-animation-can-do-for-saas-that-text-never-will",
@@ -3362,7 +3362,7 @@ If you're ready to show your product in motion instead of describing it in text,
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "micro-animations-saas-website-what-they-are-why-they-convert",
@@ -3446,7 +3446,7 @@ If you want to explore how motion. both micro-animations and [full motion design
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "animation-in-email-marketing-what-works-what-converts",
@@ -3520,7 +3520,7 @@ If you need animated assets for your email marketing. product GIFs, animated CTA
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "website-hero-video-vs-animated-homepage-saas",
@@ -3609,7 +3609,7 @@ If you're redesigning your SaaS homepage and want help deciding where [motion de
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "explainer-video-is-a-dead-category",
@@ -3700,13 +3700,13 @@ The right creative partner challenges your brief before agreeing to it. They've 
 
 That's what motion design looks like when it's done properly. It's not a deliverable. It's a solution to a specific communication problem. The animation is how the solution is expressed, not what the solution is.
 
-After 15 years of doing this, that distinction is the only thing that separates the work worth making from the work that fills a YouTube channel and collects views from people who never become customers.
+That distinction is what separates the work worth making from the work that fills a channel and collects views from people who never become customers.
 
 If you're ready to invest in motion design that actually differentiates your brand, [take a look at my work](/work/) or [get in touch](/contact/).
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "15-years-making-motion-design-what-actually-works",
@@ -3714,7 +3714,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     date: "2024-12-04",
     category: "Thought Leadership",
     tags: ["motion design career", "creative director", "lessons learned", "motion design industry", "freelance creative"],
-    excerpt: "After 1,000+ projects and 15 years in motion design, here are the lessons that actually matter. about briefs, clients, craft, and what hasn't changed.",
+    excerpt: "Lessons from the work: briefs, clients, craft, and what hasn't changed.",
     content: `Fifteen years ago, I opened After Effects for the first time and thought motion design was about making things move beautifully. It is. But that's maybe 20% of what determines whether a project succeeds.
 
 After 500-plus projects for SaaS companies, agencies, nonprofits, startups, and enterprises, here's what I've actually learned about what works.
@@ -3819,13 +3819,13 @@ Direct access to the decision maker makes everything better. When I'm working wi
 
 Solo operators can do things studios can't. I can see two minutes of finished animation from reading a brief. I can hold the entire creative logic of a project in my head simultaneously: the story, the visual language, the pacing, the emotional arc. That's not something you can distribute across a team. The best creative direction comes from one person who sees the whole picture.
 
-After 1,000+ projects, I'm still most interested in the brief that's genuinely hard. The product that seems impossible to explain simply. The cause that's too complex for a thirty-second overview. The platform that has three different audiences with three different needs. Those are the briefs worth taking.
+I'm still most interested in the brief that's genuinely hard. The product that seems impossible to explain simply. The cause that's too complex for a thirty-second overview. The platform that has three different audiences with three different needs. Those are the briefs worth taking.
 
-If you want to work with someone who's spent 15 years learning what actually works, [take a look at my process](/process/) or [get in touch](/contact/).
+If you want to work through a brief, [take a look at my process](/process/) or [get in touch](/contact/).
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "problem-with-most-saas-product-videos",
@@ -3836,7 +3836,7 @@ Dan Neale is a motion designer and creative director based in Byron Bay, Austral
     excerpt: "Most SaaS product videos fail for the same five reasons. Here's a motion designer's honest assessment of what goes wrong and how to fix it.",
     content: `## I've Watched a Lot of Bad SaaS Videos. Here's What They Have in Common.
 
-After 1,000+ motion design projects and 15 years working almost exclusively with software companies, I've watched a lot of SaaS product videos. Most of them have the same problem.
+I've watched a lot of SaaS product videos. Most of them have the same problem.
 
 They're made by people who understand the product, for an audience who doesn't. That sounds obvious. It's the fundamental error that almost nobody solves.
 
@@ -3908,7 +3908,7 @@ If you're planning a product video and want to avoid these mistakes, start with 
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "ai-video-tools-getting-better-what-they-still-cant-do",
@@ -3989,7 +3989,7 @@ If you need the kind of work that AI can't produce. concept-driven, story-led, s
 
 ---
 
-Dan Neale is a motion designer and creative director based in Byron Bay, Australia. He specialises in motion design for SaaS companies, tech founders, agencies, and nonprofits. 15 years. 1,000+ projects. motionstory.com.au`
+Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas. motionstory.com.au`
   },
   {
     slug: "how-to-use-video-as-a-marketing-tool",
@@ -4185,6 +4185,7 @@ Regardless if you have numerous product explainer videos or not, creating a play
     slug: "find-the-perfect-animation-production-company",
     title: "Finding the Perfect Animation Partner",
     date: "2024-01-15",
+    updated: "2026-09-23",
     category: "Informational",
     tags: ["Animation Australia", "animation production companies"],
     excerpt: "Finding an animation partner is one of the most important decisions you'll make for your video project. Learn what to look for in an animation production company.",
@@ -4231,7 +4232,9 @@ Assessing the style and execution showcased in their portfolio is fundamental. U
 
 ## The Impact of Choosing the Right Animation Partner
 
-Enhance your brand reach with a crystal clear message by selecting the perfect animation partner. Achieve higher engagement and conversion rates through targeted visual storytelling and precise execution. A strategic animation studio can elevate your content creation and marketing efforts to new heights, driving success across platforms like social media, TV commercials, and corporate videos.`
+Enhance your brand reach with a crystal clear message by selecting the perfect animation partner. Achieve higher engagement and conversion rates through targeted visual storytelling and precise execution. A strategic animation studio can elevate your content creation and marketing efforts to new heights, driving success across platforms like social media, TV commercials, and corporate videos.
+
+Motion Story is an [animation production company](/animation-production-company/) run by Dan Neale in Byron Bay. If you want the person as well as the company, start with the [freelance motion designer](/motion-graphics/) page.`
   }
 ];
 

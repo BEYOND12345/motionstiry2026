@@ -17,6 +17,8 @@ export const startupsVerticalLanding: VerticalLandingConfig = {
   eyebrow: 'Startups',
   headline: ['Get the idea across', 'before the deck.'],
   lede: 'Make the idea clear fast, for investors, customers, and anyone who needs to get it before they buy in.',
+  ctaNote:
+    'What does someone need to grasp before they read the deck? I can make that idea clear.',
   heroVideo: {
     vimeoId: '818912051',
     title: 'ARK / Product Concept',
@@ -49,7 +51,7 @@ export const startupsVerticalLanding: VerticalLandingConfig = {
     }),
     verticalCase('joineree', {
       tags: 'Start-up, recruitment, explainer',
-      body: 'Joineree matches the right people to the right workplace. We created focused messages for employers and employees, with a distinct animation style for a forward thinking service.',
+      body: 'Joineree matches the right people to the right workplace. I wrote separate lines for employers and employees, in one animation style.',
     }),
     verticalCase('trusyft', {
       tags: 'Start-up, product promo',
@@ -62,14 +64,14 @@ export const startupsVerticalLanding: VerticalLandingConfig = {
   ],
   value: {
     headline: 'Explain your idea.',
-    body: 'With a dynamic visual story, you can truly connect with investors, show the true value your product brings, and clarify any doubts about your next big idea.',
+    body: 'The first film has one job: make the idea clear before someone opens the deck.',
   },
   benefits: {
-    headline: 'Convince and scale',
+    headline: 'Before the deck',
     items: [
-      'Get customers believing in what you are doing',
-      'Convince more investors to back your idea',
-      'Reinforce your brand and convey your character',
+      'A homepage film people can watch cold',
+      'A version you can send with the deck',
+      'The same story for customers and investors',
     ],
   },
   quote: {

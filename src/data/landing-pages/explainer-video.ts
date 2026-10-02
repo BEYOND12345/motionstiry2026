@@ -66,7 +66,7 @@ export const explainerVideoLanding: SpineLandingConfig = {
     eyebrow: 'Product videos',
     h1: 'Make your SaaS product easy to understand.',
     subhead:
-      'I create product videos for SaaS and technology companies that turn complicated products into simple stories.',
+      'I help teams explain a complicated product. The story first, then the film.',
     videoSrc: heroFilm.videoUrl,
     videoHash: heroFilm.vimeoHash,
     fullShowreelUrl: heroFilm.videoUrl,
@@ -119,9 +119,9 @@ export const explainerVideoLanding: SpineLandingConfig = {
       },
       {
         after: 8,
-        headline: 'Hundreds of product videos. One goal: make people get it.',
-        mark: 'get it',
-        text: "I've created hundreds of product demos, SaaS explainers and technology videos. I understand UI, product messaging and how to simplify complicated software without making it feel simplistic.",
+        headline: 'Make the product followable.',
+        mark: 'followable',
+        text: "I work on product demos, explainers, and technology films. The job is to simplify complicated software without making it feel simplistic.",
       },
       {
         after: 11,

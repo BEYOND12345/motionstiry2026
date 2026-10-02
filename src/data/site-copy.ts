@@ -2,18 +2,18 @@
  * Sitewide positioning copy. Homepage + default meta should stay in sync here.
  */
 
-export const SITE_TITLE = "Motion Story | SaaS Motion Graphic Explainer Videos | Byron Bay";
+export const SITE_TITLE = "Motion Story | Freelance Motion Graphic Designer | Byron Bay";
 
 /** Primary SERP / Open Graph description (~155 chars). */
 export const SITE_DESCRIPTION =
-  "SaaS motion graphic explainer videos for new products. Product on screen, story first. Dan Neale, Byron Bay. Work directly with the director.";
+  "Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas through design and animation.";
 
 /** Organization schema / longer about line. */
 export const SITE_DESCRIPTION_LONG =
-  "SaaS motion graphic explainer videos for new software products. Dan Neale: independent motion designer and director. Product on screen, story first. Small studio, Byron Bay; clients worldwide.";
+  "Dan Neale is a freelance motion graphic designer in Byron Bay. He helps teams explain products and complex ideas, from the story through storyboard, design and animation.";
 
 export const HERO_LEDE =
-  "I help organisations turn complex ideas into clear, compelling visual stories.";
+  "I'm Dan, a freelance motion graphic designer. I help teams explain products and complex ideas.";
 
 export const HOME_HERO_BODY =
   "Whether you are explaining a product, a service, a process, a new direction or something people need to understand, I help find the story and bring it to life.";
@@ -21,7 +21,7 @@ export const HOME_HERO_BODY =
 export const HOME_ARC = "Ideas. Story. Design. Motion.";
 
 export const HOME_ME =
-  "Hello. I'm Dan. I'm your creative director, storyteller, designer, animator, all round creative. I'm obsessed with technology. I love to execute ideas.";
+  "I work out what needs to be said, then take it through storyboard, design and animation. If the brief is already clear, I can execute that too.";
 
 export const HOME_PROBLEM = {
   lead: "You have something worth explaining.",
@@ -34,7 +34,7 @@ export const HOME_APPROACH = {
   lead: "Tell your product story.",
   body: "A good product story helps people understand what you have made, how it works, why it matters and what it can do for them.",
   shape:
-    "Whether it is a physical product, a digital platform, a new feature or a complex service, we work out the clearest way to bring it to life.",
+    "Whether it is a physical product, a digital platform, a new feature or a complex service, I work out the clearest way to bring it to life with your team.",
 } as const;
 
 export const HOME_MAKE_LEAD = "Your product story can take many forms.";
@@ -59,27 +59,26 @@ export const HOME_RELATIONSHIP = {
 } as const;
 
 export const HOME_CLOSE = {
-  lead: "Need a creative partner for your story.",
-  body: "Bring me in when you need help shaping the idea, making the product easier to understand, developing the creative direction or getting the work made.",
-  close: "I work directly with your team from the first conversation through to the finished work.",
+  lead: "Have an important message to get across?",
+  body: "I can help work out the story and bring it together through design and animation.",
+  close: "You work with me from the first conversation through to the finished film.",
 } as const;
 
 export const PROFILE_LEDE =
-  "Independent motion designer and director. Making brands move since 2010. Small studio, big impact: work directly with me.";
+  "I'm Dan, a freelance motion graphic designer. I help teams explain products and complex ideas.";
 
-/** About — plug-in studio, not a freelance animator. */
-export const ABOUT_HEADLINE = "The creative studio you can plug into your team.";
+export const ABOUT_HEADLINE = "You work with me.";
 
 export const ABOUT_INTRO =
-  "I'm Dan, a creative director and motion designer with years of big-studio experience.";
+  "I'm Dan, a freelance motion graphic designer.";
 
 export const ABOUT_LEDE = [
-  "I help companies and agencies turn complex products, ideas and technology into clear visual stories, from the first idea and creative direction through to design and animation.",
-  "I work directly with your team, whether you need help shaping the story, developing a concept, creating a storyboard, producing a product demo or simply getting the work made.",
-  "Motion Story is deliberately small. You get the experience and capability of a much bigger studio, without the layers.",
+  "I help teams explain products and complex ideas. That can start with the story, or with a brief you already have.",
+  "Storyboard, design and animation stay with me. When a film needs another specialist, I bring in someone I trust and I direct that work.",
+  "Motion Story is the practice. It is not a large team.",
 ] as const;
 
-export const ABOUT_SUPPORT = "Big-studio experience. Small-studio relationship.";
+export const ABOUT_SUPPORT = "Directly. From the idea to the film.";
 
 export const ABOUT_HELP_HEADING = "What I can help with";
 

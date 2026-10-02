@@ -13,15 +13,15 @@ const BOOKING_EMBED_SRC =
   'https://calendly.com/motion-story/interested-schedule-a-call?hide_event_type_details=1&hide_gdpr_banner=1';
 
 const helpWith = [
-  'Create a storytelling strategy',
-  'Define the best type of video and format',
-  'Learn about process-based pricing',
+  'Work out what the film needs to say',
+  'Choose the format',
+  'Talk through scope and timing',
 ];
 
 const expect = [
   {
-    title: 'Brainstorm a creative idea',
-    body: "We'll discuss a tailored creative idea to explain your product in a way that's clear, engaging, and aligned with your goals.",
+    title: 'Talk through the idea',
+    body: "We'll talk about what the film needs to say, and who it is for.",
   },
   {
     title: 'Outline next steps',
@@ -56,7 +56,7 @@ const quotes = [
 
 <BaseLayout
   title="Book a Project Call | Motion Story"
-  description="Clarify your project in minutes. Book a call with Dan Neale: storytelling strategy, video format, next steps, and pricing. Motion graphics for startups and tech."
+  description="Book a 30-minute call with Dan Neale. Tell me what you are trying to explain."
   canonicalUrl="https://motionstory.com.au/book/"
 >
   <Fragment slot="head">
@@ -77,10 +77,10 @@ const quotes = [
     <main class="mx-auto max-w-5xl px-8 pt-32 pb-24">
       <p class="text-metadata mb-8 block">Strategy call</p>
       <h1 class="font-display text-4xl md:text-7xl font-bold tracking-tight leading-[0.9] mb-10 max-w-4xl">
-        Clarify your project in minutes.
+        Book a call.
       </h1>
       <p class="mt-6 max-w-xl text-body">
-        Schedule a call and I'll untangle the brief. You'll leave knowing what you need, what format fits, and what to do next to produce a successful film.
+        Tell me what you are trying to explain. If it is the right fit, we can work out the story, the format, and the next step.
       </p>
 
       <div class="mt-10 flex items-start gap-5 max-w-xl">
@@ -93,7 +93,7 @@ const quotes = [
         <div>
           <p class="font-display text-base font-bold tracking-tight mb-1">Dan Neale</p>
           <p class="text-body">
-            Independent motion designer and director. You'll talk to me directly. No sales handoff.
+            Freelance motion graphic designer. You'll talk to me. The calendar below is a 30-minute call.
           </p>
         </div>
       </div>
@@ -119,12 +119,12 @@ const quotes = [
       </div>
 
       <section class="mt-16 border-t border-black/10 pt-12">
-        <p class="text-metadata mb-4">A strategy call with a storyteller</p>
+        <p class="text-metadata mb-4">On the call</p>
         <h2 class="font-display text-2xl md:text-3xl font-bold tracking-tight mb-5 max-w-2xl">
-          Create the aha moment with animation.
+          What the film needs to say.
         </h2>
         <p class="text-body max-w-2xl">
-          In a focused session we'll dive into animation strategy, pricing, competitor context, or where to start. You walk away with actionable ideas and a clear sense of how motion graphics can solve the business challenge.
+          We can talk through the story, the format, and where to start. You will leave with a clearer brief, not a finished film.
         </p>
 
         <h3 class="mt-10 mb-6 font-display text-lg font-bold tracking-tight">What to expect</h3>
@@ -139,7 +139,7 @@ const quotes = [
       </section>
 
       <section class="mt-16 border-t border-black/10 pt-12">
-        <p class="text-metadata mb-8">Real stories, real results</p>
+        <p class="text-metadata mb-8">What clients have said</p>
         <div class="space-y-10">
           {quotes.map((q) => (
             <blockquote class="max-w-2xl">

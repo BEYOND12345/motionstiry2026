@@ -16,7 +16,9 @@ export const agenciesVerticalLanding: VerticalLandingConfig = {
   },
   eyebrow: 'Agencies & studios',
   headline: ['Senior craft.', 'No production maze.'],
-  lede: 'Senior motion design, white label or collaborative. Direct access to the director, no extra production layer.',
+  lede: 'Senior motion design, white label or alongside your team. You work with me.',
+  ctaNote:
+    "Have a project you'd like to talk through? I can work beside your team, including white label when that is how you need it.",
   heroVideo: {
     vimeoId: '649763018',
     title: 'Aon / Conversations',
@@ -62,7 +64,7 @@ export const agenciesVerticalLanding: VerticalLandingConfig = {
   ],
   value: {
     headline: 'One director. Clear accountability.',
-    body: 'Skip the account manager stack. I own concept through delivery, and when specialists come in, I direct them. Your client still gets a single point of craft.',
+    body: 'I own the concept through to delivery. When a specialist comes in, I direct them. Your client still has one person to talk to.',
   },
   benefits: {
     headline: 'How agencies use Motion Story',
