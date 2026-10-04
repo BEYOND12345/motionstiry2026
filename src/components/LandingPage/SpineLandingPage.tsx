@@ -123,7 +123,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
           </div>
         </header>
 
-        <section className={workLed ? 'mt-10 sm:mt-12' : 'mt-12 sm:mt-16'} aria-label={config.trustStrip.line}>
+        <section className={workLed ? 'mt-14 sm:mt-16' : 'mt-16 sm:mt-20'} aria-label={config.trustStrip.line}>
           <ClientTicker
             compact
             label=""
@@ -132,7 +132,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
           />
         </section>
 
-        <section className="mt-12 flex items-start gap-4 sm:mt-16 sm:gap-6">
+        <section className="mt-16 flex items-start gap-4 sm:mt-20 sm:gap-6">
           <img
             src={config.guide.photoSrc}
             alt={config.guide.name}
@@ -162,7 +162,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
         </section>
 
         {valueBody.length > 0 ? (
-          <section className="mt-14 max-w-xl sm:mt-16">
+          <section className="mt-20 max-w-xl sm:mt-24">
             <p className="font-display text-[1.4rem] font-medium leading-[1.2] tracking-tight sm:text-[1.65rem]">
               {config.value.headline}
             </p>
@@ -177,7 +177,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
         ) : null}
 
         {showPlan ? (
-          <section className="mt-14 max-w-xl sm:mt-16">
+          <section className="mt-20 max-w-xl sm:mt-24">
             <p className="font-display text-[1.4rem] font-medium tracking-tight sm:text-[1.65rem]">
               {config.plan.headline}
             </p>
@@ -201,7 +201,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
           </section>
         ) : null}
 
-        <section id="work" className={workLed ? 'mt-14 sm:mt-16' : 'mt-16 sm:mt-20'}>
+        <section id="work" className="mt-20 sm:mt-24">
           {config.proof.headline ? (
             <p className="font-display text-[1.4rem] font-medium leading-[1.2] tracking-tight sm:text-[1.65rem]">
               {config.proof.headline}
@@ -291,7 +291,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
         </section>
 
         {stakesBody.length > 0 ? (
-          <section className="mt-16 max-w-xl sm:mt-20">
+          <section className="mt-24 max-w-xl sm:mt-28">
             <p className="font-display text-[1.4rem] font-medium leading-[1.2] tracking-tight sm:text-[1.65rem]">
               {config.stakes.headline}
             </p>
@@ -304,7 +304,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
         ) : null}
 
         {config.success.headline || closeBody.length > 0 ? (
-          <section id="final-cta" className="mt-16 max-w-xl sm:mt-20">
+          <section id="final-cta" className="mt-24 max-w-xl sm:mt-28">
             {config.success.headline ? (
               <p className="font-display text-[1.45rem] font-medium leading-[1.2] tracking-tight sm:text-[1.85rem]">
                 {markPhrase(config.success.headline, workLed ? 'finished film' : undefined)}
@@ -326,7 +326,7 @@ export default function SpineLandingPage({ config }: { config: SpineLandingConfi
         ) : null}
 
         {faqs.length > 0 ? (
-          <section className="mt-16 max-w-2xl sm:mt-20">
+          <section className="mt-24 max-w-2xl sm:mt-28">
             <div className="fold">
               {faqs.map((faq) => (
                 <details key={faq.question} className="fold-item">

@@ -446,7 +446,7 @@ export default function Homepage() {
         .hp-focus-item {
           display: block;
           width: 100%;
-          padding: 0.9rem 0 0.95rem;
+          padding: 1.2rem 0 1.25rem;
           border: 0;
           border-top: 1px solid rgba(10, 10, 10, 0.1);
           background: none;
@@ -571,10 +571,10 @@ export default function Homepage() {
               Made<br />
               Simple.
             </h1>
-            <p className="hp-lede mt-10 max-w-md text-body">
+            <p className="hp-lede mt-14 max-w-md text-body">
               {HERO_LEDE}
             </p>
-            <div className="hp-logos mt-8 sm:mt-10">
+            <div className="hp-logos mt-12 sm:mt-16">
               <ClientTicker
                 compact
                 label=""
@@ -585,7 +585,7 @@ export default function Homepage() {
           </header>
 
           <div className="hp-journal hp-story pb-4">
-            <div className="hp-me mt-10 flex items-start gap-4 sm:mt-12 sm:gap-6 lg:mt-10">
+            <div className="hp-me mt-16 flex items-start gap-5 sm:mt-20 sm:gap-6">
               <a href="/about/" aria-label="Dan Neale" className="shrink-0 transition-opacity hover:opacity-60">
                 <img
                   src="/daniel-neale.jpg"
@@ -599,7 +599,7 @@ export default function Homepage() {
                 {HOME_ME}
               </p>
             </div>
-            <Beat id="story" active={beat} reduceMotion={reduceMotion} className="mt-12 sm:mt-16">
+            <Beat id="story" active={beat} reduceMotion={reduceMotion} className="mt-20 sm:mt-24">
               <p className="font-display text-[1.4rem] font-medium tracking-tight leading-[1.25] sm:text-[1.65rem] md:text-[1.85rem] md:leading-[1.2]">
                 {HOME_APPROACH.lead}
               </p>
@@ -610,7 +610,7 @@ export default function Homepage() {
                 {HOME_APPROACH.shape}
               </p>
             </Beat>
-            <div className="mt-12">
+            <div className="mt-20">
               <p className="font-display text-xl font-medium tracking-tight">
                 {HOME_MAKE_LEAD}
               </p>
@@ -619,10 +619,10 @@ export default function Homepage() {
                 {HOME_MAKE_CLOSE}
               </p>
             </div>
-            <div className="mt-14">
+            <div className="mt-20">
               <QuoteList />
             </div>
-            <Beat id="close" active={beat} reduceMotion={reduceMotion} className="mt-16 sm:mt-20">
+            <Beat id="close" active={beat} reduceMotion={reduceMotion} className="mt-24 sm:mt-28">
               <p className="font-display text-[1.45rem] font-medium tracking-tight leading-[1.2] sm:text-[1.85rem] md:text-[2.1rem] md:leading-[1.15]">
                 {HOME_CLOSE.lead}
               </p>
@@ -640,7 +640,7 @@ export default function Homepage() {
             </Beat>
           </div>
 
-          <nav className="hp-nav mt-auto max-w-md pt-10 pb-1" aria-label="Studio">
+          <nav className="hp-nav mt-auto max-w-md pt-16 pb-2" aria-label="Studio">
             <ul className="flex flex-wrap gap-x-5 gap-y-2">
               {HOME_MENU.map((item) => (
                 <li key={item.href}>

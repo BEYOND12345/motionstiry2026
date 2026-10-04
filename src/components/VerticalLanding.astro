@@ -529,7 +529,7 @@ const heroWordEms = config.headline
   .vl {
     max-width: 80rem;
     margin: 0 auto;
-    padding: 8rem 2rem 6rem;
+    padding: 10rem 3.5rem 8rem;
   }
 
   .vl-hero {
@@ -543,7 +543,7 @@ const heroWordEms = config.headline
     .vl-hero {
       grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
       gap: 3rem;
-      margin-bottom: 3.5rem;
+      margin-bottom: 4.5rem;
     }
   }
 
@@ -597,7 +597,7 @@ const heroWordEms = config.headline
 
   .vl-lede p {
     font-size: 1.0625rem;
-    line-height: 1.5;
+    line-height: 1.65;
     color: #444;
     margin: 0 0 0.3rem;
   }
@@ -799,7 +799,7 @@ const heroWordEms = config.headline
   .vl-band {
     display: grid;
     gap: 2rem;
-    padding: 3.75rem 0;
+    padding: 4.75rem 0;
     border-top: 1px solid rgba(10, 10, 10, 0.1);
     align-items: center;
   }
@@ -970,6 +970,12 @@ const heroWordEms = config.headline
       grid-row: 2;
       margin-top: 0;
       align-self: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .vl {
+      padding: 8rem 1.35rem 6rem;
     }
   }
 </style>

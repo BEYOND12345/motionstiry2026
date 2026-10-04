@@ -99,7 +99,7 @@ body.homepage-layout {
 .text-body {
   font-family: var(--font-sans);
   font-size: 17px;
-  line-height: 1.5;
+  line-height: 1.65;
   font-weight: 400;
   color: #444;
 }
@@ -340,7 +340,7 @@ body.homepage-layout {
 
 /* Home uses the site Nav overlay — clear it without a second header */
 body.homepage-layout .split-left {
-  padding-top: 8rem;
+  padding: 8.5rem 4.75rem 4.5rem;
 }
 
 body.homepage-layout .split-right {
@@ -633,7 +633,7 @@ body.homepage-layout .nav-links {
 .landing {
   max-width: 64rem;
   margin: 0 auto;
-  padding: 8rem 2rem 6rem;
+  padding: 10rem 3.5rem 8rem;
 }
 
 .landing-hero {
@@ -675,7 +675,7 @@ body.homepage-layout .nav-links {
   font-family: var(--font-sans);
   font-size: 1.0625rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.65;
   color: #444;
   margin: 0;
 }
@@ -717,6 +717,58 @@ body.homepage-layout .nav-links {
   background: #fff;
   color: #0a0a0a;
   border-top: 1px solid rgba(10, 10, 10, 0.1);
+}
+
+/* More air around the existing type. The column, the poster, and the red line stay. */
+main .max-w-5xl.px-8,
+main > article.pt-32,
+main.max-w-5xl.pt-32,
+.min-h-screen.bg-white .max-w-5xl.px-8,
+.min-h-screen.bg-white .max-w-7xl.px-8 {
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+}
+
+main .max-w-5xl.pt-32,
+main > article.pt-32,
+main.max-w-5xl.pt-32,
+.min-h-screen.bg-white > .pt-32 {
+  padding-top: 10rem;
+}
+
+main .max-w-5xl.pt-32.pb-24,
+main > article.pt-32.pb-24,
+main.max-w-5xl.pt-32.pb-24 {
+  padding-bottom: 8rem;
+}
+
+main h1.font-display,
+.min-h-screen.bg-white h1.font-display {
+  margin-bottom: 3.25rem;
+}
+
+@media (max-width: 768px) {
+  main .max-w-5xl.px-8,
+  main > article.pt-32,
+  main.max-w-5xl.pt-32,
+  .min-h-screen.bg-white .max-w-5xl.px-8,
+  .min-h-screen.bg-white .max-w-7xl.px-8 {
+    padding-left: 1.35rem;
+    padding-right: 1.35rem;
+  }
+
+  main .max-w-5xl.pt-32,
+  main > article.pt-32,
+  main.max-w-5xl.pt-32,
+  .min-h-screen.bg-white > .pt-32 {
+    padding-top: 8rem;
+  }
+
+  main .max-w-5xl.pt-32.pb-24,
+  main > article.pt-32.pb-24,
+  main.max-w-5xl.pt-32.pb-24 {
+    padding-bottom: 6rem;
+  }
 }
 
 /* Floating mailto — black chip, rounded, one red arrow */
@@ -1273,7 +1325,7 @@ body.homepage-layout .nav-links {
 
 @media (max-width: 640px) {
   .landing {
-    padding: 7.5rem 1.5rem 5.5rem;
+    padding: 8rem 1.35rem 6rem;
   }
   .band-black-inner {
     padding: 3.5rem 1.5rem;
