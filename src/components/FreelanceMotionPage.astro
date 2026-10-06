@@ -1,0 +1,414 @@
+---
+import VimeoEmbed from './VimeoEmbed';
+import {
+  FREELANCE_FAQS,
+  FREELANCE_FEATURED,
+  FREELANCE_RANGE,
+  FREELANCE_SELECTED,
+} from '../data/freelance-motion-page';
+import type { Project } from '../data/projects';
+
+const featured = FREELANCE_FEATURED;
+const selected = FREELANCE_SELECTED;
+const range = FREELANCE_RANGE;
+
+function caseHref(project: Project) {
+  return `/casestudy/${project.slug}/`;
+}
+---
+
+<div class="fl">
+  <header class="fl-hero">
+    <div class="fl-hero-copy">
+      <h1 class="fl-title">Freelance motion graphic designer.</h1>
+      <p class="fl-body">
+        Hi, I'm Dan. I work alongside creative agencies and in-house teams on concepts, visual storytelling, design and animation.
+      </p>
+      <div class="fl-actions">
+        <a class="ms-btn" href="/contact/">Send a brief</a>
+        <a class="fl-btn-secondary" href="#work">See the work</a>
+      </div>
+    </div>
+    <div class="fl-hero-film">
+      <VimeoEmbed
+        client:load
+        vimeoId={featured.vimeoId}
+        vimeoHash={featured.vimeoHash}
+        title={featured.title}
+        loading="eager"
+        className="rounded-xl"
+      />
+    </div>
+  </header>
+
+  <section id="work" class="fl-section">
+    <h2 class="fl-h2">Selected work</h2>
+    <div class="fl-grid-2">
+      {selected.map((project, i) => (
+        <article class="fl-piece">
+          <VimeoEmbed
+            client:visible
+            vimeoId={project.vimeoId}
+            vimeoHash={project.vimeoHash}
+            title={project.title}
+            loading={i < 2 ? 'eager' : 'lazy'}
+            className="rounded-xl"
+          />
+          <div class="fl-caption">
+            <h3 class="fl-name">{project.title}</h3>
+            <a class="fl-case" href={caseHref(project)}>Case study</a>
+          </div>
+        </article>
+      ))}
+    </div>
+    <p class="fl-more">
+      <a href="/work/">See more work</a>
+    </p>
+  </section>
+
+  <section class="fl-section fl-me">
+    <img
+      class="fl-photo"
+      src="/daniel-neale.jpg"
+      alt="Dan Neale"
+      width="720"
+      height="900"
+    />
+    <div>
+      <h2 class="fl-h2">Part of your team.</h2>
+      <div class="fl-prose">
+        <p>I work out what to show and where the story lands with your team, then design and animate it, or build on a direction you already have.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="fl-section" aria-label="What the work includes">
+    <ul class="fl-highlights">
+      <li>
+        <h2 class="fl-h3">Story and visual direction</h2>
+        <p>Concepts, messaging and storyboards, developed with your team.</p>
+      </li>
+      <li>
+        <h2 class="fl-h3">Design and animation</h2>
+        <p>A connected approach from the visual idea to the finished work.</p>
+      </li>
+      <li>
+        <h2 class="fl-h3">Production experience</h2>
+        <p>A clear scope, review stages and schedule to keep the project moving.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="fl-section">
+    <h2 class="fl-h2">From brand assets to brand films.</h2>
+    <p class="fl-body fl-range-lead">
+      Logo animation, campaign graphics, social content, product demos and films. Different formats, each with its own audience and purpose.
+    </p>
+    <div class="fl-grid-3">
+      {range.map((project) => (
+        <article class="fl-piece">
+          <VimeoEmbed
+            client:visible
+            vimeoId={project.vimeoId}
+            vimeoHash={project.vimeoHash}
+            title={project.title}
+            loading="lazy"
+            className="rounded-xl"
+          />
+          <div class="fl-caption">
+            <h3 class="fl-name">{project.title}</h3>
+            <a class="fl-case" href={caseHref(project)}>Case study</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="fl-section fl-close">
+    <h2 class="fl-h2">Have a project coming up?</h2>
+    <p class="fl-body">
+      Send me the brief and your deadline. We can talk through what you need and how I can fit into your team.
+    </p>
+    <div class="fl-actions fl-actions-stack">
+      <a class="ms-btn" href="/contact/">Send a brief</a>
+      <a class="fl-quiet-link" href="/book/">Prefer a call? Book a call</a>
+    </div>
+  </section>
+
+  <section class="fl-section" aria-label="Questions">
+    <div class="fold">
+      {FREELANCE_FAQS.map((faq) => (
+        <details class="fold-item">
+          <summary>{faq.question}</summary>
+          <div class="fold-body">
+            <p>{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+</div>
+
+<style>
+  .fl {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 1.5rem 4rem;
+  }
+
+  .fl-hero {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .fl-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+    font-size: clamp(40px, 11vw, 48px);
+    text-wrap: balance;
+    color: #0a0a0a;
+  }
+
+  .fl-body,
+  .fl-prose p,
+  .fl-highlights p {
+    margin: 0;
+    max-width: 38rem;
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.6;
+    color: #444;
+  }
+
+  .fl-hero-copy .fl-body {
+    margin-top: 1.35rem;
+  }
+
+  .fl-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.85rem 1rem;
+    margin-top: 1.75rem;
+  }
+
+  .fl-actions-stack {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fl-btn-secondary {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.35rem;
+    border: 1px solid rgba(10, 10, 10, 0.28);
+    border-radius: 0.75rem;
+    color: #0a0a0a;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .fl-btn-secondary:hover {
+    border-color: #0a0a0a;
+  }
+
+  .fl :global(a:focus-visible),
+  .fl :global(summary:focus-visible) {
+    outline: 2px solid #0a0a0a;
+    outline-offset: 3px;
+  }
+
+  .fl-section {
+    margin-top: 4rem;
+  }
+
+  .fl-h2 {
+    margin: 0 0 1.35rem;
+    max-width: 16em;
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: #0a0a0a;
+  }
+
+  .fl-grid-2,
+  .fl-grid-3 {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .fl-caption {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.35rem 1rem;
+    margin-top: 0.85rem;
+  }
+
+  .fl-name {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    color: #0a0a0a;
+  }
+
+  .fl-case,
+  .fl-more a,
+  .fl-quiet-link {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    line-height: 1.4;
+    color: #0a0a0a;
+    border-bottom: 1px solid rgba(10, 10, 10, 0.28);
+    padding-bottom: 0.08rem;
+  }
+
+  .fl-case:hover,
+  .fl-more a:hover,
+  .fl-quiet-link:hover,
+  .fl-btn-secondary:hover {
+    border-color: #0a0a0a;
+  }
+
+  .fl-more {
+    margin: 1.75rem 0 0;
+  }
+
+  .fl-me {
+    display: grid;
+    gap: 1.75rem;
+    align-items: start;
+  }
+
+  .fl-photo {
+    width: 50%;
+    height: auto;
+    border-radius: 0.75rem;
+    object-fit: cover;
+    object-position: center 18%;
+  }
+
+  .fl-prose {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .fl-me .fl-h2 {
+    margin-bottom: 1rem;
+  }
+
+  .fl-highlights {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.75rem;
+  }
+
+  .fl-highlights li + li {
+    padding-top: 1.75rem;
+    border-top: 1px solid rgba(10, 10, 10, 0.1);
+  }
+
+  .fl-h3 {
+    margin: 0 0 0.55rem;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+    color: #0a0a0a;
+  }
+
+  .fl-range-lead {
+    margin-bottom: 1.75rem;
+  }
+
+  .fl-close .fl-body {
+    margin-top: -0.35rem;
+  }
+
+  @media (min-width: 768px) {
+    .fl-body,
+    .fl-prose p,
+    .fl-highlights p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .fl-grid-2 {
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .fl-section {
+      margin-top: 5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .fl {
+      padding-top: 10rem;
+      padding-bottom: 6.5rem;
+    }
+
+    .fl-title {
+      font-size: clamp(64px, 5vw, 80px);
+    }
+
+    .fl-hero {
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .fl-section {
+      margin-top: 6.5rem;
+    }
+
+    .fl-me {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 4fr);
+      gap: 4rem;
+    }
+
+    .fl-photo {
+      width: 100%;
+    }
+
+    .fl-highlights {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+    }
+
+    .fl-highlights li + li {
+      padding-top: 0;
+      padding-left: 1.75rem;
+      border-top: 0;
+      border-left: 1px solid rgba(10, 10, 10, 0.1);
+    }
+
+    .fl-highlights li:first-child {
+      padding-right: 1.75rem;
+    }
+
+    .fl-grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 32px;
+    }
+  }
+</style>
