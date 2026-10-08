@@ -20,12 +20,13 @@ function caseHref(project: Project) {
 <div class="fl">
   <header class="fl-hero">
     <div class="fl-hero-copy">
-      <h1 class="fl-title">Freelance motion graphic designer.</h1>
+      <p class="fl-kicker">Senior freelance motion designer</p>
+      <h1 class="fl-title">I help work out the story.<br />Then design and animate it.</h1>
       <p class="fl-body">
-        Hi, I'm Dan. I work alongside creative agencies and in-house teams on concepts, visual storytelling, design and animation.
+        Hi, I’m Dan. I work with agencies and in-house teams to turn complex ideas into clear visual stories.
       </p>
       <div class="fl-actions">
-        <a class="ms-btn" href="/contact/">Send a brief</a>
+        <a class="ms-btn" href="/contact/">Let’s talk about your project</a>
         <a class="fl-btn-secondary" href="#work">See the work</a>
       </div>
     </div>
@@ -75,11 +76,13 @@ function caseHref(project: Project) {
       height="900"
     />
     <div>
-      <h2 class="fl-h2">Part of your team.</h2>
+      <h2 class="fl-h2">From working out the idea to making it.</h2>
       <div class="fl-prose">
-        <p>I work out what to show and where the story lands with your team, then design and animate it, or build on a direction you already have.</p>
+        <p>Some projects arrive with a clear storyboard. Others start with a product, a pile of information and a message that hasn’t quite landed.</p>
+        <p>I can help at either stage. I work with your team to decide what matters, find the visual approach and carry it through design and animation.</p>
+        <p>You work directly with me, whether you need support on one part or someone to take the project through.</p>
         <p>
-          I am based in Byron Bay and work remotely with teams in Sydney, Melbourne, Brisbane, Los Angeles and San Francisco. The <a href="/casestudy/nsw-gov-pinch-point-explainer/">NSW Government film</a> was a Sydney brief, made from here.
+          I am based in Byron Bay and work remotely with teams in Sydney, Melbourne, Brisbane, Los Angeles and San Francisco.
         </p>
       </div>
     </div>
@@ -166,13 +169,22 @@ function caseHref(project: Project) {
     align-items: center;
   }
 
+  .fl-kicker {
+    margin: 0 0 0.85rem;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #0a0a0a;
+  }
+
   .fl-title {
     margin: 0;
     font-family: var(--font-display);
     font-weight: 700;
     letter-spacing: -0.03em;
     line-height: 0.95;
-    font-size: clamp(40px, 11vw, 48px);
+    font-size: clamp(30px, 8vw, 36px);
     text-wrap: balance;
     color: #0a0a0a;
   }
@@ -381,7 +393,7 @@ function caseHref(project: Project) {
     }
 
     .fl-title {
-      font-size: clamp(64px, 5vw, 80px);
+      font-size: 60px;
     }
 
     .fl-hero {

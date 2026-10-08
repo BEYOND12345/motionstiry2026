@@ -12,7 +12,7 @@ export const FREELANCE_FAQS = [
   {
     question: 'Do you work with Sydney and Melbourne teams?',
     answer:
-      'Yes. I am based in Byron Bay and I work remotely. Sydney, Melbourne and Brisbane are the same working day. Los Angeles and San Francisco overlap with my morning. The NSW Government pinch-point film was a Sydney brief, made from here.',
+      'Yes. I am based in Byron Bay and I work remotely. Sydney, Melbourne and Brisbane are the same working day. Los Angeles and San Francisco overlap with my morning.',
   },
   {
     question: 'Can you work with our existing designs?',
