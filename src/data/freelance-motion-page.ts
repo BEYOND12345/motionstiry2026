@@ -1,13 +1,19 @@
 import { ALL_PROJECTS, type Project } from './projects';
 
-export const FREELANCE_TITLE = 'Freelance Motion Graphic Designer | Motion Story';
+export const FREELANCE_TITLE =
+  'Freelance Motion Designer for Sydney, Melbourne and Los Angeles | Motion Story';
 
 export const FREELANCE_DESCRIPTION =
-  'Freelance motion graphic designer for creative agencies and in-house teams. Concepts, visual storytelling, design and animation, from brand assets to films.';
+  'Based in Byron Bay, working remotely with teams in Sydney, Melbourne, Brisbane, Los Angeles and San Francisco. Freelance motion graphic designer.';
 
 export const FREELANCE_CANONICAL = 'https://motionstory.com.au/freelance-motion-graphic-designer/';
 
 export const FREELANCE_FAQS = [
+  {
+    question: 'Do you work with Sydney and Melbourne teams?',
+    answer:
+      'Yes. I am based in Byron Bay and I work remotely. Sydney, Melbourne and Brisbane are the same working day. Los Angeles and San Francisco overlap with my morning. The NSW Government pinch-point film was a Sydney brief, made from here.',
+  },
   {
     question: 'Can you work with our existing designs?',
     answer:

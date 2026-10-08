@@ -57,7 +57,7 @@ export function getCaseStudyLane(project: Project): CaseStudyLane {
   if (project.category === 'Agencies') {
     return {
       jobLabel: 'Motion graphics',
-      moneyHref: '/motion-graphics/',
+      moneyHref: '/freelance-motion-graphic-designer/',
       moneyLabel: 'Motion graphics studio',
     };
   }
