@@ -1,10 +1,9 @@
 import { ALL_PROJECTS, type Project } from './projects';
 
-export const FREELANCE_TITLE =
-  'Freelance Motion Designer for Sydney, Melbourne and Los Angeles | Motion Story';
+export const FREELANCE_TITLE = 'Senior Freelance Motion Designer | Motion Story';
 
 export const FREELANCE_DESCRIPTION =
-  'Based in Byron Bay, working remotely with teams in Sydney, Melbourne, Brisbane, Los Angeles and San Francisco. Freelance motion graphic designer.';
+  'Senior freelance motion design for agencies and in-house teams. Work directly with Dan Neale on concepts, visual storytelling, design and animation.';
 
 export const FREELANCE_CANONICAL = 'https://motionstory.com.au/freelance-motion-graphic-designer/';
 

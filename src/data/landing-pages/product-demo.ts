@@ -15,18 +15,18 @@ import {
 export const productDemoLanding: SpineLandingConfig = {
   slug: 'product-demo',
   seo: {
-    titleTag: 'Product Demo Videos | Motion Story',
+    titleTag: 'Custom Animated Product Demos | Motion Story',
     metaDescription:
-      'Product demos with the software on screen. Dan Neale, freelance motion graphic designer. Story, storyboard, and animation.',
+      "Show your software's value with a custom animated demo. Work directly with Dan Neale on the visual story, design and finished animation.",
     canonicalPath: '/landing-animated-product-demos-01/',
   },
   hero: {
     eyebrow: 'Product demo videos',
-    h1: 'Show how the product works.',
-    subhead: 'The software stays on screen, so a buyer can follow the workflow.',
+    h1: "Show your product's value.",
+    subhead: 'Animated demos that show what your product does and why it matters.',
     videoSrc: '861022443',
     fullShowreelUrl: '861022443',
-    primaryCta: 'Book a call',
+    primaryCta: 'Book a project call',
     secondaryCta: 'See the work',
   },
   trustStrip: {
@@ -35,13 +35,16 @@ export const productDemoLanding: SpineLandingConfig = {
     rowB: SPINE_TICKER_ROW_B,
   },
   value: SPINE_VALUE,
-  guide: SPINE_GUIDE,
+  guide: {
+    ...SPINE_GUIDE,
+    body: 'I understand the product, find the visual story and design and animate the demo.',
+  },
   plan: {
     ...SPINE_PLAN,
     steps: [
-      { label: 'We talk', body: 'Scope, audience, where the demo has to work.' },
-      SPINE_PLAN.steps[1],
-      SPINE_PLAN.steps[2],
+      { label: 'We talk', body: 'Audience, purpose and where the demo will run.' },
+      { label: 'We shape the story', body: 'Script and storyboard before animation begins.' },
+      { label: 'We make the film', body: 'Design, animation and the agreed final formats.' },
     ],
   },
   proof: {
@@ -66,7 +69,7 @@ export const productDemoLanding: SpineLandingConfig = {
         answer:
           'A short animated walkthrough that shows how your product works. Built for landing pages, sales decks, and follow up emails.',
       },
-      ...SPINE_CORE_FAQS,
+      ...SPINE_CORE_FAQS.filter((item) => item.question !== 'How long does it take?'),
     ],
   },
   finalCta: {

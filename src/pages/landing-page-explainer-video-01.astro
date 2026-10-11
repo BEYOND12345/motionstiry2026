@@ -1,18 +1,18 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import SpineLandingPage from '../components/LandingPage/SpineLandingPage';
-import { explainerVideoLanding } from '../data/landing-pages/explainer-video';
+import { broadExplainerLanding } from '../data/landing-pages/explainer-video';
 import '../styles/global.css';
 
-const config = explainerVideoLanding;
+const config = broadExplainerLanding;
 
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Product Videos for SaaS',
+  name: 'Custom Animated Explainer Videos',
   description: config.seo.metaDescription,
   provider: { '@type': 'Organization', name: 'Motion Story', url: 'https://motionstory.com.au' },
-  serviceType: 'Product video production',
+  serviceType: 'Explainer video production',
   areaServed: 'Worldwide',
 };
 

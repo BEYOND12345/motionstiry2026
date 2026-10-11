@@ -165,3 +165,25 @@ export const explainerVideoLanding: SpineLandingConfig = {
   },
   accentColor: '#FF0000',
 };
+
+/** Broad explainer Ads URL. Distinct from the product-video page. */
+export const broadExplainerLanding: SpineLandingConfig = {
+  ...explainerVideoLanding,
+  slug: 'explainer-video',
+  seo: {
+    titleTag: 'Custom Animated Explainer Videos | Motion Story',
+    metaDescription:
+      'Custom animated explainers for complex products, processes and ideas. Work directly with Dan Neale on the visual story, design and animation.',
+    canonicalPath: '/landing-page-explainer-video-01/',
+  },
+  hero: {
+    ...explainerVideoLanding.hero,
+    h1: 'I make complex ideas clear.',
+    subhead: 'Custom animation for products, processes and ideas that are hard to show.',
+    primaryCta: 'Book a project call',
+  },
+  guide: {
+    ...explainerVideoLanding.guide,
+    body: 'I understand the subject, find the visual story and make the animation. You work directly with me.',
+  },
+};
