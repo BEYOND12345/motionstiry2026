@@ -53,7 +53,8 @@ export default defineConfig({
         !page.includes('/book/') &&
         !page.includes('/landing-page-explainer-video-01/') &&
         !page.includes('/landing-page-product-video-01/') &&
-        !page.includes('/landing-animated-product-demos-01/'),
+        !page.includes('/landing-animated-product-demos-01/') &&
+        !page.includes('/independent-motion-designer/'),
       serialize: (item) => {
         const path = new URL(item.url).pathname;
 

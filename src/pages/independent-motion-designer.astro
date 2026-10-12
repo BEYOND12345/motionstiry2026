@@ -1,0 +1,40 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import StudioAlternativePage from '../components/StudioAlternativePage.astro';
+import {
+  STUDIO_ALT_CANONICAL,
+  STUDIO_ALT_DESCRIPTION,
+  STUDIO_ALT_TITLE,
+} from '../data/studio-alternative-page';
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Independent motion designer',
+  description: STUDIO_ALT_DESCRIPTION,
+  provider: {
+    '@type': 'Person',
+    name: 'Daniel Neale',
+    jobTitle: 'Independent motion designer',
+    url: 'https://motionstory.com.au/about/',
+    worksFor: { '@type': 'Organization', name: 'Motion Story', url: 'https://motionstory.com.au' },
+  },
+  serviceType: 'Motion design',
+  areaServed: 'Worldwide',
+};
+---
+
+<PageLayout
+  title={STUDIO_ALT_TITLE}
+  description={STUDIO_ALT_DESCRIPTION}
+  canonicalUrl={STUDIO_ALT_CANONICAL}
+  floatSubject="Independent motion designer"
+  showCTA={false}
+>
+  <Fragment slot="head">
+    <meta name="robots" content="noindex, nofollow" />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  </Fragment>
+
+  <StudioAlternativePage />
+</PageLayout>

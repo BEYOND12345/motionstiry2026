@@ -1,0 +1,322 @@
+---
+import VimeoEmbed from './VimeoEmbed';
+import { STUDIO_ALT_FILMS } from '../data/studio-alternative-page';
+
+const [hero, ...work] = STUDIO_ALT_FILMS;
+
+const rows = [
+  ['A team across the project', 'One senior designer, start to finish'],
+  ['Account manager relaying the brief', 'Direct conversation with the person making it'],
+  ['The brief changes hands several times', 'The brief stays in one head'],
+  ['Mid-weight animator doing the build', 'Senior experience doing the build'],
+];
+---
+
+<div class="fl">
+  <header class="fl-hero">
+    <div class="fl-hero-copy">
+      <h1 class="fl-title">An independent motion designer.<br />One expert, start to finish.</h1>
+      <p class="fl-body">
+        You work directly with me on the story, the design and the animation.
+      </p>
+      <div class="fl-actions">
+        <a class="ms-btn" href="/book/">Book a call</a>
+      </div>
+    </div>
+    <div class="fl-hero-film">
+      <VimeoEmbed
+        client:load
+        vimeoId={hero.vimeoId}
+        vimeoHash={hero.vimeoHash}
+        title={hero.title}
+        loading="eager"
+        className="rounded-xl"
+      />
+      <p class="fl-note">{hero.client}. {hero.caption}</p>
+    </div>
+  </header>
+
+  <section class="fl-section fl-me">
+    <img
+      class="fl-photo"
+      src="/daniel-neale.jpg"
+      alt="Daniel Neale"
+      width="720"
+      height="900"
+    />
+    <div>
+      <h2 class="fl-h2">One person, start to finish.</h2>
+      <div class="fl-prose">
+        <p>I understand the business, develop a custom visual story, then design and animate the finished piece. You bring an approved direction or a subject you’re struggling to explain, and I carry it through from concept to final animation.</p>
+        <p>The value is business understanding, creative thinking and hands-on delivery through one person.</p>
+        <p>Fast two to three week turnarounds. Some projects are done in two weeks, some in three, depending on the work.</p>
+        <p>You have direct access to me. I work as part of your team.</p>
+        <p>I’m Daniel. I’m the independent creative director and motion designer behind Motion Story. I run the work myself, and I’m accountable for it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="fl-section" aria-labelledby="how-run">
+    <h2 id="how-run" class="fl-h2">How the project is run.</h2>
+    <div class="fl-compare">
+      <div class="fl-compare-head">
+        <p>A studio</p>
+        <p>Working with me</p>
+      </div>
+      {rows.map(([studio, mine]) => (
+        <div class="fl-compare-row">
+          <p>{studio}</p>
+          <p>{mine}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="work" class="fl-section">
+    <h2 class="fl-h2">Selected work</h2>
+    <div class="fl-grid-3">
+      {work.map((project) => (
+        <article class="fl-piece">
+          <VimeoEmbed
+            client:visible
+            vimeoId={project.vimeoId}
+            vimeoHash={project.vimeoHash}
+            title={project.title}
+            loading="lazy"
+            className="rounded-xl"
+          />
+          <div class="fl-caption">
+            <h3 class="fl-name">{project.client}</h3>
+            <a class="fl-case" href={`/casestudy/${project.slug}/`}>Case study</a>
+          </div>
+          <p class="fl-note">{project.caption}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="fl-section fl-close">
+    <h2 class="fl-h2">One call to talk through the project.</h2>
+    <p class="fl-body">If I’m not the right fit, I’ll say so.</p>
+    <div class="fl-actions">
+      <a class="ms-btn" href="/book/">Book a call</a>
+    </div>
+  </section>
+</div>
+
+<style>
+  .fl {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 1.5rem 4rem;
+  }
+
+  .fl-hero {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .fl-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+    font-size: clamp(30px, 8vw, 36px);
+    text-wrap: balance;
+    color: #0a0a0a;
+  }
+
+  .fl-body,
+  .fl-prose p,
+  .fl-note {
+    margin: 0;
+    max-width: 38rem;
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.6;
+    color: #444;
+  }
+
+  .fl-hero-copy .fl-body {
+    margin-top: 1.35rem;
+  }
+
+  .fl-note {
+    margin-top: 0.85rem;
+    max-width: none;
+  }
+
+  .fl-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.85rem 1rem;
+    margin-top: 1.75rem;
+  }
+
+  .fl :global(a:focus-visible) {
+    outline: 2px solid #0a0a0a;
+    outline-offset: 3px;
+  }
+
+  .fl-section {
+    margin-top: 4rem;
+  }
+
+  .fl-h2 {
+    margin: 0 0 1.35rem;
+    max-width: 16em;
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: #0a0a0a;
+  }
+
+  .fl-grid-3 {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .fl-caption {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.35rem 1rem;
+    margin-top: 0.85rem;
+  }
+
+  .fl-name {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    color: #0a0a0a;
+  }
+
+  .fl-case {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    line-height: 1.4;
+    color: #0a0a0a;
+    border-bottom: 1px solid rgba(10, 10, 10, 0.28);
+    padding-bottom: 0.08rem;
+  }
+
+  .fl-case:hover {
+    border-color: #0a0a0a;
+  }
+
+  .fl-me {
+    display: grid;
+    gap: 1.75rem;
+    align-items: start;
+  }
+
+  .fl-photo {
+    width: 50%;
+    height: auto;
+    border-radius: 0.75rem;
+    object-fit: cover;
+    object-position: center 18%;
+  }
+
+  .fl-prose {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .fl-me .fl-h2 {
+    margin-bottom: 1rem;
+  }
+
+  .fl-compare-head,
+  .fl-compare-row {
+    display: grid;
+    gap: 0.35rem 2rem;
+    padding: 1.1rem 0;
+    border-top: 1px solid rgba(10, 10, 10, 0.1);
+  }
+
+  .fl-compare-head p,
+  .fl-compare-row p {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.45;
+    color: #444;
+  }
+
+  .fl-compare-head p {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: #0a0a0a;
+  }
+
+  .fl-close .fl-body {
+    margin-top: -0.35rem;
+  }
+
+  @media (min-width: 768px) {
+    .fl-body,
+    .fl-prose p,
+    .fl-note,
+    .fl-compare-row p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .fl-section {
+      margin-top: 5rem;
+    }
+
+    .fl-compare-head,
+    .fl-compare-row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .fl {
+      padding-top: 10rem;
+      padding-bottom: 6.5rem;
+    }
+
+    .fl-title {
+      font-size: 60px;
+    }
+
+    .fl-hero {
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .fl-section {
+      margin-top: 6.5rem;
+    }
+
+    .fl-me {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 4fr);
+      gap: 4rem;
+    }
+
+    .fl-photo {
+      width: 100%;
+    }
+
+    .fl-grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 32px;
+    }
+  }
+</style>
